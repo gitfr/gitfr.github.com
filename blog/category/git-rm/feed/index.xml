@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>La commande rm</title>
+      <link>http://www.gitfr.net/blog/2011/04/23/la-commande-rm</link>
+      <pubDate>Sat, 23 Apr 2011 03:21:00 CEST</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[git-rm]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/23/la-commande-rm</guid>
+      <description>La commande rm</description>
+      <content:encoded><![CDATA[<p>Peu de chose à dire sur la commande <code>rm</code>. Je ne vous fais pas l'injure de dire à quoi elle sert :). Elle est un poil plus complexe que sa soeur <em>hg</em> ou <em>svn</em> avec la présence de l'index. En effet, nous pouvons effacer des fichiers dans l'index seul, avec l'option <code>--cached</code>, mais aussi dans l'espace de travail <strong>et</strong> l'index (par défaut).</p>
+<p>Il existe un «raccourci» : si vous avez supprimer un fichier avec la commande <code>rm</code> de l'OS, Git supprimera aussi le fichier avec la commande <code>git commit -a</code>, puisque cette dernière demande à Git de vérifier les changements dans les fichiers tracés.</p>
+<p>Comme d'habitude, lisez le manuel ;).</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

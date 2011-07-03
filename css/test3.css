@@ -1,0 +1,191 @@
+body {
+    background-color: #666666;
+    font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;
+    font-size: 14px;
+    margin: auto;
+    max-width: 1024px;
+    min-width: 640px;
+}
+#container {
+    background-color: #F9F9F9;
+    color: #0B0B0B;
+    margin: 10px 0 0;
+    padding: 0 0 10px;
+}
+#container a {
+    color: #8B1B1B;
+}
+#container a:hover {
+    color: #8B8B8B;
+}
+ul, ol {
+    margin: 0 10px;
+    padding: 0;
+}
+#sidebar li {
+    list-style: none outside none;
+}
+#sidebar ul {
+    margin: 5px 0;
+    padding: 5px 0;
+}
+li {
+    list-style: disc inside none;
+}
+ol li {
+    list-style: decimal inside none;
+}
+#sidebar {
+    float: right;
+    font-size: 0.9em;
+    margin: 20px 22px 0 10px;
+    padding: 5px 15px 50px 15px;
+    width: 165px;
+    background-color: #EEEEEE;
+    /*border:1px solid;*/
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+#sidebar .sidebar-elem {
+    margin: 10px 0;
+}
+#content {
+    /*border-right: 190px solid #EEEEEE;*/
+    /*border-right: 190px;*/
+    
+    margin: 18px 210px 15px 31px;
+    min-height: 640px;
+    padding: 0 32px 11px 0;
+}
+#header {
+    background-color: #660000;
+    border-bottom: 5px solid #CB4B4B;
+    color: #FFFFFF;
+    padding: 2px 0 5px;
+}
+#headertitle {
+    margin: 0 5%;
+}
+#last_updated {
+    float: right;
+    font-size: 0.8em;
+    line-height: 2em;
+}
+#header a {
+    color: #FFFFFF;
+}
+#header a:hover {
+    color: #BBBBBB;
+}
+
+#twitter-feed {
+    padding:15px 0px 0px 0px;
+}
+
+#disqus_thread {
+    float: left;
+    width: 98%;
+}
+.clearfix {
+    clear:both;
+}
+#footer {
+    clear: both;
+    font-size: 0.8em;
+}
+#footer hr {
+    margin: 0;
+    padding: 0;
+}
+#credits {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#sidebar h2 {
+    border-bottom: 1px dotted;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+div.pygments_manni {
+    background-color: #EFEFEF;
+    border: 1px solid;
+    overflow: auto;
+}
+
+div.pygments_manni .gd {
+    border:none;
+    color: #A00000;
+    background-color:inherit;
+}
+
+div.pygments_manni .gi {
+    border:none;
+    color: #208020;
+    background-color:inherit;
+}
+
+pre {
+    margin: auto;
+    padding: 10px;
+}
+blockquote {
+    background-color: #EFEFEF;
+    font-family: verdana;
+    margin: 0;
+    padding: 10px 30px;
+}
+h1 a, h2 a, #sidebar a {
+    text-decoration: none;
+}
+.post_prose h1 {
+    font-size: 1.3em;
+}
+.post_prose h2 {
+    font-size: 1.1em;
+}
+.blog_post {
+}
+
+.blog_post p {
+    font-size: 0.97em;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.figure {
+    margin:20px 0px 20px 0px;
+}
+.blog_post .figure {
+    text-align: center;
+    padding:10px;
+}
+
+.blog_post p.caption, .blog_post div.legend p, .blog_post div.legend li {
+    font-size: 0.9em;
+    margin:5px 0px 0px 0px;
+}
+
+.blog_post div.legend {
+    text-align:left;
+}
+
+.post_header {
+    border-bottom: 1px dotted;
+    padding: 5px 0 10px 0;
+}
+.prev {
+    float: left;
+    font-size: 0.8em;
+}
+.next, .chronlink {
+    float: right;
+    font-size: 0.8em;
+}
+.strikeout {
+    text-decoration: line-through;
+}

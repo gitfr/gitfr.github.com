@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>La commande init</title>
+      <link>http://www.gitfr.net/blog/2010/12/12/la-commande-init</link>
+      <pubDate>Sun, 12 Dec 2010 00:14:00 CET</pubDate>
+      <category><![CDATA[git-init]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/12/12/la-commande-init</guid>
+      <description>La commande init</description>
+      <content:encoded><![CDATA[<p>Ce billet est la première d'une série sur les commandes Git. Et quoi de plus naturel que de commencer par la première commande que tout utilisateur tape quand il apprend Git : la commande <code>init</code> (l'aventurier commencera peut être par un <code>git clone</code> :).</p>
+<p>L'objectif de cette commande est d'initialiser un répertoire, c'est à dire de lui ajouter le dépôt Git, qui pour nom <code>.git</code>.</p>
+<blockquote>
+<p>$ git init ~/src/myrepo</p>
+<p>Initialized empty Git repository in ~/src/myrepo/.git/</p>
+</blockquote>
+<p>Ce répertoire est toujours constitué du même contenu (nous aborderons en détail le contenu dans un autre billet, ainsi que la configuration). Vous pouvez changer cela en spécifiant un répertoires de templates (option <code>--template</code>).</p>
+<p><strong>Note</strong> : Si vous ne spécifiez pas de répertoire (<code>git init</code>), c'est le répertoire courant qui est utilisé.</p>
+<p>L'option la plus importante est <code>--bare</code>, qui permet de créer un dépôt partagé. Quelle est la différence ? C'est une histoire de workflow : avec un dépôt «normal», seule la commande de synchronisation <strong>pull</strong> est permise. Git par du principe que c'est votre dépôt, et que personne n'a le droit de pousser des objets dedans. A contrario, un dépôt <strong>bare</strong> se veut un dépôt partagé, est donc la commande <strong>push</strong> est aussi autorisée.</p>
+<p><strong>Note</strong> : Il n'existe pas de mécanismes d'identification et d'authorisation dans Git, c'est à vous de le rajouter avec d'autres outils.</p>
+<p>Une autre différence, qui se voit rapidement est qu'un dépôt «bare» ne contient pas de copie de travail (<strong>working directory</strong>). A la place, vous avez directement le contenu du répertoire .git à la racine. C'est assez logique, c'est un dépôt partagé, personne n'est censé travailler directement dessus.</p>
+<p>Troisième différence, le fichier de configuration possède la variable <code>bare = true</code>.</p>
+<p>Avec l'option <code>--bare</code>, on associe souvent l'option <code>--shared</code>, qui permet de spécifier les droits Unix sur le dépôt. Tout administrateur Unix comprendra aisement les possibilités (les explications dépassent largement le cadre de ce billet). Si vous ne savez pas, utilisez <code>--shared=all</code>.</p>
+<p><strong>Note</strong> : Par convention, le nom du répertoire du projet qui héberge un dépôt bare se termine par <code>.git</code>. Exemple : <code>myproject.git</code>, alors que votre dépôt privé s'appelle <code>myproject</code>. Cela permet d'indiquer que ce répertoire contient directement la structure, et non un sous répertoire <code>.git</code>.</p>
+<p>Et voila ! Votre dépôt Git est fin prêt, vous pouvez vous déplacer dedans et créer votre premier commit.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

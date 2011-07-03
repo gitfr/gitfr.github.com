@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>RoR utilise le tracker de GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</link>
+      <pubDate>Thu, 28 Apr 2011 15:50:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</guid>
+      <description>RoR utilise le tracker de GitHub</description>
+      <content:encoded><![CDATA[<p>Si la plupart des gens considèrent GitHub comme une superbe plateforme d'hébergement de code, beaucoup sont encore dubitatifs sur la délégation des tickets (bug et/ou fonctionnalité), et préfèrent utiliser <a href="http://trac.edgewall.org/">Trac</a>, <a href="http://www.redmine.org/">Redmine</a> ou <a href="http://www.atlassian.com/software/jira/">JIRA</a>. Il est donc intéressant d'apprendre que le projet <a href="http://rubyonrails.org/">Ruby on Rails</a> (qui pour l'anecdote, est hébergé depuis le premier jour de GitHub) utilise officiellement GitHub pour<a href="https://github.com/rails/rails/issues"> ses tickets de bugs</a>.</p>
+<p>Le retour d'expérience va donc être très intéressant. Et sans nul doute, les GitHubbers (les développeurs de GitHub) seront très sensibles et réactifs aux remarques et retours, étant eux mêmes des utilisateurs de RoR.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pull request en 3 clicks</title>
+      <link>http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks</link>
+      <pubDate>Wed, 27 Apr 2011 00:58:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks</guid>
+      <description>Pull request en 3 clicks</description>
+      <content:encoded><![CDATA[<p>GitHub vient de sortir le pendant du <a href="http://blog.gitfr.net/post/4930259268/merge-en-un-click">merge en 1 click</a>. Alors que l'amélioration précédente était à destination du mainteneur, celle ci est à destination du collaborateur. Ce dernier peut maintenant modifier un fichier d'un dépôt quelconque (sans droit d'écriture donc) en passant par le site web :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7o4sTe81qdkaiq.png" /></p>
+<p>Et proposer un <em>pull request</em> dans la foulée :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7qqRc3L1qdkaiq.png" /></p>
+<p>Cela veut dire qu'une modification peut être faites et proposer en... 3 clicks ! Plus d'excuse pour proposer cette petite correction de typo que vous avez vu, ou cette documentation pas très claire. </p>
+<p><strong>Note</strong> : bien sur, rien de magique la dedans. GitHub <strong>fork</strong> le projet, applique votre modification (commit), et vous ouvre la fenêtre du <em>pull request</em>. Pas magique certes, mais bien pratique :).</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Merge en un click</title>
+      <link>http://www.gitfr.net/blog/2011/04/25/merge-en-un-click</link>
+      <pubDate>Mon, 25 Apr 2011 19:03:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/25/merge-en-un-click</guid>
+      <description>Merge en un click</description>
+      <content:encoded><![CDATA[<p>GitHub vient de sortir une fonctionnalité surement attendue par beaucoup : la possibilité de fusionner (<em>merger</em>) <strong>facilement</strong> une demande de récupération de code (<em>pull request</em>) ! </p>
+<h2>Rappel du workflow</h2>
+<p>Si je souhaite faire des modifications sur un projet, le workflow par défaut de GitHub me demande de suivre ces étapes :</p>
+<ol>
+<li>
+<p>Je créé une version personnelle de ce projet sur GitHub, afin d'avoir le droit d'écriture (<strong>fork</strong> dans la terminologie GitHub).</p>
+</li>
+<li>
+<p>Je clone ma version GitHub sur ma machine (<code>git clone</code>).</p>
+</li>
+<li>
+<p>Je code, je code, je code.</p>
+</li>
+<li>
+<p>Une fois satisfait, je pousse mes modifications sur mon fork GitHub (<code>git push</code>).</p>
+</li>
+<li>
+<p>Je fais un <em>pull request</em>, en donnant toutes les informations pertinentes au mainteneur.</p>
+</li>
+</ol>
+<p>C'est à ce moment la que vous demandez au mainteneur du projet de récupérer votre code pour le lire, le commenter et l'intégrer s'il est satisfait de vos modifications.</p>
+<h2>Coté mainteneur</h2>
+<p>Depuis quelques mois, il peut directement commenter le code dans un <em>pull request</em>, vous demander de plus amples informations, ou discuter avec d'autres personnes. Bref, il pouvait tout faire sur l'interface Web sauf pour intégrer le code. Il devait récupérer votre code (<code>git pull</code>) dans une branche et fusionner (<code>git merge</code>) avec la méthode «traditionnelle», autrement dit avec Git.</p>
+<h2>La nouveauté</h2>
+<p>Plus maintenant ! Si le mainteneur le souhaite, il peut directement faire une fusion en cliquant sur un bouton :</p>
+<p><img alt="" src="https://img.skitch.com/20110423-qtkkxtwt8rwwrds9b84y8561c6.png" /></p>
+<p>Si la fusion se passe mal :</p>
+<p><img alt="" src="https://img.skitch.com/20110425-jwxx7qcaeak3rxi42c6kmmj2ab.png" /></p>
+<p>Il suffit donc d'un seul click pour fusionner et fermer la demande.</p>
+<p><strong>Note</strong> : le merge est un <strong>non fast-forward</strong> (on modélise donc la fusion, cf ma présentation) et le message de merge indique le nombre, la source et le titre du <em>pull request</em> :</p>
+<p><img alt="" src="https://img.skitch.com/20110423-8nb941gfhsa6qt1isq71kybh9.png" /></p>
+<h2>Conclusion</h2>
+<p>Cette fonctionnalité prend tout son sens depuis les améliorations sur l'interface, puisque l'on peut visualiser le code, commenter le code, discuter autour du code... et maintenant fusionner le code. C'est un pas en avant vers la simplicité et rend GitHub plus attrayant pour les personnes qui ne sont pas encore des «Git-Fu».</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Le million ! Le million !</title>
+      <link>http://www.gitfr.net/blog/2011/04/21/le-million-le-million</link>
+      <pubDate>Thu, 21 Apr 2011 14:34:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/21/le-million-le-million</guid>
+      <description>Le million ! Le million !</description>
+      <content:encoded><![CDATA[<p>GitHub vient d’annoncer des chiffres impressionnants : 1.1 million de projets et 900 000 Gists. Et si vous êtes bon en calcul mental, vous savez donc que GitHub à dépassé les <strong>2 millions de dépôts Git</strong>. Mais plus intéressant, <strong>70% des projets sont récents</strong> (moins d'un an), ce qui fait environ 4500 nouveau projet par jour, pas mal ! Et d’après les estimations internes, le <strong>million d'utilisateurs</strong> sera atteint le 11 septembre 2011.</p>
+<p>Ces chiffres confortent GitHub comme plateforme d'hébergement de référence. Et par la même occasion, <strong>la montée en puissance</strong> (comme dirait Domenech) de Git. Il parait assez clair à mes yeux que ce dernier soit rapidement l'outil de gestion de source numéro 1 dans le monde du Logiciel Libre.</p>
+<p>Mais gardez un oeil sur <a href="http://mercurial.selenic.com/">Hg</a> ou <a href="http://bazaar.canonical.com/">Bzr</a>, il est important de maitriser plusieurs outils, rien que pour satisfaire, je ne doute pas, votre appétit de connaissance :).</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gestion de ticket v2 sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/17/gestion-de-ticket-v2-sur-github</link>
+      <pubDate>Sun, 17 Apr 2011 23:54:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/17/gestion-de-ticket-v2-sur-github</guid>
+      <description>Gestion de ticket v2 sur GitHub</description>
+      <content:encoded><![CDATA[<p>Dans mon précédent <a href="http://blog.gitfr.net/post/4312294636/github-au-centre-de-lunivers-git">article</a> sur GitHub, je disais que la gestion de ticket était «simple». Et bien, les GitHubbers doivent me lire (je ne vois pas d’autres explications) car GitHub vient de lancer <strong>Issue 2.0</strong>, le nouveau système de gestion de ticket !</p>
+<p>Une <strong>issue</strong> (que l’on peut traduire par «problème» mais je préfère le mot «ticket») ressemble maintenant à ça :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_ljteu0UlZp1qdkaiq.png" /></p>
+<p>Vous pouvez constater plusieurs changements comme les personnes concernées (en bas), la délégation du ticket à une personne ou les milestones («étapes» en français). Voyons maintenant les nouveautés plus en détail.</p>
+<h2>Assigner un ticket</h2>
+<p>Vous pouvez assigner un ticket à un utilisateur GitHub.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/ec0267f7ae8bdbe7b6bda78c356be5bba565e8dd/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6f70656e696e672d626c6f636b2d686967686c69676874732e706e67" /></p>
+<h2>Les milestones</h2>
+<p>Créer des milestones est une étape (ah-ah, oui je sais avoir de l'humour) importante pour disposer d'un outil de gestion de ticket efficace, permettant de définir des releases (ticket 10, 11 et 20 pour la future v1.2 par exemple). Un ticket pouvant porter sur une correction de bug, une nouvelle fonctionnalité ou tout autre sujet (documentation, infra...). C'est pour cela que le terme <strong>issue tracker</strong> est plus juste que <strong>bug tracker</strong>.</p>
+<h2>Historique des états d'un ticket</h2>
+<p>On peut maintenant visualiser le changement d'état d'un ticket au cours du temps.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/3feb114682e7aec6e55ce668b94a36f076d98674/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f69737375652d6576656e74732e706e67" /></p>
+<h2>Navigation plus aisée</h2>
+<p>Plus simple et agréable, vous pouvez filtrer par label ou milestone. Ou alors voir vos tickets ou ceux ou vous êtes mentionné.</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_ljtfr1rvLm1qdkaiq.png" /></p>
+<p>Vous pouvez aussi modifier plusieurs tickets à la fois («mass-edit» en anglais).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/b5136bc7590b7cb8b08b235842552ccbfc97aa5e/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6d6173732d656469742e706e67" /></p>
+<p>Enfin une recherche rapide («quickseach» en anglais) affiche les premiers résultats en quasi temps réel fait son apparition.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/9f751e258b4da3fce516d692cfb313d527bbc86d/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f717569636b7365617263682e706e67" /></p>
+<h2>Commit + ticket</h2>
+<p>Point intéressant, si vous nommez le numéro d'un ticket dans le message de commit, ce dernier  apparaitra sur le ticket.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/9bf399559491d3224bfe5c8d861042439f07a6b3/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f636f6d6d69742d6d656e74696f6e2d726573756c742e706e67" /></p>
+<p>Mieux, vous pouvez fermer un ticket directement, en utilisation le mot clé <em>fixes #xxxx</em> (ou <em>fixed</em>, <em>fix</em>, <em>closes</em>, <em>close</em> ou <em>closed</em>).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/cbe2bf72802c65cb5b741d8b816565d96a933a6b/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f636f6d6d69742d636c6f73652d726573756c742e706e67" /></p>
+<h2>email + ticket</h2>
+<p>Autre amélioration notable, vous pouvez directement répondre par mail quand vous recevez une notification.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/91a10c555a568850237a0ce6eb97e2246c7e73f2/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f656d61696c616e647765622e706e67" /></p>
+<h2>Raccourci clavier</h2>
+<p>On peut maintenant se passer de la souris :).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/0f4041d149e1e9f314be661808c94aaa74177ce3/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6b6579626f6172642e706e67" /></p>
+<h2>PJAX</h2>
+<p>Les écrans sont en PJAX, une <a href="https://github.com/defunkt/jquery-pjax">techno GitHub</a> permettant de ne recharger qu'une partie de la page et qui va être généraliser un peu partout (demande Firefox 4 ou un Chrome récent, mais je présume que cela fonctionne avec Opéra et Safari. Non IE n'est pas un navigateur moderne).</p>
+<h2>Conclusion</h2>
+<p>Les améliorations sont notables et redonnent des couleurs à la partie qui était, à mes yeux, la moins avancée du site en terme d'utilisabilité et surtout de fonctionnalités. L'arrivée des milestones permet de définir une <strong>roadmap</strong>, ce qui est toujours intéressant. Et enfin, la manipulation d'un ticket avec un message de commit va simplifier le travail de gestion de projet. Espérons que GitHub continue sur cette voie, par exemple en permettant de créer automatiquement un ticket avec un message de commit particulier sur un fork.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GitHub, au centre de l'univers Git</title>
+      <link>http://www.gitfr.net/blog/2011/04/03/github-au-centre-de-l-univers-git</link>
+      <pubDate>Sun, 03 Apr 2011 17:31:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/03/github-au-centre-de-l-univers-git</guid>
+      <description>GitHub, au centre de l'univers Git</description>
+      <content:encoded><![CDATA[<p>On me pose souvent cette question : « Git est il utilisé et quelle est la taille de sa communauté ? ». Ma réponse se résume souvent à donner <a href="http://www.github.com">l'url de GitHub</a>. Les chiffres parlent d'eux mêmes :</p>
+<ul>
+<li>
+<p>Plus d'un million de dépôt, dont 60% sont des projets.</p>
+</li>
+<li>
+<p>Plus de 400 000 utilisateurs.</p>
+</li>
+<li>
+<p>Dans les 1000 sites parmi les plus visités avec 600 000 visiteurs uniques par jour.</p>
+</li>
+<li>
+<p>Des pointes à plus de 400 000 commits par jour !</p>
+</li>
+</ul>
+<p>GitHub apporte une <strong>visibilité</strong> importante à Git, comme j'ai pu l'entendre plusieurs fois : «Je me suis mis à Git à cause de GitHub !». Mais pourquoi l'utiliser ?</p>
+<p>Au lancement du projet, au milieu de l'année 2008, le leader de l'hébergement de projets Libres s'appelle <strong>Sourceforge</strong>. Ce dernier existe depuis 1999 et a pour but d'héberger gratuitement tous ceux qui désirent une infrastructure solide, avec <em>CVS</em> (on est en 99 ne l'oubliez pas :)), liste de diffusion, et site web. Mais ce dernier vieillit mal : aspect très «20ème siècle», pas de DVCS (seulement CVS et SVN), et un forum qui tuerait sur place un ergonome... Il est possible néanmoins d'héberger son dépôt Git à l'époque avec <strong>repo.or.cz</strong>, mais il offre lui aussi un design vraiment basique et des fonctionnalités limitées. Et surtout, il n'existe aucune possibilité d'avoir des dépôts privés.</p>
+<p>D’où l'idée de proposer un hébergement Git de qualité, avec un design clair, gratuit pour les projets Libres mais permettant aussi les projets privés. Ils ont donc décider de créer (sur leur temps libre, l'utilisation de Git à cette époque est balbutiante) un site simple et efficace. Le succès est foudroyant, avec 10 000 projets en moins de 8 mois. Et plus important, le service est rapidement rentable avec les offres d'hébergement privés. Les fondateurs passent rapidement de bénévoles à employés temps plein, et embauchent quelques personnes, dont @chacon, qui se démène pour parler de Git (1 livre, 1 pdf, 3 sites dont le site officiel, des formations et quelques dizaines de présentations à son actif depuis 3 ans). Pour l'anecdote, GitHub embauche massivement depuis le début 2011 (15 postes).</p>
+<p>Il faut noter que le projet <strong>Ruby on Rails</strong> fut hébergé dés le 1er jour, faisant ainsi basculer la communauté Ruby dans l'escarcelle de Git (fin 2008, 36% des projets sont en Ruby). Les fondateurs étant des Rubyistes, la majorité du site est codé en Ruby (notamment avec du RoR), et je crois que c'est toujours le cas aujourd'hui.</p>
+<p>Quelles sont les raisons de ce succès ? Voici quelques éléments de réponses :</p>
+<ul>
+<li>
+<p>L'hébergement privé, à un prix accessible.</p>
+</li>
+<li>
+<p>L'hébergement gratuit, qui permet de tester le service sans aucune limitation d'utilisation. La seule contrainte étant de ne pas pouvoir rendre son dépôt privé.</p>
+</li>
+<li>
+<p>Un design clair, élégant et simple. Par exemple , on créé un dépôt en 2 clicks et 4 questions :</p>
+</li>
+</ul>
+<p><img alt="" src="http://help.github.com/images/bootcamp/bootcamp_2_repoinfo.jpg" /></p>
+<ul>
+<li>
+<p>Une page nous récapitule ensuite comment l'utiliser. Moins d'une minute sont nécessaire pour démarrer. L'ergonomie fait, comme souvent, la différence.</p>
+</li>
+<li>
+<p>Utiliser un projet déja existant est encore plus simple puisque la commande Git vous est donnée (protocoles ssh, https et git).</p>
+</li>
+</ul>
+<p><img alt="" src="http://img.skitch.com/20100201-e6dmj54pgmw6wq7314jtbej31k.jpg" /></p>
+<ul>
+<li>
+<p>Un moteur de recherche puissant disposant de <a href="https://github.com/search">20 mots clé</a>.</p>
+</li>
+<li>
+<p>Utilisation des clés ssh. Une fois copiées sur le site, plus besoin de s'identifier. Un jeton (token) est utilisable à la place d'un mot de passe.</p>
+</li>
+<li>
+<p>Une documentation abondante, sur le fonctionnement du site comme sur Git.</p>
+</li>
+<li>
+<p>La présence de <a href="https://gist.github.com/">Gist</a>, permettant de partager des données (code ou autre) simplement et rapidement. Le tout géré par (et donc utilisable avec) Git bien sûr. Cela permet aussi de travailler à plusieurs sans être dans un projet particulier.</p>
+</li>
+<li>
+<p>La possibilité d'avoir un wiki, qui est un dépôt Git :</p>
+</li>
+</ul>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/4f62fc3fc2842eccf396f6462a2870ad03468056/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031302f77696b692d636f6d706172652e706e67" /></p>
+<ul>
+<li>Un bugtracker (un poil simpliste mais généralement suffisant) :</li>
+</ul>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/23a622374bb0cc97818156fbf57ca825cb3c5aaa/687474703a2f2f696d672e736b697463682e636f6d2f32303130303832332d70713371777778706563656866623571326e37373370777734772e706e67" /></p>
+<ul>
+<li>Un outil de revue de code :</li>
+</ul>
+<p><img alt="" src="https://img.skitch.com/20110203-ti2rd25qq5kus8msyxgba7kbgq.jpg" /></p>
+<ul>
+<li>La gestion des notes :</li>
+</ul>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/fe89e5d2ab4275b07d80c34595df63a86385a265/687474703a2f2f696d672e736b697463682e636f6d2f32303130303832352d72756634743479756770357070636538736a68316131326b37352e6a7067" /></p>
+<ul>
+<li>
+<p>Une <a href="http://develop.github.com/p/libraries.html">API complète</a>, avec des wrappers disponibles dans <a href="http://develop.github.com/p/libraries.html">plusieurs langages</a>.</p>
+</li>
+<li>
+<p>L'utilisation de <a href="http://daringfireball.net/projects/markdown/">Markdown</a> un peu partout sur le site comme pour le rendu plus riche de document texte.</p>
+</li>
+<li>
+<p>La disponibilité de flux RSS pour les différents historiques.</p>
+</li>
+<li>
+<p>Des hooks pour plugger votre projet (sur un bugtracker, un outil d'intégration continue, de gestion de projet, Twitter...).</p>
+</li>
+<li>
+<p>Visualisation graphique des branches :</p>
+</li>
+</ul>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/a44a44c4d892b8e9f9dbd53a99ee0ec5da92d29b/687474703a2f2f696d672e736b697463682e636f6d2f32303038303431302d6262377731356a6e336d386432716b756d357764676e726a33622e706e67" /></p>
+<ul>
+<li>
+<p>Statistiques graphique du projet (nombre de ligne de code impactées dans le temps, langages utilisés...).</p>
+</li>
+<li>
+<p>La possibilité de notifier un développeur en mettant son login (@somebody) dans n'importe quelle conversation :</p>
+</li>
+</ul>
+<p><img alt="" src="https://img.skitch.com/20110323-gei22a6c1wkkqdg3xgcfe9ccfh.jpg" /></p>
+<ul>
+<li>
+<p>Un gestionnaire de binaires (où vous pouvez uploader vos propres fichiers en plus de ceux générés automatiquement).</p>
+</li>
+<li>
+<p>Et bien sûr, un service rapide et efficace.</p>
+</li>
+</ul>
+<p>Mais si la partie «technique» est importante et fait la différence vis-à-vis des concurrents (il suffit de visiter la page du projet Git sur <a href="http://www.github.com/git">GitHub</a> avec la page du projet Git sur <a href="http://repo.or.cz/w/git.git">repo.or.cz</a>), l'aspect le plus important de GitHub est <strong>social</strong>. C'est sur ce point que GitHub a fait la <strong>différence</strong>.</p>
+<h1>GitHub et le «social coding»</h1>
+<p>Dés sa création (le travail commence fin 2007 pour un lancement officiel en février 2008), GitHub se veux social. Cela signifie que le site facilite grandement la <strong>«mise en relation»</strong> des développeurs. Fini les sites «à la Sourceforge» où les gens sont cloisonnés dans les projets. Vous pouvez voir la vie du projet avec la «Timeline» et mieux, la suivre :</p>
+<p><img alt="" src="http://help.github.com/images/bootcamp/bootcamp_4_watch.jpg" /></p>
+<p>mais surtout vous pouvez <strong>suivre un développeur</strong> :</p>
+<p><img alt="" src="http://help.github.com/images/bootcamp/bootcamp_4_follow.jpg" /></p>
+<p>Et cela change tout ! Vous êtes maintenant au courant de toutes ses actions, par exemple des projets qu'il lance dès leur création.</p>
+<p>Vous pouvez naviguer dans GitHub par dépôt bien sur, mais aussi par <em>Timeline</em>, mot clé, langage de programmation ou changelog. Vous pouvez vous abonner à un flux RSS de l'activité du projet.<br />
+</p>
+<p>Mais surtout, GitHub tire partie de la philosophie des outils de code décentralisés : chacun peut cloner un projet et le modifier, pour ensuite demander l'intégration de ses modifications. En tant que créateur d'un projet, vous permettez à la terre entière de participer à votre projet, et ceci de manière totalement transparente, permettant de créer rapidement une <strong>communauté</strong> de développeurs. Et vous communiquez facilement avec les autres, par l'intermédiaire de Gist, du bugtracker, de pull request, du wiki...</p>
+<p>Intervenir sur un projet est devenu incroyablement simple :</p>
+<ul>
+<li>En clonant un projet, vous pouvez travailler sur le code en moins d'une minute :</li>
+</ul>
+<p><img alt="" src="http://help.github.com/images/bootcamp/bootcamp_3_fork.jpg" /></p>
+<ul>
+<li>En faisant un "pull request", vous pouvez contribuer à un projet (notez la discussion qui s'en suit) :</li>
+</ul>
+<p><img alt="" src="https://img.skitch.com/20110203-xhmdamh6n6yupg6wkscqjb4m93.jpg" /></p>
+<ul>
+<li>
+<p>En éditant le wiki, vous pouvez modifier la documentation projet.</p>
+</li>
+<li>
+<p>En créant un <em>issue</em> dans le bugtracker, vous pouvez demander une fonctionnalité ou rapporter un bug.</p>
+</li>
+</ul>
+<p>Quel changement ! Souvenez vous «avant», où il fallait s'abonner à une liste de diffusion, discuter avec les développeurs pour demander comment envoyer ses patchs, voir attendre les droits d'écriture sur le SVN... GitHub exploite à fond la puissance des outils de code décentralisé (DVCS), ou le <em>fork</em> et le <em>merge</em> sont des actions simples et surtout naturelles. Git étant ici favorisé par rapport à Mercurial par sa meilleure gestion des branches et des dépôts distants (ce dernier grignotant néanmoins petit à petit son retard).</p>
+<h1>Le développeur est mis en avant</h1>
+<p>Sur GitHub, le développeur a une <strong>existence propre</strong>. Il est facile de voir ses délots, et plus généralement ses activités. GitHub montre que les projets n'ont pas de vie propre, mais sont animés par des développeurs. C'est la suite logique vers la <strong>reconnaissance</strong> du rôle de développeur, que le <em>Logiciel Libre</em> avait initié (je suis sûr que vous connaissez le nom du responsable du projet Linux, mais connaissez vous le nom du responsable du projet Windows 7 ?). Vous leur parliez par IRC et par liste de diffusion, vous voyiez leurs annonces sur le blog alors que maintenant vous pouvez simplement visualiser leurs activités et surtout <strong>collaborer</strong> sans action lourde, comme s'abonner à de multiples liste de diffusion.</p>
+<p>La suite logique de cette philosophie est l'extension <em>Linkedin</em> pour GitHub : vous mettez en avant votre code, votre mobilisation dans des projets Libres, votre capacité à gérer un projet...</p>
+<h1>Conséquences</h1>
+<p>Son usage est centré sur l’utilisateur, l’individu, contrairement aux «forges« qui l’ont précédées et qui sont orientées sur les projets, cela restructure les communautés. Le système de fork attire les contributions de manière beaucoup plus naturelle et informelle que le système traditionnel. Le mainteneur incluant parfois des modifications sans demander aux contributeurs car il suit les forks de son projet !</p>
+<p>Github a permis aussi à de nombreux projets mineurs de se donner une visibilité inespérée, évitant à certains de mourir faute de contributions.</p>
+<p>Et enfin, aspect intéressant de la vie du projet, si les «requests» sur le projet initial permettent au propriétaire d’inclure facilement et rapidement la modification, l’existence des <em>forks</em> GitHub (c'est à dire un fork au niveau du code) permettent aussi de <strong>forker</strong> (ici employer dans le sens «traditionnel», c'est à dire au niveau projet) si le mainteneur ne fait pas son boulot ! </p>
+<h1>GitHub est il seul ?</h1>
+<p>Plus maintenant, nous pouvons citer un concurrent libre (vous pouvez héberger votre propre site) qui s'appelle <a href="http://gitorious.org/">Gitorious</a>. Il offre des fonctionnalités similaires, notamment dans l'aspect collaboratif (visitez par exemple <a href="http://gitorious.org/git">la page du projet Git</a>).</p>
+<p>Dans le monde non Git, il existe d'autres plateformes, notamment <a href="https://launchpad.net/">Launchpad</a> qui aurait pu connaître le succès de GitHub. Lancé en 2004, il dispose de nombreuses fonctionnalités de gestion de projet comme Answers pour le support de la gestion de la connaissance, Blueprints pour la spécification ou Translations pour la traduction ou les PPA pour l'hébergement de paquets Ubuntu. C'est la plateforme collaborative du projet Ubuntu, qui fédère des milliers d'utilisateurs. J'ai utilisé Launchpad très tôt (les projets Python étant les premiers utilisateurs de cette plateforme) et il avait un potentiel énorme. Hélas, la volonté de pousser l'outil maison à tout prix (en l'occurence Bazaar) a ôté toute chance à la plateforme de connaître un réel succès, Bazaar (que l'on écrit souvent «bzr») n'ayant pas décollé par rapport à Git et Mercurial. Dommage.</p>
+<p>Autre concurrent, <a href="https://bitbucket.org/">Bitbucket</a>. Ce dernier est proche de GitHub mais utilise Mercurial (que l'on écrit souvent «hg») en offrant hébergement gratuit comme payant. Comme pour Launchpad, c'est aussi le manque de popularité de Hg par rapport à Git qui fait (pour l'instant) de BitBucket un outsider et non un concurrent direct. Mais le rachat par Attlassian (connu des Javaistes pour développer JIRA et Confluence) en septembre 2010 peut changer la donne.</p>
+<p>Google Code est aussi une plateforme de qualité (avec Wiki, bugtracker, site web, visualiseur de source). Initialement limité à Subversion, il est maintenant possible d'utiliser Hg. Mais Google code n'offre aucune fonctionnalité sociale, et l'intégration de Hg est peut être un peu tardive (avril 2009).</p>
+<p>Sourceforge est encore dans la course, grâce à une refonte complète du site. Le côté intéressant est que vous pouvez utiliser l'outil de gestion de source que vous voulez (cvs, svn, git, hg, bzr) avec accès à une base MySQL. Néanmoins, la refonte peine à cacher l'aspect vieillissant, il suffit pour cela de visiter un projet et de faire une comparaison avec le design clair d'un Bitbucket ou GitHub.</p>
+<p>Enfin, vous avez de nombreuses «forges logicielles», ces sites vous permettant d'héberger vos projets libres. On peut citer Alioth, BerliOS, Tigris, Assembla, KForge, GNU Savanah... Mais encore une fois, elles font bien pâles figures face aux sites «sociaux», et n'offrent généralement pas d'hébergement payant (permettant leur développement en payant des développeurs). </p>
+<p>Néanmoins, il est vital pour l'écosystème du Logiciel Libre (et le marché de l'hébergement de code) d'avoir des concurrents sérieux. J'espère donc que Bitbucket ou Launchpad évolueront rapidement dans le bon sens, obligeant GitHub à travailler sans relâche pour rester en tête. </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Haskell sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/03/haskell-sur-github</link>
+      <pubDate>Sun, 03 Apr 2011 14:34:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/03/haskell-sur-github</guid>
+      <description>Haskell sur GitHub</description>
+      <content:encoded><![CDATA[<p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell GHC</a>, passe officiellement sur Git, avec un <a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar (bzr). Et enfin, que la capacité de retravailler son historique (point fort que je mets en avant dans toutes mes présentations Git) est un atout important. Point important, cette phrase vient du mail expliquant la migration en 2008 (Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et la 2.8 est en cours de développement avec le support très attendu de la fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch (1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non pas l'historique comme une série de «snapshots», mais comme une suite de <strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite grandement le <strong>cherry-picking</strong>. Malheureusement, des performances catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais permis à Darcs de décoller.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Eclipse sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github</link>
+      <pubDate>Sun, 03 Apr 2011 00:46:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github</guid>
+      <description>Eclipse sur GitHub</description>
+      <content:encoded><![CDATA[<p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
+<p>La fondation héberge ses propres projets en proposant <a href="http://dev.eclipse.org/viewcvs/viewvc.cgi/">CVS, Subversion</a> et <a href="http://git.eclipse.org/c/">Git</a>. Mais la perspective collaborative de GitHub semble être un avantage certain, comme le souligne l'<a href="http://aniszczyk.org/2011/04/01/eclipse-org-and-github/">annonce</a> de Chris Aniszczyk :</p>
+<blockquote>
+<p>I'm happy to announce we finally setup mirroring of eclipse.org repositories on GitHub.
+I think this is an important step to making the eclipse.org codebase more accessible for people
+to fork and contribute changes.</p>
+</blockquote>
+<p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
+<p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
+<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Les nouveautés 2011 sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/03/27/les-nouveautes-2011-sur-github</link>
+      <pubDate>Sun, 27 Mar 2011 10:42:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/03/27/les-nouveautes-2011-sur-github</guid>
+      <description>Les nouveautés 2011 sur GitHub</description>
+      <content:encoded><![CDATA[<p>Comme le dirait Domenech, "GitHub monte en puissance". Ce billet liste les fonctionnalités sorties depuis le début de l'année. Et au vu du nombre d'embauches (3 par mois depuis décembre 2010), cela devrait s'accélérer dans les prochains mois.</p>
+<p>Les nouveautés :</p>
+<ul>
+<li>
+<p>Vous pouvez notifier une personne (en indiquant son login, ex: <strong>@sdouche</strong>) dans le <em>issue tracker</em> ou un <em>pull request</em>. Cette personne sera automatiquement inscrite pour les échanges futurs. Ces notifications automatiques sont bien sûr désactivables (Account Settings &gt; Notification Center).</p>
+</li>
+<li>
+<p>Plus généralement, ces notifications sont activables pour chaque issue ou pull request.</p>
+</li>
+<li>
+<p>4 modes de visualisation des images : <strong>2-Up</strong> (côte à côte, mode par défaut), <strong>Swipe</strong> (une moitié de l'image avec l'une, une moitié avec l'autre), <strong>Onion Skin</strong> (zoom sur une partie de l'image tout en rendant opaque le reste), <strong>Difference</strong> (visualisation des pixels différents).</p>
+</li>
+<li>
+<p>Vous pouvez mettre en avant vos capacités de codage dans <strong>Linkedin</strong> avec l'application GitHub.</p>
+</li>
+<li>
+<p>Vous pouvez maintenant répondre aux commentaires (issue, commit, pull request, message direct) directement par email.</p>
+</li>
+<li>
+<p>En parlant d'email, ceux ci sont bien mieux conçus : gestion des threads (grâce aux headers <em>Message-Id</em>, <em>References</em> et <em>In-Reply-To</em>) et les sujets ne sont plus génériques (comme "jdoe commented on an issue").</p>
+</li>
+<li>
+<p>En appuyant sur la touche <strong>t</strong> quand vous visualisez un dépôt, vous activez le <strong>File Finder</strong>. Ce dernier vous permet de lire les fichiers plus rapidement et simplement, en utilisant le clavier au lieu de la souris.</p>
+</li>
+<li>
+<p>GitHub propose une fonctionnalité intéressante pour la <strong>revue de code</strong>, puisque vous pouvez commenter des lignes sur un <em>Pull request</em>.</p>
+</li>
+<li>
+<p>La recherche dans <strong>Gist</strong> s'est bien améliorée.</p>
+</li>
+<li>
+<p>Ré-écriture du frontal pour les <strong>Wikis</strong> : nouvel éditeur Wyswig, gestion des permissions améliorée, retour en arrière, pre-visualiation, pied de page...</p>
+</li>
+<li>
+<p>Nouveaux champs pour les <em>Service Hook payload</em>.</p>
+</li>
+</ul>
+<p>Pour être au courant des évolutions, je vous recommande de suivre le <a href="https://github.com/blog">blog</a> officiel de GitHub.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

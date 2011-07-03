@@ -1,0 +1,225 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+  <title>#gitfr</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/gitfr" />
+<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
+
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+<link rel='stylesheet' href='/css/documentation.css' type='text/css' />
+<link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="content">
+      
+  
+<div id="header" onclick="location.href='/';" style="cursor: pointer;">
+  <div id="plugbanner"></div>
+  <div id="blog_logo"></div>
+  <h1><a href="/">
+      <span id="blog_name">
+        #gitfr
+      </span>
+    </a>
+  </h1>
+</div>
+<a href="http://github.com/sdouche/gitfr"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="top_bar">
+  <div class="ButtonBar">
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <div id="search">    
+    <form id="searchform" method="get" action="http://www.google.com/search">
+      <input type="hidden" name="ie" value="UTF-8">
+      <input type="hidden" name="oe" value="UTF-8">
+      <input type="hidden" name="domains" value="www.gitfr.net">
+      <input type="hidden" name="sitesearch" value="www.gitfr.net">
+      <input name="q" id="q" size="20" value="recherche..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+    </form>
+  </div>
+</div>
+
+
+
+      <div id="main_block">
+        <div id="prose_block">
+          
+
+<div class="blog_post">
+  <a name="la-commande-add"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/03/29/la-commande-add" rel="bookmark" title="Permanent Link to La commande add">La commande add</a></h2>
+  <p class="related"><strong>29/03/2011 08:53 AM</strong> | categories: 
+
+<a href='/blog/category/git-add'>git-add</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/03/29/la-commande-add#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La commande que l'on utilise juste après <em>init</em> ou <em>clone</em> est bien évidemment la commande <em>add</em>. Celle ci permet de modifier le contenu de l'index.</p>
+<h1>L'index ?</h1>
+<p>Git se différencie des autres outils en intégrant la notion d'index. Vous pouvez le voir comme un <strong>commit temporaire</strong>. Commit car il est effectivement enregistré comme tel dans le dépôt, mais temporaire car il est géré complètement différemment. </p>
+<p>Quand on vient de <em>SVN</em> ou de <em>Hg</em>, cela peut paraitre au premier abord assez lourd : a quoi cela peut il bien servir ? Tout simplement à construire tranquillement son commit, en permettant des «va-et-vient» entre son code (que l'on peut étudier ou modifier) et la construction de son commit. Une fois utilisé, on devient accro et on ne s'en lasse pas. Mais nous verrons plus tard que l'on peut shinter l'index si cela n'est pas utile.</p>
+<h1>Une différence importante</h1>
+<p>Quand vous appelez la commande add, vous ne demandez pas à Git d'ajouter le fichier, mais seulement le <strong>contenu</strong> de ce fichier au moment de l'appel de la  commande. Késako ? Avec <em>svn add</em> (ou <em>hg add</em>), vous demandez à svn d'intégrer toutes les modifications futures de ce fichier, alors que Git va seulement intégrer les modifications <strong>actuelles</strong> de ce fichier. Si vous faites de nouveau des modifications, il faudra appeler une deuxième fois la commande add.</p>
+<p>C'est pour cela que vous pouvez retrouver ce même fichier dans l'état «changes to be commited» (aka dans l'index) et l'état «changes not staged to commit» (modifier dans le répertoire de travail) en <strong>même temps</strong> : vous avez modifié le fichier, fait un add puis modifié de nouveau le fichier. Cela peut sembler un peu complexe au premier abord, mais cela vous permet de «jouer» avec votre dernier commit car il est fait pour cela. Une fois que vous êtes sur de votre coup, vous commitez réellement.</p>
+<p>On retrouve la philosophie «gestionnaire de contenu» et non «gestionnaire de fichier» que je cite dans mes présentations. Pour faciliter la vie, Git possède aussi une notion de fichier tracé (voir plus bas la commande -u), mais c'est à vous de décider de prendre en compte systématiquement toutes les modifications en cours. Par défaut, il vous demande de sélectionner chaque modification.</p>
+<p>Une fois comprise et maitrisée, cette étape et un élément important dans la construction d'un <strong>historique propre</strong>.</p>
+<h1>Modifier l'index</h1>
+<p>Rien de plus simple :</p>
+<blockquote>
+<p>$ git add $filepattern</p>
+</blockquote>
+<p>Le pattern peut être un fichier (<em>git add monfichier.txt</em> par exemple).</p>
+<h1>Ajout interactif</h1>
+<p>Si l'ajout en ligne de commande vous semble ennuyeuse, un shell est à votre disposition pour vous simplifier la tâche. Il suffit de taper le numéro de la commande puis de choisir le ou les fichiers impactés.</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lipq1n3EbQ1qdkaiq.png" /></p>
+<p>Personnellement, je n'utilise pas beaucoup le mode interactif.</p>
+<h1>Ajout par hunk</h1>
+<p>Mais j'apprécie particulièrement l'option <strong>-p</strong>. Ce dernier permet d'ajouter du contenu par petits bouts de code, appelez <strong>hunk</strong> :</p>
+<p><img alt="Exemple d'un hunk" src="http://media.tumblr.com/tumblr_lipqrbfx1s1qdkaiq.png" /></p>
+<p>Imaginez que vous avez modifié plusieurs fichiers (ou plusieurs fois le même fichier), portant sur des sujets qui n'ont rien à voir. Cette option me liste les hunks et me demande pour chacun d'eux si je souhaite l'intégrer dans l'index. Je peux ainsi construire un <strong>commit unitaire</strong>, un commit cohérent qui ne mélange pas des modifications sans relation entre elles. Même si j'ai travaillé de manière brouillone dans mon espace de travail.</p>
+<p>De plus, la commande vous propose plusieurs possibilités, comme celle de laisser un hunk <em>undecided</em>, afin d'y revenir plus tard. Vous pouvez même éditer un hunck pour le modifier.C'est une option que je vous recommande chaudement.</p>
+<p><strong>Note</strong> : cette option est en fait un raccourci vers la sous commande <em>patch</em> de l'ajout interactif vu juste avant.</p>
+<h1>Edition d'un patch</h1>
+<p>Vous pouvez directement modifier vos changements avec l'option <em>-e</em>. Je n'utilise personnellement pas cette possibilité (ni directement, ni par l'option -p).</p>
+<h1>Deux raccourcis utiles</h1>
+<p>L'option <em>-a</em> ajoute le contenu de tous les fichiers du répertoire de travail, <em>-u</em> seulement le contenu des fichiers déjà tracés.</p>
+
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_url = "http://www.gitfr.net/blog/2011/03/29/la-commande-add";
+</script>
+<script type="text/javascript" src="http://disqus.com/forums/gitfr/embed.js"></script>
+<noscript><a href="http://gitfr.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </div><!-- End Prose Block -->
+        
+  <div class="right_sidebar">
+    <div id="right_sidebar">
+  <div id="rss">
+    <h2>flux RSS</h2>
+    <a href="http://feeds.feedburner.com/gitfr">billets</a>
+    /
+    <a href="http://gitfr.disqus.com/latest.rss">commentaires</a>
+  </div>
+  <div id="contact">
+    <h2>Contact</h2>
+    mail : seb@gitfr.net<br />
+    liste de diffusion : <a href="http://groups.google.com/group/gitfr">gitfr</a><br />
+    IRC : #gitfr sur Freenode
+  </div>
+  <div id="blog_post_list">
+    <h2>Derniers billets</h2>
+    <ul>
+    <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
+    <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
+    <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
+    <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
+    <li><a href="/blog/2011/06/13/git-1.7.5.2-publiee">Git 1.7.5.2 publiée</a></li>
+    <li><a href="/blog/2011/06/13/git-1.7.5.1-publiee">Git 1.7.5.1 publiée</a></li>
+    <li><a href="/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg">Présentation Git le 01/06 à Strasbourg</a></li>
+    <li><a href="/blog/2011/05/18/atelier-git-le-16-06-a-rennes">Atelier Git le 16/06 à Rennes</a></li>
+  </ul>
+  </div>
+  <div id="on_twitter">
+    <h3>Sur Twitter</h2>
+    <div id="blogofile_tweets"></div>
+    <a href="http://twitter.com/gitfr" style="float: right">Plus de tweets</a>
+  </div>
+  <div id="categories">
+    <h2>Categories</h2>
+    <ul>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (44)</li>
+     <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (14)</li>
+     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (9)</li>
+     <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
+     <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
+     <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (14)</li>
+     <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
+    </ul>
+  </div> 
+  <div id="archives">			
+    <h2>Archives</h2>
+    <ul>
+      <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
+      <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>
+      <li><a href="/blog/archive/2011/03/1" title="March 2011">March 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/02/1" title="February 2011">February 2011</a>&nbsp;(3)</li>
+      <li><a href="/blog/archive/2011/01/1" title="January 2011">January 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(12)</li>
+      <li><a href="/blog/archive/2010/11/1" title="November 2010">November 2010</a>&nbsp;(12)</li>
+      <li><a href="/blog/archive/2010/10/1" title="October 2010">October 2010</a>&nbsp;(3)</li>
+    </ul>
+  </div>
+  <div id="credits">
+    <h2>Crédits</h2>
+    Propulsé par <a href="http://www.blogofile.com">Blogofile</a>
+  </div>
+
+</div>
+
+  </div>
+
+      </div><!-- End Main Block -->
+    </div> <!-- End Content -->
+
+    <script type="text/javascript">
+  
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19444937-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.setAttribute('async', 'true');
+            document.documentElement.firstChild.appendChild(ga);
+        })();
+
+    </script>
+  </body>
+</html>
+
+
+
+
+

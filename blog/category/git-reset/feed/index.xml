@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Annuler des modifications</title>
+      <link>http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications</link>
+      <pubDate>Sun, 24 Apr 2011 23:28:00 CEST</pubDate>
+      <category><![CDATA[git-reset]]></category>
+      <category><![CDATA[git-revert]]></category>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[git-checkout]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications</guid>
+      <description>Annuler des modifications</description>
+      <content:encoded><![CDATA[<p>Vous pouvez annuler votre travail de plusieurs manières.</p>
+<h2>git revert</h2>
+<p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
+<p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
+<h2>git reset</h2>
+<p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
+<ul>
+<li>
+<p><code>git reset $path</code> est l'inverse de la commande <em>git add</em>, cela permet de supprimer des entrées dans l'index.</p>
+</li>
+<li>
+<p><code>git reset $commit $path</code> permet de réinitialiser le contenu du fichier situé dans l'index avec le contenu du fichier du commit spécifié. </p>
+</li>
+<li>
+<p><code>git reset -p $path</code> est l'inverse de la commande <em>git add -p</em>, pour sélectionner les <em>hunks</em> à supprimer de l'index.</p>
+</li>
+<li>
+<p><code>git reset -p $commit $path</code>. Identique à la commande précédente, mais Git affiche les <em>hunks</em> entre l'index et le commit spécifié (et non avec <em>HEAD</em> comme la commande précédente).</p>
+</li>
+<li>
+<p><code>git reset --mode $commit</code> permet de revenir à un ancien commit. Le mode permet de choisir si on veut modifier le répertoire de travail, l'index ou le dépôt. Les modes disponibles sont :</p>
+</li>
+<li>
+<p><code>--soft</code>, pour modifier uniquement le dépôt</p>
+</li>
+<li>
+<p><code>--mixed</code>, pour modifier dépôt et index</p>
+</li>
+<li>
+<p><code>--hard</code>, pour modifier dépôt, index et répertoire de travail</p>
+</li>
+</ul>
+<p>Je vous laisse découvrir l'utilité des options --keep et --merge :).</p>
+<p>Ne vous laissez pas prendre par la complexité de la section discussion du manuel, qui présente tous les cas de figures. Comme nous avons 3 (dépôt, index et répertoire de travail) et non plus 2 états, les possibilités sont multipliées.</p>
+<p>Voici un schéma simplifié (qui vient du blog http://blog.plover.com/prog/git-reset.html) qui correspond au cas d'utilisation le plus courant :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png" /></p>
+<p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
+<p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
+<h2>git checkout</h2>
+<p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
+<h2>Conclusion</h2>
+<p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
+<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

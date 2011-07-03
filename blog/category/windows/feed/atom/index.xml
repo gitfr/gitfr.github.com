@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">#gitfr</title>
+  <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
+
+  <updated>2011-07-03T21:22:47Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
+  <id>http://www.gitfr.net/blog/feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Guide visuel pour Git sous Windows]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/03/guide-visuel-pour-git-sous-windows" />
+    <id>http://www.gitfr.net/blog/2011/04/03/guide-visuel-pour-git-sous-windows</id>
+    <updated>2011-04-03T18:06:00Z</updated>
+    <published>2011-04-03T18:06:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="windows" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Guide visuel pour Git sous Windows]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/03/guide-visuel-pour-git-sous-windows"><![CDATA[<p>Tu aimes Git et tu dois utiliser Windows ? @nathanj pense à toi et t'offre <a href="http://nathanj.github.com/gitguide/tour.html">un guide</a> bourré de copie d'écran pour t'aider.</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Installer git sur Windows]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-windows" />
+    <id>http://www.gitfr.net/blog/2010/11/01/installer-git-sur-windows</id>
+    <updated>2010-11-01T19:45:00Z</updated>
+    <published>2010-11-01T19:45:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="windows" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="installation" />
+    <summary type="html"><![CDATA[Installer git sur Windows]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-windows"><![CDATA[<p>Les possibilités sont plus limitées sous Windows car il n'existe pas de projet pour l'installer à partir des sources originales. Et pour cause, Git n'est pas prévu pour fonctionner sur Windows (c'est un projet purement <strong>Unix</strong>). Heureusement, le projet <a href="http://code.google.com/p/msysgit/">msysgit</a> est la ! Ce dernier est comparable au projet <em>Git OSX Installer</em> sous Mac OS X, et comme ce dernier il est trés actif, puisque nous trouvons la version 1.7.3.1 (la 1.7.3.2 est la dernière version officielle). A une différence d'importance, msysgit installe une version <em>maison</em> (on dit un <strong>fork</strong>) qui se trouve <a href="http://repo.or.cz/w/git/mingw/4msysgit.git/">ici</a> pour rendre git opérationnel sous Windows.</p>
+<h2>Installation de msysgit</h2>
+<p>C'est assez simple :</p>
+<ul>
+<li>Téléchargez la derniere version de l'installeur. Voici un <a href="http://msysgit.googlecode.com/files/Git-1.7.3.1-preview20101002.exe">lien vers la 1.7.3.1</a></li>
+<li>Lancez l'installeur</li>
+<li>Spécifiez un répertoire d'installation si besoin</li>
+<li>Activez toutes les options</li>
+<li>Choisissez l'option <em>Use Git Bash only</em></li>
+<li>Choisissez l'option <em>Use Unix style line endings</em></li>
+</ul>
+<h2>Utiliser msysgit</h2>
+<p>Vous pouvez maintenant utiliser git dans un <strong>shell</strong>. Celui-ci est accessible par l'icone du bureau ou dans le menu Windows.</p>
+<h2>Git Extensions</h2>
+<p><a href="http://code.google.com/p/gitextensions/">Git Extensions</a> utilise le projet msysgit et ajoute une <strong>interface graphique</strong> pour pas mal d'opérations, une extension Visual Studio et l'outil Kdiff3. Cerise sur le gateau, il embarque msysgit. Ce projet vous permet donc de tout installer en une seule fois. Cliquez sur ce <a href="http://gitextensions.googlecode.com/files/GitExtensions205SetupComplete.msi">lien</a> pour télécharger la dernière version. Vous pouvez voir sur cette <a href="http://code.google.com/p/gitextensions/wiki/Info">page</a> plusieurs copies d'écran pour vous faire une idée.</p>
+<h2>Un constat</h2>
+<p>La plateforme Windows est la moins adaptée à Git, d'abord parce que cette plateforme ne possède pas nativement les outils de type Unix (bash, diff...), et que c'est avant tout un outil <strong>ligne de commande</strong>, et que la ligne de commande... n'est pas le fort de Windows (mais cela reste largement possible). Il faut donc attendre que des développeurs codent des interfaces graphiques pour effectuer toutes les opérations usuelles (les fameuses commandes <em>porcelain</em>) plus "nativement" sous Windows. Ce problème devrait disparaitre avec l'arrivée à maturité des IDEs (IntelliJ, Eclipse...) et des outils de manipulations (TortoiseGit...). Git Extensions en est un bon exemple.</p>
+<p>Reste que le projet msysgit est un projet bénévole complètement détaché du projet Git. Et que l'utilisation en ligne de commande est quand même bien plus pratique ;).</p>]]></content>
+  </entry>
+</feed>

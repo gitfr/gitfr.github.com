@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">#gitfr</title>
+  <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
+
+  <updated>2011-07-03T21:22:47Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
+  <id>http://www.gitfr.net/blog/feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Traduction de Git en français]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais" />
+    <id>http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais</id>
+    <updated>2011-04-25T13:30:00Z</updated>
+    <published>2011-04-25T13:30:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="traduction" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Traduction de Git en français]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais"><![CDATA[<p>Apr 25th, 2011 1:30pm</p>
+<p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
+<p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
+<p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>]]></content>
+  </entry>
+</feed>

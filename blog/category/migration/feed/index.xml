@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>RoR utilise le tracker de GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</link>
+      <pubDate>Thu, 28 Apr 2011 15:50:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</guid>
+      <description>RoR utilise le tracker de GitHub</description>
+      <content:encoded><![CDATA[<p>Si la plupart des gens considèrent GitHub comme une superbe plateforme d'hébergement de code, beaucoup sont encore dubitatifs sur la délégation des tickets (bug et/ou fonctionnalité), et préfèrent utiliser <a href="http://trac.edgewall.org/">Trac</a>, <a href="http://www.redmine.org/">Redmine</a> ou <a href="http://www.atlassian.com/software/jira/">JIRA</a>. Il est donc intéressant d'apprendre que le projet <a href="http://rubyonrails.org/">Ruby on Rails</a> (qui pour l'anecdote, est hébergé depuis le premier jour de GitHub) utilise officiellement GitHub pour<a href="https://github.com/rails/rails/issues"> ses tickets de bugs</a>.</p>
+<p>Le retour d'expérience va donc être très intéressant. Et sans nul doute, les GitHubbers (les développeurs de GitHub) seront très sensibles et réactifs aux remarques et retours, étant eux mêmes des utilisateurs de RoR.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Haskell sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/03/haskell-sur-github</link>
+      <pubDate>Sun, 03 Apr 2011 14:34:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/03/haskell-sur-github</guid>
+      <description>Haskell sur GitHub</description>
+      <content:encoded><![CDATA[<p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell GHC</a>, passe officiellement sur Git, avec un <a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar (bzr). Et enfin, que la capacité de retravailler son historique (point fort que je mets en avant dans toutes mes présentations Git) est un atout important. Point important, cette phrase vient du mail expliquant la migration en 2008 (Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et la 2.8 est en cours de développement avec le support très attendu de la fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch (1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non pas l'historique comme une série de «snapshots», mais comme une suite de <strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite grandement le <strong>cherry-picking</strong>. Malheureusement, des performances catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais permis à Darcs de décoller.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Eclipse sur GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github</link>
+      <pubDate>Sun, 03 Apr 2011 00:46:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github</guid>
+      <description>Eclipse sur GitHub</description>
+      <content:encoded><![CDATA[<p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
+<p>La fondation héberge ses propres projets en proposant <a href="http://dev.eclipse.org/viewcvs/viewvc.cgi/">CVS, Subversion</a> et <a href="http://git.eclipse.org/c/">Git</a>. Mais la perspective collaborative de GitHub semble être un avantage certain, comme le souligne l'<a href="http://aniszczyk.org/2011/04/01/eclipse-org-and-github/">annonce</a> de Chris Aniszczyk :</p>
+<blockquote>
+<p>I'm happy to announce we finally setup mirroring of eclipse.org repositories on GitHub.
+I think this is an important step to making the eclipse.org codebase more accessible for people
+to fork and contribute changes.</p>
+</blockquote>
+<p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
+<p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
+<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Migration CVS vers Git pour le projet Drupal</title>
+      <link>http://www.gitfr.net/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal</link>
+      <pubDate>Wed, 17 Nov 2010 08:39:00 CET</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal</guid>
+      <description>Migration CVS vers Git pour le projet Drupal</description>
+      <content:encoded><![CDATA[<p>Le projet <a href="http://www.drupal.org">Drupal</a> est en cours de migration depuis plusieurs mois (le choix de migrer sur Git est décidé depuis février 2010). C'est donc toute une communauté qui faut former à l'outil, mettre en place des nouvelles pratiques, recoder l'infrastructure (intégration continue, deploiement...). Travail important s'il en est.</p>
+<p>Aprés une <a href="http://groups.drupal.org/node/48818">évaluation des différents outils et du choix final</a>, <a href="http://drupal.org/community-initiatives/git">trois étapes</a> et dix sprints de deux semaines sont planifiés. La migration s'étale donc sur environ 15 mois.</p>
+<p>Les 3 phases :</p>
+<ul>
+<li>création d'un mirroir Git en lecture seul (recréé régulièrement)</li>
+<li>utilisation de Git en mode centralisé</li>
+<li>utilisation de Git en mode décentralisé</li>
+</ul>
+<p>On peut noter que l'équipe infrastructure de Drupal était pour <em>Bzr</em>, mais que la communauté Drupal était majoritairement pour Git. Le choix <em>Hg</em> fut éliminé par manque de soutient.</p>
+<p>Voici la feuille de route :</p>
+<ul>
+<li>Sprint 1 - Making key decisions necessary for the project to move forward</li>
+<li>Sprint 2 - Version Control API</li>
+<li>Sprint 3 - VC API / Admin Interface and Migration Script Finalization</li>
+<li>Sprint 4 - Release-Worthy Views for VC API and Git Activity Log </li>
+<li>Sprint 5 - VC API / Project Module Integration</li>
+<li>Sprint 6 - Project Module (Release Nodes being automatically generated for repositories containing appropriately named branches)</li>
+<li>Sprint 7 - Preparation for Broader Community testing</li>
+<li>Sprint 8 - Community Testing</li>
+<li>Sprint 9 - Community Testing and Deployment Preparation</li>
+<li>Sprint 10 - Deployment (CVS will be gone forever)</li>
+</ul>
+<p>Vous trouverez les résumés des <a href="http://groups.drupal.org/node/100999">sprint 1</a>, <a href="http://groups.drupal.org/node/101004">sprint 2</a> et <a href="http://groups.drupal.org/node/102104">sprint 3</a>.</p>
+<p>Le <a href="http://git.drupalcode.org/">mirroir Git</a> est déja en place puisque nous sommes à la phase 2, vous pouvez constater le nombre assez impressionant de dépôts. Les scripts de migration CVS vers SVN sont sur <a href="https://github.com/sdboyer/drupalorg-git">GitHub</a>.</p>
+<p>On a vu fleurir les présentations et les formations Git, comme au <a href="http://groups.drupal.org/node/71473">Bootcamp Git De Los Angeles</a> ou au <a href="https://docs.google.com/present/view?id=0ATSj3ekASkFxZGRzZDVzdzdfNTA2Z2g1Mm1qZng&amp;hl=en">DrupalCon de Copenhague</a>.</p>
+<p>Si vous souhaitez suivre la migration, lisez régulièrement cette <a href="http://groups.drupal.org/drupal-org-git-migration-team">page</a> ou par <em>Twitter</em> avec <strong>@DrupalGitGremln</strong>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Support de Git dans les projets Apache</title>
+      <link>http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache</link>
+      <pubDate>Wed, 17 Nov 2010 05:10:00 CET</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache</guid>
+      <description>Support de Git dans les projets Apache</description>
+      <content:encoded><![CDATA[<p>L'équipe qui gère l'infrastructure de la fondation <strong>Apache</strong> travaille sur le support de Git. Comme beaucoup de projets Libres qui utilisent <strong>SVN</strong>, de nombreux contributeurs utilisent Git par l'intermédiaire de <strong>git-svn</strong>, mais ce changement va permettre l'utilisation de Git nativement.</p>
+<p>Les discussions sont <a href="http://markmail.org/message/7ztq2pwm6456zqmy">en cours</a> sur la liste de diffusion et des tickets Jira sont <a href="https://issues.apache.org/jira/browse/INFRA/component/12312655">ouverts</a> à ce sujet.</p>
+<p>Il va être intéressant de suivre les discussions et la mise en place d'un <em>DVCS</em> sur une aussi grosse infrastructure que celle d'Apache, qui gère beaucoup de projets avec des années d'historique et d'habitude d'un modèle centralisé. Notamment de voir quels worflows ils vont mettre en place.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

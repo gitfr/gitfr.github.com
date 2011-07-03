@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Les GUI sous MacOS X</title>
+      <link>http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x</link>
+      <pubDate>Tue, 30 Nov 2010 00:18:00 CET</pubDate>
+      <category><![CDATA[macos]]></category>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[outil]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x</guid>
+      <description>Les GUI sous MacOS X</description>
+      <content:encoded><![CDATA[<p>Mon ami <em>Thomas</em>, Rubyiste Maceux ascendant foie gras (il habite Toulouse) nous fait un rapide tour d'horizon des <a href="http://blog.arbousier.info/11-29-2010/GitOsX.html">applications graphiques</a> sous <strong>Mac OS X</strong>.</p>
+<p>Au programme :</p>
+<ul>
+<li>Gitnub</li>
+<li>GitX</li>
+<li>GitY</li>
+<li>Gitbox</li>
+<li>Tower</li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Installer git sur OS X</title>
+      <link>http://www.gitfr.net/blog/2010/11/01/installer-git-sur-os-x</link>
+      <pubDate>Mon, 01 Nov 2010 00:40:00 CET</pubDate>
+      <category><![CDATA[macos]]></category>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[installation]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/11/01/installer-git-sur-os-x</guid>
+      <description>Installer git sur OS X</description>
+      <content:encoded><![CDATA[<p>Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
+<ul>
+<li>installer une version déja compilée par un tiers</li>
+<li>installer une version à partir des sources</li>
+</ul>
+<p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
+<h2>Installer une version compilée</h2>
+<p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
+<p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
+<h2>Installer une version source</h2>
+<p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
+<ul>
+<li><a href="http://www.macports.org">MacPorts</a></li>
+<li><a href="http://github.com/mxcl/homebrew">Homebrew</a></li>
+</ul>
+<p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
+<p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
+<h2>Installation de Xcode</h2>
+<p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
+<p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
+<h2>Avec MacPorts</h2>
+<p>Il faut bien évidemment installer MacPorts :</p>
+<ul>
+<li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
+<li>Lancer l'installateur en double-cliquant sur le fichier téléchargé.</li>
+<li>Choisir l'installation par défaut.</li>
+</ul>
+<p>Il ne vous reste plus qu'a installer git avec la commande :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc</p>
+</blockquote>
+<p>Ou si vous souhaitez jouer avec des dépôts SVN :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc +svn</p>
+</blockquote>
+<p><em>sudo</em> vous permet de lancer une commande en mode administrateur (et non simple utilisateur). <em>port</em> est la commande MacPorts. <em>install</em> est l'argument pour demander l'installation. <em>git-core</em> est l'application à installer.</p>
+<p>Vous pouvez mettre à jour vos <em>Ports</em> avec la commande :</p>
+<blockquote>
+<p>$ sudo port selfupdate</p>
+</blockquote>
+<h2>Avec Homebrew</h2>
+<p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
+<blockquote>
+<p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
+</blockquote>
+<p>Cette commande esotérique télécharge le fichier <em>install_homebrew.rb</em> avec la commande <em>curl</em> puis demande à l'interpréteur <em>Ruby</em> de l'éxécuter (note au passage : oui, le shell est amour, maitrisez-le et vous gagnerez des années de vie). Bien évidemment Ruby et Curl doivent être présents sur votre système.</p>
+<p>Vous avez maintenant accès à la commande <em>brew</em> :</p>
+<blockquote>
+<p>$ brew install git</p>
+</blockquote>
+<p>Cette commande ressemble à la commande MacPorts. Et vous avez aussi une commande pour mettre à jour vos applications avec la commande :</p>
+<blockquote>
+<p>$ brew update</p>
+</blockquote>
+<h2>Installation "à la main"</h2>
+<p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
+<ul>
+<li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
+<li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
+</ul>
+<h2>MacPorts ou Homebrew ?</h2>
+<p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
+<h2>Et voila !</h2>
+<p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
+<p>Merci à David Gageot et Ronan Amicel pour la relecture.Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
+<ul>
+<li>installer une version déja compilée par un tiers</li>
+<li>installer une version à partir des sources</li>
+</ul>
+<p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
+<h2>Installer une version compilée</h2>
+<p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
+<p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
+<h2>Installer une version source</h2>
+<p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
+<ul>
+<li><a href="http://www.macports.org">MacPorts</a></li>
+<li><a href="http://github.com/mxcl/homebrew">Homebrew</a></li>
+</ul>
+<p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
+<p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
+<h2>Installation de Xcode</h2>
+<p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
+<p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
+<h2>Avec MacPorts</h2>
+<p>Il faut bien évidemment installer MacPorts :</p>
+<ul>
+<li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
+<li>Lancer l'installateur en double-cliquant sur le fichier téléchargé.</li>
+<li>Choisir l'installation par défaut.</li>
+</ul>
+<p>Il ne vous reste plus qu'a installer git avec la commande :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc</p>
+</blockquote>
+<p>Ou si vous souhaitez jouer avec des dépôts SVN :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc +svn</p>
+</blockquote>
+<p><em>sudo</em> vous permet de lancer une commande en mode administrateur (et non simple utilisateur). <em>port</em> est la commande MacPorts. <em>install</em> est l'argument pour demander l'installation. <em>git-core</em> est l'application à installer.</p>
+<p>Vous pouvez mettre à jour vos <em>Ports</em> avec la commande :</p>
+<blockquote>
+<p>$ sudo port selfupdate</p>
+</blockquote>
+<h2>Avec Homebrew</h2>
+<p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
+<blockquote>
+<p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
+</blockquote>
+<p>Cette commande esotérique télécharge le fichier <em>install_homebrew.rb</em> avec la commande <em>curl</em> puis demande à l'interpréteur <em>Ruby</em> de l'éxécuter (note au passage : oui, le shell est amour, maitrisez-le et vous gagnerez des années de vie). Bien évidemment Ruby et Curl doivent être présents sur votre système.</p>
+<p>Vous avez maintenant accès à la commande <em>brew</em> :</p>
+<blockquote>
+<p>$ brew install git</p>
+</blockquote>
+<p>Cette commande ressemble à la commande MacPorts. Et vous avez aussi une commande pour mettre à jour vos applications avec la commande :</p>
+<blockquote>
+<p>$ brew update</p>
+</blockquote>
+<h2>Installation "à la main"</h2>
+<p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
+<ul>
+<li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
+<li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
+</ul>
+<h2>MacPorts ou Homebrew ?</h2>
+<p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
+<h2>Et voila !</h2>
+<p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
+<p>Merci à David Gageot et Ronan Amicel pour la relecture.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

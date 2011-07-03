@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">#gitfr</title>
+  <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
+
+  <updated>2011-07-03T21:22:47Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
+  <id>http://www.gitfr.net/blog/feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[La commande clone]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2010/12/12/la-commande-clone" />
+    <id>http://www.gitfr.net/blog/2010/12/12/la-commande-clone</id>
+    <updated>2010-12-12T05:49:00Z</updated>
+    <published>2010-12-12T05:49:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="git-clone" />
+    <summary type="html"><![CDATA[La commande clone]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2010/12/12/la-commande-clone"><![CDATA[<p>Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches <strong>remotes</strong>, et créer une branche <strong>locale</strong> qui est une copie de la branche active du dépôt distant (généralement <strong>master</strong>).</p>
+<p>La commande est simple :</p>
+<blockquote>
+<p><code>$ git clone &lt;dépôt&gt; [&lt;répertoire&gt;]</code></p>
+</blockquote>
+<p>L'URL du dépôt distant peut être en <strong>http(s)</strong>, <strong>ssh</strong>, <strong>git</strong>, <strong>ftp(s)</strong> et <strong>rsync</strong>. Les trois premiers étant les plus courants. Il était conseillé pendant longtemps de pas utiliser le http, mais depuis la version 1.6.6, Git utilise le <strong>Smart HTTP Transport</strong>, qui est efficace.</p>
+<p>Le répertoire est optionnel, par défaut Git prendra le nom du dépôt (sans le <code>.git</code> s'il existe).</p>
+<p>La partie intéressante à comprendre est contenue dans le fichier <code>config</code> du dépôt local, généré par Git :</p>
+<pre><code>[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git://git.kernel.org/pub/scm/git/git.git
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+</code></pre>
+<p>C'es lignes sont la traduction technique de l'introduction de ce billet :</p>
+<ul>
+<li>
+<p>Git ajoute le dépôt distant avec pour nom <strong>origin</strong> (convention de nommage). Je peux maintenant utiliser le terme origin au lieu de <code>git://git.kernel.org/pub/scm/git/git.git</code> (ce dernier est toujours utilisable). La section remote peut aussi s'ajouter avec la commande <code>git remote</code>.</p>
+</li>
+<li>
+<p>La ligne fetch indique comment Git doit traduire l'espace de nom distant en espace de nom local. Par défaut, il traduit toutes les branches distantes en branches locales (ex : refs/remotes/origin/abc devient refs/heads/abc). Cette ligne est appelée <strong>refspec</strong> (que nous verrons en détail dans un autre billet).</p>
+</li>
+<li>
+<p>Enfin, Git <strong>traque</strong> la branche active distante. Que signifie traquer ? Cela veut dire modéliser une relation entre deux branches. Ici ma branche master locale est associée à la branche master du dépôt origin. Quand vous faites un <code>git pull</code> ou un <code>git push</code> sur la branche locale, il va prendre la branche traquée comme référence. Sans cette information, Git demande de spécifier le dépôt et la branche sur laquelle il doit travailler.</p>
+</li>
+</ul>
+<p>Le refpsec est obligatoire, les informations de suivies (<em>tracking</em>) sont optionnelles (mais bien pratiques).</p>
+<p>Il existe plusieurs options à cette commande, comme <code>--bare</code> que nous avons déja vu avec la commande init. Je liste celles qui me semblent intéressantes à connaitre (n'hésitez pas à lire la documentation) :</p>
+<ul>
+<li>
+<p><code>--origin</code> : spécifier un nom différent que origin pour le nom remote.</p>
+</li>
+<li>
+<p><code>--branch</code> : spécifier la branche à récupérer au lieu de master.</p>
+</li>
+<li>
+<p><code>--recursive</code> : initialiser aussi les sous modules (<strong>submodules</strong>).</p>
+</li>
+<li>
+<p><code>--depth</code> : permet de créer une copie non complète (appelez <strong>shallow clone</strong>).</p>
+</li>
+<li>
+<p><code>--mirror</code> : permet de tout récupérer (mappe toutes les références).</p>
+</li>
+</ul>
+<p>Autre chose intéressante, si vous avez beaucoup de dépôts sur une URL identique, vous pouvez ajouter un alias dans votre fichier de configuration :</p>
+<pre><code>[url "ssh://git.masociete.com/srv/git"]
+insteadOf = work:
+</code></pre>
+<p>C'est toujours ça de gagné.</p>]]></content>
+  </entry>
+</feed>

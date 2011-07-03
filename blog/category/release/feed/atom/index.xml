@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">#gitfr</title>
+  <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
+
+  <updated>2011-07-03T21:22:47Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
+  <id>http://www.gitfr.net/blog/feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.5.4 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee" />
+    <id>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</id>
+    <updated>2011-06-13T02:10:00Z</updated>
+    <published>2011-06-13T02:10:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.5.4 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee"><![CDATA[<p>La quatrième version de la branche 1.7.5.x est sortie le 2 juin, soit seulement 5 jours aprés la précédente. C'est la dernière ligne du changelog qui nous donne la réponse.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>The single-key mode of "git add -p" was easily fooled into thinking
+  that it was told to add everthing ('a') when up-arrow was pressed by
+  mistake.</p>
+</li>
+<li>
+<p>Setting a git command that uses custom configuration via "-c var=val"
+  as an alias caused a crash due to a realloc(3) failure.</p>
+</li>
+<li>
+<p>"git diff -C -C" used to disable the rename detection entirely when
+  there are too many copy candidate paths in the tree; now it falls
+  back to "-C" when doing so would keep the copy candidate paths
+  under the rename detection limit.</p>
+</li>
+<li>
+<p>"git rerere" did not diagnose a corrupt MERGE_RR file in some cases.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.5.3 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee" />
+    <id>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee</id>
+    <updated>2011-06-13T02:07:00Z</updated>
+    <published>2011-06-13T02:07:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.5.3 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee"><![CDATA[<p>La troisième version de maintenance de la branche 1.7.5.x est sortie le 27 mai.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>The bash completion scripts should correctly work using zsh's bash
+  completion emulation layer now.</p>
+</li>
+<li>
+<p>Setting $(prefix) in config.mak did not affect where etc/gitconfig
+  file is read from, even though passing it from the command line of
+  $(MAKE) did.</p>
+</li>
+<li>
+<p>The logic to handle "&amp;" (expand to UNIX username) in GECOS field
+  miscounted the length of the name it formatted.</p>
+</li>
+<li>
+<p>"git cherry-pick -s resolve" failed to cherry-pick a root commit.</p>
+</li>
+<li>
+<p>"git diff --word-diff" misbehaved when diff.suppress-blank-empty was
+  in effect.</p>
+</li>
+<li>
+<p>"git log --stdin path" with an input that has additional pathspec
+  used to corrupt memory.</p>
+</li>
+<li>
+<p>"git send-pack" (hence "git push") over smalt-HTTP protocol could
+  deadlock when the client side pack-object died early.</p>
+</li>
+<li>
+<p>Compressed tarball gitweb generates used to be made with the timestamp
+  of the tarball generation; this was bad because snapshot from the same
+  tree should result in a same tarball.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.5.2 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee" />
+    <id>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</id>
+    <updated>2011-06-13T02:05:00Z</updated>
+    <published>2011-06-13T02:05:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.5.2 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee"><![CDATA[<p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>"git add -p" did not work correctly when a hunk is split and then
+  one of them was given to the editor.</p>
+</li>
+<li>
+<p>"git add -u" did not resolve a conflict where our history deleted and
+  their history modified the same file, and the working tree resolved to
+  keep a file.</p>
+</li>
+<li>
+<p>"git cvsimport" did not know that CVSNT stores its password file in a
+  location different from the traditional CVS.</p>
+</li>
+<li>
+<p>"git diff-files" did not show the mode information from the working
+  tree side of an unmerged path correctly.</p>
+</li>
+<li>
+<p>"git diff -M --cached" used to use unmerged path as a possible rename
+  source candidate, which made no sense.</p>
+</li>
+<li>
+<p>The option name parser in "git fast-import" used prefix matches for
+  some options where it shouldn't, and accepted non-existent options,
+  e.g. "--relative-marksmith" or "--forceps".</p>
+</li>
+<li>
+<p>"git format-patch" did not quote RFC822 special characters in the
+  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
+  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
+</li>
+<li>
+<p>"git format-patch" when run with "--quiet" option used to produce a
+  nonsense result that consists of alternating empty output.</p>
+</li>
+<li>
+<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
+  variables did not override the fallback default merge.<option>
+  configuration variables such as merge.ff, merge.log, etc.</p>
+</li>
+<li>
+<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
+  handling a "both sides added, differently" conflict.</p>
+</li>
+<li>
+<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
+</li>
+<li>
+<p>"git-p4" (in contrib) used a wrong base image while merge a file that
+  was added on both branches differently.</p>
+</li>
+<li>
+<p>"git rebase -i -p" failed to preserve the history when there is a
+  redundant merge created with the --no-ff option.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.5.1 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee" />
+    <id>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee</id>
+    <updated>2011-06-13T01:57:00Z</updated>
+    <published>2011-06-13T01:57:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.5.1 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee"><![CDATA[<p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>When an object "$tree:$path" does not exist, if $path does exist in the
+  subtree of $tree that corresponds to the subdirectory the user is in,
+  git now suggests using "$tree:./$path" in addition to the advice to use
+  the full path from the root of the working tree.</p>
+</li>
+<li>
+<p>The "--date=relative" output format used to say "X years, 12 months"
+  when it should have said "X+1 years".</p>
+</li>
+<li>
+<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
+  to issue a small POST (which uses content-length) and then a large
+  POST (which uses chunked) back to back.</p>
+</li>
+<li>
+<p>"git clean" used to fail on an empty directory that is not readable,
+  even though rmdir(2) could remove such a directory.  Now we attempt it
+  as the last resort.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to totally
+  ignore a change that only rearranged lines within a file.  Such a
+  change now counts as at least a minimum but non zero change.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to use the
+  pathname in the original, instead of the pathname in the result,
+  when renames are involved.</p>
+</li>
+<li>
+<p>"git pack-object" did not take core.bigfilethreashold into account
+  (unlike fast-import); now it does.</p>
+</li>
+<li>
+<p>"git reflog" ignored options like "--format=.." on the command line.</p>
+</li>
+<li>
+<p>"git stash apply" used to refuse to work if there was any change in
+  the working tree, even when the change did not overlap with the change
+  the stash recorded.</p>
+</li>
+<li>
+<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
+  did not have that many stash entries.</p>
+</li>
+<li>
+<p>An error message from "git send-email" to diagnose a broken SMTP
+  connection configuration lacked a space between "hello=<smtp-domain>"
+  and "port=<smtp-server-port>".</p>
+</li>
+<li>
+<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
+  mean the same thing.</p>
+</li>
+<li>
+<p>"git upload-pack" (hence "git push" over git native protocol) had a
+  subtle race condition that could lead to a deadlock.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4.5 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/22/git-1.7.4.5-publiee" />
+    <id>http://www.gitfr.net/blog/2011/04/22/git-1.7.4.5-publiee</id>
+    <updated>2011-04-22T15:30:00Z</updated>
+    <published>2011-04-22T15:30:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4.5 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/22/git-1.7.4.5-publiee"><![CDATA[<p>Pas de changelog cette fois ci, car cette version ne contient que des corrections... sur la documentation. Il manquait notamment l'option <code>--merge-info</code> dans le manuel de la commande <strong>git-svn</strong>.</p>
+<p>Consciencieux le Junio :).</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4.4 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee" />
+    <id>http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee</id>
+    <updated>2011-04-07T18:13:00Z</updated>
+    <published>2011-04-07T18:13:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4.4 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee"><![CDATA[<p>La quatrième version de la branche 1.7.4.x vient de sortir (7/4/2011).</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>Compilation of sha1_file.c on BSD platforms were broken due to our
+  recent use of getrlimit() without including <sys/resource.h>.</p>
+</li>
+<li>
+<p>"git config" did not diagnose incorrect configuration variable names.</p>
+</li>
+<li>
+<p>"git format-patch" did not wrap a long subject line that resulted from
+  rfc2047 encoding.</p>
+</li>
+<li>
+<p>"git instaweb" should work better again with plackup.</p>
+</li>
+<li>
+<p>"git log --max-count=4 -Sfoobar" now shows 4 commits that changes the
+  number of occurrences of string "foobar"; it used to scan only for 4
+  commits and then emitted only matching ones.</p>
+</li>
+<li>
+<p>"git log --first-parent --boundary $c^..$c" segfaulted on a merge.</p>
+</li>
+<li>
+<p>"git pull" into an empty branch should have behaved as if
+  fast-forwarding from emptiness to the version being pulled, with
+  the usual protection against overwriting untracked files.</p>
+</li>
+<li>
+<p>"git submodule" that is run while a merge in the superproject is in
+  conflicted state tried to process each conflicted submodule up to
+  three times.</p>
+</li>
+<li>
+<p>"git status" spent all the effort to notice racily-clean index entries
+  but didn't update the index file to help later operations go faster in
+  some cases.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4.3 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee" />
+    <id>http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee</id>
+    <updated>2011-04-03T14:45:00Z</updated>
+    <published>2011-04-03T14:45:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4.3 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee"><![CDATA[<p>La troisière version de maintenance de la banche 1.7.4.x est sortie le 3 avril. A vos mises à jour ! :).</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>"git apply" used to confuse lines updated by previous hunks as lines
+  that existed before when applying a hunk, contributing misapplication
+  of patches with offsets.</p>
+</li>
+<li>
+<p>"git branch --track" (and "git checkout --track --branch") used to
+  allow setting up a random non-branch that does not make sense to follow
+  as the "upstream".  The command correctly diagnoses it as an error.</p>
+</li>
+<li>
+<p>"git checkout $other_branch" silently removed untracked symbolic links
+  in the working tree that are in the way in order to check out paths
+  under it from the named branch.</p>
+</li>
+<li>
+<p>"git cvsimport" did not bail out immediately when the cvs server cannot
+  be reached, spewing unnecessary error messages that complain about the
+  server response that it never got.</p>
+</li>
+<li>
+<p>"git diff --quiet" did not work very well with the "--diff-filter"
+  option.</p>
+</li>
+<li>
+<p>"git grep -n" lacked a long-hand synonym --line-number.</p>
+</li>
+<li>
+<p>"git stash apply" reported the result of its operation by running
+  "git status" from the top-level of the working tree; it should (and
+  now does) run it from the user's working directory.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4.2 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/03/29/git-1.7.4.2-publiee" />
+    <id>http://www.gitfr.net/blog/2011/03/29/git-1.7.4.2-publiee</id>
+    <updated>2011-03-29T08:48:00Z</updated>
+    <published>2011-03-29T08:48:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4.2 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/03/29/git-1.7.4.2-publiee"><![CDATA[<p>La deuxième version de maintenance de la banche 1.7.4.x est sortie le 27 mars. Vous pouvez constater que le terme <strong>upstream</strong> (qui désigne la branche distante) remplace progressivement tous les anciens termes. Cela fait une suite à une constatation dans le manque de cohérence dans la terminologie employée (documentation et commande).</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>Many documentation updates to match "git cmd -h" output and the
+  git-cmd manual page.</p>
+</li>
+<li>
+<p>We used to keep one file descriptor open for each and every packfile
+  that we have a mmap window on it (read: "in use"), even when for very
+  tiny packfiles.  We now close the file descriptor early when the entire
+  packfile fits inside one mmap window.</p>
+</li>
+<li>
+<p>"git bisect visualize" tried to run "gitk" in windowing
+  environments even when "gitk" is not installed, resulting in a
+  strange error message.</p>
+</li>
+<li>
+<p>"git clone /no/such/path" did not fail correctly.</p>
+</li>
+<li>
+<p>"git commit" did not correctly error out when the user asked to use a
+  non existent file as the commit message template.</p>
+</li>
+<li>
+<p>"git diff --stat -B" ran on binary files counted the changes in lines,
+  which was nonsensical.</p>
+</li>
+<li>
+<p>"git diff -M" opportunistically detected copies, which was not
+  necessarily a good thing, especially when it is internally run by
+  recursive merge.</p>
+</li>
+<li>
+<p>"git difftool" didn't tell (g)vimdiff that the files it is reading are
+  to be opened read-only.</p>
+</li>
+<li>
+<p>"git merge" didn't pay attention to prepare-commit-msg hook, even
+  though if a merge is conflicted and manually resolved, the subsequent
+  "git commit" would have triggered the hook, which was inconsistent.</p>
+</li>
+<li>
+<p>"git patch-id" (and commands like "format-patch --ignore-in-upstream"
+  that use it as their internal logic) handled changes to files that end
+  with incomplete lines incorrectly.</p>
+</li>
+<li>
+<p>The official value to tell "git push" to push the current branch back
+  to update the upstream branch it forked from is now called "upstream".
+  The old name "tracking" is and will be supported.</p>
+</li>
+<li>
+<p>"git submodule update" used to honor the --merge/--rebase option (or
+  corresponding configuration variables) even for a newly cloned
+  subproject, which made no sense (so/submodule-no-update-first-time).</p>
+</li>
+<li>
+<p>gitweb's "highlight" interface mishandled tabs.</p>
+</li>
+<li>
+<p>gitweb didn't understand timezones with GMT offset that is not
+  multiple of a whole hour.</p>
+</li>
+<li>
+<p>gitweb had a few forward-incompatible syntactic constructs and
+  also used incorrect variable when showing the file mode in a diff.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4.1 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee" />
+    <id>http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee</id>
+    <updated>2011-02-12T14:24:00Z</updated>
+    <published>2011-02-12T14:24:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4.1 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee"><![CDATA[<p>La première version de maintenance de la banche 1.7.4.x est sortie ce 12 février. Seulement 6 bugs corrigés mais suffisamment importants pour exiger une nouvelle release.</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>On Windows platform, the codepath to spawn a new child process forgot
+  to first flush the output buffer.</p>
+</li>
+<li>
+<p>"git bundle" did not use OFS_DELTA encoding, making its output a few
+  per-cent larger than necessarily.</p>
+</li>
+<li>
+<p>The option to tell "git clone" to recurse into the submodules was
+  misspelled with an underscore "--recurse_submodules".</p>
+</li>
+<li>
+<p>"git diff --cached HEAD" before the first commit does what an end user
+  would expect (namely, show what would be committed without further "git
+  add").</p>
+</li>
+<li>
+<p>"git fast-import" didn't accept the command to ask for "notes" feature
+  to be present in its input stream, even though it was capable of the
+  feature.</p>
+</li>
+<li>
+<p>"git fsck" gave up scanning loose object files in directories with
+  garbage files.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.4 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee" />
+    <id>http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee</id>
+    <updated>2011-02-12T14:16:00Z</updated>
+    <published>2011-02-12T14:16:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.4 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee"><![CDATA[<p>La version 1.7.4 est sortie le 31 janvier (oui je suis en retard), et n'apporte pas de changement majeur, mais principalement de nouvelles options ou corrections un peu partout dans Git.</p>
+<p>Rien de transcendant à mes yeux mais j'apprécie la couleur de la branche dans le <code>git status</code>, <code>git blame --show-email</code>, <code>git merge --abort</code>, les options <code>--fixup</code> et <code>--squash</code> pour <code>git commit</code>, <code>git fetch --recurse-submodules</code>, l'affichage 3-way merge par défaut pour vim/gvim pour <code>git mergetool</code> et enfin <code>git log -G&lt;pattern&gt;</code> pour voir les lignes ajoutées ou supprimées qui correspondent au pattern.</p>
+<p>Comme d'habitude, je vous laisse découvrir l'intégralité du changelog :</p>
+<ul>
+<li>
+<p>The documentation Makefile now assumes by default asciidoc 8 and
+  docbook-xsl &gt;= 1.73. If you have older versions, you can set
+  ASCIIDOC7 and ASCIIDOC_ROFF, respectively.</p>
+</li>
+<li>
+<p>The option parsers of various commands that create new branches (or
+  rename existing ones to a new name) were too loose and users were
+  allowed to give a branch a name that begins with a dash by creative
+  abuse of their command line options, which only led to burning
+  themselves.  The name of a branch cannot begin with a dash now.</p>
+</li>
+<li>
+<p>System-wide fallback default attributes can be stored in
+  /etc/gitattributes; the core.attributesfile configuration variable can
+  be used to customize the path to this file.</p>
+</li>
+<li>
+<p>The thread structure generated by "git send-email" has changed
+  slightly.  Setting the cover letter of the latest series as a reply
+  to the cover letter of the previous series with --in-reply-to used
+  to make the new cover letter and all the patches replies to the
+  cover letter of the previous series; this has been changed to make
+  the patches in the new series replies to the new cover letter.</p>
+</li>
+<li>
+<p>The Bash completion script in contrib/ has been adjusted to be usable with
+  Bash 4 (options with '=value' didn't complete).  It has been also made
+  usable with zsh.</p>
+</li>
+<li>
+<p>Different pagers can be chosen depending on which subcommand is
+  being run under the pager, using the "pager.<subcommand>" variable.</p>
+</li>
+<li>
+<p>The hardcoded tab-width of 8 that is used in whitespace breakage checks is now
+  configurable via the attributes mechanism.</p>
+</li>
+<li>
+<p>Support of case insensitive filesystems (i.e. "core.ignorecase") has
+  been improved.  For example, the gitignore mechanism didn't pay attention
+  to case insensitivity.</p>
+</li>
+<li>
+<p>The <tree>:<path> syntax for naming a blob in a tree, and the :<path>
+  syntax for naming a blob in the index (e.g. "master:Makefile",
+  ":hello.c") have been extended.  You can start <path> with "./" to
+  implicitly have the (sub)directory you are in prefixed to the
+  lookup.  Similarly, ":../Makefile" from a subdirectory would mean
+  "the Makefile of the parent directory in the index".</p>
+</li>
+<li>
+<p>"git blame" learned the --show-email option to display the e-mail
+  addresses instead of the names of authors.</p>
+</li>
+<li>
+<p>"git commit" learned the --fixup and --squash options to help later invocation
+  of interactive rebase.</p>
+</li>
+<li>
+<p>Command line options to "git cvsimport" whose names are in capital
+  letters (-A, -M, -R and -S) can now be specified as the default in
+  the .git/config file by their longer names (cvsimport.authorsFile,
+  cvsimport.mergeRegex, cvsimport.trackRevisions, cvsimport.ignorePaths).</p>
+</li>
+<li>
+<p>"git daemon" can be built in the MinGW environment.</p>
+</li>
+<li>
+<p>"git daemon" can take more than one --listen option to listen to
+  multiple addresses.</p>
+</li>
+<li>
+<p>"git describe --exact-match" was optimized not to read commit
+  objects unnecessarily.</p>
+</li>
+<li>
+<p>"git diff" and "git grep" learned what functions and subroutines
+  in Fortran, Pascal and Perl look like.</p>
+</li>
+<li>
+<p>"git fetch" learned the "--recurse-submodules" option.</p>
+</li>
+<li>
+<p>"git mergetool" tells vim/gvim to show a three-way diff by default
+  (use vimdiff2/gvimdiff2 as the tool name for old behavior).</p>
+</li>
+<li>
+<p>"git log -G<pattern>" limits the output to commits whose change has
+  added or deleted lines that match the given pattern.</p>
+</li>
+<li>
+<p>"git read-tree" with no argument as a way to empty the index is
+  deprecated; we might want to remove it in the future.  Users can
+  use the new --empty option to be more explicit instead.</p>
+</li>
+<li>
+<p>"git repack -f" does not spend cycles to recompress objects in the
+  non-delta representation anymore (use -F if you really mean it
+  e.g. after you changed the core.compression variable setting).</p>
+</li>
+<li>
+<p>"git merge --log" used to limit the resulting merge log to 20
+  entries; this is now customizable by giving e.g. "--log=47".</p>
+</li>
+<li>
+<p>"git merge" may work better when all files were moved out of a
+  directory in one branch while a new file is created in place of that
+  directory in the other branch.</p>
+</li>
+<li>
+<p>"git merge" learned the "--abort" option, synonymous to
+  "git reset --merge" when a merge is in progress.</p>
+</li>
+<li>
+<p>"git notes" learned the "merge" subcommand to merge notes refs.
+  In addition to the default manual conflict resolution, there are
+  also several notes merge strategies for automatically resolving
+  notes merge conflicts.</p>
+</li>
+<li>
+<p>"git rebase --autosquash" can use SHA-1 object names to name the
+  commit which is to be fixed up (e.g. "fixup! e83c5163").</p>
+</li>
+<li>
+<p>The default "recursive" merge strategy learned the --rename-threshold
+  option to influence the rename detection, similar to the -M option
+  of "git diff".  From the "git merge" frontend, the "-X<strategy option>"
+  interface, e.g. "git merge -Xrename-threshold=50% ...", can be used
+  to trigger this.</p>
+</li>
+<li>
+<p>The "recursive" strategy also learned to ignore various whitespace
+  changes; the most notable is -Xignore-space-at-eol.</p>
+</li>
+<li>
+<p>"git send-email" learned "--to-cmd", similar to "--cc-cmd", to read
+  the recipient list from a command output.</p>
+</li>
+<li>
+<p>"git send-email" learned to read and use "To:" from its input files.</p>
+</li>
+<li>
+<p>you can extend "git shell", which is often used on boxes that allow
+  git-only login over ssh as login shell, with a custom set of
+  commands.</p>
+</li>
+<li>
+<p>The current branch name in "git status" output can be colored differently
+  from the generic header color by setting the "color.status.branch" variable.</p>
+</li>
+<li>
+<p>"git submodule sync" updates metainformation for all submodules,
+  not just the ones that have been checked out.</p>
+</li>
+<li>
+<p>gitweb can use a custom 'highlight' command with its configuration file.</p>
+</li>
+<li>
+<p>"git log --author=me --author=her" did not find commits written by
+  me or by her; instead it looked for commits written by me and by
+  her, which is impossible.</p>
+</li>
+<li>
+<p>"git push --progress" shows progress indicators now.</p>
+</li>
+<li>
+<p>"git rebase -i" showed a confusing error message when given a
+  branch name that does not exist.</p>
+</li>
+<li>
+<p>"git repack" places its temporary packs under $GIT_OBJECT_DIRECTORY/pack
+  instead of $GIT_OBJECT_DIRECTORY/ to avoid cross directory renames.</p>
+</li>
+<li>
+<p>"git submodule update --recursive --other-flags" passes flags down
+  to its subinvocations.</p>
+</li>
+</ul>]]></content>
+  </entry>
+</feed>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>#gitfr</title>
+    <link>http://www.gitfr.net/blog</link>
+    <description>Projet pour la promotion du bien et la destruction du mal</description>
+    <pubDate>Sun, 03 Jul 2011 21:22:47 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Cycle de release raccourci</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci</link>
+      <pubDate>Mon, 13 Jun 2011 03:24:00 CEST</pubDate>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci</guid>
+      <description>Cycle de release raccourci</description>
+      <content:encoded><![CDATA[<p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
+<h2>Le planning</h2>
+<ul>
+<li>
+<p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
+</li>
+<li>
+<p>Cycle d'intégration de nouvelles fonctionnalités à partir de la deuxième semaine, en fusionnant de la branche <code>next</code> vers <code>master</code>, ou de la branche <code>pu</code> vers <code>next</code>. </p>
+</li>
+<li>
+<p>Semaine N, une version <em>release candidate</em> (rc0) est taggée. Tous les sujets dans <code>next</code> sont triés (pour inclusion dans <code>master</code> ou attente de la prochaine version).</p>
+</li>
+<li>
+<p>Semaine N+1, une deuxième version <em>rc</em> est taggée. L'objectif est de tester à fond pour trouver d'éventuelles régressions, et plus aucune fonctionnalité nouvelle est acceptée.</p>
+</li>
+<li>
+<p>Semaine N+2, une troisième <em>rc</em> sort.</p>
+</li>
+<li>
+<p>Semaine X, la version finale sort.</p>
+</li>
+</ul>
+<p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
+<h2>Gestion des branches</h2>
+<p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
+<ul>
+<li>
+<p>master, la branche principale de la prochaine stable.</p>
+</li>
+<li>
+<p>next, la branche de stabilisation  de la prochaine stable.</p>
+</li>
+<li>
+<p>pu, la branche d'intégration de la prochaine stable.</p>
+</li>
+<li>
+<p>maint, la branche de maintenance de la dernière stable.</p>
+</li>
+</ul>
+<p>Une nouvelle fonctionnalité ne va pas directement dans <code>master</code>, mais passe d'abord par <code>pu</code>, puis <code>next</code>. Si tout donne satisfaction, alors la branche est mergée dans <code>master</code>. Cela signifie que :</p>
+<ul>
+<li>
+<p>vous pouvez utiliser une version stable, en stabilisation ou en cours de développement.</p>
+</li>
+<li>
+<p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
+</li>
+</ul>
+<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>git blameall</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/git-blameall</link>
+      <pubDate>Mon, 13 Jun 2011 02:22:00 CEST</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[outil]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-blameall</guid>
+      <description>git blameall</description>
+      <content:encoded><![CDATA[<p>Vous connaissez surement la commande <code>blame</code>, présent dans tous les outils de gestion de source, et qui permet de connaitre l'auteur de chaque ligne d'un fichier. Dan Gindikin nous gratifie de <a href="http://1dan.org/git-blameall/">git-blameall</a>, un petit script en Python (il faut donc qu'un interpréteur Python soit présent sur votre système, ce qui est le cas par défaut sur Linux et MacOS) qui permet d'avoir la mếme information pour toutes les lignes qui ont existées dans l'histoire de ce fichier.</p>
+<p>Vous avez donc une colonne supplémentaire qui vous donne le SHA1 ou cette ligne fut effacée. A garder sous le coude !</p>
+<p>Voici une copie d'écran :</p>
+<p><img alt="" src="http://1dan.org/git-blameall/git-blameall-screen1.png" /></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Git 1.7.5.4 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</link>
+      <pubDate>Mon, 13 Jun 2011 02:10:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</guid>
+      <description>Git 1.7.5.4 publiée</description>
+      <content:encoded><![CDATA[<p>La quatrième version de la branche 1.7.5.x est sortie le 2 juin, soit seulement 5 jours aprés la précédente. C'est la dernière ligne du changelog qui nous donne la réponse.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>The single-key mode of "git add -p" was easily fooled into thinking
+  that it was told to add everthing ('a') when up-arrow was pressed by
+  mistake.</p>
+</li>
+<li>
+<p>Setting a git command that uses custom configuration via "-c var=val"
+  as an alias caused a crash due to a realloc(3) failure.</p>
+</li>
+<li>
+<p>"git diff -C -C" used to disable the rename detection entirely when
+  there are too many copy candidate paths in the tree; now it falls
+  back to "-C" when doing so would keep the copy candidate paths
+  under the rename detection limit.</p>
+</li>
+<li>
+<p>"git rerere" did not diagnose a corrupt MERGE_RR file in some cases.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Git 1.7.5.3 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee</link>
+      <pubDate>Mon, 13 Jun 2011 02:07:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee</guid>
+      <description>Git 1.7.5.3 publiée</description>
+      <content:encoded><![CDATA[<p>La troisième version de maintenance de la branche 1.7.5.x est sortie le 27 mai.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>The bash completion scripts should correctly work using zsh's bash
+  completion emulation layer now.</p>
+</li>
+<li>
+<p>Setting $(prefix) in config.mak did not affect where etc/gitconfig
+  file is read from, even though passing it from the command line of
+  $(MAKE) did.</p>
+</li>
+<li>
+<p>The logic to handle "&amp;" (expand to UNIX username) in GECOS field
+  miscounted the length of the name it formatted.</p>
+</li>
+<li>
+<p>"git cherry-pick -s resolve" failed to cherry-pick a root commit.</p>
+</li>
+<li>
+<p>"git diff --word-diff" misbehaved when diff.suppress-blank-empty was
+  in effect.</p>
+</li>
+<li>
+<p>"git log --stdin path" with an input that has additional pathspec
+  used to corrupt memory.</p>
+</li>
+<li>
+<p>"git send-pack" (hence "git push") over smalt-HTTP protocol could
+  deadlock when the client side pack-object died early.</p>
+</li>
+<li>
+<p>Compressed tarball gitweb generates used to be made with the timestamp
+  of the tarball generation; this was bad because snapshot from the same
+  tree should result in a same tarball.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Git 1.7.5.2 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</link>
+      <pubDate>Mon, 13 Jun 2011 02:05:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</guid>
+      <description>Git 1.7.5.2 publiée</description>
+      <content:encoded><![CDATA[<p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>"git add -p" did not work correctly when a hunk is split and then
+  one of them was given to the editor.</p>
+</li>
+<li>
+<p>"git add -u" did not resolve a conflict where our history deleted and
+  their history modified the same file, and the working tree resolved to
+  keep a file.</p>
+</li>
+<li>
+<p>"git cvsimport" did not know that CVSNT stores its password file in a
+  location different from the traditional CVS.</p>
+</li>
+<li>
+<p>"git diff-files" did not show the mode information from the working
+  tree side of an unmerged path correctly.</p>
+</li>
+<li>
+<p>"git diff -M --cached" used to use unmerged path as a possible rename
+  source candidate, which made no sense.</p>
+</li>
+<li>
+<p>The option name parser in "git fast-import" used prefix matches for
+  some options where it shouldn't, and accepted non-existent options,
+  e.g. "--relative-marksmith" or "--forceps".</p>
+</li>
+<li>
+<p>"git format-patch" did not quote RFC822 special characters in the
+  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
+  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
+</li>
+<li>
+<p>"git format-patch" when run with "--quiet" option used to produce a
+  nonsense result that consists of alternating empty output.</p>
+</li>
+<li>
+<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
+  variables did not override the fallback default merge.<option>
+  configuration variables such as merge.ff, merge.log, etc.</p>
+</li>
+<li>
+<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
+  handling a "both sides added, differently" conflict.</p>
+</li>
+<li>
+<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
+</li>
+<li>
+<p>"git-p4" (in contrib) used a wrong base image while merge a file that
+  was added on both branches differently.</p>
+</li>
+<li>
+<p>"git rebase -i -p" failed to preserve the history when there is a
+  redundant merge created with the --no-ff option.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Git 1.7.5.1 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee</link>
+      <pubDate>Mon, 13 Jun 2011 01:57:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee</guid>
+      <description>Git 1.7.5.1 publiée</description>
+      <content:encoded><![CDATA[<p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>When an object "$tree:$path" does not exist, if $path does exist in the
+  subtree of $tree that corresponds to the subdirectory the user is in,
+  git now suggests using "$tree:./$path" in addition to the advice to use
+  the full path from the root of the working tree.</p>
+</li>
+<li>
+<p>The "--date=relative" output format used to say "X years, 12 months"
+  when it should have said "X+1 years".</p>
+</li>
+<li>
+<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
+  to issue a small POST (which uses content-length) and then a large
+  POST (which uses chunked) back to back.</p>
+</li>
+<li>
+<p>"git clean" used to fail on an empty directory that is not readable,
+  even though rmdir(2) could remove such a directory.  Now we attempt it
+  as the last resort.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to totally
+  ignore a change that only rearranged lines within a file.  Such a
+  change now counts as at least a minimum but non zero change.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to use the
+  pathname in the original, instead of the pathname in the result,
+  when renames are involved.</p>
+</li>
+<li>
+<p>"git pack-object" did not take core.bigfilethreashold into account
+  (unlike fast-import); now it does.</p>
+</li>
+<li>
+<p>"git reflog" ignored options like "--format=.." on the command line.</p>
+</li>
+<li>
+<p>"git stash apply" used to refuse to work if there was any change in
+  the working tree, even when the change did not overlap with the change
+  the stash recorded.</p>
+</li>
+<li>
+<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
+  did not have that many stash entries.</p>
+</li>
+<li>
+<p>An error message from "git send-email" to diagnose a broken SMTP
+  connection configuration lacked a space between "hello=<smtp-domain>"
+  and "port=<smtp-server-port>".</p>
+</li>
+<li>
+<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
+  mean the same thing.</p>
+</li>
+<li>
+<p>"git upload-pack" (hence "git push" over git native protocol) had a
+  subtle race condition that could lead to a deadlock.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Présentation Git le 01/06 à Strasbourg</title>
+      <link>http://www.gitfr.net/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg</link>
+      <pubDate>Wed, 18 May 2011 13:25:00 CEST</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg</guid>
+      <description>Présentation Git le 01/06 à Strasbourg</description>
+      <content:encoded><![CDATA[<p><code>#gitfr</code> continue sa promotion de Git en allant cette fois ci à Strasbourg, invité par le <a href="http://www.elsassjug.org">ElsassJUG</a>, groupe de Javaistes Alascien. La soirée va être riche car je fusionne la présentation DVCS avec la présentation Git, ce qui devrait donner un contenu d'environ 2h. Comme nous avons la salle jusqu'a 22h30, une longue session de question / réponse est possible à la fin de chaque partie.</p>
+<p>La soirée est limitée à 90 personnes, dans les locaux d'Alcatel-Lucent à Illkirch.</p>
+<p>Pour s'inscrire, suivez ce <a href="http://jugevents.org/jugevents/event/38343">lien</a>.</p>
+<p>A bientôt autour d'une bière Alsacienne ! :).</p>
+<p>PS : Je n'avais pas prévu de me déplacer en province avant le Brezhcamp, mais le ElsassJUG avait déjà une soirée DVCS pour le mois de juin.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Atelier Git le 16/06 à Rennes</title>
+      <link>http://www.gitfr.net/blog/2011/05/18/atelier-git-le-16-06-a-rennes</link>
+      <pubDate>Wed, 18 May 2011 13:25:00 CEST</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/05/18/atelier-git-le-16-06-a-rennes</guid>
+      <description>Atelier Git le 16/06 à Rennes</description>
+      <content:encoded><![CDATA[<p>Le <a href="http://www.breizhcamp.org/">breizhcamp</a> est une journée conférence organisée le 17 juin par plusieurs communautés techniques de Rennes avec des sessions sur Java, Ruby, Android, etc. Je suis présent à cette conférence pour 2 sessions : la keynote, avec pour thème les communautés et une session sur le langage Python.</p>
+<p>Étant sur place, j'ai proposé aux organisateurs un atelier sur Git (étonnant non ?). Limité à <strong>40 personnes</strong> et organisé la veille (le 16 juin), l'objectif est de prendre par la main les participants, en partant de zéro et les amener à une maîtrise minimale de Git :</p>
+<ul>
+<li>On démarre par une présentation sur l'intérêt de passer aux DVCS,</li>
+<li>suivi d'une présentation théorique sur Git,</li>
+<li>Pour ensuite manipuler tous ensemble.</li>
+</ul>
+<p>Cela signifie que vous devez venir avec <strong>votre ordinateur</strong> équipé de Git si vous souhaitez participer à l'atelier. Vous pouvez bien sur assister seulement aux présentations ou regarder les autres manipuler.</p>
+<p>Pour rappel, les tutoriels pour installer Git :</p>
+<ul>
+<li>http://blog.gitfr.net/post/1440298705/installer-git-sur-ubuntu</li>
+<li>http://blog.gitfr.net/post/1449390263/installer-git-sur-os-x</li>
+<li>http://blog.gitfr.net/post/1471591503/installer-git-sur-windows</li>
+</ul>
+<p>Je ne vous cache pas que je suis allergique à Windows (que je n'utilise plus personnellement et professionnellement depuis 1999) et que je suis donc beaucoup moins à l'aise sur cette plateforme. De plus, nous manipulerons principalement en ligne de commande et non au travers d'un quelconque IDE.</p>
+<p>Suivez ce <a href="http://jugevents.org/jugevents/event/show.html?id=37556">lien</a> pour les inscriptions.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>RoR utilise le tracker de GitHub</title>
+      <link>http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</link>
+      <pubDate>Thu, 28 Apr 2011 15:50:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <category><![CDATA[migration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/28/ror-utilise-le-tracker-de-github</guid>
+      <description>RoR utilise le tracker de GitHub</description>
+      <content:encoded><![CDATA[<p>Si la plupart des gens considèrent GitHub comme une superbe plateforme d'hébergement de code, beaucoup sont encore dubitatifs sur la délégation des tickets (bug et/ou fonctionnalité), et préfèrent utiliser <a href="http://trac.edgewall.org/">Trac</a>, <a href="http://www.redmine.org/">Redmine</a> ou <a href="http://www.atlassian.com/software/jira/">JIRA</a>. Il est donc intéressant d'apprendre que le projet <a href="http://rubyonrails.org/">Ruby on Rails</a> (qui pour l'anecdote, est hébergé depuis le premier jour de GitHub) utilise officiellement GitHub pour<a href="https://github.com/rails/rails/issues"> ses tickets de bugs</a>.</p>
+<p>Le retour d'expérience va donc être très intéressant. Et sans nul doute, les GitHubbers (les développeurs de GitHub) seront très sensibles et réactifs aux remarques et retours, étant eux mêmes des utilisateurs de RoR.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pull request en 3 clicks</title>
+      <link>http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks</link>
+      <pubDate>Wed, 27 Apr 2011 00:58:00 CEST</pubDate>
+      <category><![CDATA[github]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks</guid>
+      <description>Pull request en 3 clicks</description>
+      <content:encoded><![CDATA[<p>GitHub vient de sortir le pendant du <a href="http://blog.gitfr.net/post/4930259268/merge-en-un-click">merge en 1 click</a>. Alors que l'amélioration précédente était à destination du mainteneur, celle ci est à destination du collaborateur. Ce dernier peut maintenant modifier un fichier d'un dépôt quelconque (sans droit d'écriture donc) en passant par le site web :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7o4sTe81qdkaiq.png" /></p>
+<p>Et proposer un <em>pull request</em> dans la foulée :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7qqRc3L1qdkaiq.png" /></p>
+<p>Cela veut dire qu'une modification peut être faites et proposer en... 3 clicks ! Plus d'excuse pour proposer cette petite correction de typo que vous avez vu, ou cette documentation pas très claire. </p>
+<p><strong>Note</strong> : bien sur, rien de magique la dedans. GitHub <strong>fork</strong> le projet, applique votre modification (commit), et vous ouvre la fenêtre du <em>pull request</em>. Pas magique certes, mais bien pratique :).</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
