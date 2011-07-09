@@ -65,6 +65,76 @@
           
   
 <div class="blog_post">
+  <a name="suivre-le-developpement-de-git"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/05/suivre-le-developpement-de-git" rel="bookmark" title="Permanent Link to Suivre le développement de Git">Suivre le développement de Git</a></h2>
+  <p class="related"><strong>05/12/2010 01:54 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Chaque série de patchs est mis dans une branche <strong>topic</strong>, c'est à dire une branche dédiée à un développement spécifique. Ce développement est ensuite fusionné (<em>mergé</em>) dans la branche <strong>pu</strong> (<em>proposed updates</em>), qui est une branche d'intégration. Aprés une ou plusieurs revues, si le code est beau et fonctionnel, il est de nouveau fusionné avec la branche <strong>next</strong>, qui représente la prochaine version stable, et eventuellement dans la branche <strong>maint</strong> qui représente la version stable en cours (dans le cas d'une correction de bugs). <strong>master</strong> quand à lui, ne récupère que des merge venant de <strong>maint</strong>.</p>
+<p>Pour résumé, vous avez les branches principales :</p>
+<ul>
+<li>master</li>
+<li>next</li>
+<li>pu</li>
+<li>maint</li>
+</ul>
+<p>Et 3 branches supplémentaires de moindres importances : <strong>man</strong>, <strong>html</strong> et <strong>todo</strong>.</p>
+<p>Les améliorations se font en mettant à jour la branche topic, puis en fusionnant de nouveau dans la ou les branches concernées.</p>
+<p>Ce workflow demande de bien suivre les développements sur l'ensemble des branches. Et comme le dit Junio lui même (le mainteneur du projet), il est nécessaire de :</p>
+<ul>
+<li>voir quels commits sont dans les branches</li>
+<li>vérifier quels commits sont déja mergés et où</li>
+<li>connaitre la date de la dernière mise à jour</li>
+</ul>
+<p>C'est l'objet du résumé appelé "What's cooking", qui se trouve dans la branche <strong>todo</strong>. Ce fichier (<code>whats-cooking.txt</code>) est le résultat d'un script qui recense les développements en cours. C'est un fichier assez long (environ 800 lignes) qui donnent une trés bonne vue d'ensemble du projet.</p>
+<p>Bonne lecture :).</p>
+<p><strong>Note</strong> : Ce fichier est mis à jour chaque semaine dans le dépôt git et il est également envoyé sur la liste de diffusion (<strong>git@vger.kernel.org</strong>).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="historiser-etc-avec-etckeeper"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/05/historiser-etc-avec-etckeeper" rel="bookmark" title="Permanent Link to Historiser /etc avec etckeeper">Historiser /etc avec etckeeper</a></h2>
+  <p class="related"><strong>05/12/2010 01:05 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Pour illuster l'un des intérêts des <em>DVCS</em>, à savoir son coté <strong>décentralisé</strong>, ou plus éxactement le fait qu'il n'est pas obligatoire de disposer d'un dépôt central, voici un exemple concret. Nous pouvons historiser simplement un répertoire en tapant la commande :</p>
+<blockquote>
+<p>$ git init</p>
+</blockquote>
+<p>Ainsi, vous pouvez sauvegarder toute modification apportée à un fichier et historiser vos changements. Mais si vous voulez le faire simplement et <strong>automatiquement</strong>, il faut scripter un peu. Mais comme souvent dans le monde libre, un développeur à pensé avant vous, s'est sorti les doigts du <em>censure</em> et a publié son projet.</p>
+<p><a href="http://kitenet.net/~joey/code/etckeeper/">etckeeper</a>, projet de Joey Hess (bien connu des utilisateurs Debian) permet comme son nom l'indique de sauvegarder le répertoire <code>/etc</code> (ensemble des fichiers de configurations sous <em>Linux</em>), simplement et rapidement. Joey est un vieux utilisateur d'outil de gestion de sources pour sauvegarder ses documents : il a écrit un article voici quelques années sur l'utilisation de <em>CVS</em> puis <em>SVN</em> pour gérer son répertoire personnel (son <strong>home</strong>).</p>
+<p>Pour l'installer (sous <em>Ubuntu</em> ou <em>Debian</em>) :</p>
+<blockquote>
+<p>$ aptitude install etckeeper</p>
+</blockquote>
+<p>Le fichier de configuration s'appelle <code>/etc/etckeeper/etckeeper.conf</code>, notamment pour mettre git en backend. L'intérêt de etckeeper se trouve dans les scripts associés, puisqu'il traque les changements de paquet avec <strong>APT</strong> et <strong>DPKG</strong> et gére les permissions correctement (fondamental pour /etc/).</p>
+<p>Et voila ! Vous avez maintenant un historique des changements sur votre machine.</p>
+<p><strong>Note</strong> : etckeeper gère aussi <em>Hg</em>, <em>Darcs</em> et <em>Bzr</em>.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/05/git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees" rel="bookmark" title="Permanent Link to Git 1.7.0.8,1.7.1.3 et 1.7.2.4 publiées">Git 1.7.0.8,1.7.1.3 et 1.7.2.4 publiées</a></h2>
   <p class="related"><strong>05/12/2010 12:10 AM</strong> | categories: 
@@ -270,208 +340,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="des-exemples-de-fichiers-gitignore"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/10/des-exemples-de-fichiers-gitignore" rel="bookmark" title="Permanent Link to Des exemples de fichiers gitignore">Des exemples de fichiers gitignore</a></h2>
-  <p class="related"><strong>10/11/2010 06:50 PM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Le projet <a href="http://github.com/github/gitignore">gitignore</a>, lancé par <em>GitHub</em>, est une collection de fichiers <strong>gitignore</strong>. Vous trouverez des exemples pour :</p>
-<ul>
-<li>des langages (<strong>Python</strong>, <strong>Ruby</strong>, <strong>Scala</strong>...)</li>
-<li>des frameworks (<strong>Symphony</strong>,  <strong>Rails</strong>...)</li>
-<li>des éditeurs (<strong>Vim</strong>, <strong>Emacs</strong>, <strong>Eclipse</strong>...)</li>
-<li>des systèmes d'exploitation (<strong>Linux</strong>, <strong>Windows</strong>...)</li>
-</ul>
-<p><strong>Note</strong> : ces deux dernières catégories se trouvent dans le répertoire <em>Global</em>.</p>
-<p>Pour plus d'informations, (re)lisez le billet sur <a href="http://blog.gitfr.net/post/1475460682/eviter-de-commiter-des-fichiers-indesirables">gitignore</a>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="ameliorer-sa-productivite-avec-un-beau-shell"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/06/ameliorer-sa-productivite-avec-un-beau-shell" rel="bookmark" title="Permanent Link to Améliorer sa productivité avec un beau shell">Améliorer sa productivité avec un beau shell</a></h2>
-  <p class="related"><strong>06/11/2010 04:15 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/06/ameliorer-sa-productivite-avec-un-beau-shell#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Git est avant un outil qu'on utilise en <strong>ligne de commande</strong>. Mais par défaut, le shell ne vous indique pas grand chose de la part de Git, en fait rien du tout :). Il faut donc taper des commandes Git pour connaitre l'état de son dépôt. Au minimum :</p>
-<ul>
-<li><code>git status</code> pour l'état de son <strong>répertoire de travail</strong> et de son <strong>index</strong></li>
-<li><code>git branch</code> pour connaitre dans quelle <strong>branche</strong> on se trouve</li>
-</ul>
-<p>Et accessoirement, il faut connaitre sa <strong>position</strong> par rapport à la branche distante, l'état de votre pile <strong>stash</strong>, etc. Bref, cela fait beaucoup de commandes à taper régulièrement. Il est bien sur possible de le faire, mais cela demande une grande rigueur : il est si facile par exemple de travailler dans la <strong>mauvaise branche</strong>, ou pire de ne pas travailler dans une branche du tout (ce qu'on appelle un <strong>HEAD détaché</strong>).</p>
-<p>Une solution simple et élégante est d'afficher en permanence ces informations. Comme cela, plus d'erreur (cela reste possible mais l'étourderie est plus difficile). Cela tombe bien, le <strong>shell</strong> sait trés bien faire ce boulot !</p>
-<p>Vous trouverez beaucoup d'exemples sur le Net, mais ils sont souvent trés basiques : généralement, cela se résume à afficher la branche courante sans gérer correctement tous les cas (comme le fameux <strong>HEAD détaché</strong> cité plus haut). J'ai fouillé le Net de long en large, et voici les 2 projets les plus intéressants à mes yeux :</p>
-<ul>
-<li><a href="http://volnitsky.com/project/git-prompt/">git-prompt</a></li>
-<li>et... le fichier de complétion de Git</li>
-</ul>
-<p>Et oui ! Ce dernier, livré en standard avec Git, sait aussi faire de l'affichage, et il est même trés bon ! Passage en revue de ces deux solutions.</p>
-<h2>Git Prompt</h2>
-<p>L'avantage est qu'il est, malgré son nom, compatible avec <strong>SVN</strong> et <strong>Hg</strong>.</p>
-<p>Ses fonctionnalités :</p>
-<ul>
-<li>affichage de la branche courante</li>
-<li>affichage du SHA1 courant</li>
-<li>configuration de l'affichage du chemin (en absolu ou relatif, choix de la taille max)</li>
-<li>affichage du l'état du dépôt, de l'index et du répertoire de travail avec un jeu de couleur (voir plus bas)</li>
-<li>affichage des fichiers qui modifie le depôt (désactivable)</li>
-<li>affichage du statut de sortie de votre commande (il peut bipper sur une erreur)</li>
-<li>la configuration (activation des modules, couleurs...) se fait simplement au travers d'un fichier</li>
-<li>il modifie les labels (titre des fenêtres) en affichant le chemin complet</li>
-</ul>
-<p>Un jeu de couleur indique l'état du dépôt ainsi que des fichiers manipulés (entre paranthèse la couleur par défaut) :</p>
-<ol>
-<li>état initial du dépôt (blanc)</li>
-<li>dépôt "propre" (bleu foncé)</li>
-<li>présence de contenu modifié mais non ajouté à l'index (rouge foncé)</li>
-<li>présence de contenu modifié et ajouté à l'index (vert)</li>
-<li>présence de fichier non tracé (bleu clair)</li>
-<li>en cours d'une opération (magenta)</li>
-<li>commit détaché (rouge clair)</li>
-</ol>
-<p>Vous avez donc un visuel assez précis de l'état de votre dépôt. Voici un exemple avec la configuration par défaut :</p>
-<p><img alt="Exemple de git-prompt par défaut" src="http://media.tumblr.com/tumblr_lbfwhyLINq1qdkaiq.png" /></p>
-<p>Vous pouvez voir que :</p>
-<ul>
-<li>je suis connecté avec le login <em>sdouche</em></li>
-<li>ma machine s'appelle <em>fou-hi</em></li>
-<li>je suis sur le dépot <em>git</em></li>
-<li>je suis sur la branche "master" (simplifiée en <strong>M</strong> car <em>master</em> est une convention, comme <em>trunk</em>)</li>
-<li>je suis sur le commit <em>61d8db</em></li>
-<li>le statut du dépot est vert, j'ai donc du contenu modifié et ajouté</li>
-<li>un fichier <code>test.py</code> qui n'est pas tracé</li>
-<li>un fichier <code>new.txt</code> qui est ajouté</li>
-</ul>
-<p><strong>Remarque</strong> : l'état du dépôt correspond bien évidemment à l'état du ou des fichiers le plus important (un dépôt ne peut être vert si un fichier est rouge par exemple).</p>
-<p>Vous avez maintenant une vue bien plus complète de votre dépôt. Vous pouvez aisement imaginer qu'avoir ces informations en <strong>permanence</strong> est un plus indéniable. Allez sur ce <a href="http://volnitsky.com/project/git-prompt/screenshot-prompt-git.png">lien</a> pour voir le shell en action sur plusieurs commandes.</p>
-<p>Pour ma part, je n'apprécie pas trop les <em>prompt</em> à rallonge, j'ai donc une configuration bien plus légère :</p>
-<ul>
-<li>pas d'affichage de mon login ni du nom de ma machine (il affiche si les valeurs ne sont pas celles par défaut, par ex. si je suis root)</li>
-<li>un prompt classique (<strong>$</strong> pour un utilisateur et <strong>#</strong> pour root, et non le <strong>&gt;</strong>)</li>
-<li>couleurs personnalisées (répertoire en magenta par ex.)</li>
-<li>limite de 40 caractères pour l'affichage du chemin</li>
-<li>pas d'affichage des fichiers et / ou répertoires impactés</li>
-</ul>
-<p>Voici une copie d'écran :</p>
-<p><img alt="Un exemple avec ma configuration git-prompt" src="http://media.tumblr.com/tumblr_lbfvzvuwcQ1qdkaiq.png" /></p>
-<p>Vous constatez qu'il est bien plus simple. Vous pouvez voir la couleur verte sur le M, cela signifie donc que j'ai ajouté du contenu dans mon index. J'apprécie beaucoup la visualisation de l'ensemble des fichiers impactés mais malheureusement assez peu les prompts trop long.</p>
-<p>Pour l'installer, c'est trés simple :</p>
-<ul>
-<li>Allez sur le projet <a href="https://github.com/lvv/git-prompt">Github</a> et récupérer les fichiers <code>git-prompt.sh</code> et <code>git-prompt.conf</code></li>
-<li>Mettez le premier quelque part dans votre compte et renommez le second en <code>~/.git-prompt.conf</code></li>
-<li>Modifiez votre fichier <code>~/.bashrc</code> avec cette ligne  (remplacez "/path/to" par le répertoire ou vous avez sauvegardé votre fichier) :</li>
-</ul>
-<blockquote>
-<p>[[ $- == <em>i</em> ]]  &amp;&amp; . ~/path/to/git-prompt.sh</p>
-</blockquote>
-<ul>
-<li>Editez le fichier ~/.git-prompt.conf` pour configurer selon vos envies</li>
-</ul>
-<h2>Git Completion</h2>
-<p>Le fichier de complétion possède tout le nécessaire pour afficher des informations sur votre dépôt, il est même bien plus complet sur certains aspects que <em>git-prompt</em>. Mais ne vous attendait pas à l'utiliser pour autre chose que Git. Il faudra donc choisir selon vos besoins.</p>
-<p>En échange, il vous offre pas mal de possibilités, il affiche :</p>
-<ul>
-<li>la branche courante (ou le SHA1 si vous êtes sur un <em>HEAD détaché</em>)</li>
-<li>le caractère <strong>%</strong> si un contenu non tracé existe</li>
-<li>le caractère <strong>*</strong> si un contenu tracé mais non ajouté existe</li>
-<li>le caractère <strong>+</strong> si un contenu ajouté existe</li>
-<li>le caractère <strong>$</strong> si vous avez un <strong>stash</strong></li>
-<li>le caractère <strong>#</strong> si le dépôt est dans l'état initial</li>
-<li>la position courante de votre <strong>branche locale</strong> par rapport à la branche distante</li>
-</ul>
-<p>Pour ce dernier, vous avez plusieurs modes :</p>
-<ul>
-<li>
-<p>avec le mode auto il affiche :</p>
-</li>
-<li>
-<p>rien s'il n'existe pas de branche <em>upstream</em></p>
-</li>
-<li><strong>=</strong> si vous les deux branches concordent</li>
-<li><strong>&lt;</strong> pour dire vous étes en avance</li>
-<li><strong>&gt;</strong> en retard</li>
-<li>
-<p><strong>&lt;&gt;</strong> pour indiquer une divergeance</p>
-</li>
-<li>
-<p>avec le mode verbose, il affiche le nombre de commits :</p>
-</li>
-<li>
-<p>rien s'il n'existe pas de branche <em>upstream</em></p>
-</li>
-<li><strong>u=</strong> si vous les deux branches concordent</li>
-<li><strong>u+count</strong> si vous étes en avance</li>
-<li><strong>u-count</strong> si vous étes en avance</li>
-<li><strong>u+count-u-count</strong> pour indiquer une divergeance (nombre de commits dans votre branche et dans la branche upstream)</li>
-</ul>
-<p>Cela permet de savoir par exemple si vous avez oublié de pusher ou de merger. Trés pratique, voir <strong>indispensable</strong>.</p>
-<p><strong>Remarques :</strong></p>
-<ul>
-<li>Il affiche aussi le décalage avec SVN (mode <strong>git-svn</strong>) s'il trouve un serveur SVN dans la configuration du dépôt</li>
-<li>Vous pouvez modifier la configuration du décalage avec <em>upstream</em> pour chaque dépôt avec la variable <code>bash.showUpstream</code></li>
-</ul>
-<p>Mais ce n'est pas tout ! Il vous indique si vous êtes en cours :</p>
-<ul>
-<li>d'un <em>rebase</em> intéractif en affichant <strong>|REBASE-i</strong></li>
-<li>d'un <em>rebase</em> merge en affichant <strong>|REBASE-m</strong></li>
-<li>d'un <em>merge</em> en affichant <strong>|MERGING</strong></li>
-<li>d'un <em>bisect</em> en affichant <strong>|BISECTING</strong></li>
-</ul>
-<p>Bref, c'est pour moi le shell le plus complet qui existe. Le seul défaut est qu'il ne gère pas la couleur, c'est à vous de l'ajouter. Vraiment dommage.</p>
-<p>Voici ce que donne (avec une ajout de couleurs) :</p>
-<p><img alt="Un exemple avec Git Completion" src="http://media.tumblr.com/tumblr_lbfviwpAfP1qdkaiq.png" /></p>
-<p>Vous pouvez voir que je suis en avance d'un commit (u pour <strong>upstream</strong>) et que j'ai du contenu non tracé et du contenu ajouté mais pas commité.</p>
-<p>Pour disposer d'une configuration équivalente, ajoutez ces lignes dans votre fichier <code>~/.bashrc</code>:</p>
-<blockquote>
-<p><code>GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUPSTREAM="verbose"</code></p>
-<p><code>PS1='[\[\033[1;35m\]\W$(__git_ps1 " \[\033[1;34m\](%s)")\[\033[0m\]]\$ '</code></p>
-</blockquote>
-<p>Si vous souhaitez garder votre login et le nom de la machine, voici la configuration de base qui remplace la dernière ligne de la configuration précédente :</p>
-<blockquote>
-<p><code>PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '</code></p>
-</blockquote>
-<p>Ajouter <code>\u@\h</code> aprés le <strong>[</strong> à ma configuration si vous voulez associer la configuration de base avec mon jeu de couleurs.</p>
-<h2>Notes</h2>
-<ul>
-<li>Les informations Git s'affichent <strong>uniquement</strong> dans le cas ou vous êtes dans un dépôt Git</li>
-<li>Pour en savoir plus sur les couleurs du prompt, je vous conseille ce <a href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt">lien</a></li>
-<li>pour utiliser <em>Git Completion</em>, il faut bien évidemment que ce dernier soit installé (voir à se sujet un précédent <a href="http://blog.gitfr.net/post/1475820312/taper-plus-vite-avec-la-completion">billet</a>)</li>
-</ul>
-<h2>Mon shell idéal</h2>
-<p>Cela serait une combinaison des 2 :</p>
-<ul>
-<li>la possibilité de l'utiliser avec Hg, Bzr et Git</li>
-<li>affichage de l'état des fichiers sur la 1ere ligne avec un jeu de couleur (à la git-prompt)</li>
-<li>affichage sur la deuxième ligne du nom du dépôt (ce que personne ne fait), le chemin courant, l'état du dépôt (à la Git Completion)</li>
-<li>affichage du nombre de patchs dans ma pile de Stash</li>
-<li>et surtout le <strong>choix</strong> des couleurs pour chaque élement visuel. Imaginez par exemple du rouge pour afficher un décalage avec <em>upstream</em>, du bleu si j'ai du <em>stash</em>, etc</li>
-</ul>
-<h2>Conclusion</h2>
-<p>Avoir en permanence l'état de votre dépôt est un plus <strong>indéniable</strong>, que je vous <strong>encourage fortement</strong> à installer ! Il m'est arrivé plusieurs fois de commiter dans la mauvaise branche, ou d'oublier de pusher. Avec un beau shell, c'est <strong>fini</strong> (enfin, cela arrive beaucoup moins souvent :).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/06/ameliorer-sa-productivite-avec-un-beau-shell#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../6">« Articles suivants</a>
   --  
  <a href="../8">Articles précédents »</a>
@@ -495,14 +363,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
+    <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
     <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.2-publiee">Git 1.7.5.2 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.1-publiee">Git 1.7.5.1 publiée</a></li>
-    <li><a href="/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg">Présentation Git le 01/06 à Strasbourg</a></li>
-    <li><a href="/blog/2011/05/18/atelier-git-le-16-06-a-rennes">Atelier Git le 16/06 à Rennes</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -515,7 +383,7 @@
     <ul>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (44)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (45)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -524,13 +392,13 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (14)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (9)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (14)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -539,6 +407,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>

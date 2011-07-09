@@ -10,10 +10,201 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Mon, 04 Jul 2011 19:26:10 GMT</pubDate>
+    <pubDate>Sat, 09 Jul 2011 18:36:24 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.6 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee</link>
+      <pubDate>Sat, 09 Jul 2011 20:34:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee</guid>
+      <description>Git 1.7.6 publiée</description>
+      <content:encoded><![CDATA[<p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
+première version qui respecte le nouveau cycle de release plus court voulu
+par Junio.</p>
+<p>A la lecture du changelog, voici quelques points que je remarque :</p>
+<ul>
+<li>
+<p>Le magic pathspec ":/".</p>
+</li>
+<li>
+<p>L'option patch pour la commande git-commit.</p>
+</li>
+<li>
+<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
+</li>
+<li>
+<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
+   ou jamais faire un commit de merge.</p>
+</li>
+<li>
+<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
+</li>
+</ul>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>Various git-svn updates.</p>
+</li>
+<li>
+<p>Updates the way content tags are handled in gitweb.  Also adds
+  a UI to choose common timezone for displaying the dates.</p>
+</li>
+<li>
+<p>Similar to branch names, tagnames that begin with "-" are now
+  disallowed.</p>
+</li>
+<li>
+<p>Clean-up of the C part of i18n (but not l10n---please wait)
+  continues.</p>
+</li>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Pushing and pulling from a repository with large number of refs that
+  point to identical commits are optimized by not listing the same commit
+  during the common ancestor negotiation exchange with the other side.</p>
+</li>
+<li>
+<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
+  using "git add" will send the contents straight to a packfile without
+  having to hold it and its compressed representation both at the same
+  time in memory.</p>
+</li>
+<li>
+<p>Processes spawned by "[alias] <name> = !process" in the configuration
+  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
+  working tree the original command was invoked.</p>
+</li>
+<li>
+<p>A magic pathspec ":/" tells a command that limits its operation to
+  the current directory when ran from a subdirectory to work on the
+  entire working tree. In general, ":/path/to/file" would be relative
+  to the root of the working tree hierarchy.</p>
+</li>
+</ul>
+<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
+  be a no-op, but "git add -u :/" would add the updated contents of
+  the Makefile at the top level. If you want to name a path in the
+  current subdirectory whose unusual name begins with ":/", you can
+  name it by "./:/that/path" or by ":/that/path".</p>
+<ul>
+<li>
+<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
+  number of hexdigits shown for commit object names.</p>
+</li>
+<li>
+<p>"git blame" learned "--line-porcelain" that is less efficient but is
+  easier to parse.</p>
+</li>
+<li>
+<p>Aborting "git commit --interactive" discards updates to the index
+  made during the interactive session.</p>
+</li>
+<li>
+<p>"git commit" learned a "--patch" option to directly jump to the
+  per-hunk selection UI of the interactive mode.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=0 to show
+  directories that contribute less than 0.1% of changes.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=lines mode to
+  assess damage to the directory based on number of lines in the patch
+  output, not based on the similarity numbers.</p>
+</li>
+<li>
+<p>"git format-patch" learned "--quiet" option to suppress the output of
+  the names of generated files.</p>
+</li>
+<li>
+<p>"git format-patch" quotes people's names when it has RFC822 special
+  characters in it, e.g. "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>.  Earlier
+  it was up to the user to do this when using its output.</p>
+</li>
+<li>
+<p>"git format-patch" can take an empty --subject-prefix now.</p>
+</li>
+<li>
+<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
+</li>
+<li>
+<p>"git log" and friends learned a new "--notes" option to replace the
+  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
+  not imply showing the default notes.</p>
+</li>
+<li>
+<p>They also learned a log.abbrevCommit configuration variable to augment
+  the --abbrev-commit command line option.</p>
+</li>
+<li>
+<p>"git ls-remote" learned "--exit-code" option to consider it a
+  different kind of error when no remote ref to be shown.</p>
+</li>
+<li>
+<p>"git merge" learned "-" as a short-hand for "the previous branch", just
+  like the way "git checkout -" works.</p>
+</li>
+<li>
+<p>"git merge" uses "merge.ff" configuration variable to decide to always
+  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
+  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
+  (or not setting it at all) restores the default behaviour of allowing
+  fast-forward to happen when possible.</p>
+</li>
+<li>
+<p>p4-import (from contrib) learned a new option --preserve-user.</p>
+</li>
+<li>
+<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
+  would fail without touching the index nor the working tree.</p>
+</li>
+<li>
+<p>"git rebase" that does not specify on top of which branch to rebase
+  the current branch now uses @{upstream} of the current branch.</p>
+</li>
+<li>
+<p>"git rebase" finished either normally or with --abort did not
+  update the reflog for HEAD to record the event to come back to
+  where it started from.</p>
+</li>
+<li>
+<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
+  a fetch-mode mirror meant mirror everything, but now it only means refs are
+  not renamed.</p>
+</li>
+<li>
+<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
+  commits separately, producing more a useful output.</p>
+</li>
+<li>
+<p>"git submodule update" learned "--force" option to get rid of local
+  changes in submodules and replace them with the up-to-date version.</p>
+</li>
+<li>
+<p>"git status" and friends ignore .gitmodules file while the file is
+  still in a conflicted state during a merge, to avoid using information
+  that is not final and possibly corrupt with conflict markers.</p>
+</li>
+<li>
+<p>"git config" used to choke with an insanely long line.
+  (merge ef/maint-strbuf-init later)</p>
+</li>
+<li>
+<p>"git diff --quiet" did not work well with --diff-filter.
+  (merge jk/diff-not-so-quick later)</p>
+</li>
+<li>
+<p>"git status -z" did not default to --porcelain output format.
+  (merge bc/maint-status-z-to-use-porcelain later)</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.5.4 publiée</title>
       <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</link>
@@ -452,198 +643,6 @@
 <li>
 <p>"git fsck" gave up scanning loose object files in directories with
   garbage files.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.4 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee</link>
-      <pubDate>Sat, 12 Feb 2011 14:16:00 CET</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee</guid>
-      <description>Git 1.7.4 publiée</description>
-      <content:encoded><![CDATA[<p>La version 1.7.4 est sortie le 31 janvier (oui je suis en retard), et n'apporte pas de changement majeur, mais principalement de nouvelles options ou corrections un peu partout dans Git.</p>
-<p>Rien de transcendant à mes yeux mais j'apprécie la couleur de la branche dans le <code>git status</code>, <code>git blame --show-email</code>, <code>git merge --abort</code>, les options <code>--fixup</code> et <code>--squash</code> pour <code>git commit</code>, <code>git fetch --recurse-submodules</code>, l'affichage 3-way merge par défaut pour vim/gvim pour <code>git mergetool</code> et enfin <code>git log -G&lt;pattern&gt;</code> pour voir les lignes ajoutées ou supprimées qui correspondent au pattern.</p>
-<p>Comme d'habitude, je vous laisse découvrir l'intégralité du changelog :</p>
-<ul>
-<li>
-<p>The documentation Makefile now assumes by default asciidoc 8 and
-  docbook-xsl &gt;= 1.73. If you have older versions, you can set
-  ASCIIDOC7 and ASCIIDOC_ROFF, respectively.</p>
-</li>
-<li>
-<p>The option parsers of various commands that create new branches (or
-  rename existing ones to a new name) were too loose and users were
-  allowed to give a branch a name that begins with a dash by creative
-  abuse of their command line options, which only led to burning
-  themselves.  The name of a branch cannot begin with a dash now.</p>
-</li>
-<li>
-<p>System-wide fallback default attributes can be stored in
-  /etc/gitattributes; the core.attributesfile configuration variable can
-  be used to customize the path to this file.</p>
-</li>
-<li>
-<p>The thread structure generated by "git send-email" has changed
-  slightly.  Setting the cover letter of the latest series as a reply
-  to the cover letter of the previous series with --in-reply-to used
-  to make the new cover letter and all the patches replies to the
-  cover letter of the previous series; this has been changed to make
-  the patches in the new series replies to the new cover letter.</p>
-</li>
-<li>
-<p>The Bash completion script in contrib/ has been adjusted to be usable with
-  Bash 4 (options with '=value' didn't complete).  It has been also made
-  usable with zsh.</p>
-</li>
-<li>
-<p>Different pagers can be chosen depending on which subcommand is
-  being run under the pager, using the "pager.<subcommand>" variable.</p>
-</li>
-<li>
-<p>The hardcoded tab-width of 8 that is used in whitespace breakage checks is now
-  configurable via the attributes mechanism.</p>
-</li>
-<li>
-<p>Support of case insensitive filesystems (i.e. "core.ignorecase") has
-  been improved.  For example, the gitignore mechanism didn't pay attention
-  to case insensitivity.</p>
-</li>
-<li>
-<p>The <tree>:<path> syntax for naming a blob in a tree, and the :<path>
-  syntax for naming a blob in the index (e.g. "master:Makefile",
-  ":hello.c") have been extended.  You can start <path> with "./" to
-  implicitly have the (sub)directory you are in prefixed to the
-  lookup.  Similarly, ":../Makefile" from a subdirectory would mean
-  "the Makefile of the parent directory in the index".</p>
-</li>
-<li>
-<p>"git blame" learned the --show-email option to display the e-mail
-  addresses instead of the names of authors.</p>
-</li>
-<li>
-<p>"git commit" learned the --fixup and --squash options to help later invocation
-  of interactive rebase.</p>
-</li>
-<li>
-<p>Command line options to "git cvsimport" whose names are in capital
-  letters (-A, -M, -R and -S) can now be specified as the default in
-  the .git/config file by their longer names (cvsimport.authorsFile,
-  cvsimport.mergeRegex, cvsimport.trackRevisions, cvsimport.ignorePaths).</p>
-</li>
-<li>
-<p>"git daemon" can be built in the MinGW environment.</p>
-</li>
-<li>
-<p>"git daemon" can take more than one --listen option to listen to
-  multiple addresses.</p>
-</li>
-<li>
-<p>"git describe --exact-match" was optimized not to read commit
-  objects unnecessarily.</p>
-</li>
-<li>
-<p>"git diff" and "git grep" learned what functions and subroutines
-  in Fortran, Pascal and Perl look like.</p>
-</li>
-<li>
-<p>"git fetch" learned the "--recurse-submodules" option.</p>
-</li>
-<li>
-<p>"git mergetool" tells vim/gvim to show a three-way diff by default
-  (use vimdiff2/gvimdiff2 as the tool name for old behavior).</p>
-</li>
-<li>
-<p>"git log -G<pattern>" limits the output to commits whose change has
-  added or deleted lines that match the given pattern.</p>
-</li>
-<li>
-<p>"git read-tree" with no argument as a way to empty the index is
-  deprecated; we might want to remove it in the future.  Users can
-  use the new --empty option to be more explicit instead.</p>
-</li>
-<li>
-<p>"git repack -f" does not spend cycles to recompress objects in the
-  non-delta representation anymore (use -F if you really mean it
-  e.g. after you changed the core.compression variable setting).</p>
-</li>
-<li>
-<p>"git merge --log" used to limit the resulting merge log to 20
-  entries; this is now customizable by giving e.g. "--log=47".</p>
-</li>
-<li>
-<p>"git merge" may work better when all files were moved out of a
-  directory in one branch while a new file is created in place of that
-  directory in the other branch.</p>
-</li>
-<li>
-<p>"git merge" learned the "--abort" option, synonymous to
-  "git reset --merge" when a merge is in progress.</p>
-</li>
-<li>
-<p>"git notes" learned the "merge" subcommand to merge notes refs.
-  In addition to the default manual conflict resolution, there are
-  also several notes merge strategies for automatically resolving
-  notes merge conflicts.</p>
-</li>
-<li>
-<p>"git rebase --autosquash" can use SHA-1 object names to name the
-  commit which is to be fixed up (e.g. "fixup! e83c5163").</p>
-</li>
-<li>
-<p>The default "recursive" merge strategy learned the --rename-threshold
-  option to influence the rename detection, similar to the -M option
-  of "git diff".  From the "git merge" frontend, the "-X<strategy option>"
-  interface, e.g. "git merge -Xrename-threshold=50% ...", can be used
-  to trigger this.</p>
-</li>
-<li>
-<p>The "recursive" strategy also learned to ignore various whitespace
-  changes; the most notable is -Xignore-space-at-eol.</p>
-</li>
-<li>
-<p>"git send-email" learned "--to-cmd", similar to "--cc-cmd", to read
-  the recipient list from a command output.</p>
-</li>
-<li>
-<p>"git send-email" learned to read and use "To:" from its input files.</p>
-</li>
-<li>
-<p>you can extend "git shell", which is often used on boxes that allow
-  git-only login over ssh as login shell, with a custom set of
-  commands.</p>
-</li>
-<li>
-<p>The current branch name in "git status" output can be colored differently
-  from the generic header color by setting the "color.status.branch" variable.</p>
-</li>
-<li>
-<p>"git submodule sync" updates metainformation for all submodules,
-  not just the ones that have been checked out.</p>
-</li>
-<li>
-<p>gitweb can use a custom 'highlight' command with its configuration file.</p>
-</li>
-<li>
-<p>"git log --author=me --author=her" did not find commits written by
-  me or by her; instead it looked for commits written by me and by
-  her, which is impossible.</p>
-</li>
-<li>
-<p>"git push --progress" shows progress indicators now.</p>
-</li>
-<li>
-<p>"git rebase -i" showed a confusing error message when given a
-  branch name that does not exist.</p>
-</li>
-<li>
-<p>"git repack" places its temporary packs under $GIT_OBJECT_DIRECTORY/pack
-  instead of $GIT_OBJECT_DIRECTORY/ to avoid cross directory renames.</p>
-</li>
-<li>
-<p>"git submodule update --recursive --other-flags" passes flags down
-  to its subinvocations.</p>
 </li>
 </ul>]]></content:encoded>
     </item>
