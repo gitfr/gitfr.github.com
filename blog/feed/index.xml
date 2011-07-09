@@ -10,7 +10,7 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sat, 09 Jul 2011 18:36:24 GMT</pubDate>
+    <pubDate>Sat, 09 Jul 2011 18:45:36 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
@@ -23,7 +23,7 @@
       <description>gitfr sur GitHub</description>
       <content:encoded><![CDATA[<p>Par pure feinéantise intellectuelle, je n'ai pas voulu prendre mon temps pour
 tester diverses solutions techniques pour le blog. J'ai décidé d'aller au
-plus vite en utilisant les services d'un blog en ligne (<code>tumblr.com</code> en 
+plus vite en utilisant les services d'un blog en ligne (tumblr en 
 l'occurrence). Mal m'en a pris ! Malgré quelques avantages indéniables, j'ai
 ressenti très rapidement les limitations du système :</p>
 <ul>
@@ -54,7 +54,7 @@ ressenti très rapidement les limitations du système :</p>
 <p>Ce blog est maintenant propulsé par <a href="http://www.blogofile.com/">Blogofile</a>,
 un générateur de site statique, ce qui permet d'être hébergé sur GitHub. 
 Gitfr utilise Git, la boucle est bouclée ! :).</p>
-<p>Vous trouverez ce sitea sous 2 formes :</p>
+<p>Vous trouverez ce site sous 2 formes :</p>
 <ul>
 <li>
 <p>Les <a href="https://github.com/gitfr/website/">sources du site</a>, avec les articles
