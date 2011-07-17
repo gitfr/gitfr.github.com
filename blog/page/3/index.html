@@ -65,6 +65,199 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.5-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/25/git-1.7.5-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5 publiée">Git 1.7.5 publiée</a></h2>
+  <p class="related"><strong>25/04/2011 04:10 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/atelier'>atelier</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Nouvelle évolution de la banche 1.7.x avec cette 1.7.5.  Que pouvons nous dire sur cette nouvelle version qui contient plus de 500 commits de 70 contributeurs depuis la 1.7.4 ? Voici quelques changements intéressants à mes yeux :</p>
+<ul>
+<li>
+<p>Le code est prêt pour l'internationalisation !</p>
+</li>
+<li>
+<p>(<strong>maj</strong>) La commande <code>repo-config</code> (qui est un fait un alias de la commande <code>config</code>) est officiellement à éviter (<em>deprecated</em>).</p>
+</li>
+<li>
+<p>Vous pouvez vous détacher d'une référence en faisant <code>git checkout --detach $reference</code>. C'est principalement pour inspection ou vérification.</p>
+</li>
+<li>
+<p>(<strong>maj</strong>) Il est maintenant possible de spécifier une stratégie de merge lors d'un cherry-pick ou d'un revert.</p>
+</li>
+<li>
+<p>La commande cherry-pick se souvient du commit ou s'est passé un conflit, permettant de continuer plus facilement.</p>
+</li>
+<li>
+<p>Il est possible de visualiser 2 branches divergentes sans les changements équivalents avec les options <code>--cherry</code> et <code>--cherry-mark</code>.</p>
+</li>
+</ul>
+<h2>Le changelog :</h2>
+<ul>
+<li>
+<p>Various MinGW portability fixes.</p>
+</li>
+<li>
+<p>Various git-p4 enhancements (in contrib).</p>
+</li>
+<li>
+<p>Various vcs-svn, git-svn and gitk enhancements and fixes.</p>
+</li>
+<li>
+<p>Various git-gui updates (0.14.0).</p>
+</li>
+<li>
+<p>Update to more modern HP-UX port.</p>
+</li>
+<li>
+<p>The codebase is getting prepared for i18n/l10n; no translated
+  strings nor translation mechanism in the code yet, but the strings
+  are being marked for l10n.</p>
+</li>
+<li>
+<p>The bash completion script can now complete symmetric difference
+  for "git diff" command, e.g. "git diff ...bra<TAB>".</p>
+</li>
+<li>
+<p>The default minimum length of abbreviated and unique object names
+  can now be configured by setting the core.abbrev configuration
+  variable.</p>
+</li>
+<li>
+<p>"git apply -v" reports offset lines when the patch does not apply at
+  the exact location recorded in the diff output.</p>
+</li>
+<li>
+<p>"git config" used to be also known as "git repo-config", but the old
+  name is now officially deprecated.</p>
+</li>
+<li>
+<p>"git checkout --detach <commit>" is a more user friendly synonym for
+  "git checkout <commit>^0".</p>
+</li>
+<li>
+<p>"git checkout" performed on detached HEAD gives a warning and
+  advice when the commit being left behind will become unreachable from
+  any branch or tag.</p>
+</li>
+<li>
+<p>"git cherry-pick" and "git revert" can be told to use a custom merge
+  strategy, similar to "git rebase".</p>
+</li>
+<li>
+<p>"git cherry-pick" remembers which commit failed to apply when it is
+  stopped by conflicts, making it unnecessary to use "commit -c $commit"
+  to conclude it.</p>
+</li>
+<li>
+<p>"git cvsimport" bails out immediately when the cvs server cannot be
+  reached, without spewing unnecessary error messages that complain about
+  the server response it never got.</p>
+</li>
+<li>
+<p>"git fetch" vs "git upload-pack" transfer learned 'no-done'
+  protocol extension to save one round-trip after the content
+  negotiation is done. This saves one HTTP RPC, reducing the overall
+  latency for a trivial fetch.</p>
+</li>
+<li>
+<p>"git fetch" can be told to recursively fetch submodules on-demand.</p>
+</li>
+<li>
+<p>"git grep -f <filename>" learned to treat "-" as "read from the
+  standard input stream".</p>
+</li>
+<li>
+<p>"git grep --no-index" did not honor pathspecs correctly, returning
+  paths outside the specified area.</p>
+</li>
+<li>
+<p>"git init" learned the --separate-git-dir option to allow the git
+  directory for a new repository created elsewhere and linked via the
+  gitdir mechanism. This is primarily to help submodule support later
+  to switch between a branch of superproject that has the submodule
+  and another that does not.</p>
+</li>
+<li>
+<p>"git log" type commands now understand globbing pathspecs.  You
+  can say "git log -- '*.txt'" for example.</p>
+</li>
+<li>
+<p>"git log" family of commands learned --cherry and --cherry-mark
+  options that can be used to view two diverged branches while omitting
+  or highlighting equivalent changes that appear on both sides of a
+  symmetric difference (e.g. "log --cherry A...B").</p>
+</li>
+<li>
+<p>A lazy "git merge" that didn't say what to merge used to be an error.
+  When run on a branch that has an upstream defined, however, the command
+  now merges from the configured upstream.</p>
+</li>
+<li>
+<p>"git mergetool" learned how to drive "beyond compare 3" as well.</p>
+</li>
+<li>
+<p>"git rerere forget" without pathspec used to forget all the saved
+  conflicts that relate to the current merge; it now requires you to
+  give it pathspecs.</p>
+</li>
+<li>
+<p>"git rev-list --objects $revs -- $pathspec" now limits the objects listed
+  in its output properly with the pathspec, in preparation for narrow
+  clones.</p>
+</li>
+<li>
+<p>"git push" with no parameters gives better advice messages when
+  "tracking" is used as the push.default semantics or there is no remote
+  configured yet.</p>
+</li>
+<li>
+<p>A possible value to the "push.default" configuration variable,
+  'tracking', gained a synonym that more naturally describes what it
+  does, 'upstream'.</p>
+</li>
+<li>
+<p>"git rerere" learned a new subcommand "remaining" that is similar to
+  "status" and lists the paths that had conflicts which are known to
+  rerere, but excludes the paths that have already been marked as
+  resolved in the index from its output.  "git mergetool" has been
+  updated to use this facility.</p>
+</li>
+<li>
+<p>"git fetch" from a client that is mostly following the remote
+  needlessly told all of its refs to the server for both sides to
+  compute the set of objects that need to be transferred efficiently,
+  instead of stopping when the server heard enough. In a project with
+  many tags, this turns out to be extremely wasteful, especially over
+  the smart HTTP transport (sp/maint-{upload,fetch}-pack-stop-early~1).</p>
+</li>
+<li>
+<p>"git fetch" run from a repository that uses the same repository as
+  its alternate object store as the repository it is fetching from
+  did not tell the server that it already has access to objects
+  reachable from the refs in their common alternate object store,
+  causing it to fetch unnecessary objects (jc/maint-fetch-alt).</p>
+</li>
+<li>
+<p>"git remote add --mirror" created a configuration that is suitable for
+  doing both a mirror fetch and a mirror push at the same time, which
+  made little sense.  We now warn and require the command line to specify
+  either --mirror=fetch or --mirror=push.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="annuler-des-modifications"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/04/24/annuler-des-modifications" rel="bookmark" title="Permanent Link to Annuler des modifications">Annuler des modifications</a></h2>
   <p class="related"><strong>24/04/2011 11:28 PM</strong> | categories: 
@@ -320,28 +513,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/22/video-de-la-soiree-git#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="le-million-le-million"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/21/le-million-le-million" rel="bookmark" title="Permanent Link to Le million ! Le million !">Le million ! Le million !</a></h2>
-  <p class="related"><strong>21/04/2011 02:34 PM</strong> | categories: 
-
-<a href='/blog/category/github'>github</a>
- | <a href="http://www.gitfr.net/blog/2011/04/21/le-million-le-million#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>GitHub vient d’annoncer des chiffres impressionnants : 1.1 million de projets et 900 000 Gists. Et si vous êtes bon en calcul mental, vous savez donc que GitHub à dépassé les <strong>2 millions de dépôts Git</strong>. Mais plus intéressant, <strong>70% des projets sont récents</strong> (moins d'un an), ce qui fait environ 4500 nouveau projet par jour, pas mal ! Et d’après les estimations internes, le <strong>million d'utilisateurs</strong> sera atteint le 11 septembre 2011.</p>
-<p>Ces chiffres confortent GitHub comme plateforme d'hébergement de référence. Et par la même occasion, <strong>la montée en puissance</strong> (comme dirait Domenech) de Git. Il parait assez clair à mes yeux que ce dernier soit rapidement l'outil de gestion de source numéro 1 dans le monde du Logiciel Libre.</p>
-<p>Mais gardez un oeil sur <a href="http://mercurial.selenic.com/">Hg</a> ou <a href="http://bazaar.canonical.com/">Bzr</a>, il est important de maitriser plusieurs outils, rien que pour satisfaire, je ne doute pas, votre appétit de connaissance :).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/21/le-million-le-million#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../2">« Articles suivants</a>
   --  
  <a href="../4">Articles précédents »</a>
@@ -365,6 +536,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/08/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
@@ -372,7 +544,6 @@
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.2-publiee">Git 1.7.5.2 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -385,7 +556,7 @@
     <ul>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (46)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (47)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -397,6 +568,7 @@
      <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
@@ -410,7 +582,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>

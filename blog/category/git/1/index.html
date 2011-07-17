@@ -65,6 +65,91 @@
           
   
 <div class="blog_post">
+  <a name="la-difference-entre-hg-et-git"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/08/18/la-difference-entre-hg-et-git" rel="bookmark" title="Permanent Link to La différence entre Hg et Git">La différence entre Hg et Git</a></h2>
+  <p class="related"><strong>18/08/2011 12:40 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/hg'>hg</a>
+ | <a href="http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
+il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
+on vient de SVN : il est possible d'utiliser Hg (Mercurial) comme un <em>SVN qui
+marche</em>, ce n'est pas du tout le cas avec Git car très vite, on se retrouve à
+faire des grosses bétises si on n'a pas compris les concepts importants.</p>
+<h2>Hg, un SVN qui marche</h2>
+<p>Ce n'est pas une attaque contre Hg, bien au contraire, c'est une choix
+réfléchi de se comporter comme tel :</p>
+<ul>
+<li>C'est un outil de gestion de source.</li>
+<li>Chaque commit sait dans quelle branche il se trouve.</li>
+<li>Les possibilités de manipulation des branches sont assez réduites quand
+  on n'ajoute pas d'extensions.</li>
+</ul>
+<p>La volonté du fondateur de Mercurial est de toujours sacrifier les
+fonctionnalités au profit d'une conception claire, là ou Linus Torvalds
+avait en tête dés le départ un certain nombre de fonctionnalités. La vitesse
+étant le seul objectif qui autorise à sacrifier des fonctionnalités.</p>
+<p>Hg est un outil puissant, qui autorise ce que SVN ne permettait
+pas (pour être précis, il le faisait tellement mal qu'on <strong>ne se permettait
+pas</strong> de le faire) : une gestion plus fine des branches. Avec Hg, créer des
+branches et <em>merger</em> ne pose plus de soucis particulier. Comme le dit 
+l'article :</p>
+<blockquote>
+<p>For Hg, the instructor goes through the Hg primer with the student. The
+student is then left to use Hg with the instructor watching. Every time
+the student begins to think about branching or merging, the instructor his
+the student over the head with the bat. This provides a negative
+reinforcement for the student's SVN branching and merging habits.</p>
+</blockquote>
+<p>Une fois assimilées la gestion des branches et la notion de distribué, on se
+débrouille relativement bien. Je connais d'ailleurs peu d'utilisateurs
+de Mercurial qui ont étudiés le DAG, ou les possiblités avancées des 
+branches (rebase, cherry-pick...).</p>
+<h2>Git, un outil de gestion de contenu</h2>
+<p>C'est une notion importante à saisir, Git n'est <strong>pas</strong> un outil de getion de
+source (VCS). Comme avec n'importe quel outil de contenu, il est possible de
+modifier ou de supprimer ce que l'on veut : Git permet de <strong>modifier
+l'historique</strong>, ce qui n'est pas le cas d'un VCS, comme CVS, SVN ou Hg. De
+ce postulat simple découle une autre philosophie, et donc une utilisation
+sensiblement différente : une distinction entre <em>branche du DAG</em> et <em>branche
+utilisateur</em>.</p>
+<p>Une branche du <strong>DAG</strong> (<em>directed Acyclic Graph</em> ou <em>graphe orienté acyclique</em>)
+est manipulé par Git et permet de suivre les modifications du code : qui est
+le descendant de qui ? Avec ce graphe, il est simple pour un DVCS de savoir
+quoi faire lors d'une opération comme une fusion (un merge). Mais chaque
+branche est <strong>anonyme</strong>, elle ne porte pas de nom. Les noms de branches
+sont dans un <strong>espace différent</strong>, distinct, qui permet de les manipuler
+indifféremment du DAG. Ou inversement de manipuler le DAG sans toucher aux noms.
+Cet espace utilisateur est appelé <strong>référence</strong>.</p>
+<p><strong>Note</strong> : Je reviendrai la dessus dans un prochain billet, il est temps
+maintenant de transformer la conférence #gitfr en billet.</p>
+<p>Cette distinction est source de confusion, d'erreur et de déception. Mais c'est
+ce qui rend Git si <strong>puissant</strong> !</p>
+<p>C'est ce que dit la suite du billet :</p>
+<blockquote>
+<p>At the very beginning, the instructor bashes the student repeatedly over the
+head with the bat until all brain cells containing any memory of SVN are
+destroyed. The instructor then teaches the student the Git primer.</p>
+</blockquote>
+<p>J'aime beaucoup cette image :). Il ne faut surtout pas utiliser Git comme on
+utilise SVN, ni de prêt ni de loin, il faut <strong>ré-apprendre</strong> ce qu'est le
+contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
+première de la création de #gitfr.</p>
+<p>Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
+un champ des possibles inimaginable quand on vient de SVN...</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="google-code-supporte-git"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/08/17/google-code-supporte-git" rel="bookmark" title="Permanent Link to Google Code supporte Git">Google Code supporte Git</a></h2>
   <p class="related"><strong>17/08/2011 06:35 PM</strong> | categories: 
@@ -596,88 +681,6 @@ par Junio.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.5.1-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.1-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.1 publiée">Git 1.7.5.1 publiée</a></h2>
-  <p class="related"><strong>13/06/2011 01:57 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
-<h2>Le changelog</h2>
-<ul>
-<li>
-<p>When an object "$tree:$path" does not exist, if $path does exist in the
-  subtree of $tree that corresponds to the subdirectory the user is in,
-  git now suggests using "$tree:./$path" in addition to the advice to use
-  the full path from the root of the working tree.</p>
-</li>
-<li>
-<p>The "--date=relative" output format used to say "X years, 12 months"
-  when it should have said "X+1 years".</p>
-</li>
-<li>
-<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
-  to issue a small POST (which uses content-length) and then a large
-  POST (which uses chunked) back to back.</p>
-</li>
-<li>
-<p>"git clean" used to fail on an empty directory that is not readable,
-  even though rmdir(2) could remove such a directory.  Now we attempt it
-  as the last resort.</p>
-</li>
-<li>
-<p>The "--dirstat" option of "diff" family of commands used to totally
-  ignore a change that only rearranged lines within a file.  Such a
-  change now counts as at least a minimum but non zero change.</p>
-</li>
-<li>
-<p>The "--dirstat" option of "diff" family of commands used to use the
-  pathname in the original, instead of the pathname in the result,
-  when renames are involved.</p>
-</li>
-<li>
-<p>"git pack-object" did not take core.bigfilethreashold into account
-  (unlike fast-import); now it does.</p>
-</li>
-<li>
-<p>"git reflog" ignored options like "--format=.." on the command line.</p>
-</li>
-<li>
-<p>"git stash apply" used to refuse to work if there was any change in
-  the working tree, even when the change did not overlap with the change
-  the stash recorded.</p>
-</li>
-<li>
-<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
-  did not have that many stash entries.</p>
-</li>
-<li>
-<p>An error message from "git send-email" to diagnose a broken SMTP
-  connection configuration lacked a space between "hello=<smtp-domain>"
-  and "port=<smtp-server-port>".</p>
-</li>
-<li>
-<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
-  mean the same thing.</p>
-</li>
-<li>
-<p>"git upload-pack" (hence "git push" over git native protocol) had a
-  subtle race condition that could lead to a deadlock.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -699,6 +702,7 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/08/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
@@ -706,7 +710,6 @@ par Junio.</p>
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.2-publiee">Git 1.7.5.2 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -719,7 +722,7 @@ par Junio.</p>
     <ul>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (46)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (47)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -731,6 +734,7 @@ par Junio.</p>
      <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
@@ -744,7 +748,7 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>

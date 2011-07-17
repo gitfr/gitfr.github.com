@@ -7,12 +7,92 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-07-17T18:58:02Z</updated>
+  <updated>2011-07-17T23:38:14Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[La différence entre Hg et Git]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git" />
+    <id>http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git</id>
+    <updated>2011-08-18T00:40:00Z</updated>
+    <published>2011-08-18T00:40:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="hg" />
+    <summary type="html"><![CDATA[La différence entre Hg et Git]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git"><![CDATA[<p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
+il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
+on vient de SVN : il est possible d'utiliser Hg (Mercurial) comme un <em>SVN qui
+marche</em>, ce n'est pas du tout le cas avec Git car très vite, on se retrouve à
+faire des grosses bétises si on n'a pas compris les concepts importants.</p>
+<h2>Hg, un SVN qui marche</h2>
+<p>Ce n'est pas une attaque contre Hg, bien au contraire, c'est une choix
+réfléchi de se comporter comme tel :</p>
+<ul>
+<li>C'est un outil de gestion de source.</li>
+<li>Chaque commit sait dans quelle branche il se trouve.</li>
+<li>Les possibilités de manipulation des branches sont assez réduites quand
+  on n'ajoute pas d'extensions.</li>
+</ul>
+<p>La volonté du fondateur de Mercurial est de toujours sacrifier les
+fonctionnalités au profit d'une conception claire, là ou Linus Torvalds
+avait en tête dés le départ un certain nombre de fonctionnalités. La vitesse
+étant le seul objectif qui autorise à sacrifier des fonctionnalités.</p>
+<p>Hg est un outil puissant, qui autorise ce que SVN ne permettait
+pas (pour être précis, il le faisait tellement mal qu'on <strong>ne se permettait
+pas</strong> de le faire) : une gestion plus fine des branches. Avec Hg, créer des
+branches et <em>merger</em> ne pose plus de soucis particulier. Comme le dit 
+l'article :</p>
+<blockquote>
+<p>For Hg, the instructor goes through the Hg primer with the student. The
+student is then left to use Hg with the instructor watching. Every time
+the student begins to think about branching or merging, the instructor his
+the student over the head with the bat. This provides a negative
+reinforcement for the student's SVN branching and merging habits.</p>
+</blockquote>
+<p>Une fois assimilées la gestion des branches et la notion de distribué, on se
+débrouille relativement bien. Je connais d'ailleurs peu d'utilisateurs
+de Mercurial qui ont étudiés le DAG, ou les possiblités avancées des 
+branches (rebase, cherry-pick...).</p>
+<h2>Git, un outil de gestion de contenu</h2>
+<p>C'est une notion importante à saisir, Git n'est <strong>pas</strong> un outil de getion de
+source (VCS). Comme avec n'importe quel outil de contenu, il est possible de
+modifier ou de supprimer ce que l'on veut : Git permet de <strong>modifier
+l'historique</strong>, ce qui n'est pas le cas d'un VCS, comme CVS, SVN ou Hg. De
+ce postulat simple découle une autre philosophie, et donc une utilisation
+sensiblement différente : une distinction entre <em>branche du DAG</em> et <em>branche
+utilisateur</em>.</p>
+<p>Une branche du <strong>DAG</strong> (<em>directed Acyclic Graph</em> ou <em>graphe orienté acyclique</em>)
+est manipulé par Git et permet de suivre les modifications du code : qui est
+le descendant de qui ? Avec ce graphe, il est simple pour un DVCS de savoir
+quoi faire lors d'une opération comme une fusion (un merge). Mais chaque
+branche est <strong>anonyme</strong>, elle ne porte pas de nom. Les noms de branches
+sont dans un <strong>espace différent</strong>, distinct, qui permet de les manipuler
+indifféremment du DAG. Ou inversement de manipuler le DAG sans toucher aux noms.
+Cet espace utilisateur est appelé <strong>référence</strong>.</p>
+<p><strong>Note</strong> : Je reviendrai la dessus dans un prochain billet, il est temps
+maintenant de transformer la conférence #gitfr en billet.</p>
+<p>Cette distinction est source de confusion, d'erreur et de déception. Mais c'est
+ce qui rend Git si <strong>puissant</strong> !</p>
+<p>C'est ce que dit la suite du billet :</p>
+<blockquote>
+<p>At the very beginning, the instructor bashes the student repeatedly over the
+head with the bat until all brain cells containing any memory of SVN are
+destroyed. The instructor then teaches the student the Git primer.</p>
+</blockquote>
+<p>J'aime beaucoup cette image :). Il ne faut surtout pas utiliser Git comme on
+utilise SVN, ni de prêt ni de loin, il faut <strong>ré-apprendre</strong> ce qu'est le
+contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
+première de la création de #gitfr.</p>
+<p>Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
+un champ des possibles inimaginable quand on vient de SVN...</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -606,193 +686,5 @@ par Junio.</p>
 <p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
 <p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
 <p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Git 1.7.5 publiée]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee" />
-    <id>http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee</id>
-    <updated>2011-04-25T04:10:00Z</updated>
-    <published>2011-04-25T04:10:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <summary type="html"><![CDATA[Git 1.7.5 publiée]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee"><![CDATA[<p>Nouvelle évolution de la banche 1.7.x avec cette 1.7.5.  Que pouvons nous dire sur cette nouvelle version qui contient plus de 500 commits de 70 contributeurs depuis la 1.7.4 ? Voici quelques changements intéressants à mes yeux :</p>
-<ul>
-<li>
-<p>Le code est prêt pour l'internationalisation !</p>
-</li>
-<li>
-<p>(<strong>maj</strong>) La commande <code>repo-config</code> (qui est un fait un alias de la commande <code>config</code>) est officiellement à éviter (<em>deprecated</em>).</p>
-</li>
-<li>
-<p>Vous pouvez vous détacher d'une référence en faisant <code>git checkout --detach $reference</code>. C'est principalement pour inspection ou vérification.</p>
-</li>
-<li>
-<p>(<strong>maj</strong>) Il est maintenant possible de spécifier une stratégie de merge lors d'un cherry-pick ou d'un revert.</p>
-</li>
-<li>
-<p>La commande cherry-pick se souvient du commit ou s'est passé un conflit, permettant de continuer plus facilement.</p>
-</li>
-<li>
-<p>Il est possible de visualiser 2 branches divergentes sans les changements équivalents avec les options <code>--cherry</code> et <code>--cherry-mark</code>.</p>
-</li>
-</ul>
-<h2>Le changelog :</h2>
-<ul>
-<li>
-<p>Various MinGW portability fixes.</p>
-</li>
-<li>
-<p>Various git-p4 enhancements (in contrib).</p>
-</li>
-<li>
-<p>Various vcs-svn, git-svn and gitk enhancements and fixes.</p>
-</li>
-<li>
-<p>Various git-gui updates (0.14.0).</p>
-</li>
-<li>
-<p>Update to more modern HP-UX port.</p>
-</li>
-<li>
-<p>The codebase is getting prepared for i18n/l10n; no translated
-  strings nor translation mechanism in the code yet, but the strings
-  are being marked for l10n.</p>
-</li>
-<li>
-<p>The bash completion script can now complete symmetric difference
-  for "git diff" command, e.g. "git diff ...bra<TAB>".</p>
-</li>
-<li>
-<p>The default minimum length of abbreviated and unique object names
-  can now be configured by setting the core.abbrev configuration
-  variable.</p>
-</li>
-<li>
-<p>"git apply -v" reports offset lines when the patch does not apply at
-  the exact location recorded in the diff output.</p>
-</li>
-<li>
-<p>"git config" used to be also known as "git repo-config", but the old
-  name is now officially deprecated.</p>
-</li>
-<li>
-<p>"git checkout --detach <commit>" is a more user friendly synonym for
-  "git checkout <commit>^0".</p>
-</li>
-<li>
-<p>"git checkout" performed on detached HEAD gives a warning and
-  advice when the commit being left behind will become unreachable from
-  any branch or tag.</p>
-</li>
-<li>
-<p>"git cherry-pick" and "git revert" can be told to use a custom merge
-  strategy, similar to "git rebase".</p>
-</li>
-<li>
-<p>"git cherry-pick" remembers which commit failed to apply when it is
-  stopped by conflicts, making it unnecessary to use "commit -c $commit"
-  to conclude it.</p>
-</li>
-<li>
-<p>"git cvsimport" bails out immediately when the cvs server cannot be
-  reached, without spewing unnecessary error messages that complain about
-  the server response it never got.</p>
-</li>
-<li>
-<p>"git fetch" vs "git upload-pack" transfer learned 'no-done'
-  protocol extension to save one round-trip after the content
-  negotiation is done. This saves one HTTP RPC, reducing the overall
-  latency for a trivial fetch.</p>
-</li>
-<li>
-<p>"git fetch" can be told to recursively fetch submodules on-demand.</p>
-</li>
-<li>
-<p>"git grep -f <filename>" learned to treat "-" as "read from the
-  standard input stream".</p>
-</li>
-<li>
-<p>"git grep --no-index" did not honor pathspecs correctly, returning
-  paths outside the specified area.</p>
-</li>
-<li>
-<p>"git init" learned the --separate-git-dir option to allow the git
-  directory for a new repository created elsewhere and linked via the
-  gitdir mechanism. This is primarily to help submodule support later
-  to switch between a branch of superproject that has the submodule
-  and another that does not.</p>
-</li>
-<li>
-<p>"git log" type commands now understand globbing pathspecs.  You
-  can say "git log -- '*.txt'" for example.</p>
-</li>
-<li>
-<p>"git log" family of commands learned --cherry and --cherry-mark
-  options that can be used to view two diverged branches while omitting
-  or highlighting equivalent changes that appear on both sides of a
-  symmetric difference (e.g. "log --cherry A...B").</p>
-</li>
-<li>
-<p>A lazy "git merge" that didn't say what to merge used to be an error.
-  When run on a branch that has an upstream defined, however, the command
-  now merges from the configured upstream.</p>
-</li>
-<li>
-<p>"git mergetool" learned how to drive "beyond compare 3" as well.</p>
-</li>
-<li>
-<p>"git rerere forget" without pathspec used to forget all the saved
-  conflicts that relate to the current merge; it now requires you to
-  give it pathspecs.</p>
-</li>
-<li>
-<p>"git rev-list --objects $revs -- $pathspec" now limits the objects listed
-  in its output properly with the pathspec, in preparation for narrow
-  clones.</p>
-</li>
-<li>
-<p>"git push" with no parameters gives better advice messages when
-  "tracking" is used as the push.default semantics or there is no remote
-  configured yet.</p>
-</li>
-<li>
-<p>A possible value to the "push.default" configuration variable,
-  'tracking', gained a synonym that more naturally describes what it
-  does, 'upstream'.</p>
-</li>
-<li>
-<p>"git rerere" learned a new subcommand "remaining" that is similar to
-  "status" and lists the paths that had conflicts which are known to
-  rerere, but excludes the paths that have already been marked as
-  resolved in the index from its output.  "git mergetool" has been
-  updated to use this facility.</p>
-</li>
-<li>
-<p>"git fetch" from a client that is mostly following the remote
-  needlessly told all of its refs to the server for both sides to
-  compute the set of objects that need to be transferred efficiently,
-  instead of stopping when the server heard enough. In a project with
-  many tags, this turns out to be extremely wasteful, especially over
-  the smart HTTP transport (sp/maint-{upload,fetch}-pack-stop-early~1).</p>
-</li>
-<li>
-<p>"git fetch" run from a repository that uses the same repository as
-  its alternate object store as the repository it is fetching from
-  did not tell the server that it already has access to objects
-  reachable from the refs in their common alternate object store,
-  causing it to fetch unnecessary objects (jc/maint-fetch-alt).</p>
-</li>
-<li>
-<p>"git remote add --mirror" created a configuration that is suitable for
-  doing both a mirror fetch and a mirror push at the same time, which
-  made little sense.  We now warn and require the command line to specify
-  either --mirror=fetch or --mirror=push.</p>
-</li>
-</ul>]]></content>
   </entry>
 </feed>
