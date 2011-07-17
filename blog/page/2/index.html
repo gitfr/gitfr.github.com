@@ -65,6 +65,88 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.5.1-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.1-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.1 publiée">Git 1.7.5.1 publiée</a></h2>
+  <p class="related"><strong>13/06/2011 01:57 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>When an object "$tree:$path" does not exist, if $path does exist in the
+  subtree of $tree that corresponds to the subdirectory the user is in,
+  git now suggests using "$tree:./$path" in addition to the advice to use
+  the full path from the root of the working tree.</p>
+</li>
+<li>
+<p>The "--date=relative" output format used to say "X years, 12 months"
+  when it should have said "X+1 years".</p>
+</li>
+<li>
+<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
+  to issue a small POST (which uses content-length) and then a large
+  POST (which uses chunked) back to back.</p>
+</li>
+<li>
+<p>"git clean" used to fail on an empty directory that is not readable,
+  even though rmdir(2) could remove such a directory.  Now we attempt it
+  as the last resort.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to totally
+  ignore a change that only rearranged lines within a file.  Such a
+  change now counts as at least a minimum but non zero change.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to use the
+  pathname in the original, instead of the pathname in the result,
+  when renames are involved.</p>
+</li>
+<li>
+<p>"git pack-object" did not take core.bigfilethreashold into account
+  (unlike fast-import); now it does.</p>
+</li>
+<li>
+<p>"git reflog" ignored options like "--format=.." on the command line.</p>
+</li>
+<li>
+<p>"git stash apply" used to refuse to work if there was any change in
+  the working tree, even when the change did not overlap with the change
+  the stash recorded.</p>
+</li>
+<li>
+<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
+  did not have that many stash entries.</p>
+</li>
+<li>
+<p>An error message from "git send-email" to diagnose a broken SMTP
+  connection configuration lacked a space between "hello=<smtp-domain>"
+  and "port=<smtp-server-port>".</p>
+</li>
+<li>
+<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
+  mean the same thing.</p>
+</li>
+<li>
+<p>"git upload-pack" (hence "git push" over git native protocol) had a
+  subtle race condition that could lead to a deadlock.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="presentation-git-le-01-06-a-strasbourg"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg" rel="bookmark" title="Permanent Link to Présentation Git le 01/06 à Strasbourg">Présentation Git le 01/06 à Strasbourg</a></h2>
   <p class="related"><strong>18/05/2011 01:25 PM</strong> | categories: 
@@ -436,68 +518,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="annuler-des-modifications"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/24/annuler-des-modifications" rel="bookmark" title="Permanent Link to Annuler des modifications">Annuler des modifications</a></h2>
-  <p class="related"><strong>24/04/2011 11:28 PM</strong> | categories: 
-
-<a href='/blog/category/git-reset'>git-reset</a>, <a href='/blog/category/git-revert'>git-revert</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/git-checkout'>git-checkout</a>
- | <a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Vous pouvez annuler votre travail de plusieurs manières.</p>
-<h2>git revert</h2>
-<p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
-<p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
-<h2>git reset</h2>
-<p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
-<ul>
-<li>
-<p><code>git reset $path</code> est l'inverse de la commande <em>git add</em>, cela permet de supprimer des entrées dans l'index.</p>
-</li>
-<li>
-<p><code>git reset $commit $path</code> permet de réinitialiser le contenu du fichier situé dans l'index avec le contenu du fichier du commit spécifié. </p>
-</li>
-<li>
-<p><code>git reset -p $path</code> est l'inverse de la commande <em>git add -p</em>, pour sélectionner les <em>hunks</em> à supprimer de l'index.</p>
-</li>
-<li>
-<p><code>git reset -p $commit $path</code>. Identique à la commande précédente, mais Git affiche les <em>hunks</em> entre l'index et le commit spécifié (et non avec <em>HEAD</em> comme la commande précédente).</p>
-</li>
-<li>
-<p><code>git reset --mode $commit</code> permet de revenir à un ancien commit. Le mode permet de choisir si on veut modifier le répertoire de travail, l'index ou le dépôt. Les modes disponibles sont :</p>
-</li>
-<li>
-<p><code>--soft</code>, pour modifier uniquement le dépôt</p>
-</li>
-<li>
-<p><code>--mixed</code>, pour modifier dépôt et index</p>
-</li>
-<li>
-<p><code>--hard</code>, pour modifier dépôt, index et répertoire de travail</p>
-</li>
-</ul>
-<p>Je vous laisse découvrir l'utilité des options --keep et --merge :).</p>
-<p>Ne vous laissez pas prendre par la complexité de la section discussion du manuel, qui présente tous les cas de figures. Comme nous avons 3 (dépôt, index et répertoire de travail) et non plus 2 états, les possibilités sont multipliées.</p>
-<p>Voici un schéma simplifié (qui vient du blog http://blog.plover.com/prog/git-reset.html) qui correspond au cas d'utilisation le plus courant :</p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png" /></p>
-<p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
-<p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
-<h2>git checkout</h2>
-<p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
-<h2>Conclusion</h2>
-<p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
-<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../1">« Articles suivants</a>
   --  
  <a href="../3">Articles précédents »</a>
@@ -521,6 +541,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
     <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
@@ -528,7 +549,6 @@
     <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
     <li><a href="/blog/2011/06/13/git-1.7.5.2-publiee">Git 1.7.5.2 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.1-publiee">Git 1.7.5.1 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -541,7 +561,7 @@
     <ul>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (45)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (46)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -551,7 +571,8 @@
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
-     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (9)</li>
+     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
+     <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
@@ -565,6 +586,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>

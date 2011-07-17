@@ -7,12 +7,74 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-07-09T18:45:36Z</updated>
+  <updated>2011-07-17T18:58:02Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Google Code supporte Git]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git" />
+    <id>http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git</id>
+    <updated>2011-08-17T18:35:00Z</updated>
+    <published>2011-08-17T18:35:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="github" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="google code" />
+    <summary type="html"><![CDATA[Google Code supporte Git]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git"><![CDATA[<p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
+maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
+<strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
+support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
+les 3 plus gros hébergeurs de code (Sourceforge, Google Code et GitHub)
+supportent maitenant notre DVCS préféré. Cela signifie aussi que l'avenir
+s'assombrie pour Mercurial, qui se retrouve (presque) dans la même
+situation que Bzr, avec un seul hébergeur <em>dépendant</em> important. Terme mal
+choisi pour désigner un hébergeur qui s'appuie uniquement sur une techno, en
+l'occurence <a href="https://bitbucket.org/">Bitbucket</a> (<a href="https://launchpad.net/">Launchpad</a>
+pour Bzr).</p>
+<p>Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
+raisons, l'une <strong>technique</strong> et l'autre <strong>marketing</strong>.</p>
+<h2>L'argument technique</h2>
+<p>Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
+<a href="http://code.google.com/p/gerrit/">Gerrit</a> et <a href="http://www.eclipse.org/jgit/">JGit</a> 
+(ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
+sur la liste de diffusion, Git supporte depuis la version 1.6.6 le protocole
+<strong>smart http</strong>. Ce dernier gère bien mieux le protocole http sur lequel Google
+Code s'appuie <strong>massivement</strong>. Ce qui a ouvert la voie, il <em>suffisait</em> (hum)
+ensuite de modifier Git pour gérer l'infrastructure Google. Si cela vous
+intéresse, jeter un oeil sur la video
+<a href="http://www.youtube.com/watch?v=ri796Hx8las">Google I/O 2009 - Mercurial on BigTable</a>
+qui explique cette même modification avec Mercurial. Une vidéo similaire
+devrait sortir pour Git (chouette !).</p>
+<p>Chose étonnante, d'après Dave Borowitz, Google code n'utilise pas JGit mais
+<a href="http://www.samba.org/~jelmer/dulwich/">Dulwich</a>, codé en Python. Je suis
+curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
+n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
+pas en dire plus).</p>
+<h2>L'argument marketing</h2>
+<p>La montée en puissance de GitHub ne fait aucun doute, cet
+<a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php">article</a>
+le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
+GitHub représente le total des commits de Sourceforge, Google Code et
+CodePlex <strong>réunis</strong>. Même si ce chiffre est à prendre avec de grosses pincettes,
+les DVCS poussent au commit unitaire donc à en produire bien plus, c'est
+un chiffre intéressant (le nombre de lignes de code serait lui significatif).</p>
+<p>Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
+entendre que ces communautés ont eux aussi (au moins partiellement) basculées
+sur GitHub (après les communautés Ruby, Javascript et Python).</p>
+<h2>Pour conclure</h2>
+<p>Redmonk dit que <strong>GitHub est le nouveau centre de gravité</strong>, les chiffres le
+prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
+poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
+moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
+augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -732,64 +794,5 @@ par Junio.</p>
   either --mirror=fetch or --mirror=push.</p>
 </li>
 </ul>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Annuler des modifications]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications" />
-    <id>http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications</id>
-    <updated>2011-04-24T23:28:00Z</updated>
-    <published>2011-04-24T23:28:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="git-reset" />
-    <category scheme="http://www.gitfr.net/blog" term="git-revert" />
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <category scheme="http://www.gitfr.net/blog" term="git-checkout" />
-    <summary type="html"><![CDATA[Annuler des modifications]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications"><![CDATA[<p>Vous pouvez annuler votre travail de plusieurs manières.</p>
-<h2>git revert</h2>
-<p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
-<p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
-<h2>git reset</h2>
-<p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
-<ul>
-<li>
-<p><code>git reset $path</code> est l'inverse de la commande <em>git add</em>, cela permet de supprimer des entrées dans l'index.</p>
-</li>
-<li>
-<p><code>git reset $commit $path</code> permet de réinitialiser le contenu du fichier situé dans l'index avec le contenu du fichier du commit spécifié. </p>
-</li>
-<li>
-<p><code>git reset -p $path</code> est l'inverse de la commande <em>git add -p</em>, pour sélectionner les <em>hunks</em> à supprimer de l'index.</p>
-</li>
-<li>
-<p><code>git reset -p $commit $path</code>. Identique à la commande précédente, mais Git affiche les <em>hunks</em> entre l'index et le commit spécifié (et non avec <em>HEAD</em> comme la commande précédente).</p>
-</li>
-<li>
-<p><code>git reset --mode $commit</code> permet de revenir à un ancien commit. Le mode permet de choisir si on veut modifier le répertoire de travail, l'index ou le dépôt. Les modes disponibles sont :</p>
-</li>
-<li>
-<p><code>--soft</code>, pour modifier uniquement le dépôt</p>
-</li>
-<li>
-<p><code>--mixed</code>, pour modifier dépôt et index</p>
-</li>
-<li>
-<p><code>--hard</code>, pour modifier dépôt, index et répertoire de travail</p>
-</li>
-</ul>
-<p>Je vous laisse découvrir l'utilité des options --keep et --merge :).</p>
-<p>Ne vous laissez pas prendre par la complexité de la section discussion du manuel, qui présente tous les cas de figures. Comme nous avons 3 (dépôt, index et répertoire de travail) et non plus 2 états, les possibilités sont multipliées.</p>
-<p>Voici un schéma simplifié (qui vient du blog http://blog.plover.com/prog/git-reset.html) qui correspond au cas d'utilisation le plus courant :</p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png" /></p>
-<p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
-<p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
-<h2>git checkout</h2>
-<p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
-<h2>Conclusion</h2>
-<p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
-<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>]]></content>
   </entry>
 </feed>
