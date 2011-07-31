@@ -10,17 +10,17 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 17 Jul 2011 23:38:14 GMT</pubDate>
+    <pubDate>Sun, 31 Jul 2011 02:07:22 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <item>
       <title>La différence entre Hg et Git</title>
-      <link>http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git</link>
-      <pubDate>Thu, 18 Aug 2011 00:40:00 CEST</pubDate>
+      <link>http://www.gitfr.net/blog/2011/07/18/la-difference-entre-hg-et-git</link>
+      <pubDate>Mon, 18 Jul 2011 00:40:00 CEST</pubDate>
       <category><![CDATA[git]]></category>
       <category><![CDATA[hg]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/18/la-difference-entre-hg-et-git</guid>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/18/la-difference-entre-hg-et-git</guid>
       <description>La différence entre Hg et Git</description>
       <content:encoded><![CDATA[<p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
 il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
@@ -91,12 +91,12 @@ un champ des possibles inimaginable quand on vient de SVN...</p>]]></content:enc
     </item>
     <item>
       <title>Google Code supporte Git</title>
-      <link>http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git</link>
-      <pubDate>Wed, 17 Aug 2011 18:35:00 CEST</pubDate>
+      <link>http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git</link>
+      <pubDate>Sun, 17 Jul 2011 18:35:00 CEST</pubDate>
       <category><![CDATA[github]]></category>
       <category><![CDATA[git]]></category>
       <category><![CDATA[google code]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git</guid>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git</guid>
       <description>Google Code supporte Git</description>
       <content:encoded><![CDATA[<p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
 maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 

@@ -7,7 +7,7 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-07-17T23:38:14Z</updated>
+  <updated>2011-07-31T02:07:22Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
@@ -19,15 +19,15 @@
       <uri>http://www.gitfr.net/blog</uri>
     </author>
     <title type="html"><![CDATA[Google Code supporte Git]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git" />
-    <id>http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git</id>
-    <updated>2011-08-17T18:35:00Z</updated>
-    <published>2011-08-17T18:35:00Z</published>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git" />
+    <id>http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git</id>
+    <updated>2011-07-17T18:35:00Z</updated>
+    <published>2011-07-17T18:35:00Z</published>
     <category scheme="http://www.gitfr.net/blog" term="github" />
     <category scheme="http://www.gitfr.net/blog" term="git" />
     <category scheme="http://www.gitfr.net/blog" term="google code" />
     <summary type="html"><![CDATA[Google Code supporte Git]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/08/17/google-code-supporte-git"><![CDATA[<p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git"><![CDATA[<p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
 maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
 <strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
 support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
