@@ -10,10 +10,47 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 31 Jul 2011 02:07:22 GMT</pubDate>
+    <pubDate>Sat, 06 Aug 2011 21:54:01 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Le commit initial vide</title>
+      <link>http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide</link>
+      <pubDate>Sun, 31 Jul 2011 04:13:00 CEST</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[astuce]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide</guid>
+      <description>Le commit initial vide</description>
+      <content:encoded><![CDATA[<p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
+les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
+initial vide avec la commande :</p>
+<pre><code>$git commit --allow-empty -m "Initial commit."
+</code></pre>
+<p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
+simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
+<p>Examinons deux exemples.</p>
+<h2>rebase -i</h2>
+<p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
+mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
+c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
+je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
+contenu est accessible.</p>
+<h2>Travailler directement dans une branche</h2>
+<p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
+des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
+merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
+choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
+raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
+disparait de lui-même : mon premier commit de contenu (le deuxième dans le
+graphe donc) sera lui, dans une branche.</p>
+<h2>Conclusion</h2>
+<p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
+graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
+vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
+Voir des mois après :).</p>]]></content:encoded>
+    </item>
     <item>
       <title>La différence entre Hg et Git</title>
       <link>http://www.gitfr.net/blog/2011/07/18/la-difference-entre-hg-et-git</link>
@@ -623,20 +660,6 @@ par Junio.</p>
   subtle race condition that could lead to a deadlock.</p>
 </li>
 </ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Traduction de Git en français</title>
-      <link>http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais</link>
-      <pubDate>Mon, 25 Apr 2011 13:30:00 CEST</pubDate>
-      <category><![CDATA[traduction]]></category>
-      <category><![CDATA[git]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais</guid>
-      <description>Traduction de Git en français</description>
-      <content:encoded><![CDATA[<p>Apr 25th, 2011 1:30pm</p>
-<p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
-<p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
-<p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

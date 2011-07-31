@@ -10,10 +10,60 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 31 Jul 2011 02:07:22 GMT</pubDate>
+    <pubDate>Sat, 06 Aug 2011 21:54:01 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Liste de diffusion pour la traduction Git</title>
+      <link>http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</link>
+      <pubDate>Sat, 06 Aug 2011 23:13:00 CEST</pubDate>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</guid>
+      <description>Liste de diffusion pour la traduction Git</description>
+      <content:encoded><![CDATA[<p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
+<a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
+vient d'être créée. Si ça vous branche de vous prendre la tête sur la
+meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
+<em>.po</em>, vous êtes le bienvenu ! :).</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Le commit initial vide</title>
+      <link>http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide</link>
+      <pubDate>Sun, 31 Jul 2011 04:13:00 CEST</pubDate>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[astuce]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide</guid>
+      <description>Le commit initial vide</description>
+      <content:encoded><![CDATA[<p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
+les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
+initial vide avec la commande :</p>
+<pre><code>$git commit --allow-empty -m "Initial commit."
+</code></pre>
+<p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
+simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
+<p>Examinons deux exemples.</p>
+<h2>rebase -i</h2>
+<p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
+mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
+c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
+je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
+contenu est accessible.</p>
+<h2>Travailler directement dans une branche</h2>
+<p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
+des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
+merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
+choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
+raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
+disparait de lui-même : mon premier commit de contenu (le deuxième dans le
+graphe donc) sera lui, dans une branche.</p>
+<h2>Conclusion</h2>
+<p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
+graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
+vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
+Voir des mois après :).</p>]]></content:encoded>
+    </item>
     <item>
       <title>La différence entre Hg et Git</title>
       <link>http://www.gitfr.net/blog/2011/07/18/la-difference-entre-hg-et-git</link>
@@ -541,146 +591,6 @@ par Junio.</p>
 <p>Compressed tarball gitweb generates used to be made with the timestamp
   of the tarball generation; this was bad because snapshot from the same
   tree should result in a same tarball.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.5.2 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</link>
-      <pubDate>Mon, 13 Jun 2011 02:05:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</guid>
-      <description>Git 1.7.5.2 publiée</description>
-      <content:encoded><![CDATA[<p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>"git add -p" did not work correctly when a hunk is split and then
-  one of them was given to the editor.</p>
-</li>
-<li>
-<p>"git add -u" did not resolve a conflict where our history deleted and
-  their history modified the same file, and the working tree resolved to
-  keep a file.</p>
-</li>
-<li>
-<p>"git cvsimport" did not know that CVSNT stores its password file in a
-  location different from the traditional CVS.</p>
-</li>
-<li>
-<p>"git diff-files" did not show the mode information from the working
-  tree side of an unmerged path correctly.</p>
-</li>
-<li>
-<p>"git diff -M --cached" used to use unmerged path as a possible rename
-  source candidate, which made no sense.</p>
-</li>
-<li>
-<p>The option name parser in "git fast-import" used prefix matches for
-  some options where it shouldn't, and accepted non-existent options,
-  e.g. "--relative-marksmith" or "--forceps".</p>
-</li>
-<li>
-<p>"git format-patch" did not quote RFC822 special characters in the
-  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
-  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
-</li>
-<li>
-<p>"git format-patch" when run with "--quiet" option used to produce a
-  nonsense result that consists of alternating empty output.</p>
-</li>
-<li>
-<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
-  variables did not override the fallback default merge.<option>
-  configuration variables such as merge.ff, merge.log, etc.</p>
-</li>
-<li>
-<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
-  handling a "both sides added, differently" conflict.</p>
-</li>
-<li>
-<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
-</li>
-<li>
-<p>"git-p4" (in contrib) used a wrong base image while merge a file that
-  was added on both branches differently.</p>
-</li>
-<li>
-<p>"git rebase -i -p" failed to preserve the history when there is a
-  redundant merge created with the --no-ff option.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.5.1 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee</link>
-      <pubDate>Mon, 13 Jun 2011 01:57:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee</guid>
-      <description>Git 1.7.5.1 publiée</description>
-      <content:encoded><![CDATA[<p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
-<h2>Le changelog</h2>
-<ul>
-<li>
-<p>When an object "$tree:$path" does not exist, if $path does exist in the
-  subtree of $tree that corresponds to the subdirectory the user is in,
-  git now suggests using "$tree:./$path" in addition to the advice to use
-  the full path from the root of the working tree.</p>
-</li>
-<li>
-<p>The "--date=relative" output format used to say "X years, 12 months"
-  when it should have said "X+1 years".</p>
-</li>
-<li>
-<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
-  to issue a small POST (which uses content-length) and then a large
-  POST (which uses chunked) back to back.</p>
-</li>
-<li>
-<p>"git clean" used to fail on an empty directory that is not readable,
-  even though rmdir(2) could remove such a directory.  Now we attempt it
-  as the last resort.</p>
-</li>
-<li>
-<p>The "--dirstat" option of "diff" family of commands used to totally
-  ignore a change that only rearranged lines within a file.  Such a
-  change now counts as at least a minimum but non zero change.</p>
-</li>
-<li>
-<p>The "--dirstat" option of "diff" family of commands used to use the
-  pathname in the original, instead of the pathname in the result,
-  when renames are involved.</p>
-</li>
-<li>
-<p>"git pack-object" did not take core.bigfilethreashold into account
-  (unlike fast-import); now it does.</p>
-</li>
-<li>
-<p>"git reflog" ignored options like "--format=.." on the command line.</p>
-</li>
-<li>
-<p>"git stash apply" used to refuse to work if there was any change in
-  the working tree, even when the change did not overlap with the change
-  the stash recorded.</p>
-</li>
-<li>
-<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
-  did not have that many stash entries.</p>
-</li>
-<li>
-<p>An error message from "git send-email" to diagnose a broken SMTP
-  connection configuration lacked a space between "hello=<smtp-domain>"
-  and "port=<smtp-server-port>".</p>
-</li>
-<li>
-<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
-  mean the same thing.</p>
-</li>
-<li>
-<p>"git upload-pack" (hence "git push" over git native protocol) had a
-  subtle race condition that could lead to a deadlock.</p>
 </li>
 </ul>]]></content:encoded>
     </item>

@@ -65,6 +65,84 @@
           
   
 <div class="blog_post">
+  <a name="eviter-de-commiter-des-fichiers-indesirables"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/04/eviter-de-commiter-des-fichiers-indesirables" rel="bookmark" title="Permanent Link to Eviter de commiter des fichiers indésirables">Eviter de commiter des fichiers indésirables</a></h2>
+  <p class="related"><strong>04/11/2010 02:37 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/04/eviter-de-commiter-des-fichiers-indesirables#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier <code>~./gitignore</code>. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un <code>git add .</code>, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.</p>
+<p>La configuration de ce fichier est trés simple :</p>
+<ul>
+<li>1 ligne par exclusion</li>
+<li>si c'est un répertoire, mettre son nom (comme <code>egg</code>)</li>
+<li>si c'est un fichier, ajouter un wildcard (comme <code>*.egg</code>)</li>
+</ul>
+<p>Enfin, il faut modifier sa configuration Git pour utiliser ce filtre d'exclusion sur tous les dépôts avec la ligne <code>excludesfile=/path/to/.gitignore</code> dans la section <code>[core]</code> (remplacer "/path/to" par le chemin vers votre fichier). Ce qui donne :</p>
+<blockquote>
+<p><code>[core]</code></p>
+<p><code>excludesfile=/home/sdouche/.gitignore</code></p>
+</blockquote>
+<p>Disposer d'un gitignore à deux intérêts :</p>
+<ol>
+<li>éviter de commiter des fichiers indésirables</li>
+<li>ne pas être surchargé d'informations inutiles (présence de fichier <em>non suivis</em>, <strong>untracked</strong> en anglais)</li>
+</ol>
+<p>Nous allons voir plus tard que c'est pénible quand nous avons un <strong>prompt</strong> qui affiche <strong>en permanence</strong> la présence de ces fameux fichiers indésirables.</p>
+<p>Pour plus d'information sur gitignore, je vous conseille la lecture de la <a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">doc</a>.</p>
+<p>Note : il est bien sûr possible de disposer d'un fichier <em>gitignore</em> par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/eviter-de-commiter-des-fichiers-indesirables#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="configuration-minimale-pour-demarrer"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/04/configuration-minimale-pour-demarrer" rel="bookmark" title="Permanent Link to Configuration minimale pour démarrer">Configuration minimale pour démarrer</a></h2>
+  <p class="related"><strong>04/11/2010 02:01 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : </p>
+<blockquote>
+<p><code>$ git config --global user.name "Sebastien Douche"</code></p>
+<p><code>$ git config --global user.email sdouche@gmail.com</code></p>
+</blockquote>
+<p>L'option <code>--global</code> permet de configurer pour tous les dépôts que vous allez utiliser, en enregistrant ces paramètres dans le fichier <code>~/.gitconfig</code>.</p>
+<p>Avec l'option <code>--system</code>, c'est une configuration pour tous les utilisateurs de la machine, et la configuration se trouve dans le fichier <code>/etc/gitconfig</code>.</p>
+<p>Sans option, vous configurez uniquement le dépôt courant, ce qui permet par exemple de spécifier votre adresse personnelle et non professionnelle.</p>
+<p>Trois petites informations supplémentaires :</p>
+<ul>
+<li>
+<p>Sans cette configuration, Git va utiliser directement les informations contenues dans votre profil utilisateur système, ce qui n'est pas souhaité (par ex. <code>seb@mamachine</code>). </p>
+</li>
+<li>
+<p>Il n'y a <strong>pas</strong> de vérification par Git. Ce dernier créé une entrée <em>name</em> dans la section <em>user</em>. Si vous tapez <code>userz.namer</code>, c'est pareil pour lui.</p>
+</li>
+<li>
+<p>Vous pouvez éditer directement les fichiers, le résultat est strictement identique. D'ailleurs je vous conseille d'éditer les fichiers pour voir à quoi ils ressemblent (avant et aprés modification).</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="ajout-des-commentaires-sur-le-blog"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/11/01/ajout-des-commentaires-sur-le-blog" rel="bookmark" title="Permanent Link to Ajout des commentaires sur le blog">Ajout des commentaires sur le blog</a></h2>
   <p class="related"><strong>01/11/2010 07:45 PM</strong> | categories: 
@@ -408,14 +486,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
+    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
     <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
     <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -426,9 +504,10 @@
   <div id="categories">
     <h2>Categories</h2>
     <ul>
+     <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (47)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (48)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -437,7 +516,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (16)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -454,7 +533,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>

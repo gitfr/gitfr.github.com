@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">#gitfr</title>
+  <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
+
+  <updated>2011-08-06T21:54:01Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
+  <id>http://www.gitfr.net/blog/feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Le commit initial vide]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide" />
+    <id>http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide</id>
+    <updated>2011-07-31T04:13:00Z</updated>
+    <published>2011-07-31T04:13:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="astuce" />
+    <summary type="html"><![CDATA[Le commit initial vide]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide"><![CDATA[<p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
+les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
+initial vide avec la commande :</p>
+<pre><code>$git commit --allow-empty -m "Initial commit."
+</code></pre>
+<p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
+simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
+<p>Examinons deux exemples.</p>
+<h2>rebase -i</h2>
+<p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
+mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
+c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
+je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
+contenu est accessible.</p>
+<h2>Travailler directement dans une branche</h2>
+<p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
+des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
+merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
+choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
+raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
+disparait de lui-même : mon premier commit de contenu (le deuxième dans le
+graphe donc) sera lui, dans une branche.</p>
+<h2>Conclusion</h2>
+<p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
+graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
+vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
+Voir des mois après :).</p>]]></content>
+  </entry>
+</feed>

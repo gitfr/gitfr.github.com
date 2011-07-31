@@ -65,6 +65,84 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.5.2-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.2-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.2 publiée">Git 1.7.5.2 publiée</a></h2>
+  <p class="related"><strong>13/06/2011 02:05 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>"git add -p" did not work correctly when a hunk is split and then
+  one of them was given to the editor.</p>
+</li>
+<li>
+<p>"git add -u" did not resolve a conflict where our history deleted and
+  their history modified the same file, and the working tree resolved to
+  keep a file.</p>
+</li>
+<li>
+<p>"git cvsimport" did not know that CVSNT stores its password file in a
+  location different from the traditional CVS.</p>
+</li>
+<li>
+<p>"git diff-files" did not show the mode information from the working
+  tree side of an unmerged path correctly.</p>
+</li>
+<li>
+<p>"git diff -M --cached" used to use unmerged path as a possible rename
+  source candidate, which made no sense.</p>
+</li>
+<li>
+<p>The option name parser in "git fast-import" used prefix matches for
+  some options where it shouldn't, and accepted non-existent options,
+  e.g. "--relative-marksmith" or "--forceps".</p>
+</li>
+<li>
+<p>"git format-patch" did not quote RFC822 special characters in the
+  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
+  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
+</li>
+<li>
+<p>"git format-patch" when run with "--quiet" option used to produce a
+  nonsense result that consists of alternating empty output.</p>
+</li>
+<li>
+<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
+  variables did not override the fallback default merge.<option>
+  configuration variables such as merge.ff, merge.log, etc.</p>
+</li>
+<li>
+<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
+  handling a "both sides added, differently" conflict.</p>
+</li>
+<li>
+<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
+</li>
+<li>
+<p>"git-p4" (in contrib) used a wrong base image while merge a file that
+  was added on both branches differently.</p>
+</li>
+<li>
+<p>"git rebase -i -p" failed to preserve the history when there is a
+  redundant merge created with the --no-ff option.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.5.1-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.1-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.1 publiée">Git 1.7.5.1 publiée</a></h2>
   <p class="related"><strong>13/06/2011 01:57 AM</strong> | categories: 
@@ -527,35 +605,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/22/git-1.7.4.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="comment-ecrire-git"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/13/comment-ecrire-git" rel="bookmark" title="Permanent Link to Comment écrire Git">Comment écrire Git</a></h2>
-  <p class="related"><strong>13/04/2011 04:14 PM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/13/comment-ecrire-git#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Comme je vois la faute assez souvent, je rappelle que l'on écrit <strong>Git</strong> ou <strong>git</strong> mais jamais GIT. Ce n'est pas un acronyme ou une abréviation. </p>
-<p>En argot anglais, git signifie (source Wikipedia) :</p>
-<blockquote>
-<p>Git is mild profanity with origins in British English for a silly, incompetent, stupid, annoying, senile elderly or childish person. It is usually an insult, more severe than twit or idiot but less severe than wanker or arsehole.</p>
-</blockquote>
-<p>Linus Torvalds explique ce choix curieux :</p>
-<blockquote>
-<p>I'm an egotistical, and I name all my projects after myself. First 'Linux', now 'git'.</p>
-</blockquote>
-<p>Pour ceux qui n'ont pas lu le livre <a href="http://www.amazon.com/Just-Fun-Story-Accidental-Revolutionary/dp/0066620724">Just For Fun</a> ou suivre la liste de dffusion sur le kernel Linux, Linus a un caractère bien trempé, beaucoup d'humour (plus ou moins décalé d'ailleurs) et un grand sens de l'auto dérision. La lecture du livre n'a fait qu'augmenter ma sympathie pour une personne qui a, comme d'autres, changer ma vie (vous imaginez vous bosser sous Windows ou Unix SCO ? Oui je sais, les *BSD existent).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/13/comment-ecrire-git#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/1">« Articles suivants</a>
   --  
  <a href="/blog/category/git/3">Articles précédents »</a>
@@ -579,14 +628,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
+    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
     <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
     <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -597,9 +646,10 @@
   <div id="categories">
     <h2>Categories</h2>
     <ul>
+     <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (47)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (48)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -608,7 +658,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (16)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -625,7 +675,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>

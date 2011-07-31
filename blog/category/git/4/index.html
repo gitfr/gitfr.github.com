@@ -65,6 +65,55 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.4.1-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/02/12/git-1.7.4.1-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.1 publiée">Git 1.7.4.1 publiée</a></h2>
+  <p class="related"><strong>12/02/2011 02:24 PM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La première version de maintenance de la banche 1.7.4.x est sortie ce 12 février. Seulement 6 bugs corrigés mais suffisamment importants pour exiger une nouvelle release.</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>On Windows platform, the codepath to spawn a new child process forgot
+  to first flush the output buffer.</p>
+</li>
+<li>
+<p>"git bundle" did not use OFS_DELTA encoding, making its output a few
+  per-cent larger than necessarily.</p>
+</li>
+<li>
+<p>The option to tell "git clone" to recurse into the submodules was
+  misspelled with an underscore "--recurse_submodules".</p>
+</li>
+<li>
+<p>"git diff --cached HEAD" before the first commit does what an end user
+  would expect (namely, show what would be committed without further "git
+  add").</p>
+</li>
+<li>
+<p>"git fast-import" didn't accept the command to ask for "notes" feature
+  to be present in its input stream, even though it was capable of the
+  feature.</p>
+</li>
+<li>
+<p>"git fsck" gave up scanning loose object files in directories with
+  garbage files.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.4-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/02/12/git-1.7.4-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4 publiée">Git 1.7.4 publiée</a></h2>
   <p class="related"><strong>12/02/2011 02:16 PM</strong> | categories: 
@@ -562,79 +611,6 @@ insteadOf = work:
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/12/la-commande-init#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.3.3-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/08/git-1.7.3.3-publiee" rel="bookmark" title="Permanent Link to Git 1.7.3.3 publiée">Git 1.7.3.3 publiée</a></h2>
-  <p class="related"><strong>08/12/2010 03:48 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2010/12/08/git-1.7.3.3-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>C'est une version qui ne contient que des corrections de bugs (plus le backport <code>add.ignoreErrors</code>). Voici le changelog : </p>
-<ul>
-<li>
-<p>"git apply" segfaulted when a bogus input is fed to it.</p>
-</li>
-<li>
-<p>Running "git cherry-pick --ff" on a root commit segfaulted.</p>
-</li>
-<li>
-<p>"diff", "blame" and friends incorrectly applied textconv filters to
-  symlinks.</p>
-</li>
-<li>
-<p>Highlighting of whitespace breakage in "diff" output was showing
-  incorrect amount of whitespaces when blank-at-eol is set and the line
-  consisted only of whitespaces and a TAB.</p>
-</li>
-<li>
-<p>"diff" was overly inefficient when trying to find the line to use for
-  the function header (i.e. equivalent to --show-c-function of GNU diff).</p>
-</li>
-<li>
-<p>"git imap-send" depends on libcrypto but our build rule relied on the
-  linker to implicitly link it via libssl, which was wrong.</p>
-</li>
-<li>
-<p>"git merge-file" can be called from within a subdirectory now.</p>
-</li>
-<li>
-<p>"git repack -f" expanded and recompressed non-delta objects in the
-  existing pack, which was wasteful.  Use new "-F" option if you really
-  want to (e.g. when changing the pack.compression level).</p>
-</li>
-<li>
-<p>"git rev-list --format="...%x00..." incorrectly chopped its output
-  at NUL.</p>
-</li>
-<li>
-<p>"git send-email" did not correctly remove duplicate mail addresses from
-  the Cc: header that appear on the To: header.</p>
-</li>
-<li>
-<p>The completion script (in contrib/completion) ignored lightweight tags
-  in __git_ps1().</p>
-</li>
-<li>
-<p>"git-blame" mode (in contrib/emacs) didn't say (require 'format-spec)
-  even though it depends on it; it didn't work with Emacs 22 or older
-  unless Gnus is used.</p>
-</li>
-<li>
-<p>"git-p4" (in contrib/) did not correctly handle deleted files.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/08/git-1.7.3.3-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/3">« Articles suivants</a>
   --  
  <a href="/blog/category/git/5">Articles précédents »</a>
@@ -658,14 +634,14 @@ insteadOf = work:
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
+    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
     <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
     <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
     <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
     <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
     <li><a href="/blog/2011/06/13/git-blameall">git blameall</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.4-publiee">Git 1.7.5.4 publiée</a></li>
-    <li><a href="/blog/2011/06/13/git-1.7.5.3-publiee">Git 1.7.5.3 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -676,9 +652,10 @@ insteadOf = work:
   <div id="categories">
     <h2>Categories</h2>
     <ul>
+     <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (47)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (48)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -687,7 +664,7 @@ insteadOf = work:
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (15)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (16)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -704,7 +681,8 @@ insteadOf = work:
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
       <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>
