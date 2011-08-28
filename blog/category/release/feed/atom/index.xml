@@ -7,12 +7,109 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-08-06T21:54:01Z</updated>
+  <updated>2011-08-28T22:34:37Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.6.1 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee" />
+    <id>http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</id>
+    <updated>2011-08-29T00:34:00Z</updated>
+    <published>2011-08-29T00:34:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.6.1 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee"><![CDATA[<p>La première version de maintenance de la branche 1.7.6.x est sortie le 24 août,
+avec 88 corrections.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+   functions can compress or uncompress more than 4GB data in one call on
+   platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>"git unexecutable" reported that "unexecutable" was not found, even
+   though the actual error was that "unexecutable" was found but did
+   not have a proper she-bang line to be executed.</p>
+</li>
+<li>
+<p>Error exits from $PAGER were silently ignored.</p>
+</li>
+<li>
+<p>"git checkout -b <branch>" was confused when attempting to create a
+   branch whose name ends with "-g" followed by hexadecimal digits,
+   and refused to work.</p>
+</li>
+<li>
+<p>"git checkout -b <branch>" sometimes wrote a bogus reflog entry,
+   causing later "git checkout -" to fail.</p>
+</li>
+<li>
+<p>"git diff --cc" learned to correctly ignore binary files.</p>
+</li>
+<li>
+<p>"git diff -c/--cc" mishandled a deletion that resolves a conflict, and
+   looked in the working tree instead.</p>
+</li>
+<li>
+<p>"git fast-export" forgot to quote pathnames with unsafe characters
+   in its output.</p>
+</li>
+<li>
+<p>"git fetch" over smart-http transport used to abort when the
+   repository was updated between the initial connection and the
+   subsequent object transfer.</p>
+</li>
+<li>
+<p>"git fetch" did not recurse into submodules in subdirectories.</p>
+</li>
+<li>
+<p>"git ls-tree" did not error out when asked to show a corrupt tree.</p>
+</li>
+<li>
+<p>"git pull" without any argument left an extra whitespace after the
+   command name in its reflog.</p>
+</li>
+<li>
+<p>"git push --quiet" was not really quiet.</p>
+</li>
+<li>
+<p>"git rebase -i -p" incorrectly dropped commits from side branches.</p>
+</li>
+<li>
+<p>"git reset [<commit>] paths..." did not reset the index entry correctly
+   for unmerged paths.</p>
+</li>
+<li>
+<p>"git submodule add" did not allow a relative repository path when
+   the superproject did not have any default remote url.</p>
+</li>
+<li>
+<p>"git submodule foreach" failed to correctly give the standard input to
+   the user-supplied command it invoked.</p>
+</li>
+<li>
+<p>submodules that the user has never showed interest in by running
+   "git submodule init" was incorrectly marked as interesting by "git
+   submodule sync".</p>
+</li>
+<li>
+<p>"git submodule update --quiet" was not really quiet.</p>
+</li>
+<li>
+<p>"git tag -l <glob>..." did not take multiple glob patterns from the
+   command line.</p>
+</li>
+</ul>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -648,50 +745,6 @@ par Junio.</p>
 <li>
 <p>gitweb had a few forward-incompatible syntactic constructs and
   also used incorrect variable when showing the file mode in a diff.</p>
-</li>
-</ul>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Git 1.7.4.1 publiée]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee" />
-    <id>http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee</id>
-    <updated>2011-02-12T14:24:00Z</updated>
-    <published>2011-02-12T14:24:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="release" />
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <summary type="html"><![CDATA[Git 1.7.4.1 publiée]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee"><![CDATA[<p>La première version de maintenance de la banche 1.7.4.x est sortie ce 12 février. Seulement 6 bugs corrigés mais suffisamment importants pour exiger une nouvelle release.</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>On Windows platform, the codepath to spawn a new child process forgot
-  to first flush the output buffer.</p>
-</li>
-<li>
-<p>"git bundle" did not use OFS_DELTA encoding, making its output a few
-  per-cent larger than necessarily.</p>
-</li>
-<li>
-<p>The option to tell "git clone" to recurse into the submodules was
-  misspelled with an underscore "--recurse_submodules".</p>
-</li>
-<li>
-<p>"git diff --cached HEAD" before the first commit does what an end user
-  would expect (namely, show what would be committed without further "git
-  add").</p>
-</li>
-<li>
-<p>"git fast-import" didn't accept the command to ask for "notes" feature
-  to be present in its input stream, even though it was capable of the
-  feature.</p>
-</li>
-<li>
-<p>"git fsck" gave up scanning loose object files in directories with
-  garbage files.</p>
 </li>
 </ul>]]></content>
   </entry>

@@ -1,0 +1,217 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+  <title>#gitfr</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/gitfr" />
+<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
+
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+<link rel='stylesheet' href='/css/documentation.css' type='text/css' />
+<link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="content">
+      
+  
+<div id="header" onclick="location.href='/';" style="cursor: pointer;">
+  <div id="plugbanner"></div>
+  <div id="blog_logo"></div>
+  <h1><a href="/">
+      <span id="blog_name">
+        #gitfr
+      </span>
+    </a>
+  </h1>
+</div>
+<a href="http://github.com/gitfr/website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="top_bar">
+  <div class="ButtonBar">
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <div id="search">    
+    <form id="searchform" method="get" action="http://www.google.com/search">
+      <input type="hidden" name="ie" value="UTF-8">
+      <input type="hidden" name="oe" value="UTF-8">
+      <input type="hidden" name="domains" value="www.gitfr.net">
+      <input type="hidden" name="sitesearch" value="www.gitfr.net">
+      <input name="q" id="q" size="20" value="recherche..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+    </form>
+  </div>
+</div>
+
+
+
+      <div id="main_block">
+        <div id="prose_block">
+          
+  
+<div class="blog_post">
+  <a name="installer-git-sur-ubuntu"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/10/30/installer-git-sur-ubuntu" rel="bookmark" title="Permanent Link to Installer git sur Ubuntu">Installer git sur Ubuntu</a></h2>
+  <p class="related"><strong>30/10/2010 07:56 PM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/installation'>installation</a>, <a href='/blog/category/ubuntu'>ubuntu</a>
+ | <a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Pour les utilisateurs qui utilisent Debian ou Ubuntu depuis quelques temps, vous pouvez constater que le paquet s'appelle maintenant <em>git</em> et non <em>git-core</em> (pour le petite histoire, git était le paquet <em>GNU Interactive Tools</em>, renommé depuis <em>gnuit</em>). Mais le problème avec une installation du paquet officiel est que vous disposerez d'une version plus ou moins ancienne (la version disponible au moment du <em>freeze</em> de la distribution), Ubuntu ne mettant pas à jour git avec les dépots <em>backports</em>, <em>updates</em> ou <em>proposed</em>. Personnellement, j'aime disposer de la dernière version, les développeurs git améliorant régulièrement le <em>frontend</em>.</p>
+<p>C'est la qu'interviennent les <strong>PPA</strong>, pour <em>Personal Package Archives</em>. C'est un dépôt <strong>non officiel</strong> qu'il est possible d'activer sur <em>Launchpad</em> quand vous créé un projet sur cette plateforme. C'est justement sur Launchpad que les mainteneurs officiels Ubuntu du paquet git travaillent ! Et comme ils sont gentils, il existent justement un <a href="https://launchpad.net/~git-core/+archive/ppa">PPA git</a>. Voici les commandes pour utiliser ce PPA sur Ubuntu :</p>
+<blockquote>
+<p>$ sudo add-apt-repository ppa:git-core/ppa</p>
+</blockquote>
+<p>Cette commande ajoute le PPA dans vos dépôts accessibles (sources.list). C'est équivalent à mettre manuellement un fichier de configuration dans le répertoire <em>/etc/apt/sources.list.d/</em> et d'ajouter la clé GPG (voir la section <em>Technical details about this PPA</em> pour plus de détails).</p>
+<blockquote>
+<p>$ sudo aptitude update</p>
+</blockquote>
+<p>Mise à jour des paquets disponibles.</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
+<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+ <a href="/blog/category/git/6">« Articles suivants</a>
+
+        </div><!-- End Prose Block -->
+        
+  <div class="right_sidebar">
+    <div id="right_sidebar">
+  <div id="rss">
+    <h2>flux RSS</h2>
+    <a href="http://feeds.feedburner.com/gitfr">billets</a>
+    /
+    <a href="http://gitfr.disqus.com/latest.rss">commentaires</a>
+  </div>
+  <div id="contact">
+    <h2>Contact</h2>
+    mail : seb@gitfr.net<br />
+    liste de diffusion : <a href="http://groups.google.com/group/gitfr">gitfr</a><br />
+    IRC : #git-fr sur Freenode
+  </div>
+  <div id="blog_post_list">
+    <h2>Derniers billets</h2>
+    <ul>
+    <li><a href="/blog/2011/08/29/git-1.7.6.1-publiee">Git 1.7.6.1 publiée</a></li>
+    <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
+    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
+    <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
+    <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
+    <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
+    <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
+    <li><a href="/blog/2011/06/13/cycle-de-release-raccourci">Cycle de release raccourci</a></li>
+  </ul>
+  </div>
+  <div id="on_twitter">
+    <h3>Sur Twitter</h2>
+    <div id="blogofile_tweets"></div>
+    <a href="http://twitter.com/gitfr" style="float: right">Plus de tweets</a>
+  </div>
+  <div id="categories">
+    <h2>Categories</h2>
+    <ul>
+     <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (12)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (49)</li>
+     <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (16)</li>
+     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
+     <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
+     <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
+     <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (16)</li>
+     <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
+    </ul>
+  </div> 
+  <div id="archives">			
+    <h2>Archives</h2>
+    <ul>
+      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
+      <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
+      <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>
+      <li><a href="/blog/archive/2011/03/1" title="March 2011">March 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/02/1" title="February 2011">February 2011</a>&nbsp;(3)</li>
+      <li><a href="/blog/archive/2011/01/1" title="January 2011">January 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(12)</li>
+      <li><a href="/blog/archive/2010/11/1" title="November 2010">November 2010</a>&nbsp;(12)</li>
+      <li><a href="/blog/archive/2010/10/1" title="October 2010">October 2010</a>&nbsp;(3)</li>
+    </ul>
+  </div>
+  <div id="credits">
+    <h2>Crédits</h2>
+    Propulsé par <a href="http://www.blogofile.com">Blogofile</a>
+  </div>
+
+</div>
+
+  </div>
+
+      </div><!-- End Main Block -->
+    </div> <!-- End Content -->
+
+    <script type="text/javascript">
+  
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19444937-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.setAttribute('async', 'true');
+            document.documentElement.firstChild.appendChild(ga);
+        })();
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
