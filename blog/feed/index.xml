@@ -10,10 +10,24 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 28 Aug 2011 22:34:37 GMT</pubDate>
+    <pubDate>Sat, 10 Sep 2011 22:10:27 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Présentation Git le 20/09 à Lyon</title>
+      <link>http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</link>
+      <pubDate>Sat, 10 Sep 2011 18:40:00 CEST</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</guid>
+      <description>Présentation Git le 20/09 à Lyon</description>
+      <content:encoded><![CDATA[<p>GitFR continue son tour de France avec comme étape Lyon, grâce au
+<a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
+<p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
+21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
+<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.6.1 publiée</title>
       <link>http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</link>
@@ -608,37 +622,6 @@ par Junio.</p>
 <p>Vous avez donc une colonne supplémentaire qui vous donne le SHA1 ou cette ligne fut effacée. A garder sous le coude !</p>
 <p>Voici une copie d'écran :</p>
 <p><img alt="" src="http://1dan.org/git-blameall/git-blameall-screen1.png" /></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.5.4 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</link>
-      <pubDate>Mon, 13 Jun 2011 02:10:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</guid>
-      <description>Git 1.7.5.4 publiée</description>
-      <content:encoded><![CDATA[<p>La quatrième version de la branche 1.7.5.x est sortie le 2 juin, soit seulement 5 jours aprés la précédente. C'est la dernière ligne du changelog qui nous donne la réponse.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>The single-key mode of "git add -p" was easily fooled into thinking
-  that it was told to add everthing ('a') when up-arrow was pressed by
-  mistake.</p>
-</li>
-<li>
-<p>Setting a git command that uses custom configuration via "-c var=val"
-  as an alias caused a crash due to a realloc(3) failure.</p>
-</li>
-<li>
-<p>"git diff -C -C" used to disable the rename detection entirely when
-  there are too many copy candidate paths in the tree; now it falls
-  back to "-C" when doing so would keep the copy candidate paths
-  under the rename detection limit.</p>
-</li>
-<li>
-<p>"git rerere" did not diagnose a corrupt MERGE_RR file in some cases.</p>
-</li>
-</ul>]]></content:encoded>
     </item>
   </channel>
 </rss>

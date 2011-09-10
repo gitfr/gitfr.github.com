@@ -10,10 +10,24 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 28 Aug 2011 22:34:37 GMT</pubDate>
+    <pubDate>Sat, 10 Sep 2011 22:10:27 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Présentation Git le 20/09 à Lyon</title>
+      <link>http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</link>
+      <pubDate>Sat, 10 Sep 2011 18:40:00 CEST</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</guid>
+      <description>Présentation Git le 20/09 à Lyon</description>
+      <content:encoded><![CDATA[<p>GitFR continue son tour de France avec comme étape Lyon, grâce au
+<a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
+<p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
+21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
+<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation Git le 01/06 à Strasbourg</title>
       <link>http://www.gitfr.net/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg</link>
@@ -298,13 +312,13 @@
 <p>PS : merci à l'équipe du ParisJUG pour le boulot <strong>énorme</strong> que cela doit être !</p>]]></content:encoded>
     </item>
     <item>
-      <title>Untitled - 2011-08-29 00:34:36</title>
+      <title>Untitled - 2011-09-11 00:10:26</title>
       <link>http://www.gitfr.net/blog/2011/04/07/info-sur-la-presentation-du-12-04</link>
       <pubDate>Thu, 07 Apr 2011 16:05:00 CEST</pubDate>
       <category><![CDATA[atelier]]></category>
       <category><![CDATA[gitfr]]></category>
       <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/07/info-sur-la-presentation-du-12-04</guid>
-      <description>Untitled - 2011-08-29 00:34:36</description>
+      <description>Untitled - 2011-09-11 00:10:26</description>
       <content:encoded><![CDATA[<p>J'avais préparé mon billet à l'avance, histoire de le publier ce matin. Mais voila, le temps d'y penser, les <strong>200 places étaient parties</strong> ! Diantre, Git à vraiment la côte, on a battu le record de vitesse des inscriptions (moins de 4h). Pour la postérité, voici le billet initial :</p>
 <p>C'est parti ! Vous pouvez vous <strong>inscrire</strong> pour la <a href="http://www.parisjug.org/xwiki/bin/view/Meeting/20110412">présentation Git</a> de mardi prochain (l'inscription est obligatoire). J'ai profondément <strong>remanié</strong> l'ensemble pour être plus concis sur la partie théorique et laisser plus de place pour l'utilisation de Git : quelques conseils et astuces, les commandes qui me font aimer Git, les workflows, GitHub, le travail collaboratif...</p>
 <p>Je pense même que ceux qui ont vu l'atelier #1 et #2 peuvent apprendre des choses :). A cause du buffet en plein milieu, le déroulement est simple : 1h théorique, buffet et enfin 1h pratique.</p>
@@ -383,20 +397,6 @@
 <h2>Conclusion</h2>
 <p>Du positif ! Les gens semblent <strong>contents</strong> et moi j'apprends Git en profondeur, ce qui est mon objectif personnel. Mais pas le temps de se réposer, il faut bosser sur l'atelier <strong>initiation</strong>.</p>
 <p>Je suis preneur d'avis et de critiques, n'hésitez donc à poser un commentaire sur le blog, même si c'est trés négatif :).</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git disponible</title>
-      <link>http://www.gitfr.net/blog/2010/12/01/presentation-Git-disponible</link>
-      <pubDate>Wed, 01 Dec 2010 13:38:00 CET</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2010/12/01/presentation-Git-disponible</guid>
-      <description>Présentation Git disponible</description>
-      <content:encoded><![CDATA[<p>Je viens de mettre la présentation des ateliers #1 et #2 sur <em>GitHub</em>. C'est une présentation faites avec <a href="https://github.com/schacon/showoff">ShowOff</a>, application développée par <em>Chacon</em> (encore lui), qui a l'énorme avantage de séparer contenu (simple fichier texte au format <strong>Markdown</strong>) et présentation (fichier CSS). Malheureusement il n'existe pas d'export PDF, il vous faut donc obligatoirement installer ShowOff sur votre machine pour visionner la présentation.</p>
-<p>L'adresse de la présentation : <a href="https://github.com/sdouche/showoff-presentation-git">https://github.com/sdouche/showoff-presentation-git</a></p>
-<p>Bonne lecture.</p>
-<p>PS : N'hésitez pas à me faire des remarques ou critiques (par Twitter <strong>@gitfr</strong> ou mail <strong>seb@gitfr.net</strong>).</p>
-<p><strong>Mise à jour</strong> : je viens de déployer la présentation sur <a href="http://heroku.com/">Heroku</a>, une plateforme d'hébergement d'applications <em>Ruby</em> (qui utilise Git comme outil de déploiement). L'adresse est : <a href="http://presentation-git.heroku.com/">http://presentation-git.heroku.com/</a>. Je vous conseille un navigateur trés réçent pour la visualisation.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
