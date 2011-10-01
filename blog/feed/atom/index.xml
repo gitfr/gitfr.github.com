@@ -7,12 +7,233 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-09-10T22:10:27Z</updated>
+  <updated>2011-10-01T08:28:25Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.7 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee" />
+    <id>http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</id>
+    <updated>2011-10-01T10:34:00Z</updated>
+    <published>2011-10-01T10:34:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.7 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee"><![CDATA[<p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
+changements.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Interix, Cygwin and Minix ports got updated.</p>
+</li>
+<li>
+<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
+</li>
+<li>
+<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
+  before reading from gitweb_config.perl or from /etc/gitweb.conf
+  (this last one is read only when per-repository gitweb_config.perl
+  does not exist).</p>
+</li>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+  functions can compress or uncompress more than 4GB data in one call on
+  platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>Git now recognizes loose objects written by other implementations that
+  use a non-standard window size for zlib deflation (e.g. Agit running on
+  Android with 4kb window). We used to reject anything that was not
+  deflated with 32kb window.</p>
+</li>
+<li>
+<p>Interaction between the use of pager and coloring of the output has
+  been improved, especially when a command that is not built-in was
+  involved.</p>
+</li>
+<li>
+<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
+  "git apply".</p>
+</li>
+<li>
+<p>You can now feed many empty lines before feeding an mbox file to
+  "git am".</p>
+</li>
+<li>
+<p>"git archive" can be told to pass the output to gzip compression and
+  produce "archive.tar.gz".</p>
+</li>
+<li>
+<p>"git bisect" can be used in a bare repository (provided that the test
+  you perform per each iteration does not need a working tree, of
+  course).</p>
+</li>
+<li>
+<p>The length of abbreviated object names in "git branch -v" output
+  now honors the core.abbrev configuration variable.</p>
+</li>
+<li>
+<p>"git check-attr" can take relative paths from the command line.</p>
+</li>
+<li>
+<p>"git check-attr" learned an "--all" option to list the attributes for a
+  given path.</p>
+</li>
+<li>
+<p>"git checkout" (both the code to update the files upon checking out a
+  different branch and the code to checkout a specific set of files) learned
+  to stream the data from object store when possible, without having to
+  read the entire contents of a file into memory first. An earlier round
+  of this code that is not in any released version had a large leak but
+  now it has been plugged.</p>
+</li>
+<li>
+<p>"git clone" can now take a "--config key=value" option to set the
+  repository configuration options that affect the initial checkout.</p>
+</li>
+<li>
+<p>"git commit <paths>..." now lets you feed relative pathspecs that
+  refer to outside your current subdirectory.</p>
+</li>
+<li>
+<p>"git diff --stat" learned a --stat-count option to limit the output of
+  a diffstat report.</p>
+</li>
+<li>
+<p>"git diff" learned a "--histogram" option to use a different diff
+  generation machinery stolen from jgit, which might give better
+  performance.</p>
+</li>
+<li>
+<p>"git diff" had a weird worst case behaviour that can be triggered
+  when comparing files with potentially many places that could match.</p>
+</li>
+<li>
+<p>"git fetch", "git push" and friends no longer show connection
+  errors for addresses that couldn't be connected to when at least one
+  address succeeds (this is arguably a regression but a deliberate
+  one).</p>
+</li>
+<li>
+<p>"git grep" learned "--break" and "--heading" options, to let users mimic
+  the output format of "ack".</p>
+</li>
+<li>
+<p>"git grep" learned a "-W" option that shows wider context using the same
+  logic used by "git diff" to determine the hunk header.</p>
+</li>
+<li>
+<p>Invoking the low-level "git http-fetch" without "-a" option (which
+  git itself never did---normal users should not have to worry about
+  this) is now deprecated.</p>
+</li>
+<li>
+<p>The "--decorate" option to "git log" and its family learned to
+  highlight grafted and replaced commits.</p>
+</li>
+<li>
+<p>"git rebase master topci" no longer spews usage hints after giving
+  the "fatal: no such branch: topci" error message.</p>
+</li>
+<li>
+<p>The recursive merge strategy implementation got a fairly large
+  fix for many corner cases that may rarely happen in real world
+  projects (it has been verified that none of the 16000+ merges in
+  the Linux kernel history back to v2.6.12 is affected with the
+  corner case bugs this update fixes).</p>
+</li>
+<li>
+<p>"git stash" learned an "--include-untracked option".</p>
+</li>
+<li>
+<p>"git submodule update" used to stop at the first error updating a
+  submodule; it now goes on to update other submodules that can be
+  updated, and reports the ones with errors at the end.</p>
+</li>
+<li>
+<p>"git push" can be told with the "--recurse-submodules=check" option to
+  refuse pushing of the supermodule, if any of its submodules'
+  commits hasn't been pushed out to their remotes.</p>
+</li>
+<li>
+<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
+  subset of the refs exist in a repository. This may help a site to
+  put many tiny repositories into one repository (this would not be
+  useful for larger repositories as repacking would be problematic).</p>
+</li>
+<li>
+<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
+  that is more efficient in reading objects in packfiles.</p>
+</li>
+<li>
+<p>test scripts for gitweb tried to run even when CGI-related perl modules
+  are not installed; they now exit early when the latter are unavailable.</p>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Plone sur GitHub]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/09/25/plone-sur-github" />
+    <id>http://www.gitfr.net/blog/2011/09/25/plone-sur-github</id>
+    <updated>2011-09-25T13:34:00Z</updated>
+    <published>2011-09-25T13:34:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="github" />
+    <category scheme="http://www.gitfr.net/blog" term="migration" />
+    <summary type="html"><![CDATA[Plone sur GitHub]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/09/25/plone-sur-github"><![CDATA[<p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
+<a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
+présence de 127 (!) dépôts Git. Ce nombre important de dépôt est du à la
+programmation par composant du monde Zope.</p>
+<p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise
+nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le
+principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell
+GHC</a>, passe officiellement sur Git, avec un
+<a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le
+projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de
+contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support
+Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette
+plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar
+(bzr). Et enfin, que la capacité de retravailler son historique (point fort que
+je mets en avant dans toutes mes présentations Git) est un atout important.
+Point important, cette phrase vient du mail expliquant la migration en 2008
+(Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé
+pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il
+existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et
+la 2.8 est en cours de développement avec le support très attendu de la
+fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre
+qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch
+(1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non
+pas l'historique comme une série de «snapshots», mais comme une suite de
+<strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite
+grandement le <strong>cherry-picking</strong>. Malheureusement, des performances
+catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais
+permis à Darcs de décoller.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -591,85 +812,5 @@ par Junio.</p>
   (merge bc/maint-status-z-to-use-porcelain later)</p>
 </li>
 </ul>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Cycle de release raccourci]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci" />
-    <id>http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci</id>
-    <updated>2011-06-13T03:24:00Z</updated>
-    <published>2011-06-13T03:24:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <summary type="html"><![CDATA[Cycle de release raccourci]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci"><![CDATA[<p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
-<h2>Le planning</h2>
-<ul>
-<li>
-<p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
-</li>
-<li>
-<p>Cycle d'intégration de nouvelles fonctionnalités à partir de la deuxième semaine, en fusionnant de la branche <code>next</code> vers <code>master</code>, ou de la branche <code>pu</code> vers <code>next</code>. </p>
-</li>
-<li>
-<p>Semaine N, une version <em>release candidate</em> (rc0) est taggée. Tous les sujets dans <code>next</code> sont triés (pour inclusion dans <code>master</code> ou attente de la prochaine version).</p>
-</li>
-<li>
-<p>Semaine N+1, une deuxième version <em>rc</em> est taggée. L'objectif est de tester à fond pour trouver d'éventuelles régressions, et plus aucune fonctionnalité nouvelle est acceptée.</p>
-</li>
-<li>
-<p>Semaine N+2, une troisième <em>rc</em> sort.</p>
-</li>
-<li>
-<p>Semaine X, la version finale sort.</p>
-</li>
-</ul>
-<p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
-<h2>Gestion des branches</h2>
-<p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
-<ul>
-<li>
-<p>master, la branche principale de la prochaine stable.</p>
-</li>
-<li>
-<p>next, la branche de stabilisation  de la prochaine stable.</p>
-</li>
-<li>
-<p>pu, la branche d'intégration de la prochaine stable.</p>
-</li>
-<li>
-<p>maint, la branche de maintenance de la dernière stable.</p>
-</li>
-</ul>
-<p>Une nouvelle fonctionnalité ne va pas directement dans <code>master</code>, mais passe d'abord par <code>pu</code>, puis <code>next</code>. Si tout donne satisfaction, alors la branche est mergée dans <code>master</code>. Cela signifie que :</p>
-<ul>
-<li>
-<p>vous pouvez utiliser une version stable, en stabilisation ou en cours de développement.</p>
-</li>
-<li>
-<p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
-</li>
-</ul>
-<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[git blameall]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-blameall" />
-    <id>http://www.gitfr.net/blog/2011/06/13/git-blameall</id>
-    <updated>2011-06-13T02:22:00Z</updated>
-    <published>2011-06-13T02:22:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <category scheme="http://www.gitfr.net/blog" term="outil" />
-    <summary type="html"><![CDATA[git blameall]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-blameall"><![CDATA[<p>Vous connaissez surement la commande <code>blame</code>, présent dans tous les outils de gestion de source, et qui permet de connaitre l'auteur de chaque ligne d'un fichier. Dan Gindikin nous gratifie de <a href="http://1dan.org/git-blameall/">git-blameall</a>, un petit script en Python (il faut donc qu'un interpréteur Python soit présent sur votre système, ce qui est le cas par défaut sur Linux et MacOS) qui permet d'avoir la mếme information pour toutes les lignes qui ont existées dans l'histoire de ce fichier.</p>
-<p>Vous avez donc une colonne supplémentaire qui vous donne le SHA1 ou cette ligne fut effacée. A garder sous le coude !</p>
-<p>Voici une copie d'écran :</p>
-<p><img alt="" src="http://1dan.org/git-blameall/git-blameall-screen1.png" /></p>]]></content>
   </entry>
 </feed>

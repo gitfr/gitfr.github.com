@@ -65,6 +65,237 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.7-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/10/01/git-1.7.7-publiee" rel="bookmark" title="Permanent Link to Git 1.7.7 publiée">Git 1.7.7 publiée</a></h2>
+  <p class="related"><strong>01/10/2011 10:34 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
+changements.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Interix, Cygwin and Minix ports got updated.</p>
+</li>
+<li>
+<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
+</li>
+<li>
+<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
+  before reading from gitweb_config.perl or from /etc/gitweb.conf
+  (this last one is read only when per-repository gitweb_config.perl
+  does not exist).</p>
+</li>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+  functions can compress or uncompress more than 4GB data in one call on
+  platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>Git now recognizes loose objects written by other implementations that
+  use a non-standard window size for zlib deflation (e.g. Agit running on
+  Android with 4kb window). We used to reject anything that was not
+  deflated with 32kb window.</p>
+</li>
+<li>
+<p>Interaction between the use of pager and coloring of the output has
+  been improved, especially when a command that is not built-in was
+  involved.</p>
+</li>
+<li>
+<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
+  "git apply".</p>
+</li>
+<li>
+<p>You can now feed many empty lines before feeding an mbox file to
+  "git am".</p>
+</li>
+<li>
+<p>"git archive" can be told to pass the output to gzip compression and
+  produce "archive.tar.gz".</p>
+</li>
+<li>
+<p>"git bisect" can be used in a bare repository (provided that the test
+  you perform per each iteration does not need a working tree, of
+  course).</p>
+</li>
+<li>
+<p>The length of abbreviated object names in "git branch -v" output
+  now honors the core.abbrev configuration variable.</p>
+</li>
+<li>
+<p>"git check-attr" can take relative paths from the command line.</p>
+</li>
+<li>
+<p>"git check-attr" learned an "--all" option to list the attributes for a
+  given path.</p>
+</li>
+<li>
+<p>"git checkout" (both the code to update the files upon checking out a
+  different branch and the code to checkout a specific set of files) learned
+  to stream the data from object store when possible, without having to
+  read the entire contents of a file into memory first. An earlier round
+  of this code that is not in any released version had a large leak but
+  now it has been plugged.</p>
+</li>
+<li>
+<p>"git clone" can now take a "--config key=value" option to set the
+  repository configuration options that affect the initial checkout.</p>
+</li>
+<li>
+<p>"git commit <paths>..." now lets you feed relative pathspecs that
+  refer to outside your current subdirectory.</p>
+</li>
+<li>
+<p>"git diff --stat" learned a --stat-count option to limit the output of
+  a diffstat report.</p>
+</li>
+<li>
+<p>"git diff" learned a "--histogram" option to use a different diff
+  generation machinery stolen from jgit, which might give better
+  performance.</p>
+</li>
+<li>
+<p>"git diff" had a weird worst case behaviour that can be triggered
+  when comparing files with potentially many places that could match.</p>
+</li>
+<li>
+<p>"git fetch", "git push" and friends no longer show connection
+  errors for addresses that couldn't be connected to when at least one
+  address succeeds (this is arguably a regression but a deliberate
+  one).</p>
+</li>
+<li>
+<p>"git grep" learned "--break" and "--heading" options, to let users mimic
+  the output format of "ack".</p>
+</li>
+<li>
+<p>"git grep" learned a "-W" option that shows wider context using the same
+  logic used by "git diff" to determine the hunk header.</p>
+</li>
+<li>
+<p>Invoking the low-level "git http-fetch" without "-a" option (which
+  git itself never did---normal users should not have to worry about
+  this) is now deprecated.</p>
+</li>
+<li>
+<p>The "--decorate" option to "git log" and its family learned to
+  highlight grafted and replaced commits.</p>
+</li>
+<li>
+<p>"git rebase master topci" no longer spews usage hints after giving
+  the "fatal: no such branch: topci" error message.</p>
+</li>
+<li>
+<p>The recursive merge strategy implementation got a fairly large
+  fix for many corner cases that may rarely happen in real world
+  projects (it has been verified that none of the 16000+ merges in
+  the Linux kernel history back to v2.6.12 is affected with the
+  corner case bugs this update fixes).</p>
+</li>
+<li>
+<p>"git stash" learned an "--include-untracked option".</p>
+</li>
+<li>
+<p>"git submodule update" used to stop at the first error updating a
+  submodule; it now goes on to update other submodules that can be
+  updated, and reports the ones with errors at the end.</p>
+</li>
+<li>
+<p>"git push" can be told with the "--recurse-submodules=check" option to
+  refuse pushing of the supermodule, if any of its submodules'
+  commits hasn't been pushed out to their remotes.</p>
+</li>
+<li>
+<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
+  subset of the refs exist in a repository. This may help a site to
+  put many tiny repositories into one repository (this would not be
+  useful for larger repositories as repacking would be problematic).</p>
+</li>
+<li>
+<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
+  that is more efficient in reading objects in packfiles.</p>
+</li>
+<li>
+<p>test scripts for gitweb tried to run even when CGI-related perl modules
+  are not installed; they now exit early when the latter are unavailable.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="plone-sur-github"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/09/25/plone-sur-github" rel="bookmark" title="Permanent Link to Plone sur GitHub">Plone sur GitHub</a></h2>
+  <p class="related"><strong>25/09/2011 01:34 PM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>, <a href='/blog/category/migration'>migration</a>
+ | <a href="http://www.gitfr.net/blog/2011/09/25/plone-sur-github#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
+<a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
+présence de 127 (!) dépôts Git. Ce nombre important de dépôt est du à la
+programmation par composant du monde Zope.</p>
+<p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise
+nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le
+principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell
+GHC</a>, passe officiellement sur Git, avec un
+<a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le
+projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de
+contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support
+Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette
+plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar
+(bzr). Et enfin, que la capacité de retravailler son historique (point fort que
+je mets en avant dans toutes mes présentations Git) est un atout important.
+Point important, cette phrase vient du mail expliquant la migration en 2008
+(Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé
+pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il
+existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et
+la 2.8 est en cours de développement avec le support très attendu de la
+fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre
+qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch
+(1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non
+pas l'historique comme une série de «snapshots», mais comme une suite de
+<strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite
+grandement le <strong>cherry-picking</strong>. Malheureusement, des performances
+catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais
+permis à Darcs de décoller.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/09/25/plone-sur-github#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="presentation-git-le-20-09-a-lyon"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon" rel="bookmark" title="Permanent Link to Présentation Git le 20/09 à Lyon">Présentation Git le 20/09 à Lyon</a></h2>
   <p class="related"><strong>10/09/2011 06:40 PM</strong> | categories: 
@@ -411,278 +642,6 @@ augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="gitfr-sur-github"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/07/09/gitfr-sur-github" rel="bookmark" title="Permanent Link to gitfr sur GitHub">gitfr sur GitHub</a></h2>
-  <p class="related"><strong>09/07/2011 08:35 PM</strong> | categories: 
-
-<a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/07/09/gitfr-sur-github#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Par pure feinéantise intellectuelle, je n'ai pas voulu prendre mon temps pour
-tester diverses solutions techniques pour le blog. J'ai décidé d'aller au
-plus vite en utilisant les services d'un blog en ligne (tumblr en 
-l'occurrence). Mal m'en a pris ! Malgré quelques avantages indéniables, j'ai
-ressenti très rapidement les limitations du système :</p>
-<ul>
-<li>
-<p>Il faut être en ligne pour écrire, ou alors écrire dans un éditeur
-  et copier le contenu, puis le remettre en forme. De manière générale,
-  tout se fait en ligne à travers une interface simpl(ist)e.</p>
-</li>
-<li>
-<p>Le site tumblr est souvent en surcapacité. Les utilisateurs de Twitter
-  savent de quoi je veux parler :).</p>
-</li>
-<li>
-<p>Des permalinks fantaisistes (ID au lieu du titre).</p>
-</li>
-<li>
-<p>L'incapacité de collaborer sur le site, il faut en effet créer un
-  sous-site, le principal n'étant pas partageable (qui a eu cette idée
-  débile ?).</p>
-</li>
-<li>
-<p>L'outil Twitter mettait en avant l'url tumblr, et non celui du site.
-  Je ne trouve pas ça très élégant </p>
-</li>
-</ul>
-<p>Et j'en passe...</p>
-<h2>Et maintenant ?</h2>
-<p>Ce blog est maintenant propulsé par <a href="http://www.blogofile.com/">Blogofile</a>,
-un générateur de site statique, ce qui permet d'être hébergé sur GitHub. 
-Gitfr utilise Git, la boucle est bouclée ! :).</p>
-<p>Vous trouverez ce site sous 2 formes :</p>
-<ul>
-<li>
-<p>Les <a href="https://github.com/gitfr/website/">sources du site</a>, avec les articles
-  au format markdown (facilement réutilisable donc).</p>
-</li>
-<li>
-<p>Le <a href="https://github.com/gitfr/gitfr.github.com/">site web généré</a> par
-  <code>Blogofile</code>.</p>
-</li>
-</ul>
-<h2>Remarques</h2>
-<p>Le <a href="https://github.com/gitfr/website/issues">bugtracker</a> est à votre dispostion si vous avez des remarques, mais je suis
-aussi preneur de pull-request : propositions de CSS ou de fonctionnalités
-supplémentaires.</p>
-<h2>Vous voulez écrire ?</h2>
-<p>Blogofile permet de spécifier l'auteur des billets, donc si <strong>vous</strong> souhaitez
-écrire sur le blog, je suis aussi preneur, ca serait bien que #gitfr ne reste
-pas un projet personnel :).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/09/gitfr-sur-github#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.6-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/07/09/git-1.7.6-publiee" rel="bookmark" title="Permanent Link to Git 1.7.6 publiée">Git 1.7.6 publiée</a></h2>
-  <p class="related"><strong>09/07/2011 08:34 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
-première version qui respecte le nouveau cycle de release plus court voulu
-par Junio.</p>
-<p>A la lecture du changelog, voici quelques points que je remarque :</p>
-<ul>
-<li>
-<p>Le magic pathspec ":/".</p>
-</li>
-<li>
-<p>L'option patch pour la commande git-commit.</p>
-</li>
-<li>
-<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
-</li>
-<li>
-<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
-   ou jamais faire un commit de merge.</p>
-</li>
-<li>
-<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
-</li>
-</ul>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>Various git-svn updates.</p>
-</li>
-<li>
-<p>Updates the way content tags are handled in gitweb.  Also adds
-  a UI to choose common timezone for displaying the dates.</p>
-</li>
-<li>
-<p>Similar to branch names, tagnames that begin with "-" are now
-  disallowed.</p>
-</li>
-<li>
-<p>Clean-up of the C part of i18n (but not l10n---please wait)
-  continues.</p>
-</li>
-<li>
-<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
-</li>
-<li>
-<p>Pushing and pulling from a repository with large number of refs that
-  point to identical commits are optimized by not listing the same commit
-  during the common ancestor negotiation exchange with the other side.</p>
-</li>
-<li>
-<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
-  using "git add" will send the contents straight to a packfile without
-  having to hold it and its compressed representation both at the same
-  time in memory.</p>
-</li>
-<li>
-<p>Processes spawned by "[alias] <name> = !process" in the configuration
-  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
-  working tree the original command was invoked.</p>
-</li>
-<li>
-<p>A magic pathspec ":/" tells a command that limits its operation to
-  the current directory when ran from a subdirectory to work on the
-  entire working tree. In general, ":/path/to/file" would be relative
-  to the root of the working tree hierarchy.</p>
-</li>
-</ul>
-<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
-  be a no-op, but "git add -u :/" would add the updated contents of
-  the Makefile at the top level. If you want to name a path in the
-  current subdirectory whose unusual name begins with ":/", you can
-  name it by "./:/that/path" or by ":/that/path".</p>
-<ul>
-<li>
-<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
-  number of hexdigits shown for commit object names.</p>
-</li>
-<li>
-<p>"git blame" learned "--line-porcelain" that is less efficient but is
-  easier to parse.</p>
-</li>
-<li>
-<p>Aborting "git commit --interactive" discards updates to the index
-  made during the interactive session.</p>
-</li>
-<li>
-<p>"git commit" learned a "--patch" option to directly jump to the
-  per-hunk selection UI of the interactive mode.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=0 to show
-  directories that contribute less than 0.1% of changes.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=lines mode to
-  assess damage to the directory based on number of lines in the patch
-  output, not based on the similarity numbers.</p>
-</li>
-<li>
-<p>"git format-patch" learned "--quiet" option to suppress the output of
-  the names of generated files.</p>
-</li>
-<li>
-<p>"git format-patch" quotes people's names when it has RFC822 special
-  characters in it, e.g. "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>.  Earlier
-  it was up to the user to do this when using its output.</p>
-</li>
-<li>
-<p>"git format-patch" can take an empty --subject-prefix now.</p>
-</li>
-<li>
-<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
-</li>
-<li>
-<p>"git log" and friends learned a new "--notes" option to replace the
-  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
-  not imply showing the default notes.</p>
-</li>
-<li>
-<p>They also learned a log.abbrevCommit configuration variable to augment
-  the --abbrev-commit command line option.</p>
-</li>
-<li>
-<p>"git ls-remote" learned "--exit-code" option to consider it a
-  different kind of error when no remote ref to be shown.</p>
-</li>
-<li>
-<p>"git merge" learned "-" as a short-hand for "the previous branch", just
-  like the way "git checkout -" works.</p>
-</li>
-<li>
-<p>"git merge" uses "merge.ff" configuration variable to decide to always
-  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
-  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
-  (or not setting it at all) restores the default behaviour of allowing
-  fast-forward to happen when possible.</p>
-</li>
-<li>
-<p>p4-import (from contrib) learned a new option --preserve-user.</p>
-</li>
-<li>
-<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
-  would fail without touching the index nor the working tree.</p>
-</li>
-<li>
-<p>"git rebase" that does not specify on top of which branch to rebase
-  the current branch now uses @{upstream} of the current branch.</p>
-</li>
-<li>
-<p>"git rebase" finished either normally or with --abort did not
-  update the reflog for HEAD to record the event to come back to
-  where it started from.</p>
-</li>
-<li>
-<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
-  a fetch-mode mirror meant mirror everything, but now it only means refs are
-  not renamed.</p>
-</li>
-<li>
-<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
-  commits separately, producing more a useful output.</p>
-</li>
-<li>
-<p>"git submodule update" learned "--force" option to get rid of local
-  changes in submodules and replace them with the up-to-date version.</p>
-</li>
-<li>
-<p>"git status" and friends ignore .gitmodules file while the file is
-  still in a conflicted state during a merge, to avoid using information
-  that is not final and possibly corrupt with conflict markers.</p>
-</li>
-<li>
-<p>"git config" used to choke with an insanely long line.
-  (merge ef/maint-strbuf-init later)</p>
-</li>
-<li>
-<p>"git diff --quiet" did not work well with --diff-filter.
-  (merge jk/diff-not-so-quick later)</p>
-</li>
-<li>
-<p>"git status -z" did not default to --porcelain output format.
-  (merge bc/maint-status-z-to-use-porcelain later)</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/page/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -704,14 +663,14 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
+    <li><a href="/blog/2011/09/25/plone-sur-github">Plone sur GitHub</a></li>
     <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
     <li><a href="/blog/2011/08/29/git-1.7.6.1-publiee">Git 1.7.6.1 publiée</a></li>
     <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
     <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
     <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
-    <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
-    <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -725,7 +684,7 @@ par Junio.</p>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (13)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (49)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (50)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -735,14 +694,14 @@ par Junio.</p>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
+     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
+     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (16)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (17)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -751,7 +710,8 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>

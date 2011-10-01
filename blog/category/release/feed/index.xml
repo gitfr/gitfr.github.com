@@ -10,10 +10,174 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sat, 10 Sep 2011 22:10:27 GMT</pubDate>
+    <pubDate>Sat, 01 Oct 2011 08:28:25 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.7 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</link>
+      <pubDate>Sat, 01 Oct 2011 10:34:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</guid>
+      <description>Git 1.7.7 publiée</description>
+      <content:encoded><![CDATA[<p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
+changements.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Interix, Cygwin and Minix ports got updated.</p>
+</li>
+<li>
+<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
+</li>
+<li>
+<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
+  before reading from gitweb_config.perl or from /etc/gitweb.conf
+  (this last one is read only when per-repository gitweb_config.perl
+  does not exist).</p>
+</li>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+  functions can compress or uncompress more than 4GB data in one call on
+  platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>Git now recognizes loose objects written by other implementations that
+  use a non-standard window size for zlib deflation (e.g. Agit running on
+  Android with 4kb window). We used to reject anything that was not
+  deflated with 32kb window.</p>
+</li>
+<li>
+<p>Interaction between the use of pager and coloring of the output has
+  been improved, especially when a command that is not built-in was
+  involved.</p>
+</li>
+<li>
+<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
+  "git apply".</p>
+</li>
+<li>
+<p>You can now feed many empty lines before feeding an mbox file to
+  "git am".</p>
+</li>
+<li>
+<p>"git archive" can be told to pass the output to gzip compression and
+  produce "archive.tar.gz".</p>
+</li>
+<li>
+<p>"git bisect" can be used in a bare repository (provided that the test
+  you perform per each iteration does not need a working tree, of
+  course).</p>
+</li>
+<li>
+<p>The length of abbreviated object names in "git branch -v" output
+  now honors the core.abbrev configuration variable.</p>
+</li>
+<li>
+<p>"git check-attr" can take relative paths from the command line.</p>
+</li>
+<li>
+<p>"git check-attr" learned an "--all" option to list the attributes for a
+  given path.</p>
+</li>
+<li>
+<p>"git checkout" (both the code to update the files upon checking out a
+  different branch and the code to checkout a specific set of files) learned
+  to stream the data from object store when possible, without having to
+  read the entire contents of a file into memory first. An earlier round
+  of this code that is not in any released version had a large leak but
+  now it has been plugged.</p>
+</li>
+<li>
+<p>"git clone" can now take a "--config key=value" option to set the
+  repository configuration options that affect the initial checkout.</p>
+</li>
+<li>
+<p>"git commit <paths>..." now lets you feed relative pathspecs that
+  refer to outside your current subdirectory.</p>
+</li>
+<li>
+<p>"git diff --stat" learned a --stat-count option to limit the output of
+  a diffstat report.</p>
+</li>
+<li>
+<p>"git diff" learned a "--histogram" option to use a different diff
+  generation machinery stolen from jgit, which might give better
+  performance.</p>
+</li>
+<li>
+<p>"git diff" had a weird worst case behaviour that can be triggered
+  when comparing files with potentially many places that could match.</p>
+</li>
+<li>
+<p>"git fetch", "git push" and friends no longer show connection
+  errors for addresses that couldn't be connected to when at least one
+  address succeeds (this is arguably a regression but a deliberate
+  one).</p>
+</li>
+<li>
+<p>"git grep" learned "--break" and "--heading" options, to let users mimic
+  the output format of "ack".</p>
+</li>
+<li>
+<p>"git grep" learned a "-W" option that shows wider context using the same
+  logic used by "git diff" to determine the hunk header.</p>
+</li>
+<li>
+<p>Invoking the low-level "git http-fetch" without "-a" option (which
+  git itself never did---normal users should not have to worry about
+  this) is now deprecated.</p>
+</li>
+<li>
+<p>The "--decorate" option to "git log" and its family learned to
+  highlight grafted and replaced commits.</p>
+</li>
+<li>
+<p>"git rebase master topci" no longer spews usage hints after giving
+  the "fatal: no such branch: topci" error message.</p>
+</li>
+<li>
+<p>The recursive merge strategy implementation got a fairly large
+  fix for many corner cases that may rarely happen in real world
+  projects (it has been verified that none of the 16000+ merges in
+  the Linux kernel history back to v2.6.12 is affected with the
+  corner case bugs this update fixes).</p>
+</li>
+<li>
+<p>"git stash" learned an "--include-untracked option".</p>
+</li>
+<li>
+<p>"git submodule update" used to stop at the first error updating a
+  submodule; it now goes on to update other submodules that can be
+  updated, and reports the ones with errors at the end.</p>
+</li>
+<li>
+<p>"git push" can be told with the "--recurse-submodules=check" option to
+  refuse pushing of the supermodule, if any of its submodules'
+  commits hasn't been pushed out to their remotes.</p>
+</li>
+<li>
+<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
+  subset of the refs exist in a repository. This may help a site to
+  put many tiny repositories into one repository (this would not be
+  useful for larger repositories as repacking would be problematic).</p>
+</li>
+<li>
+<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
+  that is more efficient in reading objects in packfiles.</p>
+</li>
+<li>
+<p>test scripts for gitweb tried to run even when CGI-related perl modules
+  are not installed; they now exit early when the latter are unavailable.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.6.1 publiée</title>
       <link>http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</link>
@@ -617,85 +781,6 @@ par Junio.</p>
 <p>"git stash apply" reported the result of its operation by running
   "git status" from the top-level of the working tree; it should (and
   now does) run it from the user's working directory.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.4.2 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/03/29/git-1.7.4.2-publiee</link>
-      <pubDate>Tue, 29 Mar 2011 08:48:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/03/29/git-1.7.4.2-publiee</guid>
-      <description>Git 1.7.4.2 publiée</description>
-      <content:encoded><![CDATA[<p>La deuxième version de maintenance de la banche 1.7.4.x est sortie le 27 mars. Vous pouvez constater que le terme <strong>upstream</strong> (qui désigne la branche distante) remplace progressivement tous les anciens termes. Cela fait une suite à une constatation dans le manque de cohérence dans la terminologie employée (documentation et commande).</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>Many documentation updates to match "git cmd -h" output and the
-  git-cmd manual page.</p>
-</li>
-<li>
-<p>We used to keep one file descriptor open for each and every packfile
-  that we have a mmap window on it (read: "in use"), even when for very
-  tiny packfiles.  We now close the file descriptor early when the entire
-  packfile fits inside one mmap window.</p>
-</li>
-<li>
-<p>"git bisect visualize" tried to run "gitk" in windowing
-  environments even when "gitk" is not installed, resulting in a
-  strange error message.</p>
-</li>
-<li>
-<p>"git clone /no/such/path" did not fail correctly.</p>
-</li>
-<li>
-<p>"git commit" did not correctly error out when the user asked to use a
-  non existent file as the commit message template.</p>
-</li>
-<li>
-<p>"git diff --stat -B" ran on binary files counted the changes in lines,
-  which was nonsensical.</p>
-</li>
-<li>
-<p>"git diff -M" opportunistically detected copies, which was not
-  necessarily a good thing, especially when it is internally run by
-  recursive merge.</p>
-</li>
-<li>
-<p>"git difftool" didn't tell (g)vimdiff that the files it is reading are
-  to be opened read-only.</p>
-</li>
-<li>
-<p>"git merge" didn't pay attention to prepare-commit-msg hook, even
-  though if a merge is conflicted and manually resolved, the subsequent
-  "git commit" would have triggered the hook, which was inconsistent.</p>
-</li>
-<li>
-<p>"git patch-id" (and commands like "format-patch --ignore-in-upstream"
-  that use it as their internal logic) handled changes to files that end
-  with incomplete lines incorrectly.</p>
-</li>
-<li>
-<p>The official value to tell "git push" to push the current branch back
-  to update the upstream branch it forked from is now called "upstream".
-  The old name "tracking" is and will be supported.</p>
-</li>
-<li>
-<p>"git submodule update" used to honor the --merge/--rebase option (or
-  corresponding configuration variables) even for a newly cloned
-  subproject, which made no sense (so/submodule-no-update-first-time).</p>
-</li>
-<li>
-<p>gitweb's "highlight" interface mishandled tabs.</p>
-</li>
-<li>
-<p>gitweb didn't understand timezones with GMT offset that is not
-  multiple of a whole hour.</p>
-</li>
-<li>
-<p>gitweb had a few forward-incompatible syntactic constructs and
-  also used incorrect variable when showing the file mode in a diff.</p>
 </li>
 </ul>]]></content:encoded>
     </item>

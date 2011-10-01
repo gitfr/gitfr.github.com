@@ -65,6 +65,72 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.3.5-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/01/11/git-1.7.3.5-publiee" rel="bookmark" title="Permanent Link to Git 1.7.3.5 publiée">Git 1.7.3.5 publiée</a></h2>
+  <p class="related"><strong>11/01/2011 08:03 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La version 1.7.3.5 est sortie le 6 Janvier, et c'est surement la dernière version de la série 1.7.3.x (sauf bien évidemment gros bug ou faille de sécurité). Voici les changements :</p>
+<ul>
+<li>test-lib.sh/test_decode_color(): use octal not hex in awk script</li>
+<li>gitweb: Include links to feeds in HTML header only for '200 OK' response</li>
+<li>ident: die on bogus date format</li>
+<li>Fix typo in git-gc document.</li>
+<li>t0050: fix printf format strings for portability</li>
+<li>gitweb: skip logo in atom feed when there is none</li>
+<li>commit: die before asking to edit the log message</li>
+<li>am --abort: keep unrelated commits since the last failure and warn</li>
+<li>rebase --skip: correctly wrap-up when skipping the last patch</li>
+<li>status: Quote paths with spaces in short format</li>
+<li>t/t8006: Demonstrate blame is broken when cachetextconv is on</li>
+<li>fill_textconv(): Don't get/put cache if sha1 is not valid</li>
+<li>fsck docs: remove outdated and useless diagnostic</li>
+<li>git-difftool.txt: correct the description of $BASE and describe $MERGED</li>
+<li>difftool: provide basename to external tools</li>
+<li>t3419-*.sh: Fix arithmetic expansion syntax error</li>
+<li>close file on error in read_mmfile()</li>
+<li>Fix false positives in t3404 due to SHELL=/bin/false</li>
+<li>t9001: Fix test prerequisites</li>
+<li>userdiff: fix typo in ruby and python word regexes</li>
+<li>trace.c: mark file-local function static</li>
+</ul>
+<p>Comme vous pouvez le constater, rien de bien important (enfin je dis cela car je ne suis pas tombé sur un des bugs :), les développeurs se focalisant depuis quelques semaines déja sur la future version 1.7.4.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="git-rejoint-la-software-freedom-conservancy"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy" rel="bookmark" title="Permanent Link to Git rejoint la Software Freedom Conservancy">Git rejoint la Software Freedom Conservancy</a></h2>
+  <p class="related"><strong>18/12/2010 02:28 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La <strong>Software Freedom Conservancy</strong> est une organisation Ney-Yorkaise qui fait la promotion de <strong>Logiciels Libres</strong>, et qui a l'avantage d'être éxonéré de taxe (<em>tax-exempt 501(c)(3) organisation</em> dans le droit US). Cela signifie que cette association peut maintenant donner de l'argent au projet Git (donation déductible des impôts).</p>
+<p>Voila une bonne nouvelle :).</p>
+<p>Le mail d'annonce est <a href="http://comments.gmane.org/gmane.comp.version-control.git/163845">ici</a>.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.3.4-et-1.6.6.3-publiees"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees" rel="bookmark" title="Permanent Link to Git 1.7.3.4 et 1.6.6.3 publiées">Git 1.7.3.4 et 1.6.6.3 publiées</a></h2>
   <p class="related"><strong>16/12/2010 02:25 PM</strong> | categories: 
@@ -388,76 +454,6 @@ insteadOf = work:
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/08/git-1.7.3.3-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="suivre-le-developpement-de-git"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/05/suivre-le-developpement-de-git" rel="bookmark" title="Permanent Link to Suivre le développement de Git">Suivre le développement de Git</a></h2>
-  <p class="related"><strong>05/12/2010 01:54 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Chaque série de patchs est mis dans une branche <strong>topic</strong>, c'est à dire une branche dédiée à un développement spécifique. Ce développement est ensuite fusionné (<em>mergé</em>) dans la branche <strong>pu</strong> (<em>proposed updates</em>), qui est une branche d'intégration. Aprés une ou plusieurs revues, si le code est beau et fonctionnel, il est de nouveau fusionné avec la branche <strong>next</strong>, qui représente la prochaine version stable, et eventuellement dans la branche <strong>maint</strong> qui représente la version stable en cours (dans le cas d'une correction de bugs). <strong>master</strong> quand à lui, ne récupère que des merge venant de <strong>maint</strong>.</p>
-<p>Pour résumé, vous avez les branches principales :</p>
-<ul>
-<li>master</li>
-<li>next</li>
-<li>pu</li>
-<li>maint</li>
-</ul>
-<p>Et 3 branches supplémentaires de moindres importances : <strong>man</strong>, <strong>html</strong> et <strong>todo</strong>.</p>
-<p>Les améliorations se font en mettant à jour la branche topic, puis en fusionnant de nouveau dans la ou les branches concernées.</p>
-<p>Ce workflow demande de bien suivre les développements sur l'ensemble des branches. Et comme le dit Junio lui même (le mainteneur du projet), il est nécessaire de :</p>
-<ul>
-<li>voir quels commits sont dans les branches</li>
-<li>vérifier quels commits sont déja mergés et où</li>
-<li>connaitre la date de la dernière mise à jour</li>
-</ul>
-<p>C'est l'objet du résumé appelé "What's cooking", qui se trouve dans la branche <strong>todo</strong>. Ce fichier (<code>whats-cooking.txt</code>) est le résultat d'un script qui recense les développements en cours. C'est un fichier assez long (environ 800 lignes) qui donnent une trés bonne vue d'ensemble du projet.</p>
-<p>Bonne lecture :).</p>
-<p><strong>Note</strong> : Ce fichier est mis à jour chaque semaine dans le dépôt git et il est également envoyé sur la liste de diffusion (<strong>git@vger.kernel.org</strong>).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="historiser-etc-avec-etckeeper"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/05/historiser-etc-avec-etckeeper" rel="bookmark" title="Permanent Link to Historiser /etc avec etckeeper">Historiser /etc avec etckeeper</a></h2>
-  <p class="related"><strong>05/12/2010 01:05 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
- | <a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Pour illuster l'un des intérêts des <em>DVCS</em>, à savoir son coté <strong>décentralisé</strong>, ou plus éxactement le fait qu'il n'est pas obligatoire de disposer d'un dépôt central, voici un exemple concret. Nous pouvons historiser simplement un répertoire en tapant la commande :</p>
-<blockquote>
-<p>$ git init</p>
-</blockquote>
-<p>Ainsi, vous pouvez sauvegarder toute modification apportée à un fichier et historiser vos changements. Mais si vous voulez le faire simplement et <strong>automatiquement</strong>, il faut scripter un peu. Mais comme souvent dans le monde libre, un développeur à pensé avant vous, s'est sorti les doigts du <em>censure</em> et a publié son projet.</p>
-<p><a href="http://kitenet.net/~joey/code/etckeeper/">etckeeper</a>, projet de Joey Hess (bien connu des utilisateurs Debian) permet comme son nom l'indique de sauvegarder le répertoire <code>/etc</code> (ensemble des fichiers de configurations sous <em>Linux</em>), simplement et rapidement. Joey est un vieux utilisateur d'outil de gestion de sources pour sauvegarder ses documents : il a écrit un article voici quelques années sur l'utilisation de <em>CVS</em> puis <em>SVN</em> pour gérer son répertoire personnel (son <strong>home</strong>).</p>
-<p>Pour l'installer (sous <em>Ubuntu</em> ou <em>Debian</em>) :</p>
-<blockquote>
-<p>$ aptitude install etckeeper</p>
-</blockquote>
-<p>Le fichier de configuration s'appelle <code>/etc/etckeeper/etckeeper.conf</code>, notamment pour mettre git en backend. L'intérêt de etckeeper se trouve dans les scripts associés, puisqu'il traque les changements de paquet avec <strong>APT</strong> et <strong>DPKG</strong> et gére les permissions correctement (fondamental pour /etc/).</p>
-<p>Et voila ! Vous avez maintenant un historique des changements sur votre machine.</p>
-<p><strong>Note</strong> : etckeeper gère aussi <em>Hg</em>, <em>Darcs</em> et <em>Bzr</em>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../6">« Articles suivants</a>
   --  
  <a href="../8">Articles précédents »</a>
@@ -481,14 +477,14 @@ insteadOf = work:
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
+    <li><a href="/blog/2011/09/25/plone-sur-github">Plone sur GitHub</a></li>
     <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
     <li><a href="/blog/2011/08/29/git-1.7.6.1-publiee">Git 1.7.6.1 publiée</a></li>
     <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
     <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
     <li><a href="/blog/2011/07/18/la-difference-entre-hg-et-git">La différence entre Hg et Git</a></li>
     <li><a href="/blog/2011/07/17/google-code-supporte-git">Google Code supporte Git</a></li>
-    <li><a href="/blog/2011/07/09/gitfr-sur-github">gitfr sur GitHub</a></li>
-    <li><a href="/blog/2011/07/09/git-1.7.6-publiee">Git 1.7.6 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -502,7 +498,7 @@ insteadOf = work:
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (13)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (49)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (50)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
@@ -512,14 +508,14 @@ insteadOf = work:
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (10)</li>
+     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (5)</li>
+     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (16)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (17)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -528,7 +524,8 @@ insteadOf = work:
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>

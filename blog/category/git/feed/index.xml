@@ -10,10 +10,174 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sat, 10 Sep 2011 22:10:27 GMT</pubDate>
+    <pubDate>Sat, 01 Oct 2011 08:28:25 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.7 publiée</title>
+      <link>http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</link>
+      <pubDate>Sat, 01 Oct 2011 10:34:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</guid>
+      <description>Git 1.7.7 publiée</description>
+      <content:encoded><![CDATA[<p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
+changements.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Interix, Cygwin and Minix ports got updated.</p>
+</li>
+<li>
+<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
+</li>
+<li>
+<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
+  before reading from gitweb_config.perl or from /etc/gitweb.conf
+  (this last one is read only when per-repository gitweb_config.perl
+  does not exist).</p>
+</li>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+  functions can compress or uncompress more than 4GB data in one call on
+  platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>Git now recognizes loose objects written by other implementations that
+  use a non-standard window size for zlib deflation (e.g. Agit running on
+  Android with 4kb window). We used to reject anything that was not
+  deflated with 32kb window.</p>
+</li>
+<li>
+<p>Interaction between the use of pager and coloring of the output has
+  been improved, especially when a command that is not built-in was
+  involved.</p>
+</li>
+<li>
+<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
+  "git apply".</p>
+</li>
+<li>
+<p>You can now feed many empty lines before feeding an mbox file to
+  "git am".</p>
+</li>
+<li>
+<p>"git archive" can be told to pass the output to gzip compression and
+  produce "archive.tar.gz".</p>
+</li>
+<li>
+<p>"git bisect" can be used in a bare repository (provided that the test
+  you perform per each iteration does not need a working tree, of
+  course).</p>
+</li>
+<li>
+<p>The length of abbreviated object names in "git branch -v" output
+  now honors the core.abbrev configuration variable.</p>
+</li>
+<li>
+<p>"git check-attr" can take relative paths from the command line.</p>
+</li>
+<li>
+<p>"git check-attr" learned an "--all" option to list the attributes for a
+  given path.</p>
+</li>
+<li>
+<p>"git checkout" (both the code to update the files upon checking out a
+  different branch and the code to checkout a specific set of files) learned
+  to stream the data from object store when possible, without having to
+  read the entire contents of a file into memory first. An earlier round
+  of this code that is not in any released version had a large leak but
+  now it has been plugged.</p>
+</li>
+<li>
+<p>"git clone" can now take a "--config key=value" option to set the
+  repository configuration options that affect the initial checkout.</p>
+</li>
+<li>
+<p>"git commit <paths>..." now lets you feed relative pathspecs that
+  refer to outside your current subdirectory.</p>
+</li>
+<li>
+<p>"git diff --stat" learned a --stat-count option to limit the output of
+  a diffstat report.</p>
+</li>
+<li>
+<p>"git diff" learned a "--histogram" option to use a different diff
+  generation machinery stolen from jgit, which might give better
+  performance.</p>
+</li>
+<li>
+<p>"git diff" had a weird worst case behaviour that can be triggered
+  when comparing files with potentially many places that could match.</p>
+</li>
+<li>
+<p>"git fetch", "git push" and friends no longer show connection
+  errors for addresses that couldn't be connected to when at least one
+  address succeeds (this is arguably a regression but a deliberate
+  one).</p>
+</li>
+<li>
+<p>"git grep" learned "--break" and "--heading" options, to let users mimic
+  the output format of "ack".</p>
+</li>
+<li>
+<p>"git grep" learned a "-W" option that shows wider context using the same
+  logic used by "git diff" to determine the hunk header.</p>
+</li>
+<li>
+<p>Invoking the low-level "git http-fetch" without "-a" option (which
+  git itself never did---normal users should not have to worry about
+  this) is now deprecated.</p>
+</li>
+<li>
+<p>The "--decorate" option to "git log" and its family learned to
+  highlight grafted and replaced commits.</p>
+</li>
+<li>
+<p>"git rebase master topci" no longer spews usage hints after giving
+  the "fatal: no such branch: topci" error message.</p>
+</li>
+<li>
+<p>The recursive merge strategy implementation got a fairly large
+  fix for many corner cases that may rarely happen in real world
+  projects (it has been verified that none of the 16000+ merges in
+  the Linux kernel history back to v2.6.12 is affected with the
+  corner case bugs this update fixes).</p>
+</li>
+<li>
+<p>"git stash" learned an "--include-untracked option".</p>
+</li>
+<li>
+<p>"git submodule update" used to stop at the first error updating a
+  submodule; it now goes on to update other submodules that can be
+  updated, and reports the ones with errors at the end.</p>
+</li>
+<li>
+<p>"git push" can be told with the "--recurse-submodules=check" option to
+  refuse pushing of the supermodule, if any of its submodules'
+  commits hasn't been pushed out to their remotes.</p>
+</li>
+<li>
+<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
+  subset of the refs exist in a repository. This may help a site to
+  put many tiny repositories into one repository (this would not be
+  useful for larger repositories as repacking would be problematic).</p>
+</li>
+<li>
+<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
+  that is more efficient in reading objects in packfiles.</p>
+</li>
+<li>
+<p>test scripts for gitweb tried to run even when CGI-related perl modules
+  are not installed; they now exit early when the latter are unavailable.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.6.1 publiée</title>
       <link>http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</link>
@@ -610,74 +774,6 @@ par Junio.</p>
 <p>Compressed tarball gitweb generates used to be made with the timestamp
   of the tarball generation; this was bad because snapshot from the same
   tree should result in a same tarball.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.5.2 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</link>
-      <pubDate>Mon, 13 Jun 2011 02:05:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</guid>
-      <description>Git 1.7.5.2 publiée</description>
-      <content:encoded><![CDATA[<p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>"git add -p" did not work correctly when a hunk is split and then
-  one of them was given to the editor.</p>
-</li>
-<li>
-<p>"git add -u" did not resolve a conflict where our history deleted and
-  their history modified the same file, and the working tree resolved to
-  keep a file.</p>
-</li>
-<li>
-<p>"git cvsimport" did not know that CVSNT stores its password file in a
-  location different from the traditional CVS.</p>
-</li>
-<li>
-<p>"git diff-files" did not show the mode information from the working
-  tree side of an unmerged path correctly.</p>
-</li>
-<li>
-<p>"git diff -M --cached" used to use unmerged path as a possible rename
-  source candidate, which made no sense.</p>
-</li>
-<li>
-<p>The option name parser in "git fast-import" used prefix matches for
-  some options where it shouldn't, and accepted non-existent options,
-  e.g. "--relative-marksmith" or "--forceps".</p>
-</li>
-<li>
-<p>"git format-patch" did not quote RFC822 special characters in the
-  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
-  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
-</li>
-<li>
-<p>"git format-patch" when run with "--quiet" option used to produce a
-  nonsense result that consists of alternating empty output.</p>
-</li>
-<li>
-<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
-  variables did not override the fallback default merge.<option>
-  configuration variables such as merge.ff, merge.log, etc.</p>
-</li>
-<li>
-<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
-  handling a "both sides added, differently" conflict.</p>
-</li>
-<li>
-<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
-</li>
-<li>
-<p>"git-p4" (in contrib) used a wrong base image while merge a file that
-  was added on both branches differently.</p>
-</li>
-<li>
-<p>"git rebase -i -p" failed to preserve the history when there is a
-  redundant merge created with the --no-ff option.</p>
 </li>
 </ul>]]></content:encoded>
     </item>

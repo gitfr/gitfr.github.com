@@ -7,12 +7,64 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-09-10T22:10:27Z</updated>
+  <updated>2011-10-01T08:28:25Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Plone sur GitHub]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/09/25/plone-sur-github" />
+    <id>http://www.gitfr.net/blog/2011/09/25/plone-sur-github</id>
+    <updated>2011-09-25T13:34:00Z</updated>
+    <published>2011-09-25T13:34:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="github" />
+    <category scheme="http://www.gitfr.net/blog" term="migration" />
+    <summary type="html"><![CDATA[Plone sur GitHub]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/09/25/plone-sur-github"><![CDATA[<p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
+<a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
+présence de 127 (!) dépôts Git. Ce nombre important de dépôt est du à la
+programmation par composant du monde Zope.</p>
+<p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise
+nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le
+principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell
+GHC</a>, passe officiellement sur Git, avec un
+<a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le
+projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de
+contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support
+Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette
+plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar
+(bzr). Et enfin, que la capacité de retravailler son historique (point fort que
+je mets en avant dans toutes mes présentations Git) est un atout important.
+Point important, cette phrase vient du mail expliquant la migration en 2008
+(Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé
+pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il
+existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et
+la 2.8 est en cours de développement avec le support très attendu de la
+fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre
+qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch
+(1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non
+pas l'historique comme une série de «snapshots», mais comme une suite de
+<strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite
+grandement le <strong>cherry-picking</strong>. Malheureusement, des performances
+catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais
+permis à Darcs de décoller.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -429,56 +481,5 @@ to fork and contribute changes.</p>
 <p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
 <p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
 <p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Les nouveautés 2011 sur GitHub]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/03/27/les-nouveautes-2011-sur-github" />
-    <id>http://www.gitfr.net/blog/2011/03/27/les-nouveautes-2011-sur-github</id>
-    <updated>2011-03-27T10:42:00Z</updated>
-    <published>2011-03-27T10:42:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="github" />
-    <summary type="html"><![CDATA[Les nouveautés 2011 sur GitHub]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/03/27/les-nouveautes-2011-sur-github"><![CDATA[<p>Comme le dirait Domenech, "GitHub monte en puissance". Ce billet liste les fonctionnalités sorties depuis le début de l'année. Et au vu du nombre d'embauches (3 par mois depuis décembre 2010), cela devrait s'accélérer dans les prochains mois.</p>
-<p>Les nouveautés :</p>
-<ul>
-<li>
-<p>Vous pouvez notifier une personne (en indiquant son login, ex: <strong>@sdouche</strong>) dans le <em>issue tracker</em> ou un <em>pull request</em>. Cette personne sera automatiquement inscrite pour les échanges futurs. Ces notifications automatiques sont bien sûr désactivables (Account Settings &gt; Notification Center).</p>
-</li>
-<li>
-<p>Plus généralement, ces notifications sont activables pour chaque issue ou pull request.</p>
-</li>
-<li>
-<p>4 modes de visualisation des images : <strong>2-Up</strong> (côte à côte, mode par défaut), <strong>Swipe</strong> (une moitié de l'image avec l'une, une moitié avec l'autre), <strong>Onion Skin</strong> (zoom sur une partie de l'image tout en rendant opaque le reste), <strong>Difference</strong> (visualisation des pixels différents).</p>
-</li>
-<li>
-<p>Vous pouvez mettre en avant vos capacités de codage dans <strong>Linkedin</strong> avec l'application GitHub.</p>
-</li>
-<li>
-<p>Vous pouvez maintenant répondre aux commentaires (issue, commit, pull request, message direct) directement par email.</p>
-</li>
-<li>
-<p>En parlant d'email, ceux ci sont bien mieux conçus : gestion des threads (grâce aux headers <em>Message-Id</em>, <em>References</em> et <em>In-Reply-To</em>) et les sujets ne sont plus génériques (comme "jdoe commented on an issue").</p>
-</li>
-<li>
-<p>En appuyant sur la touche <strong>t</strong> quand vous visualisez un dépôt, vous activez le <strong>File Finder</strong>. Ce dernier vous permet de lire les fichiers plus rapidement et simplement, en utilisant le clavier au lieu de la souris.</p>
-</li>
-<li>
-<p>GitHub propose une fonctionnalité intéressante pour la <strong>revue de code</strong>, puisque vous pouvez commenter des lignes sur un <em>Pull request</em>.</p>
-</li>
-<li>
-<p>La recherche dans <strong>Gist</strong> s'est bien améliorée.</p>
-</li>
-<li>
-<p>Ré-écriture du frontal pour les <strong>Wikis</strong> : nouvel éditeur Wyswig, gestion des permissions améliorée, retour en arrière, pre-visualiation, pied de page...</p>
-</li>
-<li>
-<p>Nouveaux champs pour les <em>Service Hook payload</em>.</p>
-</li>
-</ul>
-<p>Pour être au courant des évolutions, je vous recommande de suivre le <a href="https://github.com/blog">blog</a> officiel de GitHub.</p>]]></content>
   </entry>
 </feed>
