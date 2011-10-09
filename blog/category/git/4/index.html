@@ -65,6 +65,54 @@
           
   
 <div class="blog_post">
+  <a name="la-commande-add"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/03/29/la-commande-add" rel="bookmark" title="Permanent Link to La commande add">La commande add</a></h2>
+  <p class="related"><strong>29/03/2011 08:53 AM</strong> | categories: 
+
+<a href='/blog/category/git-add'>git-add</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/03/29/la-commande-add#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La commande que l'on utilise juste après <em>init</em> ou <em>clone</em> est bien évidemment la commande <em>add</em>. Celle ci permet de modifier le contenu de l'index.</p>
+<h1>L'index ?</h1>
+<p>Git se différencie des autres outils en intégrant la notion d'index. Vous pouvez le voir comme un <strong>commit temporaire</strong>. Commit car il est effectivement enregistré comme tel dans le dépôt, mais temporaire car il est géré complètement différemment. </p>
+<p>Quand on vient de <em>SVN</em> ou de <em>Hg</em>, cela peut paraitre au premier abord assez lourd : a quoi cela peut il bien servir ? Tout simplement à construire tranquillement son commit, en permettant des «va-et-vient» entre son code (que l'on peut étudier ou modifier) et la construction de son commit. Une fois utilisé, on devient accro et on ne s'en lasse pas. Mais nous verrons plus tard que l'on peut shinter l'index si cela n'est pas utile.</p>
+<h1>Une différence importante</h1>
+<p>Quand vous appelez la commande add, vous ne demandez pas à Git d'ajouter le fichier, mais seulement le <strong>contenu</strong> de ce fichier au moment de l'appel de la  commande. Késako ? Avec <em>svn add</em> (ou <em>hg add</em>), vous demandez à svn d'intégrer toutes les modifications futures de ce fichier, alors que Git va seulement intégrer les modifications <strong>actuelles</strong> de ce fichier. Si vous faites de nouveau des modifications, il faudra appeler une deuxième fois la commande add.</p>
+<p>C'est pour cela que vous pouvez retrouver ce même fichier dans l'état «changes to be commited» (aka dans l'index) et l'état «changes not staged to commit» (modifier dans le répertoire de travail) en <strong>même temps</strong> : vous avez modifié le fichier, fait un add puis modifié de nouveau le fichier. Cela peut sembler un peu complexe au premier abord, mais cela vous permet de «jouer» avec votre dernier commit car il est fait pour cela. Une fois que vous êtes sur de votre coup, vous commitez réellement.</p>
+<p>On retrouve la philosophie «gestionnaire de contenu» et non «gestionnaire de fichier» que je cite dans mes présentations. Pour faciliter la vie, Git possède aussi une notion de fichier tracé (voir plus bas la commande -u), mais c'est à vous de décider de prendre en compte systématiquement toutes les modifications en cours. Par défaut, il vous demande de sélectionner chaque modification.</p>
+<p>Une fois comprise et maitrisée, cette étape et un élément important dans la construction d'un <strong>historique propre</strong>.</p>
+<h1>Modifier l'index</h1>
+<p>Rien de plus simple :</p>
+<blockquote>
+<p>$ git add $filepattern</p>
+</blockquote>
+<p>Le pattern peut être un fichier (<em>git add monfichier.txt</em> par exemple).</p>
+<h1>Ajout interactif</h1>
+<p>Si l'ajout en ligne de commande vous semble ennuyeuse, un shell est à votre disposition pour vous simplifier la tâche. Il suffit de taper le numéro de la commande puis de choisir le ou les fichiers impactés.</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lipq1n3EbQ1qdkaiq.png" /></p>
+<p>Personnellement, je n'utilise pas beaucoup le mode interactif.</p>
+<h1>Ajout par hunk</h1>
+<p>Mais j'apprécie particulièrement l'option <strong>-p</strong>. Ce dernier permet d'ajouter du contenu par petits bouts de code, appelez <strong>hunk</strong> :</p>
+<p><img alt="Exemple d'un hunk" src="http://media.tumblr.com/tumblr_lipqrbfx1s1qdkaiq.png" /></p>
+<p>Imaginez que vous avez modifié plusieurs fichiers (ou plusieurs fois le même fichier), portant sur des sujets qui n'ont rien à voir. Cette option me liste les hunks et me demande pour chacun d'eux si je souhaite l'intégrer dans l'index. Je peux ainsi construire un <strong>commit unitaire</strong>, un commit cohérent qui ne mélange pas des modifications sans relation entre elles. Même si j'ai travaillé de manière brouillone dans mon espace de travail.</p>
+<p>De plus, la commande vous propose plusieurs possibilités, comme celle de laisser un hunk <em>undecided</em>, afin d'y revenir plus tard. Vous pouvez même éditer un hunck pour le modifier.C'est une option que je vous recommande chaudement.</p>
+<p><strong>Note</strong> : cette option est en fait un raccourci vers la sous commande <em>patch</em> de l'ajout interactif vu juste avant.</p>
+<h1>Edition d'un patch</h1>
+<p>Vous pouvez directement modifier vos changements avec l'option <em>-e</em>. Je n'utilise personnellement pas cette possibilité (ni directement, ni par l'option -p).</p>
+<h1>Deux raccourcis utiles</h1>
+<p>L'option <em>-a</em> ajoute le contenu de tous les fichiers du répertoire de travail, <em>-u</em> seulement le contenu des fichiers déjà tracés.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/03/29/la-commande-add#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.4.2-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/03/29/git-1.7.4.2-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.2 publiée">Git 1.7.4.2 publiée</a></h2>
   <p class="related"><strong>29/03/2011 08:48 AM</strong> | categories: 
@@ -610,76 +658,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="la-commande-clone"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/12/la-commande-clone" rel="bookmark" title="Permanent Link to La commande clone">La commande clone</a></h2>
-  <p class="related"><strong>12/12/2010 05:49 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/git-clone'>git-clone</a>
- | <a href="http://www.gitfr.net/blog/2010/12/12/la-commande-clone#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches <strong>remotes</strong>, et créer une branche <strong>locale</strong> qui est une copie de la branche active du dépôt distant (généralement <strong>master</strong>).</p>
-<p>La commande est simple :</p>
-<blockquote>
-<p><code>$ git clone &lt;dépôt&gt; [&lt;répertoire&gt;]</code></p>
-</blockquote>
-<p>L'URL du dépôt distant peut être en <strong>http(s)</strong>, <strong>ssh</strong>, <strong>git</strong>, <strong>ftp(s)</strong> et <strong>rsync</strong>. Les trois premiers étant les plus courants. Il était conseillé pendant longtemps de pas utiliser le http, mais depuis la version 1.6.6, Git utilise le <strong>Smart HTTP Transport</strong>, qui est efficace.</p>
-<p>Le répertoire est optionnel, par défaut Git prendra le nom du dépôt (sans le <code>.git</code> s'il existe).</p>
-<p>La partie intéressante à comprendre est contenue dans le fichier <code>config</code> du dépôt local, généré par Git :</p>
-<pre><code>[remote "origin"]
-    fetch = +refs/heads/*:refs/remotes/origin/*
-    url = git://git.kernel.org/pub/scm/git/git.git
-[branch "master"]
-    remote = origin
-    merge = refs/heads/master
-</code></pre>
-<p>C'es lignes sont la traduction technique de l'introduction de ce billet :</p>
-<ul>
-<li>
-<p>Git ajoute le dépôt distant avec pour nom <strong>origin</strong> (convention de nommage). Je peux maintenant utiliser le terme origin au lieu de <code>git://git.kernel.org/pub/scm/git/git.git</code> (ce dernier est toujours utilisable). La section remote peut aussi s'ajouter avec la commande <code>git remote</code>.</p>
-</li>
-<li>
-<p>La ligne fetch indique comment Git doit traduire l'espace de nom distant en espace de nom local. Par défaut, il traduit toutes les branches distantes en branches locales (ex : refs/remotes/origin/abc devient refs/heads/abc). Cette ligne est appelée <strong>refspec</strong> (que nous verrons en détail dans un autre billet).</p>
-</li>
-<li>
-<p>Enfin, Git <strong>traque</strong> la branche active distante. Que signifie traquer ? Cela veut dire modéliser une relation entre deux branches. Ici ma branche master locale est associée à la branche master du dépôt origin. Quand vous faites un <code>git pull</code> ou un <code>git push</code> sur la branche locale, il va prendre la branche traquée comme référence. Sans cette information, Git demande de spécifier le dépôt et la branche sur laquelle il doit travailler.</p>
-</li>
-</ul>
-<p>Le refpsec est obligatoire, les informations de suivies (<em>tracking</em>) sont optionnelles (mais bien pratiques).</p>
-<p>Il existe plusieurs options à cette commande, comme <code>--bare</code> que nous avons déja vu avec la commande init. Je liste celles qui me semblent intéressantes à connaitre (n'hésitez pas à lire la documentation) :</p>
-<ul>
-<li>
-<p><code>--origin</code> : spécifier un nom différent que origin pour le nom remote.</p>
-</li>
-<li>
-<p><code>--branch</code> : spécifier la branche à récupérer au lieu de master.</p>
-</li>
-<li>
-<p><code>--recursive</code> : initialiser aussi les sous modules (<strong>submodules</strong>).</p>
-</li>
-<li>
-<p><code>--depth</code> : permet de créer une copie non complète (appelez <strong>shallow clone</strong>).</p>
-</li>
-<li>
-<p><code>--mirror</code> : permet de tout récupérer (mappe toutes les références).</p>
-</li>
-</ul>
-<p>Autre chose intéressante, si vous avez beaucoup de dépôts sur une URL identique, vous pouvez ajouter un alias dans votre fichier de configuration :</p>
-<pre><code>[url "ssh://git.masociete.com/srv/git"]
-insteadOf = work:
-</code></pre>
-<p>C'est toujours ça de gagné.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/12/la-commande-clone#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/3">« Articles suivants</a>
   --  
  <a href="/blog/category/git/5">Articles précédents »</a>
@@ -703,6 +681,7 @@ insteadOf = work:
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
@@ -710,7 +689,6 @@ insteadOf = work:
     <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
     <li><a href="/blog/2011/08/29/git-1.7.6.1-publiee">Git 1.7.6.1 publiée</a></li>
     <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
-    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -724,12 +702,16 @@ insteadOf = work:
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (50)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
@@ -741,6 +723,7 @@ insteadOf = work:
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
+     <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (17)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
@@ -750,7 +733,7 @@ insteadOf = work:
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>

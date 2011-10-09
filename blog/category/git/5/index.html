@@ -65,6 +65,76 @@
           
   
 <div class="blog_post">
+  <a name="la-commande-clone"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/12/la-commande-clone" rel="bookmark" title="Permanent Link to La commande clone">La commande clone</a></h2>
+  <p class="related"><strong>12/12/2010 05:49 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/git-clone'>git-clone</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/12/la-commande-clone#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches <strong>remotes</strong>, et créer une branche <strong>locale</strong> qui est une copie de la branche active du dépôt distant (généralement <strong>master</strong>).</p>
+<p>La commande est simple :</p>
+<blockquote>
+<p><code>$ git clone &lt;dépôt&gt; [&lt;répertoire&gt;]</code></p>
+</blockquote>
+<p>L'URL du dépôt distant peut être en <strong>http(s)</strong>, <strong>ssh</strong>, <strong>git</strong>, <strong>ftp(s)</strong> et <strong>rsync</strong>. Les trois premiers étant les plus courants. Il était conseillé pendant longtemps de pas utiliser le http, mais depuis la version 1.6.6, Git utilise le <strong>Smart HTTP Transport</strong>, qui est efficace.</p>
+<p>Le répertoire est optionnel, par défaut Git prendra le nom du dépôt (sans le <code>.git</code> s'il existe).</p>
+<p>La partie intéressante à comprendre est contenue dans le fichier <code>config</code> du dépôt local, généré par Git :</p>
+<pre><code>[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git://git.kernel.org/pub/scm/git/git.git
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+</code></pre>
+<p>C'es lignes sont la traduction technique de l'introduction de ce billet :</p>
+<ul>
+<li>
+<p>Git ajoute le dépôt distant avec pour nom <strong>origin</strong> (convention de nommage). Je peux maintenant utiliser le terme origin au lieu de <code>git://git.kernel.org/pub/scm/git/git.git</code> (ce dernier est toujours utilisable). La section remote peut aussi s'ajouter avec la commande <code>git remote</code>.</p>
+</li>
+<li>
+<p>La ligne fetch indique comment Git doit traduire l'espace de nom distant en espace de nom local. Par défaut, il traduit toutes les branches distantes en branches locales (ex : refs/remotes/origin/abc devient refs/heads/abc). Cette ligne est appelée <strong>refspec</strong> (que nous verrons en détail dans un autre billet).</p>
+</li>
+<li>
+<p>Enfin, Git <strong>traque</strong> la branche active distante. Que signifie traquer ? Cela veut dire modéliser une relation entre deux branches. Ici ma branche master locale est associée à la branche master du dépôt origin. Quand vous faites un <code>git pull</code> ou un <code>git push</code> sur la branche locale, il va prendre la branche traquée comme référence. Sans cette information, Git demande de spécifier le dépôt et la branche sur laquelle il doit travailler.</p>
+</li>
+</ul>
+<p>Le refpsec est obligatoire, les informations de suivies (<em>tracking</em>) sont optionnelles (mais bien pratiques).</p>
+<p>Il existe plusieurs options à cette commande, comme <code>--bare</code> que nous avons déja vu avec la commande init. Je liste celles qui me semblent intéressantes à connaitre (n'hésitez pas à lire la documentation) :</p>
+<ul>
+<li>
+<p><code>--origin</code> : spécifier un nom différent que origin pour le nom remote.</p>
+</li>
+<li>
+<p><code>--branch</code> : spécifier la branche à récupérer au lieu de master.</p>
+</li>
+<li>
+<p><code>--recursive</code> : initialiser aussi les sous modules (<strong>submodules</strong>).</p>
+</li>
+<li>
+<p><code>--depth</code> : permet de créer une copie non complète (appelez <strong>shallow clone</strong>).</p>
+</li>
+<li>
+<p><code>--mirror</code> : permet de tout récupérer (mappe toutes les références).</p>
+</li>
+</ul>
+<p>Autre chose intéressante, si vous avez beaucoup de dépôts sur une URL identique, vous pouvez ajouter un alias dans votre fichier de configuration :</p>
+<pre><code>[url "ssh://git.masociete.com/srv/git"]
+insteadOf = work:
+</code></pre>
+<p>C'est toujours ça de gagné.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/12/la-commande-clone#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="structure-d-un-depot-git"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/12/structure-d-un-depot-git" rel="bookmark" title="Permanent Link to Structure d'un dépôt Git">Structure d'un dépôt Git</a></h2>
   <p class="related"><strong>12/12/2010 02:35 AM</strong> | categories: 
@@ -343,51 +413,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="migration-cvs-vers-git-pour-le-projet-drupal"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal" rel="bookmark" title="Permanent Link to Migration CVS vers Git pour le projet Drupal">Migration CVS vers Git pour le projet Drupal</a></h2>
-  <p class="related"><strong>17/11/2010 08:39 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/migration'>migration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Le projet <a href="http://www.drupal.org">Drupal</a> est en cours de migration depuis plusieurs mois (le choix de migrer sur Git est décidé depuis février 2010). C'est donc toute une communauté qui faut former à l'outil, mettre en place des nouvelles pratiques, recoder l'infrastructure (intégration continue, deploiement...). Travail important s'il en est.</p>
-<p>Aprés une <a href="http://groups.drupal.org/node/48818">évaluation des différents outils et du choix final</a>, <a href="http://drupal.org/community-initiatives/git">trois étapes</a> et dix sprints de deux semaines sont planifiés. La migration s'étale donc sur environ 15 mois.</p>
-<p>Les 3 phases :</p>
-<ul>
-<li>création d'un mirroir Git en lecture seul (recréé régulièrement)</li>
-<li>utilisation de Git en mode centralisé</li>
-<li>utilisation de Git en mode décentralisé</li>
-</ul>
-<p>On peut noter que l'équipe infrastructure de Drupal était pour <em>Bzr</em>, mais que la communauté Drupal était majoritairement pour Git. Le choix <em>Hg</em> fut éliminé par manque de soutient.</p>
-<p>Voici la feuille de route :</p>
-<ul>
-<li>Sprint 1 - Making key decisions necessary for the project to move forward</li>
-<li>Sprint 2 - Version Control API</li>
-<li>Sprint 3 - VC API / Admin Interface and Migration Script Finalization</li>
-<li>Sprint 4 - Release-Worthy Views for VC API and Git Activity Log </li>
-<li>Sprint 5 - VC API / Project Module Integration</li>
-<li>Sprint 6 - Project Module (Release Nodes being automatically generated for repositories containing appropriately named branches)</li>
-<li>Sprint 7 - Preparation for Broader Community testing</li>
-<li>Sprint 8 - Community Testing</li>
-<li>Sprint 9 - Community Testing and Deployment Preparation</li>
-<li>Sprint 10 - Deployment (CVS will be gone forever)</li>
-</ul>
-<p>Vous trouverez les résumés des <a href="http://groups.drupal.org/node/100999">sprint 1</a>, <a href="http://groups.drupal.org/node/101004">sprint 2</a> et <a href="http://groups.drupal.org/node/102104">sprint 3</a>.</p>
-<p>Le <a href="http://git.drupalcode.org/">mirroir Git</a> est déja en place puisque nous sommes à la phase 2, vous pouvez constater le nombre assez impressionant de dépôts. Les scripts de migration CVS vers SVN sont sur <a href="https://github.com/sdboyer/drupalorg-git">GitHub</a>.</p>
-<p>On a vu fleurir les présentations et les formations Git, comme au <a href="http://groups.drupal.org/node/71473">Bootcamp Git De Los Angeles</a> ou au <a href="https://docs.google.com/present/view?id=0ATSj3ekASkFxZGRzZDVzdzdfNTA2Z2g1Mm1qZng&amp;hl=en">DrupalCon de Copenhague</a>.</p>
-<p>Si vous souhaitez suivre la migration, lisez régulièrement cette <a href="http://groups.drupal.org/drupal-org-git-migration-team">page</a> ou par <em>Twitter</em> avec <strong>@DrupalGitGremln</strong>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/4">« Articles suivants</a>
   --  
  <a href="/blog/category/git/6">Articles précédents »</a>
@@ -411,6 +436,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
@@ -418,7 +444,6 @@
     <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
     <li><a href="/blog/2011/08/29/git-1.7.6.1-publiee">Git 1.7.6.1 publiée</a></li>
     <li><a href="/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git">Liste de diffusion pour la traduction Git</a></li>
-    <li><a href="/blog/2011/07/31/le-commit-initial-vide">Le commit initial vide</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -432,12 +457,16 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (15)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (50)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
@@ -449,6 +478,7 @@
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
+     <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (17)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
@@ -458,7 +488,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
