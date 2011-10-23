@@ -10,10 +10,51 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Wed, 19 Oct 2011 20:32:16 GMT</pubDate>
+    <pubDate>Sun, 23 Oct 2011 18:21:09 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Retour sur l'atelier du 20/10</title>
+      <link>http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</link>
+      <pubDate>Sun, 23 Oct 2011 20:20:00 CEST</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</guid>
+      <description>Retour sur l'atelier du 20/10</description>
+      <content:encoded><![CDATA[<p>Petit retour qui intéressera peut être les personnes qui souhaitent aussi
+faire des ateliers Git. Je ne suis pas très satisfait de mon 2eme atelier
+plusieurs raisons :</p>
+<ol>
+<li>
+<p>C'était mon 1er atelier qui ne suit pas directement la conférence. Je ne
+   connaissais donc pas le niveau des participants. Moralité, j'ai rabaché
+   ma prés, au lieu de considérer qu'elle était acquise.</p>
+</li>
+<li>
+<p>Conséquence du point précédent, les participants ont passés plus de temps à
+   m'écouter qu'a travailler sur leurs machines. Il faut donc que je m'oblige à
+   me taire et attendre que les participants essayent les commandes.</p>
+</li>
+<li>
+<p>Je pense qu'il est bon de faire les démos avec un dépôt réel dés qu'on arrive
+   à la partie «cas d'utilisation».</p>
+</li>
+</ol>
+<p>Pour le dernier point, je suis partagé sur la solution à adopter :</p>
+<ul>
+<li>
+<p>Créer un dépôt spécial pour l'atelier, avec du contenu texte par exemple.</p>
+</li>
+<li>
+<p>Partager un dépôt de code que je possède.</p>
+</li>
+<li>
+<p>Demander aux participants de venir avec leur code.</p>
+</li>
+</ul>
+<p>Vous en pensez quoi ?</p>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation Git le 24/11 à Bordeaux</title>
       <link>http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux</link>
@@ -200,18 +241,6 @@ pas un projet personnel :).</p>]]></content:encoded>
 <p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
 <p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
 <p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Recherche de salles</title>
-      <link>http://www.gitfr.net/blog/2011/04/24/recherche-de-salles</link>
-      <pubDate>Sun, 24 Apr 2011 15:31:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/24/recherche-de-salles</guid>
-      <description>Recherche de salles</description>
-      <content:encoded><![CDATA[<p>Le chiffre des inscrits à la soirée ParisJUG (420 si je me rappelle bien ce que m'a dit Antonio) montre l'intérêt pour Git. Et même si la vidéo est disponible sur le Net, je pense qu'il est intéressant de faire quelques sessions supplémentaires. Si vous avez à votre disposition une <strong>grande</strong> salle sur <strong>Paris</strong> (ou très proche), faites moi signe (<em>seb@gitfr.net</em>).</p>
-<p>Je sais que c'est beaucoup demandé (grande salle + Paris), mais c'est l'unique moyen pour ne pas faire trop de sessions et permettre aux auditeurs de rentrer chez eux pas trop tard.</p>
-<p>PS : Si vous êtes intéressé par une session en province, n'hésitez pas à me contacter.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
