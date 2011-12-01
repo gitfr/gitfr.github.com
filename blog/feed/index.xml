@@ -10,10 +10,121 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 23 Oct 2011 18:21:09 GMT</pubDate>
+    <pubDate>Thu, 01 Dec 2011 11:47:35 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Atelier privé Hg vs Git le 03/12 à Paris</title>
+      <link>http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</link>
+      <pubDate>Thu, 01 Dec 2011 10:48:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</guid>
+      <description>Atelier privé Hg vs Git le 03/12 à Paris</description>
+      <content:encoded><![CDATA[<p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
+raisons :</p>
+<ul>
+<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
+<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
+  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
+  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
+</ul>
+<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
+SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
+passer à Git ;).</p>
+<p>L'objectif est triple :</p>
+<ul>
+<li>Montrer à quel point Git déchire sa race :).</li>
+<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
+<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
+  Bzr que je n'ai jamais utilisé.</li>
+</ul>
+<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
+les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
+de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
+atelier Git.</p>
+<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
+d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
+plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
+sûr fort intéressant. </p>
+<p>Je tente de faire un compte rendu juste après.</p>
+<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
+Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
+qui n'est plus le cas depuis que je connais Git.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Comportement par défaut du git push</title>
+      <link>http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push</link>
+      <pubDate>Sat, 26 Nov 2011 20:20:00 CET</pubDate>
+      <category><![CDATA[git-push]]></category>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[configuration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push</guid>
+      <description>Comportement par défaut du git push</description>
+      <content:encoded><![CDATA[<p>Git est hautement configurable, avec des dizaines de variables possibles
+dans le fichier de configuration, la longueur de l'aide de l'option config
+donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
+sur les différentes possibilités de configuration, je vous propose plutôt
+des billets courts sur un thème particulier de la configuration.</p>
+<p>Pour ce premier billet, je souhaite aborder le comportement de Git lors d'un
+push. Ce qui ont suivis l'atelier Git à Bordeaux ne seront pas étonnés par ce
+choix : ayant totalement oublié cette option, je ne comprenais pas que ma
+machine ne se comporte pas comme ceux des participants à l'atelier (ma
+crédibilité en tant qu'expert Git en a sérieusement patis :).</p>
+<p>Commençons par lire le manuel sur l'option push.default :</p>
+<p>Defines the action git push should take if no refspec is given on the command
+line, no refspec is configured in the remote, and no refspec is implied by any
+of the options given on the command line. Possible values are: </p>
+<ul>
+<li>nothing - do not push anything.</li>
+<li>matching - push all matching branches. All branches having the same name in
+both ends are considered to be matching. This is the default.</li>
+<li>upstream - push the current branch to its upstream branch.</li>
+<li>tracking - deprecated synonym for upstream.</li>
+<li>current - push the current branch to a branch of the same name.</li>
+</ul>
+<p>Comme vous pouvez le constater, le comportement par défaut si aucun refspec
+n'est fourni (en ligne de commande ou par configuration) est de pousser
+toutes les branches qui existent en local et sur le serveur. Cela veut donc
+dire que si vous tapez la commande <code>git push</code>, vous allez mettre à jour sur le
+serveur toutes les branches que vous avez modifié en local, ce qui est rarement
+souhaitable. Il faudra indiquer le refspec complet <code>git push origin mybranch</code>
+pour éviter cela.</p>
+<p>C'est pour cette raison que je configure Git avec l'option upstream :</p>
+<blockquote>
+<p>$ git config --global push.default upstream</p>
+</blockquote>
+<p>2 avantages immédiats :</p>
+<ul>
+<li>Il ne pousse que la branche courante.</li>
+<li>Il m'oblige à faire un <em>tracking</em>, ce qui est bien utile.</li>
+</ul>
+<p>Maintenant, si vous tentez de pousser la branche <em>test</em> avec la commande
+<code>git push</code> sans tracking préalable, Git vous répond :</p>
+<blockquote>
+<p>fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin test</p>
+</blockquote>
+<p>Suivez le conseil de Git en tapant la commande ci dessus pour suivre votre
+la branche distante test sur origin avec votre branche locale test. Vous verrez
+immédiatement un changement sur votre shell avec l'information <strong>u=</strong>, qui 
+indique que vos deux branches sont synchronisées.</p>
+<h2>Rappel sur le tracking</h2>
+<p>Le tracking consiste à <em>associer</em> une branche locale et une branche distante
+(dite <em>upstream</em> dans la terminologie Git), ce qui donne à Git la branche
+distante à utiliser lors d'un <code>git pull</code>. Si vous ne comprenez pas pourquoi
+vous n'êtes pas plus souvent confronté à cette notion de tracking, c'est tout
+simplement que Git le fait pour vous la plupart du temps :</p>
+<ul>
+<li>Git suit la branche master lors d'un clone.</li>
+<li>Git suit la branche que vous venez de créer si celle ci existe déjà sur le
+   serveur </li>
+</ul>
+<p>C'est donc dans le cas ou créer une nouvelle branche en locale sans existance
+préalable sur le serveur que vous devez explicitement faire cette association.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Retour sur l'atelier du 20/10</title>
       <link>http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</link>
@@ -492,111 +603,6 @@ changements.</p>
 <p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
 21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
 <p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.6.1 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</link>
-      <pubDate>Mon, 29 Aug 2011 00:34:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee</guid>
-      <description>Git 1.7.6.1 publiée</description>
-      <content:encoded><![CDATA[<p>La première version de maintenance de la branche 1.7.6.x est sortie le 24 août,
-avec 88 corrections.</p>
-<h2>Le changelog</h2>
-<ul>
-<li>
-<p>Various codepaths that invoked zlib deflate/inflate assumed that these
-   functions can compress or uncompress more than 4GB data in one call on
-   platforms with 64-bit long, which has been corrected.</p>
-</li>
-<li>
-<p>"git unexecutable" reported that "unexecutable" was not found, even
-   though the actual error was that "unexecutable" was found but did
-   not have a proper she-bang line to be executed.</p>
-</li>
-<li>
-<p>Error exits from $PAGER were silently ignored.</p>
-</li>
-<li>
-<p>"git checkout -b <branch>" was confused when attempting to create a
-   branch whose name ends with "-g" followed by hexadecimal digits,
-   and refused to work.</p>
-</li>
-<li>
-<p>"git checkout -b <branch>" sometimes wrote a bogus reflog entry,
-   causing later "git checkout -" to fail.</p>
-</li>
-<li>
-<p>"git diff --cc" learned to correctly ignore binary files.</p>
-</li>
-<li>
-<p>"git diff -c/--cc" mishandled a deletion that resolves a conflict, and
-   looked in the working tree instead.</p>
-</li>
-<li>
-<p>"git fast-export" forgot to quote pathnames with unsafe characters
-   in its output.</p>
-</li>
-<li>
-<p>"git fetch" over smart-http transport used to abort when the
-   repository was updated between the initial connection and the
-   subsequent object transfer.</p>
-</li>
-<li>
-<p>"git fetch" did not recurse into submodules in subdirectories.</p>
-</li>
-<li>
-<p>"git ls-tree" did not error out when asked to show a corrupt tree.</p>
-</li>
-<li>
-<p>"git pull" without any argument left an extra whitespace after the
-   command name in its reflog.</p>
-</li>
-<li>
-<p>"git push --quiet" was not really quiet.</p>
-</li>
-<li>
-<p>"git rebase -i -p" incorrectly dropped commits from side branches.</p>
-</li>
-<li>
-<p>"git reset [<commit>] paths..." did not reset the index entry correctly
-   for unmerged paths.</p>
-</li>
-<li>
-<p>"git submodule add" did not allow a relative repository path when
-   the superproject did not have any default remote url.</p>
-</li>
-<li>
-<p>"git submodule foreach" failed to correctly give the standard input to
-   the user-supplied command it invoked.</p>
-</li>
-<li>
-<p>submodules that the user has never showed interest in by running
-   "git submodule init" was incorrectly marked as interesting by "git
-   submodule sync".</p>
-</li>
-<li>
-<p>"git submodule update --quiet" was not really quiet.</p>
-</li>
-<li>
-<p>"git tag -l <glob>..." did not take multiple glob patterns from the
-   command line.</p>
-</li>
-</ul>]]></content:encoded>
-    </item>
-    <item>
-      <title>Liste de diffusion pour la traduction Git</title>
-      <link>http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</link>
-      <pubDate>Sat, 06 Aug 2011 23:13:00 CEST</pubDate>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</guid>
-      <description>Liste de diffusion pour la traduction Git</description>
-      <content:encoded><![CDATA[<p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
-<a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
-vient d'être créée. Si ça vous branche de vous prendre la tête sur la
-meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
-<em>.po</em>, vous êtes le bienvenu ! :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

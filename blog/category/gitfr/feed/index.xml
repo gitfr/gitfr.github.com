@@ -10,10 +10,49 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 23 Oct 2011 18:21:09 GMT</pubDate>
+    <pubDate>Thu, 01 Dec 2011 11:47:35 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Atelier privé Hg vs Git le 03/12 à Paris</title>
+      <link>http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</link>
+      <pubDate>Thu, 01 Dec 2011 10:48:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</guid>
+      <description>Atelier privé Hg vs Git le 03/12 à Paris</description>
+      <content:encoded><![CDATA[<p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
+raisons :</p>
+<ul>
+<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
+<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
+  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
+  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
+</ul>
+<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
+SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
+passer à Git ;).</p>
+<p>L'objectif est triple :</p>
+<ul>
+<li>Montrer à quel point Git déchire sa race :).</li>
+<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
+<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
+  Bzr que je n'ai jamais utilisé.</li>
+</ul>
+<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
+les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
+de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
+atelier Git.</p>
+<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
+d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
+plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
+sûr fort intéressant. </p>
+<p>Je tente de faire un compte rendu juste après.</p>
+<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
+Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
+qui n'est plus le cas depuis que je connais Git.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Retour sur l'atelier du 20/10</title>
       <link>http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</link>
@@ -227,20 +266,6 @@ pas un projet personnel :).</p>]]></content:encoded>
 </ul>
 <p>Je ne vous cache pas que je suis allergique à Windows (que je n'utilise plus personnellement et professionnellement depuis 1999) et que je suis donc beaucoup moins à l'aise sur cette plateforme. De plus, nous manipulerons principalement en ligne de commande et non au travers d'un quelconque IDE.</p>
 <p>Suivez ce <a href="http://jugevents.org/jugevents/event/show.html?id=37556">lien</a> pour les inscriptions.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Traduction de Git en français</title>
-      <link>http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais</link>
-      <pubDate>Mon, 25 Apr 2011 13:30:00 CEST</pubDate>
-      <category><![CDATA[traduction]]></category>
-      <category><![CDATA[git]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais</guid>
-      <description>Traduction de Git en français</description>
-      <content:encoded><![CDATA[<p>Apr 25th, 2011 1:30pm</p>
-<p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
-<p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
-<p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

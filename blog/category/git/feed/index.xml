@@ -10,10 +10,82 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 23 Oct 2011 18:21:09 GMT</pubDate>
+    <pubDate>Thu, 01 Dec 2011 11:47:35 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Comportement par défaut du git push</title>
+      <link>http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push</link>
+      <pubDate>Sat, 26 Nov 2011 20:20:00 CET</pubDate>
+      <category><![CDATA[git-push]]></category>
+      <category><![CDATA[git]]></category>
+      <category><![CDATA[configuration]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push</guid>
+      <description>Comportement par défaut du git push</description>
+      <content:encoded><![CDATA[<p>Git est hautement configurable, avec des dizaines de variables possibles
+dans le fichier de configuration, la longueur de l'aide de l'option config
+donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
+sur les différentes possibilités de configuration, je vous propose plutôt
+des billets courts sur un thème particulier de la configuration.</p>
+<p>Pour ce premier billet, je souhaite aborder le comportement de Git lors d'un
+push. Ce qui ont suivis l'atelier Git à Bordeaux ne seront pas étonnés par ce
+choix : ayant totalement oublié cette option, je ne comprenais pas que ma
+machine ne se comporte pas comme ceux des participants à l'atelier (ma
+crédibilité en tant qu'expert Git en a sérieusement patis :).</p>
+<p>Commençons par lire le manuel sur l'option push.default :</p>
+<p>Defines the action git push should take if no refspec is given on the command
+line, no refspec is configured in the remote, and no refspec is implied by any
+of the options given on the command line. Possible values are: </p>
+<ul>
+<li>nothing - do not push anything.</li>
+<li>matching - push all matching branches. All branches having the same name in
+both ends are considered to be matching. This is the default.</li>
+<li>upstream - push the current branch to its upstream branch.</li>
+<li>tracking - deprecated synonym for upstream.</li>
+<li>current - push the current branch to a branch of the same name.</li>
+</ul>
+<p>Comme vous pouvez le constater, le comportement par défaut si aucun refspec
+n'est fourni (en ligne de commande ou par configuration) est de pousser
+toutes les branches qui existent en local et sur le serveur. Cela veut donc
+dire que si vous tapez la commande <code>git push</code>, vous allez mettre à jour sur le
+serveur toutes les branches que vous avez modifié en local, ce qui est rarement
+souhaitable. Il faudra indiquer le refspec complet <code>git push origin mybranch</code>
+pour éviter cela.</p>
+<p>C'est pour cette raison que je configure Git avec l'option upstream :</p>
+<blockquote>
+<p>$ git config --global push.default upstream</p>
+</blockquote>
+<p>2 avantages immédiats :</p>
+<ul>
+<li>Il ne pousse que la branche courante.</li>
+<li>Il m'oblige à faire un <em>tracking</em>, ce qui est bien utile.</li>
+</ul>
+<p>Maintenant, si vous tentez de pousser la branche <em>test</em> avec la commande
+<code>git push</code> sans tracking préalable, Git vous répond :</p>
+<blockquote>
+<p>fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin test</p>
+</blockquote>
+<p>Suivez le conseil de Git en tapant la commande ci dessus pour suivre votre
+la branche distante test sur origin avec votre branche locale test. Vous verrez
+immédiatement un changement sur votre shell avec l'information <strong>u=</strong>, qui 
+indique que vos deux branches sont synchronisées.</p>
+<h2>Rappel sur le tracking</h2>
+<p>Le tracking consiste à <em>associer</em> une branche locale et une branche distante
+(dite <em>upstream</em> dans la terminologie Git), ce qui donne à Git la branche
+distante à utiliser lors d'un <code>git pull</code>. Si vous ne comprenez pas pourquoi
+vous n'êtes pas plus souvent confronté à cette notion de tracking, c'est tout
+simplement que Git le fait pour vous la plupart du temps :</p>
+<ul>
+<li>Git suit la branche master lors d'un clone.</li>
+<li>Git suit la branche que vous venez de créer si celle ci existe déjà sur le
+   serveur </li>
+</ul>
+<p>C'est donc dans le cas ou créer une nouvelle branche en locale sans existance
+préalable sur le serveur que vous devez explicitement faire cette association.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Comprendre le refspec</title>
       <link>http://www.gitfr.net/blog/2011/10/09/comprendre-le-refspec</link>
@@ -867,37 +939,6 @@ par Junio.</p>
 <p>Vous avez donc une colonne supplémentaire qui vous donne le SHA1 ou cette ligne fut effacée. A garder sous le coude !</p>
 <p>Voici une copie d'écran :</p>
 <p><img alt="" src="http://1dan.org/git-blameall/git-blameall-screen1.png" /></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.5.4 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</link>
-      <pubDate>Mon, 13 Jun 2011 02:10:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/06/13/git-1.7.5.4-publiee</guid>
-      <description>Git 1.7.5.4 publiée</description>
-      <content:encoded><![CDATA[<p>La quatrième version de la branche 1.7.5.x est sortie le 2 juin, soit seulement 5 jours aprés la précédente. C'est la dernière ligne du changelog qui nous donne la réponse.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>The single-key mode of "git add -p" was easily fooled into thinking
-  that it was told to add everthing ('a') when up-arrow was pressed by
-  mistake.</p>
-</li>
-<li>
-<p>Setting a git command that uses custom configuration via "-c var=val"
-  as an alias caused a crash due to a realloc(3) failure.</p>
-</li>
-<li>
-<p>"git diff -C -C" used to disable the rename detection entirely when
-  there are too many copy candidate paths in the tree; now it falls
-  back to "-C" when doing so would keep the copy candidate paths
-  under the rename detection limit.</p>
-</li>
-<li>
-<p>"git rerere" did not diagnose a corrupt MERGE_RR file in some cases.</p>
-</li>
-</ul>]]></content:encoded>
     </item>
   </channel>
 </rss>

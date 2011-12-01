@@ -10,10 +10,49 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 23 Oct 2011 18:21:09 GMT</pubDate>
+    <pubDate>Thu, 01 Dec 2011 11:47:35 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Atelier privé Hg vs Git le 03/12 à Paris</title>
+      <link>http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</link>
+      <pubDate>Thu, 01 Dec 2011 10:48:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</guid>
+      <description>Atelier privé Hg vs Git le 03/12 à Paris</description>
+      <content:encoded><![CDATA[<p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
+raisons :</p>
+<ul>
+<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
+<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
+  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
+  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
+</ul>
+<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
+SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
+passer à Git ;).</p>
+<p>L'objectif est triple :</p>
+<ul>
+<li>Montrer à quel point Git déchire sa race :).</li>
+<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
+<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
+  Bzr que je n'ai jamais utilisé.</li>
+</ul>
+<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
+les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
+de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
+atelier Git.</p>
+<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
+d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
+plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
+sûr fort intéressant. </p>
+<p>Je tente de faire un compte rendu juste après.</p>
+<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
+Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
+qui n'est plus le cas depuis que je connais Git.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Retour sur l'atelier du 20/10</title>
       <link>http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</link>
@@ -349,43 +388,6 @@ quelques heures :).</p>]]></content:encoded>
       <content:encoded><![CDATA[<p>Le chiffre des inscrits à la soirée ParisJUG (420 si je me rappelle bien ce que m'a dit Antonio) montre l'intérêt pour Git. Et même si la vidéo est disponible sur le Net, je pense qu'il est intéressant de faire quelques sessions supplémentaires. Si vous avez à votre disposition une <strong>grande</strong> salle sur <strong>Paris</strong> (ou très proche), faites moi signe (<em>seb@gitfr.net</em>).</p>
 <p>Je sais que c'est beaucoup demandé (grande salle + Paris), mais c'est l'unique moyen pour ne pas faire trop de sessions et permettre aux auditeurs de rentrer chez eux pas trop tard.</p>
 <p>PS : Si vous êtes intéressé par une session en province, n'hésitez pas à me contacter.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Retour sur la soirée Git ParisJUG</title>
-      <link>http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug</link>
-      <pubDate>Sat, 23 Apr 2011 05:36:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug</guid>
-      <description>Retour sur la soirée Git ParisJUG</description>
-      <content:encoded><![CDATA[<p>J'arrive vers 19h et des poussières, et je vois une file assez impressionnante de personnes qui attendent de rentrer. J'apprendrai plus tard que le système de réservation s'est gouré et n'a pas limité à 200 places comme d'habitude mais à... 300 ! L'équipe du ParisJUG s'est donc mis à la recherche d'un maximum de sièges (interdiction de rester dans le couloir ou par terre). Donc non seulement j'ai battu le record d'inscription (200 places parties en 3h, 120 personnes en liste d'attente), mais surement le nombre de personnes présentes à une conférence :). Signe que Git à le vent en poupe en France !</p>
-<p>A cause d'une pause de 40mn en plein milieu de la soirée j'ai présenté Git en deux parties, de 55 minutes chacune. Le tout faisant 393 slides.</p>
-<h2>La partie «théorie»</h2>
-<p>J'ai épuré par rapport à l'atelier #1 et #2, pour me focaliser sur les points clés :</p>
-<ul>
-<li>Les objets (blob, tree, commit)</li>
-<li>La base de données clé / valeur</li>
-<li>Le SHA1</li>
-<li>Le graphe (DAG)</li>
-<li>Les références (tag et branche, distante et locale)</li>
-<li>Un peu de théorie sur le merge (2 way merge, 3 way merge)</li>
-</ul>
-<p>La difficulté est que l'auditeur lambda ne connait pas les DVCS, la notion de graphe (le DAG) n'est donc <strong>pas maitrisée</strong>. Venant de svn, ils ne connaissent que le graphe à une branche (que j'appelle un <strong>graphe dégénéré</strong>). C'est à cause de ce graphe unaire que les merges sont difficiles. Inversement, le DVCS ayant une <strong>vue globale</strong> de l'historique, il est plus à même de vous faciliter la vie avec de nombreuses commandes et de prendre les bonnes décisions.</p>
-<p>Les points fondamentaux que j'ai tenté de faire passer : </p>
-<ul>
-<li>Git est avant tout bien pensé conceptuellement. Complexe de prime abord, la compréhension de Git est grandement amélioré en abordant chaque concept individuellement.</li>
-<li>Git permet de modifier le graphe dans tous les sens. C'est le <strong>gros</strong> avantage sur ses concurrents.</li>
-<li>Le travail collaboratif est simplifié avec les références distantes, permettant d'avoir N versions d'un projet sur son dépôt.</li>
-</ul>
-<p>Et surtout que Git n'est <strong>pas</strong> l'outil magique que l'on peut croire, il n'est qu'un <strong>outil stupide</strong> qu'il ne fait que ce qu'on lui ordonne. Mais il a l'avantage de disposer des fonctionnalités qu'on est en droit d'attendre en 2011. <strong>Svn est dépassé</strong>, pas besoin de tortiller du cul (j'aime bien cette expression un poil vulgaire).</p>
-<h2>La partie «pratique»</h2>
-<p>Cette partie avait pour but de mettre les pieds à l'étrier, en donnant des conseils et quelques astuces. J'ai pensé à parler des commandes de base, ou à faire une démo en «live», mais après quelques essais, je n'était pas satisfait. J'ai donc joué la carte du <strong>faire envie</strong>. J'ai parlé de quelques commandes que j'adore comme le <code>add -p</code> ou le <code>rebase -i</code>. </p>
-<p>Mais surtout, le point clé de cette partie est de montrer l'utilité de modifier aussi facilement le graphe pour disposer d'un historique «propre». Cette notion étant mouvante dans le temps, on peut à tout moment revoir cette historique pour le rendre conforme à ses souhaits. Disposer de <strong>commits  unitaires</strong> facilitant la compréhension des changements, des <strong>multiples branches</strong> pour différencier les travaux au cours du temps et leurs intégrations, le tout donc dans un graphe facile à comprendre. est un avantage <strong>indéniable</strong> de Git. C'est de mon point de vue, ce qu'il l'emporte sur <em>Hg</em>. Car ce dernier est (aussi) bien pensé, (plus) facile à utiliser et diablement efficace, même si la gestion des branches est un poil simpliste.</p>
-<p>J'ai aussi parlé des Workflows et rapidement des outils graphiques et de GitHub.</p>
-<h2>Conclusion</h2>
-<p>De l'avis de toutes les personnes qui ont vu mes premières présentations, celle ci est bien mieux construite. Mon travail à donc payé (j'ai passé quelque chose comme 20h, si ce n'est pas plus). J'ai aussi accompagné les auditeurs pendant 2h, la pause aidant sur ce point.</p>
-<p>Mais si j'ai bien réussi la partie théorique, je dois encore améliorer la partie pratique en enlevant quelques commandes peu pertinentes et me focaliser sur l'intérêt de modifier le graphe à travers des exemples intéressants : l'avantage du décentralisé en travaillant tranquillement sur son dépôt, le travail collaboratif, le fait de revoir son historique au bout de plusieurs semaines de travail, etc.</p>
-<p>Bref, beaucoup de positif, mais encore du travail pour une meilleur ROI de l'auditeur :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

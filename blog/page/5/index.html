@@ -65,6 +65,75 @@
           
   
 <div class="blog_post">
+  <a name="retour-sur-la-soiree-git-parisjug"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/23/retour-sur-la-soiree-git-parisjug" rel="bookmark" title="Permanent Link to Retour sur la soirée Git ParisJUG">Retour sur la soirée Git ParisJUG</a></h2>
+  <p class="related"><strong>23/04/2011 05:36 AM</strong> | categories: 
+
+<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>J'arrive vers 19h et des poussières, et je vois une file assez impressionnante de personnes qui attendent de rentrer. J'apprendrai plus tard que le système de réservation s'est gouré et n'a pas limité à 200 places comme d'habitude mais à... 300 ! L'équipe du ParisJUG s'est donc mis à la recherche d'un maximum de sièges (interdiction de rester dans le couloir ou par terre). Donc non seulement j'ai battu le record d'inscription (200 places parties en 3h, 120 personnes en liste d'attente), mais surement le nombre de personnes présentes à une conférence :). Signe que Git à le vent en poupe en France !</p>
+<p>A cause d'une pause de 40mn en plein milieu de la soirée j'ai présenté Git en deux parties, de 55 minutes chacune. Le tout faisant 393 slides.</p>
+<h2>La partie «théorie»</h2>
+<p>J'ai épuré par rapport à l'atelier #1 et #2, pour me focaliser sur les points clés :</p>
+<ul>
+<li>Les objets (blob, tree, commit)</li>
+<li>La base de données clé / valeur</li>
+<li>Le SHA1</li>
+<li>Le graphe (DAG)</li>
+<li>Les références (tag et branche, distante et locale)</li>
+<li>Un peu de théorie sur le merge (2 way merge, 3 way merge)</li>
+</ul>
+<p>La difficulté est que l'auditeur lambda ne connait pas les DVCS, la notion de graphe (le DAG) n'est donc <strong>pas maitrisée</strong>. Venant de svn, ils ne connaissent que le graphe à une branche (que j'appelle un <strong>graphe dégénéré</strong>). C'est à cause de ce graphe unaire que les merges sont difficiles. Inversement, le DVCS ayant une <strong>vue globale</strong> de l'historique, il est plus à même de vous faciliter la vie avec de nombreuses commandes et de prendre les bonnes décisions.</p>
+<p>Les points fondamentaux que j'ai tenté de faire passer : </p>
+<ul>
+<li>Git est avant tout bien pensé conceptuellement. Complexe de prime abord, la compréhension de Git est grandement amélioré en abordant chaque concept individuellement.</li>
+<li>Git permet de modifier le graphe dans tous les sens. C'est le <strong>gros</strong> avantage sur ses concurrents.</li>
+<li>Le travail collaboratif est simplifié avec les références distantes, permettant d'avoir N versions d'un projet sur son dépôt.</li>
+</ul>
+<p>Et surtout que Git n'est <strong>pas</strong> l'outil magique que l'on peut croire, il n'est qu'un <strong>outil stupide</strong> qu'il ne fait que ce qu'on lui ordonne. Mais il a l'avantage de disposer des fonctionnalités qu'on est en droit d'attendre en 2011. <strong>Svn est dépassé</strong>, pas besoin de tortiller du cul (j'aime bien cette expression un poil vulgaire).</p>
+<h2>La partie «pratique»</h2>
+<p>Cette partie avait pour but de mettre les pieds à l'étrier, en donnant des conseils et quelques astuces. J'ai pensé à parler des commandes de base, ou à faire une démo en «live», mais après quelques essais, je n'était pas satisfait. J'ai donc joué la carte du <strong>faire envie</strong>. J'ai parlé de quelques commandes que j'adore comme le <code>add -p</code> ou le <code>rebase -i</code>. </p>
+<p>Mais surtout, le point clé de cette partie est de montrer l'utilité de modifier aussi facilement le graphe pour disposer d'un historique «propre». Cette notion étant mouvante dans le temps, on peut à tout moment revoir cette historique pour le rendre conforme à ses souhaits. Disposer de <strong>commits  unitaires</strong> facilitant la compréhension des changements, des <strong>multiples branches</strong> pour différencier les travaux au cours du temps et leurs intégrations, le tout donc dans un graphe facile à comprendre. est un avantage <strong>indéniable</strong> de Git. C'est de mon point de vue, ce qu'il l'emporte sur <em>Hg</em>. Car ce dernier est (aussi) bien pensé, (plus) facile à utiliser et diablement efficace, même si la gestion des branches est un poil simpliste.</p>
+<p>J'ai aussi parlé des Workflows et rapidement des outils graphiques et de GitHub.</p>
+<h2>Conclusion</h2>
+<p>De l'avis de toutes les personnes qui ont vu mes premières présentations, celle ci est bien mieux construite. Mon travail à donc payé (j'ai passé quelque chose comme 20h, si ce n'est pas plus). J'ai aussi accompagné les auditeurs pendant 2h, la pause aidant sur ce point.</p>
+<p>Mais si j'ai bien réussi la partie théorique, je dois encore améliorer la partie pratique en enlevant quelques commandes peu pertinentes et me focaliser sur l'intérêt de modifier le graphe à travers des exemples intéressants : l'avantage du décentralisé en travaillant tranquillement sur son dépôt, le travail collaboratif, le fait de revoir son historique au bout de plusieurs semaines de travail, etc.</p>
+<p>Bref, beaucoup de positif, mais encore du travail pour une meilleur ROI de l'auditeur :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="la-commande-rm"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/23/la-commande-rm" rel="bookmark" title="Permanent Link to La commande rm">La commande rm</a></h2>
+  <p class="related"><strong>23/04/2011 03:21 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/git-rm'>git-rm</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/23/la-commande-rm#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Peu de chose à dire sur la commande <code>rm</code>. Je ne vous fais pas l'injure de dire à quoi elle sert :). Elle est un poil plus complexe que sa soeur <em>hg</em> ou <em>svn</em> avec la présence de l'index. En effet, nous pouvons effacer des fichiers dans l'index seul, avec l'option <code>--cached</code>, mais aussi dans l'espace de travail <strong>et</strong> l'index (par défaut).</p>
+<p>Il existe un «raccourci» : si vous avez supprimer un fichier avec la commande <code>rm</code> de l'OS, Git supprimera aussi le fichier avec la commande <code>git commit -a</code>, puisque cette dernière demande à Git de vérifier les changements dans les fichiers tracés.</p>
+<p>Comme d'habitude, lisez le manuel ;).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/23/la-commande-rm#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-commande-commit"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/04/23/la-commande-commit" rel="bookmark" title="Permanent Link to La commande commit">La commande commit</a></h2>
   <p class="related"><strong>23/04/2011 02:17 AM</strong> | categories: 
@@ -271,89 +340,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/13/comment-ecrire-git#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.4.4-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/07/git-1.7.4.4-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.4 publiée">Git 1.7.4.4 publiée</a></h2>
-  <p class="related"><strong>07/04/2011 06:13 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La quatrième version de la branche 1.7.4.x vient de sortir (7/4/2011).</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>Compilation of sha1_file.c on BSD platforms were broken due to our
-  recent use of getrlimit() without including <sys/resource.h>.</p>
-</li>
-<li>
-<p>"git config" did not diagnose incorrect configuration variable names.</p>
-</li>
-<li>
-<p>"git format-patch" did not wrap a long subject line that resulted from
-  rfc2047 encoding.</p>
-</li>
-<li>
-<p>"git instaweb" should work better again with plackup.</p>
-</li>
-<li>
-<p>"git log --max-count=4 -Sfoobar" now shows 4 commits that changes the
-  number of occurrences of string "foobar"; it used to scan only for 4
-  commits and then emitted only matching ones.</p>
-</li>
-<li>
-<p>"git log --first-parent --boundary $c^..$c" segfaulted on a merge.</p>
-</li>
-<li>
-<p>"git pull" into an empty branch should have behaved as if
-  fast-forwarding from emptiness to the version being pulled, with
-  the usual protection against overwriting untracked files.</p>
-</li>
-<li>
-<p>"git submodule" that is run while a merge in the superproject is in
-  conflicted state tried to process each conflicted submodule up to
-  three times.</p>
-</li>
-<li>
-<p>"git status" spent all the effort to notice racily-clean index entries
-  but didn't update the index file to help later operations go faster in
-  some cases.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="info-sur-la-presentation-du-12-04"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/07/info-sur-la-presentation-du-12-04" rel="bookmark" title="Permanent Link to Untitled - 2011-10-23 20:21:08">Untitled - 2011-10-23 20:21:08</a></h2>
-  <p class="related"><strong>07/04/2011 04:05 PM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/04/07/info-sur-la-presentation-du-12-04#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>J'avais préparé mon billet à l'avance, histoire de le publier ce matin. Mais voila, le temps d'y penser, les <strong>200 places étaient parties</strong> ! Diantre, Git à vraiment la côte, on a battu le record de vitesse des inscriptions (moins de 4h). Pour la postérité, voici le billet initial :</p>
-<p>C'est parti ! Vous pouvez vous <strong>inscrire</strong> pour la <a href="http://www.parisjug.org/xwiki/bin/view/Meeting/20110412">présentation Git</a> de mardi prochain (l'inscription est obligatoire). J'ai profondément <strong>remanié</strong> l'ensemble pour être plus concis sur la partie théorique et laisser plus de place pour l'utilisation de Git : quelques conseils et astuces, les commandes qui me font aimer Git, les workflows, GitHub, le travail collaboratif...</p>
-<p>Je pense même que ceux qui ont vu l'atelier #1 et #2 peuvent apprendre des choses :). A cause du buffet en plein milieu, le déroulement est simple : 1h théorique, buffet et enfin 1h pratique.</p>
-<p>Et petite surprise, il y aura un jeu concours du sponsor de la soirée (questions sur Git et sur Java, ben oui <em>ParisJUG</em>, c'est pour Paris <strong>Java</strong> Users Group).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/07/info-sur-la-presentation-du-12-04#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../4">« Articles suivants</a>
   --  
  <a href="../6">Articles précédents »</a>
@@ -377,14 +363,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
+    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
-    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
-    <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -396,9 +382,9 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -406,12 +392,12 @@
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -429,6 +415,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>

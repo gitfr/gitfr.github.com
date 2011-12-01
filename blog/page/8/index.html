@@ -65,6 +65,101 @@
           
   
 <div class="blog_post">
+  <a name="git-rejoint-la-software-freedom-conservancy"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy" rel="bookmark" title="Permanent Link to Git rejoint la Software Freedom Conservancy">Git rejoint la Software Freedom Conservancy</a></h2>
+  <p class="related"><strong>18/12/2010 02:28 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La <strong>Software Freedom Conservancy</strong> est une organisation Ney-Yorkaise qui fait la promotion de <strong>Logiciels Libres</strong>, et qui a l'avantage d'être éxonéré de taxe (<em>tax-exempt 501(c)(3) organisation</em> dans le droit US). Cela signifie que cette association peut maintenant donner de l'argent au projet Git (donation déductible des impôts).</p>
+<p>Voila une bonne nouvelle :).</p>
+<p>Le mail d'annonce est <a href="http://comments.gmane.org/gmane.comp.version-control.git/163845">ici</a>.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="git-1.7.3.4-et-1.6.6.3-publiees"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees" rel="bookmark" title="Permanent Link to Git 1.7.3.4 et 1.6.6.3 publiées">Git 1.7.3.4 et 1.6.6.3 publiées</a></h2>
+  <p class="related"><strong>16/12/2010 02:25 PM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Le changement le plus important est la correction d'une faille de sécurité sur <strong>Gitweb</strong>. Cette correction est backportée sur l'ensemble des branches de maintenance (1.7.2.5, 1.7.1.4, 1.7.0.9, 1.6.5.9, 1.6.4.5).</p>
+<p>Junio (le mainteneur) en a profité pour intégrer d'autres correctifs (uniquement sur 1.7.3.4 et 1.6.6.3) :</p>
+<ul>
+<li>
+<p>Smart HTTP transport used to incorrectly retry redirected POST
+  request with GET request.</p>
+</li>
+<li>
+<p>"git apply" did not correctly handle patches that only change modes
+  if told to apply while stripping leading paths with -p option.</p>
+</li>
+<li>
+<p>"git apply" can deal with patches with timezone formatted with a
+  colon between the hours and minutes part (e.g. "-08:00" instead of
+  "-0800").</p>
+</li>
+<li>
+<p>"git checkout" removed an untracked file "foo" from the working
+  tree when switching to a branch that contains a tracked path
+  "foo/bar".  Prevent this, just like the case where the conflicting
+  path were "foo" (c752e7f..7980872d).</p>
+</li>
+<li>
+<p>"git cherry-pick" or "git revert" refused to work when a path that
+  would be modified by the operation was stat-dirty without a real
+  difference in the contents of the file.</p>
+</li>
+<li>
+<p>"git diff --check" reported an incorrect line number for added
+  blank lines at the end of file.</p>
+</li>
+<li>
+<p>"git imap-send" failed to build under NO_OPENSSL.</p>
+</li>
+<li>
+<p>Setting log.decorate configuration variable to "0" or "1" to mean
+  "false" or "true" did not work.</p>
+</li>
+<li>
+<p>"git push" over dumb HTTP protocol did not work against WebDAV
+  servers that did not terminate a collection name with a slash.</p>
+</li>
+<li>
+<p>"git tag -v" did not work with GPG signatures in rfc1991 mode.</p>
+</li>
+<li>
+<p>The post-receive-email sample hook was accidentally broken in 1.7.3.3
+  update.</p>
+</li>
+<li>
+<p>"gitweb" can sometimes be tricked into parrotting a filename argument
+  given in a request without properly quoting.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-commande-clone"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/12/la-commande-clone" rel="bookmark" title="Permanent Link to La commande clone">La commande clone</a></h2>
   <p class="related"><strong>12/12/2010 05:49 AM</strong> | categories: 
@@ -353,59 +448,6 @@ insteadOf = work:
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="historiser-etc-avec-etckeeper"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/05/historiser-etc-avec-etckeeper" rel="bookmark" title="Permanent Link to Historiser /etc avec etckeeper">Historiser /etc avec etckeeper</a></h2>
-  <p class="related"><strong>05/12/2010 01:05 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
- | <a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Pour illuster l'un des intérêts des <em>DVCS</em>, à savoir son coté <strong>décentralisé</strong>, ou plus éxactement le fait qu'il n'est pas obligatoire de disposer d'un dépôt central, voici un exemple concret. Nous pouvons historiser simplement un répertoire en tapant la commande :</p>
-<blockquote>
-<p>$ git init</p>
-</blockquote>
-<p>Ainsi, vous pouvez sauvegarder toute modification apportée à un fichier et historiser vos changements. Mais si vous voulez le faire simplement et <strong>automatiquement</strong>, il faut scripter un peu. Mais comme souvent dans le monde libre, un développeur à pensé avant vous, s'est sorti les doigts du <em>censure</em> et a publié son projet.</p>
-<p><a href="http://kitenet.net/~joey/code/etckeeper/">etckeeper</a>, projet de Joey Hess (bien connu des utilisateurs Debian) permet comme son nom l'indique de sauvegarder le répertoire <code>/etc</code> (ensemble des fichiers de configurations sous <em>Linux</em>), simplement et rapidement. Joey est un vieux utilisateur d'outil de gestion de sources pour sauvegarder ses documents : il a écrit un article voici quelques années sur l'utilisation de <em>CVS</em> puis <em>SVN</em> pour gérer son répertoire personnel (son <strong>home</strong>).</p>
-<p>Pour l'installer (sous <em>Ubuntu</em> ou <em>Debian</em>) :</p>
-<blockquote>
-<p>$ aptitude install etckeeper</p>
-</blockquote>
-<p>Le fichier de configuration s'appelle <code>/etc/etckeeper/etckeeper.conf</code>, notamment pour mettre git en backend. L'intérêt de etckeeper se trouve dans les scripts associés, puisqu'il traque les changements de paquet avec <strong>APT</strong> et <strong>DPKG</strong> et gére les permissions correctement (fondamental pour /etc/).</p>
-<p>Et voila ! Vous avez maintenant un historique des changements sur votre machine.</p>
-<p><strong>Note</strong> : etckeeper gère aussi <em>Hg</em>, <em>Darcs</em> et <em>Bzr</em>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/historiser-etc-avec-etckeeper#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/05/git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees" rel="bookmark" title="Permanent Link to Git 1.7.0.8,1.7.1.3 et 1.7.2.4 publiées">Git 1.7.0.8,1.7.1.3 et 1.7.2.4 publiées</a></h2>
-  <p class="related"><strong>05/12/2010 12:10 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2010/12/05/git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Ces versions ne contiennent qu'un <em>backport</em> (un portage d'un code provenant d'une version supérieure, en l'occurence la future 1.7.4 en cours de développement). Ce dernier introduit la variable de configuration <code>add.IgnoreErrors</code>, nouveau nom de la variable existante <code>add.ignore-errors</code>.</p>
-<p>Cela permet donc de continuer à utiliser les branches 1.7.0.x, 1.7.1.x et 1.7.2.x avec les mêmes paramêtres que les futures versions.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../7">« Articles suivants</a>
   --  
  <a href="../9">Articles précédents »</a>
@@ -429,14 +471,14 @@ insteadOf = work:
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
+    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
-    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
-    <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -448,9 +490,9 @@ insteadOf = work:
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -458,12 +500,12 @@ insteadOf = work:
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -481,6 +523,8 @@ insteadOf = work:
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>

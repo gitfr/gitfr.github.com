@@ -65,6 +65,87 @@
           
   
 <div class="blog_post">
+  <a name="comportement-par-defaut-du-git-push"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push" rel="bookmark" title="Permanent Link to Comportement par défaut du git push">Comportement par défaut du git push</a></h2>
+  <p class="related"><strong>26/11/2011 08:20 PM</strong> | categories: 
+
+<a href='/blog/category/git-push'>git-push</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
+ | <a href="http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Git est hautement configurable, avec des dizaines de variables possibles
+dans le fichier de configuration, la longueur de l'aide de l'option config
+donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
+sur les différentes possibilités de configuration, je vous propose plutôt
+des billets courts sur un thème particulier de la configuration.</p>
+<p>Pour ce premier billet, je souhaite aborder le comportement de Git lors d'un
+push. Ce qui ont suivis l'atelier Git à Bordeaux ne seront pas étonnés par ce
+choix : ayant totalement oublié cette option, je ne comprenais pas que ma
+machine ne se comporte pas comme ceux des participants à l'atelier (ma
+crédibilité en tant qu'expert Git en a sérieusement patis :).</p>
+<p>Commençons par lire le manuel sur l'option push.default :</p>
+<p>Defines the action git push should take if no refspec is given on the command
+line, no refspec is configured in the remote, and no refspec is implied by any
+of the options given on the command line. Possible values are: </p>
+<ul>
+<li>nothing - do not push anything.</li>
+<li>matching - push all matching branches. All branches having the same name in
+both ends are considered to be matching. This is the default.</li>
+<li>upstream - push the current branch to its upstream branch.</li>
+<li>tracking - deprecated synonym for upstream.</li>
+<li>current - push the current branch to a branch of the same name.</li>
+</ul>
+<p>Comme vous pouvez le constater, le comportement par défaut si aucun refspec
+n'est fourni (en ligne de commande ou par configuration) est de pousser
+toutes les branches qui existent en local et sur le serveur. Cela veut donc
+dire que si vous tapez la commande <code>git push</code>, vous allez mettre à jour sur le
+serveur toutes les branches que vous avez modifié en local, ce qui est rarement
+souhaitable. Il faudra indiquer le refspec complet <code>git push origin mybranch</code>
+pour éviter cela.</p>
+<p>C'est pour cette raison que je configure Git avec l'option upstream :</p>
+<blockquote>
+<p>$ git config --global push.default upstream</p>
+</blockquote>
+<p>2 avantages immédiats :</p>
+<ul>
+<li>Il ne pousse que la branche courante.</li>
+<li>Il m'oblige à faire un <em>tracking</em>, ce qui est bien utile.</li>
+</ul>
+<p>Maintenant, si vous tentez de pousser la branche <em>test</em> avec la commande
+<code>git push</code> sans tracking préalable, Git vous répond :</p>
+<blockquote>
+<p>fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin test</p>
+</blockquote>
+<p>Suivez le conseil de Git en tapant la commande ci dessus pour suivre votre
+la branche distante test sur origin avec votre branche locale test. Vous verrez
+immédiatement un changement sur votre shell avec l'information <strong>u=</strong>, qui 
+indique que vos deux branches sont synchronisées.</p>
+<h2>Rappel sur le tracking</h2>
+<p>Le tracking consiste à <em>associer</em> une branche locale et une branche distante
+(dite <em>upstream</em> dans la terminologie Git), ce qui donne à Git la branche
+distante à utiliser lors d'un <code>git pull</code>. Si vous ne comprenez pas pourquoi
+vous n'êtes pas plus souvent confronté à cette notion de tracking, c'est tout
+simplement que Git le fait pour vous la plupart du temps :</p>
+<ul>
+<li>Git suit la branche master lors d'un clone.</li>
+<li>Git suit la branche que vous venez de créer si celle ci existe déjà sur le
+   serveur </li>
+</ul>
+<p>C'est donc dans le cas ou créer une nouvelle branche en locale sans existance
+préalable sur le serveur que vous devez explicitement faire cette association.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/11/26/comportement-par-defaut-du-git-push#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="comprendre-le-refspec"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/10/09/comprendre-le-refspec" rel="bookmark" title="Permanent Link to Comprendre le refspec">Comprendre le refspec</a></h2>
   <p class="related"><strong>09/10/2011 05:53 PM</strong> | categories: 
@@ -911,74 +992,6 @@ par Junio.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="cycle-de-release-raccourci"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/06/13/cycle-de-release-raccourci" rel="bookmark" title="Permanent Link to Cycle de release raccourci">Cycle de release raccourci</a></h2>
-  <p class="related"><strong>13/06/2011 03:24 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
-<h2>Le planning</h2>
-<ul>
-<li>
-<p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
-</li>
-<li>
-<p>Cycle d'intégration de nouvelles fonctionnalités à partir de la deuxième semaine, en fusionnant de la branche <code>next</code> vers <code>master</code>, ou de la branche <code>pu</code> vers <code>next</code>. </p>
-</li>
-<li>
-<p>Semaine N, une version <em>release candidate</em> (rc0) est taggée. Tous les sujets dans <code>next</code> sont triés (pour inclusion dans <code>master</code> ou attente de la prochaine version).</p>
-</li>
-<li>
-<p>Semaine N+1, une deuxième version <em>rc</em> est taggée. L'objectif est de tester à fond pour trouver d'éventuelles régressions, et plus aucune fonctionnalité nouvelle est acceptée.</p>
-</li>
-<li>
-<p>Semaine N+2, une troisième <em>rc</em> sort.</p>
-</li>
-<li>
-<p>Semaine X, la version finale sort.</p>
-</li>
-</ul>
-<p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
-<h2>Gestion des branches</h2>
-<p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
-<ul>
-<li>
-<p>master, la branche principale de la prochaine stable.</p>
-</li>
-<li>
-<p>next, la branche de stabilisation  de la prochaine stable.</p>
-</li>
-<li>
-<p>pu, la branche d'intégration de la prochaine stable.</p>
-</li>
-<li>
-<p>maint, la branche de maintenance de la dernière stable.</p>
-</li>
-</ul>
-<p>Une nouvelle fonctionnalité ne va pas directement dans <code>master</code>, mais passe d'abord par <code>pu</code>, puis <code>next</code>. Si tout donne satisfaction, alors la branche est mergée dans <code>master</code>. Cela signifie que :</p>
-<ul>
-<li>
-<p>vous pouvez utiliser une version stable, en stabilisation ou en cours de développement.</p>
-</li>
-<li>
-<p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
-</li>
-</ul>
-<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -1000,14 +1013,14 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
+    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
-    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
-    <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -1019,9 +1032,9 @@ par Junio.</p>
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -1029,12 +1042,12 @@ par Junio.</p>
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -1052,6 +1065,8 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>

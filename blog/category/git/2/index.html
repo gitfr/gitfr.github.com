@@ -65,6 +65,74 @@
           
   
 <div class="blog_post">
+  <a name="cycle-de-release-raccourci"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/06/13/cycle-de-release-raccourci" rel="bookmark" title="Permanent Link to Cycle de release raccourci">Cycle de release raccourci</a></h2>
+  <p class="related"><strong>13/06/2011 03:24 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
+<h2>Le planning</h2>
+<ul>
+<li>
+<p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
+</li>
+<li>
+<p>Cycle d'intégration de nouvelles fonctionnalités à partir de la deuxième semaine, en fusionnant de la branche <code>next</code> vers <code>master</code>, ou de la branche <code>pu</code> vers <code>next</code>. </p>
+</li>
+<li>
+<p>Semaine N, une version <em>release candidate</em> (rc0) est taggée. Tous les sujets dans <code>next</code> sont triés (pour inclusion dans <code>master</code> ou attente de la prochaine version).</p>
+</li>
+<li>
+<p>Semaine N+1, une deuxième version <em>rc</em> est taggée. L'objectif est de tester à fond pour trouver d'éventuelles régressions, et plus aucune fonctionnalité nouvelle est acceptée.</p>
+</li>
+<li>
+<p>Semaine N+2, une troisième <em>rc</em> sort.</p>
+</li>
+<li>
+<p>Semaine X, la version finale sort.</p>
+</li>
+</ul>
+<p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
+<h2>Gestion des branches</h2>
+<p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
+<ul>
+<li>
+<p>master, la branche principale de la prochaine stable.</p>
+</li>
+<li>
+<p>next, la branche de stabilisation  de la prochaine stable.</p>
+</li>
+<li>
+<p>pu, la branche d'intégration de la prochaine stable.</p>
+</li>
+<li>
+<p>maint, la branche de maintenance de la dernière stable.</p>
+</li>
+</ul>
+<p>Une nouvelle fonctionnalité ne va pas directement dans <code>master</code>, mais passe d'abord par <code>pu</code>, puis <code>next</code>. Si tout donne satisfaction, alors la branche est mergée dans <code>master</code>. Cela signifie que :</p>
+<ul>
+<li>
+<p>vous pouvez utiliser une version stable, en stabilisation ou en cours de développement.</p>
+</li>
+<li>
+<p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
+</li>
+</ul>
+<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/cycle-de-release-raccourci#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-blameall"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-blameall" rel="bookmark" title="Permanent Link to git blameall">git blameall</a></h2>
   <p class="related"><strong>13/06/2011 02:22 AM</strong> | categories: 
@@ -559,68 +627,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="annuler-des-modifications"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/24/annuler-des-modifications" rel="bookmark" title="Permanent Link to Annuler des modifications">Annuler des modifications</a></h2>
-  <p class="related"><strong>24/04/2011 11:28 PM</strong> | categories: 
-
-<a href='/blog/category/git-reset'>git-reset</a>, <a href='/blog/category/git-revert'>git-revert</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/git-checkout'>git-checkout</a>
- | <a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Vous pouvez annuler votre travail de plusieurs manières.</p>
-<h2>git revert</h2>
-<p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
-<p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
-<h2>git reset</h2>
-<p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
-<ul>
-<li>
-<p><code>git reset $path</code> est l'inverse de la commande <em>git add</em>, cela permet de supprimer des entrées dans l'index.</p>
-</li>
-<li>
-<p><code>git reset $commit $path</code> permet de réinitialiser le contenu du fichier situé dans l'index avec le contenu du fichier du commit spécifié. </p>
-</li>
-<li>
-<p><code>git reset -p $path</code> est l'inverse de la commande <em>git add -p</em>, pour sélectionner les <em>hunks</em> à supprimer de l'index.</p>
-</li>
-<li>
-<p><code>git reset -p $commit $path</code>. Identique à la commande précédente, mais Git affiche les <em>hunks</em> entre l'index et le commit spécifié (et non avec <em>HEAD</em> comme la commande précédente).</p>
-</li>
-<li>
-<p><code>git reset --mode $commit</code> permet de revenir à un ancien commit. Le mode permet de choisir si on veut modifier le répertoire de travail, l'index ou le dépôt. Les modes disponibles sont :</p>
-</li>
-<li>
-<p><code>--soft</code>, pour modifier uniquement le dépôt</p>
-</li>
-<li>
-<p><code>--mixed</code>, pour modifier dépôt et index</p>
-</li>
-<li>
-<p><code>--hard</code>, pour modifier dépôt, index et répertoire de travail</p>
-</li>
-</ul>
-<p>Je vous laisse découvrir l'utilité des options --keep et --merge :).</p>
-<p>Ne vous laissez pas prendre par la complexité de la section discussion du manuel, qui présente tous les cas de figures. Comme nous avons 3 (dépôt, index et répertoire de travail) et non plus 2 états, les possibilités sont multipliées.</p>
-<p>Voici un schéma simplifié (qui vient du blog http://blog.plover.com/prog/git-reset.html) qui correspond au cas d'utilisation le plus courant :</p>
-<p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png" /></p>
-<p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
-<p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
-<h2>git checkout</h2>
-<p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
-<h2>Conclusion</h2>
-<p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
-<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/1">« Articles suivants</a>
   --  
  <a href="/blog/category/git/3">Articles précédents »</a>
@@ -644,14 +650,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
+    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
     <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
-    <li><a href="/blog/2011/10/01/git-1.7.7-publiee">Git 1.7.7 publiée</a></li>
-    <li><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon">Présentation Git le 20/09 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -663,9 +669,9 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (17)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -673,12 +679,12 @@
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -696,6 +702,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
