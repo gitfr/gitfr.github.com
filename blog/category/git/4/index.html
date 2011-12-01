@@ -65,61 +65,6 @@
           
   
 <div class="blog_post">
-  <a name="git-1.7.4.3-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/03/git-1.7.4.3-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.3 publiée">Git 1.7.4.3 publiée</a></h2>
-  <p class="related"><strong>03/04/2011 02:45 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La troisière version de maintenance de la banche 1.7.4.x est sortie le 3 avril. A vos mises à jour ! :).</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>"git apply" used to confuse lines updated by previous hunks as lines
-  that existed before when applying a hunk, contributing misapplication
-  of patches with offsets.</p>
-</li>
-<li>
-<p>"git branch --track" (and "git checkout --track --branch") used to
-  allow setting up a random non-branch that does not make sense to follow
-  as the "upstream".  The command correctly diagnoses it as an error.</p>
-</li>
-<li>
-<p>"git checkout $other_branch" silently removed untracked symbolic links
-  in the working tree that are in the way in order to check out paths
-  under it from the named branch.</p>
-</li>
-<li>
-<p>"git cvsimport" did not bail out immediately when the cvs server cannot
-  be reached, spewing unnecessary error messages that complain about the
-  server response that it never got.</p>
-</li>
-<li>
-<p>"git diff --quiet" did not work very well with the "--diff-filter"
-  option.</p>
-</li>
-<li>
-<p>"git grep -n" lacked a long-hand synonym --line-number.</p>
-</li>
-<li>
-<p>"git stash apply" reported the result of its operation by running
-  "git status" from the top-level of the working tree; it should (and
-  now does) run it from the user's working directory.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
   <a name="la-commande-add"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/03/29/la-commande-add" rel="bookmark" title="Permanent Link to La commande add">La commande add</a></h2>
   <p class="related"><strong>29/03/2011 08:53 AM</strong> | categories: 
@@ -640,6 +585,79 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="git-1.7.3.4-et-1.6.6.3-publiees"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees" rel="bookmark" title="Permanent Link to Git 1.7.3.4 et 1.6.6.3 publiées">Git 1.7.3.4 et 1.6.6.3 publiées</a></h2>
+  <p class="related"><strong>16/12/2010 02:25 PM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Le changement le plus important est la correction d'une faille de sécurité sur <strong>Gitweb</strong>. Cette correction est backportée sur l'ensemble des branches de maintenance (1.7.2.5, 1.7.1.4, 1.7.0.9, 1.6.5.9, 1.6.4.5).</p>
+<p>Junio (le mainteneur) en a profité pour intégrer d'autres correctifs (uniquement sur 1.7.3.4 et 1.6.6.3) :</p>
+<ul>
+<li>
+<p>Smart HTTP transport used to incorrectly retry redirected POST
+  request with GET request.</p>
+</li>
+<li>
+<p>"git apply" did not correctly handle patches that only change modes
+  if told to apply while stripping leading paths with -p option.</p>
+</li>
+<li>
+<p>"git apply" can deal with patches with timezone formatted with a
+  colon between the hours and minutes part (e.g. "-08:00" instead of
+  "-0800").</p>
+</li>
+<li>
+<p>"git checkout" removed an untracked file "foo" from the working
+  tree when switching to a branch that contains a tracked path
+  "foo/bar".  Prevent this, just like the case where the conflicting
+  path were "foo" (c752e7f..7980872d).</p>
+</li>
+<li>
+<p>"git cherry-pick" or "git revert" refused to work when a path that
+  would be modified by the operation was stat-dirty without a real
+  difference in the contents of the file.</p>
+</li>
+<li>
+<p>"git diff --check" reported an incorrect line number for added
+  blank lines at the end of file.</p>
+</li>
+<li>
+<p>"git imap-send" failed to build under NO_OPENSSL.</p>
+</li>
+<li>
+<p>Setting log.decorate configuration variable to "0" or "1" to mean
+  "false" or "true" did not work.</p>
+</li>
+<li>
+<p>"git push" over dumb HTTP protocol did not work against WebDAV
+  servers that did not terminate a collection name with a slash.</p>
+</li>
+<li>
+<p>"git tag -v" did not work with GPG signatures in rfc1991 mode.</p>
+</li>
+<li>
+<p>The post-receive-email sample hook was accidentally broken in 1.7.3.3
+  update.</p>
+</li>
+<li>
+<p>"gitweb" can sometimes be tricked into parrotting a filename argument
+  given in a request without properly quoting.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/16/git-1.7.3.4-et-1.6.6.3-publiees#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
  <a href="/blog/category/git/3">« Articles suivants</a>
   --  
  <a href="/blog/category/git/5">Articles précédents »</a>
@@ -663,14 +681,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
+    <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
-    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
-    <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -682,9 +700,9 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -692,12 +710,12 @@
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -715,8 +733,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(3)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>

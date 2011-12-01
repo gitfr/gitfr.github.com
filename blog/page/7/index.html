@@ -65,6 +65,35 @@
           
   
 <div class="blog_post">
+  <a name="eclipse-sur-github"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/03/eclipse-sur-github" rel="bookmark" title="Permanent Link to Eclipse sur GitHub">Eclipse sur GitHub</a></h2>
+  <p class="related"><strong>03/04/2011 12:46 AM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>, <a href='/blog/category/migration'>migration</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
+<p>La fondation héberge ses propres projets en proposant <a href="http://dev.eclipse.org/viewcvs/viewvc.cgi/">CVS, Subversion</a> et <a href="http://git.eclipse.org/c/">Git</a>. Mais la perspective collaborative de GitHub semble être un avantage certain, comme le souligne l'<a href="http://aniszczyk.org/2011/04/01/eclipse-org-and-github/">annonce</a> de Chris Aniszczyk :</p>
+<blockquote>
+<p>I'm happy to announce we finally setup mirroring of eclipse.org repositories on GitHub.
+I think this is an important step to making the eclipse.org codebase more accessible for people
+to fork and contribute changes.</p>
+</blockquote>
+<p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
+<p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
+<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-commande-add"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/03/29/la-commande-add" rel="bookmark" title="Permanent Link to La commande add">La commande add</a></h2>
   <p class="related"><strong>29/03/2011 08:53 AM</strong> | categories: 
@@ -603,50 +632,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.3.5-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/01/11/git-1.7.3.5-publiee" rel="bookmark" title="Permanent Link to Git 1.7.3.5 publiée">Git 1.7.3.5 publiée</a></h2>
-  <p class="related"><strong>11/01/2011 08:03 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La version 1.7.3.5 est sortie le 6 Janvier, et c'est surement la dernière version de la série 1.7.3.x (sauf bien évidemment gros bug ou faille de sécurité). Voici les changements :</p>
-<ul>
-<li>test-lib.sh/test_decode_color(): use octal not hex in awk script</li>
-<li>gitweb: Include links to feeds in HTML header only for '200 OK' response</li>
-<li>ident: die on bogus date format</li>
-<li>Fix typo in git-gc document.</li>
-<li>t0050: fix printf format strings for portability</li>
-<li>gitweb: skip logo in atom feed when there is none</li>
-<li>commit: die before asking to edit the log message</li>
-<li>am --abort: keep unrelated commits since the last failure and warn</li>
-<li>rebase --skip: correctly wrap-up when skipping the last patch</li>
-<li>status: Quote paths with spaces in short format</li>
-<li>t/t8006: Demonstrate blame is broken when cachetextconv is on</li>
-<li>fill_textconv(): Don't get/put cache if sha1 is not valid</li>
-<li>fsck docs: remove outdated and useless diagnostic</li>
-<li>git-difftool.txt: correct the description of $BASE and describe $MERGED</li>
-<li>difftool: provide basename to external tools</li>
-<li>t3419-*.sh: Fix arithmetic expansion syntax error</li>
-<li>close file on error in read_mmfile()</li>
-<li>Fix false positives in t3404 due to SHELL=/bin/false</li>
-<li>t9001: Fix test prerequisites</li>
-<li>userdiff: fix typo in ruby and python word regexes</li>
-<li>trace.c: mark file-local function static</li>
-</ul>
-<p>Comme vous pouvez le constater, rien de bien important (enfin je dis cela car je ne suis pas tombé sur un des bugs :), les développeurs se focalisant depuis quelques semaines déja sur la future version 1.7.4.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../6">« Articles suivants</a>
   --  
  <a href="../8">Articles précédents »</a>
@@ -670,14 +655,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
+    <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
-    <li><a href="/blog/2011/11/26/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
     <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
     <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
-    <li><a href="/blog/2011/10/01/plone-sur-github">Plone sur GitHub</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -689,9 +674,9 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (18)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (52)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -699,12 +684,12 @@
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (22)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -722,8 +707,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2011/11/1" title="November 2011">November 2011</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(3)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
