@@ -65,6 +65,261 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.5-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/25/git-1.7.5-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5 publiée">Git 1.7.5 publiée</a></h2>
+  <p class="related"><strong>25/04/2011 04:10 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/atelier'>atelier</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Nouvelle évolution de la banche 1.7.x avec cette 1.7.5.  Que pouvons nous dire sur cette nouvelle version qui contient plus de 500 commits de 70 contributeurs depuis la 1.7.4 ? Voici quelques changements intéressants à mes yeux :</p>
+<ul>
+<li>
+<p>Le code est prêt pour l'internationalisation !</p>
+</li>
+<li>
+<p>(<strong>maj</strong>) La commande <code>repo-config</code> (qui est un fait un alias de la commande <code>config</code>) est officiellement à éviter (<em>deprecated</em>).</p>
+</li>
+<li>
+<p>Vous pouvez vous détacher d'une référence en faisant <code>git checkout --detach $reference</code>. C'est principalement pour inspection ou vérification.</p>
+</li>
+<li>
+<p>(<strong>maj</strong>) Il est maintenant possible de spécifier une stratégie de merge lors d'un cherry-pick ou d'un revert.</p>
+</li>
+<li>
+<p>La commande cherry-pick se souvient du commit ou s'est passé un conflit, permettant de continuer plus facilement.</p>
+</li>
+<li>
+<p>Il est possible de visualiser 2 branches divergentes sans les changements équivalents avec les options <code>--cherry</code> et <code>--cherry-mark</code>.</p>
+</li>
+</ul>
+<h2>Le changelog :</h2>
+<ul>
+<li>
+<p>Various MinGW portability fixes.</p>
+</li>
+<li>
+<p>Various git-p4 enhancements (in contrib).</p>
+</li>
+<li>
+<p>Various vcs-svn, git-svn and gitk enhancements and fixes.</p>
+</li>
+<li>
+<p>Various git-gui updates (0.14.0).</p>
+</li>
+<li>
+<p>Update to more modern HP-UX port.</p>
+</li>
+<li>
+<p>The codebase is getting prepared for i18n/l10n; no translated
+  strings nor translation mechanism in the code yet, but the strings
+  are being marked for l10n.</p>
+</li>
+<li>
+<p>The bash completion script can now complete symmetric difference
+  for "git diff" command, e.g. "git diff ...bra<TAB>".</p>
+</li>
+<li>
+<p>The default minimum length of abbreviated and unique object names
+  can now be configured by setting the core.abbrev configuration
+  variable.</p>
+</li>
+<li>
+<p>"git apply -v" reports offset lines when the patch does not apply at
+  the exact location recorded in the diff output.</p>
+</li>
+<li>
+<p>"git config" used to be also known as "git repo-config", but the old
+  name is now officially deprecated.</p>
+</li>
+<li>
+<p>"git checkout --detach <commit>" is a more user friendly synonym for
+  "git checkout <commit>^0".</p>
+</li>
+<li>
+<p>"git checkout" performed on detached HEAD gives a warning and
+  advice when the commit being left behind will become unreachable from
+  any branch or tag.</p>
+</li>
+<li>
+<p>"git cherry-pick" and "git revert" can be told to use a custom merge
+  strategy, similar to "git rebase".</p>
+</li>
+<li>
+<p>"git cherry-pick" remembers which commit failed to apply when it is
+  stopped by conflicts, making it unnecessary to use "commit -c $commit"
+  to conclude it.</p>
+</li>
+<li>
+<p>"git cvsimport" bails out immediately when the cvs server cannot be
+  reached, without spewing unnecessary error messages that complain about
+  the server response it never got.</p>
+</li>
+<li>
+<p>"git fetch" vs "git upload-pack" transfer learned 'no-done'
+  protocol extension to save one round-trip after the content
+  negotiation is done. This saves one HTTP RPC, reducing the overall
+  latency for a trivial fetch.</p>
+</li>
+<li>
+<p>"git fetch" can be told to recursively fetch submodules on-demand.</p>
+</li>
+<li>
+<p>"git grep -f <filename>" learned to treat "-" as "read from the
+  standard input stream".</p>
+</li>
+<li>
+<p>"git grep --no-index" did not honor pathspecs correctly, returning
+  paths outside the specified area.</p>
+</li>
+<li>
+<p>"git init" learned the --separate-git-dir option to allow the git
+  directory for a new repository created elsewhere and linked via the
+  gitdir mechanism. This is primarily to help submodule support later
+  to switch between a branch of superproject that has the submodule
+  and another that does not.</p>
+</li>
+<li>
+<p>"git log" type commands now understand globbing pathspecs.  You
+  can say "git log -- '*.txt'" for example.</p>
+</li>
+<li>
+<p>"git log" family of commands learned --cherry and --cherry-mark
+  options that can be used to view two diverged branches while omitting
+  or highlighting equivalent changes that appear on both sides of a
+  symmetric difference (e.g. "log --cherry A...B").</p>
+</li>
+<li>
+<p>A lazy "git merge" that didn't say what to merge used to be an error.
+  When run on a branch that has an upstream defined, however, the command
+  now merges from the configured upstream.</p>
+</li>
+<li>
+<p>"git mergetool" learned how to drive "beyond compare 3" as well.</p>
+</li>
+<li>
+<p>"git rerere forget" without pathspec used to forget all the saved
+  conflicts that relate to the current merge; it now requires you to
+  give it pathspecs.</p>
+</li>
+<li>
+<p>"git rev-list --objects $revs -- $pathspec" now limits the objects listed
+  in its output properly with the pathspec, in preparation for narrow
+  clones.</p>
+</li>
+<li>
+<p>"git push" with no parameters gives better advice messages when
+  "tracking" is used as the push.default semantics or there is no remote
+  configured yet.</p>
+</li>
+<li>
+<p>A possible value to the "push.default" configuration variable,
+  'tracking', gained a synonym that more naturally describes what it
+  does, 'upstream'.</p>
+</li>
+<li>
+<p>"git rerere" learned a new subcommand "remaining" that is similar to
+  "status" and lists the paths that had conflicts which are known to
+  rerere, but excludes the paths that have already been marked as
+  resolved in the index from its output.  "git mergetool" has been
+  updated to use this facility.</p>
+</li>
+<li>
+<p>"git fetch" from a client that is mostly following the remote
+  needlessly told all of its refs to the server for both sides to
+  compute the set of objects that need to be transferred efficiently,
+  instead of stopping when the server heard enough. In a project with
+  many tags, this turns out to be extremely wasteful, especially over
+  the smart HTTP transport (sp/maint-{upload,fetch}-pack-stop-early~1).</p>
+</li>
+<li>
+<p>"git fetch" run from a repository that uses the same repository as
+  its alternate object store as the repository it is fetching from
+  did not tell the server that it already has access to objects
+  reachable from the refs in their common alternate object store,
+  causing it to fetch unnecessary objects (jc/maint-fetch-alt).</p>
+</li>
+<li>
+<p>"git remote add --mirror" created a configuration that is suitable for
+  doing both a mirror fetch and a mirror push at the same time, which
+  made little sense.  We now warn and require the command line to specify
+  either --mirror=fetch or --mirror=push.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/25/git-1.7.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="annuler-des-modifications"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/24/annuler-des-modifications" rel="bookmark" title="Permanent Link to Annuler des modifications">Annuler des modifications</a></h2>
+  <p class="related"><strong>24/04/2011 11:28 PM</strong> | categories: 
+
+<a href='/blog/category/git-reset'>git-reset</a>, <a href='/blog/category/git-revert'>git-revert</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/git-checkout'>git-checkout</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Vous pouvez annuler votre travail de plusieurs manières.</p>
+<h2>git revert</h2>
+<p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
+<p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
+<h2>git reset</h2>
+<p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
+<ul>
+<li>
+<p><code>git reset $path</code> est l'inverse de la commande <em>git add</em>, cela permet de supprimer des entrées dans l'index.</p>
+</li>
+<li>
+<p><code>git reset $commit $path</code> permet de réinitialiser le contenu du fichier situé dans l'index avec le contenu du fichier du commit spécifié. </p>
+</li>
+<li>
+<p><code>git reset -p $path</code> est l'inverse de la commande <em>git add -p</em>, pour sélectionner les <em>hunks</em> à supprimer de l'index.</p>
+</li>
+<li>
+<p><code>git reset -p $commit $path</code>. Identique à la commande précédente, mais Git affiche les <em>hunks</em> entre l'index et le commit spécifié (et non avec <em>HEAD</em> comme la commande précédente).</p>
+</li>
+<li>
+<p><code>git reset --mode $commit</code> permet de revenir à un ancien commit. Le mode permet de choisir si on veut modifier le répertoire de travail, l'index ou le dépôt. Les modes disponibles sont :</p>
+</li>
+<li>
+<p><code>--soft</code>, pour modifier uniquement le dépôt</p>
+</li>
+<li>
+<p><code>--mixed</code>, pour modifier dépôt et index</p>
+</li>
+<li>
+<p><code>--hard</code>, pour modifier dépôt, index et répertoire de travail</p>
+</li>
+</ul>
+<p>Je vous laisse découvrir l'utilité des options --keep et --merge :).</p>
+<p>Ne vous laissez pas prendre par la complexité de la section discussion du manuel, qui présente tous les cas de figures. Comme nous avons 3 (dépôt, index et répertoire de travail) et non plus 2 états, les possibilités sont multipliées.</p>
+<p>Voici un schéma simplifié (qui vient du blog http://blog.plover.com/prog/git-reset.html) qui correspond au cas d'utilisation le plus courant :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png" /></p>
+<p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
+<p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
+<h2>git checkout</h2>
+<p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
+<h2>Conclusion</h2>
+<p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
+<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/24/annuler-des-modifications#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-commande-rm"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/04/23/la-commande-rm" rel="bookmark" title="Permanent Link to La commande rm">La commande rm</a></h2>
   <p class="related"><strong>23/04/2011 03:21 AM</strong> | categories: 
@@ -276,105 +531,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/guide-visuel-pour-git-sous-windows#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="cgit-un-frontal-web-pour-git"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/03/cgit-un-frontal-web-pour-git" rel="bookmark" title="Permanent Link to cgit, un frontal Web pour Git">cgit, un frontal Web pour Git</a></h2>
-  <p class="related"><strong>03/04/2011 03:16 PM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
- | <a href="http://www.gitfr.net/blog/2011/04/03/cgit-un-frontal-web-pour-git#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Quand vous installez un dépôt Git sur votre serveur, il est toujours intéressant d'installer en plus un frontal Web. Cela vous permet notamment de naviguer dans votre dépôt sans avoir besoin de le cloner, de télécharger une version, ou tout simplement de connaitre l'état du dépôt.</p>
-<p>Le frontal fournit avec Git est <a href="https://git.wiki.kernel.org/index.php/Gitweb">Gitweb</a>, écrit en Perl et utilisable en cgi. Mais son interface est un peu désuete, et les fonctionnalités limitées (je vous laisse juge en naviguant sur <a href="http://git.kernel.org/">le dépôt Git</a>).</p>
-<p><a href="http://hjemli.net/git/cgit">cgit</a> tente de combler ces lacunes en offrant plusieurs fonctionnalités intéressantes :</p>
-<ul>
-<li>
-<p>Une interface un peu plus propre et claire.</p>
-</li>
-<li>
-<p>Un cache pour une navigation rapide (mais il est déja bien plus rapide que gitweb sans l'activer).</p>
-</li>
-<li>
-<p>La possibilité de visualiser les différences plus facilement (side-by-side diffs).</p>
-</li>
-<li>
-<p>flux RSS.</p>
-</li>
-<li>
-<p>La découverte automatique de dépôts à la configuration.</p>
-</li>
-<li>
-<p>La colorisation syntaxique.</p>
-</li>
-</ul>
-<p>Il est très facile à configurer. Pour l'installation, téléchargez l'archive et tapez la commande <em>make</em> pour générer le binaire en C. Il suffit ensuite de l'utiliser comme un cgi. Lisez la documentation fournie pour connaître les options du fichier de configuration.</p>
-<p>Je vous laisse regarder la différence entre les deux, mais pour moi, c'est évident que cgit est plus intéressant. C'est pour cette raison qu'il est utilisé par défaut au taff :)</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/cgit-un-frontal-web-pour-git#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.4.3-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/03/git-1.7.4.3-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.3 publiée">Git 1.7.4.3 publiée</a></h2>
-  <p class="related"><strong>03/04/2011 02:45 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La troisière version de maintenance de la banche 1.7.4.x est sortie le 3 avril. A vos mises à jour ! :).</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>"git apply" used to confuse lines updated by previous hunks as lines
-  that existed before when applying a hunk, contributing misapplication
-  of patches with offsets.</p>
-</li>
-<li>
-<p>"git branch --track" (and "git checkout --track --branch") used to
-  allow setting up a random non-branch that does not make sense to follow
-  as the "upstream".  The command correctly diagnoses it as an error.</p>
-</li>
-<li>
-<p>"git checkout $other_branch" silently removed untracked symbolic links
-  in the working tree that are in the way in order to check out paths
-  under it from the named branch.</p>
-</li>
-<li>
-<p>"git cvsimport" did not bail out immediately when the cvs server cannot
-  be reached, spewing unnecessary error messages that complain about the
-  server response that it never got.</p>
-</li>
-<li>
-<p>"git diff --quiet" did not work very well with the "--diff-filter"
-  option.</p>
-</li>
-<li>
-<p>"git grep -n" lacked a long-hand synonym --line-number.</p>
-</li>
-<li>
-<p>"git stash apply" reported the result of its operation by running
-  "git status" from the top-level of the working tree; it should (and
-  now does) run it from the user's working directory.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/git-1.7.4.3-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/2">« Articles suivants</a>
   --  
  <a href="/blog/category/git/4">Articles précédents »</a>
@@ -398,14 +554,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
+    <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
     <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
     <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
     <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
-    <li><a href="/blog/2011/10/08/presentation-git-le-03-11-a-evry">Présentation Git le 03/11 à Évry</a></li>
-    <li><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois">Atelier Git le 20/10 à Levallois</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -418,16 +574,16 @@
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (20)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (51)</li>
+     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (53)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (1)</li>
+     <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
@@ -440,8 +596,8 @@
      <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
-     <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (17)</li>
+     <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (18)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -450,7 +606,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(3)</li>
+      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>

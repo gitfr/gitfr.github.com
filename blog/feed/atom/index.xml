@@ -7,12 +7,302 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-12-01T20:58:40Z</updated>
+  <updated>2011-12-11T22:22:18Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Comportement par défaut du git push]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push" />
+    <id>http://www.gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push</id>
+    <updated>2011-12-11T23:19:00Z</updated>
+    <published>2011-12-11T23:19:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="git-pull" />
+    <category scheme="http://www.gitfr.net/blog" term="git-push" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <category scheme="http://www.gitfr.net/blog" term="refspec" />
+    <category scheme="http://www.gitfr.net/blog" term="configuration" />
+    <summary type="html"><![CDATA[Comportement par défaut du git push]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push"><![CDATA[<p>Git est hautement configurable, avec des dizaines de variables possibles
+dans le fichier de configuration, la longueur de l'aide de l'option config
+donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
+sur les différentes possibilités de configuration, je vous propose plutôt
+des billets courts sur un thème particulier de la configuration.</p>
+<p>Pour ce premier billet, je souhaite aborder le comportement de Git lors d'un
+push. Ce qui ont suivis l'atelier Git à Bordeaux ne seront pas étonnés par ce
+choix : ayant totalement oublié cette option, je ne comprenais pas que ma
+machine ne se comporte pas comme ceux des participants à l'atelier (ma
+crédibilité en tant qu'expert Git en a sérieusement pâti :).</p>
+<p>Commençons par lire le manuel sur l'option push.default :</p>
+<p>Defines the action git push should take if no refspec is given on the command
+line, no refspec is configured in the remote, and no refspec is implied by any
+of the options given on the command line. Possible values are: </p>
+<ul>
+<li>nothing - do not push anything.</li>
+<li>matching - push all matching branches. All branches having the same name in
+both ends are considered to be matching. This is the default.</li>
+<li>upstream - push the current branch to its upstream branch.</li>
+<li>tracking - deprecated synonym for upstream.</li>
+<li>current - push the current branch to a branch of the same name.</li>
+</ul>
+<p>Comme vous pouvez le constater, si aucun refspec n'est fourni (en ligne de
+commande ou par configuration) le comportement par défaut est de pousser
+toutes les branches qui existent en local et sur le serveur. Cela veut donc
+dire que si vous tapez la commande <code>git push</code>, vous allez mettre à jour sur le
+serveur toutes les branches que vous avez modifié en local, ce qui est rarement
+souhaitable. Il faudra indiquer le refspec complet <code>git push origin mybranch</code>
+pour éviter cela.</p>
+<p>C'est pour cette raison que je configure Git avec l'option upstream :</p>
+<blockquote>
+<p>$ git config --global push.default upstream</p>
+</blockquote>
+<p>2 avantages immédiats :</p>
+<ul>
+<li>Il ne pousse que la branche courante.</li>
+<li>Il m'oblige à faire un <em>tracking</em>, ce qui est bien utile.</li>
+</ul>
+<p>Maintenant, si vous tentez de pousser la branche <em>test</em> avec la commande
+<code>git push</code> sans tracking préalable, Git vous répond :</p>
+<blockquote>
+<p>fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin test</p>
+</blockquote>
+<p>Suivez le conseil de Git en tapant la commande ci dessus pour suivre votre
+la branche distante test sur origin avec votre branche locale test. Vous verrez
+immédiatement un changement sur votre shell avec l'information <strong>u=</strong>, qui 
+indique que vos deux branches sont synchronisées.</p>
+<h2>Rappel sur le tracking</h2>
+<p>Le tracking consiste à <em>associer</em> une branche locale et une branche distante
+(dite <em>upstream</em> dans la terminologie Git), ce qui informe Git de la branche
+distante à utiliser lors d'un <code>git pull</code>. Si vous ne comprenez pas pourquoi
+vous n'êtes pas plus souvent confronté à cette notion de tracking, c'est tout
+simplement que Git le fait pour vous la plupart du temps :</p>
+<ul>
+<li>Git suit la branche master lors d'un clone.</li>
+<li>Git suit la branche que vous venez de créer si celle ci existe déjà sur le
+   serveur </li>
+</ul>
+<p>C'est donc (la plupart du temps) dans le cas ou créer une nouvelle branche en
+locale sans existance préalable sur le serveur que vous devez explicitement
+faire cette association.</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.8 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/12/11/git-1.7.8-publiee" />
+    <id>http://www.gitfr.net/blog/2011/12/11/git-1.7.8-publiee</id>
+    <updated>2011-12-11T23:13:00Z</updated>
+    <published>2011-12-11T23:13:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.8 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2011/12/11/git-1.7.8-publiee"><![CDATA[<p>La version 1.7.8 est sortie le 2 décembre. Comme vous pouvez constater, le
+changelog est assez gros avec surtout de nouvelles options pour plusieurs
+commandes et l'habituel lot de corrections.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>Some git-svn, git-gui, git-p4 (in contrib) and msysgit updates.</p>
+</li>
+<li>
+<p>Updates to bash completion scripts.</p>
+</li>
+<li>
+<p>The build procedure has been taught to take advantage of computed
+  dependency automatically when the complier supports it.</p>
+</li>
+<li>
+<p>The date parser now accepts timezone designators that lack minutes
+  part and also has a colon between "hh:mm".</p>
+</li>
+<li>
+<p>The contents of the /etc/mailname file, if exists, is used as the
+  default value of the hostname part of the committer/author e-mail.</p>
+</li>
+<li>
+<p>"git am" learned how to read from patches generated by Hg.</p>
+</li>
+<li>
+<p>"git archive" talking with a remote repository can report errors
+  from the remote side in a more informative way.</p>
+</li>
+<li>
+<p>"git branch" learned an explicit --list option to ask for branches
+  listed, optionally with a glob matching pattern to limit its output.</p>
+</li>
+<li>
+<p>"git check-attr" learned "--cached" option to look at .gitattributes
+  files from the index, not from the working tree.</p>
+</li>
+<li>
+<p>Variants of "git cherry-pick" and "git revert" that take multiple
+  commits learned to "--continue" and "--abort".</p>
+</li>
+<li>
+<p>"git daemon" gives more human readble error messages to clients
+  using ERR packets when appropriate.</p>
+</li>
+<li>
+<p>Errors at the network layer is logged by "git daemon".</p>
+</li>
+<li>
+<p>"git diff" learned "--minimal" option to spend extra cycles to come
+  up with a minimal patch output.</p>
+</li>
+<li>
+<p>"git diff" learned "--function-context" option to show the whole
+  function as context that was affected by a change.</p>
+</li>
+<li>
+<p>"git difftool" can be told to skip launching the tool for a path by
+  answering 'n' to its prompt.</p>
+</li>
+<li>
+<p>"git fetch" learned to honor transfer.fsckobjects configuration to
+  validate the objects that were received from the other end, just like
+  "git receive-pack" (the receiving end of "git push") does.</p>
+</li>
+<li>
+<p>"git fetch" makes sure that the set of objects it received from the
+  other end actually completes the history before updating the refs.
+  "git receive-pack" (the receiving end of "git push") learned to do the
+  same.</p>
+</li>
+<li>
+<p>"git fetch" learned that fetching/cloning from a regular file on the
+  filesystem is not necessarily a request to unpack a bundle file; the
+  file could be ".git" with "gitdir: <path>" in it.</p>
+</li>
+<li>
+<p>"git for-each-ref" learned "%(contents:subject)", "%(contents:body)"
+  and "%(contents:signature)". The last one is useful for signed tags.</p>
+</li>
+<li>
+<p>"git grep" used to incorrectly pay attention to .gitignore files
+  scattered in the directory it was working in even when "--no-index"
+  option was used. It no longer does this. The "--exclude-standard"
+  option needs to be given to explicitly activate the ignore
+  mechanism.</p>
+</li>
+<li>
+<p>"git grep" learned "--untracked" option, where given patterns are
+   searched in untracked (but not ignored) files as well as tracked
+   files in the working tree, so that matches in new but not yet
+   added files do not get missed.</p>
+</li>
+<li>
+<p>The recursive merge backend no longer looks for meaningless
+  existing merges in submodules unless in the outermost merge.</p>
+</li>
+<li>
+<p>"git log" and friends learned "--children" option.</p>
+</li>
+<li>
+<p>"git ls-remote" learned to respond to "-h"(elp) requests.</p>
+</li>
+<li>
+<p>"mediawiki" remote helper can interact with (surprise!) MediaWiki
+  with "git fetch" &amp; "git push".</p>
+</li>
+<li>
+<p>"git merge" learned the "--edit" option to allow users to edit the
+  merge commit log message.</p>
+</li>
+<li>
+<p>"git rebase -i" can be told to use special purpose editor suitable
+  only for its insn sheet via sequence.editor configuration variable.</p>
+</li>
+<li>
+<p>"git send-email" learned to respond to "-h"(elp) requests.</p>
+</li>
+<li>
+<p>"git send-email" allows the value given to sendemail.aliasfile to begin
+  with "~/" to refer to the $HOME directory.</p>
+</li>
+<li>
+<p>"git send-email" forces use of Authen::SASL::Perl to work around
+  issues between Authen::SASL::Cyrus and AUTH PLAIN/LOGIN.</p>
+</li>
+<li>
+<p>"git stash" learned "--include-untracked" option to stash away
+  untracked/ignored cruft from the working tree.</p>
+</li>
+<li>
+<p>"git submodule clone" does not leak an error message to the UI
+  level unnecessarily anymore.</p>
+</li>
+<li>
+<p>"git submodule update" learned to honor "none" as the value for
+  submodule.<name>.update to specify that the named submodule should
+  not be checked out by default.</p>
+</li>
+<li>
+<p>When populating a new submodule directory with "git submodule init",
+  the $GIT_DIR metainformation directory for submodules is created inside
+  $GIT_DIR/modules/<name>/ directory of the superproject and referenced
+  via the gitfile mechanism. This is to make it possible to switch
+  between commits in the superproject that has and does not have the
+  submodule in the tree without re-cloning.</p>
+</li>
+<li>
+<p>"gitweb" leaked unescaped control characters from syntax hiliter
+  outputs.</p>
+</li>
+<li>
+<p>"gitweb" can be told to give custom string at the end of the HTML
+  HEAD element.</p>
+</li>
+<li>
+<p>"gitweb" now has its own manual pages.</p>
+</li>
+<li>
+<p>HTTP transport did not use pushurl correctly, and also did not tell
+  what host it is trying to authenticate with when asking for
+  credentials.
+  (merge deba493 jk/http-auth later to maint).</p>
+</li>
+<li>
+<p>"git blame" was aborted if started from an uncommitted content and
+  the path had the textconv filter in effect.
+  (merge 8518088 ss/blame-textconv-fake-working-tree later to maint).</p>
+</li>
+<li>
+<p>Adding many refs to the local repository in one go (e.g. "git fetch"
+  that fetches many tags) and looking up a ref by name in a repository
+  with too many refs were unnecessarily slow.
+  (merge 17d68a54d jp/get-ref-dir-unsorted later to maint).</p>
+</li>
+<li>
+<p>Report from "git commit" on untracked files was confused under
+  core.ignorecase option.
+  (merge 395c7356 jk/name-hash-dirent later to maint).</p>
+</li>
+<li>
+<p>"git merge" did not understand ":/<pattern>" as a way to name a commit.</p>
+</li>
+<li>
+<p>"git push" on the receiving end used to call post-receive and post-update
+  hooks for attempted removal of non-existing refs.
+  (merge 160b81ed ph/push-to-delete-nothing later to maint).</p>
+</li>
+<li>
+<p>Help text for "git remote set-url" and "git remote set-branches"
+  were misspelled.
+  (merge c49904e fc/remote-seturl-usage-fix later to maint).
+  (merge 656cdf0 jc/remote-setbranches-usage-fix later to maint).</p>
+</li>
+</ul>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -386,224 +676,5 @@ conférence sera sûrement filmé et mis à disposition sur Internet.</p>
 Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
 <p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
 quelques heures :).</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Plone sur GitHub]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/10/01/plone-sur-github" />
-    <id>http://www.gitfr.net/blog/2011/10/01/plone-sur-github</id>
-    <updated>2011-10-01T15:29:00Z</updated>
-    <published>2011-10-01T15:29:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="github" />
-    <category scheme="http://www.gitfr.net/blog" term="migration" />
-    <summary type="html"><![CDATA[Plone sur GitHub]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/10/01/plone-sur-github"><![CDATA[<p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
-<a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
-présence de 127 (!) dépôts Git. Ce nombre important vient de la programmation
-par composant du monde <em>Zope</em> (une fonctionnalité = un composant Python = un
-dépot Git).</p>
-<p>Pourquoi je parle de cette migration en particulier alors que de nombreux
-projets Libres passent sur GitHub ? Tout simplement car c'est aussi un des
-plus gros projets <strong>Python</strong>, langage utilisé par les deux principaux
-«concurrents» de Git, à savoir <em>Mercurial</em> et <em>Bazaar</em>. Ce choix fait suite
-à  un sondage chez les développeurs pour déterminer la prochaine
-plateforme d'hébergement (3 réponses possibles : oui, neutre, non) :</p>
-<ul>
-<li>Héberger son prore serveur Git : 10, 36, 33</li>
-<li>Héberger son prore serveur Hg : 8, 18, 53</li>
-<li>Héberger son prore serveur Bzr : 1, 3, 75</li>
-<li>Sur GitHub : 46, 21, 12</li>
-<li>Sur Bitbucket : 8, 18, 53</li>
-<li>Sur Launchpad : 4, 6, 69</li>
-<li>Continuer avec son propre serveur SVN : 28, 30, 21</li>
-</ul>
-<p>Ce résultat est révélateur sur plusieurs points :</p>
-<ul>
-<li>Un rejet absolu de Bzr. Personne n'en veut à part quatre personnes.</li>
-<li>Un rejet massif de Launchpad et dans une moindre mesure de Bitbucket (plutôt
-  étonnant).</li>
-<li>Peu de gens sont pour héberger un serveur DVCS, ce qui me semble encore une
-  fois assez étonnant. Il est facile par exemple d'administrer un serveur Hg.
-  Plus un problème de méconnaissance ?</li>
-<li>Plus de la moitié des votants sont en faveur de GitHub, sans être un
-  plébiscite.</li>
-</ul>
-<p>La conclusion qui semble se dégager de cette enquête est que c'est encore une
-fois GitHub qui fait pencher la balance vers Git, et non l'inverse. D'autant
-plus que choisir Git signifie faire une croix sur la possibilité pour un
-développeur Python de coder facilement des extensions Mercurial, atout non
-négligeable quand on gère un projet.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Git 1.7.7 publiée]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee" />
-    <id>http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee</id>
-    <updated>2011-10-01T10:34:00Z</updated>
-    <published>2011-10-01T10:34:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="release" />
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <summary type="html"><![CDATA[Git 1.7.7 publiée]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/10/01/git-1.7.7-publiee"><![CDATA[<p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
-méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
-changements.</p>
-<h2>Le changelog</h2>
-<ul>
-<li>
-<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
-</li>
-<li>
-<p>Interix, Cygwin and Minix ports got updated.</p>
-</li>
-<li>
-<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
-</li>
-<li>
-<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
-  before reading from gitweb_config.perl or from /etc/gitweb.conf
-  (this last one is read only when per-repository gitweb_config.perl
-  does not exist).</p>
-</li>
-<li>
-<p>Various codepaths that invoked zlib deflate/inflate assumed that these
-  functions can compress or uncompress more than 4GB data in one call on
-  platforms with 64-bit long, which has been corrected.</p>
-</li>
-<li>
-<p>Git now recognizes loose objects written by other implementations that
-  use a non-standard window size for zlib deflation (e.g. Agit running on
-  Android with 4kb window). We used to reject anything that was not
-  deflated with 32kb window.</p>
-</li>
-<li>
-<p>Interaction between the use of pager and coloring of the output has
-  been improved, especially when a command that is not built-in was
-  involved.</p>
-</li>
-<li>
-<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
-  "git apply".</p>
-</li>
-<li>
-<p>You can now feed many empty lines before feeding an mbox file to
-  "git am".</p>
-</li>
-<li>
-<p>"git archive" can be told to pass the output to gzip compression and
-  produce "archive.tar.gz".</p>
-</li>
-<li>
-<p>"git bisect" can be used in a bare repository (provided that the test
-  you perform per each iteration does not need a working tree, of
-  course).</p>
-</li>
-<li>
-<p>The length of abbreviated object names in "git branch -v" output
-  now honors the core.abbrev configuration variable.</p>
-</li>
-<li>
-<p>"git check-attr" can take relative paths from the command line.</p>
-</li>
-<li>
-<p>"git check-attr" learned an "--all" option to list the attributes for a
-  given path.</p>
-</li>
-<li>
-<p>"git checkout" (both the code to update the files upon checking out a
-  different branch and the code to checkout a specific set of files) learned
-  to stream the data from object store when possible, without having to
-  read the entire contents of a file into memory first. An earlier round
-  of this code that is not in any released version had a large leak but
-  now it has been plugged.</p>
-</li>
-<li>
-<p>"git clone" can now take a "--config key=value" option to set the
-  repository configuration options that affect the initial checkout.</p>
-</li>
-<li>
-<p>"git commit <paths>..." now lets you feed relative pathspecs that
-  refer to outside your current subdirectory.</p>
-</li>
-<li>
-<p>"git diff --stat" learned a --stat-count option to limit the output of
-  a diffstat report.</p>
-</li>
-<li>
-<p>"git diff" learned a "--histogram" option to use a different diff
-  generation machinery stolen from jgit, which might give better
-  performance.</p>
-</li>
-<li>
-<p>"git diff" had a weird worst case behaviour that can be triggered
-  when comparing files with potentially many places that could match.</p>
-</li>
-<li>
-<p>"git fetch", "git push" and friends no longer show connection
-  errors for addresses that couldn't be connected to when at least one
-  address succeeds (this is arguably a regression but a deliberate
-  one).</p>
-</li>
-<li>
-<p>"git grep" learned "--break" and "--heading" options, to let users mimic
-  the output format of "ack".</p>
-</li>
-<li>
-<p>"git grep" learned a "-W" option that shows wider context using the same
-  logic used by "git diff" to determine the hunk header.</p>
-</li>
-<li>
-<p>Invoking the low-level "git http-fetch" without "-a" option (which
-  git itself never did---normal users should not have to worry about
-  this) is now deprecated.</p>
-</li>
-<li>
-<p>The "--decorate" option to "git log" and its family learned to
-  highlight grafted and replaced commits.</p>
-</li>
-<li>
-<p>"git rebase master topci" no longer spews usage hints after giving
-  the "fatal: no such branch: topci" error message.</p>
-</li>
-<li>
-<p>The recursive merge strategy implementation got a fairly large
-  fix for many corner cases that may rarely happen in real world
-  projects (it has been verified that none of the 16000+ merges in
-  the Linux kernel history back to v2.6.12 is affected with the
-  corner case bugs this update fixes).</p>
-</li>
-<li>
-<p>"git stash" learned an "--include-untracked option".</p>
-</li>
-<li>
-<p>"git submodule update" used to stop at the first error updating a
-  submodule; it now goes on to update other submodules that can be
-  updated, and reports the ones with errors at the end.</p>
-</li>
-<li>
-<p>"git push" can be told with the "--recurse-submodules=check" option to
-  refuse pushing of the supermodule, if any of its submodules'
-  commits hasn't been pushed out to their remotes.</p>
-</li>
-<li>
-<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
-  subset of the refs exist in a repository. This may help a site to
-  put many tiny repositories into one repository (this would not be
-  useful for larger repositories as repacking would be problematic).</p>
-</li>
-<li>
-<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
-  that is more efficient in reading objects in packfiles.</p>
-</li>
-<li>
-<p>test scripts for gitweb tried to run even when CGI-related perl modules
-  are not installed; they now exit early when the latter are unavailable.</p>
-</li>
-</ul>]]></content>
   </entry>
 </feed>
