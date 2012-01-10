@@ -65,6 +65,45 @@
           
   
 <div class="blog_post">
+  <a name="configuration-minimale-pour-demarrer"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/04/configuration-minimale-pour-demarrer" rel="bookmark" title="Permanent Link to Configuration minimale pour démarrer">Configuration minimale pour démarrer</a></h2>
+  <p class="related"><strong>04/11/2010 02:01 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : </p>
+<blockquote>
+<p><code>$ git config --global user.name "Sebastien Douche"</code></p>
+<p><code>$ git config --global user.email sdouche@gmail.com</code></p>
+</blockquote>
+<p>L'option <code>--global</code> permet de configurer pour tous les dépôts que vous allez utiliser, en enregistrant ces paramètres dans le fichier <code>~/.gitconfig</code>.</p>
+<p>Avec l'option <code>--system</code>, c'est une configuration pour tous les utilisateurs de la machine, et la configuration se trouve dans le fichier <code>/etc/gitconfig</code>.</p>
+<p>Sans option, vous configurez uniquement le dépôt courant, ce qui permet par exemple de spécifier votre adresse personnelle et non professionnelle.</p>
+<p>Trois petites informations supplémentaires :</p>
+<ul>
+<li>
+<p>Sans cette configuration, Git va utiliser directement les informations contenues dans votre profil utilisateur système, ce qui n'est pas souhaité (par ex. <code>seb@mamachine</code>). </p>
+</li>
+<li>
+<p>Il n'y a <strong>pas</strong> de vérification par Git. Ce dernier créé une entrée <em>name</em> dans la section <em>user</em>. Si vous tapez <code>userz.namer</code>, c'est pareil pour lui.</p>
+</li>
+<li>
+<p>Vous pouvez éditer directement les fichiers, le résultat est strictement identique. D'ailleurs je vous conseille d'éditer les fichiers pour voir à quoi ils ressemblent (avant et aprés modification).</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="ajout-des-commentaires-sur-le-blog"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/11/01/ajout-des-commentaires-sur-le-blog" rel="bookmark" title="Permanent Link to Ajout des commentaires sur le blog">Ajout des commentaires sur le blog</a></h2>
   <p class="related"><strong>01/11/2010 07:45 PM</strong> | categories: 
@@ -408,6 +447,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
     <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
@@ -415,7 +455,6 @@
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
-    <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -442,7 +481,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (24)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (25)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -460,6 +499,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>

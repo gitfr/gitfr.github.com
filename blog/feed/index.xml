@@ -10,10 +10,82 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 11 Dec 2011 22:22:18 GMT</pubDate>
+    <pubDate>Tue, 10 Jan 2012 20:04:26 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Retour sur un an de gitfr</title>
+      <link>http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr</link>
+      <pubDate>Tue, 10 Jan 2012 20:54:00 CET</pubDate>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr</guid>
+      <description>Retour sur un an de gitfr</description>
+      <content:encoded><![CDATA[<p>Cela fait maintenant un peu plus d'un an que #gitfr existe (1ere conférence le
+24 novembre 2010), il est donc temps de faire un petit point. D'abord quelques
+chiffres :</p>
+<ul>
+<li>quelques centaines d'heures dépensées</li>
+<li>13 conférences</li>
+<li>~800 auditeurs aux conférences</li>
+<li>~4000 visulisations sur parleys.com</li>
+<li>86 billets de blog</li>
+<li>plusieurs centaines de fotes d'ortografes</li>
+<li>6 ateliers</li>
+<li>~120 participants aux ateliers</li>
+<li>7 jours de congés utilisés</li>
+<li>0€ gagné</li>
+</ul>
+<p>Alors que l'objectif initial était de faire des ateliers, c'est précisemment
+l'activité la plus faible. Je vois plusieurs raisons :</p>
+<ul>
+<li>
+<p>Tout d'abord, participer à un atelier demande à comprendre un minimum Git. Il
+  me semble inutile d'organiser un atelier sans que les participants soient
+  d'abord conviés à la conférence.</p>
+</li>
+<li>
+<p>Une conférence permet de faire venir des dizaines ou centaines de personnes,
+  l'atelier est lui difficile à faire à plus de 30.</p>
+</li>
+<li>
+<p>Un atelier est bien plus compliqué a organiser.</p>
+</li>
+<li>
+<p>On m'a plus sollicité pour des conférences, tout simplement. Je n'ai plus
+  le temps pour trouver des salles, je m'adapte aux demandes.</p>
+</li>
+</ul>
+<p>De plus, j'avoue qu'après des dizaines d'heures dépensées pour monter une
+conférence de qualité, ma motivation et mon énergie pour l'atelir avaient
+diminués. Je dirais même que je redoutais un peu de faire des ateliers, car
+cela demande bien plus de préparation. Avec 6 ateliers, et malgré une qualité
+insuffisante à mes yeux sur les premiers, cette peur s'est estompée.</p>
+<p>J'avoue aussi que l'activité du blog est assez faible, car je pense trop
+souvent à faire des billets trop longs. Je vais donc tenter à l'avenir des
+billets courts, même si cela nécessite de faire plusieurs billets sur le même
+sujet. Et bien sûr, cela aussi du temps et de l'énergie.</p>
+<p>Vous pouvez constater que #gitfr est une activité purement bénévole. Non
+seulement, je n'ai pas gagné d'argent avec mais j'ai dépensé 7 jours de congés
+payés pour les déplacements en province. C'est à ce titre que je demande au
+minimum le remboursement des frais et une gratuité de l'évènement pour le
+public : je me déplace uniquement si n'importe qui peut venir assister aux
+conférences et aux ateliers. Que je ne gagne pas d'argent soit, mais je ne suis
+pas là pour enrichir ou former une société ! #gitfr est et restera une
+activité bénévole et gratuite, ce n'est pas dans son ADN de proposer des
+ateliers payants (il faut pour cela se tourner vers des formateurs, je pense
+d'ailleurs en faire une liste si cela est utile). Ceux qui me connaissent
+savent parfaitement mon dégout pour les gens qui cachent leurs activités pro
+sous des soit-disantes activités associatives. La séparation doit être nette et
+étanche. Si vous souhaitez une conférence ou un atelier Git, n'hésitez donc pas
+à demander, #gitfr répondra présent si les conditions le permet !</p>
+<p>Et pour finir sur une note positive, je crois que la majorité des participants
+ont appréciés les conférences et comprennent maintenant l'avantage d'utiliser
+Git (et globalement les DVCS). C'est finalement le seul objectif de #gitfr :
+montrer aux développeurs et aux managers qu'ils ont tout à gagner à revoir
+leurs pratiques de gestion de source. Les DVCS ne sont pas l'avenir, ils sont
+le présent. </p>]]></content:encoded>
+    </item>
     <item>
       <title>Comportement par défaut du git push</title>
       <link>http://www.gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push</link>
@@ -614,19 +686,6 @@ bashing, enfin si j'arrive à me retenir ;)</p>
 <p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
 conférence sera sûrement filmé et mis à disposition sur Internet.</p>
 <p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Atelier Git le 20/10 à Levallois</title>
-      <link>http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois</link>
-      <pubDate>Fri, 07 Oct 2011 23:48:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois</guid>
-      <description>Atelier Git le 20/10 à Levallois</description>
-      <content:encoded><![CDATA[<p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
-Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
-<p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
-quelques heures :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

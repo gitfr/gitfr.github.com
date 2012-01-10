@@ -65,6 +65,40 @@
           
   
 <div class="blog_post">
+  <a name="la-commande-init"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/12/la-commande-init" rel="bookmark" title="Permanent Link to La commande init">La commande init</a></h2>
+  <p class="related"><strong>12/12/2010 12:14 AM</strong> | categories: 
+
+<a href='/blog/category/git-init'>git-init</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/12/la-commande-init#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Ce billet est la première d'une série sur les commandes Git. Et quoi de plus naturel que de commencer par la première commande que tout utilisateur tape quand il apprend Git : la commande <code>init</code> (l'aventurier commencera peut être par un <code>git clone</code> :).</p>
+<p>L'objectif de cette commande est d'initialiser un répertoire, c'est à dire de lui ajouter le dépôt Git, qui pour nom <code>.git</code>.</p>
+<blockquote>
+<p>$ git init ~/src/myrepo</p>
+<p>Initialized empty Git repository in ~/src/myrepo/.git/</p>
+</blockquote>
+<p>Ce répertoire est toujours constitué du même contenu (nous aborderons en détail le contenu dans un autre billet, ainsi que la configuration). Vous pouvez changer cela en spécifiant un répertoires de templates (option <code>--template</code>).</p>
+<p><strong>Note</strong> : Si vous ne spécifiez pas de répertoire (<code>git init</code>), c'est le répertoire courant qui est utilisé.</p>
+<p>L'option la plus importante est <code>--bare</code>, qui permet de créer un dépôt partagé. Quelle est la différence ? C'est une histoire de workflow : avec un dépôt «normal», seule la commande de synchronisation <strong>pull</strong> est permise. Git par du principe que c'est votre dépôt, et que personne n'a le droit de pousser des objets dedans. A contrario, un dépôt <strong>bare</strong> se veut un dépôt partagé, est donc la commande <strong>push</strong> est aussi autorisée.</p>
+<p><strong>Note</strong> : Il n'existe pas de mécanismes d'identification et d'authorisation dans Git, c'est à vous de le rajouter avec d'autres outils.</p>
+<p>Une autre différence, qui se voit rapidement est qu'un dépôt «bare» ne contient pas de copie de travail (<strong>working directory</strong>). A la place, vous avez directement le contenu du répertoire .git à la racine. C'est assez logique, c'est un dépôt partagé, personne n'est censé travailler directement dessus.</p>
+<p>Troisième différence, le fichier de configuration possède la variable <code>bare = true</code>.</p>
+<p>Avec l'option <code>--bare</code>, on associe souvent l'option <code>--shared</code>, qui permet de spécifier les droits Unix sur le dépôt. Tout administrateur Unix comprendra aisement les possibilités (les explications dépassent largement le cadre de ce billet). Si vous ne savez pas, utilisez <code>--shared=all</code>.</p>
+<p><strong>Note</strong> : Par convention, le nom du répertoire du projet qui héberge un dépôt bare se termine par <code>.git</code>. Exemple : <code>myproject.git</code>, alors que votre dépôt privé s'appelle <code>myproject</code>. Cela permet d'indiquer que ce répertoire contient directement la structure, et non un sous répertoire <code>.git</code>.</p>
+<p>Et voila ! Votre dépôt Git est fin prêt, vous pouvez vous déplacer dedans et créer votre premier commit.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/12/la-commande-init#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="creation-de-liste-de-diffusion-gitfr"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/08/creation-de-liste-de-diffusion-gitfr" rel="bookmark" title="Permanent Link to Création de liste de diffusion gitfr">Création de liste de diffusion gitfr</a></h2>
   <p class="related"><strong>08/12/2010 04:18 PM</strong> | categories: 
@@ -339,34 +373,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/01/presentation-Git-disponible#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="les-gui-sous-macos-x"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/30/les-gui-sous-macos-x" rel="bookmark" title="Permanent Link to Les GUI sous MacOS X">Les GUI sous MacOS X</a></h2>
-  <p class="related"><strong>30/11/2010 12:18 AM</strong> | categories: 
-
-<a href='/blog/category/macos'>macos</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
- | <a href="http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Mon ami <em>Thomas</em>, Rubyiste Maceux ascendant foie gras (il habite Toulouse) nous fait un rapide tour d'horizon des <a href="http://blog.arbousier.info/11-29-2010/GitOsX.html">applications graphiques</a> sous <strong>Mac OS X</strong>.</p>
-<p>Au programme :</p>
-<ul>
-<li>Gitnub</li>
-<li>GitX</li>
-<li>GitY</li>
-<li>Gitbox</li>
-<li>Tower</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../8">« Articles suivants</a>
   --  
  <a href="../10">Articles précédents »</a>
@@ -390,6 +396,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
     <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
@@ -397,7 +404,6 @@
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
     <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
-    <li><a href="/blog/2011/10/09/comprendre-le-refspec">Comprendre le refspec</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -424,7 +430,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (24)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (25)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -442,6 +448,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>

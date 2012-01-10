@@ -7,7 +7,7 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2011-12-11T22:22:18Z</updated>
+  <updated>2012-01-10T20:04:26Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
@@ -571,7 +571,7 @@ par Junio.</p>
   be a no-op, but "git add -u :/" would add the updated contents of
   the Makefile at the top level. If you want to name a path in the
   current subdirectory whose unusual name begins with ":/", you can
-  name it by "./:/that/path" or by ":/that/path".</p>
+  name it by "./:/that/path" or by "\:/that/path".</p>
 <ul>
 <li>
 <p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
