@@ -65,6 +65,29 @@
           
   
 <div class="blog_post">
+  <a name="atelier-git-le-20-10-a-levallois"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/10/07/atelier-git-le-20-10-a-levallois" rel="bookmark" title="Permanent Link to Atelier Git le 20/10 à Levallois">Atelier Git le 20/10 à Levallois</a></h2>
+  <p class="related"><strong>07/10/2011 11:48 PM</strong> | categories: 
+
+<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
+ | <a href="http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
+Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
+<p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
+quelques heures :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="presentation-git-le-20-09-a-lyon"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/09/10/presentation-git-le-20-09-a-lyon" rel="bookmark" title="Permanent Link to Présentation Git le 20/09 à Lyon">Présentation Git le 20/09 à Lyon</a></h2>
   <p class="related"><strong>10/09/2011 06:40 PM</strong> | categories: 
@@ -286,53 +309,6 @@ pas un projet personnel :).</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/24/recherche-de-salles#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="retour-sur-la-soiree-git-parisjug"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/23/retour-sur-la-soiree-git-parisjug" rel="bookmark" title="Permanent Link to Retour sur la soirée Git ParisJUG">Retour sur la soirée Git ParisJUG</a></h2>
-  <p class="related"><strong>23/04/2011 05:36 AM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>J'arrive vers 19h et des poussières, et je vois une file assez impressionnante de personnes qui attendent de rentrer. J'apprendrai plus tard que le système de réservation s'est gouré et n'a pas limité à 200 places comme d'habitude mais à... 300 ! L'équipe du ParisJUG s'est donc mis à la recherche d'un maximum de sièges (interdiction de rester dans le couloir ou par terre). Donc non seulement j'ai battu le record d'inscription (200 places parties en 3h, 120 personnes en liste d'attente), mais surement le nombre de personnes présentes à une conférence :). Signe que Git à le vent en poupe en France !</p>
-<p>A cause d'une pause de 40mn en plein milieu de la soirée j'ai présenté Git en deux parties, de 55 minutes chacune. Le tout faisant 393 slides.</p>
-<h2>La partie «théorie»</h2>
-<p>J'ai épuré par rapport à l'atelier #1 et #2, pour me focaliser sur les points clés :</p>
-<ul>
-<li>Les objets (blob, tree, commit)</li>
-<li>La base de données clé / valeur</li>
-<li>Le SHA1</li>
-<li>Le graphe (DAG)</li>
-<li>Les références (tag et branche, distante et locale)</li>
-<li>Un peu de théorie sur le merge (2 way merge, 3 way merge)</li>
-</ul>
-<p>La difficulté est que l'auditeur lambda ne connait pas les DVCS, la notion de graphe (le DAG) n'est donc <strong>pas maitrisée</strong>. Venant de svn, ils ne connaissent que le graphe à une branche (que j'appelle un <strong>graphe dégénéré</strong>). C'est à cause de ce graphe unaire que les merges sont difficiles. Inversement, le DVCS ayant une <strong>vue globale</strong> de l'historique, il est plus à même de vous faciliter la vie avec de nombreuses commandes et de prendre les bonnes décisions.</p>
-<p>Les points fondamentaux que j'ai tenté de faire passer : </p>
-<ul>
-<li>Git est avant tout bien pensé conceptuellement. Complexe de prime abord, la compréhension de Git est grandement amélioré en abordant chaque concept individuellement.</li>
-<li>Git permet de modifier le graphe dans tous les sens. C'est le <strong>gros</strong> avantage sur ses concurrents.</li>
-<li>Le travail collaboratif est simplifié avec les références distantes, permettant d'avoir N versions d'un projet sur son dépôt.</li>
-</ul>
-<p>Et surtout que Git n'est <strong>pas</strong> l'outil magique que l'on peut croire, il n'est qu'un <strong>outil stupide</strong> qu'il ne fait que ce qu'on lui ordonne. Mais il a l'avantage de disposer des fonctionnalités qu'on est en droit d'attendre en 2011. <strong>Svn est dépassé</strong>, pas besoin de tortiller du cul (j'aime bien cette expression un poil vulgaire).</p>
-<h2>La partie «pratique»</h2>
-<p>Cette partie avait pour but de mettre les pieds à l'étrier, en donnant des conseils et quelques astuces. J'ai pensé à parler des commandes de base, ou à faire une démo en «live», mais après quelques essais, je n'était pas satisfait. J'ai donc joué la carte du <strong>faire envie</strong>. J'ai parlé de quelques commandes que j'adore comme le <code>add -p</code> ou le <code>rebase -i</code>. </p>
-<p>Mais surtout, le point clé de cette partie est de montrer l'utilité de modifier aussi facilement le graphe pour disposer d'un historique «propre». Cette notion étant mouvante dans le temps, on peut à tout moment revoir cette historique pour le rendre conforme à ses souhaits. Disposer de <strong>commits  unitaires</strong> facilitant la compréhension des changements, des <strong>multiples branches</strong> pour différencier les travaux au cours du temps et leurs intégrations, le tout donc dans un graphe facile à comprendre. est un avantage <strong>indéniable</strong> de Git. C'est de mon point de vue, ce qu'il l'emporte sur <em>Hg</em>. Car ce dernier est (aussi) bien pensé, (plus) facile à utiliser et diablement efficace, même si la gestion des branches est un poil simpliste.</p>
-<p>J'ai aussi parlé des Workflows et rapidement des outils graphiques et de GitHub.</p>
-<h2>Conclusion</h2>
-<p>De l'avis de toutes les personnes qui ont vu mes premières présentations, celle ci est bien mieux construite. Mon travail à donc payé (j'ai passé quelque chose comme 20h, si ce n'est pas plus). J'ai aussi accompagné les auditeurs pendant 2h, la pause aidant sur ce point.</p>
-<p>Mais si j'ai bien réussi la partie théorique, je dois encore améliorer la partie pratique en enlevant quelques commandes peu pertinentes et me focaliser sur l'intérêt de modifier le graphe à travers des exemples intéressants : l'avantage du décentralisé en travaillant tranquillement sur son dépôt, le travail collaboratif, le fait de revoir son historique au bout de plusieurs semaines de travail, etc.</p>
-<p>Bref, beaucoup de positif, mais encore du travail pour une meilleur ROI de l'auditeur :).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/23/retour-sur-la-soiree-git-parisjug#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/gitfr/1">« Articles suivants</a>
   --  
  <a href="/blog/category/gitfr/3">Articles précédents »</a>
@@ -356,6 +332,7 @@ pas un projet personnel :).</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
     <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
@@ -363,7 +340,6 @@ pas un projet personnel :).</p>
     <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
     <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
-    <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -375,7 +351,7 @@ pas un projet personnel :).</p>
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (21)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
      <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (53)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
@@ -391,7 +367,7 @@ pas un projet personnel :).</p>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (25)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (26)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -409,7 +385,7 @@ pas un projet personnel :).</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(3)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>

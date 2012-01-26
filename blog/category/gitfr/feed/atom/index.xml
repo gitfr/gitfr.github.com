@@ -7,12 +7,31 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-01-26T20:18:58Z</updated>
+  <updated>2012-01-26T20:35:31Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Présentation et atelier Git le 20/02 à Lyon]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon" />
+    <id>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</id>
+    <updated>2012-01-26T21:07:00Z</updated>
+    <published>2012-01-26T21:07:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="atelier" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Présentation et atelier Git le 20/02 à Lyon]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon"><![CDATA[<p>gitfr repart à Lyon pour un combo présentation + atelier sur une journée. Cela
+se passera le 20 février dans les locaux d'Alptis, 25 cours Albert Thomas, de
+14h à 21h (8h de conf, même pas peur !).</p>
+<p>Si je vous dis que les inscriptions sont déjà closes, vous me croyez ? Désolé,
+j'ai raté l'ouverture des inscriptions.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -309,23 +328,5 @@ quelques heures :).</p>]]></content>
 <p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
 21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
 <p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Liste de diffusion pour la traduction Git]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git" />
-    <id>http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</id>
-    <updated>2011-08-06T23:13:00Z</updated>
-    <published>2011-08-06T23:13:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Liste de diffusion pour la traduction Git]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git"><![CDATA[<p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
-<a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
-vient d'être créée. Si ça vous branche de vous prendre la tête sur la
-meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
-<em>.po</em>, vous êtes le bienvenu ! :).</p>]]></content>
   </entry>
 </feed>

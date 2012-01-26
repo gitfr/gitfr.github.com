@@ -10,10 +10,24 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Thu, 26 Jan 2012 20:18:58 GMT</pubDate>
+    <pubDate>Thu, 26 Jan 2012 20:35:31 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Présentation et atelier Git le 20/02 à Lyon</title>
+      <link>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</link>
+      <pubDate>Thu, 26 Jan 2012 21:07:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</guid>
+      <description>Présentation et atelier Git le 20/02 à Lyon</description>
+      <content:encoded><![CDATA[<p>gitfr repart à Lyon pour un combo présentation + atelier sur une journée. Cela
+se passera le 20 février dans les locaux d'Alptis, 25 cours Albert Thomas, de
+14h à 21h (8h de conf, même pas peur !).</p>
+<p>Si je vous dis que les inscriptions sont déjà closes, vous me croyez ? Désolé,
+j'ai raté l'ouverture des inscriptions.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Retour sur un an de gitfr</title>
       <link>http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr</link>
@@ -265,19 +279,6 @@ quelques heures :).</p>]]></content:encoded>
 <p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
 21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
 <p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Liste de diffusion pour la traduction Git</title>
-      <link>http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</link>
-      <pubDate>Sat, 06 Aug 2011 23:13:00 CEST</pubDate>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/08/06/liste-de-diffusion-pour-la-traduction-git</guid>
-      <description>Liste de diffusion pour la traduction Git</description>
-      <content:encoded><![CDATA[<p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
-<a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
-vient d'être créée. Si ça vous branche de vous prendre la tête sur la
-meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
-<em>.po</em>, vous êtes le bienvenu ! :).</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

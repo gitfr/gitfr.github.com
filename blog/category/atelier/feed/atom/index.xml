@@ -7,12 +7,31 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-01-26T20:18:58Z</updated>
+  <updated>2012-01-26T20:35:31Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Présentation et atelier Git le 20/02 à Lyon]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon" />
+    <id>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</id>
+    <updated>2012-01-26T21:07:00Z</updated>
+    <published>2012-01-26T21:07:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="atelier" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Présentation et atelier Git le 20/02 à Lyon]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon"><![CDATA[<p>gitfr repart à Lyon pour un combo présentation + atelier sur une journée. Cela
+se passera le 20 février dans les locaux d'Alptis, 25 cours Albert Thomas, de
+14h à 21h (8h de conf, même pas peur !).</p>
+<p>Si je vous dis que les inscriptions sont déjà closes, vous me croyez ? Désolé,
+j'ai raté l'ouverture des inscriptions.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -251,35 +270,5 @@ quelques heures :).</p>]]></content>
 <p>Pour s'inscrire, suivez ce <a href="http://jugevents.org/jugevents/event/38343">lien</a>.</p>
 <p>A bientôt autour d'une bière Alsacienne ! :).</p>
 <p>PS : Je n'avais pas prévu de me déplacer en province avant le Brezhcamp, mais le ElsassJUG avait déjà une soirée DVCS pour le mois de juin.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Atelier Git le 16/06 à Rennes]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/05/18/atelier-git-le-16-06-a-rennes" />
-    <id>http://www.gitfr.net/blog/2011/05/18/atelier-git-le-16-06-a-rennes</id>
-    <updated>2011-05-18T13:25:00Z</updated>
-    <published>2011-05-18T13:25:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Atelier Git le 16/06 à Rennes]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/05/18/atelier-git-le-16-06-a-rennes"><![CDATA[<p>Le <a href="http://www.breizhcamp.org/">breizhcamp</a> est une journée conférence organisée le 17 juin par plusieurs communautés techniques de Rennes avec des sessions sur Java, Ruby, Android, etc. Je suis présent à cette conférence pour 2 sessions : la keynote, avec pour thème les communautés et une session sur le langage Python.</p>
-<p>Étant sur place, j'ai proposé aux organisateurs un atelier sur Git (étonnant non ?). Limité à <strong>40 personnes</strong> et organisé la veille (le 16 juin), l'objectif est de prendre par la main les participants, en partant de zéro et les amener à une maîtrise minimale de Git :</p>
-<ul>
-<li>On démarre par une présentation sur l'intérêt de passer aux DVCS,</li>
-<li>suivi d'une présentation théorique sur Git,</li>
-<li>Pour ensuite manipuler tous ensemble.</li>
-</ul>
-<p>Cela signifie que vous devez venir avec <strong>votre ordinateur</strong> équipé de Git si vous souhaitez participer à l'atelier. Vous pouvez bien sur assister seulement aux présentations ou regarder les autres manipuler.</p>
-<p>Pour rappel, les tutoriels pour installer Git :</p>
-<ul>
-<li>http://blog.gitfr.net/post/1440298705/installer-git-sur-ubuntu</li>
-<li>http://blog.gitfr.net/post/1449390263/installer-git-sur-os-x</li>
-<li>http://blog.gitfr.net/post/1471591503/installer-git-sur-windows</li>
-</ul>
-<p>Je ne vous cache pas que je suis allergique à Windows (que je n'utilise plus personnellement et professionnellement depuis 1999) et que je suis donc beaucoup moins à l'aise sur cette plateforme. De plus, nous manipulerons principalement en ligne de commande et non au travers d'un quelconque IDE.</p>
-<p>Suivez ce <a href="http://jugevents.org/jugevents/event/show.html?id=37556">lien</a> pour les inscriptions.</p>]]></content>
   </entry>
 </feed>
