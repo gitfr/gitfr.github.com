@@ -10,10 +10,124 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Tue, 10 Jan 2012 20:04:26 GMT</pubDate>
+    <pubDate>Thu, 26 Jan 2012 20:18:58 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>La commande diff</title>
+      <link>http://www.gitfr.net/blog/2012/01/26/la-commande-diff</link>
+      <pubDate>Thu, 26 Jan 2012 15:48:00 CET</pubDate>
+      <category><![CDATA[git git-diff]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/26/la-commande-diff</guid>
+      <description>La commande diff</description>
+      <content:encoded><![CDATA[<p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
+SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
+d'horizon.</p>
+<h2>Le base</h2>
+<p>Commençons par le basique. Pour connaître les différences entre votre
+répertoire de travail et votre index :</p>
+<blockquote>
+<p>$ git diff</p>
+</blockquote>
+<p>Entre l'index et votre dépôt :</p>
+<blockquote>
+<p>$ git diff --staged</p>
+</blockquote>
+<p>Entre le répertoire de travail et le dépôt :</p>
+<blockquote>
+<p>$ git diff HEAD</p>
+</blockquote>
+<p><strong>Note</strong> : la notation HEAD se retrouve assez souvent (git-log, git-reset...)
+quand on parle du dépôt, vu qu'il s'agit du commit courant, c'est à dire notre
+position sur le graphe (l'index étant le prochain commit).</p>
+<p>La commande permet de spécifier des fichiers ou des commits (ces deux
+possibilités peuvent être combinées) :</p>
+<blockquote>
+<p>$ git diff -- monfichier</p>
+<p>$ git diff commit</p>
+</blockquote>
+<p>Si vous voulez connaître la différence entre 2 commits :</p>
+<blockquote>
+<p>$ git diff commit1 commit2 </p>
+</blockquote>
+<p>Plus intéressant, si vous voulez savoir ce qui existe dans une branche et pas
+dans l'autre :</p>
+<blockquote>
+<p>$ git diff commit1...commit2</p>
+</blockquote>
+<p>Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
+deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.</p>
+<h2>Le contexte</h2>
+<p>Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
+affiche 3 lignes supplémentaires en dessous des changements pour vous donner
+plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
+possibles :</p>
+<ol>
+<li>La 1ère est bien sûr d'augmenter le contexte avec l'option <code>-U</code></li>
+</ol>
+<blockquote>
+<p>$ git diff -U5</p>
+</blockquote>
+<p>Pensez à faire un alias si vous préférez toujours disposer d'un contexte d'une
+taille différente.</p>
+<ol>
+<li>Demander à Git la fonction qui contient la modification</li>
+</ol>
+<blockquote>
+<p>$ git diff -W</p>
+</blockquote>
+<p>C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
+langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
+premiers tests en Python, cela semble plûtot bien fonctionner.</p>
+<h2>Ignorer les espaces</h2>
+<p>Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
+supprimer des espaces. Vous avez à votre disposition les options <code>-b</code> <code>-w</code> pour
+ignorer les espaces en fin de lignes ou toutes les espaces.</p>
+<h2>Algorithme patience</h2>
+<p>La commande implémente aussi un autre algorithme de détection de changement du
+nom de <em>Patience</em>. Pour faire très court, cet algo se focalise uniquement sur
+des lignes à fort contenu, alors que l'algorithme classique travaille sur
+toutes les lignes. Il y'a des cas ou c'est intéressant de l'essayer (notamment
+quand le diff classique est complètement perdu).</p>
+<p><strong>Note</strong> : pour de plus amples explications, veuillez vous référer à cette
+page <a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html">ci</a> et à
+celle <a href="http://alfedenzo.livejournal.com/170301.html">la</a>.</p>
+<h2>Faire des statistiques</h2>
+<p>Je vous laisse regarder par vous même les options <code>--stat</code>, <code>--numstat</code>,
+<code>--shortstat</code>, <code>--dirstat</code> et <code>--summary</code> :).</p>
+<h2>Afficher les différences sur la même ligne</h2>
+<p>Il est intéressant, par exemple pour de la documentation, d'afficher les
+modifications sur la même ligne. C'est tout l'intérêt du mode <em>word diff</em>.</p>
+<blockquote>
+<p>$ git diff --word-diff</p>
+</blockquote>
+<h2>Ne pas afficher les prefixes</h2>
+<p>Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :</p>
+<blockquote>
+<p>$ git diff --no-prefix</p>
+</blockquote>
+<h2>Chercher une chaine dans le contenu</h2>
+<p>Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
+lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
+faut :</p>
+<blockquote>
+<p>$ git diff -Srenderer HEAD~10..HEAD</p>
+</blockquote>
+<p>Vous pouvez utiliser une expression rationnelle avec l'option <code>-G</code>.</p>
+<p><strong>Note</strong> : l'option <code>--pickaxe-all</code> affiche l'ensemble du commit, et pas
+uniquement les fichiers impactés.</p>
+<h2>Générer un patch</h2>
+<p>Le comportement par défaut de Git est de générer un patch :</p>
+<blockquote>
+<p>$ git diff &gt; diff.patch</p>
+</blockquote>
+<h2>Et encore plein d'autres options</h2>
+<p>Comme d'habitude, je vous recommande chaudement de lire le manuel de la
+commande tellement Git regorge d'options (notamment pour aider au scripting).
+Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
+<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>]]></content:encoded>
+    </item>
     <item>
       <title>Retour sur un an de gitfr</title>
       <link>http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr</link>
@@ -670,22 +784,6 @@ base).</p>
 <h2>Conclusion</h2>
 <p>Je pense avoir fait le tour. Comme d'habitude je vous conseille de de lire
 les pages du manuel (git-clone, git-fetch, git-push et git-pull).</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 03/11 à Évry</title>
-      <link>http://www.gitfr.net/blog/2011/10/08/presentation-git-le-03-11-a-evry</link>
-      <pubDate>Sat, 08 Oct 2011 00:05:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/08/presentation-git-le-03-11-a-evry</guid>
-      <description>Présentation Git le 03/11 à Évry</description>
-      <content:encoded><![CDATA[<p>Nouvelle conférence Git à Télécom SudParis, à Évry, en région parisienne. L'occasion d'évengéliser
-des étudiants pas encore trop déformés par SVN :). A ce propos, vu qu'ils ont pour obligation
-d'utiliser ce dernier pour leurs devoirs, je devrais <strong>exceptionnellement</strong> être soft en SVN
-bashing, enfin si j'arrive à me retenir ;)</p>
-<p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
-conférence sera sûrement filmé et mis à disposition sur Internet.</p>
-<p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

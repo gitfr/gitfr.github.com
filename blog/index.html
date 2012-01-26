@@ -65,6 +65,131 @@
           
   
 <div class="blog_post">
+  <a name="la-commande-diff"></a>
+  <h2 class="blog_post_title"><a href="/blog/2012/01/26/la-commande-diff" rel="bookmark" title="Permanent Link to La commande diff">La commande diff</a></h2>
+  <p class="related"><strong>26/01/2012 03:48 PM</strong> | categories: 
+
+<a href='/blog/category/git-git-diff'>git git-diff</a>
+ | <a href="http://www.gitfr.net/blog/2012/01/26/la-commande-diff#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
+SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
+d'horizon.</p>
+<h2>Le base</h2>
+<p>Commençons par le basique. Pour connaître les différences entre votre
+répertoire de travail et votre index :</p>
+<blockquote>
+<p>$ git diff</p>
+</blockquote>
+<p>Entre l'index et votre dépôt :</p>
+<blockquote>
+<p>$ git diff --staged</p>
+</blockquote>
+<p>Entre le répertoire de travail et le dépôt :</p>
+<blockquote>
+<p>$ git diff HEAD</p>
+</blockquote>
+<p><strong>Note</strong> : la notation HEAD se retrouve assez souvent (git-log, git-reset...)
+quand on parle du dépôt, vu qu'il s'agit du commit courant, c'est à dire notre
+position sur le graphe (l'index étant le prochain commit).</p>
+<p>La commande permet de spécifier des fichiers ou des commits (ces deux
+possibilités peuvent être combinées) :</p>
+<blockquote>
+<p>$ git diff -- monfichier</p>
+<p>$ git diff commit</p>
+</blockquote>
+<p>Si vous voulez connaître la différence entre 2 commits :</p>
+<blockquote>
+<p>$ git diff commit1 commit2 </p>
+</blockquote>
+<p>Plus intéressant, si vous voulez savoir ce qui existe dans une branche et pas
+dans l'autre :</p>
+<blockquote>
+<p>$ git diff commit1...commit2</p>
+</blockquote>
+<p>Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
+deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.</p>
+<h2>Le contexte</h2>
+<p>Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
+affiche 3 lignes supplémentaires en dessous des changements pour vous donner
+plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
+possibles :</p>
+<ol>
+<li>La 1ère est bien sûr d'augmenter le contexte avec l'option <code>-U</code></li>
+</ol>
+<blockquote>
+<p>$ git diff -U5</p>
+</blockquote>
+<p>Pensez à faire un alias si vous préférez toujours disposer d'un contexte d'une
+taille différente.</p>
+<ol>
+<li>Demander à Git la fonction qui contient la modification</li>
+</ol>
+<blockquote>
+<p>$ git diff -W</p>
+</blockquote>
+<p>C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
+langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
+premiers tests en Python, cela semble plûtot bien fonctionner.</p>
+<h2>Ignorer les espaces</h2>
+<p>Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
+supprimer des espaces. Vous avez à votre disposition les options <code>-b</code> <code>-w</code> pour
+ignorer les espaces en fin de lignes ou toutes les espaces.</p>
+<h2>Algorithme patience</h2>
+<p>La commande implémente aussi un autre algorithme de détection de changement du
+nom de <em>Patience</em>. Pour faire très court, cet algo se focalise uniquement sur
+des lignes à fort contenu, alors que l'algorithme classique travaille sur
+toutes les lignes. Il y'a des cas ou c'est intéressant de l'essayer (notamment
+quand le diff classique est complètement perdu).</p>
+<p><strong>Note</strong> : pour de plus amples explications, veuillez vous référer à cette
+page <a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html">ci</a> et à
+celle <a href="http://alfedenzo.livejournal.com/170301.html">la</a>.</p>
+<h2>Faire des statistiques</h2>
+<p>Je vous laisse regarder par vous même les options <code>--stat</code>, <code>--numstat</code>,
+<code>--shortstat</code>, <code>--dirstat</code> et <code>--summary</code> :).</p>
+<h2>Afficher les différences sur la même ligne</h2>
+<p>Il est intéressant, par exemple pour de la documentation, d'afficher les
+modifications sur la même ligne. C'est tout l'intérêt du mode <em>word diff</em>.</p>
+<blockquote>
+<p>$ git diff --word-diff</p>
+</blockquote>
+<h2>Ne pas afficher les prefixes</h2>
+<p>Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :</p>
+<blockquote>
+<p>$ git diff --no-prefix</p>
+</blockquote>
+<h2>Chercher une chaine dans le contenu</h2>
+<p>Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
+lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
+faut :</p>
+<blockquote>
+<p>$ git diff -Srenderer HEAD~10..HEAD</p>
+</blockquote>
+<p>Vous pouvez utiliser une expression rationnelle avec l'option <code>-G</code>.</p>
+<p><strong>Note</strong> : l'option <code>--pickaxe-all</code> affiche l'ensemble du commit, et pas
+uniquement les fichiers impactés.</p>
+<h2>Générer un patch</h2>
+<p>Le comportement par défaut de Git est de générer un patch :</p>
+<blockquote>
+<p>$ git diff &gt; diff.patch</p>
+</blockquote>
+<h2>Et encore plein d'autres options</h2>
+<p>Comme d'habitude, je vous recommande chaudement de lire le manuel de la
+commande tellement Git regorge d'options (notamment pour aider au scripting).
+Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
+<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/01/26/la-commande-diff#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="retour-sur-un-an-de-gitfr"></a>
   <h2 class="blog_post_title"><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr" rel="bookmark" title="Permanent Link to Retour sur un an de gitfr">Retour sur un an de gitfr</a></h2>
   <p class="related"><strong>10/01/2012 08:54 PM</strong> | categories: 
@@ -602,34 +727,6 @@ plusieurs raisons :</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="presentation-git-le-24-11-a-bordeaux"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux" rel="bookmark" title="Permanent Link to Présentation Git le 24/11 à Bordeaux">Présentation Git le 24/11 à Bordeaux</a></h2>
-  <p class="related"><strong>13/10/2011 01:40 AM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
-combo présentation et atelier sur 2 jours : </p>
-<ul>
-<li>Présentation le 24/11</li>
-<li>Atelier le 25/11</li>
-</ul>
-<p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
-<a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
-de l'événement.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/page/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -651,6 +748,7 @@ de l'événement.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
     <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
@@ -658,7 +756,6 @@ de l'événement.</p>
     <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
     <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
     <li><a href="/blog/2011/10/23/retour-sur-l-atelier-du-20-10">Retour sur l'atelier du 20/10</a></li>
-    <li><a href="/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux">Présentation Git le 24/11 à Bordeaux</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -673,6 +770,7 @@ de l'événement.</p>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (20)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
      <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (53)</li>
+     <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
@@ -703,7 +801,7 @@ de l'événement.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(1)</li>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
