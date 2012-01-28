@@ -65,6 +65,72 @@
           
   
 <div class="blog_post">
+  <a name="google-code-supporte-git"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/07/17/google-code-supporte-git" rel="bookmark" title="Permanent Link to Google Code supporte Git">Google Code supporte Git</a></h2>
+  <p class="related"><strong>17/07/2011 06:35 PM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/google-code'>google code</a>
+ | <a href="http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
+maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
+<strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
+support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
+les 3 plus gros hébergeurs de code (Sourceforge, Google Code et GitHub)
+supportent maitenant notre DVCS préféré. Cela signifie aussi que l'avenir
+s'assombrie pour Mercurial, qui se retrouve (presque) dans la même
+situation que Bzr, avec un seul hébergeur <em>dépendant</em> important. Terme mal
+choisi pour désigner un hébergeur qui s'appuie uniquement sur une techno, en
+l'occurence <a href="https://bitbucket.org/">Bitbucket</a> (<a href="https://launchpad.net/">Launchpad</a>
+pour Bzr).</p>
+<p>Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
+raisons, l'une <strong>technique</strong> et l'autre <strong>marketing</strong>.</p>
+<h2>L'argument technique</h2>
+<p>Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
+<a href="http://code.google.com/p/gerrit/">Gerrit</a> et <a href="http://www.eclipse.org/jgit/">JGit</a> 
+(ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
+sur la liste de diffusion, Git supporte depuis la version 1.6.6 le protocole
+<strong>smart http</strong>. Ce dernier gère bien mieux le protocole http sur lequel Google
+Code s'appuie <strong>massivement</strong>. Ce qui a ouvert la voie, il <em>suffisait</em> (hum)
+ensuite de modifier Git pour gérer l'infrastructure Google. Si cela vous
+intéresse, jeter un oeil sur la video
+<a href="http://www.youtube.com/watch?v=ri796Hx8las">Google I/O 2009 - Mercurial on BigTable</a>
+qui explique cette même modification avec Mercurial. Une vidéo similaire
+devrait sortir pour Git (chouette !).</p>
+<p>Chose étonnante, d'après Dave Borowitz, Google code n'utilise pas JGit mais
+<a href="http://www.samba.org/~jelmer/dulwich/">Dulwich</a>, codé en Python. Je suis
+curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
+n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
+pas en dire plus).</p>
+<h2>L'argument marketing</h2>
+<p>La montée en puissance de GitHub ne fait aucun doute, cet
+<a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php">article</a>
+le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
+GitHub représente le total des commits de Sourceforge, Google Code et
+CodePlex <strong>réunis</strong>. Même si ce chiffre est à prendre avec de grosses pincettes,
+les DVCS poussent au commit unitaire donc à en produire bien plus, c'est
+un chiffre intéressant (le nombre de lignes de code serait lui significatif).</p>
+<p>Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
+entendre que ces communautés ont eux aussi (au moins partiellement) basculées
+sur GitHub (après les communautés Ruby, Javascript et Python).</p>
+<h2>Pour conclure</h2>
+<p>Redmonk dit que <strong>GitHub est le nouveau centre de gravité</strong>, les chiffres le
+prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
+poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
+moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
+augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.6-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/07/09/git-1.7.6-publiee" rel="bookmark" title="Permanent Link to Git 1.7.6 publiée">Git 1.7.6 publiée</a></h2>
   <p class="related"><strong>09/07/2011 08:34 PM</strong> | categories: 
@@ -612,29 +678,6 @@ par Junio.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="traduction-de-git-en-francais"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/25/traduction-de-git-en-francais" rel="bookmark" title="Permanent Link to Traduction de Git en français">Traduction de Git en français</a></h2>
-  <p class="related"><strong>25/04/2011 01:30 PM</strong> | categories: 
-
-<a href='/blog/category/traduction'>traduction</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Apr 25th, 2011 1:30pm</p>
-<p>Si vous avez lu la nouvelle sur la version 1.7.5, vous savez que Git est prêt à être traduit. C'était déja le cas avec les outils git-gui et gitk, mais pas encore de Git lui même.  J'ai décidé d'aider en traduisant l'interface en français. Et oui, participer à un projet Libre ne veux pas dire obligatoirement coder, on peut aussi créer de la <strong>documentation</strong>, rapporter des <strong>bugs</strong>, utiliser des versions <strong>béta</strong>, gérer l'<strong>infrastructure</strong> technique ou... traduire.</p>
-<p>J'ai créé un <a href="https://github.com/sdouche/git-french-translation/">projet sur GitHub</a>, pour simplifier la tâche d'éventuels bénévoles. Je cherche en effet des bonnes âmes pour m'aider dans cette tâche ingrate et fastidieuse :). Quel intérêt à m'aider ? Traduire permet souvent d'apprendre sur l'outil («tiens, d'ou vient cette phrase ?», «mais que signifie ce message ?») mais permet aussi de gonfler son égo en disant qu'on a participé un tant soi peu au projet Git !</p>
-<p>Personnellement, mes connaissances en C datant de quelques années maintenant, la traduction est pour moi le meilleur moyen d'aider le projet. Et puis, cela rentre plutôt bien dans la «mission» de #gitfr :).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/25/traduction-de-git-en-francais#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/1">« Articles suivants</a>
   --  
  <a href="/blog/category/git/3">Articles précédents »</a>
@@ -658,6 +701,7 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
     <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
@@ -665,7 +709,6 @@ par Junio.</p>
     <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
     <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
     <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
-    <li><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris">Atelier privé Hg vs Git le 03/12 à Paris</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -679,7 +722,7 @@ par Junio.</p>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (21)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (53)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (54)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -702,7 +745,7 @@ par Junio.</p>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (18)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (19)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -711,7 +754,7 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(3)</li>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(4)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>

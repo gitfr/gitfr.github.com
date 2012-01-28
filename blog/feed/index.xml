@@ -10,10 +10,172 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Thu, 26 Jan 2012 20:35:31 GMT</pubDate>
+    <pubDate>Sat, 28 Jan 2012 20:38:21 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.9 publiée</title>
+      <link>http://www.gitfr.net/blog/2012/01/28/git-1.7.9-publiee</link>
+      <pubDate>Sat, 28 Jan 2012 21:13:00 CET</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/28/git-1.7.9-publiee</guid>
+      <description>Git 1.7.9 publiée</description>
+      <content:encoded><![CDATA[<p>La version 1.7.9 est sortie le 27 janvier avec plusieurs évolutions
+intéressantes : </p>
+<ul>
+<li>
+<p>Un meilleur support des gros fichiers (Git n'étant pas réputé pour ça).</p>
+</li>
+<li>
+<p>La signature des commits, qui fait suite au piratage de la machine qui 
+  héberge le dépôt Git du projet Linux de Linus Torvalds.</p>
+</li>
+<li>
+<p>L'internationalisation est maintenant activée (honte à moi, toujours pas
+  démarré le projet de traduction en Français).</p>
+</li>
+<li>
+<p>La possibilité d'ajouter une description à une branche.</p>
+</li>
+<li>
+<p>L'option <code>--no-edit</code> quand on amende un commit. </p>
+</li>
+</ul>
+<p>Je vous laisse comme d'habitude lire le changelog mais je trouve cette version
+bien excitente ! J'attends la mise à jour sur ma machine pour faire quelques
+tests.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>gitk updates accumulated since early 2011.</p>
+</li>
+<li>
+<p>git-gui updated to 0.16.0.</p>
+</li>
+<li>
+<p>git-p4 (in contrib/) updates.</p>
+</li>
+<li>
+<p>Git uses gettext to translate its most common interface messages
+  into the user's language if translations are available and the
+  locale is appropriately set. Distributors can drop new PO files
+  in po/ to add new translations.</p>
+</li>
+<li>
+<p>The code to handle username/password for HTTP transactions used in
+  "git push" &amp; "git fetch" learned to talk "credential API" to
+  external programs to cache or store them, to allow integration with
+  platform native keychain mechanisms.</p>
+</li>
+<li>
+<p>The input prompts in the terminal use our own getpass() replacement
+  when possible. HTTP transactions used to ask for the username without
+  echoing back what was typed, but with this change you will see it as
+  you type.</p>
+</li>
+<li>
+<p>The internals of "revert/cherry-pick" have been tweaked to prepare
+  building more generic "sequencer" on top of the implementation that
+  drives them.</p>
+</li>
+<li>
+<p>"git rev-parse FETCH_HEAD" after "git fetch" without specifying
+  what to fetch from the command line will now show the commit that
+  would be merged if the command were "git pull".</p>
+</li>
+<li>
+<p>"git add" learned to stream large files directly into a packfile
+  instead of writing them into individual loose object files.</p>
+</li>
+<li>
+<p>"git checkout -B <current branch> <elsewhere>" is a more intuitive
+  way to spell "git reset --keep <elsewhere>".</p>
+</li>
+<li>
+<p>"git checkout" and "git merge" learned "--no-overwrite-ignore" option
+  to tell Git that untracked and ignored files are not expendable.</p>
+</li>
+<li>
+<p>"git commit --amend" learned "--no-edit" option to say that the
+  user is amending the tree being recorded, without updating the
+  commit log message.</p>
+</li>
+<li>
+<p>"git commit" and "git reset" re-learned the optimization to prime
+  the cache-tree information in the index, which makes it faster to
+  write a tree object out after the index entries are updated.</p>
+</li>
+<li>
+<p>"git commit" detects and rejects an attempt to stuff NUL byte in
+  the commit log message.</p>
+</li>
+<li>
+<p>"git commit" learned "-S" to GPG-sign the commit; this can be shown
+  with the "--show-signature" option to "git log".</p>
+</li>
+<li>
+<p>fsck and prune are relatively lengthy operations that still go
+  silent while making the end-user wait. They learned to give progress
+  output like other slow operations.</p>
+</li>
+<li>
+<p>The set of built-in function-header patterns for various languages
+  knows MATLAB.</p>
+</li>
+<li>
+<p>"git log --format='<format>'" learned new %g[nNeE] specifiers to
+  show information from the reflog entries when walking the reflog
+  (i.e. with "-g").</p>
+</li>
+<li>
+<p>"git pull" can be used to fetch and merge an annotated/signed tag,
+  instead of the tip of a topic branch. The GPG signature from the
+  signed tag is recorded in the resulting merge commit for later
+  auditing.</p>
+</li>
+<li>
+<p>"git log" learned "--show-signature" option to show the signed tag
+  that was merged that is embedded in the merge commit. It also can
+  show the signature made on the commit with "git commit -S".</p>
+</li>
+<li>
+<p>"git branch --edit-description" can be used to add descriptive text
+  to explain what a topic branch is about.</p>
+</li>
+<li>
+<p>"git fmt-merge-msg" learned to take the branch description into
+  account when preparing a merge summary that "git merge" records
+  when merging a local branch.</p>
+</li>
+<li>
+<p>"git request-pull" has been updated to convey more information
+  useful for integrators to decide if a topic is worth merging and
+  what is pulled is indeed what the requestor asked to pull,
+  including:</p>
+</li>
+<li>
+<p>the tip of the branch being requested to be merged;</p>
+</li>
+<li>the branch description describing what the topic is about;</li>
+<li>
+<p>the contents of the annotated tag, when requesting to pull a tag.</p>
+</li>
+<li>
+<p>"git pull" learned to notice 'pull.rebase' configuration variable,
+   which serves as a global fallback for setting 'branch.<name>.rebase'
+   configuration variable per branch.</p>
+</li>
+<li>
+<p>"git tag" learned "--cleanup" option to control how the whitespaces
+   and empty lines in tag message are cleaned up.</p>
+</li>
+<li>
+<p>"gitweb" learned to show side-by-side diff.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation et atelier Git le 20/02 à Lyon</title>
       <link>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</link>
@@ -612,24 +774,6 @@ plusieurs raisons :</p>
 </li>
 </ul>
 <p>Vous en pensez quoi ?</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 24/11 à Bordeaux</title>
-      <link>http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux</link>
-      <pubDate>Thu, 13 Oct 2011 01:40:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux</guid>
-      <description>Présentation Git le 24/11 à Bordeaux</description>
-      <content:encoded><![CDATA[<p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
-combo présentation et atelier sur 2 jours : </p>
-<ul>
-<li>Présentation le 24/11</li>
-<li>Atelier le 25/11</li>
-</ul>
-<p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
-<a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
-de l'événement.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
