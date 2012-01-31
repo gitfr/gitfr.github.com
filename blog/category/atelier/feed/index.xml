@@ -10,10 +10,36 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sat, 28 Jan 2012 20:38:21 GMT</pubDate>
+    <pubDate>Tue, 31 Jan 2012 23:57:42 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Présentation Git le 13/02 à Montpellier</title>
+      <link>http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier</link>
+      <pubDate>Wed, 01 Feb 2012 00:30:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier</guid>
+      <description>Présentation Git le 13/02 à Montpellier</description>
+      <content:encoded><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur d'une présentation Git ;).</p>
+<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Présentation Git le 13/02 à Montpellier</title>
+      <link>http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier</link>
+      <pubDate>Thu, 26 Jan 2012 21:07:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier</guid>
+      <description>Présentation Git le 13/02 à Montpellier</description>
+      <content:encoded><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur <em>khof</em> d'une présentation Git.</p>
+<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation et atelier Git le 20/02 à Lyon</title>
       <link>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</link>
@@ -193,34 +219,6 @@ conférence sera sûrement filmé et mis à disposition sur Internet.</p>
 Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
 <p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
 quelques heures :).</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 20/09 à Lyon</title>
-      <link>http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</link>
-      <pubDate>Sat, 10 Sep 2011 18:40:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</guid>
-      <description>Présentation Git le 20/09 à Lyon</description>
-      <content:encoded><![CDATA[<p>GitFR continue son tour de France avec comme étape Lyon, grâce au
-<a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
-<p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
-21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
-<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 01/06 à Strasbourg</title>
-      <link>http://www.gitfr.net/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg</link>
-      <pubDate>Wed, 18 May 2011 13:25:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/05/18/presentation-git-le-01-06-a-strasbourg</guid>
-      <description>Présentation Git le 01/06 à Strasbourg</description>
-      <content:encoded><![CDATA[<p><code>#gitfr</code> continue sa promotion de Git en allant cette fois ci à Strasbourg, invité par le <a href="http://www.elsassjug.org">ElsassJUG</a>, groupe de Javaistes Alascien. La soirée va être riche car je fusionne la présentation DVCS avec la présentation Git, ce qui devrait donner un contenu d'environ 2h. Comme nous avons la salle jusqu'a 22h30, une longue session de question / réponse est possible à la fin de chaque partie.</p>
-<p>La soirée est limitée à 90 personnes, dans les locaux d'Alcatel-Lucent à Illkirch.</p>
-<p>Pour s'inscrire, suivez ce <a href="http://jugevents.org/jugevents/event/38343">lien</a>.</p>
-<p>A bientôt autour d'une bière Alsacienne ! :).</p>
-<p>PS : Je n'avais pas prévu de me déplacer en province avant le Brezhcamp, mais le ElsassJUG avait déjà une soirée DVCS pour le mois de juin.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

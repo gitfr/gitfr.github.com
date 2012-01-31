@@ -65,6 +65,113 @@
           
   
 <div class="blog_post">
+  <a name="haskell-sur-github"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/03/haskell-sur-github" rel="bookmark" title="Permanent Link to Haskell sur GitHub">Haskell sur GitHub</a></h2>
+  <p class="related"><strong>03/04/2011 02:34 PM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>, <a href='/blog/category/migration'>migration</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/03/haskell-sur-github#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell GHC</a>, passe officiellement sur Git, avec un <a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar (bzr). Et enfin, que la capacité de retravailler son historique (point fort que je mets en avant dans toutes mes présentations Git) est un atout important. Point important, cette phrase vient du mail expliquant la migration en 2008 (Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et la 2.8 est en cours de développement avec le support très attendu de la fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch (1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non pas l'historique comme une série de «snapshots», mais comme une suite de <strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite grandement le <strong>cherry-picking</strong>. Malheureusement, des performances catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais permis à Darcs de décoller.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/haskell-sur-github#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="eclipse-sur-github"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/03/eclipse-sur-github" rel="bookmark" title="Permanent Link to Eclipse sur GitHub">Eclipse sur GitHub</a></h2>
+  <p class="related"><strong>03/04/2011 12:46 AM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>, <a href='/blog/category/migration'>migration</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
+<p>La fondation héberge ses propres projets en proposant <a href="http://dev.eclipse.org/viewcvs/viewvc.cgi/">CVS, Subversion</a> et <a href="http://git.eclipse.org/c/">Git</a>. Mais la perspective collaborative de GitHub semble être un avantage certain, comme le souligne l'<a href="http://aniszczyk.org/2011/04/01/eclipse-org-and-github/">annonce</a> de Chris Aniszczyk :</p>
+<blockquote>
+<p>I'm happy to announce we finally setup mirroring of eclipse.org repositories on GitHub.
+I think this is an important step to making the eclipse.org codebase more accessible for people
+to fork and contribute changes.</p>
+</blockquote>
+<p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
+<p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
+<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/03/eclipse-sur-github#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="la-commande-add"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/03/29/la-commande-add" rel="bookmark" title="Permanent Link to La commande add">La commande add</a></h2>
+  <p class="related"><strong>29/03/2011 08:53 AM</strong> | categories: 
+
+<a href='/blog/category/git-add'>git-add</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/03/29/la-commande-add#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La commande que l'on utilise juste après <em>init</em> ou <em>clone</em> est bien évidemment la commande <em>add</em>. Celle ci permet de modifier le contenu de l'index.</p>
+<h1>L'index ?</h1>
+<p>Git se différencie des autres outils en intégrant la notion d'index. Vous pouvez le voir comme un <strong>commit temporaire</strong>. Commit car il est effectivement enregistré comme tel dans le dépôt, mais temporaire car il est géré complètement différemment. </p>
+<p>Quand on vient de <em>SVN</em> ou de <em>Hg</em>, cela peut paraitre au premier abord assez lourd : a quoi cela peut il bien servir ? Tout simplement à construire tranquillement son commit, en permettant des «va-et-vient» entre son code (que l'on peut étudier ou modifier) et la construction de son commit. Une fois utilisé, on devient accro et on ne s'en lasse pas. Mais nous verrons plus tard que l'on peut shinter l'index si cela n'est pas utile.</p>
+<h1>Une différence importante</h1>
+<p>Quand vous appelez la commande add, vous ne demandez pas à Git d'ajouter le fichier, mais seulement le <strong>contenu</strong> de ce fichier au moment de l'appel de la  commande. Késako ? Avec <em>svn add</em> (ou <em>hg add</em>), vous demandez à svn d'intégrer toutes les modifications futures de ce fichier, alors que Git va seulement intégrer les modifications <strong>actuelles</strong> de ce fichier. Si vous faites de nouveau des modifications, il faudra appeler une deuxième fois la commande add.</p>
+<p>C'est pour cela que vous pouvez retrouver ce même fichier dans l'état «changes to be commited» (aka dans l'index) et l'état «changes not staged to commit» (modifier dans le répertoire de travail) en <strong>même temps</strong> : vous avez modifié le fichier, fait un add puis modifié de nouveau le fichier. Cela peut sembler un peu complexe au premier abord, mais cela vous permet de «jouer» avec votre dernier commit car il est fait pour cela. Une fois que vous êtes sur de votre coup, vous commitez réellement.</p>
+<p>On retrouve la philosophie «gestionnaire de contenu» et non «gestionnaire de fichier» que je cite dans mes présentations. Pour faciliter la vie, Git possède aussi une notion de fichier tracé (voir plus bas la commande -u), mais c'est à vous de décider de prendre en compte systématiquement toutes les modifications en cours. Par défaut, il vous demande de sélectionner chaque modification.</p>
+<p>Une fois comprise et maitrisée, cette étape et un élément important dans la construction d'un <strong>historique propre</strong>.</p>
+<h1>Modifier l'index</h1>
+<p>Rien de plus simple :</p>
+<blockquote>
+<p>$ git add $filepattern</p>
+</blockquote>
+<p>Le pattern peut être un fichier (<em>git add monfichier.txt</em> par exemple).</p>
+<h1>Ajout interactif</h1>
+<p>Si l'ajout en ligne de commande vous semble ennuyeuse, un shell est à votre disposition pour vous simplifier la tâche. Il suffit de taper le numéro de la commande puis de choisir le ou les fichiers impactés.</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lipq1n3EbQ1qdkaiq.png" /></p>
+<p>Personnellement, je n'utilise pas beaucoup le mode interactif.</p>
+<h1>Ajout par hunk</h1>
+<p>Mais j'apprécie particulièrement l'option <strong>-p</strong>. Ce dernier permet d'ajouter du contenu par petits bouts de code, appelez <strong>hunk</strong> :</p>
+<p><img alt="Exemple d'un hunk" src="http://media.tumblr.com/tumblr_lipqrbfx1s1qdkaiq.png" /></p>
+<p>Imaginez que vous avez modifié plusieurs fichiers (ou plusieurs fois le même fichier), portant sur des sujets qui n'ont rien à voir. Cette option me liste les hunks et me demande pour chacun d'eux si je souhaite l'intégrer dans l'index. Je peux ainsi construire un <strong>commit unitaire</strong>, un commit cohérent qui ne mélange pas des modifications sans relation entre elles. Même si j'ai travaillé de manière brouillone dans mon espace de travail.</p>
+<p>De plus, la commande vous propose plusieurs possibilités, comme celle de laisser un hunk <em>undecided</em>, afin d'y revenir plus tard. Vous pouvez même éditer un hunck pour le modifier.C'est une option que je vous recommande chaudement.</p>
+<p><strong>Note</strong> : cette option est en fait un raccourci vers la sous commande <em>patch</em> de l'ajout interactif vu juste avant.</p>
+<h1>Edition d'un patch</h1>
+<p>Vous pouvez directement modifier vos changements avec l'option <em>-e</em>. Je n'utilise personnellement pas cette possibilité (ni directement, ni par l'option -p).</p>
+<h1>Deux raccourcis utiles</h1>
+<p>L'option <em>-a</em> ajoute le contenu de tous les fichiers du répertoire de travail, <em>-u</em> seulement le contenu des fichiers déjà tracés.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/03/29/la-commande-add#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.4.2-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/03/29/git-1.7.4.2-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.2 publiée">Git 1.7.4.2 publiée</a></h2>
   <p class="related"><strong>29/03/2011 08:48 AM</strong> | categories: 
@@ -353,274 +460,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.4-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/02/12/git-1.7.4-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4 publiée">Git 1.7.4 publiée</a></h2>
-  <p class="related"><strong>12/02/2011 02:16 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La version 1.7.4 est sortie le 31 janvier (oui je suis en retard), et n'apporte pas de changement majeur, mais principalement de nouvelles options ou corrections un peu partout dans Git.</p>
-<p>Rien de transcendant à mes yeux mais j'apprécie la couleur de la branche dans le <code>git status</code>, <code>git blame --show-email</code>, <code>git merge --abort</code>, les options <code>--fixup</code> et <code>--squash</code> pour <code>git commit</code>, <code>git fetch --recurse-submodules</code>, l'affichage 3-way merge par défaut pour vim/gvim pour <code>git mergetool</code> et enfin <code>git log -G&lt;pattern&gt;</code> pour voir les lignes ajoutées ou supprimées qui correspondent au pattern.</p>
-<p>Comme d'habitude, je vous laisse découvrir l'intégralité du changelog :</p>
-<ul>
-<li>
-<p>The documentation Makefile now assumes by default asciidoc 8 and
-  docbook-xsl &gt;= 1.73. If you have older versions, you can set
-  ASCIIDOC7 and ASCIIDOC_ROFF, respectively.</p>
-</li>
-<li>
-<p>The option parsers of various commands that create new branches (or
-  rename existing ones to a new name) were too loose and users were
-  allowed to give a branch a name that begins with a dash by creative
-  abuse of their command line options, which only led to burning
-  themselves.  The name of a branch cannot begin with a dash now.</p>
-</li>
-<li>
-<p>System-wide fallback default attributes can be stored in
-  /etc/gitattributes; the core.attributesfile configuration variable can
-  be used to customize the path to this file.</p>
-</li>
-<li>
-<p>The thread structure generated by "git send-email" has changed
-  slightly.  Setting the cover letter of the latest series as a reply
-  to the cover letter of the previous series with --in-reply-to used
-  to make the new cover letter and all the patches replies to the
-  cover letter of the previous series; this has been changed to make
-  the patches in the new series replies to the new cover letter.</p>
-</li>
-<li>
-<p>The Bash completion script in contrib/ has been adjusted to be usable with
-  Bash 4 (options with '=value' didn't complete).  It has been also made
-  usable with zsh.</p>
-</li>
-<li>
-<p>Different pagers can be chosen depending on which subcommand is
-  being run under the pager, using the "pager.<subcommand>" variable.</p>
-</li>
-<li>
-<p>The hardcoded tab-width of 8 that is used in whitespace breakage checks is now
-  configurable via the attributes mechanism.</p>
-</li>
-<li>
-<p>Support of case insensitive filesystems (i.e. "core.ignorecase") has
-  been improved.  For example, the gitignore mechanism didn't pay attention
-  to case insensitivity.</p>
-</li>
-<li>
-<p>The <tree>:<path> syntax for naming a blob in a tree, and the :<path>
-  syntax for naming a blob in the index (e.g. "master:Makefile",
-  ":hello.c") have been extended.  You can start <path> with "./" to
-  implicitly have the (sub)directory you are in prefixed to the
-  lookup.  Similarly, ":../Makefile" from a subdirectory would mean
-  "the Makefile of the parent directory in the index".</p>
-</li>
-<li>
-<p>"git blame" learned the --show-email option to display the e-mail
-  addresses instead of the names of authors.</p>
-</li>
-<li>
-<p>"git commit" learned the --fixup and --squash options to help later invocation
-  of interactive rebase.</p>
-</li>
-<li>
-<p>Command line options to "git cvsimport" whose names are in capital
-  letters (-A, -M, -R and -S) can now be specified as the default in
-  the .git/config file by their longer names (cvsimport.authorsFile,
-  cvsimport.mergeRegex, cvsimport.trackRevisions, cvsimport.ignorePaths).</p>
-</li>
-<li>
-<p>"git daemon" can be built in the MinGW environment.</p>
-</li>
-<li>
-<p>"git daemon" can take more than one --listen option to listen to
-  multiple addresses.</p>
-</li>
-<li>
-<p>"git describe --exact-match" was optimized not to read commit
-  objects unnecessarily.</p>
-</li>
-<li>
-<p>"git diff" and "git grep" learned what functions and subroutines
-  in Fortran, Pascal and Perl look like.</p>
-</li>
-<li>
-<p>"git fetch" learned the "--recurse-submodules" option.</p>
-</li>
-<li>
-<p>"git mergetool" tells vim/gvim to show a three-way diff by default
-  (use vimdiff2/gvimdiff2 as the tool name for old behavior).</p>
-</li>
-<li>
-<p>"git log -G<pattern>" limits the output to commits whose change has
-  added or deleted lines that match the given pattern.</p>
-</li>
-<li>
-<p>"git read-tree" with no argument as a way to empty the index is
-  deprecated; we might want to remove it in the future.  Users can
-  use the new --empty option to be more explicit instead.</p>
-</li>
-<li>
-<p>"git repack -f" does not spend cycles to recompress objects in the
-  non-delta representation anymore (use -F if you really mean it
-  e.g. after you changed the core.compression variable setting).</p>
-</li>
-<li>
-<p>"git merge --log" used to limit the resulting merge log to 20
-  entries; this is now customizable by giving e.g. "--log=47".</p>
-</li>
-<li>
-<p>"git merge" may work better when all files were moved out of a
-  directory in one branch while a new file is created in place of that
-  directory in the other branch.</p>
-</li>
-<li>
-<p>"git merge" learned the "--abort" option, synonymous to
-  "git reset --merge" when a merge is in progress.</p>
-</li>
-<li>
-<p>"git notes" learned the "merge" subcommand to merge notes refs.
-  In addition to the default manual conflict resolution, there are
-  also several notes merge strategies for automatically resolving
-  notes merge conflicts.</p>
-</li>
-<li>
-<p>"git rebase --autosquash" can use SHA-1 object names to name the
-  commit which is to be fixed up (e.g. "fixup! e83c5163").</p>
-</li>
-<li>
-<p>The default "recursive" merge strategy learned the --rename-threshold
-  option to influence the rename detection, similar to the -M option
-  of "git diff".  From the "git merge" frontend, the "-X<strategy option>"
-  interface, e.g. "git merge -Xrename-threshold=50% ...", can be used
-  to trigger this.</p>
-</li>
-<li>
-<p>The "recursive" strategy also learned to ignore various whitespace
-  changes; the most notable is -Xignore-space-at-eol.</p>
-</li>
-<li>
-<p>"git send-email" learned "--to-cmd", similar to "--cc-cmd", to read
-  the recipient list from a command output.</p>
-</li>
-<li>
-<p>"git send-email" learned to read and use "To:" from its input files.</p>
-</li>
-<li>
-<p>you can extend "git shell", which is often used on boxes that allow
-  git-only login over ssh as login shell, with a custom set of
-  commands.</p>
-</li>
-<li>
-<p>The current branch name in "git status" output can be colored differently
-  from the generic header color by setting the "color.status.branch" variable.</p>
-</li>
-<li>
-<p>"git submodule sync" updates metainformation for all submodules,
-  not just the ones that have been checked out.</p>
-</li>
-<li>
-<p>gitweb can use a custom 'highlight' command with its configuration file.</p>
-</li>
-<li>
-<p>"git log --author=me --author=her" did not find commits written by
-  me or by her; instead it looked for commits written by me and by
-  her, which is impossible.</p>
-</li>
-<li>
-<p>"git push --progress" shows progress indicators now.</p>
-</li>
-<li>
-<p>"git rebase -i" showed a confusing error message when given a
-  branch name that does not exist.</p>
-</li>
-<li>
-<p>"git repack" places its temporary packs under $GIT_OBJECT_DIRECTORY/pack
-  instead of $GIT_OBJECT_DIRECTORY/ to avoid cross directory renames.</p>
-</li>
-<li>
-<p>"git submodule update --recursive --other-flags" passes flags down
-  to its subinvocations.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/02/12/git-1.7.4-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.3.5-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/01/11/git-1.7.3.5-publiee" rel="bookmark" title="Permanent Link to Git 1.7.3.5 publiée">Git 1.7.3.5 publiée</a></h2>
-  <p class="related"><strong>11/01/2011 08:03 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La version 1.7.3.5 est sortie le 6 Janvier, et c'est surement la dernière version de la série 1.7.3.x (sauf bien évidemment gros bug ou faille de sécurité). Voici les changements :</p>
-<ul>
-<li>test-lib.sh/test_decode_color(): use octal not hex in awk script</li>
-<li>gitweb: Include links to feeds in HTML header only for '200 OK' response</li>
-<li>ident: die on bogus date format</li>
-<li>Fix typo in git-gc document.</li>
-<li>t0050: fix printf format strings for portability</li>
-<li>gitweb: skip logo in atom feed when there is none</li>
-<li>commit: die before asking to edit the log message</li>
-<li>am --abort: keep unrelated commits since the last failure and warn</li>
-<li>rebase --skip: correctly wrap-up when skipping the last patch</li>
-<li>status: Quote paths with spaces in short format</li>
-<li>t/t8006: Demonstrate blame is broken when cachetextconv is on</li>
-<li>fill_textconv(): Don't get/put cache if sha1 is not valid</li>
-<li>fsck docs: remove outdated and useless diagnostic</li>
-<li>git-difftool.txt: correct the description of $BASE and describe $MERGED</li>
-<li>difftool: provide basename to external tools</li>
-<li>t3419-*.sh: Fix arithmetic expansion syntax error</li>
-<li>close file on error in read_mmfile()</li>
-<li>Fix false positives in t3404 due to SHELL=/bin/false</li>
-<li>t9001: Fix test prerequisites</li>
-<li>userdiff: fix typo in ruby and python word regexes</li>
-<li>trace.c: mark file-local function static</li>
-</ul>
-<p>Comme vous pouvez le constater, rien de bien important (enfin je dis cela car je ne suis pas tombé sur un des bugs :), les développeurs se focalisant depuis quelques semaines déja sur la future version 1.7.4.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/01/11/git-1.7.3.5-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-rejoint-la-software-freedom-conservancy"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy" rel="bookmark" title="Permanent Link to Git rejoint la Software Freedom Conservancy">Git rejoint la Software Freedom Conservancy</a></h2>
-  <p class="related"><strong>18/12/2010 02:28 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La <strong>Software Freedom Conservancy</strong> est une organisation Ney-Yorkaise qui fait la promotion de <strong>Logiciels Libres</strong>, et qui a l'avantage d'être éxonéré de taxe (<em>tax-exempt 501(c)(3) organisation</em> dans le droit US). Cela signifie que cette association peut maintenant donner de l'argent au projet Git (donation déductible des impôts).</p>
-<p>Voila une bonne nouvelle :).</p>
-<p>Le mail d'annonce est <a href="http://comments.gmane.org/gmane.comp.version-control.git/163845">ici</a>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/18/git-rejoint-la-software-freedom-conservancy#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../7">« Articles suivants</a>
   --  
  <a href="../9">Articles précédents »</a>
@@ -644,14 +483,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
+    <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
+    <li><a href="/blog/2012/01/26/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
     <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
-    <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
-    <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
-    <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -663,7 +502,7 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
      <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (54)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
@@ -679,7 +518,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (26)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (29)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -697,7 +536,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>

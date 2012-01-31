@@ -10,10 +10,49 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sat, 28 Jan 2012 20:38:21 GMT</pubDate>
+    <pubDate>Tue, 31 Jan 2012 23:57:42 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Mise à jour de la présentation Git</title>
+      <link>http://www.gitfr.net/blog/2012/02/01/mise-a-jour-de-la-presentation-git</link>
+      <pubDate>Wed, 01 Feb 2012 00:50:00 CET</pubDate>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/02/01/mise-a-jour-de-la-presentation-git</guid>
+      <description>Mise à jour de la présentation Git</description>
+      <content:encoded><![CDATA[<p>Demander à cor et à cri depuis de mois, j'ai mis à jour la présentation 
+le <a href="https://github.com/sdouche/showoff-presentation-git">dépôt Git</a> et la
+<a href="http://presentation-git.heroku.com/">présentation en ligne</a>. Il y'a malheureusement
+des petits soucis d'affichage des images mais un rafraichissement règle en
+général le problème.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Présentation Git le 13/02 à Montpellier</title>
+      <link>http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier</link>
+      <pubDate>Wed, 01 Feb 2012 00:30:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier</guid>
+      <description>Présentation Git le 13/02 à Montpellier</description>
+      <content:encoded><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur d'une présentation Git ;).</p>
+<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Présentation Git le 13/02 à Montpellier</title>
+      <link>http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier</link>
+      <pubDate>Thu, 26 Jan 2012 21:07:00 CET</pubDate>
+      <category><![CDATA[atelier]]></category>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier</guid>
+      <description>Présentation Git le 13/02 à Montpellier</description>
+      <content:encoded><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur <em>khof</em> d'une présentation Git.</p>
+<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation et atelier Git le 20/02 à Lyon</title>
       <link>http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon</link>
@@ -236,49 +275,6 @@ combo présentation et atelier sur 2 jours : </p>
 <p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
 <a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
 de l'événement.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 03/11 à Évry</title>
-      <link>http://www.gitfr.net/blog/2011/10/08/presentation-git-le-03-11-a-evry</link>
-      <pubDate>Sat, 08 Oct 2011 00:05:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/08/presentation-git-le-03-11-a-evry</guid>
-      <description>Présentation Git le 03/11 à Évry</description>
-      <content:encoded><![CDATA[<p>Nouvelle conférence Git à Télécom SudParis, à Évry, en région parisienne. L'occasion d'évengéliser
-des étudiants pas encore trop déformés par SVN :). A ce propos, vu qu'ils ont pour obligation
-d'utiliser ce dernier pour leurs devoirs, je devrais <strong>exceptionnellement</strong> être soft en SVN
-bashing, enfin si j'arrive à me retenir ;)</p>
-<p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
-conférence sera sûrement filmé et mis à disposition sur Internet.</p>
-<p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Atelier Git le 20/10 à Levallois</title>
-      <link>http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois</link>
-      <pubDate>Fri, 07 Oct 2011 23:48:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois</guid>
-      <description>Atelier Git le 20/10 à Levallois</description>
-      <content:encoded><![CDATA[<p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
-Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
-<p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
-quelques heures :).</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 20/09 à Lyon</title>
-      <link>http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</link>
-      <pubDate>Sat, 10 Sep 2011 18:40:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/09/10/presentation-git-le-20-09-a-lyon</guid>
-      <description>Présentation Git le 20/09 à Lyon</description>
-      <content:encoded><![CDATA[<p>GitFR continue son tour de France avec comme étape Lyon, grâce au
-<a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
-<p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
-21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
-<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

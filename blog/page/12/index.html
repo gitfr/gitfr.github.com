@@ -65,6 +65,229 @@
           
   
 <div class="blog_post">
+  <a name="installer-git-sur-windows"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/01/installer-git-sur-windows" rel="bookmark" title="Permanent Link to Installer git sur Windows">Installer git sur Windows</a></h2>
+  <p class="related"><strong>01/11/2010 07:45 PM</strong> | categories: 
+
+<a href='/blog/category/windows'>windows</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/installation'>installation</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-windows#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Les possibilités sont plus limitées sous Windows car il n'existe pas de projet pour l'installer à partir des sources originales. Et pour cause, Git n'est pas prévu pour fonctionner sur Windows (c'est un projet purement <strong>Unix</strong>). Heureusement, le projet <a href="http://code.google.com/p/msysgit/">msysgit</a> est la ! Ce dernier est comparable au projet <em>Git OSX Installer</em> sous Mac OS X, et comme ce dernier il est trés actif, puisque nous trouvons la version 1.7.3.1 (la 1.7.3.2 est la dernière version officielle). A une différence d'importance, msysgit installe une version <em>maison</em> (on dit un <strong>fork</strong>) qui se trouve <a href="http://repo.or.cz/w/git/mingw/4msysgit.git/">ici</a> pour rendre git opérationnel sous Windows.</p>
+<h2>Installation de msysgit</h2>
+<p>C'est assez simple :</p>
+<ul>
+<li>Téléchargez la derniere version de l'installeur. Voici un <a href="http://msysgit.googlecode.com/files/Git-1.7.3.1-preview20101002.exe">lien vers la 1.7.3.1</a></li>
+<li>Lancez l'installeur</li>
+<li>Spécifiez un répertoire d'installation si besoin</li>
+<li>Activez toutes les options</li>
+<li>Choisissez l'option <em>Use Git Bash only</em></li>
+<li>Choisissez l'option <em>Use Unix style line endings</em></li>
+</ul>
+<h2>Utiliser msysgit</h2>
+<p>Vous pouvez maintenant utiliser git dans un <strong>shell</strong>. Celui-ci est accessible par l'icone du bureau ou dans le menu Windows.</p>
+<h2>Git Extensions</h2>
+<p><a href="http://code.google.com/p/gitextensions/">Git Extensions</a> utilise le projet msysgit et ajoute une <strong>interface graphique</strong> pour pas mal d'opérations, une extension Visual Studio et l'outil Kdiff3. Cerise sur le gateau, il embarque msysgit. Ce projet vous permet donc de tout installer en une seule fois. Cliquez sur ce <a href="http://gitextensions.googlecode.com/files/GitExtensions205SetupComplete.msi">lien</a> pour télécharger la dernière version. Vous pouvez voir sur cette <a href="http://code.google.com/p/gitextensions/wiki/Info">page</a> plusieurs copies d'écran pour vous faire une idée.</p>
+<h2>Un constat</h2>
+<p>La plateforme Windows est la moins adaptée à Git, d'abord parce que cette plateforme ne possède pas nativement les outils de type Unix (bash, diff...), et que c'est avant tout un outil <strong>ligne de commande</strong>, et que la ligne de commande... n'est pas le fort de Windows (mais cela reste largement possible). Il faut donc attendre que des développeurs codent des interfaces graphiques pour effectuer toutes les opérations usuelles (les fameuses commandes <em>porcelain</em>) plus "nativement" sous Windows. Ce problème devrait disparaitre avec l'arrivée à maturité des IDEs (IntelliJ, Eclipse...) et des outils de manipulations (TortoiseGit...). Git Extensions en est un bon exemple.</p>
+<p>Reste que le projet msysgit est un projet bénévole complètement détaché du projet Git. Et que l'utilisation en ligne de commande est quand même bien plus pratique ;).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-windows#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="installer-git-sur-os-x"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/01/installer-git-sur-os-x" rel="bookmark" title="Permanent Link to Installer git sur OS X">Installer git sur OS X</a></h2>
+  <p class="related"><strong>01/11/2010 12:40 AM</strong> | categories: 
+
+<a href='/blog/category/macos'>macos</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/installation'>installation</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-os-x#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
+<ul>
+<li>installer une version déja compilée par un tiers</li>
+<li>installer une version à partir des sources</li>
+</ul>
+<p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
+<h2>Installer une version compilée</h2>
+<p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
+<p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
+<h2>Installer une version source</h2>
+<p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
+<ul>
+<li><a href="http://www.macports.org">MacPorts</a></li>
+<li><a href="http://github.com/mxcl/homebrew">Homebrew</a></li>
+</ul>
+<p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
+<p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
+<h2>Installation de Xcode</h2>
+<p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
+<p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
+<h2>Avec MacPorts</h2>
+<p>Il faut bien évidemment installer MacPorts :</p>
+<ul>
+<li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
+<li>Lancer l'installateur en double-cliquant sur le fichier téléchargé.</li>
+<li>Choisir l'installation par défaut.</li>
+</ul>
+<p>Il ne vous reste plus qu'a installer git avec la commande :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc</p>
+</blockquote>
+<p>Ou si vous souhaitez jouer avec des dépôts SVN :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc +svn</p>
+</blockquote>
+<p><em>sudo</em> vous permet de lancer une commande en mode administrateur (et non simple utilisateur). <em>port</em> est la commande MacPorts. <em>install</em> est l'argument pour demander l'installation. <em>git-core</em> est l'application à installer.</p>
+<p>Vous pouvez mettre à jour vos <em>Ports</em> avec la commande :</p>
+<blockquote>
+<p>$ sudo port selfupdate</p>
+</blockquote>
+<h2>Avec Homebrew</h2>
+<p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
+<blockquote>
+<p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
+</blockquote>
+<p>Cette commande esotérique télécharge le fichier <em>install_homebrew.rb</em> avec la commande <em>curl</em> puis demande à l'interpréteur <em>Ruby</em> de l'éxécuter (note au passage : oui, le shell est amour, maitrisez-le et vous gagnerez des années de vie). Bien évidemment Ruby et Curl doivent être présents sur votre système.</p>
+<p>Vous avez maintenant accès à la commande <em>brew</em> :</p>
+<blockquote>
+<p>$ brew install git</p>
+</blockquote>
+<p>Cette commande ressemble à la commande MacPorts. Et vous avez aussi une commande pour mettre à jour vos applications avec la commande :</p>
+<blockquote>
+<p>$ brew update</p>
+</blockquote>
+<h2>Installation "à la main"</h2>
+<p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
+<ul>
+<li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
+<li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
+</ul>
+<h2>MacPorts ou Homebrew ?</h2>
+<p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
+<h2>Et voila !</h2>
+<p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
+<p>Merci à David Gageot et Ronan Amicel pour la relecture.Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
+<ul>
+<li>installer une version déja compilée par un tiers</li>
+<li>installer une version à partir des sources</li>
+</ul>
+<p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
+<h2>Installer une version compilée</h2>
+<p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
+<p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
+<h2>Installer une version source</h2>
+<p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
+<ul>
+<li><a href="http://www.macports.org">MacPorts</a></li>
+<li><a href="http://github.com/mxcl/homebrew">Homebrew</a></li>
+</ul>
+<p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
+<p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
+<h2>Installation de Xcode</h2>
+<p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
+<p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
+<h2>Avec MacPorts</h2>
+<p>Il faut bien évidemment installer MacPorts :</p>
+<ul>
+<li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
+<li>Lancer l'installateur en double-cliquant sur le fichier téléchargé.</li>
+<li>Choisir l'installation par défaut.</li>
+</ul>
+<p>Il ne vous reste plus qu'a installer git avec la commande :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc</p>
+</blockquote>
+<p>Ou si vous souhaitez jouer avec des dépôts SVN :</p>
+<blockquote>
+<p>$ sudo port install git-core +bash_completion +doc +svn</p>
+</blockquote>
+<p><em>sudo</em> vous permet de lancer une commande en mode administrateur (et non simple utilisateur). <em>port</em> est la commande MacPorts. <em>install</em> est l'argument pour demander l'installation. <em>git-core</em> est l'application à installer.</p>
+<p>Vous pouvez mettre à jour vos <em>Ports</em> avec la commande :</p>
+<blockquote>
+<p>$ sudo port selfupdate</p>
+</blockquote>
+<h2>Avec Homebrew</h2>
+<p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
+<blockquote>
+<p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
+</blockquote>
+<p>Cette commande esotérique télécharge le fichier <em>install_homebrew.rb</em> avec la commande <em>curl</em> puis demande à l'interpréteur <em>Ruby</em> de l'éxécuter (note au passage : oui, le shell est amour, maitrisez-le et vous gagnerez des années de vie). Bien évidemment Ruby et Curl doivent être présents sur votre système.</p>
+<p>Vous avez maintenant accès à la commande <em>brew</em> :</p>
+<blockquote>
+<p>$ brew install git</p>
+</blockquote>
+<p>Cette commande ressemble à la commande MacPorts. Et vous avez aussi une commande pour mettre à jour vos applications avec la commande :</p>
+<blockquote>
+<p>$ brew update</p>
+</blockquote>
+<h2>Installation "à la main"</h2>
+<p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
+<ul>
+<li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
+<li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
+</ul>
+<h2>MacPorts ou Homebrew ?</h2>
+<p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
+<h2>Et voila !</h2>
+<p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
+<p>Merci à David Gageot et Ronan Amicel pour la relecture.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-os-x#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="installer-git-sur-ubuntu"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/10/30/installer-git-sur-ubuntu" rel="bookmark" title="Permanent Link to Installer git sur Ubuntu">Installer git sur Ubuntu</a></h2>
+  <p class="related"><strong>30/10/2010 07:56 PM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/installation'>installation</a>, <a href='/blog/category/ubuntu'>ubuntu</a>
+ | <a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Pour les utilisateurs qui utilisent Debian ou Ubuntu depuis quelques temps, vous pouvez constater que le paquet s'appelle maintenant <em>git</em> et non <em>git-core</em> (pour le petite histoire, git était le paquet <em>GNU Interactive Tools</em>, renommé depuis <em>gnuit</em>). Mais le problème avec une installation du paquet officiel est que vous disposerez d'une version plus ou moins ancienne (la version disponible au moment du <em>freeze</em> de la distribution), Ubuntu ne mettant pas à jour git avec les dépots <em>backports</em>, <em>updates</em> ou <em>proposed</em>. Personnellement, j'aime disposer de la dernière version, les développeurs git améliorant régulièrement le <em>frontend</em>.</p>
+<p>C'est la qu'interviennent les <strong>PPA</strong>, pour <em>Personal Package Archives</em>. C'est un dépôt <strong>non officiel</strong> qu'il est possible d'activer sur <em>Launchpad</em> quand vous créé un projet sur cette plateforme. C'est justement sur Launchpad que les mainteneurs officiels Ubuntu du paquet git travaillent ! Et comme ils sont gentils, il existent justement un <a href="https://launchpad.net/~git-core/+archive/ppa">PPA git</a>. Voici les commandes pour utiliser ce PPA sur Ubuntu :</p>
+<blockquote>
+<p>$ sudo add-apt-repository ppa:git-core/ppa</p>
+</blockquote>
+<p>Cette commande ajoute le PPA dans vos dépôts accessibles (sources.list). C'est équivalent à mettre manuellement un fichier de configuration dans le répertoire <em>/etc/apt/sources.list.d/</em> et d'ajouter la clé GPG (voir la section <em>Technical details about this PPA</em> pour plus de détails).</p>
+<blockquote>
+<p>$ sudo aptitude update</p>
+</blockquote>
+<p>Mise à jour des paquets disponibles.</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
+<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="inscription-a-l-atelier-git-2-du-30-11-2010"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/10/30/inscription-a-l-atelier-git-2-du-30-11-2010" rel="bookmark" title="Permanent Link to Inscription à l'atelier git">Inscription à l'atelier git</a></h2>
   <p class="related"><strong>30/10/2010 03:39 AM</strong> | categories: 
@@ -164,14 +387,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
+    <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
+    <li><a href="/blog/2012/01/26/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
     <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
     <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
-    <li><a href="/blog/2011/12/11/git-1.7.8-publiee">Git 1.7.8 publiée</a></li>
-    <li><a href="/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille">Présentation et atelier Git le 15/12 à Lille</a></li>
-    <li><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris">Présentation Git le 14/12 à Paris</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -183,7 +406,7 @@
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
      <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (54)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
@@ -199,7 +422,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (26)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (29)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -217,7 +440,8 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(4)</li>
+      <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>
+      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
       <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
       <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
