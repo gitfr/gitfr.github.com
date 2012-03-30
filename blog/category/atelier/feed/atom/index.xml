@@ -7,12 +7,31 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-01-31T23:57:42Z</updated>
+  <updated>2012-03-30T07:39:51Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Présentation Git le 12/04 à Lausanne]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne" />
+    <id>http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne</id>
+    <updated>2012-03-30T09:40:00Z</updated>
+    <published>2012-03-30T09:40:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="atelier" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Présentation Git le 12/04 à Lausanne]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne"><![CDATA[<p>gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
+précisemment à Lausanne. C'est organisé par le JUGL, le <em>Java User Group de
+Lausanne</em>, et la présentation démarre à 18h30 dans <a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/OCTOLausanne">les locaux
+d'Octo</a>.</p>
+<p>Toutes les infos sur le site du <a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/WebHome">JUGL</a>.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -28,24 +47,6 @@
     <summary type="html"><![CDATA[Présentation Git le 13/02 à Montpellier]]></summary>
     <content type="html" xml:base="http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier"><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
 belle ville de Montpellier qui aura l'honneur d'une présentation Git ;).</p>
-<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
-II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Présentation Git le 13/02 à Montpellier]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier" />
-    <id>http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier</id>
-    <updated>2012-01-26T21:07:00Z</updated>
-    <published>2012-01-26T21:07:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Présentation Git le 13/02 à Montpellier]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2012/01/26/presentation-git-le-13-02-a-montpellier"><![CDATA[<p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
-belle ville de Montpellier qui aura l'honneur <em>khof</em> d'une présentation Git.</p>
 <p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
 II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>]]></content>
   </entry>
