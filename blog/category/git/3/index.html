@@ -65,6 +65,88 @@
           
   
 <div class="blog_post">
+  <a name="git-1.7.5.1-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.1-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.1 publiée">Git 1.7.5.1 publiée</a></h2>
+  <p class="related"><strong>13/06/2011 01:57 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>When an object "$tree:$path" does not exist, if $path does exist in the
+  subtree of $tree that corresponds to the subdirectory the user is in,
+  git now suggests using "$tree:./$path" in addition to the advice to use
+  the full path from the root of the working tree.</p>
+</li>
+<li>
+<p>The "--date=relative" output format used to say "X years, 12 months"
+  when it should have said "X+1 years".</p>
+</li>
+<li>
+<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
+  to issue a small POST (which uses content-length) and then a large
+  POST (which uses chunked) back to back.</p>
+</li>
+<li>
+<p>"git clean" used to fail on an empty directory that is not readable,
+  even though rmdir(2) could remove such a directory.  Now we attempt it
+  as the last resort.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to totally
+  ignore a change that only rearranged lines within a file.  Such a
+  change now counts as at least a minimum but non zero change.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to use the
+  pathname in the original, instead of the pathname in the result,
+  when renames are involved.</p>
+</li>
+<li>
+<p>"git pack-object" did not take core.bigfilethreashold into account
+  (unlike fast-import); now it does.</p>
+</li>
+<li>
+<p>"git reflog" ignored options like "--format=.." on the command line.</p>
+</li>
+<li>
+<p>"git stash apply" used to refuse to work if there was any change in
+  the working tree, even when the change did not overlap with the change
+  the stash recorded.</p>
+</li>
+<li>
+<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
+  did not have that many stash entries.</p>
+</li>
+<li>
+<p>An error message from "git send-email" to diagnose a broken SMTP
+  connection configuration lacked a space between "hello=<smtp-domain>"
+  and "port=<smtp-server-port>".</p>
+</li>
+<li>
+<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
+  mean the same thing.</p>
+</li>
+<li>
+<p>"git upload-pack" (hence "git push" over git native protocol) had a
+  subtle race condition that could lead to a deadlock.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="traduction-de-git-en-francais"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/04/25/traduction-de-git-en-francais" rel="bookmark" title="Permanent Link to Traduction de Git en français">Traduction de Git en français</a></h2>
   <p class="related"><strong>25/04/2011 01:30 PM</strong> | categories: 
@@ -474,66 +556,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/13/comment-ecrire-git#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.4.4-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/07/git-1.7.4.4-publiee" rel="bookmark" title="Permanent Link to Git 1.7.4.4 publiée">Git 1.7.4.4 publiée</a></h2>
-  <p class="related"><strong>07/04/2011 06:13 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La quatrième version de la branche 1.7.4.x vient de sortir (7/4/2011).</p>
-<p>Le changelog :</p>
-<ul>
-<li>
-<p>Compilation of sha1_file.c on BSD platforms were broken due to our
-  recent use of getrlimit() without including <sys/resource.h>.</p>
-</li>
-<li>
-<p>"git config" did not diagnose incorrect configuration variable names.</p>
-</li>
-<li>
-<p>"git format-patch" did not wrap a long subject line that resulted from
-  rfc2047 encoding.</p>
-</li>
-<li>
-<p>"git instaweb" should work better again with plackup.</p>
-</li>
-<li>
-<p>"git log --max-count=4 -Sfoobar" now shows 4 commits that changes the
-  number of occurrences of string "foobar"; it used to scan only for 4
-  commits and then emitted only matching ones.</p>
-</li>
-<li>
-<p>"git log --first-parent --boundary $c^..$c" segfaulted on a merge.</p>
-</li>
-<li>
-<p>"git pull" into an empty branch should have behaved as if
-  fast-forwarding from emptiness to the version being pulled, with
-  the usual protection against overwriting untracked files.</p>
-</li>
-<li>
-<p>"git submodule" that is run while a merge in the superproject is in
-  conflicted state tried to process each conflicted submodule up to
-  three times.</p>
-</li>
-<li>
-<p>"git status" spent all the effort to notice racily-clean index entries
-  but didn't update the index file to help later operations go faster in
-  some cases.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/07/git-1.7.4.4-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/2">« Articles suivants</a>
   --  
  <a href="/blog/category/git/4">Articles précédents »</a>
@@ -557,6 +579,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
@@ -564,7 +587,6 @@
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
     <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
     <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
-    <li><a href="/blog/2011/12/11/comportement-par-defaut-du-git-push">Comportement par défaut du git push</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -578,7 +600,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (54)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (55)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -601,7 +623,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (19)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (20)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -610,6 +632,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(4)</li>

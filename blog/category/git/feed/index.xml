@@ -10,10 +10,352 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Fri, 30 Mar 2012 07:39:50 GMT</pubDate>
+    <pubDate>Sun, 15 Apr 2012 21:04:42 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.10 publiée</title>
+      <link>http://www.gitfr.net/blog/2012/04/15/git-1.7.10-publiee</link>
+      <pubDate>Sun, 15 Apr 2012 22:52:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/04/15/git-1.7.10-publiee</guid>
+      <description>Git 1.7.10 publiée</description>
+      <content:encoded><![CDATA[<p>Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
+voulais initialement tester cette version avant de publier l'annonce mais je
+n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :</p>
+<ul>
+<li>
+<p>gitk a pas mal de petites évolutions.</p>
+</li>
+<li>
+<p>Un éditeur s'ouvre lors d'un <code>git-commit</code> pour pousser les gens à expliquer
+  les changements.</p>
+</li>
+<li>
+<p>On peut cloner qu'un répertoire.</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants dans votre façon de travailler avec Git.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>various "gitk" updates.</p>
+</li>
+<li>
+<p>Teams for localizing the messages from the Porcelain layer of
+  commands are starting to form, thanks to Jiang Xin who volunteered
+  to be the localization coordinator.  Translated messages for
+  simplified Chinese, Swedish and Portuguese are available.</p>
+</li>
+<li>
+<p>The configuration mechanism learned an "include" facility; an
+  assignment to the include.path pseudo-variable causes the named
+  file to be included in-place when Git looks up configuration
+  variables.</p>
+</li>
+<li>
+<p>A content filter (clean/smudge) used to be just a way to make the
+  recorded contents "more useful", and allowed to fail; a filter can
+  now optionally be marked as "required".</p>
+</li>
+<li>
+<p>Options whose names begin with "--no-" (e.g. the "--no-verify"
+  option of the "git commit" command) can be negated by omitting
+  "no-" from its name, e.g. "git commit --verify".</p>
+</li>
+<li>
+<p>"git am" learned to pass "-b" option to underlying "git mailinfo", so
+  that a bracketed string other than "PATCH" at the beginning can be kept.</p>
+</li>
+<li>
+<p>"git clone" learned "--single-branch" option to limit cloning to a
+  single branch (surprise!); tags that do not point into the history
+  of the branch are not fetched.</p>
+</li>
+<li>
+<p>"git clone" learned to detach the HEAD in the resulting repository
+  when the user specifies a tag with "--branch" (e.g., "--branch=v1.0").
+  Clone also learned to print the usual "detached HEAD" advice in such
+  a case, similar to "git checkout v1.0".</p>
+</li>
+<li>
+<p>When showing a patch while ignoring whitespace changes, the context
+  lines are taken from the postimage, in order to make it easier to
+  view the output.</p>
+</li>
+<li>
+<p>"git diff --stat" learned to adjust the width of the output on
+  wider terminals, and give more columns to pathnames as needed.</p>
+</li>
+<li>
+<p>"diff-highlight" filter (in contrib/) was updated to produce more
+  aesthetically pleasing output.</p>
+</li>
+<li>
+<p>"fsck" learned "--no-dangling" option to omit dangling object
+  information.</p>
+</li>
+<li>
+<p>"git log -G" and "git log -S" learned to pay attention to the "-i"
+  option.  With "-i", "log -G" ignores the case when finding patch
+  hunks that introduce or remove a string that matches the given
+  pattern.  Similarly with "-i", "log -S" ignores the case when
+  finding the commit the given block of text appears or disappears
+  from the file.</p>
+</li>
+<li>
+<p>"git merge" in an interactive session learned to spawn the editor
+  by default to let the user edit the auto-generated merge message,
+  to encourage people to explain their merges better. Legacy scripts
+  can export GIT_MERGE_AUTOEDIT=no to retain the historical behavior.
+  Both "git merge" and "git pull" can be given --no-edit from the
+  command line to accept the auto-generated merge message.</p>
+</li>
+<li>
+<p>The advice message given when the user didn't give enough clue on
+  what to merge to "git pull" and "git merge" has been updated to
+  be more concise and easier to understand.</p>
+</li>
+<li>
+<p>"git push" learned the "--prune" option, similar to "git fetch".</p>
+</li>
+<li>
+<p>The whole directory that houses a top-level superproject managed by
+  "git submodule" can be moved to another place.</p>
+</li>
+<li>
+<p>"git symbolic-ref" learned the "--short" option to abbreviate the
+  refname it shows unambiguously.</p>
+</li>
+<li>
+<p>"git tag --list" can be given "--points-at <object>" to limit its
+  output to those that point at the given object.</p>
+</li>
+<li>
+<p>"gitweb" allows intermediate entries in the directory hierarchy
+  that leads to a project to be clicked, which in turn shows the
+  list of projects inside that directory.</p>
+</li>
+<li>
+<p>"gitweb" learned to read various pieces of information for the
+  repositories lazily, instead of reading everything that could be
+  needed (including the ones that are not necessary for a specific
+  task).</p>
+</li>
+<li>
+<p>Project search in "gitweb" shows the substring that matched in the
+  project name and description highlighted.</p>
+</li>
+<li>
+<p>HTTP transport learned to authenticate with a proxy if needed.</p>
+</li>
+<li>
+<p>A new script "diffall" is added to contrib/; it drives an
+  external tool to perform a directory diff of two Git revisions
+  in one go, unlike "difftool" that compares one file at a time.</p>
+</li>
+<li>
+<p>Improved handling of views, labels and branches in "git-p4" (in contrib).</p>
+</li>
+<li>
+<p>"git-p4" (in contrib) suffered from unnecessary merge conflicts when
+  p4 expanded the embedded $RCS$-like keywords; it can be now told to
+  unexpand them.</p>
+</li>
+<li>
+<p>Some "git-svn" updates.</p>
+</li>
+<li>
+<p>"vcs-svn"/"svn-fe" learned to read dumps with svn-deltas and
+  support incremental imports.</p>
+</li>
+<li>
+<p>"git difftool/mergetool" learned to drive DeltaWalker.</p>
+</li>
+<li>
+<p>Unnecessary calls to parse_object() "git upload-pack" makes in
+  response to "git fetch", have been eliminated, to help performance
+  in repositories with excessive number of refs.</p>
+</li>
+<li>
+<p>Recursive call chains in "git index-pack" to deal with long delta
+  chains have been flattened, to reduce the stack footprint.</p>
+</li>
+<li>
+<p>Use of add_extra_ref() API is now gone, to make it possible to
+  cleanly restructure the overall refs API.</p>
+</li>
+<li>
+<p>The command line parser of "git pack-objects" now uses parse-options
+  API.</p>
+</li>
+<li>
+<p>The test suite supports the new "test_pause" helper function.</p>
+</li>
+<li>
+<p>Parallel to the test suite, there is a beginning of performance
+  benchmarking framework.</p>
+</li>
+<li>
+<p>t/Makefile is adjusted to prevent newer versions of GNU make from
+  running tests in seemingly random order.</p>
+</li>
+<li>
+<p>The code to check if a path points at a file beyond a symbolic link
+  has been restructured to be thread-safe.</p>
+</li>
+<li>
+<p>When pruning directories that has become empty during "git prune"
+  and "git prune-packed", call closedir() that iterates over a
+  directory before rmdir() it.</p>
+</li>
+<li>
+<p>Build with NO_PERL_MAKEMAKER was broken and Git::I18N did not work
+  with versions of Perl older than 5.8.3.
+  (merge 5eb660e ab/perl-i18n later to maint).</p>
+</li>
+<li>
+<p>"git tag -s" honored "gpg.program" configuration variable since
+  1.7.9, but "git tag -v" and "git verify-tag" didn't.
+  (merge a2c2506 az/verify-tag-use-gpg-config later to maint).</p>
+</li>
+<li>
+<p>"configure" script learned to take "--with-sane-tool-path" from the
+  command line to record SANE_TOOL_PATH (used to avoid broken platform
+  tools in /usr/bin) in config.mak.autogen.  This may be useful for
+  people on Solaris who have saner tools outside /usr/xpg[46]/bin.</p>
+</li>
+<li>
+<p>zsh port of bash completion script needed another workaround.</p>
+</li>
+<li>
+<p>git-gui updated to 0.16.0.</p>
+</li>
+<li>
+<p>git-p4 (in contrib/) updates.</p>
+</li>
+<li>
+<p>Git uses gettext to translate its most common interface messages
+  into the user's language if translations are available and the
+  locale is appropriately set. Distributors can drop new PO files
+  in po/ to add new translations.</p>
+</li>
+<li>
+<p>The code to handle username/password for HTTP transactions used in
+  "git push" &amp; "git fetch" learned to talk "credential API" to
+  external programs to cache or store them, to allow integration with
+  platform native keychain mechanisms.</p>
+</li>
+<li>
+<p>The input prompts in the terminal use our own getpass() replacement
+  when possible. HTTP transactions used to ask for the username without
+  echoing back what was typed, but with this change you will see it as
+  you type.</p>
+</li>
+<li>
+<p>The internals of "revert/cherry-pick" have been tweaked to prepare
+  building more generic "sequencer" on top of the implementation that
+  drives them.</p>
+</li>
+<li>
+<p>"git rev-parse FETCH_HEAD" after "git fetch" without specifying
+  what to fetch from the command line will now show the commit that
+  would be merged if the command were "git pull".</p>
+</li>
+<li>
+<p>"git add" learned to stream large files directly into a packfile
+  instead of writing them into individual loose object files.</p>
+</li>
+<li>
+<p>"git checkout -B <current branch> <elsewhere>" is a more intuitive
+  way to spell "git reset --keep <elsewhere>".</p>
+</li>
+<li>
+<p>"git checkout" and "git merge" learned "--no-overwrite-ignore" option
+  to tell Git that untracked and ignored files are not expendable.</p>
+</li>
+<li>
+<p>"git commit --amend" learned "--no-edit" option to say that the
+  user is amending the tree being recorded, without updating the
+  commit log message.</p>
+</li>
+<li>
+<p>"git commit" and "git reset" re-learned the optimization to prime
+  the cache-tree information in the index, which makes it faster to
+  write a tree object out after the index entries are updated.</p>
+</li>
+<li>
+<p>"git commit" detects and rejects an attempt to stuff NUL byte in
+  the commit log message.</p>
+</li>
+<li>
+<p>"git commit" learned "-S" to GPG-sign the commit; this can be shown
+  with the "--show-signature" option to "git log".</p>
+</li>
+<li>
+<p>fsck and prune are relatively lengthy operations that still go
+  silent while making the end-user wait. They learned to give progress
+  output like other slow operations.</p>
+</li>
+<li>
+<p>The set of built-in function-header patterns for various languages
+  knows MATLAB.</p>
+</li>
+<li>
+<p>"git log --format='<format>'" learned new %g[nNeE] specifiers to
+  show information from the reflog entries when walking the reflog
+  (i.e. with "-g").</p>
+</li>
+<li>
+<p>"git pull" can be used to fetch and merge an annotated/signed tag,
+  instead of the tip of a topic branch. The GPG signature from the
+  signed tag is recorded in the resulting merge commit for later
+  auditing.</p>
+</li>
+<li>
+<p>"git log" learned "--show-signature" option to show the signed tag
+  that was merged that is embedded in the merge commit. It also can
+  show the signature made on the commit with "git commit -S".</p>
+</li>
+<li>
+<p>"git branch --edit-description" can be used to add descriptive text
+  to explain what a topic branch is about.</p>
+</li>
+<li>
+<p>"git fmt-merge-msg" learned to take the branch description into
+  account when preparing a merge summary that "git merge" records
+  when merging a local branch.</p>
+</li>
+<li>
+<p>"git request-pull" has been updated to convey more information
+  useful for integrators to decide if a topic is worth merging and
+  what is pulled is indeed what the requestor asked to pull,
+  including:</p>
+</li>
+<li>
+<p>the tip of the branch being requested to be merged;</p>
+</li>
+<li>the branch description describing what the topic is about;</li>
+<li>
+<p>the contents of the annotated tag, when requesting to pull a tag.</p>
+</li>
+<li>
+<p>"git pull" learned to notice 'pull.rebase' configuration variable,
+  which serves as a global fallback for setting 'branch.<name>.rebase'
+  configuration variable per branch.</p>
+</li>
+<li>
+<p>"git tag" learned "--cleanup" option to control how the whitespaces
+  and empty lines in tag message are cleaned up.</p>
+</li>
+<li>
+<p>"gitweb" learned to show side-by-side diff.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.9 publiée</title>
       <link>http://www.gitfr.net/blog/2012/01/28/git-1.7.9-publiee</link>
@@ -1048,197 +1390,6 @@ prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
 poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
 moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
 augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Git 1.7.6 publiée</title>
-      <link>http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee</link>
-      <pubDate>Sat, 09 Jul 2011 20:34:00 CEST</pubDate>
-      <category><![CDATA[release]]></category>
-      <category><![CDATA[git]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee</guid>
-      <description>Git 1.7.6 publiée</description>
-      <content:encoded><![CDATA[<p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
-première version qui respecte le nouveau cycle de release plus court voulu
-par Junio.</p>
-<p>A la lecture du changelog, voici quelques points que je remarque :</p>
-<ul>
-<li>
-<p>Le magic pathspec ":/".</p>
-</li>
-<li>
-<p>L'option patch pour la commande git-commit.</p>
-</li>
-<li>
-<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
-</li>
-<li>
-<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
-   ou jamais faire un commit de merge.</p>
-</li>
-<li>
-<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
-</li>
-</ul>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>Various git-svn updates.</p>
-</li>
-<li>
-<p>Updates the way content tags are handled in gitweb.  Also adds
-  a UI to choose common timezone for displaying the dates.</p>
-</li>
-<li>
-<p>Similar to branch names, tagnames that begin with "-" are now
-  disallowed.</p>
-</li>
-<li>
-<p>Clean-up of the C part of i18n (but not l10n---please wait)
-  continues.</p>
-</li>
-<li>
-<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
-</li>
-<li>
-<p>Pushing and pulling from a repository with large number of refs that
-  point to identical commits are optimized by not listing the same commit
-  during the common ancestor negotiation exchange with the other side.</p>
-</li>
-<li>
-<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
-  using "git add" will send the contents straight to a packfile without
-  having to hold it and its compressed representation both at the same
-  time in memory.</p>
-</li>
-<li>
-<p>Processes spawned by "[alias] <name> = !process" in the configuration
-  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
-  working tree the original command was invoked.</p>
-</li>
-<li>
-<p>A magic pathspec ":/" tells a command that limits its operation to
-  the current directory when ran from a subdirectory to work on the
-  entire working tree. In general, ":/path/to/file" would be relative
-  to the root of the working tree hierarchy.</p>
-</li>
-</ul>
-<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
-  be a no-op, but "git add -u :/" would add the updated contents of
-  the Makefile at the top level. If you want to name a path in the
-  current subdirectory whose unusual name begins with ":/", you can
-  name it by "./:/that/path" or by "\:/that/path".</p>
-<ul>
-<li>
-<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
-  number of hexdigits shown for commit object names.</p>
-</li>
-<li>
-<p>"git blame" learned "--line-porcelain" that is less efficient but is
-  easier to parse.</p>
-</li>
-<li>
-<p>Aborting "git commit --interactive" discards updates to the index
-  made during the interactive session.</p>
-</li>
-<li>
-<p>"git commit" learned a "--patch" option to directly jump to the
-  per-hunk selection UI of the interactive mode.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=0 to show
-  directories that contribute less than 0.1% of changes.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=lines mode to
-  assess damage to the directory based on number of lines in the patch
-  output, not based on the similarity numbers.</p>
-</li>
-<li>
-<p>"git format-patch" learned "--quiet" option to suppress the output of
-  the names of generated files.</p>
-</li>
-<li>
-<p>"git format-patch" quotes people's names when it has RFC822 special
-  characters in it, e.g. "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>.  Earlier
-  it was up to the user to do this when using its output.</p>
-</li>
-<li>
-<p>"git format-patch" can take an empty --subject-prefix now.</p>
-</li>
-<li>
-<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
-</li>
-<li>
-<p>"git log" and friends learned a new "--notes" option to replace the
-  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
-  not imply showing the default notes.</p>
-</li>
-<li>
-<p>They also learned a log.abbrevCommit configuration variable to augment
-  the --abbrev-commit command line option.</p>
-</li>
-<li>
-<p>"git ls-remote" learned "--exit-code" option to consider it a
-  different kind of error when no remote ref to be shown.</p>
-</li>
-<li>
-<p>"git merge" learned "-" as a short-hand for "the previous branch", just
-  like the way "git checkout -" works.</p>
-</li>
-<li>
-<p>"git merge" uses "merge.ff" configuration variable to decide to always
-  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
-  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
-  (or not setting it at all) restores the default behaviour of allowing
-  fast-forward to happen when possible.</p>
-</li>
-<li>
-<p>p4-import (from contrib) learned a new option --preserve-user.</p>
-</li>
-<li>
-<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
-  would fail without touching the index nor the working tree.</p>
-</li>
-<li>
-<p>"git rebase" that does not specify on top of which branch to rebase
-  the current branch now uses @{upstream} of the current branch.</p>
-</li>
-<li>
-<p>"git rebase" finished either normally or with --abort did not
-  update the reflog for HEAD to record the event to come back to
-  where it started from.</p>
-</li>
-<li>
-<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
-  a fetch-mode mirror meant mirror everything, but now it only means refs are
-  not renamed.</p>
-</li>
-<li>
-<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
-  commits separately, producing more a useful output.</p>
-</li>
-<li>
-<p>"git submodule update" learned "--force" option to get rid of local
-  changes in submodules and replace them with the up-to-date version.</p>
-</li>
-<li>
-<p>"git status" and friends ignore .gitmodules file while the file is
-  still in a conflicted state during a merge, to avoid using information
-  that is not final and possibly corrupt with conflict markers.</p>
-</li>
-<li>
-<p>"git config" used to choke with an insanely long line.
-  (merge ef/maint-strbuf-init later)</p>
-</li>
-<li>
-<p>"git diff --quiet" did not work well with --diff-filter.
-  (merge jk/diff-not-so-quick later)</p>
-</li>
-<li>
-<p>"git status -z" did not default to --porcelain output format.
-  (merge bc/maint-status-z-to-use-porcelain later)</p>
-</li>
-</ul>]]></content:encoded>
     </item>
   </channel>
 </rss>
