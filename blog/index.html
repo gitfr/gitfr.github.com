@@ -65,6 +65,251 @@
           
   
 <div class="blog_post">
+  <a name="retour-sur-le-breizhcamp-2012"></a>
+  <h2 class="blog_post_title"><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012" rel="bookmark" title="Permanent Link to Retour sur le BreizhCamp 2012">Retour sur le BreizhCamp 2012</a></h2>
+  <p class="related"><strong>01/07/2012 02:54 AM</strong> | categories: 
+
+<a href='/blog/category/gitfr'>gitfr</a>
+ | <a href="http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Les organisateurs du <a href="http://www.breizhcamp.org/">BreihCamp</a> m'ont proposé de
+monter un atelier Git de 3 heures le jeudi 14 juin. J'ai fait 2 erreurs :</p>
+<ul>
+<li>
+<p>Ne pas demander explicitivement de voir ma présentation. Moralité
+  pratiquement personne ne l'avait vu et donc la plupart avaient
+  des lacunes théoriques importantes.</p>
+</li>
+<li>
+<p>Ne pas définir un niveau (débutant, intermédiaire, confirmé),
+  j'avais donc des parfaits débutants comme des utilisateurs 
+  avec plusiueurs mois d'expérience.</p>
+</li>
+</ul>
+<p>J'ai donc opté pour un atelier avec des gros morceaux de présentation
+donnés au fil de l'eau quand cela était nécessaire pour comprendre
+les commandes a taper.</p>
+<p>Je fais donc le constat suivant :</p>
+<ul>
+<li>
+<p>Je donnerais un atelier si et seulement si j'ai donné une présentation
+  juste avant. Non obligatoire mais me permet de ne pas revenir sur la
+  théorie (et tant pis pour ceux qui estiment de ne pas en avoir besoin
+  mais sont à la ramasse).</p>
+</li>
+<li>
+<p>Fixer un niveau pour l'atelier.</p>
+</li>
+</ul>
+<p>Cela peut donc donner une journée complète de Git (pres + atelier débutant +
+atelier intermédiaire). Mais avec plus de 20 présentations et 7 ateliers,
+cela ne me fait pas vraiment peur. J'ai d'ailleurs totalement improvisé
+cet atelier / pres de 3h :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="git-1.7.11-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2012/07/01/git-1.7.11-publiee" rel="bookmark" title="Permanent Link to Git 1.7.11 publiée">Git 1.7.11 publiée</a></h2>
+  <p class="related"><strong>01/07/2012 02:52 AM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :</p>
+<ul>
+<li>
+<p>Fini la configuration par défaut qui pousse toutes les branches connues
+  sur le serveur. C'est maintenant le mode <em>simple</em> qui prend le relais,
+  mode qui ne pousse (si et seulement si elle possède un nom identique sur le
+  serveur) que le branche courante. C'est une configuration bien plus
+  pertinente pour les débutants. Néanmoins je vous préconise <strong>le mode
+  upstream</strong> comme dit dans
+  <a href="http://gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push/">ce billet</a>.</p>
+</li>
+<li>
+<p>Un outil en shell du nom de <em>git-subtree.sh</em> est ajoutée dans la section
+  contrib, outil qui simplifie le découpage ou la fusion de dépôt. Cela
+  permet par exemple de se dispenser de submodules en intégrant un dépôt
+  dans un autre dépôt.</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>A new mode for push, "simple", which is a cross between "current"
+  and "upstream", has been introduced. "git push" without any refspec
+  will push the current branch out to the same name at the remote
+  repository only when it is set to track the branch with the same
+  name over there.  The plan is to make this mode the new default
+  value when push.default is not configured.</p>
+</li>
+<li>
+<p>A couple of commands learned the "--column" option to produce
+  columnar output.</p>
+</li>
+<li>
+<p>A third-party tool "git subtree" is distributed in contrib/</p>
+</li>
+<li>
+<p>A remote helper that acts as a proxy and caches ssl session for the
+  https:// transport is added to the contrib/ area.</p>
+</li>
+<li>
+<p>Error messages given when @{u} is used for a branch without its
+  upstream configured have been clarified.</p>
+</li>
+<li>
+<p>Even with the "-q"uiet option, "checkout" used to report setting up
+  tracking.  Also "branch" learned the "-q"uiet option to squelch
+  informational message.</p>
+</li>
+<li>
+<p>Your build platform may support hardlinks but you may prefer not to
+  use them, e.g. when installing to DESTDIR to make a tarball and
+  untarring on a filesystem that has poor support for hardlinks.
+  There is a Makefile option NO_INSTALL_HARDLINKS for you.</p>
+</li>
+<li>
+<p>The smart-http backend used to always override GIT_COMMITTER_*
+  variables with REMOTE_USER and REMOTE_ADDR, but these variables are
+  now preserved when set.</p>
+</li>
+<li>
+<p>"git am" learned the "--include" option, which is an opposite of
+  existing the "--exclude" option.</p>
+</li>
+<li>
+<p>When "git am -3" needs to fall back to an application of the patch
+  to a synthesized preimage followed by a 3-way merge, the paths that
+  needed such treatment are now reported to the end user, so that the
+  result in them can be eyeballed with extra care.</p>
+</li>
+<li>
+<p>The output from "diff/log --stat" used to always allocate 4 columns
+  to show the number of modified lines, but not anymore.</p>
+</li>
+<li>
+<p>"git difftool" learned the "--dir-diff" option to spawn external
+  diff tools that can compare two directory hierarchies at a time
+  after populating two temporary directories, instead of running an
+  instance of the external tool once per a file pair.</p>
+</li>
+<li>
+<p>The "fmt-merge-msg" command learned to list the primary contributors
+  involved in the side topic you are merging in a comment in the merge
+  commit template.</p>
+</li>
+<li>
+<p>"git rebase" learned to optionally keep commits that do not
+  introduce any change in the original history.</p>
+</li>
+<li>
+<p>"git push --recurse-submodules" learned to optionally look into the
+  histories of submodules bound to the superproject and push them
+  out.</p>
+</li>
+<li>
+<p>A 'snapshot' request to "gitweb" honors If-Modified-Since: header,
+  based on the commit date.</p>
+</li>
+<li>
+<p>"gitweb" learned to highlight the patch it outputs even more.</p>
+</li>
+<li>
+<p>"git svn" used to die with unwanted SIGPIPE when talking with an HTTP
+  server that uses keep-alive.</p>
+</li>
+<li>
+<p>"git svn" learned to use platform specific authentication
+  providers, e.g. gnome-keyring, kwallet, etc.</p>
+</li>
+<li>
+<p>"git p4" has been moved out of the contrib/ area and has seen more
+  work on importing labels as tags from (and exporting tags as labels
+  to) p4.</p>
+</li>
+<li>
+<p>Bash completion script (in contrib/) have been cleaned up to make
+  future work on it simpler.</p>
+</li>
+<li>
+<p>An experimental "version 4" format of the index file has been
+  introduced to reduce on-disk footprint and I/O overhead.</p>
+</li>
+<li>
+<p>"git archive" learned to produce its output without reading the
+  blob object it writes out in memory in its entirety.</p>
+</li>
+<li>
+<p>"git index-pack" that runs when fetching or pushing objects to
+  complete the packfile on the receiving end learned to use multiple
+  threads to do its job when available.</p>
+</li>
+<li>
+<p>The code to compute hash values for lines used by the internal diff
+  engine was optimized on little-endian machines, using the same
+  trick the kernel folks came up with.</p>
+</li>
+<li>
+<p>"git apply" had some memory leaks plugged.</p>
+</li>
+<li>
+<p>Setting up a revision traversal with many starting points was
+  inefficient as these were placed in a date-order priority queue
+  one-by-one.  Now they are collected in the queue unordered first,
+  and sorted immediately before getting used.</p>
+</li>
+<li>
+<p>More lower-level commands learned to use the streaming API to read
+  from the object store without keeping everything in core.</p>
+</li>
+<li>
+<p>The weighting parameters to suggestion command name typo have been
+  tweaked, so that "git tags" will suggest "tag?" and not "stage?".</p>
+</li>
+<li>
+<p>Because "sh" on the user's PATH may be utterly broken on some
+  systems, run-command API now uses SHELL_PATH, not /bin/sh, when
+  spawning an external command (not applicable to Windows port).</p>
+</li>
+<li>
+<p>The API to iterate over the refs/ hierarchy has been tweaked to
+  allow walking only a subset of it more efficiently.</p>
+</li>
+<li>
+<p>"git submodule init" used to report "registered for path ..."
+  even for submodules that were registered earlier.
+  (cherry-pick c1c259e jl/submodule-report-new-path-once later to maint).</p>
+</li>
+<li>
+<p>"git diff --stat" used to fully count a binary file with modified
+  execution bits whose contents is unmodified, which was not quite
+  right.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.10-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2012/04/15/git-1.7.10-publiee" rel="bookmark" title="Permanent Link to Git 1.7.10 publiée">Git 1.7.10 publiée</a></h2>
   <p class="related"><strong>15/04/2012 10:52 PM</strong> | categories: 
@@ -682,214 +927,6 @@ j'ai raté l'ouverture des inscriptions.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="la-commande-diff"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/01/26/la-commande-diff" rel="bookmark" title="Permanent Link to La commande diff">La commande diff</a></h2>
-  <p class="related"><strong>26/01/2012 03:48 PM</strong> | categories: 
-
-<a href='/blog/category/git-git-diff'>git git-diff</a>
- | <a href="http://www.gitfr.net/blog/2012/01/26/la-commande-diff#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
-SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
-d'horizon.</p>
-<h2>Le base</h2>
-<p>Commençons par le basique. Pour connaître les différences entre votre
-répertoire de travail et votre index :</p>
-<blockquote>
-<p>$ git diff</p>
-</blockquote>
-<p>Entre l'index et votre dépôt :</p>
-<blockquote>
-<p>$ git diff --staged</p>
-</blockquote>
-<p>Entre le répertoire de travail et le dépôt :</p>
-<blockquote>
-<p>$ git diff HEAD</p>
-</blockquote>
-<p><strong>Note</strong> : la notation HEAD se retrouve assez souvent (git-log, git-reset...)
-quand on parle du dépôt, vu qu'il s'agit du commit courant, c'est à dire notre
-position sur le graphe (l'index étant le prochain commit).</p>
-<p>La commande permet de spécifier des fichiers ou des commits (ces deux
-possibilités peuvent être combinées) :</p>
-<blockquote>
-<p>$ git diff -- monfichier</p>
-<p>$ git diff commit</p>
-</blockquote>
-<p>Si vous voulez connaître la différence entre 2 commits :</p>
-<blockquote>
-<p>$ git diff commit1 commit2 </p>
-</blockquote>
-<p>Plus intéressant, si vous voulez savoir ce qui existe dans une branche et pas
-dans l'autre :</p>
-<blockquote>
-<p>$ git diff commit1...commit2</p>
-</blockquote>
-<p>Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
-deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.</p>
-<h2>Le contexte</h2>
-<p>Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
-affiche 3 lignes supplémentaires en dessous des changements pour vous donner
-plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
-possibles :</p>
-<ol>
-<li>La 1ère est bien sûr d'augmenter le contexte avec l'option <code>-U</code></li>
-</ol>
-<blockquote>
-<p>$ git diff -U5</p>
-</blockquote>
-<p>Pensez à faire un alias si vous préférez toujours disposer d'un contexte d'une
-taille différente.</p>
-<ol>
-<li>Demander à Git la fonction qui contient la modification</li>
-</ol>
-<blockquote>
-<p>$ git diff -W</p>
-</blockquote>
-<p>C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
-langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
-premiers tests en Python, cela semble plûtot bien fonctionner.</p>
-<h2>Ignorer les espaces</h2>
-<p>Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
-supprimer des espaces. Vous avez à votre disposition les options <code>-b</code> <code>-w</code> pour
-ignorer les espaces en fin de lignes ou toutes les espaces.</p>
-<h2>Algorithme patience</h2>
-<p>La commande implémente aussi un autre algorithme de détection de changement du
-nom de <em>Patience</em>. Pour faire très court, cet algo se focalise uniquement sur
-des lignes à fort contenu, alors que l'algorithme classique travaille sur
-toutes les lignes. Il y'a des cas ou c'est intéressant de l'essayer (notamment
-quand le diff classique est complètement perdu).</p>
-<p><strong>Note</strong> : pour de plus amples explications, veuillez vous référer à cette
-page <a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html">ci</a> et à
-celle <a href="http://alfedenzo.livejournal.com/170301.html">la</a>.</p>
-<h2>Faire des statistiques</h2>
-<p>Je vous laisse regarder par vous même les options <code>--stat</code>, <code>--numstat</code>,
-<code>--shortstat</code>, <code>--dirstat</code> et <code>--summary</code> :).</p>
-<h2>Afficher les différences sur la même ligne</h2>
-<p>Il est intéressant, par exemple pour de la documentation, d'afficher les
-modifications sur la même ligne. C'est tout l'intérêt du mode <em>word diff</em>.</p>
-<blockquote>
-<p>$ git diff --word-diff</p>
-</blockquote>
-<h2>Ne pas afficher les prefixes</h2>
-<p>Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :</p>
-<blockquote>
-<p>$ git diff --no-prefix</p>
-</blockquote>
-<h2>Chercher une chaine dans le contenu</h2>
-<p>Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
-lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
-faut :</p>
-<blockquote>
-<p>$ git diff -Srenderer HEAD~10..HEAD</p>
-</blockquote>
-<p>Vous pouvez utiliser une expression rationnelle avec l'option <code>-G</code>.</p>
-<p><strong>Note</strong> : l'option <code>--pickaxe-all</code> affiche l'ensemble du commit, et pas
-uniquement les fichiers impactés.</p>
-<h2>Générer un patch</h2>
-<p>Le comportement par défaut de Git est de générer un patch :</p>
-<blockquote>
-<p>$ git diff &gt; diff.patch</p>
-</blockquote>
-<h2>Et encore plein d'autres options</h2>
-<p>Comme d'habitude, je vous recommande chaudement de lire le manuel de la
-commande tellement Git regorge d'options (notamment pour aider au scripting).
-Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
-<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/01/26/la-commande-diff#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="retour-sur-un-an-de-gitfr"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr" rel="bookmark" title="Permanent Link to Retour sur un an de gitfr">Retour sur un an de gitfr</a></h2>
-  <p class="related"><strong>10/01/2012 08:54 PM</strong> | categories: 
-
-<a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Cela fait maintenant un peu plus d'un an que #gitfr existe (1ere conférence le
-24 novembre 2010), il est donc temps de faire un petit point. D'abord quelques
-chiffres :</p>
-<ul>
-<li>quelques centaines d'heures dépensées</li>
-<li>13 conférences</li>
-<li>~800 auditeurs aux conférences</li>
-<li>~4000 visulisations sur parleys.com</li>
-<li>86 billets de blog</li>
-<li>plusieurs centaines de fotes d'ortografes</li>
-<li>6 ateliers</li>
-<li>~120 participants aux ateliers</li>
-<li>7 jours de congés utilisés</li>
-<li>0€ gagné</li>
-</ul>
-<p>Alors que l'objectif initial était de faire des ateliers, c'est précisemment
-l'activité la plus faible. Je vois plusieurs raisons :</p>
-<ul>
-<li>
-<p>Tout d'abord, participer à un atelier demande à comprendre un minimum Git. Il
-  me semble inutile d'organiser un atelier sans que les participants soient
-  d'abord conviés à la conférence.</p>
-</li>
-<li>
-<p>Une conférence permet de faire venir des dizaines ou centaines de personnes,
-  l'atelier est lui difficile à faire à plus de 30.</p>
-</li>
-<li>
-<p>Un atelier est bien plus compliqué a organiser.</p>
-</li>
-<li>
-<p>On m'a plus sollicité pour des conférences, tout simplement. Je n'ai plus
-  le temps pour trouver des salles, je m'adapte aux demandes.</p>
-</li>
-</ul>
-<p>De plus, j'avoue qu'après des dizaines d'heures dépensées pour monter une
-conférence de qualité, ma motivation et mon énergie pour l'atelir avaient
-diminués. Je dirais même que je redoutais un peu de faire des ateliers, car
-cela demande bien plus de préparation. Avec 6 ateliers, et malgré une qualité
-insuffisante à mes yeux sur les premiers, cette peur s'est estompée.</p>
-<p>J'avoue aussi que l'activité du blog est assez faible, car je pense trop
-souvent à faire des billets trop longs. Je vais donc tenter à l'avenir des
-billets courts, même si cela nécessite de faire plusieurs billets sur le même
-sujet. Et bien sûr, cela aussi du temps et de l'énergie.</p>
-<p>Vous pouvez constater que #gitfr est une activité purement bénévole. Non
-seulement, je n'ai pas gagné d'argent avec mais j'ai dépensé 7 jours de congés
-payés pour les déplacements en province. C'est à ce titre que je demande au
-minimum le remboursement des frais et une gratuité de l'évènement pour le
-public : je me déplace uniquement si n'importe qui peut venir assister aux
-conférences et aux ateliers. Que je ne gagne pas d'argent soit, mais je ne suis
-pas là pour enrichir ou former une société ! #gitfr est et restera une
-activité bénévole et gratuite, ce n'est pas dans son ADN de proposer des
-ateliers payants (il faut pour cela se tourner vers des formateurs, je pense
-d'ailleurs en faire une liste si cela est utile). Ceux qui me connaissent
-savent parfaitement mon dégout pour les gens qui cachent leurs activités pro
-sous des soit-disantes activités associatives. La séparation doit être nette et
-étanche. Si vous souhaitez une conférence ou un atelier Git, n'hésitez donc pas
-à demander, #gitfr répondra présent si les conditions le permet !</p>
-<p>Et pour finir sur une note positive, je crois que la majorité des participants
-ont appréciés les conférences et comprennent maintenant l'avantage d'utiliser
-Git (et globalement les DVCS). C'est finalement le seul objectif de #gitfr :
-montrer aux développeurs et aux managers qu'ils ont tout à gagner à revoir
-leurs pratiques de gestion de source. Les DVCS ne sont pas l'avenir, ils sont
-le présent. </p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/page/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -911,14 +948,14 @@ le présent. </p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
+    <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
-    <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
-    <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -932,7 +969,7 @@ le présent. </p>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (55)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (56)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -946,7 +983,7 @@ le présent. </p>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (29)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (30)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -955,7 +992,7 @@ le présent. </p>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (21)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -964,6 +1001,7 @@ le présent. </p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>

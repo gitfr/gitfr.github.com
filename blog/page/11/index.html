@@ -65,6 +65,58 @@
           
   
 <div class="blog_post">
+  <a name="presentation-Git-disponible"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/01/presentation-Git-disponible" rel="bookmark" title="Permanent Link to Présentation Git disponible">Présentation Git disponible</a></h2>
+  <p class="related"><strong>01/12/2010 01:38 PM</strong> | categories: 
+
+<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/01/presentation-Git-disponible#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Je viens de mettre la présentation des ateliers #1 et #2 sur <em>GitHub</em>. C'est une présentation faites avec <a href="https://github.com/schacon/showoff">ShowOff</a>, application développée par <em>Chacon</em> (encore lui), qui a l'énorme avantage de séparer contenu (simple fichier texte au format <strong>Markdown</strong>) et présentation (fichier CSS). Malheureusement il n'existe pas d'export PDF, il vous faut donc obligatoirement installer ShowOff sur votre machine pour visionner la présentation.</p>
+<p>L'adresse de la présentation : <a href="https://github.com/sdouche/showoff-presentation-git">https://github.com/sdouche/showoff-presentation-git</a></p>
+<p>Bonne lecture.</p>
+<p>PS : N'hésitez pas à me faire des remarques ou critiques (par Twitter <strong>@gitfr</strong> ou mail <strong>seb@gitfr.net</strong>).</p>
+<p><strong>Mise à jour</strong> : je viens de déployer la présentation sur <a href="http://heroku.com/">Heroku</a>, une plateforme d'hébergement d'applications <em>Ruby</em> (qui utilise Git comme outil de déploiement). L'adresse est : <a href="http://presentation-git.heroku.com/">http://presentation-git.heroku.com/</a>. Je vous conseille un navigateur trés réçent pour la visualisation.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/01/presentation-Git-disponible#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="les-gui-sous-macos-x"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/30/les-gui-sous-macos-x" rel="bookmark" title="Permanent Link to Les GUI sous MacOS X">Les GUI sous MacOS X</a></h2>
+  <p class="related"><strong>30/11/2010 12:18 AM</strong> | categories: 
+
+<a href='/blog/category/macos'>macos</a>, <a href='/blog/category/git'>git</a>, <a href='/blog/category/outil'>outil</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Mon ami <em>Thomas</em>, Rubyiste Maceux ascendant foie gras (il habite Toulouse) nous fait un rapide tour d'horizon des <a href="http://blog.arbousier.info/11-29-2010/GitOsX.html">applications graphiques</a> sous <strong>Mac OS X</strong>.</p>
+<p>Au programme :</p>
+<ul>
+<li>Gitnub</li>
+<li>GitX</li>
+<li>GitY</li>
+<li>Gitbox</li>
+<li>Tower</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/30/les-gui-sous-macos-x#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="migration-cvs-vers-git-pour-le-projet-drupal"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal" rel="bookmark" title="Permanent Link to Migration CVS vers Git pour le projet Drupal">Migration CVS vers Git pour le projet Drupal</a></h2>
   <p class="related"><strong>17/11/2010 08:39 AM</strong> | categories: 
@@ -422,112 +474,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/eviter-de-commiter-des-fichiers-indesirables#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="taper-plus-vite-avec-la-completion"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/04/taper-plus-vite-avec-la-completion" rel="bookmark" title="Permanent Link to Taper plus vite avec la complétion">Taper plus vite avec la complétion</a></h2>
-  <p class="related"><strong>04/11/2010 02:37 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/04/taper-plus-vite-avec-la-completion#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Le petit doigt de la main gauche est pour un <strong>Unixien</strong> un doigt important (bon, vous pouvez me rétorquer que <em>tous</em> les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche <strong>tab</strong>. Cette touche permet sous Unix de faire la <strong>complétion</strong>. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex <code>--exclude</code> de la commande <code>diff</code>).</p>
-<p>Comment cela marche t'il avec Git ? Voici quelques exemples :</p>
-<blockquote>
-<p><code>$ git &lt;TAB&gt;&lt;TAB&gt;</code></p>
-</blockquote>
-<p>Le shell répond : </p>
-<blockquote>
-<p><code>add  bundle  commit  gc  rebase ....</code></p>
-</blockquote>
-<p>En tapant simplement <code>git</code>, la complétion me propose une centaine de sous commandes Git (je ne représente ci dessus que 4 commandes à titre d'exemple). Maintenant si je tape la lettre <em>a</em> :</p>
-<blockquote>
-<p><code>$ git a&lt;TAB&gt;&lt;TAB&gt;</code></p>
-</blockquote>
-<p>Le shell répond :</p>
-<blockquote>
-<p><code>add  aliases  am  amend  annotate  apply  archive</code></p>
-</blockquote>
-<p>Le shell me propose les commandes qui commencent par la lettre <em>a</em>. Le shell complète uniquement si ce que vous tapez est <strong>sans ambiguité</strong>. Si je reprends l'exemple précédent, si j'avais tapé <em>ad</em>, la complétion aurait donné <em>add</em>.</p>
-<p>Mais ce qui est formi-formi-formidable avec la complétion, c'est qu'elle marche aussi sur les options des sous commandes. En reprenant l'exemple de la sous commande add :</p>
-<blockquote>
-<p><code>$ git add -&lt;TAB&gt;&lt;TAB&gt;</code></p>
-</blockquote>
-<p>Le shell répond :</p>
-<blockquote>
-<p><code>--dry-run  --ignore-errors  --intent-to-add  --interactive  --patch  --refresh  --update</code></p>
-</blockquote>
-<p>Comme vous pouvez le constater, c'est un gain de temps incroyable. Pour la petite histoire, c'est la fréquence d'utilisation de cette touche qui me donne une première idée de la familiarité d'un candidat avec Unix en entretien d'embauche :).</p>
-<p><strong>Note</strong> : vous constaterez peut être que toutes les sous commandes ou options ne sont pas représentées dans la complétion. C'est un choix (ou non, par exemple un oubli ?) des développeurs du fichier de complétion. Il faut en effet modifier manuellement ce fichier à chaque nouvelle version (travail un poil fastidieux, pour vous donner une idée le fichier de la version 1.7.3.2 fait 2419 lignes), il se peut donc que les développeurs fassent des choix. Ceci est aussi valide pour les commandes Shell en général.</p>
-<h2>Activer la complétion</h2>
-<p>C'est assez simple, il suffit d'ajouter le fichier de complétion Git soit dans votre profil (fichier <code>~/.bashrc</code>), soit dans la configuration globale de bash_completion du système. La plupart du temps, cette configuration est automatique à l'installation de Git.</p>
-<h2>Sous Ubuntu</h2>
-<p>Le fichier de complétion est automatiquement activé sous Ubuntu car le fichier <code>git</code> est placé dans le répertoire <code>/etc/bash_completion.d/</code> par le paquet git lui même. Le paquet <code>bash-completion</code> étant lui installé par défaut.</p>
-<h2>Sous Mac OS X</h2>
-<p>Il est nécessaire d'installer (avec Homebrew ou MacPorts) le paquet <code>bash_completion</code> si ce n'est pas deja fait, avec la commande :</p>
-<blockquote>
-<p>$ sudo port install bash_completion</p>
-</blockquote>
-<p>ou</p>
-<blockquote>
-<p>$ brew install bash-completion</p>
-</blockquote>
-<p>Puis d'ajouter cette ligne dans votre <code>~/.bashrc</code>:</p>
-<blockquote>
-<p><code>source ./path/to/git-completion.bash</code></p>
-</blockquote>
-<p>Changez <code>/path/to</code> avec le répertoire qui contient le fichier (qui est dofférent selon la méthode d'installation).</p>
-<h2>Sous Windows</h2>
-<p>Comme sous Ubuntu, la complétion est activé par défaut avec <em>msysgit</em>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/taper-plus-vite-avec-la-completion#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="configuration-minimale-pour-demarrer"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/04/configuration-minimale-pour-demarrer" rel="bookmark" title="Permanent Link to Configuration minimale pour démarrer">Configuration minimale pour démarrer</a></h2>
-  <p class="related"><strong>04/11/2010 02:01 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : </p>
-<blockquote>
-<p><code>$ git config --global user.name "Sebastien Douche"</code></p>
-<p><code>$ git config --global user.email sdouche@gmail.com</code></p>
-</blockquote>
-<p>L'option <code>--global</code> permet de configurer pour tous les dépôts que vous allez utiliser, en enregistrant ces paramètres dans le fichier <code>~/.gitconfig</code>.</p>
-<p>Avec l'option <code>--system</code>, c'est une configuration pour tous les utilisateurs de la machine, et la configuration se trouve dans le fichier <code>/etc/gitconfig</code>.</p>
-<p>Sans option, vous configurez uniquement le dépôt courant, ce qui permet par exemple de spécifier votre adresse personnelle et non professionnelle.</p>
-<p>Trois petites informations supplémentaires :</p>
-<ul>
-<li>
-<p>Sans cette configuration, Git va utiliser directement les informations contenues dans votre profil utilisateur système, ce qui n'est pas souhaité (par ex. <code>seb@mamachine</code>). </p>
-</li>
-<li>
-<p>Il n'y a <strong>pas</strong> de vérification par Git. Ce dernier créé une entrée <em>name</em> dans la section <em>user</em>. Si vous tapez <code>userz.namer</code>, c'est pareil pour lui.</p>
-</li>
-<li>
-<p>Vous pouvez éditer directement les fichiers, le résultat est strictement identique. D'ailleurs je vous conseille d'éditer les fichiers pour voir à quoi ils ressemblent (avant et aprés modification).</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/04/configuration-minimale-pour-demarrer#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../10">« Articles suivants</a>
   --  
  <a href="../12">Articles précédents »</a>
@@ -551,14 +497,14 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
+    <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
-    <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
-    <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -572,7 +518,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (55)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (56)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -586,7 +532,7 @@
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (29)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (30)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -595,7 +541,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (21)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -604,6 +550,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>

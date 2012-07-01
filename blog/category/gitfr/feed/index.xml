@@ -10,10 +10,51 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 15 Apr 2012 21:04:43 GMT</pubDate>
+    <pubDate>Sun, 01 Jul 2012 14:28:23 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Retour sur le BreizhCamp 2012</title>
+      <link>http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012</link>
+      <pubDate>Sun, 01 Jul 2012 02:54:00 CEST</pubDate>
+      <category><![CDATA[gitfr]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012</guid>
+      <description>Retour sur le BreizhCamp 2012</description>
+      <content:encoded><![CDATA[<p>Les organisateurs du <a href="http://www.breizhcamp.org/">BreihCamp</a> m'ont proposé de
+monter un atelier Git de 3 heures le jeudi 14 juin. J'ai fait 2 erreurs :</p>
+<ul>
+<li>
+<p>Ne pas demander explicitivement de voir ma présentation. Moralité
+  pratiquement personne ne l'avait vu et donc la plupart avaient
+  des lacunes théoriques importantes.</p>
+</li>
+<li>
+<p>Ne pas définir un niveau (débutant, intermédiaire, confirmé),
+  j'avais donc des parfaits débutants comme des utilisateurs 
+  avec plusiueurs mois d'expérience.</p>
+</li>
+</ul>
+<p>J'ai donc opté pour un atelier avec des gros morceaux de présentation
+donnés au fil de l'eau quand cela était nécessaire pour comprendre
+les commandes a taper.</p>
+<p>Je fais donc le constat suivant :</p>
+<ul>
+<li>
+<p>Je donnerais un atelier si et seulement si j'ai donné une présentation
+  juste avant. Non obligatoire mais me permet de ne pas revenir sur la
+  théorie (et tant pis pour ceux qui estiment de ne pas en avoir besoin
+  mais sont à la ramasse).</p>
+</li>
+<li>
+<p>Fixer un niveau pour l'atelier.</p>
+</li>
+</ul>
+<p>Cela peut donc donner une journée complète de Git (pres + atelier débutant +
+atelier intermédiaire). Mais avec plus de 20 présentations et 7 ateliers,
+cela ne me fait pas vraiment peur. J'ai d'ailleurs totalement improvisé
+cet atelier / pres de 3h :).</p>]]></content:encoded>
+    </item>
     <item>
       <title>Présentation Git le 12/04 à Lausanne</title>
       <link>http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne</link>
@@ -258,24 +299,6 @@ plusieurs raisons :</p>
 </li>
 </ul>
 <p>Vous en pensez quoi ?</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Présentation Git le 24/11 à Bordeaux</title>
-      <link>http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux</link>
-      <pubDate>Thu, 13 Oct 2011 01:40:00 CEST</pubDate>
-      <category><![CDATA[atelier]]></category>
-      <category><![CDATA[gitfr]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/10/13/presentation-git-le-24-11-a-bordeaux</guid>
-      <description>Présentation Git le 24/11 à Bordeaux</description>
-      <content:encoded><![CDATA[<p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
-combo présentation et atelier sur 2 jours : </p>
-<ul>
-<li>Présentation le 24/11</li>
-<li>Atelier le 25/11</li>
-</ul>
-<p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
-<a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
-de l'événement.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

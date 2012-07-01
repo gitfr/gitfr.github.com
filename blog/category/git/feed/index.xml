@@ -10,10 +10,193 @@
     <title>#gitfr</title>
     <link>http://www.gitfr.net/blog</link>
     <description>Projet pour la promotion du bien et la destruction du mal</description>
-    <pubDate>Sun, 15 Apr 2012 21:04:42 GMT</pubDate>
+    <pubDate>Sun, 01 Jul 2012 14:28:23 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>Git 1.7.11 publiée</title>
+      <link>http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee</link>
+      <pubDate>Sun, 01 Jul 2012 02:52:00 CEST</pubDate>
+      <category><![CDATA[release]]></category>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee</guid>
+      <description>Git 1.7.11 publiée</description>
+      <content:encoded><![CDATA[<p>Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :</p>
+<ul>
+<li>
+<p>Fini la configuration par défaut qui pousse toutes les branches connues
+  sur le serveur. C'est maintenant le mode <em>simple</em> qui prend le relais,
+  mode qui ne pousse (si et seulement si elle possède un nom identique sur le
+  serveur) que le branche courante. C'est une configuration bien plus
+  pertinente pour les débutants. Néanmoins je vous préconise <strong>le mode
+  upstream</strong> comme dit dans
+  <a href="http://gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push/">ce billet</a>.</p>
+</li>
+<li>
+<p>Un outil en shell du nom de <em>git-subtree.sh</em> est ajoutée dans la section
+  contrib, outil qui simplifie le découpage ou la fusion de dépôt. Cela
+  permet par exemple de se dispenser de submodules en intégrant un dépôt
+  dans un autre dépôt.</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>A new mode for push, "simple", which is a cross between "current"
+  and "upstream", has been introduced. "git push" without any refspec
+  will push the current branch out to the same name at the remote
+  repository only when it is set to track the branch with the same
+  name over there.  The plan is to make this mode the new default
+  value when push.default is not configured.</p>
+</li>
+<li>
+<p>A couple of commands learned the "--column" option to produce
+  columnar output.</p>
+</li>
+<li>
+<p>A third-party tool "git subtree" is distributed in contrib/</p>
+</li>
+<li>
+<p>A remote helper that acts as a proxy and caches ssl session for the
+  https:// transport is added to the contrib/ area.</p>
+</li>
+<li>
+<p>Error messages given when @{u} is used for a branch without its
+  upstream configured have been clarified.</p>
+</li>
+<li>
+<p>Even with the "-q"uiet option, "checkout" used to report setting up
+  tracking.  Also "branch" learned the "-q"uiet option to squelch
+  informational message.</p>
+</li>
+<li>
+<p>Your build platform may support hardlinks but you may prefer not to
+  use them, e.g. when installing to DESTDIR to make a tarball and
+  untarring on a filesystem that has poor support for hardlinks.
+  There is a Makefile option NO_INSTALL_HARDLINKS for you.</p>
+</li>
+<li>
+<p>The smart-http backend used to always override GIT_COMMITTER_*
+  variables with REMOTE_USER and REMOTE_ADDR, but these variables are
+  now preserved when set.</p>
+</li>
+<li>
+<p>"git am" learned the "--include" option, which is an opposite of
+  existing the "--exclude" option.</p>
+</li>
+<li>
+<p>When "git am -3" needs to fall back to an application of the patch
+  to a synthesized preimage followed by a 3-way merge, the paths that
+  needed such treatment are now reported to the end user, so that the
+  result in them can be eyeballed with extra care.</p>
+</li>
+<li>
+<p>The output from "diff/log --stat" used to always allocate 4 columns
+  to show the number of modified lines, but not anymore.</p>
+</li>
+<li>
+<p>"git difftool" learned the "--dir-diff" option to spawn external
+  diff tools that can compare two directory hierarchies at a time
+  after populating two temporary directories, instead of running an
+  instance of the external tool once per a file pair.</p>
+</li>
+<li>
+<p>The "fmt-merge-msg" command learned to list the primary contributors
+  involved in the side topic you are merging in a comment in the merge
+  commit template.</p>
+</li>
+<li>
+<p>"git rebase" learned to optionally keep commits that do not
+  introduce any change in the original history.</p>
+</li>
+<li>
+<p>"git push --recurse-submodules" learned to optionally look into the
+  histories of submodules bound to the superproject and push them
+  out.</p>
+</li>
+<li>
+<p>A 'snapshot' request to "gitweb" honors If-Modified-Since: header,
+  based on the commit date.</p>
+</li>
+<li>
+<p>"gitweb" learned to highlight the patch it outputs even more.</p>
+</li>
+<li>
+<p>"git svn" used to die with unwanted SIGPIPE when talking with an HTTP
+  server that uses keep-alive.</p>
+</li>
+<li>
+<p>"git svn" learned to use platform specific authentication
+  providers, e.g. gnome-keyring, kwallet, etc.</p>
+</li>
+<li>
+<p>"git p4" has been moved out of the contrib/ area and has seen more
+  work on importing labels as tags from (and exporting tags as labels
+  to) p4.</p>
+</li>
+<li>
+<p>Bash completion script (in contrib/) have been cleaned up to make
+  future work on it simpler.</p>
+</li>
+<li>
+<p>An experimental "version 4" format of the index file has been
+  introduced to reduce on-disk footprint and I/O overhead.</p>
+</li>
+<li>
+<p>"git archive" learned to produce its output without reading the
+  blob object it writes out in memory in its entirety.</p>
+</li>
+<li>
+<p>"git index-pack" that runs when fetching or pushing objects to
+  complete the packfile on the receiving end learned to use multiple
+  threads to do its job when available.</p>
+</li>
+<li>
+<p>The code to compute hash values for lines used by the internal diff
+  engine was optimized on little-endian machines, using the same
+  trick the kernel folks came up with.</p>
+</li>
+<li>
+<p>"git apply" had some memory leaks plugged.</p>
+</li>
+<li>
+<p>Setting up a revision traversal with many starting points was
+  inefficient as these were placed in a date-order priority queue
+  one-by-one.  Now they are collected in the queue unordered first,
+  and sorted immediately before getting used.</p>
+</li>
+<li>
+<p>More lower-level commands learned to use the streaming API to read
+  from the object store without keeping everything in core.</p>
+</li>
+<li>
+<p>The weighting parameters to suggestion command name typo have been
+  tweaked, so that "git tags" will suggest "tag?" and not "stage?".</p>
+</li>
+<li>
+<p>Because "sh" on the user's PATH may be utterly broken on some
+  systems, run-command API now uses SHELL_PATH, not /bin/sh, when
+  spawning an external command (not applicable to Windows port).</p>
+</li>
+<li>
+<p>The API to iterate over the refs/ hierarchy has been tweaked to
+  allow walking only a subset of it more efficiently.</p>
+</li>
+<li>
+<p>"git submodule init" used to report "registered for path ..."
+  even for submodules that were registered earlier.
+  (cherry-pick c1c259e jl/submodule-report-new-path-once later to maint).</p>
+</li>
+<li>
+<p>"git diff --stat" used to fully count a binary file with modified
+  execution bits whose contents is unmodified, which was not quite
+  right.</p>
+</li>
+</ul>]]></content:encoded>
+    </item>
     <item>
       <title>Git 1.7.10 publiée</title>
       <link>http://www.gitfr.net/blog/2012/04/15/git-1.7.10-publiee</link>
@@ -1333,63 +1516,6 @@ contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
 première de la création de #gitfr.</p>
 <p>Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
 un champ des possibles inimaginable quand on vient de SVN...</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Code supporte Git</title>
-      <link>http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git</link>
-      <pubDate>Sun, 17 Jul 2011 18:35:00 CEST</pubDate>
-      <category><![CDATA[github]]></category>
-      <category><![CDATA[git]]></category>
-      <category><![CDATA[google code]]></category>
-      <guid isPermaLink="true">http://www.gitfr.net/blog/2011/07/17/google-code-supporte-git</guid>
-      <description>Google Code supporte Git</description>
-      <content:encoded><![CDATA[<p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
-maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
-<strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
-support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
-les 3 plus gros hébergeurs de code (Sourceforge, Google Code et GitHub)
-supportent maitenant notre DVCS préféré. Cela signifie aussi que l'avenir
-s'assombrie pour Mercurial, qui se retrouve (presque) dans la même
-situation que Bzr, avec un seul hébergeur <em>dépendant</em> important. Terme mal
-choisi pour désigner un hébergeur qui s'appuie uniquement sur une techno, en
-l'occurence <a href="https://bitbucket.org/">Bitbucket</a> (<a href="https://launchpad.net/">Launchpad</a>
-pour Bzr).</p>
-<p>Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
-raisons, l'une <strong>technique</strong> et l'autre <strong>marketing</strong>.</p>
-<h2>L'argument technique</h2>
-<p>Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
-<a href="http://code.google.com/p/gerrit/">Gerrit</a> et <a href="http://www.eclipse.org/jgit/">JGit</a> 
-(ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
-sur la liste de diffusion, Git supporte depuis la version 1.6.6 le protocole
-<strong>smart http</strong>. Ce dernier gère bien mieux le protocole http sur lequel Google
-Code s'appuie <strong>massivement</strong>. Ce qui a ouvert la voie, il <em>suffisait</em> (hum)
-ensuite de modifier Git pour gérer l'infrastructure Google. Si cela vous
-intéresse, jeter un oeil sur la video
-<a href="http://www.youtube.com/watch?v=ri796Hx8las">Google I/O 2009 - Mercurial on BigTable</a>
-qui explique cette même modification avec Mercurial. Une vidéo similaire
-devrait sortir pour Git (chouette !).</p>
-<p>Chose étonnante, d'après Dave Borowitz, Google code n'utilise pas JGit mais
-<a href="http://www.samba.org/~jelmer/dulwich/">Dulwich</a>, codé en Python. Je suis
-curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
-n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
-pas en dire plus).</p>
-<h2>L'argument marketing</h2>
-<p>La montée en puissance de GitHub ne fait aucun doute, cet
-<a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php">article</a>
-le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
-GitHub représente le total des commits de Sourceforge, Google Code et
-CodePlex <strong>réunis</strong>. Même si ce chiffre est à prendre avec de grosses pincettes,
-les DVCS poussent au commit unitaire donc à en produire bien plus, c'est
-un chiffre intéressant (le nombre de lignes de code serait lui significatif).</p>
-<p>Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
-entendre que ces communautés ont eux aussi (au moins partiellement) basculées
-sur GitHub (après les communautés Ruby, Javascript et Python).</p>
-<h2>Pour conclure</h2>
-<p>Redmonk dit que <strong>GitHub est le nouveau centre de gravité</strong>, les chiffres le
-prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
-poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
-moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
-augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

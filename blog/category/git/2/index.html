@@ -65,6 +65,53 @@
           
   
 <div class="blog_post">
+  <a name="le-commit-initial-vide"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/07/31/le-commit-initial-vide" rel="bookmark" title="Permanent Link to Le commit initial vide">Le commit initial vide</a></h2>
+  <p class="related"><strong>31/07/2011 04:13 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/astuce'>astuce</a>
+ | <a href="http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
+les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
+initial vide avec la commande :</p>
+<pre><code>$git commit --allow-empty -m "Initial commit."
+</code></pre>
+<p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
+simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
+<p>Examinons deux exemples.</p>
+<h2>rebase -i</h2>
+<p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
+mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
+c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
+je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
+contenu est accessible.</p>
+<h2>Travailler directement dans une branche</h2>
+<p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
+des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
+merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
+choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
+raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
+disparait de lui-même : mon premier commit de contenu (le deuxième dans le
+graphe donc) sera lui, dans une branche.</p>
+<h2>Conclusion</h2>
+<p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
+graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
+vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
+Voir des mois après :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/31/le-commit-initial-vide#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-difference-entre-hg-et-git"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/07/18/la-difference-entre-hg-et-git" rel="bookmark" title="Permanent Link to La différence entre Hg et Git">La différence entre Hg et Git</a></h2>
   <p class="related"><strong>18/07/2011 12:40 AM</strong> | categories: 
@@ -603,84 +650,6 @@ par Junio.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.3-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.5.2-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/06/13/git-1.7.5.2-publiee" rel="bookmark" title="Permanent Link to Git 1.7.5.2 publiée">Git 1.7.5.2 publiée</a></h2>
-  <p class="related"><strong>13/06/2011 02:05 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>"git add -p" did not work correctly when a hunk is split and then
-  one of them was given to the editor.</p>
-</li>
-<li>
-<p>"git add -u" did not resolve a conflict where our history deleted and
-  their history modified the same file, and the working tree resolved to
-  keep a file.</p>
-</li>
-<li>
-<p>"git cvsimport" did not know that CVSNT stores its password file in a
-  location different from the traditional CVS.</p>
-</li>
-<li>
-<p>"git diff-files" did not show the mode information from the working
-  tree side of an unmerged path correctly.</p>
-</li>
-<li>
-<p>"git diff -M --cached" used to use unmerged path as a possible rename
-  source candidate, which made no sense.</p>
-</li>
-<li>
-<p>The option name parser in "git fast-import" used prefix matches for
-  some options where it shouldn't, and accepted non-existent options,
-  e.g. "--relative-marksmith" or "--forceps".</p>
-</li>
-<li>
-<p>"git format-patch" did not quote RFC822 special characters in the
-  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
-  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
-</li>
-<li>
-<p>"git format-patch" when run with "--quiet" option used to produce a
-  nonsense result that consists of alternating empty output.</p>
-</li>
-<li>
-<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
-  variables did not override the fallback default merge.<option>
-  configuration variables such as merge.ff, merge.log, etc.</p>
-</li>
-<li>
-<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
-  handling a "both sides added, differently" conflict.</p>
-</li>
-<li>
-<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
-</li>
-<li>
-<p>"git-p4" (in contrib) used a wrong base image while merge a file that
-  was added on both branches differently.</p>
-</li>
-<li>
-<p>"git rebase -i -p" failed to preserve the history when there is a
-  redundant merge created with the --no-ff option.</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/1">« Articles suivants</a>
   --  
  <a href="/blog/category/git/3">Articles précédents »</a>
@@ -704,14 +673,14 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
+    <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
     <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
-    <li><a href="/blog/2012/01/26/la-commande-diff">La commande diff</a></li>
-    <li><a href="/blog/2012/01/10/retour-sur-un-an-de-gitfr">Retour sur un an de gitfr</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -725,7 +694,7 @@ par Junio.</p>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (55)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (56)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -739,7 +708,7 @@ par Junio.</p>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (29)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (30)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -748,7 +717,7 @@ par Junio.</p>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (20)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (21)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -757,6 +726,7 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>
