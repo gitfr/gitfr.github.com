@@ -7,12 +7,187 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-07-01T14:28:23Z</updated>
+  <updated>2012-08-24T00:56:15Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.12 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee" />
+    <id>http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee</id>
+    <updated>2012-08-24T02:54:00Z</updated>
+    <published>2012-08-24T02:54:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.12 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee"><![CDATA[<p>Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :</p>
+<ul>
+<li>
+<p>Une option <code>--root</code> à rebase pour modifier aussi le commit root.</p>
+</li>
+<li>
+<p>Une option <code>-x</code> à rebase pour éxécuter une commande à chaque
+  application d'un patch.</p>
+</li>
+<li>
+<p>On peut visualiser la documentation en HTML avec <code>git help -w $cmd</code></p>
+</li>
+<li>
+<p><code>git status</code> est plus précis quand le dépôt est dans un état
+  intermédiaire (lors d'un merge, un rebase, etc).</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>Git can be told to normalize pathnames it read from readdir(3) and
+   all arguments it got from the command line into precomposed UTF-8
+   (assuming that they come as decomposed UTF-8), in order to work
+   around issues on Mac OS.</li>
+</ul>
+<p>I think there still are other places that need conversion
+   (e.g. paths that are read from stdin for some commands), but this
+   should be a good first step in the right direction.</p>
+<ul>
+<li>
+<p>Per-user $HOME/.gitconfig file can optionally be stored in
+   $HOME/.config/git/config instead, which is in line with XDG.</p>
+</li>
+<li>
+<p>The value of core.attributesfile and core.excludesfile default to
+   $HOME/.config/git/attributes and $HOME/.config/git/ignore respectively
+   when these files exist.</p>
+</li>
+<li>
+<p>Logic to disambiguate abbreviated object names have been taught to
+   take advantage of object types that are expected in the context,
+   e.g. XXXXXX in the "git describe" output v1.2.3-gXXXXXX must be a
+   commit object, not a blob nor a tree.  This will help us prolong
+   the lifetime of abbreviated object names.</p>
+</li>
+<li>
+<p>"git apply" learned to wiggle the base version and perform three-way
+   merge when a patch does not exactly apply to the version you have.</p>
+</li>
+<li>
+<p>Scripted Porcelain writers now have access to the credential API via
+   the "git credential" plumbing command.</p>
+</li>
+<li>
+<p>"git help" used to always default to "man" format even on platforms
+   where "man" viewer is not widely available.</p>
+</li>
+<li>
+<p>"git clone --local $path" started its life as an experiment to
+   optionally use link/copy when cloning a repository on the disk, but
+   we didn't deprecate it after we made the option a no-op to always
+   use the optimization.  The command learned "--no-local" option to
+   turn this off, as a more explicit alternative over use of file://
+   URL.</p>
+</li>
+<li>
+<p>"git fetch" and friends used to say "remote side hung up
+   unexpectedly" when they failed to get response they expect from the
+   other side, but one common reason why they don't get expected
+   response is that the remote repository does not exist or cannot be
+   read. The error message in this case was updated to give better
+   hints to the user.</p>
+</li>
+<li>
+<p>"git help -w $cmd" can show HTML version of documentation for
+   "git-$cmd" by setting help.htmlpath to somewhere other than the
+   default location where the build procedure installs them locally;
+   the variable can even point at a http:// URL.</p>
+</li>
+<li>
+<p>"git rebase [-i] --root $tip" can now be used to rewrite all the
+   history leading to "$tip" down to the root commit.</p>
+</li>
+<li>
+<p>"git rebase -i" learned "-x <cmd>" to insert "exec <cmd>" after
+   each commit in the resulting history.</p>
+</li>
+<li>
+<p>"git status" gives finer classification to various states of paths
+   in conflicted state and offer advice messages in its output.</p>
+</li>
+<li>
+<p>"git submodule" learned to deal with nested submodule structure
+   where a module is contained within a module whose origin is
+   specified as a relative URL to its superproject's origin.</p>
+</li>
+<li>
+<p>A rather heavy-ish "git completion" script has been split to create
+   a separate "git prompting" script, to help lazy-autoloading of the
+   completion part while making prompting part always available.</p>
+</li>
+<li>
+<p>"gitweb" pays attention to various forms of credits that are
+   similar to "Signed-off-by:" lines in the commit objects and
+   highlights them accordingly.</p>
+</li>
+<li>
+<p>"mediawiki" remote helper (in contrib/) learned to handle file
+   attachments.</p>
+</li>
+<li>
+<p>"git p4" now uses "Jobs:" and "p4 move" when appropriate.</p>
+</li>
+<li>
+<p>vcs-svn has been updated to clean-up compilation, lift 32-bit
+   limitations, etc.</p>
+</li>
+<li>
+<p>Some tests showed false failures caused by a bug in ecryptofs.</p>
+</li>
+<li>
+<p>We no longer use AsciiDoc7 syntax in our documentation and favor a
+   more modern style.</p>
+</li>
+<li>
+<p>"git am --rebasing" codepath was taught to grab authorship, log
+   message and the patch text directly out of existing commits.  This
+   will help rebasing commits that have confusing "diff" output in
+   their log messages.</p>
+</li>
+<li>
+<p>"git index-pack" and "git pack-objects" use streaming API to read
+   from the object store to avoid having to hold a large blob object
+   in-core while they are doing their thing.</p>
+</li>
+<li>
+<p>Code to match paths with exclude patterns learned to avoid calling
+   fnmatch() by comparing fixed leading substring literally when
+   possible.</p>
+</li>
+<li>
+<p>"git log -n 1 -- rarely-touched-path" was spending unnecessary
+   cycles after showing the first change to find the next one, only to
+   discard it.</p>
+</li>
+<li>
+<p>"git svn" got a large-looking code reorganization at the last
+   minute before the code freeze.</p>
+</li>
+<li>
+<p>"git submodule add" was confused when the superproject did not have
+   its repository in its usual place in the working tree and GIT_DIR
+   and GIT_WORK_TREE was used to access it.</p>
+</li>
+<li>
+<p>"git commit --amend" let the user edit the log message and then died
+   when the human-readable committer name was given insufficiently by
+   getpwent(3).</p>
+</li>
+</ul>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -1471,79 +1646,6 @@ par Junio.</p>
 <p>Compressed tarball gitweb generates used to be made with the timestamp
   of the tarball generation; this was bad because snapshot from the same
   tree should result in a same tarball.</p>
-</li>
-</ul>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Git 1.7.5.2 publiée]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee" />
-    <id>http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee</id>
-    <updated>2011-06-13T02:05:00Z</updated>
-    <published>2011-06-13T02:05:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="release" />
-    <category scheme="http://www.gitfr.net/blog" term="git" />
-    <summary type="html"><![CDATA[Git 1.7.5.2 publiée]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/06/13/git-1.7.5.2-publiee"><![CDATA[<p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>"git add -p" did not work correctly when a hunk is split and then
-  one of them was given to the editor.</p>
-</li>
-<li>
-<p>"git add -u" did not resolve a conflict where our history deleted and
-  their history modified the same file, and the working tree resolved to
-  keep a file.</p>
-</li>
-<li>
-<p>"git cvsimport" did not know that CVSNT stores its password file in a
-  location different from the traditional CVS.</p>
-</li>
-<li>
-<p>"git diff-files" did not show the mode information from the working
-  tree side of an unmerged path correctly.</p>
-</li>
-<li>
-<p>"git diff -M --cached" used to use unmerged path as a possible rename
-  source candidate, which made no sense.</p>
-</li>
-<li>
-<p>The option name parser in "git fast-import" used prefix matches for
-  some options where it shouldn't, and accepted non-existent options,
-  e.g. "--relative-marksmith" or "--forceps".</p>
-</li>
-<li>
-<p>"git format-patch" did not quote RFC822 special characters in the
-  email address (e.g From: Junio C. Hamano <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>, not
-  From: "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>).</p>
-</li>
-<li>
-<p>"git format-patch" when run with "--quiet" option used to produce a
-  nonsense result that consists of alternating empty output.</p>
-</li>
-<li>
-<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
-  variables did not override the fallback default merge.<option>
-  configuration variables such as merge.ff, merge.log, etc.</p>
-</li>
-<li>
-<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
-  handling a "both sides added, differently" conflict.</p>
-</li>
-<li>
-<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
-</li>
-<li>
-<p>"git-p4" (in contrib) used a wrong base image while merge a file that
-  was added on both branches differently.</p>
-</li>
-<li>
-<p>"git rebase -i -p" failed to preserve the history when there is a
-  redundant merge created with the --no-ff option.</p>
 </li>
 </ul>]]></content>
   </entry>

@@ -65,6 +65,34 @@
           
   
 <div class="blog_post">
+  <a name="des-exemples-de-fichiers-gitignore"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/11/10/des-exemples-de-fichiers-gitignore" rel="bookmark" title="Permanent Link to Des exemples de fichiers gitignore">Des exemples de fichiers gitignore</a></h2>
+  <p class="related"><strong>10/11/2010 06:50 PM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
+ | <a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Le projet <a href="http://github.com/github/gitignore">gitignore</a>, lancé par <em>GitHub</em>, est une collection de fichiers <strong>gitignore</strong>. Vous trouverez des exemples pour :</p>
+<ul>
+<li>des langages (<strong>Python</strong>, <strong>Ruby</strong>, <strong>Scala</strong>...)</li>
+<li>des frameworks (<strong>Symphony</strong>,  <strong>Rails</strong>...)</li>
+<li>des éditeurs (<strong>Vim</strong>, <strong>Emacs</strong>, <strong>Eclipse</strong>...)</li>
+<li>des systèmes d'exploitation (<strong>Linux</strong>, <strong>Windows</strong>...)</li>
+</ul>
+<p><strong>Note</strong> : ces deux dernières catégories se trouvent dans le répertoire <em>Global</em>.</p>
+<p>Pour plus d'informations, (re)lisez le billet sur <a href="http://blog.gitfr.net/post/1475460682/eviter-de-commiter-des-fichiers-indesirables">gitignore</a>.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="ameliorer-sa-productivite-avec-un-beau-shell"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/11/06/ameliorer-sa-productivite-avec-un-beau-shell" rel="bookmark" title="Permanent Link to Améliorer sa productivité avec un beau shell">Améliorer sa productivité avec un beau shell</a></h2>
   <p class="related"><strong>06/11/2010 04:15 AM</strong> | categories: 
@@ -618,45 +646,9 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/01/installer-git-sur-os-x#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="installer-git-sur-ubuntu"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/10/30/installer-git-sur-ubuntu" rel="bookmark" title="Permanent Link to Installer git sur Ubuntu">Installer git sur Ubuntu</a></h2>
-  <p class="related"><strong>30/10/2010 07:56 PM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/installation'>installation</a>, <a href='/blog/category/ubuntu'>ubuntu</a>
- | <a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
-<blockquote>
-<p>$ sudo aptitude install git</p>
-</blockquote>
-<p>Pour les utilisateurs qui utilisent Debian ou Ubuntu depuis quelques temps, vous pouvez constater que le paquet s'appelle maintenant <em>git</em> et non <em>git-core</em> (pour le petite histoire, git était le paquet <em>GNU Interactive Tools</em>, renommé depuis <em>gnuit</em>). Mais le problème avec une installation du paquet officiel est que vous disposerez d'une version plus ou moins ancienne (la version disponible au moment du <em>freeze</em> de la distribution), Ubuntu ne mettant pas à jour git avec les dépots <em>backports</em>, <em>updates</em> ou <em>proposed</em>. Personnellement, j'aime disposer de la dernière version, les développeurs git améliorant régulièrement le <em>frontend</em>.</p>
-<p>C'est la qu'interviennent les <strong>PPA</strong>, pour <em>Personal Package Archives</em>. C'est un dépôt <strong>non officiel</strong> qu'il est possible d'activer sur <em>Launchpad</em> quand vous créé un projet sur cette plateforme. C'est justement sur Launchpad que les mainteneurs officiels Ubuntu du paquet git travaillent ! Et comme ils sont gentils, il existent justement un <a href="https://launchpad.net/~git-core/+archive/ppa">PPA git</a>. Voici les commandes pour utiliser ce PPA sur Ubuntu :</p>
-<blockquote>
-<p>$ sudo add-apt-repository ppa:git-core/ppa</p>
-</blockquote>
-<p>Cette commande ajoute le PPA dans vos dépôts accessibles (sources.list). C'est équivalent à mettre manuellement un fichier de configuration dans le répertoire <em>/etc/apt/sources.list.d/</em> et d'ajouter la clé GPG (voir la section <em>Technical details about this PPA</em> pour plus de détails).</p>
-<blockquote>
-<p>$ sudo aptitude update</p>
-</blockquote>
-<p>Mise à jour des paquets disponibles.</p>
-<blockquote>
-<p>$ sudo aptitude install git</p>
-</blockquote>
-<p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
-<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/10/30/installer-git-sur-ubuntu#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/6">« Articles suivants</a>
+  --  
+ <a href="/blog/category/git/8">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
         
@@ -677,6 +669,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
     <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
@@ -684,7 +677,6 @@
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
-    <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -698,7 +690,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (56)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -721,7 +713,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -730,6 +722,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>

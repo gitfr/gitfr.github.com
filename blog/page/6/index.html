@@ -65,6 +65,31 @@
           
   
 <div class="blog_post">
+  <a name="pull-request-en-3-clicks"></a>
+  <h2 class="blog_post_title"><a href="/blog/2011/04/27/pull-request-en-3-clicks" rel="bookmark" title="Permanent Link to Pull request en 3 clicks">Pull request en 3 clicks</a></h2>
+  <p class="related"><strong>27/04/2011 12:58 AM</strong> | categories: 
+
+<a href='/blog/category/github'>github</a>
+ | <a href="http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>GitHub vient de sortir le pendant du <a href="http://blog.gitfr.net/post/4930259268/merge-en-un-click">merge en 1 click</a>. Alors que l'amélioration précédente était à destination du mainteneur, celle ci est à destination du collaborateur. Ce dernier peut maintenant modifier un fichier d'un dépôt quelconque (sans droit d'écriture donc) en passant par le site web :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7o4sTe81qdkaiq.png" /></p>
+<p>Et proposer un <em>pull request</em> dans la foulée :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_lka7qqRc3L1qdkaiq.png" /></p>
+<p>Cela veut dire qu'une modification peut être faites et proposer en... 3 clicks ! Plus d'excuse pour proposer cette petite correction de typo que vous avez vu, ou cette documentation pas très claire. </p>
+<p><strong>Note</strong> : bien sur, rien de magique la dedans. GitHub <strong>fork</strong> le projet, applique votre modification (commit), et vous ouvre la fenêtre du <em>pull request</em>. Pas magique certes, mais bien pratique :).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/27/pull-request-en-3-clicks#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="merge-en-un-click"></a>
   <h2 class="blog_post_title"><a href="/blog/2011/04/25/merge-en-un-click" rel="bookmark" title="Permanent Link to Merge en un click">Merge en un click</a></h2>
   <p class="related"><strong>25/04/2011 07:03 PM</strong> | categories: 
@@ -484,67 +509,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/23/la-commande-rm#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="la-commande-commit"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/04/23/la-commande-commit" rel="bookmark" title="Permanent Link to La commande commit">La commande commit</a></h2>
-  <p class="related"><strong>23/04/2011 02:17 AM</strong> | categories: 
-
-<a href='/blog/category/git-commit'>git-commit</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/04/23/la-commande-commit#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Maintenant que nous savons construire notre commit temporaire (l'index), nous allons voir comment le transformer en commit définitif. Il est intéressant de noter que vous pouvez <strong>shinter</strong> la commande <code>add</code> de plusieurs façons :</p>
-<ul>
-<li>
-<p>En désignant le(s) fichier(s) directement : <code>git commit monfichier</code></p>
-</li>
-<li>
-<p>En mode interactif (en fait appelle son équivalent dans <code>git add</code>) : <code>git commit -i</code></p>
-</li>
-<li>
-<p>En prenant tous les fichiers déja tracés, avec l'option <code>git commit -a</code></p>
-</li>
-</ul>
-<p>Comme j'ai pu le dire dans mes présentations, je vous conseille fortement d'utiliser l'index, même si cela peut sembler inintéressant ou futile au premier abord (vous allez surement pensez cela au début).</p>
-<p>La commande <code>commit</code> dispose de plusieurs options pour vous simplfier la vie. Comme spécifier l'auteur (<code>--author=</code>), la date (<code>--date=</code>), le contenu d'un fichier comme message de commit (<code>-F</code>), signer le message (<code>-s</code>), spécifier le message en ligne de commande (<code>-m</code>)... Bref, rien de bien compliqué et je vous encourage, comme d'habitude, à lire le manuel (<code>man git commit</code>). Mais je vous propose néanmoins de nous attarder sur 2 options fort intéressantes.</p>
-<h2>Commencer par un commit vide</h2>
-<p>Quand je créé un dépôt, je commence toujours pas un commit vide (option <code>--allow-empty</code>) pour avoir  un commit de <strong>référence</strong>. A quoi cela peut il servir ?</p>
-<ul>
-<li>
-<p>Si je travaille directement dans <em>master</em>, je peux revoir l'ensemble des commits (par un <code>rebase -i</code>, article à venir), ce qui n'est pas possible si mon premier commit contient des données.</p>
-</li>
-<li>
-<p>Si je travaill dans une branche, je peux faire un merge (autre article à venir) en modélisant le merge dans master. Ce qui n'est pas possible si je n'ai pas de commit uniquement dans master.</p>
-</li>
-</ul>
-<p>Je trouve que c'est une très bonne pratique que je vous conseille. Pour ma part, j'appelle  toujours ce commit «Initial commit».</p>
-<h2>Modifier son dernier commit</h2>
-<p>Malgré l'index, il m'arrive souvent de me rendre compte d'une erreur aprés coup. C'est la qu'intervient l'option <code>--amend</code>, qui écrase le dernier commit par celui que vous êtes en train de faire. Vraiment pratique ! On voici ici tout l'intérêt de ne <strong>pas</strong> pousser en permanence ses commits sur le serveur, mais d'attendre d'avoir fini le travail. Ce qui permet de pousser un ensemble de commits cohérents.</p>
-<h2>De l'art du bon message</h2>
-<p>Un petit mot pour rappeler l'importance de bien choisir son message de commit. Git possède une convention : la 1ere ligne est le résumé, suivi d'un saut de ligne, puis du contenu plus exhaustif du commit. Au travail nous avons une autre convention :</p>
-<ul>
-<li>Chaque ligne commence par le type de modification : new, fix, chg</li>
-<li>Le signe :</li>
-<li>Puis la cible du message : usr (utilisateur), dev (développeur), pkg (packageur)</li>
-<li>Le signe :</li>
-<li>Et enfin le message</li>
-</ul>
-<p>Un exemple :</p>
-<blockquote>
-<p>chg: pkg: remove sact.nevrax.skin dependency</p>
-</blockquote>
-<p>Et nous avons autant de ligne que nécessaire, ce qui permet de voir rapidement si notre commit est <strong>unitaire</strong> : si des lignes n'ont rien à voir entre elles, on le voit facilement. Cela nous pousse dans cette bonne pratique. Nous ne suivons donc pas la convention Git, mais cela est adapté à nos besoins (rapidité d'écriture, simplicité de relecture, commit unitaire) et que nous tous dans la même pièce, avec <em>daily meeting</em> et revue de code. Sur un projet Libre, il peut être intéressant d'avoir un descriptif long du commit.</p>
-<p>De plus, un outil transforme automatiquement les messages en changelog (un exemple <a href="http://pypi.python.org/pypi/sact.epoch/1.0.1">ici</a>, ce qui est bien utile.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/04/23/la-commande-commit#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../5">« Articles suivants</a>
   --  
  <a href="../7">Articles précédents »</a>
@@ -568,6 +532,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
     <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
@@ -575,7 +540,6 @@
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
     <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
     <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
-    <li><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon">Présentation et atelier Git le 20/02 à Lyon</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -589,7 +553,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (56)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -612,7 +576,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (21)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (22)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -621,6 +585,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>

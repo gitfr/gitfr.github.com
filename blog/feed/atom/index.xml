@@ -7,12 +7,187 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-07-01T14:28:23Z</updated>
+  <updated>2012-08-24T00:56:15Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Git 1.7.12 publiée]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee" />
+    <id>http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee</id>
+    <updated>2012-08-24T02:54:00Z</updated>
+    <published>2012-08-24T02:54:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="release" />
+    <category scheme="http://www.gitfr.net/blog" term="git" />
+    <summary type="html"><![CDATA[Git 1.7.12 publiée]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee"><![CDATA[<p>Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :</p>
+<ul>
+<li>
+<p>Une option <code>--root</code> à rebase pour modifier aussi le commit root.</p>
+</li>
+<li>
+<p>Une option <code>-x</code> à rebase pour éxécuter une commande à chaque
+  application d'un patch.</p>
+</li>
+<li>
+<p>On peut visualiser la documentation en HTML avec <code>git help -w $cmd</code></p>
+</li>
+<li>
+<p><code>git status</code> est plus précis quand le dépôt est dans un état
+  intermédiaire (lors d'un merge, un rebase, etc).</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>Git can be told to normalize pathnames it read from readdir(3) and
+   all arguments it got from the command line into precomposed UTF-8
+   (assuming that they come as decomposed UTF-8), in order to work
+   around issues on Mac OS.</li>
+</ul>
+<p>I think there still are other places that need conversion
+   (e.g. paths that are read from stdin for some commands), but this
+   should be a good first step in the right direction.</p>
+<ul>
+<li>
+<p>Per-user $HOME/.gitconfig file can optionally be stored in
+   $HOME/.config/git/config instead, which is in line with XDG.</p>
+</li>
+<li>
+<p>The value of core.attributesfile and core.excludesfile default to
+   $HOME/.config/git/attributes and $HOME/.config/git/ignore respectively
+   when these files exist.</p>
+</li>
+<li>
+<p>Logic to disambiguate abbreviated object names have been taught to
+   take advantage of object types that are expected in the context,
+   e.g. XXXXXX in the "git describe" output v1.2.3-gXXXXXX must be a
+   commit object, not a blob nor a tree.  This will help us prolong
+   the lifetime of abbreviated object names.</p>
+</li>
+<li>
+<p>"git apply" learned to wiggle the base version and perform three-way
+   merge when a patch does not exactly apply to the version you have.</p>
+</li>
+<li>
+<p>Scripted Porcelain writers now have access to the credential API via
+   the "git credential" plumbing command.</p>
+</li>
+<li>
+<p>"git help" used to always default to "man" format even on platforms
+   where "man" viewer is not widely available.</p>
+</li>
+<li>
+<p>"git clone --local $path" started its life as an experiment to
+   optionally use link/copy when cloning a repository on the disk, but
+   we didn't deprecate it after we made the option a no-op to always
+   use the optimization.  The command learned "--no-local" option to
+   turn this off, as a more explicit alternative over use of file://
+   URL.</p>
+</li>
+<li>
+<p>"git fetch" and friends used to say "remote side hung up
+   unexpectedly" when they failed to get response they expect from the
+   other side, but one common reason why they don't get expected
+   response is that the remote repository does not exist or cannot be
+   read. The error message in this case was updated to give better
+   hints to the user.</p>
+</li>
+<li>
+<p>"git help -w $cmd" can show HTML version of documentation for
+   "git-$cmd" by setting help.htmlpath to somewhere other than the
+   default location where the build procedure installs them locally;
+   the variable can even point at a http:// URL.</p>
+</li>
+<li>
+<p>"git rebase [-i] --root $tip" can now be used to rewrite all the
+   history leading to "$tip" down to the root commit.</p>
+</li>
+<li>
+<p>"git rebase -i" learned "-x <cmd>" to insert "exec <cmd>" after
+   each commit in the resulting history.</p>
+</li>
+<li>
+<p>"git status" gives finer classification to various states of paths
+   in conflicted state and offer advice messages in its output.</p>
+</li>
+<li>
+<p>"git submodule" learned to deal with nested submodule structure
+   where a module is contained within a module whose origin is
+   specified as a relative URL to its superproject's origin.</p>
+</li>
+<li>
+<p>A rather heavy-ish "git completion" script has been split to create
+   a separate "git prompting" script, to help lazy-autoloading of the
+   completion part while making prompting part always available.</p>
+</li>
+<li>
+<p>"gitweb" pays attention to various forms of credits that are
+   similar to "Signed-off-by:" lines in the commit objects and
+   highlights them accordingly.</p>
+</li>
+<li>
+<p>"mediawiki" remote helper (in contrib/) learned to handle file
+   attachments.</p>
+</li>
+<li>
+<p>"git p4" now uses "Jobs:" and "p4 move" when appropriate.</p>
+</li>
+<li>
+<p>vcs-svn has been updated to clean-up compilation, lift 32-bit
+   limitations, etc.</p>
+</li>
+<li>
+<p>Some tests showed false failures caused by a bug in ecryptofs.</p>
+</li>
+<li>
+<p>We no longer use AsciiDoc7 syntax in our documentation and favor a
+   more modern style.</p>
+</li>
+<li>
+<p>"git am --rebasing" codepath was taught to grab authorship, log
+   message and the patch text directly out of existing commits.  This
+   will help rebasing commits that have confusing "diff" output in
+   their log messages.</p>
+</li>
+<li>
+<p>"git index-pack" and "git pack-objects" use streaming API to read
+   from the object store to avoid having to hold a large blob object
+   in-core while they are doing their thing.</p>
+</li>
+<li>
+<p>Code to match paths with exclude patterns learned to avoid calling
+   fnmatch() by comparing fixed leading substring literally when
+   possible.</p>
+</li>
+<li>
+<p>"git log -n 1 -- rarely-touched-path" was spending unnecessary
+   cycles after showing the first change to find the next one, only to
+   discard it.</p>
+</li>
+<li>
+<p>"git svn" got a large-looking code reorganization at the last
+   minute before the code freeze.</p>
+</li>
+<li>
+<p>"git submodule add" was confused when the superproject did not have
+   its repository in its usual place in the working tree and GIT_DIR
+   and GIT_WORK_TREE was used to access it.</p>
+</li>
+<li>
+<p>"git commit --amend" let the user edit the log message and then died
+   when the human-readable committer name was given insufficiently by
+   getpwent(3).</p>
+</li>
+</ul>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -953,82 +1128,5 @@ uniquement les fichiers impactés.</p>
 commande tellement Git regorge d'options (notamment pour aider au scripting).
 Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
 <code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Retour sur un an de gitfr]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr" />
-    <id>http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr</id>
-    <updated>2012-01-10T20:54:00Z</updated>
-    <published>2012-01-10T20:54:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Retour sur un an de gitfr]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2012/01/10/retour-sur-un-an-de-gitfr"><![CDATA[<p>Cela fait maintenant un peu plus d'un an que #gitfr existe (1ere conférence le
-24 novembre 2010), il est donc temps de faire un petit point. D'abord quelques
-chiffres :</p>
-<ul>
-<li>quelques centaines d'heures dépensées</li>
-<li>13 conférences</li>
-<li>~800 auditeurs aux conférences</li>
-<li>~4000 visulisations sur parleys.com</li>
-<li>86 billets de blog</li>
-<li>plusieurs centaines de fotes d'ortografes</li>
-<li>6 ateliers</li>
-<li>~120 participants aux ateliers</li>
-<li>7 jours de congés utilisés</li>
-<li>0€ gagné</li>
-</ul>
-<p>Alors que l'objectif initial était de faire des ateliers, c'est précisemment
-l'activité la plus faible. Je vois plusieurs raisons :</p>
-<ul>
-<li>
-<p>Tout d'abord, participer à un atelier demande à comprendre un minimum Git. Il
-  me semble inutile d'organiser un atelier sans que les participants soient
-  d'abord conviés à la conférence.</p>
-</li>
-<li>
-<p>Une conférence permet de faire venir des dizaines ou centaines de personnes,
-  l'atelier est lui difficile à faire à plus de 30.</p>
-</li>
-<li>
-<p>Un atelier est bien plus compliqué a organiser.</p>
-</li>
-<li>
-<p>On m'a plus sollicité pour des conférences, tout simplement. Je n'ai plus
-  le temps pour trouver des salles, je m'adapte aux demandes.</p>
-</li>
-</ul>
-<p>De plus, j'avoue qu'après des dizaines d'heures dépensées pour monter une
-conférence de qualité, ma motivation et mon énergie pour l'atelir avaient
-diminués. Je dirais même que je redoutais un peu de faire des ateliers, car
-cela demande bien plus de préparation. Avec 6 ateliers, et malgré une qualité
-insuffisante à mes yeux sur les premiers, cette peur s'est estompée.</p>
-<p>J'avoue aussi que l'activité du blog est assez faible, car je pense trop
-souvent à faire des billets trop longs. Je vais donc tenter à l'avenir des
-billets courts, même si cela nécessite de faire plusieurs billets sur le même
-sujet. Et bien sûr, cela aussi du temps et de l'énergie.</p>
-<p>Vous pouvez constater que #gitfr est une activité purement bénévole. Non
-seulement, je n'ai pas gagné d'argent avec mais j'ai dépensé 7 jours de congés
-payés pour les déplacements en province. C'est à ce titre que je demande au
-minimum le remboursement des frais et une gratuité de l'évènement pour le
-public : je me déplace uniquement si n'importe qui peut venir assister aux
-conférences et aux ateliers. Que je ne gagne pas d'argent soit, mais je ne suis
-pas là pour enrichir ou former une société ! #gitfr est et restera une
-activité bénévole et gratuite, ce n'est pas dans son ADN de proposer des
-ateliers payants (il faut pour cela se tourner vers des formateurs, je pense
-d'ailleurs en faire une liste si cela est utile). Ceux qui me connaissent
-savent parfaitement mon dégout pour les gens qui cachent leurs activités pro
-sous des soit-disantes activités associatives. La séparation doit être nette et
-étanche. Si vous souhaitez une conférence ou un atelier Git, n'hésitez donc pas
-à demander, #gitfr répondra présent si les conditions le permet !</p>
-<p>Et pour finir sur une note positive, je crois que la majorité des participants
-ont appréciés les conférences et comprennent maintenant l'avantage d'utiliser
-Git (et globalement les DVCS). C'est finalement le seul objectif de #gitfr :
-montrer aux développeurs et aux managers qu'ils ont tout à gagner à revoir
-leurs pratiques de gestion de source. Les DVCS ne sont pas l'avenir, ils sont
-le présent. </p>]]></content>
   </entry>
 </feed>
