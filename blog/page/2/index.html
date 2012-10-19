@@ -65,6 +65,201 @@
           
   
 <div class="blog_post">
+  <a name="presentation-git-le-13-02-a-montpellier"></a>
+  <h2 class="blog_post_title"><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier" rel="bookmark" title="Permanent Link to Présentation Git le 13/02 à Montpellier">Présentation Git le 13/02 à Montpellier</a></h2>
+  <p class="related"><strong>01/02/2012 12:30 AM</strong> | categories: 
+
+<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
+ | <a href="http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur d'une présentation Git ;).</p>
+<p>C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur <a href="https://www.eventbrite.com/event/2870566943?nomo=1">cette page</a>.</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/02/01/presentation-git-le-13-02-a-montpellier#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
+  <a name="git-1.7.9-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2012/01/28/git-1.7.9-publiee" rel="bookmark" title="Permanent Link to Git 1.7.9 publiée">Git 1.7.9 publiée</a></h2>
+  <p class="related"><strong>28/01/2012 09:13 PM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2012/01/28/git-1.7.9-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>La version 1.7.9 est sortie le 27 janvier avec plusieurs évolutions
+intéressantes : </p>
+<ul>
+<li>
+<p>Un meilleur support des gros fichiers (Git n'étant pas réputé pour ça).</p>
+</li>
+<li>
+<p>La signature des commits, qui fait suite au piratage de la machine qui 
+  héberge le dépôt Git du projet Linux de Linus Torvalds.</p>
+</li>
+<li>
+<p>L'internationalisation est maintenant activée (honte à moi, toujours pas
+  démarré le projet de traduction en Français).</p>
+</li>
+<li>
+<p>La possibilité d'ajouter une description à une branche.</p>
+</li>
+<li>
+<p>L'option <code>--no-edit</code> quand on amende un commit. </p>
+</li>
+</ul>
+<p>Je vous laisse comme d'habitude lire le changelog mais je trouve cette version
+bien excitente ! J'attends la mise à jour sur ma machine pour faire quelques
+tests.</p>
+<h2>Le changelog</h2>
+<ul>
+<li>
+<p>gitk updates accumulated since early 2011.</p>
+</li>
+<li>
+<p>git-gui updated to 0.16.0.</p>
+</li>
+<li>
+<p>git-p4 (in contrib/) updates.</p>
+</li>
+<li>
+<p>Git uses gettext to translate its most common interface messages
+  into the user's language if translations are available and the
+  locale is appropriately set. Distributors can drop new PO files
+  in po/ to add new translations.</p>
+</li>
+<li>
+<p>The code to handle username/password for HTTP transactions used in
+  "git push" &amp; "git fetch" learned to talk "credential API" to
+  external programs to cache or store them, to allow integration with
+  platform native keychain mechanisms.</p>
+</li>
+<li>
+<p>The input prompts in the terminal use our own getpass() replacement
+  when possible. HTTP transactions used to ask for the username without
+  echoing back what was typed, but with this change you will see it as
+  you type.</p>
+</li>
+<li>
+<p>The internals of "revert/cherry-pick" have been tweaked to prepare
+  building more generic "sequencer" on top of the implementation that
+  drives them.</p>
+</li>
+<li>
+<p>"git rev-parse FETCH_HEAD" after "git fetch" without specifying
+  what to fetch from the command line will now show the commit that
+  would be merged if the command were "git pull".</p>
+</li>
+<li>
+<p>"git add" learned to stream large files directly into a packfile
+  instead of writing them into individual loose object files.</p>
+</li>
+<li>
+<p>"git checkout -B <current branch> <elsewhere>" is a more intuitive
+  way to spell "git reset --keep <elsewhere>".</p>
+</li>
+<li>
+<p>"git checkout" and "git merge" learned "--no-overwrite-ignore" option
+  to tell Git that untracked and ignored files are not expendable.</p>
+</li>
+<li>
+<p>"git commit --amend" learned "--no-edit" option to say that the
+  user is amending the tree being recorded, without updating the
+  commit log message.</p>
+</li>
+<li>
+<p>"git commit" and "git reset" re-learned the optimization to prime
+  the cache-tree information in the index, which makes it faster to
+  write a tree object out after the index entries are updated.</p>
+</li>
+<li>
+<p>"git commit" detects and rejects an attempt to stuff NUL byte in
+  the commit log message.</p>
+</li>
+<li>
+<p>"git commit" learned "-S" to GPG-sign the commit; this can be shown
+  with the "--show-signature" option to "git log".</p>
+</li>
+<li>
+<p>fsck and prune are relatively lengthy operations that still go
+  silent while making the end-user wait. They learned to give progress
+  output like other slow operations.</p>
+</li>
+<li>
+<p>The set of built-in function-header patterns for various languages
+  knows MATLAB.</p>
+</li>
+<li>
+<p>"git log --format='<format>'" learned new %g[nNeE] specifiers to
+  show information from the reflog entries when walking the reflog
+  (i.e. with "-g").</p>
+</li>
+<li>
+<p>"git pull" can be used to fetch and merge an annotated/signed tag,
+  instead of the tip of a topic branch. The GPG signature from the
+  signed tag is recorded in the resulting merge commit for later
+  auditing.</p>
+</li>
+<li>
+<p>"git log" learned "--show-signature" option to show the signed tag
+  that was merged that is embedded in the merge commit. It also can
+  show the signature made on the commit with "git commit -S".</p>
+</li>
+<li>
+<p>"git branch --edit-description" can be used to add descriptive text
+  to explain what a topic branch is about.</p>
+</li>
+<li>
+<p>"git fmt-merge-msg" learned to take the branch description into
+  account when preparing a merge summary that "git merge" records
+  when merging a local branch.</p>
+</li>
+<li>
+<p>"git request-pull" has been updated to convey more information
+  useful for integrators to decide if a topic is worth merging and
+  what is pulled is indeed what the requestor asked to pull,
+  including:</p>
+</li>
+<li>
+<p>the tip of the branch being requested to be merged;</p>
+</li>
+<li>the branch description describing what the topic is about;</li>
+<li>
+<p>the contents of the annotated tag, when requesting to pull a tag.</p>
+</li>
+<li>
+<p>"git pull" learned to notice 'pull.rebase' configuration variable,
+   which serves as a global fallback for setting 'branch.<name>.rebase'
+   configuration variable per branch.</p>
+</li>
+<li>
+<p>"git tag" learned "--cleanup" option to control how the whitespaces
+   and empty lines in tag message are cleaned up.</p>
+</li>
+<li>
+<p>"gitweb" learned to show side-by-side diff.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/01/28/git-1.7.9-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="presentation-et-atelier-git-le-20-02-a-lyon"></a>
   <h2 class="blog_post_title"><a href="/blog/2012/01/26/presentation-et-atelier-git-le-20-02-a-lyon" rel="bookmark" title="Permanent Link to Présentation et atelier Git le 20/02 à Lyon">Présentation et atelier Git le 20/02 à Lyon</a></h2>
   <p class="related"><strong>26/01/2012 09:07 PM</strong> | categories: 
@@ -623,83 +818,6 @@ poste.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/12/01/presentation-et-atelier-git-le-15-12-a-lille#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="presentation-git-le-14-12-a-paris"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/12/01/presentation-git-le-14-12-a-paris" rel="bookmark" title="Permanent Link to Présentation Git le 14/12 à Paris">Présentation Git le 14/12 à Paris</a></h2>
-  <p class="related"><strong>01/12/2011 01:02 PM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/12/01/presentation-git-le-14-12-a-paris#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Avant dernière conférence de l'année 2011, organisé par l'association
-<a href="http://www.altnetfr.org/">alt.netFR</a>. Si vous êtes sur Paris, c'est votre
-dernière chance de me voir en live avant un bon bout de temps ! C'est Valtech
-qui accueille cette fois ci dans une grande salle pouvant accueillir plus de
-100 personnes.<br />
-</p>
-<p>L'inscription se fait sur cette <a href="http://www.eventbrite.com/event/2421871884">page</a>.</p>
-<p>Pour l'anectode, je suis depuis 16 ans un grand fan d'Unix et du Logiciel Libre
-et je déteste Windows. je crois que ça va basher plus fort que d'habitude ;).</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/12/01/presentation-git-le-14-12-a-paris#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="atelier-prive-hg-vs-git-le-03-12-a-paris"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris" rel="bookmark" title="Permanent Link to Atelier privé Hg vs Git le 03/12 à Paris">Atelier privé Hg vs Git le 03/12 à Paris</a></h2>
-  <p class="related"><strong>01/12/2011 10:48 AM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
-raisons :</p>
-<ul>
-<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
-<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
-  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
-  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
-</ul>
-<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
-SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
-passer à Git ;).</p>
-<p>L'objectif est triple :</p>
-<ul>
-<li>Montrer à quel point Git déchire sa race :).</li>
-<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
-<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
-  Bzr que je n'ai jamais utilisé.</li>
-</ul>
-<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
-les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
-de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
-atelier Git.</p>
-<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
-d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
-plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
-sûr fort intéressant. </p>
-<p>Je tente de faire un compte rendu juste après.</p>
-<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
-Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
-qui n'est plus le cas depuis que je connais Git.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../1">« Articles suivants</a>
   --  
  <a href="../3">Articles précédents »</a>
@@ -723,14 +841,14 @@ qui n'est plus le cas depuis que je connais Git.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></li>
+    <li><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></li>
     <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
     <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
     <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
-    <li><a href="/blog/2012/02/01/presentation-git-le-13-02-a-montpellier">Présentation Git le 13/02 à Montpellier</a></li>
-    <li><a href="/blog/2012/01/28/git-1.7.9-publiee">Git 1.7.9 publiée</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -742,7 +860,7 @@ qui n'est plus le cas depuis que je connais Git.</p>
     <h2>Categories</h2>
     <ul>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (23)</li>
+     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
      <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
@@ -758,7 +876,7 @@ qui n'est plus le cas depuis que je connais Git.</p>
      <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (30)</li>
+     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (32)</li>
      <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
      <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
@@ -776,6 +894,7 @@ qui n'est plus le cas depuis que je connais Git.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2012/10/1" title="October 2012">October 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>

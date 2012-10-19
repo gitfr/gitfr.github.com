@@ -7,12 +7,60 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-08-24T00:56:15Z</updated>
+  <updated>2012-10-19T04:39:26Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Présentation et atelier Git le 24 et 25/11 à Toulouse]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse" />
+    <id>http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse</id>
+    <updated>2012-10-19T06:37:00Z</updated>
+    <published>2012-10-19T06:37:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="atelier" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Présentation et atelier Git le 24 et 25/11 à Toulouse]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse"><![CDATA[<p>gitfr descend sur Toulouse à l'occasion de l'événement <a href="http://www.capitoledulibre.org/2012/">Le Capitole du
+Libre</a> avec non pas une présentation et
+un atelier mais <strong>deux</strong> ateliers !</p>
+<p>La présentation d'une heure s'appelle «Pourquoi Git ?», destinée aux gens
+pressés. Puis le lendemain deux ateliers «Initiation» et «Allez plus loin».</p>
+<p>7h de Git au programme, si vous aviez envie de vous y mettre, c'est
+l'occasion !</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[gitfr recherche un repreneur (ou simplement des bloggeurs)]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/10/19/gitfr-recherche-un-repreneur" />
+    <id>http://www.gitfr.net/blog/2012/10/19/gitfr-recherche-un-repreneur</id>
+    <updated>2012-10-19T06:36:00Z</updated>
+    <published>2012-10-19T06:36:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[gitfr recherche un repreneur (ou simplement des bloggeurs)]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/10/19/gitfr-recherche-un-repreneur"><![CDATA[<p>Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
+informaticiens Français aux DVCS en général, et à Git en particulier.
+Et avec bientôt une trentaine de présentations et une dizaine
+d'atelier, je pense avoir réussi à transmettre un peu de mes connaissances
+et passion autour de ce fabuleux logiciel.</p>
+<p>Néanmoins, je n'ai plus autant de temps à consacrer à gitfr, notamment
+à cause de mes nouveaux projets et cela se ressens sur le peu de billet
+sur ce blog. Alors, si vous êtes partant pour écrire voir reprendre
+tout en partie des activités de gitfr, c'est avec plaisir que je transmettrais
+le flambeau.</p>
+<p>Si cela vous intéresse : seb@gitfr.net.</p>
+<p><strong>Note</strong> : le coût est de 15€ / an pour le nom de domaine que je prends à ma
+charge, le reste étant hébergé sur GitHub. Le site peut être revue de fond en
+comble si besoin.</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -258,95 +306,5 @@ qui accueille cette fois ci dans une grande salle pouvant accueillir plus de
 <p>L'inscription se fait sur cette <a href="http://www.eventbrite.com/event/2421871884">page</a>.</p>
 <p>Pour l'anectode, je suis depuis 16 ans un grand fan d'Unix et du Logiciel Libre
 et je déteste Windows. je crois que ça va basher plus fort que d'habitude ;).</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Atelier privé Hg vs Git le 03/12 à Paris]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris" />
-    <id>http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris</id>
-    <updated>2011-12-01T10:48:00Z</updated>
-    <published>2011-12-01T10:48:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Atelier privé Hg vs Git le 03/12 à Paris]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/12/01/atelier-prive-hg-vs-git-le-03-12-a-paris"><![CDATA[<p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
-raisons :</p>
-<ul>
-<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
-<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
-  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
-  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
-</ul>
-<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
-SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
-passer à Git ;).</p>
-<p>L'objectif est triple :</p>
-<ul>
-<li>Montrer à quel point Git déchire sa race :).</li>
-<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
-<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
-  Bzr que je n'ai jamais utilisé.</li>
-</ul>
-<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
-les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
-de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
-atelier Git.</p>
-<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
-d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
-plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
-sûr fort intéressant. </p>
-<p>Je tente de faire un compte rendu juste après.</p>
-<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
-Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
-qui n'est plus le cas depuis que je connais Git.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Retour sur l'atelier du 20/10]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10" />
-    <id>http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10</id>
-    <updated>2011-10-23T20:20:00Z</updated>
-    <published>2011-10-23T20:20:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Retour sur l'atelier du 20/10]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/10/23/retour-sur-l-atelier-du-20-10"><![CDATA[<p>Petit retour qui intéressera peut être les personnes qui souhaitent aussi
-faire des ateliers Git. Je ne suis pas très satisfait de mon 2eme atelier
-plusieurs raisons :</p>
-<ol>
-<li>
-<p>C'était mon 1er atelier qui ne suit pas directement la conférence. Je ne
-   connaissais donc pas le niveau des participants. Moralité, j'ai rabaché
-   ma prés, au lieu de considérer qu'elle était acquise.</p>
-</li>
-<li>
-<p>Conséquence du point précédent, les participants ont passés plus de temps à
-   m'écouter qu'a travailler sur leurs machines. Il faut donc que je m'oblige à
-   me taire et attendre que les participants essayent les commandes.</p>
-</li>
-<li>
-<p>Je pense qu'il est bon de faire les démos avec un dépôt réel dés qu'on arrive
-   à la partie «cas d'utilisation».</p>
-</li>
-</ol>
-<p>Pour le dernier point, je suis partagé sur la solution à adopter :</p>
-<ul>
-<li>
-<p>Créer un dépôt spécial pour l'atelier, avec du contenu texte par exemple.</p>
-</li>
-<li>
-<p>Partager un dépôt de code que je possède.</p>
-</li>
-<li>
-<p>Demander aux participants de venir avec leur code.</p>
-</li>
-</ul>
-<p>Vous en pensez quoi ?</p>]]></content>
   </entry>
 </feed>

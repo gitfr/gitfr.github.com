@@ -7,12 +7,33 @@
   <title type="text">#gitfr</title>
   <subtitle type="text">Projet pour la promotion du bien et la destruction du mal</subtitle>
 
-  <updated>2012-08-24T00:56:15Z</updated>
+  <updated>2012-10-19T04:39:26Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog" />
   <id>http://www.gitfr.net/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.gitfr.net/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.gitfr.net/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Présentation et atelier Git le 24 et 25/11 à Toulouse]]></title>
+    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse" />
+    <id>http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse</id>
+    <updated>2012-10-19T06:37:00Z</updated>
+    <published>2012-10-19T06:37:00Z</published>
+    <category scheme="http://www.gitfr.net/blog" term="atelier" />
+    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
+    <summary type="html"><![CDATA[Présentation et atelier Git le 24 et 25/11 à Toulouse]]></summary>
+    <content type="html" xml:base="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse"><![CDATA[<p>gitfr descend sur Toulouse à l'occasion de l'événement <a href="http://www.capitoledulibre.org/2012/">Le Capitole du
+Libre</a> avec non pas une présentation et
+un atelier mais <strong>deux</strong> ateliers !</p>
+<p>La présentation d'une heure s'appelle «Pourquoi Git ?», destinée aux gens
+pressés. Puis le lendemain deux ateliers «Initiation» et «Allez plus loin».</p>
+<p>7h de Git au programme, si vous aviez envie de vous y mettre, c'est
+l'occasion !</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -251,23 +272,5 @@ bashing, enfin si j'arrive à me retenir ;)</p>
 <p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
 conférence sera sûrement filmé et mis à disposition sur Internet.</p>
 <p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://www.gitfr.net/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Atelier Git le 20/10 à Levallois]]></title>
-    <link rel="alternate" type="text/html" href="http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois" />
-    <id>http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois</id>
-    <updated>2011-10-07T23:48:00Z</updated>
-    <published>2011-10-07T23:48:00Z</published>
-    <category scheme="http://www.gitfr.net/blog" term="atelier" />
-    <category scheme="http://www.gitfr.net/blog" term="gitfr" />
-    <summary type="html"><![CDATA[Atelier Git le 20/10 à Levallois]]></summary>
-    <content type="html" xml:base="http://www.gitfr.net/blog/2011/10/07/atelier-git-le-20-10-a-levallois"><![CDATA[<p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
-Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
-<p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
-quelques heures :).</p>]]></content>
   </entry>
 </feed>
