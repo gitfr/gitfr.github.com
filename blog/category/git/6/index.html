@@ -65,6 +65,60 @@
           
   
 <div class="blog_post">
+  <a name="structure-d-un-depot-git"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/12/structure-d-un-depot-git" rel="bookmark" title="Permanent Link to Structure d'un dépôt Git">Structure d'un dépôt Git</a></h2>
+  <p class="related"><strong>12/12/2010 02:35 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/12/structure-d-un-depot-git#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Un dépôt Git se matérialise par la présence du répertoire <code>.git</code>. Il est unique, contrairement à <em>SVN</em> et <em>CVS</em> (et quel bonheur de ne plus avoir tous ces sous répertoires !), et se trouve à la racine du projet (<code>myproject/.git</code>). Dans le cas d'un dépôt partagé (dépôt <em>bare</em>), le contenu de ce sous répertoire se trouve directement dans le répertoire principal.</p>
+<p>La structure est trés simple. Voici un exemple avec un dépôt qui vient d'être créé :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_ldag4xEM841qdkaiq.png" /></p>
+<ul>
+<li>
+<p>config : fichier de configuration du dépôt (nous aborderons la configuration dans un autre billet).</p>
+</li>
+<li>
+<p>description : fichier texte que vous devez modifier pour expliquer en une phrase le contenu du dépôt. Cette description est affichée par des outils comme <strong>Gitweb</strong> ou <strong>cgit</strong>.</p>
+</li>
+<li>
+<p>objects : ce répertoire contient tous les objets (blob, tree, commit, tag). Chaque object est contenu dans un fichier séparé, accessible par un sous répertoire dont le nom correspond aux deux premières lettres du SHA1 de l'objet (ce qui donne 256 sous répertoires au maximum). Exemple : si un objet commence par <code>a156bc76e</code>, alors l'objet sera localisé dans le répertoire <code>objects/a1/</code>, avec pour nom de fichier <code>56bc76e</code>. Quand le nombre d'objets dépasse un seuil, Git compresse les objets, ajoute un fichier index et déplace le tout dans le sous répertoire <code>objects/pack</code>.</p>
+</li>
+<li>
+<p>refs : toutes les références sont dans ce répertoire. Dans le sous répertoire <strong>heads</strong> si cela concerne une branche, <strong>tags</strong> si c'est un tag et <strong>remotes</strong> si c'est une branche d'un répôt distant. Vous pouvez aussi trouver le répertoire <code>packed-refs</code> dans le cas des packs Git.</p>
+</li>
+<li>
+<p>HEAD : c'est une référence symbolique, son contenu n'étant pas un commit mais une autre référence. Elle pointe sur la branche courante. Il existe une exception dans le cas d'un <strong>detached head</strong>, HEAD pointe alors directement sur un commit.</p>
+</li>
+<li>
+<p>branches : ce répertoire n'est plus utilisé.</p>
+</li>
+<li>
+<p>hooks : contient les scripts de personnalisation.</p>
+</li>
+<li>
+<p>index : fichier binaire qui contient la liste des fichiers en cours de modification (cela représente le commit en cours de création, appelé en anglais <em>staging</em>). vous pouvez parcourir ce fichier avec la commande <code>git ls-files --stage</code>.</p>
+</li>
+<li>
+<p>info : informations additionnelles utilisées par Git, comme les attributs ou les fichiers à ignorer.</p>
+</li>
+<li>
+<p>logs : tout changement est enregistré dans un fichier de log, avec un fichier par branche ou tag.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/12/structure-d-un-depot-git#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="la-commande-init"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/12/la-commande-init" rel="bookmark" title="Permanent Link to La commande init">La commande init</a></h2>
   <p class="related"><strong>12/12/2010 12:14 AM</strong> | categories: 
@@ -334,28 +388,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/17/migration-cvs-vers-git-pour-le-projet-drupal#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="support-de-git-dans-les-projets-apache"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/17/support-de-git-dans-les-projets-apache" rel="bookmark" title="Permanent Link to Support de Git dans les projets Apache">Support de Git dans les projets Apache</a></h2>
-  <p class="related"><strong>17/11/2010 05:10 AM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/migration'>migration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>L'équipe qui gère l'infrastructure de la fondation <strong>Apache</strong> travaille sur le support de Git. Comme beaucoup de projets Libres qui utilisent <strong>SVN</strong>, de nombreux contributeurs utilisent Git par l'intermédiaire de <strong>git-svn</strong>, mais ce changement va permettre l'utilisation de Git nativement.</p>
-<p>Les discussions sont <a href="http://markmail.org/message/7ztq2pwm6456zqmy">en cours</a> sur la liste de diffusion et des tickets Jira sont <a href="https://issues.apache.org/jira/browse/INFRA/component/12312655">ouverts</a> à ce sujet.</p>
-<p>Il va être intéressant de suivre les discussions et la mise en place d'un <em>DVCS</em> sur une aussi grosse infrastructure que celle d'Apache, qui gère beaucoup de projets avec des années d'historique et d'habitude d'un modèle centralisé. Notamment de voir quels worflows ils vont mettre en place.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/git/5">« Articles suivants</a>
   --  
  <a href="/blog/category/git/7">Articles précédents »</a>
@@ -379,6 +411,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2013/01/06/git-1.8.0-publiee">Git 1.8.0 publiée</a></li>
     <li><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></li>
     <li><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></li>
     <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
@@ -386,7 +419,6 @@
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
-    <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -400,7 +432,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (58)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -423,7 +455,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (22)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -432,6 +464,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2013/01/1" title="January 2013">January 2013</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/10/1" title="October 2012">October 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>

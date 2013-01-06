@@ -65,6 +65,44 @@
           
   
 <div class="blog_post">
+  <a name="suivre-le-developpement-de-git"></a>
+  <h2 class="blog_post_title"><a href="/blog/2010/12/05/suivre-le-developpement-de-git" rel="bookmark" title="Permanent Link to Suivre le développement de Git">Suivre le développement de Git</a></h2>
+  <p class="related"><strong>05/12/2010 01:54 AM</strong> | categories: 
+
+<a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p>Chaque série de patchs est mis dans une branche <strong>topic</strong>, c'est à dire une branche dédiée à un développement spécifique. Ce développement est ensuite fusionné (<em>mergé</em>) dans la branche <strong>pu</strong> (<em>proposed updates</em>), qui est une branche d'intégration. Aprés une ou plusieurs revues, si le code est beau et fonctionnel, il est de nouveau fusionné avec la branche <strong>next</strong>, qui représente la prochaine version stable, et eventuellement dans la branche <strong>maint</strong> qui représente la version stable en cours (dans le cas d'une correction de bugs). <strong>master</strong> quand à lui, ne récupère que des merge venant de <strong>maint</strong>.</p>
+<p>Pour résumé, vous avez les branches principales :</p>
+<ul>
+<li>master</li>
+<li>next</li>
+<li>pu</li>
+<li>maint</li>
+</ul>
+<p>Et 3 branches supplémentaires de moindres importances : <strong>man</strong>, <strong>html</strong> et <strong>todo</strong>.</p>
+<p>Les améliorations se font en mettant à jour la branche topic, puis en fusionnant de nouveau dans la ou les branches concernées.</p>
+<p>Ce workflow demande de bien suivre les développements sur l'ensemble des branches. Et comme le dit Junio lui même (le mainteneur du projet), il est nécessaire de :</p>
+<ul>
+<li>voir quels commits sont dans les branches</li>
+<li>vérifier quels commits sont déja mergés et où</li>
+<li>connaitre la date de la dernière mise à jour</li>
+</ul>
+<p>C'est l'objet du résumé appelé "What's cooking", qui se trouve dans la branche <strong>todo</strong>. Ce fichier (<code>whats-cooking.txt</code>) est le résultat d'un script qui recense les développements en cours. C'est un fichier assez long (environ 800 lignes) qui donnent une trés bonne vue d'ensemble du projet.</p>
+<p>Bonne lecture :).</p>
+<p><strong>Note</strong> : Ce fichier est mis à jour chaque semaine dans le dépôt git et il est également envoyé sur la liste de diffusion (<strong>git@vger.kernel.org</strong>).</p>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/12/05/suivre-le-developpement-de-git#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="historiser-etc-avec-etckeeper"></a>
   <h2 class="blog_post_title"><a href="/blog/2010/12/05/historiser-etc-avec-etckeeper" rel="bookmark" title="Permanent Link to Historiser /etc avec etckeeper">Historiser /etc avec etckeeper</a></h2>
   <p class="related"><strong>05/12/2010 01:05 AM</strong> | categories: 
@@ -302,34 +340,6 @@
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/17/support-de-git-dans-les-projets-apache#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="des-exemples-de-fichiers-gitignore"></a>
-  <h2 class="blog_post_title"><a href="/blog/2010/11/10/des-exemples-de-fichiers-gitignore" rel="bookmark" title="Permanent Link to Des exemples de fichiers gitignore">Des exemples de fichiers gitignore</a></h2>
-  <p class="related"><strong>10/11/2010 06:50 PM</strong> | categories: 
-
-<a href='/blog/category/git'>git</a>, <a href='/blog/category/configuration'>configuration</a>
- | <a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Le projet <a href="http://github.com/github/gitignore">gitignore</a>, lancé par <em>GitHub</em>, est une collection de fichiers <strong>gitignore</strong>. Vous trouverez des exemples pour :</p>
-<ul>
-<li>des langages (<strong>Python</strong>, <strong>Ruby</strong>, <strong>Scala</strong>...)</li>
-<li>des frameworks (<strong>Symphony</strong>,  <strong>Rails</strong>...)</li>
-<li>des éditeurs (<strong>Vim</strong>, <strong>Emacs</strong>, <strong>Eclipse</strong>...)</li>
-<li>des systèmes d'exploitation (<strong>Linux</strong>, <strong>Windows</strong>...)</li>
-</ul>
-<p><strong>Note</strong> : ces deux dernières catégories se trouvent dans le répertoire <em>Global</em>.</p>
-<p>Pour plus d'informations, (re)lisez le billet sur <a href="http://blog.gitfr.net/post/1475460682/eviter-de-commiter-des-fichiers-indesirables">gitignore</a>.</p>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2010/11/10/des-exemples-de-fichiers-gitignore#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="../10">« Articles suivants</a>
   --  
  <a href="../12">Articles précédents »</a>
@@ -353,6 +363,7 @@
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2013/01/06/git-1.8.0-publiee">Git 1.8.0 publiée</a></li>
     <li><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></li>
     <li><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></li>
     <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
@@ -360,7 +371,6 @@
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
-    <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -374,7 +384,7 @@
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (58)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -397,7 +407,7 @@
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (22)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -406,6 +416,7 @@
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2013/01/1" title="January 2013">January 2013</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/10/1" title="October 2012">October 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>

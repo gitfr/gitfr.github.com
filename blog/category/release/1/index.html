@@ -65,6 +65,338 @@
           
   
 <div class="blog_post">
+  <a name="git-1.8.0-publiee"></a>
+  <h2 class="blog_post_title"><a href="/blog/2013/01/06/git-1.8.0-publiee" rel="bookmark" title="Permanent Link to Git 1.8.0 publiée">Git 1.8.0 publiée</a></h2>
+  <p class="related"><strong>06/01/2013 09:43 PM</strong> | categories: 
+
+<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
+ | <a href="http://www.gitfr.net/blog/2013/01/06/git-1.8.0-publiee#disqus_thread">Commentaires</a>
+<p/>
+  <div class="post_prose">
+    
+  <p><strong>Note</strong> : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.</p>
+<p>Changements intéressants:
+ * la configuration upstream d'une branche évolue: --set-upstream est dépréciée,
+   et est remplacée par --set-upstream-to=reference.
+   Au delà du changement de nom, c'est la syntaxe qui évolue pour être plus simple
+   et plus logique.
+   En effet, avec --set-upstream, vous deviez taper:</p>
+<p><code>git branch --set-upstream my-branch origin/dev</code></p>
+<p>--set-upstream est un flag, qui précise que le refspec de base de la branche
+   créée est aussi l'upstream. Ce n'est pas évident, et l'on aurait tendance à
+   interpréter la commande dans l'autre sens, dans la tradition des commandes Unix.
+   Avec la nouvelle syntaxe, on tape:</p>
+<p><code>git branch --set-upstream-to=origin/dev my-branch</code></p>
+<p>Cette syntaxe est bien plus compréhensible. L'ancienne syntaxe est dépréciée.
+   Si vous ne connaissez toujours pas les magies et bienfaits des branches upstream,
+   je vous invite à (re)lire
+   <a href="http://gitfr.net/blog/2011/12/11/comportement-par-defaut-du-git-push/">ce billet</a>.</p>
+<ul>
+<li>
+<p>git cherry-pick respecte désormais l'ordre des commits tels que passés en arguments.
+   Précédemment, il rejouait les commits suivant la chronologie de commit.</p>
+</li>
+<li>
+<p>git blame est désormais plus précis lors des merge : il reconnait les conflits
+   résolus comme venant d'un des commits parents plutôt que simplement étant des
+   modifications non committées (sha1=0000000)</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des
+changements intéressants.</p>
+<h2>Changelog</h2>
+<ul>
+<li>
+<p>A credential helper for Win32 to allow access to the keychain of
+   the logged-in user has been added.</p>
+</li>
+<li>
+<p>An initial port to HP NonStop.</p>
+</li>
+<li>
+<p>A credential helper to allow access to the Gnome keyring has been
+   added.</p>
+</li>
+<li>
+<p>When "git am" sanitizes the "Subject:" line, we strip the prefix from
+   "Re: subject" and also from a less common "re: subject", but left
+   the even less common "RE: subject" intact.  Now we strip that too.</p>
+</li>
+<li>
+<p>It was tempting to say "git branch --set-upstream origin/master",
+   but that tells Git to arrange the local branch "origin/master" to
+   integrate with the currently checked out branch, which is highly
+   unlikely what the user meant.  The option is deprecated; use the
+   new "--set-upstream-to" (with a short-and-sweet "-u") option
+   instead.</p>
+</li>
+<li>
+<p>"git cherry-pick" learned the "--allow-empty-message" option to
+   allow it to replay a commit without any log message.</p>
+</li>
+<li>
+<p>After "git cherry-pick -s" gave control back to the user asking
+   help to resolve conflicts, concluding "git commit" used to need to
+   be run with "-s" if the user wants to sign it off; now the command
+   leaves the sign-off line in the log template.</p>
+</li>
+<li>
+<p>"git daemon" learned the "--access-hook" option to allow an
+   external command to decline service based on the client address,
+   repository path, etc.</p>
+</li>
+<li>
+<p>"git difftool --dir-diff" learned to use symbolic links to prepare
+   a temporary copy of the working tree when available.</p>
+</li>
+<li>
+<p>"git grep" learned to use a non-standard pattern type by default if
+   a configuration variable tells it to.</p>
+</li>
+<li>
+<p>Accumulated updates to "git gui" has been merged.</p>
+</li>
+<li>
+<p>"git log -g" learned the "--grep-reflog=<pattern>" option to limit
+   its output to commits with a reflog message that matches the given
+   pattern.</p>
+</li>
+<li>
+<p>"git merge-base" learned the "--is-ancestor A B" option to tell if A is
+   an ancestor of B.  The result is indicated by its exit status code.</p>
+</li>
+<li>
+<p>"git mergetool" now allows users to override the actual command used
+   with the mergetool.$name.cmd configuration variable even for built-in
+   mergetool backends.</p>
+</li>
+<li>
+<p>"git rebase -i" learned the "--edit-todo" option to open an editor
+   to edit the instruction sheet.</p>
+</li>
+<li>
+<p>"git svn" has been updated to work with SVN 1.7.</p>
+</li>
+<li>
+<p>"git p4" learned the "--conflicts" option to specify what to do when
+   encountering a conflict during "p4 submit".</p>
+</li>
+<li>
+<p>Git ships with a fall-back regexp implementation for platforms with
+   buggy regexp library, but it was easy for people to keep using their
+   platform regexp by mistake.  A new test has been added to check this.</p>
+</li>
+<li>
+<p>The "check-docs" build target has been updated and greatly
+   simplified.</p>
+</li>
+<li>
+<p>The test suite is run under MALLOC_CHECK_ when running with a glibc
+   that supports the feature.</p>
+</li>
+<li>
+<p>The documentation in the TeXinfo format was using indented output
+   for materials meant to be examples that are better typeset in
+   monospace.</p>
+</li>
+<li>
+<p>Compatibility wrapper around some mkdir(2) implementations that
+   reject parameters with trailing slash has been introduced.</p>
+</li>
+<li>
+<p>Compatibility wrapper for systems that lack usable setitimer() has
+   been added.</p>
+</li>
+<li>
+<p>The option parsing of "git checkout" had error checking, dwim and
+   defaulting missing options, all mixed in the code, and issuing an
+   appropriate error message with useful context was getting harder.
+   The code has been reorganized to allow giving a proper diagnosis
+   when the user says "git checkout -b -t foo bar" (e.g. "-t" is not a
+   good name for a branch).</p>
+</li>
+<li>
+<p>Many internal uses of a "git merge-base" equivalent were only to see
+   if one commit fast-forwards to the other, which did not need the
+   full set of merge bases to be computed. They have been updated to
+   use less expensive checks.</p>
+</li>
+<li>
+<p>The heuristics to detect and silently convert latin1 to utf8 when
+   we were told to use utf-8 in the log message has been transplanted
+   from "mailinfo" to "commit" and "commit-tree".</p>
+</li>
+<li>
+<p>Messages given by "git <subcommand> -h" from many subcommands have
+   been marked for translation.</p>
+</li>
+<li>
+<p>The attribute system may be asked for a path that itself or its
+   leading directories no longer exists in the working tree, and it is
+   fine if we cannot open .gitattribute file in such a case.  Failure
+   to open per-directory .gitattributes with error status other than
+   ENOENT and ENOTDIR should be diagnosed, but it wasn't.</p>
+</li>
+<li>
+<p>When looking for $HOME/.gitconfig etc., it is OK if we cannot read
+   them because they do not exist, but we did not diagnose existing
+   files that we cannot read.</p>
+</li>
+<li>
+<p>When "git am" is fed an input that has multiple "Content-type: ..."
+   header, it did not grok charset= attribute correctly.</p>
+</li>
+<li>
+<p>"git am" mishandled a patch attached as application/octet-stream
+   (e.g. not text/*); Content-Transfer-Encoding (e.g. base64) was not
+   honored correctly.</p>
+</li>
+<li>
+<p>"git blame MAKEFILE" run in a history that has "Makefile" but not
+   "MAKEFILE" should say "No such file MAKEFILE in HEAD", but got
+   confused on a case insensitive filesystem and failed to do so.</p>
+</li>
+<li>
+<p>Even during a conflicted merge, "git blame $path" always meant to
+   blame uncommitted changes to the "working tree" version; make it
+   more useful by showing cleanly merged parts as coming from the other
+   branch that is being merged.</p>
+</li>
+<li>
+<p>It was unclear in the documentation for "git blame" that it is
+   unnecessary for users to use the "--follow" option.</p>
+</li>
+<li>
+<p>Output from "git branch -v" contains "(no branch)" that could be
+   localized, but the code to align it along with the names of
+   branches was counting in bytes, not in display columns.</p>
+</li>
+<li>
+<p>"git cherry-pick A C B" used to replay changes in A and then B and
+   then C if these three commits had committer timestamps in that
+   order, which is not what the user who said "A C B" naturally
+   expects.</p>
+</li>
+<li>
+<p>A repository created with "git clone --single" had its fetch
+   refspecs set up just like a clone without "--single", leading the
+   subsequent "git fetch" to slurp all the other branches, defeating
+   the whole point of specifying "only this branch".</p>
+</li>
+<li>
+<p>Documentation talked about "first line of commit log" when it meant
+   the title of the commit.  The description was clarified by defining
+   how the title is decided and rewording the casual mention of "first
+   line" to "title".</p>
+</li>
+<li>
+<p>"git cvsimport" did not thoroughly cleanse tag names that it
+   inferred from the names of the tags it obtained from CVS, which
+   caused "git tag" to barf and stop the import in the middle.</p>
+</li>
+<li>
+<p>Earlier we made the diffstat summary line that shows the number of
+   lines added/deleted localizable, but it was found irritating having
+   to see them in various languages on a list whose discussion language
+   is English, and this change has been reverted.</p>
+</li>
+<li>
+<p>"git fetch --all", when passed "--no-tags", did not honor the
+   "--no-tags" option while fetching from individual remotes (the same
+   issue existed with "--tags", but the combination "--all --tags" makes
+   much less sense than "--all --no-tags").</p>
+</li>
+<li>
+<p>"git fetch" over http had an old workaround for an unlikely server
+   misconfiguration; it turns out that this hurts debuggability of the
+   configuration in general, and has been reverted.</p>
+</li>
+<li>
+<p>"git fetch" over http advertised that it supports "deflate", which
+   is much less common, and did not advertise the more common "gzip" on
+   its Accept-Encoding header.</p>
+</li>
+<li>
+<p>"git fetch" over the dumb-http revision walker could segfault when
+   curl's multi interface was used.</p>
+</li>
+<li>
+<p>"git gc --auto" notified the user that auto-packing has triggered
+    even under the "--quiet" option.</p>
+</li>
+<li>
+<p>After "gitk" showed the contents of a tag, neither "Reread
+   references" nor "Reload" updated what is shown as the
+   contents of it when the user overwrote the tag with "git tag -f".</p>
+</li>
+<li>
+<p>"git log --all-match --grep=A --grep=B" ought to show commits that
+   mention both A and B, but when these three options are used with
+   --author or --committer, it showed commits that mention either A or
+   B (or both) instead.</p>
+</li>
+<li>
+<p>The "-Xours" backend option to "git merge -s recursive" was ignored
+   for binary files.</p>
+</li>
+<li>
+<p>"git p4", when "--use-client-spec" and "--detect-branches" are used
+   together, misdetected branches.</p>
+</li>
+<li>
+<p>"git receive-pack" (the counterpart to "git push") did not give
+   progress output while processing objects it received to the puser
+   when run over the smart-http protocol.</p>
+</li>
+<li>
+<p>When you misspell the command name you give to the "exec" action in
+   the "git rebase -i" instruction sheet you were told that 'rebase' is not a
+   git subcommand from "git rebase --continue".</p>
+</li>
+<li>
+<p>The subcommand in "git remote" to remove a defined remote was
+   "rm" and the command did not take a fully-spelled "remove".</p>
+</li>
+<li>
+<p>The interactive prompt that "git send-email" gives was error prone. It
+   asked "What e-mail address do you want to use?" with the address it
+   guessed (correctly) the user would want to use in its prompt,
+   tempting the user to say "y". But the response was taken as "No,
+   please use 'y' as the e-mail address instead", which is most
+   certainly not what the user meant.</p>
+</li>
+<li>
+<p>"git show --format='%ci'" did not give the timestamp correctly for
+   commits created without human readable name on the "committer" line.</p>
+</li>
+<li>
+<p>"git show --quiet" ought to be a synonym for "git show -s", but
+   wasn't.</p>
+</li>
+<li>
+<p>"git submodule frotz" was not diagnosed as "frotz" being an unknown
+   subcommand to "git submodule"; the user instead got a complaint
+   that "git submodule status" was run with an unknown path "frotz".</p>
+</li>
+<li>
+<p>"git status" honored the ignore=dirty settings in .gitmodules but
+   "git commit" didn't.</p>
+</li>
+<li>
+<p>"gitweb" did not give the correct committer timezone in its feed
+   output due to a typo.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://www.gitfr.net/blog/2013/01/06/git-1.8.0-publiee#disqus_thread">Lire et poster des commentaires</a></div>
+  <hr class="interblog" />
+  
+<div class="blog_post">
   <a name="git-1.7.12-publiee"></a>
   <h2 class="blog_post_title"><a href="/blog/2012/08/24/git-1.7.12-publiee" rel="bookmark" title="Permanent Link to Git 1.7.12 publiée">Git 1.7.12 publiée</a></h2>
   <p class="related"><strong>24/08/2012 02:54 AM</strong> | categories: 
@@ -1451,207 +1783,6 @@ avec 88 corrections.</p>
 
   <div class="after_post"><a href="http://www.gitfr.net/blog/2011/08/29/git-1.7.6.1-publiee#disqus_thread">Lire et poster des commentaires</a></div>
   <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.6-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2011/07/09/git-1.7.6-publiee" rel="bookmark" title="Permanent Link to Git 1.7.6 publiée">Git 1.7.6 publiée</a></h2>
-  <p class="related"><strong>09/07/2011 08:34 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
-première version qui respecte le nouveau cycle de release plus court voulu
-par Junio.</p>
-<p>A la lecture du changelog, voici quelques points que je remarque :</p>
-<ul>
-<li>
-<p>Le magic pathspec ":/".</p>
-</li>
-<li>
-<p>L'option patch pour la commande git-commit.</p>
-</li>
-<li>
-<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
-</li>
-<li>
-<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
-   ou jamais faire un commit de merge.</p>
-</li>
-<li>
-<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
-</li>
-</ul>
-<h2>Changelog</h2>
-<ul>
-<li>
-<p>Various git-svn updates.</p>
-</li>
-<li>
-<p>Updates the way content tags are handled in gitweb.  Also adds
-  a UI to choose common timezone for displaying the dates.</p>
-</li>
-<li>
-<p>Similar to branch names, tagnames that begin with "-" are now
-  disallowed.</p>
-</li>
-<li>
-<p>Clean-up of the C part of i18n (but not l10n---please wait)
-  continues.</p>
-</li>
-<li>
-<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
-</li>
-<li>
-<p>Pushing and pulling from a repository with large number of refs that
-  point to identical commits are optimized by not listing the same commit
-  during the common ancestor negotiation exchange with the other side.</p>
-</li>
-<li>
-<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
-  using "git add" will send the contents straight to a packfile without
-  having to hold it and its compressed representation both at the same
-  time in memory.</p>
-</li>
-<li>
-<p>Processes spawned by "[alias] <name> = !process" in the configuration
-  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
-  working tree the original command was invoked.</p>
-</li>
-<li>
-<p>A magic pathspec ":/" tells a command that limits its operation to
-  the current directory when ran from a subdirectory to work on the
-  entire working tree. In general, ":/path/to/file" would be relative
-  to the root of the working tree hierarchy.</p>
-</li>
-</ul>
-<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
-  be a no-op, but "git add -u :/" would add the updated contents of
-  the Makefile at the top level. If you want to name a path in the
-  current subdirectory whose unusual name begins with ":/", you can
-  name it by "./:/that/path" or by "\:/that/path".</p>
-<ul>
-<li>
-<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
-  number of hexdigits shown for commit object names.</p>
-</li>
-<li>
-<p>"git blame" learned "--line-porcelain" that is less efficient but is
-  easier to parse.</p>
-</li>
-<li>
-<p>Aborting "git commit --interactive" discards updates to the index
-  made during the interactive session.</p>
-</li>
-<li>
-<p>"git commit" learned a "--patch" option to directly jump to the
-  per-hunk selection UI of the interactive mode.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=0 to show
-  directories that contribute less than 0.1% of changes.</p>
-</li>
-<li>
-<p>"git diff" and its family of commands learned --dirstat=lines mode to
-  assess damage to the directory based on number of lines in the patch
-  output, not based on the similarity numbers.</p>
-</li>
-<li>
-<p>"git format-patch" learned "--quiet" option to suppress the output of
-  the names of generated files.</p>
-</li>
-<li>
-<p>"git format-patch" quotes people's names when it has RFC822 special
-  characters in it, e.g. "Junio C. Hamano" <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#106;&#99;&#104;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>.  Earlier
-  it was up to the user to do this when using its output.</p>
-</li>
-<li>
-<p>"git format-patch" can take an empty --subject-prefix now.</p>
-</li>
-<li>
-<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
-</li>
-<li>
-<p>"git log" and friends learned a new "--notes" option to replace the
-  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
-  not imply showing the default notes.</p>
-</li>
-<li>
-<p>They also learned a log.abbrevCommit configuration variable to augment
-  the --abbrev-commit command line option.</p>
-</li>
-<li>
-<p>"git ls-remote" learned "--exit-code" option to consider it a
-  different kind of error when no remote ref to be shown.</p>
-</li>
-<li>
-<p>"git merge" learned "-" as a short-hand for "the previous branch", just
-  like the way "git checkout -" works.</p>
-</li>
-<li>
-<p>"git merge" uses "merge.ff" configuration variable to decide to always
-  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
-  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
-  (or not setting it at all) restores the default behaviour of allowing
-  fast-forward to happen when possible.</p>
-</li>
-<li>
-<p>p4-import (from contrib) learned a new option --preserve-user.</p>
-</li>
-<li>
-<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
-  would fail without touching the index nor the working tree.</p>
-</li>
-<li>
-<p>"git rebase" that does not specify on top of which branch to rebase
-  the current branch now uses @{upstream} of the current branch.</p>
-</li>
-<li>
-<p>"git rebase" finished either normally or with --abort did not
-  update the reflog for HEAD to record the event to come back to
-  where it started from.</p>
-</li>
-<li>
-<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
-  a fetch-mode mirror meant mirror everything, but now it only means refs are
-  not renamed.</p>
-</li>
-<li>
-<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
-  commits separately, producing more a useful output.</p>
-</li>
-<li>
-<p>"git submodule update" learned "--force" option to get rid of local
-  changes in submodules and replace them with the up-to-date version.</p>
-</li>
-<li>
-<p>"git status" and friends ignore .gitmodules file while the file is
-  still in a conflicted state during a merge, to avoid using information
-  that is not final and possibly corrupt with conflict markers.</p>
-</li>
-<li>
-<p>"git config" used to choke with an insanely long line.
-  (merge ef/maint-strbuf-init later)</p>
-</li>
-<li>
-<p>"git diff --quiet" did not work well with --diff-filter.
-  (merge jk/diff-not-so-quick later)</p>
-</li>
-<li>
-<p>"git status -z" did not default to --porcelain output format.
-  (merge bc/maint-status-z-to-use-porcelain later)</p>
-</li>
-</ul>
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2011/07/09/git-1.7.6-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
  <a href="/blog/category/release/2">Articles précédents »</a>
 
         </div><!-- End Prose Block -->
@@ -1673,6 +1804,7 @@ par Junio.</p>
   <div id="blog_post_list">
     <h2>Derniers billets</h2>
     <ul>
+    <li><a href="/blog/2013/01/06/git-1.8.0-publiee">Git 1.8.0 publiée</a></li>
     <li><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></li>
     <li><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></li>
     <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
@@ -1680,7 +1812,6 @@ par Junio.</p>
     <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
     <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
     <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
-    <li><a href="/blog/2012/02/01/mise-a-jour-de-la-presentation-git">Mise à jour de la présentation Git</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -1694,7 +1825,7 @@ par Junio.</p>
      <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (24)</li>
      <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (57)</li>
+     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (58)</li>
      <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
@@ -1717,7 +1848,7 @@ par Junio.</p>
      <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
      <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
      <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (22)</li>
+     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (23)</li>
      <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
      <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
@@ -1726,6 +1857,7 @@ par Junio.</p>
   <div id="archives">			
     <h2>Archives</h2>
     <ul>
+      <li><a href="/blog/archive/2013/01/1" title="January 2013">January 2013</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/10/1" title="October 2012">October 2012</a>&nbsp;(2)</li>
       <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
       <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
