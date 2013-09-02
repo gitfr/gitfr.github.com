@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Git 1.7.12 publiée | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="git-1.7.12-publiee.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Git 1.7.12 publiée</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2012-08-24T02:54:00">2012-08-24 02:54</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+
+    </small>
+    <hr>
+    <p>Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :</p>
+<ul>
+<li>
+<p>Une option <code>--root</code> à rebase pour modifier aussi le commit root.</p>
+</li>
+<li>
+<p>Une option <code>-x</code> à rebase pour éxécuter une commande à chaque
+  application d'un patch.</p>
+</li>
+<li>
+<p>On peut visualiser la documentation en HTML avec <code>git help -w $cmd</code></p>
+</li>
+<li>
+<p><code>git status</code> est plus précis quand le dépôt est dans un état
+  intermédiaire (lors d'un merge, un rebase, etc).</p>
+</li>
+</ul>
+<p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
+changements intéressants.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>Git can be told to normalize pathnames it read from readdir(3) and
+   all arguments it got from the command line into precomposed UTF-8
+   (assuming that they come as decomposed UTF-8), in order to work
+   around issues on Mac OS.</li>
+</ul>
+<p>I think there still are other places that need conversion
+   (e.g. paths that are read from stdin for some commands), but this
+   should be a good first step in the right direction.</p>
+<ul>
+<li>
+<p>Per-user $HOME/.gitconfig file can optionally be stored in
+   $HOME/.config/git/config instead, which is in line with XDG.</p>
+</li>
+<li>
+<p>The value of core.attributesfile and core.excludesfile default to
+   $HOME/.config/git/attributes and $HOME/.config/git/ignore respectively
+   when these files exist.</p>
+</li>
+<li>
+<p>Logic to disambiguate abbreviated object names have been taught to
+   take advantage of object types that are expected in the context,
+   e.g. XXXXXX in the "git describe" output v1.2.3-gXXXXXX must be a
+   commit object, not a blob nor a tree.  This will help us prolong
+   the lifetime of abbreviated object names.</p>
+</li>
+<li>
+<p>"git apply" learned to wiggle the base version and perform three-way
+   merge when a patch does not exactly apply to the version you have.</p>
+</li>
+<li>
+<p>Scripted Porcelain writers now have access to the credential API via
+   the "git credential" plumbing command.</p>
+</li>
+<li>
+<p>"git help" used to always default to "man" format even on platforms
+   where "man" viewer is not widely available.</p>
+</li>
+<li>
+<p>"git clone --local $path" started its life as an experiment to
+   optionally use link/copy when cloning a repository on the disk, but
+   we didn't deprecate it after we made the option a no-op to always
+   use the optimization.  The command learned "--no-local" option to
+   turn this off, as a more explicit alternative over use of file://
+   URL.</p>
+</li>
+<li>
+<p>"git fetch" and friends used to say "remote side hung up
+   unexpectedly" when they failed to get response they expect from the
+   other side, but one common reason why they don't get expected
+   response is that the remote repository does not exist or cannot be
+   read. The error message in this case was updated to give better
+   hints to the user.</p>
+</li>
+<li>
+<p>"git help -w $cmd" can show HTML version of documentation for
+   "git-$cmd" by setting help.htmlpath to somewhere other than the
+   default location where the build procedure installs them locally;
+   the variable can even point at a http:// URL.</p>
+</li>
+<li>
+<p>"git rebase [-i] --root $tip" can now be used to rewrite all the
+   history leading to "$tip" down to the root commit.</p>
+</li>
+<li>
+<p>"git rebase -i" learned "-x <cmd>" to insert "exec <cmd>" after
+   each commit in the resulting history.</cmd></cmd></p>
+</li>
+<li>
+<p>"git status" gives finer classification to various states of paths
+   in conflicted state and offer advice messages in its output.</p>
+</li>
+<li>
+<p>"git submodule" learned to deal with nested submodule structure
+   where a module is contained within a module whose origin is
+   specified as a relative URL to its superproject's origin.</p>
+</li>
+<li>
+<p>A rather heavy-ish "git completion" script has been split to create
+   a separate "git prompting" script, to help lazy-autoloading of the
+   completion part while making prompting part always available.</p>
+</li>
+<li>
+<p>"gitweb" pays attention to various forms of credits that are
+   similar to "Signed-off-by:" lines in the commit objects and
+   highlights them accordingly.</p>
+</li>
+<li>
+<p>"mediawiki" remote helper (in contrib/) learned to handle file
+   attachments.</p>
+</li>
+<li>
+<p>"git p4" now uses "Jobs:" and "p4 move" when appropriate.</p>
+</li>
+<li>
+<p>vcs-svn has been updated to clean-up compilation, lift 32-bit
+   limitations, etc.</p>
+</li>
+<li>
+<p>Some tests showed false failures caused by a bug in ecryptofs.</p>
+</li>
+<li>
+<p>We no longer use AsciiDoc7 syntax in our documentation and favor a
+   more modern style.</p>
+</li>
+<li>
+<p>"git am --rebasing" codepath was taught to grab authorship, log
+   message and the patch text directly out of existing commits.  This
+   will help rebasing commits that have confusing "diff" output in
+   their log messages.</p>
+</li>
+<li>
+<p>"git index-pack" and "git pack-objects" use streaming API to read
+   from the object store to avoid having to hold a large blob object
+   in-core while they are doing their thing.</p>
+</li>
+<li>
+<p>Code to match paths with exclude patterns learned to avoid calling
+   fnmatch() by comparing fixed leading substring literally when
+   possible.</p>
+</li>
+<li>
+<p>"git log -n 1 -- rarely-touched-path" was spending unnecessary
+   cycles after showing the first change to find the next one, only to
+   discard it.</p>
+</li>
+<li>
+<p>"git svn" got a large-looking code reorganization at the last
+   minute before the code freeze.</p>
+</li>
+<li>
+<p>"git submodule add" was confused when the superproject did not have
+   its repository in its usual place in the working tree and GIT_DIR
+   and GIT_WORK_TREE was used to access it.</p>
+</li>
+<li>
+<p>"git commit --amend" let the user edit the log message and then died
+   when the human-readable committer name was given insufficiently by
+   getpwent(3).</p>
+</li>
+</ul>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="retour-sur-le-breizhcamp-2012.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="gitfr-recherche-un-repreneur.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>GitFR (hg)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>La différence entre Hg et Git</title><link>http://gitfr.net/blog/posts/la-difference-entre-hg-et-git.html</link><description>&lt;p&gt;J'aime beaucoup ce &lt;a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial"&gt;billet&lt;/a&gt;,
+il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
+on vient de SVN : il est possible d'utiliser Hg (Mercurial) comme un &lt;em&gt;SVN qui
+marche&lt;/em&gt;, ce n'est pas du tout le cas avec Git car très vite, on se retrouve à
+faire des grosses bêtises si on n'a pas compris les concepts importants.&lt;/p&gt;
+&lt;h3&gt;Hg, un SVN qui marche&lt;/h3&gt;
+&lt;p&gt;Ce n'est pas une attaque contre Hg, bien au contraire, c'est une choix
+réfléchi de se comporter comme tel :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C'est un outil de gestion de source.&lt;/li&gt;
+&lt;li&gt;Chaque commit sait dans quelle branche il se trouve.&lt;/li&gt;
+&lt;li&gt;Les possibilités de manipulation des branches sont assez réduites quand
+  on n'ajoute pas d'extensions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La volonté du fondateur de Mercurial est de toujours sacrifier les
+fonctionnalités au profit d'une conception claire, là ou Linus Torvalds
+avait en tête dés le départ un certain nombre de fonctionnalités. La vitesse
+étant le seul objectif qui autorise à sacrifier des fonctionnalités.&lt;/p&gt;
+&lt;p&gt;Hg est un outil puissant, qui autorise ce que SVN ne permettait
+pas (pour être précis, il le faisait tellement mal qu'on &lt;strong&gt;ne se permettait
+pas&lt;/strong&gt; de le faire) : une gestion plus fine des branches. Avec Hg, créer des
+branches et &lt;em&gt;merger&lt;/em&gt; ne pose plus de soucis particulier. Comme le dit 
+l'article :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For Hg, the instructor goes through the Hg primer with the student. The
+student is then left to use Hg with the instructor watching. Every time
+the student begins to think about branching or merging, the instructor hits
+the student over the head with the bat. This provides a negative
+reinforcement for the student's SVN branching and merging habits.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Une fois assimilées la gestion des branches et la notion de distribué, on se
+débrouille relativement bien. Je connais d'ailleurs peu d'utilisateurs
+de Mercurial qui ont étudiés le DAG, ou les possiblités avancées des 
+branches (rebase, cherry-pick...).&lt;/p&gt;
+&lt;h3&gt;Git, un outil de gestion de contenu&lt;/h3&gt;
+&lt;p&gt;C'est une notion importante à saisir, Git n'est &lt;strong&gt;pas&lt;/strong&gt; un outil de gestion de
+source (VCS). Comme avec n'importe quel outil de contenu, il est possible de
+modifier ou de supprimer ce que l'on veut : Git permet de &lt;strong&gt;modifier
+l'historique&lt;/strong&gt;, ce qui n'est pas le cas d'un VCS, comme CVS, SVN ou Hg. De
+ce postulat simple découle une autre philosophie, et donc une utilisation
+sensiblement différente : une distinction entre &lt;em&gt;branche du DAG&lt;/em&gt; et &lt;em&gt;branche
+utilisateur&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Une branche du &lt;strong&gt;DAG&lt;/strong&gt; (&lt;em&gt;directed Acyclic Graph&lt;/em&gt; ou &lt;em&gt;graphe orienté acyclique&lt;/em&gt;)
+est manipulée par Git et permet de suivre les modifications du code : qui est
+le descendant de qui ? Avec ce graphe, il est simple pour un DVCS de savoir
+quoi faire lors d'une opération comme une fusion (un merge). Mais chaque
+branche est &lt;strong&gt;anonyme&lt;/strong&gt;, elle ne porte pas de nom. Les noms de branches
+sont dans un &lt;strong&gt;espace différent&lt;/strong&gt;, distinct, qui permet de les manipuler
+indifféremment du DAG. Ou inversement de manipuler le DAG sans toucher aux noms.
+Cet espace utilisateur est appelé &lt;strong&gt;référence&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Je reviendrai la dessus dans un prochain billet, il est temps
+maintenant de transformer la conférence #gitfr en billet.&lt;/p&gt;
+&lt;p&gt;Cette distinction est source de confusion, d'erreur et de déception. Mais c'est
+ce qui rend Git si &lt;strong&gt;puissant&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;C'est ce que dit la suite du billet :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;At the very beginning, the instructor bashes the student repeatedly over the
+head with the bat until all brain cells containing any memory of SVN are
+destroyed. The instructor then teaches the student the Git primer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;J'aime beaucoup cette image :). Il ne faut surtout pas utiliser Git comme on
+utilise SVN, ni de prêt ni de loin, il faut &lt;strong&gt;ré-apprendre&lt;/strong&gt; ce qu'est le
+contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
+première de la création de #gitfr.&lt;/p&gt;
+&lt;p&gt;Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
+un champ des possibles inimaginable quand on vient de SVN...&lt;/p&gt;</description><category>git</category><category>hg</category><guid>http://gitfr.net/blog/posts/la-difference-entre-hg-et-git.html</guid><pubDate>Mon, 18 Jul 2011 00:40:00 GMT</pubDate></item></channel></rss>

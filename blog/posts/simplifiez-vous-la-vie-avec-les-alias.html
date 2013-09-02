@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Simplifiez vous la vie avec les alias | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="simplifiez-vous-la-vie-avec-les-alias.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Simplifiez vous la vie avec les alias</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-11-04T03:33:00">2010-11-04 03:33</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/configuration.html"><span class="badge badge-info">configuration</span></a>
+
+    </small>
+    <hr>
+    <p>Git est un couteau Suisse, avec beaucoup de sous commandes et d'options. Il n'est pas rare de taper des lignes assez fastidieuses comme celle ci :</p>
+<blockquote>
+<p><code>$ git log --graph --abbrev-commit --date=relative</code></p>
+</blockquote>
+<p>Outre le fait qu'il faut retenir par coeur beaucoup de choses (la commande log est à cet égard un bel exemple), cela devient vite <strong>trés</strong> pénible. Les alias sont la justement pour vous simplifier la vie. Par exemple, pour disposer de raccourci des commandes usuelles :</p>
+<blockquote>
+<p><code>$ git config --global alias.ci commit</code></p>
+<p><code>$ git config --global alias.co checkout</code> </p>
+<p><code>$ git config --global alias.br branch</code> </p>
+<p><code>$ git config --global alias.st status</code> </p>
+</blockquote>
+<p>Ou pour reprendre le premier exemple de ce billet :</p>
+<blockquote>
+<p><code>$ git config --global alias.glog 'log --graph --abbrev-commit --date=relative'</code></p>
+</blockquote>
+<p>Vous pouvez maintenant visualiser vos logs avec la commande <code>git glog</code>. </p>
+<p>Ce qui est formidable avec les alias est qu'ils marchent si on mélange alias et commande "normale". Par exemple :</p>
+<blockquote>
+<p><code>$ git glog --first-parent</code></p>
+</blockquote>
+<p>Une autre possibilité intéressante est d'appeler une commande <strong>Shell</strong>. Il suffit pour cela de commencer son alias avec <strong>!</strong> (point d'exclamation). Par exemple :</p>
+<blockquote>
+<p><code>$ git config --global alias.ka "!gitk --all"</code></p>
+</blockquote>
+<p>La commande <strong>git ka</strong> appelle le programme <code>gitk</code> avec l'option <code>--all</code>.</p>
+<p>Je vous conseille d'user et d'abuser des alias pour :</p>
+<ul>
+<li>simplifier l'utilisation de commandes complexes</li>
+<li>disposer d'un environnement à votre main, avec des raccourcis qui vous parlent</li>
+</ul>
+<p>Pour illuster le deuxieme point, je préfère taper <strong>undo</strong> que <code>git reset --hard</code>. C'est un choix purement personnel. A titre d'exemple, mon fichier contient 36 alias.</p>
+<p><strong>Note</strong> : Cerise sur le gateau, la complétion fonctionne aussi avec les alias.</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="eviter-de-commiter-des-fichiers-indesirables.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="ameliorer-sa-productivite-avec-un-beau-shell.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

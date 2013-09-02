@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Git 1.7.3.3 publiée | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="git-1.7.3.3-publiee.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Git 1.7.3.3 publiée</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-12-08T15:48:00">2010-12-08 15:48</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+
+    </small>
+    <hr>
+    <p>C'est une version qui ne contient que des corrections de bugs (plus le backport <code>add.ignoreErrors</code>). Voici le changelog : </p>
+<ul>
+<li>
+<p>"git apply" segfaulted when a bogus input is fed to it.</p>
+</li>
+<li>
+<p>Running "git cherry-pick --ff" on a root commit segfaulted.</p>
+</li>
+<li>
+<p>"diff", "blame" and friends incorrectly applied textconv filters to
+  symlinks.</p>
+</li>
+<li>
+<p>Highlighting of whitespace breakage in "diff" output was showing
+  incorrect amount of whitespaces when blank-at-eol is set and the line
+  consisted only of whitespaces and a TAB.</p>
+</li>
+<li>
+<p>"diff" was overly inefficient when trying to find the line to use for
+  the function header (i.e. equivalent to --show-c-function of GNU diff).</p>
+</li>
+<li>
+<p>"git imap-send" depends on libcrypto but our build rule relied on the
+  linker to implicitly link it via libssl, which was wrong.</p>
+</li>
+<li>
+<p>"git merge-file" can be called from within a subdirectory now.</p>
+</li>
+<li>
+<p>"git repack -f" expanded and recompressed non-delta objects in the
+  existing pack, which was wasteful.  Use new "-F" option if you really
+  want to (e.g. when changing the pack.compression level).</p>
+</li>
+<li>
+<p>"git rev-list --format="...%x00..." incorrectly chopped its output
+  at NUL.</p>
+</li>
+<li>
+<p>"git send-email" did not correctly remove duplicate mail addresses from
+  the Cc: header that appear on the To: header.</p>
+</li>
+<li>
+<p>The completion script (in contrib/completion) ignored lightweight tags
+  in __git_ps1().</p>
+</li>
+<li>
+<p>"git-blame" mode (in contrib/emacs) didn't say (require 'format-spec)
+  even though it depends on it; it didn't work with Emacs 22 or older
+  unless Gnus is used.</p>
+</li>
+<li>
+<p>"git-p4" (in contrib/) did not correctly handle deleted files.</p>
+</li>
+</ul>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="suivre-le-developpement-de-git.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="creation-de-liste-de-diffusion-gitfr.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

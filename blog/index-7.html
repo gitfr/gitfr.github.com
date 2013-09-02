@@ -1,0 +1,779 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Site francophone sur Git.">
+    <meta name="author" content="GitFR">
+    <title>GitFR (anciens billets page 7) | GitFR</title>
+    
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+    
+    
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href=".">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
+            </li><li><a href="rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/la-difference-entre-hg-et-git.html">La différence entre Hg et Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-07-18T00:40:00">2011-07-18 00:40</time>
+        </small></h1>
+        <hr>
+        <p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
+il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
+on vient de SVN : il est possible d'utiliser Hg (Mercurial) comme un <em>SVN qui
+marche</em>, ce n'est pas du tout le cas avec Git car très vite, on se retrouve à
+faire des grosses bêtises si on n'a pas compris les concepts importants.</p>
+<h3>Hg, un SVN qui marche</h3>
+<p>Ce n'est pas une attaque contre Hg, bien au contraire, c'est une choix
+réfléchi de se comporter comme tel :</p>
+<ul>
+<li>C'est un outil de gestion de source.</li>
+<li>Chaque commit sait dans quelle branche il se trouve.</li>
+<li>Les possibilités de manipulation des branches sont assez réduites quand
+  on n'ajoute pas d'extensions.</li>
+</ul>
+<p>La volonté du fondateur de Mercurial est de toujours sacrifier les
+fonctionnalités au profit d'une conception claire, là ou Linus Torvalds
+avait en tête dés le départ un certain nombre de fonctionnalités. La vitesse
+étant le seul objectif qui autorise à sacrifier des fonctionnalités.</p>
+<p>Hg est un outil puissant, qui autorise ce que SVN ne permettait
+pas (pour être précis, il le faisait tellement mal qu'on <strong>ne se permettait
+pas</strong> de le faire) : une gestion plus fine des branches. Avec Hg, créer des
+branches et <em>merger</em> ne pose plus de soucis particulier. Comme le dit 
+l'article :</p>
+<blockquote>
+<p>For Hg, the instructor goes through the Hg primer with the student. The
+student is then left to use Hg with the instructor watching. Every time
+the student begins to think about branching or merging, the instructor hits
+the student over the head with the bat. This provides a negative
+reinforcement for the student's SVN branching and merging habits.</p>
+</blockquote>
+<p>Une fois assimilées la gestion des branches et la notion de distribué, on se
+débrouille relativement bien. Je connais d'ailleurs peu d'utilisateurs
+de Mercurial qui ont étudiés le DAG, ou les possiblités avancées des 
+branches (rebase, cherry-pick...).</p>
+<h3>Git, un outil de gestion de contenu</h3>
+<p>C'est une notion importante à saisir, Git n'est <strong>pas</strong> un outil de gestion de
+source (VCS). Comme avec n'importe quel outil de contenu, il est possible de
+modifier ou de supprimer ce que l'on veut : Git permet de <strong>modifier
+l'historique</strong>, ce qui n'est pas le cas d'un VCS, comme CVS, SVN ou Hg. De
+ce postulat simple découle une autre philosophie, et donc une utilisation
+sensiblement différente : une distinction entre <em>branche du DAG</em> et <em>branche
+utilisateur</em>.</p>
+<p>Une branche du <strong>DAG</strong> (<em>directed Acyclic Graph</em> ou <em>graphe orienté acyclique</em>)
+est manipulée par Git et permet de suivre les modifications du code : qui est
+le descendant de qui ? Avec ce graphe, il est simple pour un DVCS de savoir
+quoi faire lors d'une opération comme une fusion (un merge). Mais chaque
+branche est <strong>anonyme</strong>, elle ne porte pas de nom. Les noms de branches
+sont dans un <strong>espace différent</strong>, distinct, qui permet de les manipuler
+indifféremment du DAG. Ou inversement de manipuler le DAG sans toucher aux noms.
+Cet espace utilisateur est appelé <strong>référence</strong>.</p>
+<p><strong>Note</strong> : Je reviendrai la dessus dans un prochain billet, il est temps
+maintenant de transformer la conférence #gitfr en billet.</p>
+<p>Cette distinction est source de confusion, d'erreur et de déception. Mais c'est
+ce qui rend Git si <strong>puissant</strong> !</p>
+<p>C'est ce que dit la suite du billet :</p>
+<blockquote>
+<p>At the very beginning, the instructor bashes the student repeatedly over the
+head with the bat until all brain cells containing any memory of SVN are
+destroyed. The instructor then teaches the student the Git primer.</p>
+</blockquote>
+<p>J'aime beaucoup cette image :). Il ne faut surtout pas utiliser Git comme on
+utilise SVN, ni de prêt ni de loin, il faut <strong>ré-apprendre</strong> ce qu'est le
+contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
+première de la création de #gitfr.</p>
+<p>Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
+un champ des possibles inimaginable quand on vient de SVN...</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0069-google_code_supporte_git.html">Google Code supporte Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-07-17T18:35:00">2011-07-17 18:35</time>
+        </small></h1>
+        <hr>
+        <p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
+maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
+<strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
+support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
+les 3 plus gros hébergeurs de code (Sourceforge, Google Code et GitHub)
+supportent maitenant notre DVCS préféré. Cela signifie aussi que l'avenir
+s'assombrie pour Mercurial, qui se retrouve (presque) dans la même
+situation que Bzr, avec un seul hébergeur <em>dépendant</em> important. Terme mal
+choisi pour désigner un hébergeur qui s'appuie uniquement sur une techno, en
+l'occurence <a href="https://bitbucket.org/">Bitbucket</a> (<a href="https://launchpad.net/">Launchpad</a>
+pour Bzr).</p>
+<p>Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
+raisons, l'une <strong>technique</strong> et l'autre <strong>marketing</strong>.</p>
+<h3>L'argument technique</h3>
+<p>Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
+<a href="http://code.google.com/p/gerrit/">Gerrit</a> et <a href="http://www.eclipse.org/jgit/">JGit</a> 
+(ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
+sur la liste de diffusion, Git supporte depuis la version 1.6.6 le protocole
+<strong>smart http</strong>. Ce dernier gère bien mieux le protocole http sur lequel Google
+Code s'appuie <strong>massivement</strong>. Ce qui a ouvert la voie, il <em>suffisait</em> (hum)
+ensuite de modifier Git pour gérer l'infrastructure Google. Si cela vous
+intéresse, jeter un oeil sur la video
+<a href="http://www.youtube.com/watch?v=ri796Hx8las">Google I/O 2009 - Mercurial on BigTable</a>
+qui explique cette même modification avec Mercurial. Une vidéo similaire
+devrait sortir pour Git (chouette !).</p>
+<p>Chose étonnante, d'après Dave Borowitz, Google code n'utilise pas JGit mais
+<a href="http://www.samba.org/~jelmer/dulwich/">Dulwich</a>, codé en Python. Je suis
+curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
+n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
+pas en dire plus).</p>
+<h3>L'argument marketing</h3>
+<p>La montée en puissance de GitHub ne fait aucun doute, cet
+<a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php">article</a>
+le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
+GitHub représente le total des commits de Sourceforge, Google Code et
+CodePlex <strong>réunis</strong>. Même si ce chiffre est à prendre avec de grosses pincettes,
+les DVCS poussent au commit unitaire donc à en produire bien plus, c'est
+un chiffre intéressant (le nombre de lignes de code serait lui significatif).</p>
+<p>Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
+entendre que ces communautés ont eux aussi (au moins partiellement) basculées
+sur GitHub (après les communautés Ruby, Javascript et Python).</p>
+<h3>Pour conclure</h3>
+<p>Redmonk dit que <strong>GitHub est le nouveau centre de gravité</strong>, les chiffres le
+prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
+poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
+moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
+augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/gitfr-sur-github.html">gitfr sur GitHub</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-07-09T20:35:00">2011-07-09 20:35</time>
+        </small></h1>
+        <hr>
+        <p>Par pure feinéantise intellectuelle, je n'ai pas voulu prendre mon temps pour
+tester diverses solutions techniques pour le blog. J'ai décidé d'aller au
+plus vite en utilisant les services d'un blog en ligne (tumblr en 
+l'occurrence). Mal m'en a pris ! Malgré quelques avantages indéniables, j'ai
+ressenti très rapidement les limitations du système :</p>
+<ul>
+<li>
+<p>Il faut être en ligne pour écrire, ou alors écrire dans un éditeur
+  et copier le contenu, puis le remettre en forme. De manière générale,
+  tout se fait en ligne à travers une interface simpl(ist)e.</p>
+</li>
+<li>
+<p>Le site tumblr est souvent en surcapacité. Les utilisateurs de Twitter
+  savent de quoi je veux parler :).</p>
+</li>
+<li>
+<p>Des permalinks fantaisistes (ID au lieu du titre).</p>
+</li>
+<li>
+<p>L'incapacité de collaborer sur le site, il faut en effet créer un
+  sous-site, le principal n'étant pas partageable (qui a eu cette idée
+  débile ?).</p>
+</li>
+<li>
+<p>L'outil Twitter mettait en avant l'url tumblr, et non celui du site.
+  Je ne trouve pas ça très élégant </p>
+</li>
+</ul>
+<p>Et j'en passe...</p>
+<h3>Et maintenant ?</h3>
+<p>Ce blog est maintenant propulsé par <a href="http://www.blogofile.com/">Blogofile</a>,
+un générateur de site statique, ce qui permet d'être hébergé sur GitHub. 
+Gitfr utilise Git, la boucle est bouclée ! :).</p>
+<p>Vous trouverez ce site sous 2 formes :</p>
+<ul>
+<li>
+<p>Les <a href="https://github.com/gitfr/website/">sources du site</a>, avec les articles
+  au format markdown (facilement réutilisable donc).</p>
+</li>
+<li>
+<p>Le <a href="https://github.com/gitfr/gitfr.github.com/">site web généré</a> par
+  <code>Blogofile</code>.</p>
+</li>
+</ul>
+<h3>Remarques</h3>
+<p>Le <a href="https://github.com/gitfr/website/issues">bugtracker</a> est à votre dispostion si vous avez des remarques, mais je suis
+aussi preneur de pull-request : propositions de CSS ou de fonctionnalités
+supplémentaires.</p>
+<h3>Vous voulez écrire ?</h3>
+<p>Blogofile permet de spécifier l'auteur des billets, donc si <strong>vous</strong> souhaitez
+écrire sur le blog, je suis aussi preneur, ca serait bien que #gitfr ne reste
+pas un projet personnel :).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.6-publiee.html">Git 1.7.6 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-07-09T20:34:00">2011-07-09 20:34</time>
+        </small></h1>
+        <hr>
+        <p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
+première version qui respecte le nouveau cycle de release plus court voulu
+par Junio.</p>
+<p>A la lecture du changelog, voici quelques points que je remarque :</p>
+<ul>
+<li>
+<p>Le magic pathspec ":/".</p>
+</li>
+<li>
+<p>L'option patch pour la commande git-commit.</p>
+</li>
+<li>
+<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
+</li>
+<li>
+<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
+   ou jamais faire un commit de merge.</p>
+</li>
+<li>
+<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
+</li>
+</ul>
+<h3>Changelog</h3>
+<ul>
+<li>
+<p>Various git-svn updates.</p>
+</li>
+<li>
+<p>Updates the way content tags are handled in gitweb.  Also adds
+  a UI to choose common timezone for displaying the dates.</p>
+</li>
+<li>
+<p>Similar to branch names, tagnames that begin with "-" are now
+  disallowed.</p>
+</li>
+<li>
+<p>Clean-up of the C part of i18n (but not l10n---please wait)
+  continues.</p>
+</li>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Pushing and pulling from a repository with large number of refs that
+  point to identical commits are optimized by not listing the same commit
+  during the common ancestor negotiation exchange with the other side.</p>
+</li>
+<li>
+<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
+  using "git add" will send the contents straight to a packfile without
+  having to hold it and its compressed representation both at the same
+  time in memory.</p>
+</li>
+<li>
+<p>Processes spawned by "[alias] <name> = !process" in the configuration
+  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
+  working tree the original command was invoked.</name></p>
+</li>
+<li>
+<p>A magic pathspec ":/" tells a command that limits its operation to
+  the current directory when ran from a subdirectory to work on the
+  entire working tree. In general, ":/path/to/file" would be relative
+  to the root of the working tree hierarchy.</p>
+</li>
+</ul>
+<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
+  be a no-op, but "git add -u :/" would add the updated contents of
+  the Makefile at the top level. If you want to name a path in the
+  current subdirectory whose unusual name begins with ":/", you can
+  name it by "./:/that/path" or by "\:/that/path".</p>
+<ul>
+<li>
+<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
+  number of hexdigits shown for commit object names.</n></p>
+</li>
+<li>
+<p>"git blame" learned "--line-porcelain" that is less efficient but is
+  easier to parse.</p>
+</li>
+<li>
+<p>Aborting "git commit --interactive" discards updates to the index
+  made during the interactive session.</p>
+</li>
+<li>
+<p>"git commit" learned a "--patch" option to directly jump to the
+  per-hunk selection UI of the interactive mode.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=0 to show
+  directories that contribute less than 0.1% of changes.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=lines mode to
+  assess damage to the directory based on number of lines in the patch
+  output, not based on the similarity numbers.</p>
+</li>
+<li>
+<p>"git format-patch" learned "--quiet" option to suppress the output of
+  the names of generated files.</p>
+</li>
+<li>
+<p>"git format-patch" quotes people's names when it has RFC822 special
+  characters in it, e.g. "Junio C. Hamano" <a href="mailto:jch@example.com">jch@example.com</a>.  Earlier
+  it was up to the user to do this when using its output.</p>
+</li>
+<li>
+<p>"git format-patch" can take an empty --subject-prefix now.</p>
+</li>
+<li>
+<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
+</li>
+<li>
+<p>"git log" and friends learned a new "--notes" option to replace the
+  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
+  not imply showing the default notes.</ref></p>
+</li>
+<li>
+<p>They also learned a log.abbrevCommit configuration variable to augment
+  the --abbrev-commit command line option.</p>
+</li>
+<li>
+<p>"git ls-remote" learned "--exit-code" option to consider it a
+  different kind of error when no remote ref to be shown.</p>
+</li>
+<li>
+<p>"git merge" learned "-" as a short-hand for "the previous branch", just
+  like the way "git checkout -" works.</p>
+</li>
+<li>
+<p>"git merge" uses "merge.ff" configuration variable to decide to always
+  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
+  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
+  (or not setting it at all) restores the default behaviour of allowing
+  fast-forward to happen when possible.</p>
+</li>
+<li>
+<p>p4-import (from contrib) learned a new option --preserve-user.</p>
+</li>
+<li>
+<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
+  would fail without touching the index nor the working tree.</p>
+</li>
+<li>
+<p>"git rebase" that does not specify on top of which branch to rebase
+  the current branch now uses @{upstream} of the current branch.</p>
+</li>
+<li>
+<p>"git rebase" finished either normally or with --abort did not
+  update the reflog for HEAD to record the event to come back to
+  where it started from.</p>
+</li>
+<li>
+<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
+  a fetch-mode mirror meant mirror everything, but now it only means refs are
+  not renamed.</p>
+</li>
+<li>
+<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
+  commits separately, producing more a useful output.</p>
+</li>
+<li>
+<p>"git submodule update" learned "--force" option to get rid of local
+  changes in submodules and replace them with the up-to-date version.</p>
+</li>
+<li>
+<p>"git status" and friends ignore .gitmodules file while the file is
+  still in a conflicted state during a merge, to avoid using information
+  that is not final and possibly corrupt with conflict markers.</p>
+</li>
+<li>
+<p>"git config" used to choke with an insanely long line.
+  (merge ef/maint-strbuf-init later)</p>
+</li>
+<li>
+<p>"git diff --quiet" did not work well with --diff-filter.
+  (merge jk/diff-not-so-quick later)</p>
+</li>
+<li>
+<p>"git status -z" did not default to --porcelain output format.
+  (merge bc/maint-status-z-to-use-porcelain later)</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0066-cycle_de_release_raccourci.html">Cycle de release raccourci</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T03:24:00">2011-06-13 03:24</time>
+        </small></h1>
+        <hr>
+        <p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
+<h3>Le planning</h3>
+<ul>
+<li>
+<p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
+</li>
+<li>
+<p>Cycle d'intégration de nouvelles fonctionnalités à partir de la deuxième semaine, en fusionnant de la branche <code>next</code> vers <code>master</code>, ou de la branche <code>pu</code> vers <code>next</code>. </p>
+</li>
+<li>
+<p>Semaine N, une version <em>release candidate</em> (rc0) est taggée. Tous les sujets dans <code>next</code> sont triés (pour inclusion dans <code>master</code> ou attente de la prochaine version).</p>
+</li>
+<li>
+<p>Semaine N+1, une deuxième version <em>rc</em> est taggée. L'objectif est de tester à fond pour trouver d'éventuelles régressions, et plus aucune fonctionnalité nouvelle est acceptée.</p>
+</li>
+<li>
+<p>Semaine N+2, une troisième <em>rc</em> sort.</p>
+</li>
+<li>
+<p>Semaine X, la version finale sort.</p>
+</li>
+</ul>
+<p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
+<h3>Gestion des branches</h3>
+<p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
+<ul>
+<li>
+<p>master, la branche principale de la prochaine stable.</p>
+</li>
+<li>
+<p>next, la branche de stabilisation  de la prochaine stable.</p>
+</li>
+<li>
+<p>pu, la branche d'intégration de la prochaine stable.</p>
+</li>
+<li>
+<p>maint, la branche de maintenance de la dernière stable.</p>
+</li>
+</ul>
+<p>Une nouvelle fonctionnalité ne va pas directement dans <code>master</code>, mais passe d'abord par <code>pu</code>, puis <code>next</code>. Si tout donne satisfaction, alors la branche est mergée dans <code>master</code>. Cela signifie que :</p>
+<ul>
+<li>
+<p>vous pouvez utiliser une version stable, en stabilisation ou en cours de développement.</p>
+</li>
+<li>
+<p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
+</li>
+</ul>
+<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0065-git_blameall.html">git blameall</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T02:22:00">2011-06-13 02:22</time>
+        </small></h1>
+        <hr>
+        <p>Vous connaissez surement la commande <code>blame</code>, présent dans tous les outils de gestion de source, et qui permet de connaitre l'auteur de chaque ligne d'un fichier. Dan Gindikin nous gratifie de <a href="http://1dan.org/git-blameall/">git-blameall</a>, un petit script en Python (il faut donc qu'un interpréteur Python soit présent sur votre système, ce qui est le cas par défaut sur Linux et MacOS) qui permet d'avoir la mếme information pour toutes les lignes qui ont existées dans l'histoire de ce fichier.</p>
+<p>Vous avez donc une colonne supplémentaire qui vous donne le SHA1 ou cette ligne fut effacée. A garder sous le coude !</p>
+<p>Voici une copie d'écran :</p>
+<p><img alt="" src="http://1dan.org/git-blameall/git-blameall-screen1.png"></p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.5.4-publiee.html">Git 1.7.5.4 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T02:10:00">2011-06-13 02:10</time>
+        </small></h1>
+        <hr>
+        <p>La quatrième version de la branche 1.7.5.x est sortie le 2 juin, soit seulement 5 jours aprés la précédente. C'est la dernière ligne du changelog qui nous donne la réponse.</p>
+<h3>Changelog</h3>
+<ul>
+<li>
+<p>The single-key mode of "git add -p" was easily fooled into thinking
+  that it was told to add everthing ('a') when up-arrow was pressed by
+  mistake.</p>
+</li>
+<li>
+<p>Setting a git command that uses custom configuration via "-c var=val"
+  as an alias caused a crash due to a realloc(3) failure.</p>
+</li>
+<li>
+<p>"git diff -C -C" used to disable the rename detection entirely when
+  there are too many copy candidate paths in the tree; now it falls
+  back to "-C" when doing so would keep the copy candidate paths
+  under the rename detection limit.</p>
+</li>
+<li>
+<p>"git rerere" did not diagnose a corrupt MERGE_RR file in some cases.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.5.3-publiee.html">Git 1.7.5.3 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T02:07:00">2011-06-13 02:07</time>
+        </small></h1>
+        <hr>
+        <p>La troisième version de maintenance de la branche 1.7.5.x est sortie le 27 mai.</p>
+<h3>Changelog</h3>
+<ul>
+<li>
+<p>The bash completion scripts should correctly work using zsh's bash
+  completion emulation layer now.</p>
+</li>
+<li>
+<p>Setting $(prefix) in config.mak did not affect where etc/gitconfig
+  file is read from, even though passing it from the command line of
+  $(MAKE) did.</p>
+</li>
+<li>
+<p>The logic to handle "&amp;" (expand to UNIX username) in GECOS field
+  miscounted the length of the name it formatted.</p>
+</li>
+<li>
+<p>"git cherry-pick -s resolve" failed to cherry-pick a root commit.</p>
+</li>
+<li>
+<p>"git diff --word-diff" misbehaved when diff.suppress-blank-empty was
+  in effect.</p>
+</li>
+<li>
+<p>"git log --stdin path" with an input that has additional pathspec
+  used to corrupt memory.</p>
+</li>
+<li>
+<p>"git send-pack" (hence "git push") over smalt-HTTP protocol could
+  deadlock when the client side pack-object died early.</p>
+</li>
+<li>
+<p>Compressed tarball gitweb generates used to be made with the timestamp
+  of the tarball generation; this was bad because snapshot from the same
+  tree should result in a same tarball.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.5.2-publiee.html">Git 1.7.5.2 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T02:05:00">2011-06-13 02:05</time>
+        </small></h1>
+        <hr>
+        <p>La deuxième version de maintenance de la branche 1.7.5.x est sortie la 20 mai.</p>
+<h3>Changelog</h3>
+<ul>
+<li>
+<p>"git add -p" did not work correctly when a hunk is split and then
+  one of them was given to the editor.</p>
+</li>
+<li>
+<p>"git add -u" did not resolve a conflict where our history deleted and
+  their history modified the same file, and the working tree resolved to
+  keep a file.</p>
+</li>
+<li>
+<p>"git cvsimport" did not know that CVSNT stores its password file in a
+  location different from the traditional CVS.</p>
+</li>
+<li>
+<p>"git diff-files" did not show the mode information from the working
+  tree side of an unmerged path correctly.</p>
+</li>
+<li>
+<p>"git diff -M --cached" used to use unmerged path as a possible rename
+  source candidate, which made no sense.</p>
+</li>
+<li>
+<p>The option name parser in "git fast-import" used prefix matches for
+  some options where it shouldn't, and accepted non-existent options,
+  e.g. "--relative-marksmith" or "--forceps".</p>
+</li>
+<li>
+<p>"git format-patch" did not quote RFC822 special characters in the
+  email address (e.g From: Junio C. Hamano <a href="mailto:jch@example.com">jch@example.com</a>, not
+  From: "Junio C. Hamano" <a href="mailto:jch@example.com">jch@example.com</a>).</p>
+</li>
+<li>
+<p>"git format-patch" when run with "--quiet" option used to produce a
+  nonsense result that consists of alternating empty output.</p>
+</li>
+<li>
+<p>In "git merge", per-branch branch.<name>.mergeoptions configuration
+  variables did not override the fallback default merge.<option>
+  configuration variables such as merge.ff, merge.log, etc.</option></name></p>
+</li>
+<li>
+<p>"git merge-one-file" did not honor GIT_WORK_TREE settings when
+  handling a "both sides added, differently" conflict.</p>
+</li>
+<li>
+<p>"git mergetool" did not handle conflicted submodules gracefully.</p>
+</li>
+<li>
+<p>"git-p4" (in contrib) used a wrong base image while merge a file that
+  was added on both branches differently.</p>
+</li>
+<li>
+<p>"git rebase -i -p" failed to preserve the history when there is a
+  redundant merge created with the --no-ff option.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.5.1-publiee.html">Git 1.7.5.1 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-06-13T01:57:00">2011-06-13 01:57</time>
+        </small></h1>
+        <hr>
+        <p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>
+<p>When an object "$tree:$path" does not exist, if $path does exist in the
+  subtree of $tree that corresponds to the subdirectory the user is in,
+  git now suggests using "$tree:./$path" in addition to the advice to use
+  the full path from the root of the working tree.</p>
+</li>
+<li>
+<p>The "--date=relative" output format used to say "X years, 12 months"
+  when it should have said "X+1 years".</p>
+</li>
+<li>
+<p>The smart-HTTP transfer was broken in 1.7.5 when the client needs
+  to issue a small POST (which uses content-length) and then a large
+  POST (which uses chunked) back to back.</p>
+</li>
+<li>
+<p>"git clean" used to fail on an empty directory that is not readable,
+  even though rmdir(2) could remove such a directory.  Now we attempt it
+  as the last resort.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to totally
+  ignore a change that only rearranged lines within a file.  Such a
+  change now counts as at least a minimum but non zero change.</p>
+</li>
+<li>
+<p>The "--dirstat" option of "diff" family of commands used to use the
+  pathname in the original, instead of the pathname in the result,
+  when renames are involved.</p>
+</li>
+<li>
+<p>"git pack-object" did not take core.bigfilethreashold into account
+  (unlike fast-import); now it does.</p>
+</li>
+<li>
+<p>"git reflog" ignored options like "--format=.." on the command line.</p>
+</li>
+<li>
+<p>"git stash apply" used to refuse to work if there was any change in
+  the working tree, even when the change did not overlap with the change
+  the stash recorded.</p>
+</li>
+<li>
+<p>"git stash apply @{99999}" was not diagnosed as an error, even when you
+  did not have that many stash entries.</p>
+</li>
+<li>
+<p>An error message from "git send-email" to diagnose a broken SMTP
+  connection configuration lacked a space between "hello=<smtp-domain>"
+  and "port=<smtp-server-port>".</smtp-server-port></smtp-domain></p>
+</li>
+<li>
+<p>"git stash -p --no-keep-index" and "git stash --no-keep-index -p" now
+  mean the same thing.</p>
+</li>
+<li>
+<p>"git upload-pack" (hence "git push" over git native protocol) had a
+  subtle race condition that could lead to a deadlock.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager">
+    <li class="previous">
+        <a href="index-8.html">← Billets récents</a>
+    </li><li class="next">
+        <a href="index-6.html">Anciens billets →</a>
+</li></ul>
+</div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

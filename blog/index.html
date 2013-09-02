@@ -1,80 +1,536 @@
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  <title>#gitfr</title>
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/gitfr" />
-<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
-
-<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
-<link rel='stylesheet' href='/css/pygments_tango.css' type='text/css' />
-<link rel='stylesheet' href='/css/site.css' type='text/css' />
-<link rel='stylesheet' href='/css/documentation.css' type='text/css' />
-<link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
-
-<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="/js/jquery.tweet.js"></script>
-<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
-<script type="text/javascript" src="/js/site.js"></script>
-
-
-
-  </head>
-  <body>
-    <div id="content">
-      
-  
-<div id="header" onclick="location.href='/';" style="cursor: pointer;">
-  <div id="plugbanner"></div>
-  <div id="blog_logo"></div>
-  <h1><a href="/">
-      <span id="blog_name">
-        #gitfr
-      </span>
-    </a>
-  </h1>
-</div>
-<a href="http://github.com/gitfr/website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-<div id="top_bar">
-  <div class="ButtonBar">
-    <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </div>
-  <div id="search">    
-    <form id="searchform" method="get" action="http://www.google.com/search">
-      <input type="hidden" name="ie" value="UTF-8">
-      <input type="hidden" name="oe" value="UTF-8">
-      <input type="hidden" name="domains" value="www.gitfr.net">
-      <input type="hidden" name="sitesearch" value="www.gitfr.net">
-      <input name="q" id="q" size="20" value="recherche..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
-    </form>
-  </div>
-</div>
-
-
-
-      <div id="main_block">
-        <div id="prose_block">
-          
-  
-<div class="blog_post">
-  <a name="git-1.8.0-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2013/01/06/git-1.8.0-publiee" rel="bookmark" title="Permanent Link to Git 1.8.0 publiée">Git 1.8.0 publiée</a></h2>
-  <p class="related"><strong>06/01/2013 09:43 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2013/01/06/git-1.8.0-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
+    <meta charset="utf-8">
+    <meta name="description" content="Site francophone sur Git.">
+    <meta name="author" content="GitFR">
+    <title>GitFR | GitFR</title>
     
-  <p><strong>Note</strong> : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.</p>
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+    
+    
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href=".">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
+            </li><li><a href="rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/git-184-publiee.html">Git 1.8.4 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2013-09-02T08:34:06">2013-09-02 08:34</time>
+        </small></h1>
+        <hr>
+        <p>La version 1.8.4 est sortie le 23 août. Beaucoup de choses au menu avec plus de
+870 changements (venant de plus de 100 contributeurs). Le changelog est donc
+particulièrement bien fourni. Voici quelques points clés :</p>
+<ul class="simple">
+<li><tt class="docutils literal">git log</tt> a une option "-Lbegin,end:filename". Encore expérimentale, elle
+permet de spécifier un range (désolé pour l'anglicisme mais j'ai du mal à
+trouver une terme français aussi explicite).</li>
+<li><tt class="docutils literal">git clean</tt> possède maintenant un mode interactif qui reprend celui de
+<tt class="docutils literal">git add</tt>.</li>
+<li><tt class="docutils literal">git submodule</tt> peut être appelé des sous-répertoires, et une nouvelle
+variable <tt class="docutils literal"><span class="pre">submodule.*.update</span></tt> permet d'invoquer une commande. De plus,
+on peut cloner un dépôt en mode <tt class="docutils literal">shallow</tt>.</li>
+<li><tt class="docutils literal">git rebase <span class="pre">-i</span></tt> gère maintenant les options <tt class="docutils literal">strategy</tt> et <tt class="docutils literal"><span class="pre">-X</span></tt>.</li>
+<li>Pendant un <tt class="docutils literal">git rebase –autostash</tt>, on peut sauver le stash avant de
+lancer l'opération.</li>
+<li>2 nouvelles variables <tt class="docutils literal">status.branch</tt> et <tt class="docutils literal">status.short</tt> pour éviter de
+taper <tt class="docutils literal">git status <span class="pre">-branch</span></tt> et <tt class="docutils literal">git status <span class="pre">-short</span></tt>.</li>
+<li><tt class="docutils literal">git log</tt> possède une nouvelle option <tt class="docutils literal"><span class="pre">–author-date-order</span></tt>.</li>
+<li><tt class="docutils literal">git diff</tt> a un nouveau mode pour ignorer les additions ou suppressions
+de lignes vides.</li>
+<li>La variable <tt class="docutils literal">color.ui</tt> est maintenant sur <tt class="docutils literal">auto</tt>.</li>
+<li><tt class="docutils literal">git <span class="pre">name-rev</span></tt> peut nommer un tag annoté à partir de son nom.</li>
+<li><tt class="docutils literal">git describe</tt> possède maintenant l'option <tt class="docutils literal"><span class="pre">–first-parent</span></tt>.</li>
+</ul>
+<p>A noter que la version 2.0 devrait sortir l'année prochaine.</p>
+<div class="section" id="changelog">
+<h2>Changelog</h2>
+<blockquote>
+<ul>
+<li><p class="first">Cygwin port has been updated for more recent Cygwin 1.7.</p>
+</li>
+<li><p class="first">"git rebase -i" now honors --strategy and -X options.</p>
+</li>
+<li><p class="first">Git-gui has been updated to its 0.18.0 version.</p>
+</li>
+<li><p class="first">MediaWiki remote helper (in contrib/) has been updated to use the
+credential helper interface from Git.pm.</p>
+</li>
+<li><p class="first">Update build for Cygwin 1.[57].  Torsten Bögershausen reports that
+this is fine with Cygwin 1.7 ($gmane/225824) so let's try moving it
+ahead.</p>
+</li>
+<li><p class="first">The credential helper to talk to keychain on OS X (in contrib/) has
+been updated to kick in not just when talking http/https but also
+imap(s) and smtp.</p>
+</li>
+<li><p class="first">Remote transport helper has been updated to report errors and
+maintain ref hierarchy used to keep track of its own state better.</p>
+</li>
+<li><p class="first">With "export" remote-helper protocol, (1) a push that tries to
+update a remote ref whose name is different from the pushing side
+does not work yet, and (2) the helper may not know how to do
+--dry-run; these problematic cases are disabled for now.</p>
+</li>
+<li><p class="first">git-remote-hg/bzr (in contrib/) updates.</p>
+</li>
+<li><p class="first">git-remote-mw (in contrib/) hints users to check the certificate,
+when <a class="reference external" href="https://">https://</a> connection failed.</p>
+</li>
+<li><p class="first">git-remote-mw (in contrib/) adds a command to allow previewing the
+contents locally before pushing it out, when working with a
+MediaWiki remote.</p>
+</li>
+<li><p class="first">Sample "post-receive-email" hook script got an enhanced replacement
+"multimail" (in contrib/).</p>
+</li>
+<li><p class="first">Also in contrib/ is a new "contacts" script that runs "git blame"
+to find out the people who may be interested in a set of changes.</p>
+</li>
+<li><p class="first">"git clean" command learned an interactive mode.</p>
+</li>
+<li><p class="first">The "--head" option to "git show-ref" was only to add "HEAD" to the
+list of candidate refs to be filtered by the usual rules
+(e.g. "--heads" that only show refs under refs/heads).  The meaning
+of the option has been changed to always show "HEAD" regardless of
+what filtering will be applied to any other ref.</p>
+<p>This is a backward incompatible change and might cause breakages to
+people's existing scripts.</p>
+</li>
+<li><p class="first">"git show -s" was less discoverable than it should have been.  It
+now has a natural synonym "git show --no-patch".</p>
+</li>
+<li><p class="first">"git check-mailmap" is a new command that lets you map usernames
+and e-mail addresses through the mailmap mechanism, just like many
+built-in commands do.</p>
+</li>
+<li><p class="first">"git name-rev" learned to name an annotated tag object back to its
+tagname; "git name-rev $(git rev-parse v1.0.0)" gives "tags/v1.0.0",
+for example.</p>
+</li>
+<li><p class="first">"git cat-file --batch-check=&lt;format&gt;" is added, primarily to allow
+on-disk footprint of objects in packfiles (often they are a lot
+smaller than their true size, when expressed as deltas) to be
+reported.</p>
+</li>
+<li><p class="first">"git rebase [-i]" used to leave just "rebase" as its reflog messages
+for some operations. They have been reworded to be more informative.</p>
+</li>
+<li><p class="first">In addition to the choice from "rebase, merge, or checkout-detach",
+"submodule update" can allow a custom command to be used in to
+update the working tree of submodules via the "submodule.*.update"
+configuration variable.</p>
+</li>
+<li><p class="first">"git submodule update" can optionally clone the submodule
+repositories shallowly.</p>
+</li>
+<li><p class="first">"git format-patch" learned "--from[=whom]" option, which sets the
+"From: " header to the specified person (or the person who runs the
+command, if "=whom" part is missing) and move the original author
+information to an in-body From: header as necessary.</p>
+</li>
+<li><p class="first">The configuration variable "merge.ff" was cleary a tri-state to
+choose one from "favor fast-forward when possible", "always create
+a merge even when the history could fast-forward" and "do not
+create any merge, only update when the history fast-forwards", but
+the command line parser did not implement the usual convention of
+"last one wins, and command line overrides the configuration"
+correctly.</p>
+</li>
+<li><p class="first">"gitweb" learned to optionally place extra links that point at the
+levels higher than the Gitweb pages themselves in the breadcrumbs,
+so that it can be used as part of a larger installation.</p>
+</li>
+<li><p class="first">"git log --format=" now honors i18n.logoutputencoding configuration
+variable.</p>
+</li>
+<li><p class="first">The "push.default=simple" mode of "git push" has been updated to
+behave like "current" without requiring a remote tracking
+information, when you push to a remote that is different from where
+you fetch from (i.e. a triangular workflow).</p>
+</li>
+<li><p class="first">Having multiple "fixup!" on a line in the rebase instruction sheet
+did not work very well with "git rebase -i --autosquash".</p>
+</li>
+<li><p class="first">"git log" learned the "--author-date-order" option, with which the
+output is topologically sorted and commits in parallel histories
+are shown intermixed together based on the author timestamp.</p>
+</li>
+<li><p class="first">Various subcommands of "git submodule" refused to run from anywhere
+other than the top of the working tree of the superproject, but
+they have been taught to let you run from a subdirectory.</p>
+</li>
+<li><p class="first">"git diff" learned a mode that ignores hunks whose change consists
+only of additions and removals of blank lines, which is the same as
+"diff -B" (ignore blank lines) of GNU diff.</p>
+</li>
+<li><p class="first">"git rm" gives a single message followed by list of paths to report
+multiple paths that cannot be removed.</p>
+</li>
+<li><p class="first">"git rebase" can be told with ":/look for this string" syntax commits
+to replay the changes onto and where the work to be replayed begins.</p>
+</li>
+<li><p class="first">Many tutorials teach users to set "color.ui" to "auto" as the first
+thing after you set "user.name/email" to introduce yourselves to
+Git.  Now the variable defaults to "auto".</p>
+</li>
+<li><p class="first">On Cygwin, "cygstart" is now recognised as a possible way to start
+a web browser (used in "help -w" and "instaweb" among others).</p>
+</li>
+<li><p class="first">"git status" learned status.branch and status.short configuration
+variables to use --branch and --short options by default (override
+with --no-branch and --no-short options from the command line).</p>
+</li>
+<li><p class="first">"git cmd &lt;name&gt;", when &lt;name&gt; happens to be a 40-hex string,
+directly uses the 40-hex string as an object name, even if a ref
+"refs/&lt;some hierarchy&gt;/&lt;name&gt;" exists.  This disambiguation order
+is unlikely to change, but we should warn about the ambiguity just
+like we warn when more than one refs/ hierarchies share the same
+name.</p>
+</li>
+<li><p class="first">"git rebase" learned "--[no-]autostash" option to save local
+changes instead of refusing to run (to which people's normal
+response was to stash them and re-run).  This introduced a corner
+case breakage to "git am --abort" but it has been fixed.</p>
+</li>
+<li><p class="first">"check-ignore" (new feature since 1.8.2) has been updated to work
+more like "check-attr" over bidi-pipes.</p>
+</li>
+<li><p class="first">"git describe" learned "--first-parent" option to limit its closest
+tagged commit search to the first-parent chain.</p>
+</li>
+<li><p class="first">"git merge foo" that might have meant "git merge origin/foo" is
+diagnosed with a more informative error message.</p>
+</li>
+<li><p class="first">"git log -L&lt;line&gt;,&lt;range&gt;:&lt;filename&gt;" has been added.  This may
+still have leaks and rough edges, though.</p>
+</li>
+<li><p class="first">We used the approxidate() parser for "--expire=&lt;timestamp&gt;" options
+of various commands, but it is better to treat --expire=all and
+--expire=now a bit more specially than using the current timestamp.
+"git gc" and "git reflog" have been updated with a new parsing
+function for expiry dates.</p>
+</li>
+<li><p class="first">Updates to completion (both bash and zsh) helpers.</p>
+</li>
+<li><p class="first">The behaviour of the "--chain-reply-to" option of "git send-email"
+have changed at 1.7.0, and we added a warning/advice message to
+help users adjust to the new behaviour back then, but we kept it
+around for too long.  The message has finally been removed.</p>
+</li>
+<li><p class="first">"git fetch origin master" unlike "git fetch origin" or "git fetch"
+did not update "refs/remotes/origin/master"; this was an early
+design decision to keep the update of remote tracking branches
+predictable, but in practice it turns out that people find it more
+convenient to opportunistically update them whenever we have a
+chance, and we have been updating them when we run "git push" which
+already breaks the original "predictability" anyway.</p>
+</li>
+<li><p class="first">The configuration variable core.checkstat was advertised in the
+documentation but the code expected core.statinfo instead.
+For now, we accept both core.checkstat and core.statinfo, but the
+latter will be removed in the longer term.</p>
+</li>
+<li><p class="first">On Cygwin, we used to use our own lstat(2) emulation that is
+allegedly faster than the platform one in codepaths where some of
+the information it returns did not matter, but it started to bite
+us in a few codepaths where the trick it uses to cheat does show
+breakages. This emulation has been removed and we use the native
+lstat(2) emulation supplied by Cygwin now.</p>
+</li>
+<li><p class="first">The function attributes extensions are used to catch mistakes in
+use of our own variadic functions that use NULL sentinel at the end
+(i.e. like execl(3)) and format strings (i.e. like printf(3)).</p>
+</li>
+<li><p class="first">The code to allow configuration data to be read from in-tree blob
+objects is in.  This may help working in a bare repository and
+submodule updates.</p>
+</li>
+<li><p class="first">Fetching between repositories with many refs employed O(n^2)
+algorithm to match up the common objects, which has been corrected.</p>
+</li>
+<li><p class="first">The original way to specify remote repository using .git/branches/
+used to have a nifty feature.  The code to support the feature was
+still in a function but the caller was changed not to call it 5
+years ago, breaking that feature and leaving the supporting code
+unreachable.  The dead code has been removed.</p>
+</li>
+<li><p class="first">"git pack-refs" that races with new ref creation or deletion have
+been susceptible to lossage of refs under right conditions, which
+has been tightened up.</p>
+</li>
+<li><p class="first">We read loose and packed references in two steps, but after
+deciding to read a loose ref but before actually opening it to read
+it, another process racing with us can unlink it, which would cause
+us to barf.  The codepath has been updated to retry when such a
+race is detected, instead of outright failing.</p>
+</li>
+<li><p class="first">Uses of the platform fnmatch(3) function (many places in the code,
+matching pathspec, .gitignore and .gitattributes to name a few)
+have been replaced with wildmatch, allowing "foo/**/bar" that would
+match foo/bar, foo/a/bar, foo/a/b/bar, etc.</p>
+</li>
+<li><p class="first">Memory ownership and lifetime rules for what for-each-ref feeds to
+its callbacks have been clarified (in short, "you do not own it, so
+make a copy if you want to keep it").</p>
+</li>
+<li><p class="first">The revision traversal logic to improve culling of irrelevant
+parents while traversing a mergy history has been updated.</p>
+</li>
+<li><p class="first">Some leaks in unpack-trees (used in merge, cherry-pick and other
+codepaths) have been plugged.</p>
+</li>
+<li><p class="first">The codepath to read from marks files in fast-import/export did not
+have to accept anything but 40-hex representation of the object
+name.  Further, fast-export did not need full in-core object
+representation to have parsed wen reading from them.  These
+codepaths have been optimized by taking advantage of these access
+patterns.</p>
+</li>
+<li><p class="first">Object lookup logic, when the object hashtable starts to become
+crowded, has been optimized.</p>
+</li>
+<li><p class="first">When TEST_OUTPUT_DIRECTORY setting is used, it was handled somewhat
+inconsistently between the test framework and t/Makefile, and logic
+to summarize the results looked at a wrong place.</p>
+</li>
+<li><p class="first">"git clone" uses a lighter-weight implementation when making sure
+that the history behind refs are complete.</p>
+</li>
+<li><p class="first">Many warnings from sparse source checker in compat/ area has been
+squelched.</p>
+</li>
+<li><p class="first">The code to reading and updating packed-refs file has been updated,
+correcting corner case bugs.</p>
+</li>
+<li><p class="first">Newer Net::SMTP::SSL module does not want the user programs to use
+the default behaviour to let server certificate go without
+verification, so by default enable the verification with a
+mechanism to turn it off if needed.
+(merge 35035bb rr/send-email-ssl-verify later to maint).</p>
+</li>
+<li><p class="first">When "git" is spawned in such a way that any of the low 3 file
+descriptors is closed, our first open() may yield file descriptor 2,
+and writing error message to it would screw things up in a big way.
+(merge a11c396 tr/protect-low-3-fds later to maint).</p>
+</li>
+<li><p class="first">The mailmap mechanism unnecessarily downcased the e-mail addresses
+in the output, and also ignored the human name when it is a single
+character name.
+(merge bd23794 jc/mailmap-case-insensitivity later to maint).</p>
+</li>
+<li><p class="first">In two places we did not check return value (expected to be a file
+descriptor) correctly.
+(merge a77f106 tr/fd-gotcha-fixes later to maint).</p>
+</li>
+<li><p class="first">Logic to auto-detect character encodings in the commit log message
+did not reject overlong and invalid UTF-8 characters.
+(merge 81050ac bc/commit-invalid-utf8 later to maint).</p>
+</li>
+<li><p class="first">Pass port number as a separate argument when "send-email" initializes
+Net::SMTP, instead of as a part of the hostname, i.e. host:port.
+This allows GSSAPI codepath to match with the hostname given.
+(merge 1a741bf bc/send-email-use-port-as-separate-param later to maint).</p>
+</li>
+<li><p class="first">"git diff" refused to even show difference when core.safecrlf is
+set to true (i.e. error out) and there are offending lines in the
+working tree files.
+(merge 5430bb2 jc/maint-diff-core-safecrlf later to maint).</p>
+</li>
+<li><p class="first">A test that should have failed but didn't revealed a bug that needs
+to be corrected.
+(merge 94d75d1 jc/t1512-fix later to maint).</p>
+</li>
+<li><p class="first">An overlong path to a .git directory may have overflown the
+temporary path buffer used to create a name for lockfiles.
+(merge 2fbd4f9 mh/maint-lockfile-overflow later to maint).</p>
+</li>
+<li><p class="first">Invocations of "git checkout" used internally by "git rebase" were
+counted as "checkout", and affected later "git checkout -" to the
+the user to an unexpected place.
+(merge 3bed291 rr/rebase-checkout-reflog later to maint).</p>
+</li>
+<li><p class="first">The configuration variable column.ui was poorly documented.
+(merge 5e62cc1 rr/column-doc later to maint).</p>
+</li>
+<li><p class="first">"git name-rev --refs=tags/v*" were forbidden, which was a bit
+inconvenient (you had to give a pattern to match refs fully, like
+--refs=refs/tags/v*).
+(merge 98c5c4a nk/name-rev-abbreviated-refs later to maint).</p>
+</li>
+<li><p class="first">"git apply" parsed patches that add new files, generated by
+programs other than Git, incorrectly.  This is an old breakage in
+v1.7.11 and will need to be merged down to the maintenance tracks.</p>
+</li>
+<li><p class="first">Older cURL wanted piece of memory we call it with to be stable, but
+we updated the auth material after handing it to a call.</p>
+</li>
+<li><p class="first">"git pull" into nothing trashed "local changes" that were in the
+index, and this avoids it.</p>
+</li>
+<li><p class="first">Many "git submodule" operations do not work on a submodule at a
+path whose name is not in ASCII.</p>
+</li>
+<li><p class="first">"cherry-pick" had a small leak in an error codepath.</p>
+</li>
+<li><p class="first">Logic used by git-send-email to suppress cc mishandled names like
+"A U. Thor" &lt;<a class="reference external" href="mailto:author@example.xz">author@example.xz</a>&gt;, where the human readable part
+needs to be quoted (the user input may not have the double quotes
+around the name, and comparison was done between quoted and
+unquoted strings).  It also mishandled names that need RFC2047
+quoting.</p>
+</li>
+<li><p class="first">Call to discard_cache/discard_index (used when we use different
+contents of the index in-core, in many operations like commit,
+apply, and merge) used to leak memory that held the array of index
+entries, which has been plugged.
+(merge a0fc4db rs/discard-index-discard-array later to maint).</p>
+</li>
+<li><p class="first">"gitweb" forgot to clear a global variable $search_regexp upon each
+request, mistakenly carrying over the previous search to a new one
+when used as a persistent CGI.</p>
+</li>
+<li><p class="first">The wildmatch engine did not honor WM_CASEFOLD option correctly.</p>
+</li>
+<li><p class="first">"git log -c --follow $path" segfaulted upon hitting the commit that
+renamed the $path being followed.</p>
+</li>
+<li><p class="first">When a reflog notation is used for implicit "current branch", we
+did not say which branch and worse said "branch ''".</p>
+</li>
+<li><p class="first">"difftool --dir-diff" did not copy back changes made by the
+end-user in the diff tool backend to the working tree in some
+cases.</p>
+</li>
+<li><p class="first">"git push $there HEAD:branch" did not resolve HEAD early enough, so
+it was easy to flip it around while push is still going on and push
+out a branch that the user did not originally intended when the
+command was started.</p>
+</li>
+<li><p class="first">The bash prompt code (in contrib/) displayed the name of the branch
+being rebased when "rebase -i/-m/-p" modes are in use, but not the
+plain vanilla "rebase".</p>
+</li>
+<li><p class="first">Handling of negative exclude pattern for directories "!dir" was
+broken in the update to v1.8.3.</p>
+</li>
+<li><p class="first">zsh prompt script that borrowed from bash prompt script did not
+work due to slight differences in array variable notation between
+these two shells.</p>
+</li>
+<li><p class="first">An entry for "<a class="reference external" href="file://">file://</a>" scheme in the enumeration of URL types Git
+can take in the HTML documentation was made into a clickable link
+by mistake.</p>
+</li>
+<li><p class="first">"git push --[no-]verify" was not documented.</p>
+</li>
+<li><p class="first">Stop installing the git-remote-testpy script that is only used for
+testing.</p>
+</li>
+<li><p class="first">"git commit --allow-empty-message -m ''" should not start an
+editor.</p>
+</li>
+<li><p class="first">"git merge @{-1}~22" was rewritten to "git merge <a class="reference external" href="mailto:frotz@%7B1%7D~22">frotz@{1}~22</a>"
+incorrectly when your previous branch was "frotz" (it should be
+rewritten to "git merge frotz~22" instead).</p>
+</li>
+<li><p class="first">"git diff -c -p" was not showing a deleted line from a hunk when
+another hunk immediately begins where the earlier one ends.</p>
+</li>
+<li><p class="first">"git log --ancestry-path A...B" did not work as expected, as it did
+not pay attention to the fact that the merge base between A and B
+was the bottom of the range being specified.</p>
+</li>
+<li><p class="first">Mac OS X does not like to write(2) more than INT_MAX number of
+bytes; work it around by chopping write(2) into smaller pieces.</p>
+</li>
+<li><p class="first">Newer MacOS X encourages the programs to compile and link with
+their CommonCrypto, not with OpenSSL.</p>
+</li>
+<li><p class="first">"git clone foo/bar:baz" cannot be a request to clone from a remote
+over git-over-ssh specified in the scp style.  This case is now
+detected and clones from a local repository at "foo/bar:baz".</p>
+</li>
+<li><p class="first">When $HOME is misconfigured to point at an unreadable directory, we
+used to complain and die. Loosen the check.</p>
+</li>
+<li><p class="first">"git subtree" (in contrib/) had one codepath with loose error
+checks to lose data at the remote side.</p>
+</li>
+<li><p class="first">"git fetch" into a shallow repository from a repository that does
+not know about the shallow boundary commits (e.g. a different fork
+from the repository the current shallow repository was cloned from)
+did not work correctly.</p>
+</li>
+<li><p class="first">"git checkout foo" DWIMs the intended "upstream" and turns it into
+"git checkout -t -b foo remotes/origin/foo". This codepath has been
+updated to correctly take existing remote definitions into account.</p>
+</li>
+</ul>
+</blockquote>
+</div>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.8.0-publiee.html">Git 1.8.0 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2013-01-06T21:43:00">2013-01-06 21:43</time>
+        </small></h1>
+        <hr>
+        <p><strong>Note</strong> : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.</p>
 <p>Changements intéressants:
  * la configuration upstream d'une branche évolue: --set-upstream est dépréciée,
    et est remplacée par --set-upstream-to=reference.
@@ -104,7 +560,7 @@
 </ul>
 <p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des
 changements intéressants.</p>
-<h2>Changelog</h2>
+<h3>Changelog</h3>
 <ul>
 <li>
 <p>A credential helper for Win32 to allow access to the keychain of
@@ -159,7 +615,7 @@ changements intéressants.</p>
 <li>
 <p>"git log -g" learned the "--grep-reflog=<pattern>" option to limit
    its output to commits with a reflog message that matches the given
-   pattern.</p>
+   pattern.</pattern></p>
 </li>
 <li>
 <p>"git merge-base" learned the "--is-ancestor A B" option to tell if A is
@@ -228,7 +684,7 @@ changements intéressants.</p>
 </li>
 <li>
 <p>Messages given by "git <subcommand> -h" from many subcommands have
-   been marked for translation.</p>
+   been marked for translation.</subcommand></p>
 </li>
 <li>
 <p>The attribute system may be asked for a path that itself or its
@@ -387,52 +843,34 @@ changements intéressants.</p>
    output due to a typo.</p>
 </li>
 </ul>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2013/01/06/git-1.8.0-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="presentation-et-atelier-git-le-24-et-25-a-toulouse"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse" rel="bookmark" title="Permanent Link to Présentation et atelier Git le 24 et 25/11 à Toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></h2>
-  <p class="related"><strong>19/10/2012 06:37 AM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>gitfr descend sur Toulouse à l'occasion de l'événement <a href="http://www.capitoledulibre.org/2012/">Le Capitole du
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html">Présentation et atelier Git le 24 et 25/11 à Toulouse</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-10-19T06:37:00">2012-10-19 06:37</time>
+        </small></h1>
+        <hr>
+        <p>gitfr descend sur Toulouse à l'occasion de l'événement <a href="http://www.capitoledulibre.org/2012/">Le Capitole du
 Libre</a> avec non pas une présentation et
 un atelier mais <strong>deux</strong> ateliers !</p>
 <p>La présentation d'une heure s'appelle «Pourquoi Git ?», destinée aux gens
 pressés. Puis le lendemain deux ateliers «Initiation» et «Allez plus loin».</p>
 <p>7h de Git au programme, si vous aviez envie de vous y mettre, c'est
 l'occasion !</p>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="gitfr-recherche-un-repreneur"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur" rel="bookmark" title="Permanent Link to gitfr recherche un repreneur (ou simplement des bloggeurs)">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></h2>
-  <p class="related"><strong>19/10/2012 06:36 AM</strong> | categories: 
-
-<a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2012/10/19/gitfr-recherche-un-repreneur#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/gitfr-recherche-un-repreneur.html">gitfr recherche un repreneur (ou simplement des bloggeurs)</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-10-19T06:36:00">2012-10-19 06:36</time>
+        </small></h1>
+        <hr>
+        <p>Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
 informaticiens Français aux DVCS en général, et à Git en particulier.
 Et avec bientôt une trentaine de présentations et une dizaine
 d'atelier, je pense avoir réussi à transmettre un peu de mes connaissances
@@ -446,26 +884,17 @@ le flambeau.</p>
 <p><strong>Note</strong> : le coût est de 15€ / an pour le nom de domaine que je prends à ma
 charge, le reste étant hébergé sur GitHub. Le site peut être revue de fond en
 comble si besoin.</p>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/10/19/gitfr-recherche-un-repreneur#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.12-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/08/24/git-1.7.12-publiee" rel="bookmark" title="Permanent Link to Git 1.7.12 publiée">Git 1.7.12 publiée</a></h2>
-  <p class="related"><strong>24/08/2012 02:54 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :</p>
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.12-publiee.html">Git 1.7.12 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-08-24T02:54:00">2012-08-24 02:54</time>
+        </small></h1>
+        <hr>
+        <p>Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :</p>
 <ul>
 <li>
 <p>Une option <code>--root</code> à rebase pour modifier aussi le commit root.</p>
@@ -484,7 +913,7 @@ comble si besoin.</p>
 </ul>
 <p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.</p>
-<h2>Le changelog</h2>
+<h3>Le changelog</h3>
 <ul>
 <li>Git can be told to normalize pathnames it read from readdir(3) and
    all arguments it got from the command line into precomposed UTF-8
@@ -551,7 +980,7 @@ changements intéressants.</p>
 </li>
 <li>
 <p>"git rebase -i" learned "-x <cmd>" to insert "exec <cmd>" after
-   each commit in the resulting history.</p>
+   each commit in the resulting history.</cmd></cmd></p>
 </li>
 <li>
 <p>"git status" gives finer classification to various states of paths
@@ -626,26 +1055,17 @@ changements intéressants.</p>
    getpwent(3).</p>
 </li>
 </ul>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/08/24/git-1.7.12-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="retour-sur-le-breizhcamp-2012"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012" rel="bookmark" title="Permanent Link to Retour sur le BreizhCamp 2012">Retour sur le BreizhCamp 2012</a></h2>
-  <p class="related"><strong>01/07/2012 02:54 AM</strong> | categories: 
-
-<a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Les organisateurs du <a href="http://www.breizhcamp.org/">BreihCamp</a> m'ont proposé de
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/retour-sur-le-breizhcamp-2012.html">Retour sur le BreizhCamp 2012</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-07-01T02:54:00">2012-07-01 02:54</time>
+        </small></h1>
+        <hr>
+        <p>Les organisateurs du <a href="http://www.breizhcamp.org/">BreihCamp</a> m'ont proposé de
 monter un atelier Git de 3 heures le jeudi 14 juin. J'ai fait 2 erreurs :</p>
 <ul>
 <li>
@@ -678,26 +1098,17 @@ les commandes a taper.</p>
 atelier intermédiaire). Mais avec plus de 20 présentations et 7 ateliers,
 cela ne me fait pas vraiment peur. J'ai d'ailleurs totalement improvisé
 cet atelier / pres de 3h :).</p>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.11-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/07/01/git-1.7.11-publiee" rel="bookmark" title="Permanent Link to Git 1.7.11 publiée">Git 1.7.11 publiée</a></h2>
-  <p class="related"><strong>01/07/2012 02:52 AM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :</p>
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.11-publiee.html">Git 1.7.11 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-07-01T02:52:00">2012-07-01 02:52</time>
+        </small></h1>
+        <hr>
+        <p>Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :</p>
 <ul>
 <li>
 <p>Fini la configuration par défaut qui pousse toutes les branches connues
@@ -717,7 +1128,7 @@ cet atelier / pres de 3h :).</p>
 </ul>
 <p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.</p>
-<h2>Le changelog</h2>
+<h3>Le changelog</h3>
 <ul>
 <li>
 <p>A new mode for push, "simple", which is a cross between "current"
@@ -871,26 +1282,17 @@ changements intéressants.</p>
   right.</p>
 </li>
 </ul>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/07/01/git-1.7.11-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="git-1.7.10-publiee"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/04/15/git-1.7.10-publiee" rel="bookmark" title="Permanent Link to Git 1.7.10 publiée">Git 1.7.10 publiée</a></h2>
-  <p class="related"><strong>15/04/2012 10:52 PM</strong> | categories: 
-
-<a href='/blog/category/release'>release</a>, <a href='/blog/category/git'>git</a>
- | <a href="http://www.gitfr.net/blog/2012/04/15/git-1.7.10-publiee#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.10-publiee.html">Git 1.7.10 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-04-15T22:52:00">2012-04-15 22:52</time>
+        </small></h1>
+        <hr>
+        <p>Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
 voulais initialement tester cette version avant de publier l'annonce mais je
 n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :</p>
 <ul>
@@ -907,7 +1309,7 @@ n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :</p>
 </ul>
 <p>N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants dans votre façon de travailler avec Git.</p>
-<h2>Le changelog</h2>
+<h3>Le changelog</h3>
 <ul>
 <li>
 <p>various "gitk" updates.</p>
@@ -1000,7 +1402,7 @@ changements intéressants dans votre façon de travailler avec Git.</p>
 </li>
 <li>
 <p>"git tag --list" can be given "--points-at <object>" to limit its
-  output to those that point at the given object.</p>
+  output to those that point at the given object.</object></p>
 </li>
 <li>
 <p>"gitweb" allows intermediate entries in the directory hierarchy
@@ -1139,7 +1541,7 @@ changements intéressants dans votre façon de travailler avec Git.</p>
 </li>
 <li>
 <p>"git checkout -B <current branch> <elsewhere>" is a more intuitive
-  way to spell "git reset --keep <elsewhere>".</p>
+  way to spell "git reset --keep <elsewhere>".</elsewhere></elsewhere></current></p>
 </li>
 <li>
 <p>"git checkout" and "git merge" learned "--no-overwrite-ignore" option
@@ -1175,7 +1577,7 @@ changements intéressants dans votre façon de travailler avec Git.</p>
 <li>
 <p>"git log --format='<format>'" learned new %g[nNeE] specifiers to
   show information from the reflog entries when walking the reflog
-  (i.e. with "-g").</p>
+  (i.e. with "-g").</format></p>
 </li>
 <li>
 <p>"git pull" can be used to fetch and merge an annotated/signed tag,
@@ -1213,7 +1615,7 @@ changements intéressants dans votre façon de travailler avec Git.</p>
 <li>
 <p>"git pull" learned to notice 'pull.rebase' configuration variable,
   which serves as a global fallback for setting 'branch.<name>.rebase'
-  configuration variable per branch.</p>
+  configuration variable per branch.</name></p>
 </li>
 <li>
 <p>"git tag" learned "--cleanup" option to control how the whitespaces
@@ -1223,166 +1625,68 @@ changements intéressants dans votre façon de travailler avec Git.</p>
 <p>"gitweb" learned to show side-by-side diff.</p>
 </li>
 </ul>
+            
+    <p>
 
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/04/15/git-1.7.10-publiee#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
-  
-<div class="blog_post">
-  <a name="presentation-git-le-12-04-a-lausanne"></a>
-  <h2 class="blog_post_title"><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne" rel="bookmark" title="Permanent Link to Présentation Git le 12/04 à Lausanne">Présentation Git le 12/04 à Lausanne</a></h2>
-  <p class="related"><strong>30/03/2012 09:40 AM</strong> | categories: 
-
-<a href='/blog/category/atelier'>atelier</a>, <a href='/blog/category/gitfr'>gitfr</a>
- | <a href="http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne#disqus_thread">Commentaires</a>
-<p/>
-  <div class="post_prose">
-    
-  <p>gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-git-le-12-04-a-lausanne.html">Présentation Git le 12/04 à Lausanne</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-03-30T09:40:00">2012-03-30 09:40</time>
+        </small></h1>
+        <hr>
+        <p>gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
 précisemment à Lausanne. C'est organisé par le JUGL, le <em>Java User Group de
 Lausanne</em>, et la présentation démarre à 18h30 dans <a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/OCTOLausanne">les locaux
 d'Octo</a>.</p>
 <p>Toutes les infos sur le site du <a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/WebHome">JUGL</a>.</p>
+            
+    <p>
 
-  </div>
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/mise-a-jour-de-la-presentation-git.html">Mise à jour de la présentation Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-02-01T00:50:00">2012-02-01 00:50</time>
+        </small></h1>
+        <hr>
+        <p>Demander à cor et à cri depuis de mois, j'ai mis à jour la présentation 
+le <a href="https://github.com/sdouche/showoff-presentation-git">dépôt Git</a> et la
+<a href="http://presentation-git.heroku.com/">présentation en ligne</a>. Il y'a malheureusement
+des petits soucis d'affichage des images mais un rafraichissement règle en
+général le problème.</p>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager">
+    <li class="next">
+        <a href="index-10.html">Anciens billets →</a>
+</li></ul>
+</div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
 
 
-  <div class="after_post"><a href="http://www.gitfr.net/blog/2012/03/30/presentation-git-le-12-04-a-lausanne#disqus_thread">Lire et poster des commentaires</a></div>
-  <hr class="interblog" />
- <a href="/blog/page/2">Articles précédents »</a>
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
-        </div><!-- End Prose Block -->
-        
-  <div class="right_sidebar">
-    <div id="right_sidebar">
-  <div id="rss">
-    <h2>flux RSS</h2>
-    <a href="http://feeds.feedburner.com/gitfr">billets</a>
-    /
-    <a href="http://gitfr.disqus.com/latest.rss">commentaires</a>
-  </div>
-  <div id="contact">
-    <h2>Contact</h2>
-    mail : seb@gitfr.net<br />
-    liste de diffusion : <a href="http://groups.google.com/group/gitfr">gitfr</a><br />
-    IRC : #git-fr sur Freenode
-  </div>
-  <div id="blog_post_list">
-    <h2>Derniers billets</h2>
-    <ul>
-    <li><a href="/blog/2013/01/06/git-1.8.0-publiee">Git 1.8.0 publiée</a></li>
-    <li><a href="/blog/2012/10/19/presentation-et-atelier-git-le-24-et-25-a-toulouse">Présentation et atelier Git le 24 et 25/11 à Toulouse</a></li>
-    <li><a href="/blog/2012/10/19/gitfr-recherche-un-repreneur">gitfr recherche un repreneur (ou simplement des bloggeurs)</a></li>
-    <li><a href="/blog/2012/08/24/git-1.7.12-publiee">Git 1.7.12 publiée</a></li>
-    <li><a href="/blog/2012/07/01/retour-sur-le-breizhcamp-2012">Retour sur le BreizhCamp 2012</a></li>
-    <li><a href="/blog/2012/07/01/git-1.7.11-publiee">Git 1.7.11 publiée</a></li>
-    <li><a href="/blog/2012/04/15/git-1.7.10-publiee">Git 1.7.10 publiée</a></li>
-    <li><a href="/blog/2012/03/30/presentation-git-le-12-04-a-lausanne">Présentation Git le 12/04 à Lausanne</a></li>
-  </ul>
-  </div>
-  <div id="on_twitter">
-    <h3>Sur Twitter</h2>
-    <div id="blogofile_tweets"></div>
-    <a href="http://twitter.com/gitfr" style="float: right">Plus de tweets</a>
-  </div>
-  <div id="categories">
-    <h2>Categories</h2>
-    <ul>
-     <li><a href="/blog/category/astuce">astuce</a> (<a href="/blog/category/astuce/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/atelier">atelier</a> (<a href="/blog/category/atelier/feed">rss</a>) (24)</li>
-     <li><a href="/blog/category/configuration">configuration</a> (<a href="/blog/category/configuration/feed">rss</a>) (7)</li>
-     <li><a href="/blog/category/git">git</a> (<a href="/blog/category/git/feed">rss</a>) (58)</li>
-     <li><a href="/blog/category/git-git-diff">git git-diff</a> (<a href="/blog/category/git-git-diff/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-add">git-add</a> (<a href="/blog/category/git-add/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-checkout">git-checkout</a> (<a href="/blog/category/git-checkout/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-clone">git-clone</a> (<a href="/blog/category/git-clone/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/git-commit">git-commit</a> (<a href="/blog/category/git-commit/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-fetch">git-fetch</a> (<a href="/blog/category/git-fetch/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-init">git-init</a> (<a href="/blog/category/git-init/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-pull">git-pull</a> (<a href="/blog/category/git-pull/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/git-push">git-push</a> (<a href="/blog/category/git-push/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/git-remote">git-remote</a> (<a href="/blog/category/git-remote/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-reset">git-reset</a> (<a href="/blog/category/git-reset/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-revert">git-revert</a> (<a href="/blog/category/git-revert/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/git-rm">git-rm</a> (<a href="/blog/category/git-rm/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/gitfr">gitfr</a> (<a href="/blog/category/gitfr/feed">rss</a>) (32)</li>
-     <li><a href="/blog/category/github">github</a> (<a href="/blog/category/github/feed">rss</a>) (11)</li>
-     <li><a href="/blog/category/google-code">google code</a> (<a href="/blog/category/google-code/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/hg">hg</a> (<a href="/blog/category/hg/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/installation">installation</a> (<a href="/blog/category/installation/feed">rss</a>) (3)</li>
-     <li><a href="/blog/category/macos">macos</a> (<a href="/blog/category/macos/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/migration">migration</a> (<a href="/blog/category/migration/feed">rss</a>) (6)</li>
-     <li><a href="/blog/category/outil">outil</a> (<a href="/blog/category/outil/feed">rss</a>) (4)</li>
-     <li><a href="/blog/category/refspec">refspec</a> (<a href="/blog/category/refspec/feed">rss</a>) (2)</li>
-     <li><a href="/blog/category/release">release</a> (<a href="/blog/category/release/feed">rss</a>) (23)</li>
-     <li><a href="/blog/category/traduction">traduction</a> (<a href="/blog/category/traduction/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/ubuntu">ubuntu</a> (<a href="/blog/category/ubuntu/feed">rss</a>) (1)</li>
-     <li><a href="/blog/category/windows">windows</a> (<a href="/blog/category/windows/feed">rss</a>) (2)</li>
-    </ul>
-  </div> 
-  <div id="archives">			
-    <h2>Archives</h2>
-    <ul>
-      <li><a href="/blog/archive/2013/01/1" title="January 2013">January 2013</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2012/10/1" title="October 2012">October 2012</a>&nbsp;(2)</li>
-      <li><a href="/blog/archive/2012/08/1" title="August 2012">August 2012</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2012/07/1" title="July 2012">July 2012</a>&nbsp;(2)</li>
-      <li><a href="/blog/archive/2012/04/1" title="April 2012">April 2012</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2012/03/1" title="March 2012">March 2012</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2012/02/1" title="February 2012">February 2012</a>&nbsp;(2)</li>
-      <li><a href="/blog/archive/2012/01/1" title="January 2012">January 2012</a>&nbsp;(4)</li>
-      <li><a href="/blog/archive/2011/12/1" title="December 2011">December 2011</a>&nbsp;(5)</li>
-      <li><a href="/blog/archive/2011/10/1" title="October 2011">October 2011</a>&nbsp;(7)</li>
-      <li><a href="/blog/archive/2011/09/1" title="September 2011">September 2011</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2011/08/1" title="August 2011">August 2011</a>&nbsp;(2)</li>
-      <li><a href="/blog/archive/2011/07/1" title="July 2011">July 2011</a>&nbsp;(5)</li>
-      <li><a href="/blog/archive/2011/06/1" title="June 2011">June 2011</a>&nbsp;(6)</li>
-      <li><a href="/blog/archive/2011/05/1" title="May 2011">May 2011</a>&nbsp;(2)</li>
-      <li><a href="/blog/archive/2011/04/1" title="April 2011">April 2011</a>&nbsp;(23)</li>
-      <li><a href="/blog/archive/2011/03/1" title="March 2011">March 2011</a>&nbsp;(4)</li>
-      <li><a href="/blog/archive/2011/02/1" title="February 2011">February 2011</a>&nbsp;(3)</li>
-      <li><a href="/blog/archive/2011/01/1" title="January 2011">January 2011</a>&nbsp;(1)</li>
-      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(12)</li>
-      <li><a href="/blog/archive/2010/11/1" title="November 2010">November 2010</a>&nbsp;(12)</li>
-      <li><a href="/blog/archive/2010/10/1" title="October 2010">October 2010</a>&nbsp;(3)</li>
-    </ul>
-  </div>
-  <div id="credits">
-    <h2>Crédits</h2>
-    Propulsé par <a href="http://www.blogofile.com">Blogofile</a>
-  </div>
 
-</div>
-
-  </div>
-
-      </div><!-- End Main Block -->
-    </div> <!-- End Content -->
-
-    <script type="text/javascript">
-  
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-19444937-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script');
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            ga.setAttribute('async', 'true');
-            document.documentElement.firstChild.appendChild(ga);
-        })();
-
-    </script>
-  </body>
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
 </html>
-
-
-
-
-

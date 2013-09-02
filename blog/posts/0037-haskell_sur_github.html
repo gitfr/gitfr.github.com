@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Haskell sur GitHub | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="0037-haskell_sur_github.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Haskell sur GitHub</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2011-04-03T14:34:00">2011-04-03 14:34</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+            <a class="tag" href="../categories/migration.html"><span class="badge badge-info">migration</span></a>
+
+    </small>
+    <hr>
+    <p>On le savait déjà (la décision date d’aout 2008 !) mais voila une très mauvaise nouvelle pour l'outil de gestion de source <a href="http://darcs.net/">Darcs</a>. Le principal projet qui l'utilise, à savoir le compilateur <a href="http://www.haskell.org/ghc/">Haskell GHC</a>, passe officiellement sur Git, avec un <a href="https://github.com/ghc/ghc">miroir disponible sur GitHub</a> depuis le 31 mars.</p>
+<p>Mauvaise nouvelle aussi (et surtout) car Darcs est lui même en Haskell, le projet GHC était donc le premier pourvoyeur (si je ne me trompe pas) de contributions. Mais le point intéressant est l'argument pour passer à Git :</p>
+<blockquote>
+<p>It came down to two things: the degree of support available, and 
+flexibility of the tools (git is much happier to let you modify the history 
+than Mercurial).  Speed ruled out bzr, and Windows support is less of an 
+issue: git appears to work reasonably well on Windows these days.</p>
+</blockquote>
+<p>Les développeurs GHC, comme la fondation Eclipse, estiment donc que le support Windows est devenu «raisonnable» pour ne pas gêner les utilisateurs de cette plateforme. Ils estiment aussi que la vitesse est le point faible de Bazaar (bzr). Et enfin, que la capacité de retravailler son historique (point fort que je mets en avant dans toutes mes présentations Git) est un atout important. Point important, cette phrase vient du mail expliquant la migration en 2008 (Bazaar étant maintenant plus rapide, par contre Git est toujours mieux armé pour gérer l'historique).</p>
+<p>Est ce la fin pour Darcs ? Un projet Libre ne meurt vraiment jamais tant qu'il existe des utilisateurs. Le développement se poursuit (la 2.5.2 est sortie et la 2.8 est en cours de développement avec le support très attendu de la fonction <em>rebase</em>). Il est dommage pour la diversité de l'écosystème Libre qu'un outil meurt mais Darcs ne semble plus avoir d'atout majeur face à Git.</p>
+<p>Pour la petite histoire, Darcs est né en 2002 d'un <strong>fork</strong> du projet GNU Arch (1er DVCS libre en 2001). L'aspect intéressant de Darcs est qu'il présente non pas l'historique comme une série de «snapshots», mais comme une suite de <strong>patchs</strong>, qui n'ont pas nécessairement de lien entre eux. Ce qui facilite grandement le <strong>cherry-picking</strong>. Malheureusement, des performances catastrophiques et quelques bugs génants au moment du <em>merge</em> n'ont jamais permis à Darcs de décoller.</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="0036-eclipse_sur_github.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="git-1.7.4.3-publiee.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

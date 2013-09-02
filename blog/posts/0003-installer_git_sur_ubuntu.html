@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Installer git sur Ubuntu | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="0003-installer_git_sur_ubuntu.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Installer git sur Ubuntu</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-10-30T19:56:00">2010-10-30 19:56</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/installation.html"><span class="badge badge-info">installation</span></a>
+            <a class="tag" href="../categories/ubuntu.html"><span class="badge badge-info">ubuntu</span></a>
+
+    </small>
+    <hr>
+    <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Pour les utilisateurs qui utilisent Debian ou Ubuntu depuis quelques temps, vous pouvez constater que le paquet s'appelle maintenant <em>git</em> et non <em>git-core</em> (pour le petite histoire, git était le paquet <em>GNU Interactive Tools</em>, renommé depuis <em>gnuit</em>). Mais le problème avec une installation du paquet officiel est que vous disposerez d'une version plus ou moins ancienne (la version disponible au moment du <em>freeze</em> de la distribution), Ubuntu ne mettant pas à jour git avec les dépots <em>backports</em>, <em>updates</em> ou <em>proposed</em>. Personnellement, j'aime disposer de la dernière version, les développeurs git améliorant régulièrement le <em>frontend</em>.</p>
+<p>C'est la qu'interviennent les <strong>PPA</strong>, pour <em>Personal Package Archives</em>. C'est un dépôt <strong>non officiel</strong> qu'il est possible d'activer sur <em>Launchpad</em> quand vous créé un projet sur cette plateforme. C'est justement sur Launchpad que les mainteneurs officiels Ubuntu du paquet git travaillent ! Et comme ils sont gentils, il existent justement un <a href="https://launchpad.net/~git-core/+archive/ppa">PPA git</a>. Voici les commandes pour utiliser ce PPA sur Ubuntu :</p>
+<blockquote>
+<p>$ sudo add-apt-repository ppa:git-core/ppa</p>
+</blockquote>
+<p>Cette commande ajoute le PPA dans vos dépôts accessibles (sources.list). C'est équivalent à mettre manuellement un fichier de configuration dans le répertoire <em>/etc/apt/sources.list.d/</em> et d'ajouter la clé GPG (voir la section <em>Technical details about this PPA</em> pour plus de détails).</p>
+<blockquote>
+<p>$ sudo aptitude update</p>
+</blockquote>
+<p>Mise à jour des paquets disponibles.</p>
+<blockquote>
+<p>$ sudo aptitude install git</p>
+</blockquote>
+<p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
+<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="inscription-a-l-atelier-git-2-du-30-11-2010.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="0004-installer_git_sur_os_x.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

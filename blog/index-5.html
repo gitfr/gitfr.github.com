@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Site francophone sur Git.">
+    <meta name="author" content="GitFR">
+    <title>GitFR (anciens billets page 5) | GitFR</title>
+    
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+    
+    
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href=".">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
+            </li><li><a href="rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/0050-la_commande_rm.html">La commande rm</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-23T03:21:00">2011-04-23 03:21</time>
+        </small></h1>
+        <hr>
+        <p>Peu de chose à dire sur la commande <code>rm</code>. Je ne vous fais pas l'injure de dire à quoi elle sert :). Elle est un poil plus complexe que sa soeur <em>hg</em> ou <em>svn</em> avec la présence de l'index. En effet, nous pouvons effacer des fichiers dans l'index seul, avec l'option <code>--cached</code>, mais aussi dans l'espace de travail <strong>et</strong> l'index (par défaut).</p>
+<p>Il existe un «raccourci» : si vous avez supprimer un fichier avec la commande <code>rm</code> de l'OS, Git supprimera aussi le fichier avec la commande <code>git commit -a</code>, puisque cette dernière demande à Git de vérifier les changements dans les fichiers tracés.</p>
+<p>Comme d'habitude, lisez le manuel ;).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0049-la_commande_commit.html">La commande commit</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-23T02:17:00">2011-04-23 02:17</time>
+        </small></h1>
+        <hr>
+        <p>Maintenant que nous savons construire notre commit temporaire (l'index), nous allons voir comment le transformer en commit définitif. Il est intéressant de noter que vous pouvez <strong>shinter</strong> la commande <code>add</code> de plusieurs façons :</p>
+<ul>
+<li>
+<p>En désignant le(s) fichier(s) directement : <code>git commit monfichier</code></p>
+</li>
+<li>
+<p>En mode interactif (en fait appelle son équivalent dans <code>git add</code>) : <code>git commit -i</code></p>
+</li>
+<li>
+<p>En prenant tous les fichiers déja tracés, avec l'option <code>git commit -a</code></p>
+</li>
+</ul>
+<p>Comme j'ai pu le dire dans mes présentations, je vous conseille fortement d'utiliser l'index, même si cela peut sembler inintéressant ou futile au premier abord (vous allez surement pensez cela au début).</p>
+<p>La commande <code>commit</code> dispose de plusieurs options pour vous simplfier la vie. Comme spécifier l'auteur (<code>--author=</code>), la date (<code>--date=</code>), le contenu d'un fichier comme message de commit (<code>-F</code>), signer le message (<code>-s</code>), spécifier le message en ligne de commande (<code>-m</code>)... Bref, rien de bien compliqué et je vous encourage, comme d'habitude, à lire le manuel (<code>man git commit</code>). Mais je vous propose néanmoins de nous attarder sur 2 options fort intéressantes.</p>
+<h3>Commencer par un commit vide</h3>
+<p>Quand je créé un dépôt, je commence toujours pas un commit vide (option <code>--allow-empty</code>) pour avoir  un commit de <strong>référence</strong>. A quoi cela peut il servir ?</p>
+<ul>
+<li>
+<p>Si je travaille directement dans <em>master</em>, je peux revoir l'ensemble des commits (par un <code>rebase -i</code>, article à venir), ce qui n'est pas possible si mon premier commit contient des données.</p>
+</li>
+<li>
+<p>Si je travaill dans une branche, je peux faire un merge (autre article à venir) en modélisant le merge dans master. Ce qui n'est pas possible si je n'ai pas de commit uniquement dans master.</p>
+</li>
+</ul>
+<p>Je trouve que c'est une très bonne pratique que je vous conseille. Pour ma part, j'appelle  toujours ce commit «Initial commit».</p>
+<h3>Modifier son dernier commit</h3>
+<p>Malgré l'index, il m'arrive souvent de me rendre compte d'une erreur aprés coup. C'est la qu'intervient l'option <code>--amend</code>, qui écrase le dernier commit par celui que vous êtes en train de faire. Vraiment pratique ! On voici ici tout l'intérêt de ne <strong>pas</strong> pousser en permanence ses commits sur le serveur, mais d'attendre d'avoir fini le travail. Ce qui permet de pousser un ensemble de commits cohérents.</p>
+<h3>De l'art du bon message</h3>
+<p>Un petit mot pour rappeler l'importance de bien choisir son message de commit. Git possède une convention : la 1ere ligne est le résumé, suivi d'un saut de ligne, puis du contenu plus exhaustif du commit. Au travail nous avons une autre convention :</p>
+<ul>
+<li>Chaque ligne commence par le type de modification : new, fix, chg</li>
+<li>Le signe :</li>
+<li>Puis la cible du message : usr (utilisateur), dev (développeur), pkg (packageur)</li>
+<li>Le signe :</li>
+<li>Et enfin le message</li>
+</ul>
+<p>Un exemple :</p>
+<blockquote>
+<p>chg: pkg: remove sact.nevrax.skin dependency</p>
+</blockquote>
+<p>Et nous avons autant de ligne que nécessaire, ce qui permet de voir rapidement si notre commit est <strong>unitaire</strong> : si des lignes n'ont rien à voir entre elles, on le voit facilement. Cela nous pousse dans cette bonne pratique. Nous ne suivons donc pas la convention Git, mais cela est adapté à nos besoins (rapidité d'écriture, simplicité de relecture, commit unitaire) et que nous tous dans la même pièce, avec <em>daily meeting</em> et revue de code. Sur un projet Libre, il peut être intéressant d'avoir un descriptif long du commit.</p>
+<p>De plus, un outil transforme automatiquement les messages en changelog (un exemple <a href="http://pypi.python.org/pypi/sact.epoch/1.0.1">ici</a>, ce qui est bien utile.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.4.5-publiee.html">Git 1.7.4.5 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-22T15:30:00">2011-04-22 15:30</time>
+        </small></h1>
+        <hr>
+        <p>Pas de changelog cette fois ci, car cette version ne contient que des corrections... sur la documentation. Il manquait notamment l'option <code>--merge-info</code> dans le manuel de la commande <strong>git-svn</strong>.</p>
+<p>Consciencieux le Junio :).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/video-de-la-soiree-git.html">Vidéo de la soirée Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-22T14:08:00">2011-04-22 14:08</time>
+        </small></h1>
+        <hr>
+        <p>Bonne nouvelle si vous avez raté la soirée Git, les parties <a href="http://www.parleys.com/#st=5&amp;id=2366">théorique</a> et <a href="http://www.parleys.com/#st=5&amp;id=2368">pratique</a> sont disponibles sur le site <strong>parleys.com</strong>. La qualité semble bonne et je suis audible, mais ne supportant pas de me voir ou de m'entendre, ne m'en demandez pas plus :).</p>
+<p>N'hésitez pas à faire un retour, j'ai surement plein de points à améliorer. Et pour ceux qui ne me connaissent pas, j'aime beaucoup le second degrés (voir le troisième, le quatrième...). Ne me prenez donc pas trop au sérieux, enfin sauf pour svn, ou je suis <strong>très</strong> sérieux.</p>
+<p>PS : merci à l'équipe du ParisJUG pour le boulot <strong>énorme</strong> que cela doit être !</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/le-million-le-million.html">Le million ! Le million !</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-21T14:34:00">2011-04-21 14:34</time>
+        </small></h1>
+        <hr>
+        <p>GitHub vient d’annoncer des chiffres impressionnants : 1.1 million de projets et 900 000 Gists. Et si vous êtes bon en calcul mental, vous savez donc que GitHub à dépassé les <strong>2 millions de dépôts Git</strong>. Mais plus intéressant, <strong>70% des projets sont récents</strong> (moins d'un an), ce qui fait environ 4500 nouveau projet par jour, pas mal ! Et d’après les estimations internes, le <strong>million d'utilisateurs</strong> sera atteint le 11 septembre 2011.</p>
+<p>Ces chiffres confortent GitHub comme plateforme d'hébergement de référence. Et par la même occasion, <strong>la montée en puissance</strong> (comme dirait Domenech) de Git. Il parait assez clair à mes yeux que ce dernier soit rapidement l'outil de gestion de source numéro 1 dans le monde du Logiciel Libre.</p>
+<p>Mais gardez un oeil sur <a href="http://mercurial.selenic.com/">Hg</a> ou <a href="http://bazaar.canonical.com/">Bzr</a>, il est important de maitriser plusieurs outils, rien que pour satisfaire, je ne doute pas, votre appétit de connaissance :).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0045-gestion_de_ticket_v2_sur_github.html">Gestion de ticket v2 sur GitHub</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-17T23:54:00">2011-04-17 23:54</time>
+        </small></h1>
+        <hr>
+        <p>Dans mon précédent <a href="http://blog.gitfr.net/post/4312294636/github-au-centre-de-lunivers-git">article</a> sur GitHub, je disais que la gestion de ticket était «simple». Et bien, les GitHubbers doivent me lire (je ne vois pas d’autres explications) car GitHub vient de lancer <strong>Issue 2.0</strong>, le nouveau système de gestion de ticket !</p>
+<p>Une <strong>issue</strong> (que l’on peut traduire par «problème» mais je préfère le mot «ticket») ressemble maintenant à ça :</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_ljteu0UlZp1qdkaiq.png"></p>
+<p>Vous pouvez constater plusieurs changements comme les personnes concernées (en bas), la délégation du ticket à une personne ou les milestones («étapes» en français). Voyons maintenant les nouveautés plus en détail.</p>
+<h3>Assigner un ticket</h3>
+<p>Vous pouvez assigner un ticket à un utilisateur GitHub.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/ec0267f7ae8bdbe7b6bda78c356be5bba565e8dd/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6f70656e696e672d626c6f636b2d686967686c69676874732e706e67"></p>
+<h3>Les milestones</h3>
+<p>Créer des milestones est une étape (ah-ah, oui je sais avoir de l'humour) importante pour disposer d'un outil de gestion de ticket efficace, permettant de définir des releases (ticket 10, 11 et 20 pour la future v1.2 par exemple). Un ticket pouvant porter sur une correction de bug, une nouvelle fonctionnalité ou tout autre sujet (documentation, infra...). C'est pour cela que le terme <strong>issue tracker</strong> est plus juste que <strong>bug tracker</strong>.</p>
+<h3>Historique des états d'un ticket</h3>
+<p>On peut maintenant visualiser le changement d'état d'un ticket au cours du temps.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/3feb114682e7aec6e55ce668b94a36f076d98674/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f69737375652d6576656e74732e706e67"></p>
+<h3>Navigation plus aisée</h3>
+<p>Plus simple et agréable, vous pouvez filtrer par label ou milestone. Ou alors voir vos tickets ou ceux ou vous êtes mentionné.</p>
+<p><img alt="" src="http://media.tumblr.com/tumblr_ljtfr1rvLm1qdkaiq.png"></p>
+<p>Vous pouvez aussi modifier plusieurs tickets à la fois («mass-edit» en anglais).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/b5136bc7590b7cb8b08b235842552ccbfc97aa5e/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6d6173732d656469742e706e67"></p>
+<p>Enfin une recherche rapide («quickseach» en anglais) affiche les premiers résultats en quasi temps réel fait son apparition.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/9f751e258b4da3fce516d692cfb313d527bbc86d/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f717569636b7365617263682e706e67"></p>
+<h3>Commit + ticket</h3>
+<p>Point intéressant, si vous nommez le numéro d'un ticket dans le message de commit, ce dernier  apparaitra sur le ticket.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/9bf399559491d3224bfe5c8d861042439f07a6b3/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f636f6d6d69742d6d656e74696f6e2d726573756c742e706e67"></p>
+<p>Mieux, vous pouvez fermer un ticket directement, en utilisation le mot clé <em>fixes #xxxx</em> (ou <em>fixed</em>, <em>fix</em>, <em>closes</em>, <em>close</em> ou <em>closed</em>).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/cbe2bf72802c65cb5b741d8b816565d96a933a6b/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f636f6d6d69742d636c6f73652d726573756c742e706e67"></p>
+<h3>email + ticket</h3>
+<p>Autre amélioration notable, vous pouvez directement répondre par mail quand vous recevez une notification.</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/91a10c555a568850237a0ce6eb97e2246c7e73f2/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f656d61696c616e647765622e706e67"></p>
+<h3>Raccourci clavier</h3>
+<p>On peut maintenant se passer de la souris :).</p>
+<p><img alt="" src="https://d3nwyuy0nl342s.cloudfront.net/img/0f4041d149e1e9f314be661808c94aaa74177ce3/687474703a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f6973737565732d6e6578742f6b6579626f6172642e706e67"></p>
+<h3>PJAX</h3>
+<p>Les écrans sont en PJAX, une <a href="https://github.com/defunkt/jquery-pjax">techno GitHub</a> permettant de ne recharger qu'une partie de la page et qui va être généraliser un peu partout (demande Firefox 4 ou un Chrome récent, mais je présume que cela fonctionne avec Opéra et Safari. Non IE n'est pas un navigateur moderne).</p>
+<h3>Conclusion</h3>
+<p>Les améliorations sont notables et redonnent des couleurs à la partie qui était, à mes yeux, la moins avancée du site en terme d'utilisabilité et surtout de fonctionnalités. L'arrivée des milestones permet de définir une <strong>roadmap</strong>, ce qui est toujours intéressant. Et enfin, la manipulation d'un ticket avec un message de commit va simplifier le travail de gestion de projet. Espérons que GitHub continue sur cette voie, par exemple en permettant de créer automatiquement un ticket avec un message de commit particulier sur un fork.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/comment-ecrire-git.html">Comment écrire Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-13T16:14:00">2011-04-13 16:14</time>
+        </small></h1>
+        <hr>
+        <p>Comme je vois la faute assez souvent, je rappelle que l'on écrit <strong>Git</strong> ou <strong>git</strong> mais jamais GIT. Ce n'est pas un acronyme ou une abréviation. </p>
+<p>En argot anglais, git signifie (source Wikipedia) :</p>
+<blockquote>
+<p>Git is mild profanity with origins in British English for a silly, incompetent, stupid, annoying, senile elderly or childish person. It is usually an insult, more severe than twit or idiot but less severe than wanker or arsehole.</p>
+</blockquote>
+<p>Linus Torvalds explique ce choix curieux :</p>
+<blockquote>
+<p>I'm an egotistical, and I name all my projects after myself. First 'Linux', now 'git'.</p>
+</blockquote>
+<p>Pour ceux qui n'ont pas lu le livre <a href="http://www.amazon.com/Just-Fun-Story-Accidental-Revolutionary/dp/0066620724">Just For Fun</a> ou suivre la liste de dffusion sur le kernel Linux, Linus a un caractère bien trempé, beaucoup d'humour (plus ou moins décalé d'ailleurs) et un grand sens de l'auto dérision. La lecture du livre n'a fait qu'augmenter ma sympathie pour une personne qui a, comme d'autres, changer ma vie (vous imaginez vous bosser sous Windows ou Unix SCO ? Oui je sais, les *BSD existent).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.4.4-publiee.html">Git 1.7.4.4 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-07T18:13:00">2011-04-07 18:13</time>
+        </small></h1>
+        <hr>
+        <p>La quatrième version de la branche 1.7.4.x vient de sortir (7/4/2011).</p>
+<p>Le changelog :</p>
+<ul>
+<li>
+<p>Compilation of sha1_file.c on BSD platforms were broken due to our
+  recent use of getrlimit() without including <sys>.</sys></p>
+</li>
+<li>
+<p>"git config" did not diagnose incorrect configuration variable names.</p>
+</li>
+<li>
+<p>"git format-patch" did not wrap a long subject line that resulted from
+  rfc2047 encoding.</p>
+</li>
+<li>
+<p>"git instaweb" should work better again with plackup.</p>
+</li>
+<li>
+<p>"git log --max-count=4 -Sfoobar" now shows 4 commits that changes the
+  number of occurrences of string "foobar"; it used to scan only for 4
+  commits and then emitted only matching ones.</p>
+</li>
+<li>
+<p>"git log --first-parent --boundary $c^..$c" segfaulted on a merge.</p>
+</li>
+<li>
+<p>"git pull" into an empty branch should have behaved as if
+  fast-forwarding from emptiness to the version being pulled, with
+  the usual protection against overwriting untracked files.</p>
+</li>
+<li>
+<p>"git submodule" that is run while a merge in the superproject is in
+  conflicted state tried to process each conflicted submodule up to
+  three times.</p>
+</li>
+<li>
+<p>"git status" spent all the effort to notice racily-clean index entries
+  but didn't update the index file to help later operations go faster in
+  some cases.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/info-sur-la-presentation-du-12-04.html">0042-Info_sur_la_présentation_du_12_04</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-07T16:05:00">2011-04-07 16:05</time>
+        </small></h1>
+        <hr>
+        <p>J'avais préparé mon billet à l'avance, histoire de le publier ce matin. Mais voila, le temps d'y penser, les <strong>200 places étaient parties</strong> ! Diantre, Git à vraiment la côte, on a battu le record de vitesse des inscriptions (moins de 4h). Pour la postérité, voici le billet initial :</p>
+<p>C'est parti ! Vous pouvez vous <strong>inscrire</strong> pour la <a href="http://www.parisjug.org/xwiki/bin/view/Meeting/20110412">présentation Git</a> de mardi prochain (l'inscription est obligatoire). J'ai profondément <strong>remanié</strong> l'ensemble pour être plus concis sur la partie théorique et laisser plus de place pour l'utilisation de Git : quelques conseils et astuces, les commandes qui me font aimer Git, les workflows, GitHub, le travail collaboratif...</p>
+<p>Je pense même que ceux qui ont vu l'atelier #1 et #2 peuvent apprendre des choses :). A cause du buffet en plein milieu, le déroulement est simple : 1h théorique, buffet et enfin 1h pratique.</p>
+<p>Et petite surprise, il y aura un jeu concours du sponsor de la soirée (questions sur Git et sur Java, ben oui <em>ParisJUG</em>, c'est pour Paris <strong>Java</strong> Users Group).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0041-guide_visuel_pour_git_sous_windows.html">Guide visuel pour Git sous Windows</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-04-03T18:06:00">2011-04-03 18:06</time>
+        </small></h1>
+        <hr>
+        <p>Tu aimes Git et tu dois utiliser Windows ? @nathanj pense à toi et t'offre <a href="http://nathanj.github.com/gitguide/tour.html">un guide</a> bourré de copie d'écran pour t'aider.</p>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager">
+    <li class="previous">
+        <a href="index-6.html">← Billets récents</a>
+    </li><li class="next">
+        <a href="index-4.html">Anciens billets →</a>
+</li></ul>
+</div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

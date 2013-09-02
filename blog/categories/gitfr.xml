@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>GitFR (gitfr)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Présentation et atelier Git le 24 et 25/11 à Toulouse</title><link>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</link><description>&lt;p&gt;gitfr descend sur Toulouse à l'occasion de l'événement &lt;a href="http://www.capitoledulibre.org/2012/"&gt;Le Capitole du
+Libre&lt;/a&gt; avec non pas une présentation et
+un atelier mais &lt;strong&gt;deux&lt;/strong&gt; ateliers !&lt;/p&gt;
+&lt;p&gt;La présentation d'une heure s'appelle «Pourquoi Git ?», destinée aux gens
+pressés. Puis le lendemain deux ateliers «Initiation» et «Allez plus loin».&lt;/p&gt;
+&lt;p&gt;7h de Git au programme, si vous aviez envie de vous y mettre, c'est
+l'occasion !&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</guid><pubDate>Fri, 19 Oct 2012 06:37:00 GMT</pubDate></item><item><title>gitfr recherche un repreneur (ou simplement des bloggeurs)</title><link>http://gitfr.net/blog/posts/gitfr-recherche-un-repreneur.html</link><description>&lt;p&gt;Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
+informaticiens Français aux DVCS en général, et à Git en particulier.
+Et avec bientôt une trentaine de présentations et une dizaine
+d'atelier, je pense avoir réussi à transmettre un peu de mes connaissances
+et passion autour de ce fabuleux logiciel.&lt;/p&gt;
+&lt;p&gt;Néanmoins, je n'ai plus autant de temps à consacrer à gitfr, notamment
+à cause de mes nouveaux projets et cela se ressens sur le peu de billet
+sur ce blog. Alors, si vous êtes partant pour écrire voir reprendre
+tout en partie des activités de gitfr, c'est avec plaisir que je transmettrais
+le flambeau.&lt;/p&gt;
+&lt;p&gt;Si cela vous intéresse : seb@gitfr.net.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : le coût est de 15€ / an pour le nom de domaine que je prends à ma
+charge, le reste étant hébergé sur GitHub. Le site peut être revue de fond en
+comble si besoin.&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/gitfr-recherche-un-repreneur.html</guid><pubDate>Fri, 19 Oct 2012 06:36:00 GMT</pubDate></item><item><title>Retour sur le BreizhCamp 2012</title><link>http://gitfr.net/blog/posts/retour-sur-le-breizhcamp-2012.html</link><description>&lt;p&gt;Les organisateurs du &lt;a href="http://www.breizhcamp.org/"&gt;BreihCamp&lt;/a&gt; m'ont proposé de
+monter un atelier Git de 3 heures le jeudi 14 juin. J'ai fait 2 erreurs :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ne pas demander explicitivement de voir ma présentation. Moralité
+  pratiquement personne ne l'avait vu et donc la plupart avaient
+  des lacunes théoriques importantes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ne pas définir un niveau (débutant, intermédiaire, confirmé),
+  j'avais donc des parfaits débutants comme des utilisateurs 
+  avec plusiueurs mois d'expérience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;J'ai donc opté pour un atelier avec des gros morceaux de présentation
+donnés au fil de l'eau quand cela était nécessaire pour comprendre
+les commandes a taper.&lt;/p&gt;
+&lt;p&gt;Je fais donc le constat suivant :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Je donnerais un atelier si et seulement si j'ai donné une présentation
+  juste avant. Non obligatoire mais me permet de ne pas revenir sur la
+  théorie (et tant pis pour ceux qui estiment de ne pas en avoir besoin
+  mais sont à la ramasse).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fixer un niveau pour l'atelier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cela peut donc donner une journée complète de Git (pres + atelier débutant +
+atelier intermédiaire). Mais avec plus de 20 présentations et 7 ateliers,
+cela ne me fait pas vraiment peur. J'ai d'ailleurs totalement improvisé
+cet atelier / pres de 3h :).&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/retour-sur-le-breizhcamp-2012.html</guid><pubDate>Sun, 01 Jul 2012 02:54:00 GMT</pubDate></item><item><title>Présentation Git le 12/04 à Lausanne</title><link>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-lausanne.html</link><description>&lt;p&gt;gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
+précisemment à Lausanne. C'est organisé par le JUGL, le &lt;em&gt;Java User Group de
+Lausanne&lt;/em&gt;, et la présentation démarre à 18h30 dans &lt;a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/OCTOLausanne"&gt;les locaux
+d'Octo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Toutes les infos sur le site du &lt;a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/WebHome"&gt;JUGL&lt;/a&gt;.&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-lausanne.html</guid><pubDate>Fri, 30 Mar 2012 09:40:00 GMT</pubDate></item><item><title>Mise à jour de la présentation Git</title><link>http://gitfr.net/blog/posts/mise-a-jour-de-la-presentation-git.html</link><description>&lt;p&gt;Demander à cor et à cri depuis de mois, j'ai mis à jour la présentation 
+le &lt;a href="https://github.com/sdouche/showoff-presentation-git"&gt;dépôt Git&lt;/a&gt; et la
+&lt;a href="http://presentation-git.heroku.com/"&gt;présentation en ligne&lt;/a&gt;. Il y'a malheureusement
+des petits soucis d'affichage des images mais un rafraichissement règle en
+général le problème.&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/mise-a-jour-de-la-presentation-git.html</guid><pubDate>Wed, 01 Feb 2012 00:50:00 GMT</pubDate></item><item><title>Présentation Git le 13/02 à Montpellier</title><link>http://gitfr.net/blog/posts/presentation-git-le-13-02-a-montpellier.html</link><description>&lt;p&gt;gitfr ne sera jamais descendu plus bas que ce 13 février puisque c'est la
+belle ville de Montpellier qui aura l'honneur d'une présentation Git ;).&lt;/p&gt;
+&lt;p&gt;C'est le MontpellierJUG qui organise cette soirée à l'université Montpellier
+II. Toutes les infos et inscription sur &lt;a href="https://www.eventbrite.com/event/2870566943?nomo=1"&gt;cette page&lt;/a&gt;.&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-git-le-13-02-a-montpellier.html</guid><pubDate>Wed, 01 Feb 2012 00:30:00 GMT</pubDate></item><item><title>Présentation et atelier Git le 20/02 à Lyon</title><link>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-20-02-a-lyon.html</link><description>&lt;p&gt;gitfr repart à Lyon pour un combo présentation + atelier sur une journée. Cela
+se passera le 20 février dans les locaux d'Alptis, 25 cours Albert Thomas, de
+14h à 21h (8h de conf, même pas peur !).&lt;/p&gt;
+&lt;p&gt;Si je vous dis que les inscriptions sont déjà closes, vous me croyez ? Désolé,
+j'ai raté l'ouverture des inscriptions.&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-20-02-a-lyon.html</guid><pubDate>Thu, 26 Jan 2012 21:07:00 GMT</pubDate></item><item><title>Retour sur un an de gitfr</title><link>http://gitfr.net/blog/posts/retour-sur-un-an-de-gitfr.html</link><description>&lt;p&gt;Cela fait maintenant un peu plus d'un an que #gitfr existe (1ere conférence le
+24 novembre 2010), il est donc temps de faire un petit point. D'abord quelques
+chiffres :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;quelques centaines d'heures dépensées&lt;/li&gt;
+&lt;li&gt;13 conférences&lt;/li&gt;
+&lt;li&gt;~800 auditeurs aux conférences&lt;/li&gt;
+&lt;li&gt;~4000 visulisations sur parleys.com&lt;/li&gt;
+&lt;li&gt;86 billets de blog&lt;/li&gt;
+&lt;li&gt;plusieurs centaines de fotes d'ortografes&lt;/li&gt;
+&lt;li&gt;6 ateliers&lt;/li&gt;
+&lt;li&gt;~120 participants aux ateliers&lt;/li&gt;
+&lt;li&gt;7 jours de congés utilisés&lt;/li&gt;
+&lt;li&gt;0€ gagné&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alors que l'objectif initial était de faire des ateliers, c'est précisemment
+l'activité la plus faible. Je vois plusieurs raisons :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Tout d'abord, participer à un atelier demande à comprendre un minimum Git. Il
+  me semble inutile d'organiser un atelier sans que les participants soient
+  d'abord conviés à la conférence.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Une conférence permet de faire venir des dizaines ou centaines de personnes,
+  l'atelier est lui difficile à faire à plus de 30.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Un atelier est bien plus compliqué a organiser.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On m'a plus sollicité pour des conférences, tout simplement. Je n'ai plus
+  le temps pour trouver des salles, je m'adapte aux demandes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De plus, j'avoue qu'après des dizaines d'heures dépensées pour monter une
+conférence de qualité, ma motivation et mon énergie pour l'atelir avaient
+diminués. Je dirais même que je redoutais un peu de faire des ateliers, car
+cela demande bien plus de préparation. Avec 6 ateliers, et malgré une qualité
+insuffisante à mes yeux sur les premiers, cette peur s'est estompée.&lt;/p&gt;
+&lt;p&gt;J'avoue aussi que l'activité du blog est assez faible, car je pense trop
+souvent à faire des billets trop longs. Je vais donc tenter à l'avenir des
+billets courts, même si cela nécessite de faire plusieurs billets sur le même
+sujet. Et bien sûr, cela aussi du temps et de l'énergie.&lt;/p&gt;
+&lt;p&gt;Vous pouvez constater que #gitfr est une activité purement bénévole. Non
+seulement, je n'ai pas gagné d'argent avec mais j'ai dépensé 7 jours de congés
+payés pour les déplacements en province. C'est à ce titre que je demande au
+minimum le remboursement des frais et une gratuité de l'évènement pour le
+public : je me déplace uniquement si n'importe qui peut venir assister aux
+conférences et aux ateliers. Que je ne gagne pas d'argent soit, mais je ne suis
+pas là pour enrichir ou former une société ! #gitfr est et restera une
+activité bénévole et gratuite, ce n'est pas dans son ADN de proposer des
+ateliers payants (il faut pour cela se tourner vers des formateurs, je pense
+d'ailleurs en faire une liste si cela est utile). Ceux qui me connaissent
+savent parfaitement mon dégout pour les gens qui cachent leurs activités pro
+sous des soit-disantes activités associatives. La séparation doit être nette et
+étanche. Si vous souhaitez une conférence ou un atelier Git, n'hésitez donc pas
+à demander, #gitfr répondra présent si les conditions le permet !&lt;/p&gt;
+&lt;p&gt;Et pour finir sur une note positive, je crois que la majorité des participants
+ont appréciés les conférences et comprennent maintenant l'avantage d'utiliser
+Git (et globalement les DVCS). C'est finalement le seul objectif de #gitfr :
+montrer aux développeurs et aux managers qu'ils ont tout à gagner à revoir
+leurs pratiques de gestion de source. Les DVCS ne sont pas l'avenir, ils sont
+le présent. &lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/retour-sur-un-an-de-gitfr.html</guid><pubDate>Tue, 10 Jan 2012 20:54:00 GMT</pubDate></item><item><title>Présentation et atelier Git le 15/12 à Lille</title><link>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-15-12-a-lille.html</link><description>&lt;p&gt;Si vous êtes sur Lille ou sa région et que vous voulez apprendre Git, réservez
+votre 15 décembre ! Au programme, 3h (voir plus si les participants sont
+motivés) avec en entrée une présentation de Git, suivi d'un atelier pour
+débutant.&lt;/p&gt;
+&lt;p&gt;Je vous avoue que 3h pour une présentation et un atlier est un peu court, mais
+cela me suffit pour vous donner une idée assez précise des possbilités de
+l'outil :).&lt;/p&gt;
+&lt;p&gt;Cet événement est organisé par Ineat Conseil et cela se passera dans leur
+locaux. Les places sont donc limitées !&lt;/p&gt;
+&lt;p&gt;L'inscription se fait sur cette &lt;a href="http://ineat-conseil-git-estw.eventbrite.com/"&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rappel&lt;/strong&gt; : les participants doivent venir avec Git déjà installé sur leur
+poste.&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-15-12-a-lille.html</guid><pubDate>Thu, 01 Dec 2011 13:07:00 GMT</pubDate></item><item><title>Présentation Git le 14/12 à Paris</title><link>http://gitfr.net/blog/posts/presentation-git-le-14-12-a-paris.html</link><description>&lt;p&gt;Avant dernière conférence de l'année 2011, organisé par l'association
+&lt;a href="http://www.altnetfr.org/"&gt;alt.netFR&lt;/a&gt;. Si vous êtes sur Paris, c'est votre
+dernière chance de me voir en live avant un bon bout de temps ! C'est Valtech
+qui accueille cette fois ci dans une grande salle pouvant accueillir plus de
+100 personnes.  &lt;/p&gt;
+&lt;p&gt;L'inscription se fait sur cette &lt;a href="http://www.eventbrite.com/event/2421871884"&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour l'anectode, je suis depuis 16 ans un grand fan d'Unix et du Logiciel Libre
+et je déteste Windows. je crois que ça va basher plus fort que d'habitude ;).&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-git-le-14-12-a-paris.html</guid><pubDate>Thu, 01 Dec 2011 13:02:00 GMT</pubDate></item></channel></rss>

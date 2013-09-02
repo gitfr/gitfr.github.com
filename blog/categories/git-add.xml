@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>GitFR (git-add)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>La commande add</title><link>http://gitfr.net/blog/posts/0035-la_commande_add.html</link><description>&lt;p&gt;La commande que l'on utilise juste après &lt;em&gt;init&lt;/em&gt; ou &lt;em&gt;clone&lt;/em&gt; est bien évidemment la commande &lt;em&gt;add&lt;/em&gt;. Celle ci permet de modifier le contenu de l'index.&lt;/p&gt;
+&lt;h2&gt;L'index ?&lt;/h2&gt;
+&lt;p&gt;Git se différencie des autres outils en intégrant la notion d'index. Vous pouvez le voir comme un &lt;strong&gt;commit temporaire&lt;/strong&gt;. Commit car il est effectivement enregistré comme tel dans le dépôt, mais temporaire car il est géré complètement différemment. &lt;/p&gt;
+&lt;p&gt;Quand on vient de &lt;em&gt;SVN&lt;/em&gt; ou de &lt;em&gt;Hg&lt;/em&gt;, cela peut paraitre au premier abord assez lourd : a quoi cela peut il bien servir ? Tout simplement à construire tranquillement son commit, en permettant des «va-et-vient» entre son code (que l'on peut étudier ou modifier) et la construction de son commit. Une fois utilisé, on devient accro et on ne s'en lasse pas. Mais nous verrons plus tard que l'on peut shinter l'index si cela n'est pas utile.&lt;/p&gt;
+&lt;h2&gt;Une différence importante&lt;/h2&gt;
+&lt;p&gt;Quand vous appelez la commande add, vous ne demandez pas à Git d'ajouter le fichier, mais seulement le &lt;strong&gt;contenu&lt;/strong&gt; de ce fichier au moment de l'appel de la  commande. Késako ? Avec &lt;em&gt;svn add&lt;/em&gt; (ou &lt;em&gt;hg add&lt;/em&gt;), vous demandez à svn d'intégrer toutes les modifications futures de ce fichier, alors que Git va seulement intégrer les modifications &lt;strong&gt;actuelles&lt;/strong&gt; de ce fichier. Si vous faites de nouveau des modifications, il faudra appeler une deuxième fois la commande add.&lt;/p&gt;
+&lt;p&gt;C'est pour cela que vous pouvez retrouver ce même fichier dans l'état «changes to be commited» (aka dans l'index) et l'état «changes not staged to commit» (modifier dans le répertoire de travail) en &lt;strong&gt;même temps&lt;/strong&gt; : vous avez modifié le fichier, fait un add puis modifié de nouveau le fichier. Cela peut sembler un peu complexe au premier abord, mais cela vous permet de «jouer» avec votre dernier commit car il est fait pour cela. Une fois que vous êtes sur de votre coup, vous commitez réellement.&lt;/p&gt;
+&lt;p&gt;On retrouve la philosophie «gestionnaire de contenu» et non «gestionnaire de fichier» que je cite dans mes présentations. Pour faciliter la vie, Git possède aussi une notion de fichier tracé (voir plus bas la commande -u), mais c'est à vous de décider de prendre en compte systématiquement toutes les modifications en cours. Par défaut, il vous demande de sélectionner chaque modification.&lt;/p&gt;
+&lt;p&gt;Une fois comprise et maitrisée, cette étape et un élément important dans la construction d'un &lt;strong&gt;historique propre&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Modifier l'index&lt;/h2&gt;
+&lt;p&gt;Rien de plus simple :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git add $filepattern&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le pattern peut être un fichier (&lt;em&gt;git add monfichier.txt&lt;/em&gt; par exemple).&lt;/p&gt;
+&lt;h2&gt;Ajout interactif&lt;/h2&gt;
+&lt;p&gt;Si l'ajout en ligne de commande vous semble ennuyeuse, un shell est à votre disposition pour vous simplifier la tâche. Il suffit de taper le numéro de la commande puis de choisir le ou les fichiers impactés.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://media.tumblr.com/tumblr_lipq1n3EbQ1qdkaiq.png"&gt;&lt;/p&gt;
+&lt;p&gt;Personnellement, je n'utilise pas beaucoup le mode interactif.&lt;/p&gt;
+&lt;h2&gt;Ajout par hunk&lt;/h2&gt;
+&lt;p&gt;Mais j'apprécie particulièrement l'option &lt;strong&gt;-p&lt;/strong&gt;. Ce dernier permet d'ajouter du contenu par petits bouts de code, appelez &lt;strong&gt;hunk&lt;/strong&gt; :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Exemple d'un hunk" src="http://media.tumblr.com/tumblr_lipqrbfx1s1qdkaiq.png"&gt;&lt;/p&gt;
+&lt;p&gt;Imaginez que vous avez modifié plusieurs fichiers (ou plusieurs fois le même fichier), portant sur des sujets qui n'ont rien à voir. Cette option me liste les hunks et me demande pour chacun d'eux si je souhaite l'intégrer dans l'index. Je peux ainsi construire un &lt;strong&gt;commit unitaire&lt;/strong&gt;, un commit cohérent qui ne mélange pas des modifications sans relation entre elles. Même si j'ai travaillé de manière brouillone dans mon espace de travail.&lt;/p&gt;
+&lt;p&gt;De plus, la commande vous propose plusieurs possibilités, comme celle de laisser un hunk &lt;em&gt;undecided&lt;/em&gt;, afin d'y revenir plus tard. Vous pouvez même éditer un hunck pour le modifier.C'est une option que je vous recommande chaudement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : cette option est en fait un raccourci vers la sous commande &lt;em&gt;patch&lt;/em&gt; de l'ajout interactif vu juste avant.&lt;/p&gt;
+&lt;h2&gt;Edition d'un patch&lt;/h2&gt;
+&lt;p&gt;Vous pouvez directement modifier vos changements avec l'option &lt;em&gt;-e&lt;/em&gt;. Je n'utilise personnellement pas cette possibilité (ni directement, ni par l'option -p).&lt;/p&gt;
+&lt;h2&gt;Deux raccourcis utiles&lt;/h2&gt;
+&lt;p&gt;L'option &lt;em&gt;-a&lt;/em&gt; ajoute le contenu de tous les fichiers du répertoire de travail, &lt;em&gt;-u&lt;/em&gt; seulement le contenu des fichiers déjà tracés.&lt;/p&gt;</description><category>git</category><category>git-add</category><guid>http://gitfr.net/blog/posts/0035-la_commande_add.html</guid><pubDate>Tue, 29 Mar 2011 08:53:00 GMT</pubDate></item></channel></rss>

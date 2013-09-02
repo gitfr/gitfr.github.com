@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Git 1.7.6 publiée | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="git-1.7.6-publiee.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Git 1.7.6 publiée</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2011-07-09T20:34:00">2011-07-09 20:34</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+
+    </small>
+    <hr>
+    <p>Nouvelle fournée pour Git avec cette branche 1.7.6.x. A noter que c'est la
+première version qui respecte le nouveau cycle de release plus court voulu
+par Junio.</p>
+<p>A la lecture du changelog, voici quelques points que je remarque :</p>
+<ul>
+<li>
+<p>Le magic pathspec ":/".</p>
+</li>
+<li>
+<p>L'option patch pour la commande git-commit.</p>
+</li>
+<li>
+<p>La possibilité d'utiliser les expressions rationnelles pour git-grep.</p>
+</li>
+<li>
+<p>La variable de configuration <code>merge.ff</code> pour spécifier s'il faut toujours
+   ou jamais faire un commit de merge.</p>
+</li>
+<li>
+<p>Ne pas spécifier de branche à git-rebase signifie rebaser sur upstream.</p>
+</li>
+</ul>
+<h3>Changelog</h3>
+<ul>
+<li>
+<p>Various git-svn updates.</p>
+</li>
+<li>
+<p>Updates the way content tags are handled in gitweb.  Also adds
+  a UI to choose common timezone for displaying the dates.</p>
+</li>
+<li>
+<p>Similar to branch names, tagnames that begin with "-" are now
+  disallowed.</p>
+</li>
+<li>
+<p>Clean-up of the C part of i18n (but not l10n---please wait)
+  continues.</p>
+</li>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Pushing and pulling from a repository with large number of refs that
+  point to identical commits are optimized by not listing the same commit
+  during the common ancestor negotiation exchange with the other side.</p>
+</li>
+<li>
+<p>Adding a file larger than core.bigfilethreshold (defaults to 1/2 Gig)
+  using "git add" will send the contents straight to a packfile without
+  having to hold it and its compressed representation both at the same
+  time in memory.</p>
+</li>
+<li>
+<p>Processes spawned by "[alias] <name> = !process" in the configuration
+  can inspect <code>GIT_PREFIX</code> environment variable to learn where in the
+  working tree the original command was invoked.</name></p>
+</li>
+<li>
+<p>A magic pathspec ":/" tells a command that limits its operation to
+  the current directory when ran from a subdirectory to work on the
+  entire working tree. In general, ":/path/to/file" would be relative
+  to the root of the working tree hierarchy.</p>
+</li>
+</ul>
+<p>After "git reset --hard; edit Makefile; cd t/", "git add -u" would
+  be a no-op, but "git add -u :/" would add the updated contents of
+  the Makefile at the top level. If you want to name a path in the
+  current subdirectory whose unusual name begins with ":/", you can
+  name it by "./:/that/path" or by "\:/that/path".</p>
+<ul>
+<li>
+<p>"git blame" learned "--abbrev[=<n>]" option to control the minimum
+  number of hexdigits shown for commit object names.</n></p>
+</li>
+<li>
+<p>"git blame" learned "--line-porcelain" that is less efficient but is
+  easier to parse.</p>
+</li>
+<li>
+<p>Aborting "git commit --interactive" discards updates to the index
+  made during the interactive session.</p>
+</li>
+<li>
+<p>"git commit" learned a "--patch" option to directly jump to the
+  per-hunk selection UI of the interactive mode.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=0 to show
+  directories that contribute less than 0.1% of changes.</p>
+</li>
+<li>
+<p>"git diff" and its family of commands learned --dirstat=lines mode to
+  assess damage to the directory based on number of lines in the patch
+  output, not based on the similarity numbers.</p>
+</li>
+<li>
+<p>"git format-patch" learned "--quiet" option to suppress the output of
+  the names of generated files.</p>
+</li>
+<li>
+<p>"git format-patch" quotes people's names when it has RFC822 special
+  characters in it, e.g. "Junio C. Hamano" <a href="mailto:jch@example.com">jch@example.com</a>.  Earlier
+  it was up to the user to do this when using its output.</p>
+</li>
+<li>
+<p>"git format-patch" can take an empty --subject-prefix now.</p>
+</li>
+<li>
+<p>"git grep" learned the "-P" option to take pcre regular expressions.</p>
+</li>
+<li>
+<p>"git log" and friends learned a new "--notes" option to replace the
+  "--show-notes" option.  Unlike "--show-notes", "--notes=<ref>" does
+  not imply showing the default notes.</ref></p>
+</li>
+<li>
+<p>They also learned a log.abbrevCommit configuration variable to augment
+  the --abbrev-commit command line option.</p>
+</li>
+<li>
+<p>"git ls-remote" learned "--exit-code" option to consider it a
+  different kind of error when no remote ref to be shown.</p>
+</li>
+<li>
+<p>"git merge" learned "-" as a short-hand for "the previous branch", just
+  like the way "git checkout -" works.</p>
+</li>
+<li>
+<p>"git merge" uses "merge.ff" configuration variable to decide to always
+  create a merge commit (i.e. --no-ff, aka merge.ff=no), refuse to create
+  a merge commit (i.e. --ff-only, aka merge.ff=only). Setting merge.ff=yes
+  (or not setting it at all) restores the default behaviour of allowing
+  fast-forward to happen when possible.</p>
+</li>
+<li>
+<p>p4-import (from contrib) learned a new option --preserve-user.</p>
+</li>
+<li>
+<p>"git read-tree -m" learned "--dry-run" option that reports if a merge
+  would fail without touching the index nor the working tree.</p>
+</li>
+<li>
+<p>"git rebase" that does not specify on top of which branch to rebase
+  the current branch now uses @{upstream} of the current branch.</p>
+</li>
+<li>
+<p>"git rebase" finished either normally or with --abort did not
+  update the reflog for HEAD to record the event to come back to
+  where it started from.</p>
+</li>
+<li>
+<p>"git remote add -t only-this-branch --mirror=fetch" is now allowed. Earlier
+  a fetch-mode mirror meant mirror everything, but now it only means refs are
+  not renamed.</p>
+</li>
+<li>
+<p>"git rev-list --count" used with "--cherry-mark" counts the cherry-picked
+  commits separately, producing more a useful output.</p>
+</li>
+<li>
+<p>"git submodule update" learned "--force" option to get rid of local
+  changes in submodules and replace them with the up-to-date version.</p>
+</li>
+<li>
+<p>"git status" and friends ignore .gitmodules file while the file is
+  still in a conflicted state during a merge, to avoid using information
+  that is not final and possibly corrupt with conflict markers.</p>
+</li>
+<li>
+<p>"git config" used to choke with an insanely long line.
+  (merge ef/maint-strbuf-init later)</p>
+</li>
+<li>
+<p>"git diff --quiet" did not work well with --diff-filter.
+  (merge jk/diff-not-so-quick later)</p>
+</li>
+<li>
+<p>"git status -z" did not default to --porcelain output format.
+  (merge bc/maint-status-z-to-use-porcelain later)</p>
+</li>
+</ul>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="0066-cycle_de_release_raccourci.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="gitfr-sur-github.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

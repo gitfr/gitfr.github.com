@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Migration CVS vers Git pour le projet Drupal | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="0014-migration_cvs_vers_git_pour_le_projet_drupal.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Migration CVS vers Git pour le projet Drupal</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-11-17T08:39:00">2010-11-17 08:39</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/migration.html"><span class="badge badge-info">migration</span></a>
+
+    </small>
+    <hr>
+    <p>Le projet <a href="http://www.drupal.org">Drupal</a> est en cours de migration depuis plusieurs mois (le choix de migrer sur Git est décidé depuis février 2010). C'est donc toute une communauté qui faut former à l'outil, mettre en place des nouvelles pratiques, recoder l'infrastructure (intégration continue, deploiement...). Travail important s'il en est.</p>
+<p>Aprés une <a href="http://groups.drupal.org/node/48818">évaluation des différents outils et du choix final</a>, <a href="http://drupal.org/community-initiatives/git">trois étapes</a> et dix sprints de deux semaines sont planifiés. La migration s'étale donc sur environ 15 mois.</p>
+<p>Les 3 phases :</p>
+<ul>
+<li>création d'un mirroir Git en lecture seul (recréé régulièrement)</li>
+<li>utilisation de Git en mode centralisé</li>
+<li>utilisation de Git en mode décentralisé</li>
+</ul>
+<p>On peut noter que l'équipe infrastructure de Drupal était pour <em>Bzr</em>, mais que la communauté Drupal était majoritairement pour Git. Le choix <em>Hg</em> fut éliminé par manque de soutient.</p>
+<p>Voici la feuille de route :</p>
+<ul>
+<li>Sprint 1 - Making key decisions necessary for the project to move forward</li>
+<li>Sprint 2 - Version Control API</li>
+<li>Sprint 3 - VC API / Admin Interface and Migration Script Finalization</li>
+<li>Sprint 4 - Release-Worthy Views for VC API and Git Activity Log </li>
+<li>Sprint 5 - VC API / Project Module Integration</li>
+<li>Sprint 6 - Project Module (Release Nodes being automatically generated for repositories containing appropriately named branches)</li>
+<li>Sprint 7 - Preparation for Broader Community testing</li>
+<li>Sprint 8 - Community Testing</li>
+<li>Sprint 9 - Community Testing and Deployment Preparation</li>
+<li>Sprint 10 - Deployment (CVS will be gone forever)</li>
+</ul>
+<p>Vous trouverez les résumés des <a href="http://groups.drupal.org/node/100999">sprint 1</a>, <a href="http://groups.drupal.org/node/101004">sprint 2</a> et <a href="http://groups.drupal.org/node/102104">sprint 3</a>.</p>
+<p>Le <a href="http://git.drupalcode.org/">mirroir Git</a> est déja en place puisque nous sommes à la phase 2, vous pouvez constater le nombre assez impressionant de dépôts. Les scripts de migration CVS vers SVN sont sur <a href="https://github.com/sdboyer/drupalorg-git">GitHub</a>.</p>
+<p>On a vu fleurir les présentations et les formations Git, comme au <a href="http://groups.drupal.org/node/71473">Bootcamp Git De Los Angeles</a> ou au <a href="https://docs.google.com/present/view?id=0ATSj3ekASkFxZGRzZDVzdzdfNTA2Z2g1Mm1qZng&amp;hl=en">DrupalCon de Copenhague</a>.</p>
+<p>Si vous souhaitez suivre la migration, lisez régulièrement cette <a href="http://groups.drupal.org/drupal-org-git-migration-team">page</a> ou par <em>Twitter</em> avec <strong>@DrupalGitGremln</strong>.</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="0013-support_de_git_dans_les_projets_apache.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="0015-les_gui_sous_macos_x.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>GitFR (git git-diff)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>La commande diff</title><link>http://gitfr.net/blog/posts/la-commande-diff.html</link><description>&lt;p&gt;Vous connaissez surement la commande &lt;code&gt;git-diff&lt;/code&gt;, puisqu'elle existe sur Hg ou
+SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
+d'horizon.&lt;/p&gt;
+&lt;h3&gt;Le base&lt;/h3&gt;
+&lt;p&gt;Commençons par le basique. Pour connaître les différences entre votre
+répertoire de travail et votre index :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Entre l'index et votre dépôt :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff --staged&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Entre le répertoire de travail et le dépôt :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff HEAD&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : la notation HEAD se retrouve assez souvent (git-log, git-reset...)
+quand on parle du dépôt, vu qu'il s'agit du commit courant, c'est à dire notre
+position sur le graphe (l'index étant le prochain commit).&lt;/p&gt;
+&lt;p&gt;La commande permet de spécifier des fichiers ou des commits (ces deux
+possibilités peuvent être combinées) :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff -- monfichier&lt;/p&gt;
+&lt;p&gt;$ git diff commit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Si vous voulez connaître la différence entre 2 commits :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff commit1 commit2 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Plus intéressant, si vous voulez savoir ce qui existe dans une branche et pas
+dans l'autre :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff commit1...commit2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
+deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.&lt;/p&gt;
+&lt;h3&gt;Le contexte&lt;/h3&gt;
+&lt;p&gt;Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
+affiche 3 lignes supplémentaires en dessous des changements pour vous donner
+plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
+possibles :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;La 1ère est bien sûr d'augmenter le contexte avec l'option &lt;code&gt;-U&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff -U5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pensez à faire un alias si vous préférez toujours disposer d'un contexte d'une
+taille différente.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Demander à Git la fonction qui contient la modification&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff -W&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
+langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
+premiers tests en Python, cela semble plûtot bien fonctionner.&lt;/p&gt;
+&lt;h3&gt;Ignorer les espaces&lt;/h3&gt;
+&lt;p&gt;Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
+supprimer des espaces. Vous avez à votre disposition les options &lt;code&gt;-b&lt;/code&gt; &lt;code&gt;-w&lt;/code&gt; pour
+ignorer les espaces en fin de lignes ou toutes les espaces.&lt;/p&gt;
+&lt;h3&gt;Algorithme patience&lt;/h3&gt;
+&lt;p&gt;La commande implémente aussi un autre algorithme de détection de changement du
+nom de &lt;em&gt;Patience&lt;/em&gt;. Pour faire très court, cet algo se focalise uniquement sur
+des lignes à fort contenu, alors que l'algorithme classique travaille sur
+toutes les lignes. Il y'a des cas ou c'est intéressant de l'essayer (notamment
+quand le diff classique est complètement perdu).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : pour de plus amples explications, veuillez vous référer à cette
+page &lt;a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html"&gt;ci&lt;/a&gt; et à
+celle &lt;a href="http://alfedenzo.livejournal.com/170301.html"&gt;la&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Faire des statistiques&lt;/h3&gt;
+&lt;p&gt;Je vous laisse regarder par vous même les options &lt;code&gt;--stat&lt;/code&gt;, &lt;code&gt;--numstat&lt;/code&gt;,
+&lt;code&gt;--shortstat&lt;/code&gt;, &lt;code&gt;--dirstat&lt;/code&gt; et &lt;code&gt;--summary&lt;/code&gt; :).&lt;/p&gt;
+&lt;h3&gt;Afficher les différences sur la même ligne&lt;/h3&gt;
+&lt;p&gt;Il est intéressant, par exemple pour de la documentation, d'afficher les
+modifications sur la même ligne. C'est tout l'intérêt du mode &lt;em&gt;word diff&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff --word-diff&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Ne pas afficher les prefixes&lt;/h3&gt;
+&lt;p&gt;Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff --no-prefix&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Chercher une chaine dans le contenu&lt;/h3&gt;
+&lt;p&gt;Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
+lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
+faut :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff -Srenderer HEAD~10..HEAD&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vous pouvez utiliser une expression rationnelle avec l'option &lt;code&gt;-G&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : l'option &lt;code&gt;--pickaxe-all&lt;/code&gt; affiche l'ensemble du commit, et pas
+uniquement les fichiers impactés.&lt;/p&gt;
+&lt;h3&gt;Générer un patch&lt;/h3&gt;
+&lt;p&gt;Le comportement par défaut de Git est de générer un patch :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git diff &amp;gt; diff.patch&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Et encore plein d'autres options&lt;/h3&gt;
+&lt;p&gt;Comme d'habitude, je vous recommande chaudement de lire le manuel de la
+commande tellement Git regorge d'options (notamment pour aider au scripting).
+Je n'ai pas parlé de l'option &lt;code&gt;--check&lt;/code&gt; pour vérifier les espaces inutiles, le
+&lt;code&gt;-M&lt;/code&gt; et le &lt;code&gt;-C&lt;/code&gt; pour détecter copie et déplacement...&lt;/p&gt;</description><category>git git-diff</category><guid>http://gitfr.net/blog/posts/la-commande-diff.html</guid><pubDate>Thu, 26 Jan 2012 15:48:00 GMT</pubDate></item></channel></rss>

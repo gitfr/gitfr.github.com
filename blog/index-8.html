@@ -1,0 +1,690 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Site francophone sur Git.">
+    <meta name="author" content="GitFR">
+    <title>GitFR (anciens billets page 8) | GitFR</title>
+    
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+    
+    
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href=".">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
+            </li><li><a href="rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/presentation-git-le-24-11-a-bordeaux.html">Présentation Git le 24/11 à Bordeaux</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-13T01:40:00">2011-10-13 01:40</time>
+        </small></h1>
+        <hr>
+        <p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
+combo présentation et atelier sur 2 jours : </p>
+<ul>
+<li>Présentation le 24/11</li>
+<li>Atelier le 25/11</li>
+</ul>
+<p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
+<a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
+de l'événement.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0079-comprendre_le_refspec.html">Comprendre le refspec</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-09T17:53:00">2011-10-09 17:53</time>
+        </small></h1>
+        <hr>
+        <p>Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
+comporte Git : il vous indique les références du dépôt distant en
+ajoutant l'espace de nom <code>origin</code> (dans le cas d'un clone) ou le nom que
+vous lui donnez si vous l'avez ajouter avec la commande <code>git-remote add</code>.
+Mais pourquoi Git a t'il ce comportement ?</p>
+<p>La réponse se trouve dans le <strong>refspec</strong>, nom un peu barbare, qui pourrait
+se traduire en bon français par : «comment je gère les dépôts distants
+chef ?». Soit ce refspec est spécifié en ligne de commande au moment
+de l'action (fetch ou push), soit elle se trouve dans le fichier de
+configuration du dépôt.</p>
+<h3>Petit rappel</h3>
+<p>Il est <strong>impossible</strong> de modifer directement un dépôt distant, vous devez
+obligatoirement modifier le dépôt local puis pousser vos commits
+sur le dépôt distant. Autrement dit, modifier un dépôt consiste à
+synchroniser les bases de données.</p>
+<p>C'est là que le refspec rentre en jeu, il permet de définir les branches
+concernées au moment de la synchronisation.</p>
+<h3>Clonage</h3>
+<p>Si vous joué rarement avec le refspec, c'est que vous travaillé la plupart
+du temps sur un dépôt local que vous avez créé avec la commande <code>git-clone</code>.
+Ce dernier génère un refspec générique suffisant. Editez le fichier
+<code>.git/config</code> et vous verrez ces lignes :</p>
+<div class="code"><pre><span class="k">[remote "origin"]</span>
+<span class="na">fetch</span> <span class="o">=</span> <span class="s">+refs/heads/*:refs/remotes/origin/*</span>
+<span class="na">url</span> <span class="o">=</span> <span class="s">/path/to/repos</span>
+</pre></div>
+
+
+<p>Une explication rapide : le dépôt distant qui se trouve à l'url spécifié
+s'appelle en local <em>origin</em> et on associe à chaque référence de branche
+du dépôt distant une référence de branche locale préfixée par <em>origin</em>.</p>
+<p>Mais un deuxième rappel avant d'aller plus loin.</p>
+<h3>Structure des références</h3>
+<p>La gestion des références est d'une simplicité affligeante. Tout est contenu
+dans le répertoire <code>.git/refs</code>. Un répertoire étant un espace de nom, un
+fichier une référence. Pour fonctionner, Git à besoin de 2 espaces de nom
+bien particulier :</p>
+<ul>
+<li>
+<p><em>heads</em> pour stocker les références locales de type branche.</p>
+</li>
+<li>
+<p><em>tags</em> pour stocker les références locales de type tag.</p>
+</li>
+</ul>
+<p>Vous ne faites pas attention à ces répertoires en temps normal car les
+commandes Git savent pertinamment que les références sont à ces endroits
+précis.</p>
+<h3>Explication</h3>
+<p>Si je vous dis qu'un refspec s'écrit toujours <code>source:destination</code>, la ligne
+suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :</p>
+<blockquote>
+<p>fetch = +refs/heads/<em>:refs/remotes/origin/</em></p>
+</blockquote>
+<ul>
+<li>
+<p>Le mot clé fetch indique que c'est lu à chaque utilisation de cette commande
+  Le sens de transfert est du dépôt distant (la source) vers le dépôt local
+  (la destination).</p>
+</li>
+<li>
+<p>Le symbole <code>+</code> signifie qu'on autorise les récuparation <em>non fast-forword</em>.</p>
+</li>
+<li>
+<p>le reste de la ligne est assez explicite. Pour toutes les références se
+  trouvant dans le chemin <code>refs/heads/</code> dans le dépôt distant, on associe une
+  référence dans le chemin <code>refs/remotes/origin/</code> dans le dépot local. </p>
+</li>
+</ul>
+<p>Si par exemple le dépôt distant a 3 branches qui se nomment <code>riri</code>, <code>fifi</code> et
+<code>loulou</code>, vous aurez donc en local 3 branches <code>origin/riri</code>, <code>origin/fifi</code> et
+<code>origin/loulou</code>.</p>
+<h3>Importance du refspec</h3>
+<p>Il est important de maitriser le refspec car tout part de là, c'est en fonction
+des références à récupérer ou à pousser que Git détermine les objets à 
+synchroniser. Si je demande à récupérer toutes les références distantes, je demande
+implicitement tous les objets accessibles par ces références, donc toute la base.
+Au contraire, si le refspec implique des références précises, seuls les objets
+nécessaires à ces références seront impactés.</p>
+<h3>Ajout d'un dépôt distant</h3>
+<p>La commande <code>git-remote</code> permet de manipuler les dépôts distants, avec
+notamment la commande <code>git-remote add</code> pour en ajouter. Ce dernier se comporte
+comme la commande <code>git-clone</code>, en configurant le refspec au plus
+large (toutes les références donc).</p>
+<h3>refspec en ligne de commande</h3>
+<p>Le refspec se manipule aussi en ligne de commande, ce qui permet de passer
+outre la configuration ou d'utiliser Git sans configuration préalable.</p>
+<p>Quelques exemples :</p>
+<blockquote>
+<p>git fetch origin +pu:tmp</p>
+</blockquote>
+<p>Récupére la référence <em>pu</em> et les objets associés et appeles la <em>tmp</em>
+en local.</p>
+<blockquote>
+<p>git push HEAD:master</p>
+</blockquote>
+<p>Pousse la branche actuelle sur la branche distante master.</p>
+<blockquote>
+<p>git push origin master:refs/heads/qa/experimental</p>
+</blockquote>
+<p>Pousse la branche master sur la branche distante expérimental. Nous
+utilisons ici le nom complet de la référence. </p>
+<h3>Le refspec :</h3>
+<p>Refspec particulier qui indique de mettre à jour toutes les branches
+distantes existantes qui ont un nom identique aux branches locales. C'est en
+fait le refspec utilisé par défaut au push quand nous en spécifions pas.</p>
+<h3>Effacer une référence distante</h3>
+<p>Autre cas particulier. Si vous souhaitez par exemple effacer la référence
+distante test si vous souhaitez effacer une référence distante,
+il faut taper :</p>
+<blockquote>
+<p>git push :test</p>
+</blockquote>
+<p>Autrement dit, je pousse une référence vide sur la référence test.</p>
+<h3>Associer branche locale / branche distante</h3>
+<p>Comme nous l'avons vu, le refspec en ligne de commande permet d'associer
+temporairement une branche locale et une branche sur le dépôt distant. Mais
+comment associer ces deux branches dans la configuration et éviter ainsi de
+le répêter à chaque fois ? Tout se situe encore dans le fichier
+<code>.git/config</code> du dépôt local :</p>
+<div class="code"><pre><span class="p">[</span><span class="n">branch</span> <span class="s">"master"</span><span class="p">]</span>                                                                                   
+<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>                                                                             
+<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
+
+
+<p>Qui veut dire : associe la branche master du dépôt <em>origin</em> à ma référence
+locale <code>master</code>. Et oh surprise, la ligne est utilisée pour la commande
+<code>merge</code>, ce qui est tout à faire logique. la commande <code>git-fetch</code> ne fait que
+récupérer les objets et associer des références. Si vous voulez mélanger
+votre travail avec le travail distant, il faut donc faire un merge.</p>
+<p>Petite remarque, c'est uniquement quand vous avez spécifiée une branche
+distante (<em>upstream</em> dans le vocabulaire Git) que votre shell vous indiquera
+si vous avez des commits en avance ou en retard (logique non ?). Cela arrive
+quand vous avez créé une nouvelle branche locale mais sans l'avoir poussée
+sur le dépôt distant.</p>
+<h3>pull = fetch + merge</h3>
+<p>Vous devez maintenant comprendre pourquoi on dit que la commande <code>git-pull</code>
+n'est en fait qu'un raccouri pour :</p>
+<ol>
+<li>git-fetch</li>
+<li>git-merge origin/master</li>
+</ol>
+<h3>A quoi sert le fetch ?</h3>
+<p>La commande <code>git-pull</code> est une commodité car c'est dans 90% des cas ce que l'on
+souhaite faire. Mais le merge est seulement une des nombreuses possibilités que
+vous offre Git. La beauté du travail collaboratif avec Git est que cette branche
+distante est en fait une branche locale (c'est uniquement la référence qui est
+distante), et que vous pouvez donc faire ce que vous souhaitez avec, comme
+cherrypicker des commits, faire un rebase... ou un merge. C'est à vous de voir
+ce qui vous intéresse. C'est la raison pour laquelle des personnes disent sur
+le Net de ne pas faire que des fetch.</p>
+<p>Notez qu'il existe l'option <code>--rebase</code> pour rebaser automatiquement votre
+branche locale sur la branche distante (ce qui est la aussi un scénario de
+base).</p>
+<h3>Conclusion</h3>
+<p>Je pense avoir fait le tour. Comme d'habitude je vous conseille de de lire
+les pages du manuel (git-clone, git-fetch, git-push et git-pull).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-git-le-03-11-a-evry.html">Présentation Git le 03/11 à Évry</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-08T00:05:00">2011-10-08 00:05</time>
+        </small></h1>
+        <hr>
+        <p>Nouvelle conférence Git à Télécom SudParis, à Évry, en région parisienne. L'occasion d'évengéliser
+des étudiants pas encore trop déformés par SVN :). A ce propos, vu qu'ils ont pour obligation
+d'utiliser ce dernier pour leurs devoirs, je devrais <strong>exceptionnellement</strong> être soft en SVN
+bashing, enfin si j'arrive à me retenir ;)</p>
+<p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
+conférence sera sûrement filmé et mis à disposition sur Internet.</p>
+<p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/atelier-git-le-20-10-a-levallois.html">Atelier Git le 20/10 à Levallois</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-07T23:48:00">2011-10-07 23:48</time>
+        </small></h1>
+        <hr>
+        <p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
+Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
+<p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
+quelques heures :).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0076-plone_sur_github.html">Plone sur GitHub</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-01T15:29:00">2011-10-01 15:29</time>
+        </small></h1>
+        <hr>
+        <p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
+<a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
+présence de 127 (!) dépôts Git. Ce nombre important vient de la programmation
+par composant du monde <em>Zope</em> (une fonctionnalité = un composant Python = un
+dépot Git).</p>
+<p>Pourquoi je parle de cette migration en particulier alors que de nombreux
+projets Libres passent sur GitHub ? Tout simplement car c'est aussi un des
+plus gros projets <strong>Python</strong>, langage utilisé par les deux principaux
+«concurrents» de Git, à savoir <em>Mercurial</em> et <em>Bazaar</em>. Ce choix fait suite
+à  un sondage chez les développeurs pour déterminer la prochaine
+plateforme d'hébergement (3 réponses possibles : oui, neutre, non) :</p>
+<ul>
+<li>Héberger son prore serveur Git : 10, 36, 33</li>
+<li>Héberger son prore serveur Hg : 8, 18, 53</li>
+<li>Héberger son prore serveur Bzr : 1, 3, 75</li>
+<li>Sur GitHub : 46, 21, 12</li>
+<li>Sur Bitbucket : 8, 18, 53</li>
+<li>Sur Launchpad : 4, 6, 69</li>
+<li>Continuer avec son propre serveur SVN : 28, 30, 21</li>
+</ul>
+<p>Ce résultat est révélateur sur plusieurs points :</p>
+<ul>
+<li>Un rejet absolu de Bzr. Personne n'en veut à part quatre personnes.</li>
+<li>Un rejet massif de Launchpad et dans une moindre mesure de Bitbucket (plutôt
+  étonnant).</li>
+<li>Peu de gens sont pour héberger un serveur DVCS, ce qui me semble encore une
+  fois assez étonnant. Il est facile par exemple d'administrer un serveur Hg.
+  Plus un problème de méconnaissance ?</li>
+<li>Plus de la moitié des votants sont en faveur de GitHub, sans être un
+  plébiscite.</li>
+</ul>
+<p>La conclusion qui semble se dégager de cette enquête est que c'est encore une
+fois GitHub qui fait pencher la balance vers Git, et non l'inverse. D'autant
+plus que choisir Git signifie faire une croix sur la possibilité pour un
+développeur Python de coder facilement des extensions Mercurial, atout non
+négligeable quand on gère un projet.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.7-publiee.html">Git 1.7.7 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-01T10:34:00">2011-10-01 10:34</time>
+        </small></h1>
+        <hr>
+        <p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
+changements.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>
+<p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
+</li>
+<li>
+<p>Interix, Cygwin and Minix ports got updated.</p>
+</li>
+<li>
+<p>Various updates to git-p4 (in contrib/), fast-import, and git-svn.</p>
+</li>
+<li>
+<p>Gitweb learned to read from /etc/gitweb-common.conf when it exists,
+  before reading from gitweb_config.perl or from /etc/gitweb.conf
+  (this last one is read only when per-repository gitweb_config.perl
+  does not exist).</p>
+</li>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+  functions can compress or uncompress more than 4GB data in one call on
+  platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>Git now recognizes loose objects written by other implementations that
+  use a non-standard window size for zlib deflation (e.g. Agit running on
+  Android with 4kb window). We used to reject anything that was not
+  deflated with 32kb window.</p>
+</li>
+<li>
+<p>Interaction between the use of pager and coloring of the output has
+  been improved, especially when a command that is not built-in was
+  involved.</p>
+</li>
+<li>
+<p>"git am" learned to pass the "--exclude=<path>" option through to underlying
+  "git apply".</path></p>
+</li>
+<li>
+<p>You can now feed many empty lines before feeding an mbox file to
+  "git am".</p>
+</li>
+<li>
+<p>"git archive" can be told to pass the output to gzip compression and
+  produce "archive.tar.gz".</p>
+</li>
+<li>
+<p>"git bisect" can be used in a bare repository (provided that the test
+  you perform per each iteration does not need a working tree, of
+  course).</p>
+</li>
+<li>
+<p>The length of abbreviated object names in "git branch -v" output
+  now honors the core.abbrev configuration variable.</p>
+</li>
+<li>
+<p>"git check-attr" can take relative paths from the command line.</p>
+</li>
+<li>
+<p>"git check-attr" learned an "--all" option to list the attributes for a
+  given path.</p>
+</li>
+<li>
+<p>"git checkout" (both the code to update the files upon checking out a
+  different branch and the code to checkout a specific set of files) learned
+  to stream the data from object store when possible, without having to
+  read the entire contents of a file into memory first. An earlier round
+  of this code that is not in any released version had a large leak but
+  now it has been plugged.</p>
+</li>
+<li>
+<p>"git clone" can now take a "--config key=value" option to set the
+  repository configuration options that affect the initial checkout.</p>
+</li>
+<li>
+<p>"git commit <paths>..." now lets you feed relative pathspecs that
+  refer to outside your current subdirectory.</paths></p>
+</li>
+<li>
+<p>"git diff --stat" learned a --stat-count option to limit the output of
+  a diffstat report.</p>
+</li>
+<li>
+<p>"git diff" learned a "--histogram" option to use a different diff
+  generation machinery stolen from jgit, which might give better
+  performance.</p>
+</li>
+<li>
+<p>"git diff" had a weird worst case behaviour that can be triggered
+  when comparing files with potentially many places that could match.</p>
+</li>
+<li>
+<p>"git fetch", "git push" and friends no longer show connection
+  errors for addresses that couldn't be connected to when at least one
+  address succeeds (this is arguably a regression but a deliberate
+  one).</p>
+</li>
+<li>
+<p>"git grep" learned "--break" and "--heading" options, to let users mimic
+  the output format of "ack".</p>
+</li>
+<li>
+<p>"git grep" learned a "-W" option that shows wider context using the same
+  logic used by "git diff" to determine the hunk header.</p>
+</li>
+<li>
+<p>Invoking the low-level "git http-fetch" without "-a" option (which
+  git itself never did---normal users should not have to worry about
+  this) is now deprecated.</p>
+</li>
+<li>
+<p>The "--decorate" option to "git log" and its family learned to
+  highlight grafted and replaced commits.</p>
+</li>
+<li>
+<p>"git rebase master topci" no longer spews usage hints after giving
+  the "fatal: no such branch: topci" error message.</p>
+</li>
+<li>
+<p>The recursive merge strategy implementation got a fairly large
+  fix for many corner cases that may rarely happen in real world
+  projects (it has been verified that none of the 16000+ merges in
+  the Linux kernel history back to v2.6.12 is affected with the
+  corner case bugs this update fixes).</p>
+</li>
+<li>
+<p>"git stash" learned an "--include-untracked option".</p>
+</li>
+<li>
+<p>"git submodule update" used to stop at the first error updating a
+  submodule; it now goes on to update other submodules that can be
+  updated, and reports the ones with errors at the end.</p>
+</li>
+<li>
+<p>"git push" can be told with the "--recurse-submodules=check" option to
+  refuse pushing of the supermodule, if any of its submodules'
+  commits hasn't been pushed out to their remotes.</p>
+</li>
+<li>
+<p>"git upload-pack" and "git receive-pack" learned to pretend that only a
+  subset of the refs exist in a repository. This may help a site to
+  put many tiny repositories into one repository (this would not be
+  useful for larger repositories as repacking would be problematic).</p>
+</li>
+<li>
+<p>"git verify-pack" has been rewritten to use the "index-pack" machinery
+  that is more efficient in reading objects in packfiles.</p>
+</li>
+<li>
+<p>test scripts for gitweb tried to run even when CGI-related perl modules
+  are not installed; they now exit early when the latter are unavailable.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-git-le-20-09-a-lyon.html">Présentation Git le 20/09 à Lyon</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-09-10T18:40:00">2011-09-10 18:40</time>
+        </small></h1>
+        <hr>
+        <p>GitFR continue son tour de France avec comme étape Lyon, grâce au
+<a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
+<p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
+21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
+<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.6.1-publiee.html">Git 1.7.6.1 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-08-29T00:34:00">2011-08-29 00:34</time>
+        </small></h1>
+        <hr>
+        <p>La première version de maintenance de la branche 1.7.6.x est sortie le 24 août,
+avec 88 corrections.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>
+<p>Various codepaths that invoked zlib deflate/inflate assumed that these
+   functions can compress or uncompress more than 4GB data in one call on
+   platforms with 64-bit long, which has been corrected.</p>
+</li>
+<li>
+<p>"git unexecutable" reported that "unexecutable" was not found, even
+   though the actual error was that "unexecutable" was found but did
+   not have a proper she-bang line to be executed.</p>
+</li>
+<li>
+<p>Error exits from $PAGER were silently ignored.</p>
+</li>
+<li>
+<p>"git checkout -b <branch>" was confused when attempting to create a
+   branch whose name ends with "-g" followed by hexadecimal digits,
+   and refused to work.</branch></p>
+</li>
+<li>
+<p>"git checkout -b <branch>" sometimes wrote a bogus reflog entry,
+   causing later "git checkout -" to fail.</branch></p>
+</li>
+<li>
+<p>"git diff --cc" learned to correctly ignore binary files.</p>
+</li>
+<li>
+<p>"git diff -c/--cc" mishandled a deletion that resolves a conflict, and
+   looked in the working tree instead.</p>
+</li>
+<li>
+<p>"git fast-export" forgot to quote pathnames with unsafe characters
+   in its output.</p>
+</li>
+<li>
+<p>"git fetch" over smart-http transport used to abort when the
+   repository was updated between the initial connection and the
+   subsequent object transfer.</p>
+</li>
+<li>
+<p>"git fetch" did not recurse into submodules in subdirectories.</p>
+</li>
+<li>
+<p>"git ls-tree" did not error out when asked to show a corrupt tree.</p>
+</li>
+<li>
+<p>"git pull" without any argument left an extra whitespace after the
+   command name in its reflog.</p>
+</li>
+<li>
+<p>"git push --quiet" was not really quiet.</p>
+</li>
+<li>
+<p>"git rebase -i -p" incorrectly dropped commits from side branches.</p>
+</li>
+<li>
+<p>"git reset [<commit>] paths..." did not reset the index entry correctly
+   for unmerged paths.</commit></p>
+</li>
+<li>
+<p>"git submodule add" did not allow a relative repository path when
+   the superproject did not have any default remote url.</p>
+</li>
+<li>
+<p>"git submodule foreach" failed to correctly give the standard input to
+   the user-supplied command it invoked.</p>
+</li>
+<li>
+<p>submodules that the user has never showed interest in by running
+   "git submodule init" was incorrectly marked as interesting by "git
+   submodule sync".</p>
+</li>
+<li>
+<p>"git submodule update --quiet" was not really quiet.</p>
+</li>
+<li>
+<p>"git tag -l <glob>..." did not take multiple glob patterns from the
+   command line.</glob></p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0072-liste_de_diffusion_pour_la_traduction_git.html">Liste de diffusion pour la traduction Git</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-08-06T23:13:00">2011-08-06 23:13</time>
+        </small></h1>
+        <hr>
+        <p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
+<a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
+vient d'être créée. Si ça vous branche de vous prendre la tête sur la
+meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
+<em>.po</em>, vous êtes le bienvenu ! :).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/0071-le_commit_initial_vide.html">Le commit initial vide</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-07-31T04:13:00">2011-07-31 04:13</time>
+        </small></h1>
+        <hr>
+        <p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
+les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
+initial vide avec la commande :</p>
+<div class="code"><pre><span class="err">$</span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">empty</span> <span class="o">-</span><span class="n">m</span> <span class="s">"Initial commit."</span>
+</pre></div>
+
+
+<p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
+simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
+<p>Examinons deux exemples.</p>
+<h3>rebase -i</h3>
+<p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
+mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
+c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
+je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
+contenu est accessible.</p>
+<h3>Travailler directement dans une branche</h3>
+<p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
+des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
+merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
+choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
+raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
+disparait de lui-même : mon premier commit de contenu (le deuxième dans le
+graphe donc) sera lui, dans une branche.</p>
+<h3>Conclusion</h3>
+<p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
+graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
+vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
+Voir des mois après :).</p>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager">
+    <li class="previous">
+        <a href="index-9.html">← Billets récents</a>
+    </li><li class="next">
+        <a href="index-7.html">Anciens billets →</a>
+</li></ul>
+</div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

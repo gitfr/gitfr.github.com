@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Git 1.7.3.4 et 1.6.6.3 publiées | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="git-1.7.3.4-et-1.6.6.3-publiees.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Git 1.7.3.4 et 1.6.6.3 publiées</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-12-16T14:25:00">2010-12-16 14:25</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+
+    </small>
+    <hr>
+    <p>Le changement le plus important est la correction d'une faille de sécurité sur <strong>Gitweb</strong>. Cette correction est backportée sur l'ensemble des branches de maintenance (1.7.2.5, 1.7.1.4, 1.7.0.9, 1.6.5.9, 1.6.4.5).</p>
+<p>Junio (le mainteneur) en a profité pour intégrer d'autres correctifs (uniquement sur 1.7.3.4 et 1.6.6.3) :</p>
+<ul>
+<li>
+<p>Smart HTTP transport used to incorrectly retry redirected POST
+  request with GET request.</p>
+</li>
+<li>
+<p>"git apply" did not correctly handle patches that only change modes
+  if told to apply while stripping leading paths with -p option.</p>
+</li>
+<li>
+<p>"git apply" can deal with patches with timezone formatted with a
+  colon between the hours and minutes part (e.g. "-08:00" instead of
+  "-0800").</p>
+</li>
+<li>
+<p>"git checkout" removed an untracked file "foo" from the working
+  tree when switching to a branch that contains a tracked path
+  "foo/bar".  Prevent this, just like the case where the conflicting
+  path were "foo" (c752e7f..7980872d).</p>
+</li>
+<li>
+<p>"git cherry-pick" or "git revert" refused to work when a path that
+  would be modified by the operation was stat-dirty without a real
+  difference in the contents of the file.</p>
+</li>
+<li>
+<p>"git diff --check" reported an incorrect line number for added
+  blank lines at the end of file.</p>
+</li>
+<li>
+<p>"git imap-send" failed to build under NO_OPENSSL.</p>
+</li>
+<li>
+<p>Setting log.decorate configuration variable to "0" or "1" to mean
+  "false" or "true" did not work.</p>
+</li>
+<li>
+<p>"git push" over dumb HTTP protocol did not work against WebDAV
+  servers that did not terminate a collection name with a slash.</p>
+</li>
+<li>
+<p>"git tag -v" did not work with GPG signatures in rfc1991 mode.</p>
+</li>
+<li>
+<p>The post-receive-email sample hook was accidentally broken in 1.7.3.3
+  update.</p>
+</li>
+<li>
+<p>"gitweb" can sometimes be tricked into parrotting a filename argument
+  given in a request without properly quoting.</p>
+</li>
+</ul>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="0025-la_commande_clone.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="0027-git_rejoint_la_software_freedom_conservancy.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

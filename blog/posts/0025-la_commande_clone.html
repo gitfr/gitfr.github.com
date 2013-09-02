@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>La commande clone | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="0025-la_commande_clone.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>La commande clone</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-12-12T05:49:00">2010-12-12 05:49</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/git-clone.html"><span class="badge badge-info">git-clone</span></a>
+
+    </small>
+    <hr>
+    <p>Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches <strong>remotes</strong>, et créer une branche <strong>locale</strong> qui est une copie de la branche active du dépôt distant (généralement <strong>master</strong>).</p>
+<p>La commande est simple :</p>
+<blockquote>
+<p><code>$ git clone &lt;dépôt&gt; [&lt;répertoire&gt;]</code></p>
+</blockquote>
+<p>L'URL du dépôt distant peut être en <strong>http(s)</strong>, <strong>ssh</strong>, <strong>git</strong>, <strong>ftp(s)</strong> et <strong>rsync</strong>. Les trois premiers étant les plus courants. Il était conseillé pendant longtemps de pas utiliser le http, mais depuis la version 1.6.6, Git utilise le <strong>Smart HTTP Transport</strong>, qui est efficace.</p>
+<p>Le répertoire est optionnel, par défaut Git prendra le nom du dépôt (sans le <code>.git</code> s'il existe).</p>
+<p>La partie intéressante à comprendre est contenue dans le fichier <code>config</code> du dépôt local, généré par Git :</p>
+<div class="code"><pre><span class="k">[remote "origin"]</span>
+    <span class="na">fetch</span> <span class="o">=</span> <span class="s">+refs/heads/*:refs/remotes/origin/*</span>
+<span class="s">    url = git://git.kernel.org/pub/scm/git/git.git</span>
+<span class="k">[branch "master"]</span>
+    <span class="na">remote</span> <span class="o">=</span> <span class="s">origin</span>
+<span class="s">    merge = refs/heads/master</span>
+</pre></div>
+
+
+<p>C'es lignes sont la traduction technique de l'introduction de ce billet :</p>
+<ul>
+<li>
+<p>Git ajoute le dépôt distant avec pour nom <strong>origin</strong> (convention de nommage). Je peux maintenant utiliser le terme origin au lieu de <code>git://git.kernel.org/pub/scm/git/git.git</code> (ce dernier est toujours utilisable). La section remote peut aussi s'ajouter avec la commande <code>git remote</code>.</p>
+</li>
+<li>
+<p>La ligne fetch indique comment Git doit traduire l'espace de nom distant en espace de nom local. Par défaut, il traduit toutes les branches distantes en branches locales (ex : refs/remotes/origin/abc devient refs/heads/abc). Cette ligne est appelée <strong>refspec</strong> (que nous verrons en détail dans un autre billet).</p>
+</li>
+<li>
+<p>Enfin, Git <strong>traque</strong> la branche active distante. Que signifie traquer ? Cela veut dire modéliser une relation entre deux branches. Ici ma branche master locale est associée à la branche master du dépôt origin. Quand vous faites un <code>git pull</code> ou un <code>git push</code> sur la branche locale, il va prendre la branche traquée comme référence. Sans cette information, Git demande de spécifier le dépôt et la branche sur laquelle il doit travailler.</p>
+</li>
+</ul>
+<p>Le refpsec est obligatoire, les informations de suivies (<em>tracking</em>) sont optionnelles (mais bien pratiques).</p>
+<p>Il existe plusieurs options à cette commande, comme <code>--bare</code> que nous avons déja vu avec la commande init. Je liste celles qui me semblent intéressantes à connaitre (n'hésitez pas à lire la documentation) :</p>
+<ul>
+<li>
+<p><code>--origin</code> : spécifier un nom différent que origin pour le nom remote.</p>
+</li>
+<li>
+<p><code>--branch</code> : spécifier la branche à récupérer au lieu de master.</p>
+</li>
+<li>
+<p><code>--recursive</code> : initialiser aussi les sous modules (<strong>submodules</strong>).</p>
+</li>
+<li>
+<p><code>--depth</code> : permet de créer une copie non complète (appelez <strong>shallow clone</strong>).</p>
+</li>
+<li>
+<p><code>--mirror</code> : permet de tout récupérer (mappe toutes les références).</p>
+</li>
+</ul>
+<p>Autre chose intéressante, si vous avez beaucoup de dépôts sur une URL identique, vous pouvez ajouter un alias dans votre fichier de configuration :</p>
+<div class="code"><pre><span class="k">[url "ssh://git.masociete.com/srv/git"]</span>
+<span class="na">insteadOf</span> <span class="o">=</span> <span class="s">work:</span>
+</pre></div>
+
+
+<p>C'est toujours ça de gagné.</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="structure-d-un-depot-git.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="git-1.7.3.4-et-1.6.6.3-publiees.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

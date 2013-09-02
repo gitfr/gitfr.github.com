@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Eviter de commiter des fichiers indésirables | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="eviter-de-commiter-des-fichiers-indesirables.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Eviter de commiter des fichiers indésirables</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-11-04T02:37:00">2010-11-04 02:37</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/configuration.html"><span class="badge badge-info">configuration</span></a>
+
+    </small>
+    <hr>
+    <p>Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier <code>~./gitignore</code>. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un <code>git add .</code>, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.</p>
+<p>La configuration de ce fichier est trés simple :</p>
+<ul>
+<li>1 ligne par exclusion</li>
+<li>si c'est un répertoire, mettre son nom (comme <code>egg</code>)</li>
+<li>si c'est un fichier, ajouter un wildcard (comme <code>*.egg</code>)</li>
+</ul>
+<p>Enfin, il faut modifier sa configuration Git pour utiliser ce filtre d'exclusion sur tous les dépôts avec la ligne <code>excludesfile=/path/to/.gitignore</code> dans la section <code>[core]</code> (remplacer "/path/to" par le chemin vers votre fichier). Ce qui donne :</p>
+<blockquote>
+<p><code>[core]</code></p>
+<p><code>excludesfile=/home/sdouche/.gitignore</code></p>
+</blockquote>
+<p>Disposer d'un gitignore à deux intérêts :</p>
+<ol>
+<li>éviter de commiter des fichiers indésirables</li>
+<li>ne pas être surchargé d'informations inutiles (présence de fichier <em>non suivis</em>, <strong>untracked</strong> en anglais)</li>
+</ol>
+<p>Nous allons voir plus tard que c'est pénible quand nous avons un <strong>prompt</strong> qui affiche <strong>en permanence</strong> la présence de ces fameux fichiers indésirables.</p>
+<p>Pour plus d'information sur gitignore, je vous conseille la lecture de la <a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">doc</a>.</p>
+<p>Note : il est bien sûr possible de disposer d'un fichier <em>gitignore</em> par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="taper-plus-vite-avec-la-completion.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="simplifiez-vous-la-vie-avec-les-alias.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

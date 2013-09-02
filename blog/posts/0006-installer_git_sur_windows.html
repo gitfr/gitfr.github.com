@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="GitFR">
+    <title>Installer git sur Windows | GitFR</title>
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+    
+
+
+
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="../archive.html">Archives</a>
+            </li><li><a href="../categories/index.html">Tags</a>
+            </li><li><a href="../rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+    <li>
+    <a href="0006-installer_git_sur_windows.md" id="sourcelink">Source</a>
+    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
+    
+    <h1>Installer git sur Windows</h1>
+
+    <hr>
+    <small>
+        Publié: <time class="published" datetime="2010-11-01T19:45:00">2010-11-01 19:45</time>
+        
+
+        
+          |  Plus de billets sur
+            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+            <a class="tag" href="../categories/installation.html"><span class="badge badge-info">installation</span></a>
+            <a class="tag" href="../categories/windows.html"><span class="badge badge-info">windows</span></a>
+
+    </small>
+    <hr>
+    <p>Les possibilités sont plus limitées sous Windows car il n'existe pas de projet pour l'installer à partir des sources originales. Et pour cause, Git n'est pas prévu pour fonctionner sur Windows (c'est un projet purement <strong>Unix</strong>). Heureusement, le projet <a href="http://code.google.com/p/msysgit/">msysgit</a> est la ! Ce dernier est comparable au projet <em>Git OSX Installer</em> sous Mac OS X, et comme ce dernier il est trés actif, puisque nous trouvons la version 1.7.3.1 (la 1.7.3.2 est la dernière version officielle). A une différence d'importance, msysgit installe une version <em>maison</em> (on dit un <strong>fork</strong>) qui se trouve <a href="http://repo.or.cz/w/git/mingw/4msysgit.git/">ici</a> pour rendre git opérationnel sous Windows.</p>
+<h3>Installation de msysgit</h3>
+<p>C'est assez simple :</p>
+<ul>
+<li>Téléchargez la derniere version de l'installeur. Voici un <a href="http://msysgit.googlecode.com/files/Git-1.7.3.1-preview20101002.exe">lien vers la 1.7.3.1</a></li>
+<li>Lancez l'installeur</li>
+<li>Spécifiez un répertoire d'installation si besoin</li>
+<li>Activez toutes les options</li>
+<li>Choisissez l'option <em>Use Git Bash only</em></li>
+<li>Choisissez l'option <em>Use Unix style line endings</em></li>
+</ul>
+<h3>Utiliser msysgit</h3>
+<p>Vous pouvez maintenant utiliser git dans un <strong>shell</strong>. Celui-ci est accessible par l'icone du bureau ou dans le menu Windows.</p>
+<h3>Git Extensions</h3>
+<p><a href="http://code.google.com/p/gitextensions/">Git Extensions</a> utilise le projet msysgit et ajoute une <strong>interface graphique</strong> pour pas mal d'opérations, une extension Visual Studio et l'outil Kdiff3. Cerise sur le gateau, il embarque msysgit. Ce projet vous permet donc de tout installer en une seule fois. Cliquez sur ce <a href="http://gitextensions.googlecode.com/files/GitExtensions205SetupComplete.msi">lien</a> pour télécharger la dernière version. Vous pouvez voir sur cette <a href="http://code.google.com/p/gitextensions/wiki/Info">page</a> plusieurs copies d'écran pour vous faire une idée.</p>
+<h3>Un constat</h3>
+<p>La plateforme Windows est la moins adaptée à Git, d'abord parce que cette plateforme ne possède pas nativement les outils de type Unix (bash, diff...), et que c'est avant tout un outil <strong>ligne de commande</strong>, et que la ligne de commande... n'est pas le fort de Windows (mais cela reste largement possible). Il faut donc attendre que des développeurs codent des interfaces graphiques pour effectuer toutes les opérations usuelles (les fameuses commandes <em>porcelain</em>) plus "nativement" sous Windows. Ce problème devrait disparaitre avec l'arrivée à maturité des IDEs (IntelliJ, Eclipse...) et des outils de manipulations (TortoiseGit...). Git Extensions en est un bon exemple.</p>
+<p>Reste que le projet msysgit est un projet bénévole complètement détaché du projet Git. Et que l'utilisation en ligne de commande est quand même bien plus pratique ;).</p>
+    
+    <ul class="pager">
+        <li class="previous">
+            <a href="0004-installer_git_sur_os_x.html">← Billet précédent</a>
+        </li>
+        <li class="next">
+            <a href="0005-ajout_des_commentaires_sur_le_blog.html">Billet suivant →</a>
+        </li>
+    </ul>
+
+        
+
+    
+
+    </div>
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Site francophone sur Git.">
+    <meta name="author" content="GitFR">
+    <title>GitFR (anciens billets page 9) | GitFR</title>
+    
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+    
+    
+    
+</head>
+<body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href=".">
+            GitFR
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+            <li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
+            </li><li><a href="rss.xml">RSS</a>
+
+                </li></ul>
+                <ul class="nav pull-right">
+                
+                
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.9-publiee.html">Git 1.7.9 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-01-28T21:13:00">2012-01-28 21:13</time>
+        </small></h1>
+        <hr>
+        <p>La version 1.7.9 est sortie le 27 janvier avec plusieurs évolutions
+intéressantes : </p>
+<ul>
+<li>
+<p>Un meilleur support des gros fichiers (Git n'étant pas réputé pour ça).</p>
+</li>
+<li>
+<p>La signature des commits, qui fait suite au piratage de la machine qui 
+  héberge le dépôt Git du projet Linux de Linus Torvalds.</p>
+</li>
+<li>
+<p>L'internationalisation est maintenant activée (honte à moi, toujours pas
+  démarré le projet de traduction en Français).</p>
+</li>
+<li>
+<p>La possibilité d'ajouter une description à une branche.</p>
+</li>
+<li>
+<p>L'option <code>--no-edit</code> quand on amende un commit. </p>
+</li>
+</ul>
+<p>Je vous laisse comme d'habitude lire le changelog mais je trouve cette version
+bien excitente ! J'attends la mise à jour sur ma machine pour faire quelques
+tests.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>
+<p>gitk updates accumulated since early 2011.</p>
+</li>
+<li>
+<p>git-gui updated to 0.16.0.</p>
+</li>
+<li>
+<p>git-p4 (in contrib/) updates.</p>
+</li>
+<li>
+<p>Git uses gettext to translate its most common interface messages
+  into the user's language if translations are available and the
+  locale is appropriately set. Distributors can drop new PO files
+  in po/ to add new translations.</p>
+</li>
+<li>
+<p>The code to handle username/password for HTTP transactions used in
+  "git push" &amp; "git fetch" learned to talk "credential API" to
+  external programs to cache or store them, to allow integration with
+  platform native keychain mechanisms.</p>
+</li>
+<li>
+<p>The input prompts in the terminal use our own getpass() replacement
+  when possible. HTTP transactions used to ask for the username without
+  echoing back what was typed, but with this change you will see it as
+  you type.</p>
+</li>
+<li>
+<p>The internals of "revert/cherry-pick" have been tweaked to prepare
+  building more generic "sequencer" on top of the implementation that
+  drives them.</p>
+</li>
+<li>
+<p>"git rev-parse FETCH_HEAD" after "git fetch" without specifying
+  what to fetch from the command line will now show the commit that
+  would be merged if the command were "git pull".</p>
+</li>
+<li>
+<p>"git add" learned to stream large files directly into a packfile
+  instead of writing them into individual loose object files.</p>
+</li>
+<li>
+<p>"git checkout -B <current branch> <elsewhere>" is a more intuitive
+  way to spell "git reset --keep <elsewhere>".</elsewhere></elsewhere></current></p>
+</li>
+<li>
+<p>"git checkout" and "git merge" learned "--no-overwrite-ignore" option
+  to tell Git that untracked and ignored files are not expendable.</p>
+</li>
+<li>
+<p>"git commit --amend" learned "--no-edit" option to say that the
+  user is amending the tree being recorded, without updating the
+  commit log message.</p>
+</li>
+<li>
+<p>"git commit" and "git reset" re-learned the optimization to prime
+  the cache-tree information in the index, which makes it faster to
+  write a tree object out after the index entries are updated.</p>
+</li>
+<li>
+<p>"git commit" detects and rejects an attempt to stuff NUL byte in
+  the commit log message.</p>
+</li>
+<li>
+<p>"git commit" learned "-S" to GPG-sign the commit; this can be shown
+  with the "--show-signature" option to "git log".</p>
+</li>
+<li>
+<p>fsck and prune are relatively lengthy operations that still go
+  silent while making the end-user wait. They learned to give progress
+  output like other slow operations.</p>
+</li>
+<li>
+<p>The set of built-in function-header patterns for various languages
+  knows MATLAB.</p>
+</li>
+<li>
+<p>"git log --format='<format>'" learned new %g[nNeE] specifiers to
+  show information from the reflog entries when walking the reflog
+  (i.e. with "-g").</format></p>
+</li>
+<li>
+<p>"git pull" can be used to fetch and merge an annotated/signed tag,
+  instead of the tip of a topic branch. The GPG signature from the
+  signed tag is recorded in the resulting merge commit for later
+  auditing.</p>
+</li>
+<li>
+<p>"git log" learned "--show-signature" option to show the signed tag
+  that was merged that is embedded in the merge commit. It also can
+  show the signature made on the commit with "git commit -S".</p>
+</li>
+<li>
+<p>"git branch --edit-description" can be used to add descriptive text
+  to explain what a topic branch is about.</p>
+</li>
+<li>
+<p>"git fmt-merge-msg" learned to take the branch description into
+  account when preparing a merge summary that "git merge" records
+  when merging a local branch.</p>
+</li>
+<li>
+<p>"git request-pull" has been updated to convey more information
+  useful for integrators to decide if a topic is worth merging and
+  what is pulled is indeed what the requestor asked to pull,
+  including:</p>
+</li>
+<li>
+<p>the tip of the branch being requested to be merged;</p>
+</li>
+<li>the branch description describing what the topic is about;</li>
+<li>
+<p>the contents of the annotated tag, when requesting to pull a tag.</p>
+</li>
+<li>
+<p>"git pull" learned to notice 'pull.rebase' configuration variable,
+   which serves as a global fallback for setting 'branch.<name>.rebase'
+   configuration variable per branch.</name></p>
+</li>
+<li>
+<p>"git tag" learned "--cleanup" option to control how the whitespaces
+   and empty lines in tag message are cleaned up.</p>
+</li>
+<li>
+<p>"gitweb" learned to show side-by-side diff.</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-et-atelier-git-le-20-02-a-lyon.html">Présentation et atelier Git le 20/02 à Lyon</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-01-26T21:07:00">2012-01-26 21:07</time>
+        </small></h1>
+        <hr>
+        <p>gitfr repart à Lyon pour un combo présentation + atelier sur une journée. Cela
+se passera le 20 février dans les locaux d'Alptis, 25 cours Albert Thomas, de
+14h à 21h (8h de conf, même pas peur !).</p>
+<p>Si je vous dis que les inscriptions sont déjà closes, vous me croyez ? Désolé,
+j'ai raté l'ouverture des inscriptions.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/la-commande-diff.html">La commande diff</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-01-26T15:48:00">2012-01-26 15:48</time>
+        </small></h1>
+        <hr>
+        <p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
+SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
+d'horizon.</p>
+<h3>Le base</h3>
+<p>Commençons par le basique. Pour connaître les différences entre votre
+répertoire de travail et votre index :</p>
+<blockquote>
+<p>$ git diff</p>
+</blockquote>
+<p>Entre l'index et votre dépôt :</p>
+<blockquote>
+<p>$ git diff --staged</p>
+</blockquote>
+<p>Entre le répertoire de travail et le dépôt :</p>
+<blockquote>
+<p>$ git diff HEAD</p>
+</blockquote>
+<p><strong>Note</strong> : la notation HEAD se retrouve assez souvent (git-log, git-reset...)
+quand on parle du dépôt, vu qu'il s'agit du commit courant, c'est à dire notre
+position sur le graphe (l'index étant le prochain commit).</p>
+<p>La commande permet de spécifier des fichiers ou des commits (ces deux
+possibilités peuvent être combinées) :</p>
+<blockquote>
+<p>$ git diff -- monfichier</p>
+<p>$ git diff commit</p>
+</blockquote>
+<p>Si vous voulez connaître la différence entre 2 commits :</p>
+<blockquote>
+<p>$ git diff commit1 commit2 </p>
+</blockquote>
+<p>Plus intéressant, si vous voulez savoir ce qui existe dans une branche et pas
+dans l'autre :</p>
+<blockquote>
+<p>$ git diff commit1...commit2</p>
+</blockquote>
+<p>Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
+deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.</p>
+<h3>Le contexte</h3>
+<p>Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
+affiche 3 lignes supplémentaires en dessous des changements pour vous donner
+plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
+possibles :</p>
+<ol>
+<li>La 1ère est bien sûr d'augmenter le contexte avec l'option <code>-U</code></li>
+</ol>
+<blockquote>
+<p>$ git diff -U5</p>
+</blockquote>
+<p>Pensez à faire un alias si vous préférez toujours disposer d'un contexte d'une
+taille différente.</p>
+<ol>
+<li>Demander à Git la fonction qui contient la modification</li>
+</ol>
+<blockquote>
+<p>$ git diff -W</p>
+</blockquote>
+<p>C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
+langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
+premiers tests en Python, cela semble plûtot bien fonctionner.</p>
+<h3>Ignorer les espaces</h3>
+<p>Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
+supprimer des espaces. Vous avez à votre disposition les options <code>-b</code> <code>-w</code> pour
+ignorer les espaces en fin de lignes ou toutes les espaces.</p>
+<h3>Algorithme patience</h3>
+<p>La commande implémente aussi un autre algorithme de détection de changement du
+nom de <em>Patience</em>. Pour faire très court, cet algo se focalise uniquement sur
+des lignes à fort contenu, alors que l'algorithme classique travaille sur
+toutes les lignes. Il y'a des cas ou c'est intéressant de l'essayer (notamment
+quand le diff classique est complètement perdu).</p>
+<p><strong>Note</strong> : pour de plus amples explications, veuillez vous référer à cette
+page <a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html">ci</a> et à
+celle <a href="http://alfedenzo.livejournal.com/170301.html">la</a>.</p>
+<h3>Faire des statistiques</h3>
+<p>Je vous laisse regarder par vous même les options <code>--stat</code>, <code>--numstat</code>,
+<code>--shortstat</code>, <code>--dirstat</code> et <code>--summary</code> :).</p>
+<h3>Afficher les différences sur la même ligne</h3>
+<p>Il est intéressant, par exemple pour de la documentation, d'afficher les
+modifications sur la même ligne. C'est tout l'intérêt du mode <em>word diff</em>.</p>
+<blockquote>
+<p>$ git diff --word-diff</p>
+</blockquote>
+<h3>Ne pas afficher les prefixes</h3>
+<p>Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :</p>
+<blockquote>
+<p>$ git diff --no-prefix</p>
+</blockquote>
+<h3>Chercher une chaine dans le contenu</h3>
+<p>Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
+lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
+faut :</p>
+<blockquote>
+<p>$ git diff -Srenderer HEAD~10..HEAD</p>
+</blockquote>
+<p>Vous pouvez utiliser une expression rationnelle avec l'option <code>-G</code>.</p>
+<p><strong>Note</strong> : l'option <code>--pickaxe-all</code> affiche l'ensemble du commit, et pas
+uniquement les fichiers impactés.</p>
+<h3>Générer un patch</h3>
+<p>Le comportement par défaut de Git est de générer un patch :</p>
+<blockquote>
+<p>$ git diff &gt; diff.patch</p>
+</blockquote>
+<h3>Et encore plein d'autres options</h3>
+<p>Comme d'habitude, je vous recommande chaudement de lire le manuel de la
+commande tellement Git regorge d'options (notamment pour aider au scripting).
+Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
+<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/retour-sur-un-an-de-gitfr.html">Retour sur un an de gitfr</a>
+        <small>  
+             Publié: <time class="published" datetime="2012-01-10T20:54:00">2012-01-10 20:54</time>
+        </small></h1>
+        <hr>
+        <p>Cela fait maintenant un peu plus d'un an que #gitfr existe (1ere conférence le
+24 novembre 2010), il est donc temps de faire un petit point. D'abord quelques
+chiffres :</p>
+<ul>
+<li>quelques centaines d'heures dépensées</li>
+<li>13 conférences</li>
+<li>~800 auditeurs aux conférences</li>
+<li>~4000 visulisations sur parleys.com</li>
+<li>86 billets de blog</li>
+<li>plusieurs centaines de fotes d'ortografes</li>
+<li>6 ateliers</li>
+<li>~120 participants aux ateliers</li>
+<li>7 jours de congés utilisés</li>
+<li>0€ gagné</li>
+</ul>
+<p>Alors que l'objectif initial était de faire des ateliers, c'est précisemment
+l'activité la plus faible. Je vois plusieurs raisons :</p>
+<ul>
+<li>
+<p>Tout d'abord, participer à un atelier demande à comprendre un minimum Git. Il
+  me semble inutile d'organiser un atelier sans que les participants soient
+  d'abord conviés à la conférence.</p>
+</li>
+<li>
+<p>Une conférence permet de faire venir des dizaines ou centaines de personnes,
+  l'atelier est lui difficile à faire à plus de 30.</p>
+</li>
+<li>
+<p>Un atelier est bien plus compliqué a organiser.</p>
+</li>
+<li>
+<p>On m'a plus sollicité pour des conférences, tout simplement. Je n'ai plus
+  le temps pour trouver des salles, je m'adapte aux demandes.</p>
+</li>
+</ul>
+<p>De plus, j'avoue qu'après des dizaines d'heures dépensées pour monter une
+conférence de qualité, ma motivation et mon énergie pour l'atelir avaient
+diminués. Je dirais même que je redoutais un peu de faire des ateliers, car
+cela demande bien plus de préparation. Avec 6 ateliers, et malgré une qualité
+insuffisante à mes yeux sur les premiers, cette peur s'est estompée.</p>
+<p>J'avoue aussi que l'activité du blog est assez faible, car je pense trop
+souvent à faire des billets trop longs. Je vais donc tenter à l'avenir des
+billets courts, même si cela nécessite de faire plusieurs billets sur le même
+sujet. Et bien sûr, cela aussi du temps et de l'énergie.</p>
+<p>Vous pouvez constater que #gitfr est une activité purement bénévole. Non
+seulement, je n'ai pas gagné d'argent avec mais j'ai dépensé 7 jours de congés
+payés pour les déplacements en province. C'est à ce titre que je demande au
+minimum le remboursement des frais et une gratuité de l'évènement pour le
+public : je me déplace uniquement si n'importe qui peut venir assister aux
+conférences et aux ateliers. Que je ne gagne pas d'argent soit, mais je ne suis
+pas là pour enrichir ou former une société ! #gitfr est et restera une
+activité bénévole et gratuite, ce n'est pas dans son ADN de proposer des
+ateliers payants (il faut pour cela se tourner vers des formateurs, je pense
+d'ailleurs en faire une liste si cela est utile). Ceux qui me connaissent
+savent parfaitement mon dégout pour les gens qui cachent leurs activités pro
+sous des soit-disantes activités associatives. La séparation doit être nette et
+étanche. Si vous souhaitez une conférence ou un atelier Git, n'hésitez donc pas
+à demander, #gitfr répondra présent si les conditions le permet !</p>
+<p>Et pour finir sur une note positive, je crois que la majorité des participants
+ont appréciés les conférences et comprennent maintenant l'avantage d'utiliser
+Git (et globalement les DVCS). C'est finalement le seul objectif de #gitfr :
+montrer aux développeurs et aux managers qu'ils ont tout à gagner à revoir
+leurs pratiques de gestion de source. Les DVCS ne sont pas l'avenir, ils sont
+le présent. </p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/comportement-par-defaut-du-git-push.html">Comportement par défaut du git push</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-12-11T23:19:00">2011-12-11 23:19</time>
+        </small></h1>
+        <hr>
+        <p>Git est hautement configurable, avec des dizaines de variables possibles
+dans le fichier de configuration, la longueur de l'aide de l'option config
+donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
+sur les différentes possibilités de configuration, je vous propose plutôt
+des billets courts sur un thème particulier de la configuration.</p>
+<p>Pour ce premier billet, je souhaite aborder le comportement de Git lors d'un
+push. Ce qui ont suivis l'atelier Git à Bordeaux ne seront pas étonnés par ce
+choix : ayant totalement oublié cette option, je ne comprenais pas que ma
+machine ne se comporte pas comme ceux des participants à l'atelier (ma
+crédibilité en tant qu'expert Git en a sérieusement pâti :).</p>
+<p>Commençons par lire le manuel sur l'option push.default :</p>
+<p>Defines the action git push should take if no refspec is given on the command
+line, no refspec is configured in the remote, and no refspec is implied by any
+of the options given on the command line. Possible values are: </p>
+<ul>
+<li>nothing - do not push anything.</li>
+<li>matching - push all matching branches. All branches having the same name in
+both ends are considered to be matching. This is the default.</li>
+<li>upstream - push the current branch to its upstream branch.</li>
+<li>tracking - deprecated synonym for upstream.</li>
+<li>current - push the current branch to a branch of the same name.</li>
+</ul>
+<p>Comme vous pouvez le constater, si aucun refspec n'est fourni (en ligne de
+commande ou par configuration) le comportement par défaut est de pousser
+toutes les branches qui existent en local et sur le serveur. Cela veut donc
+dire que si vous tapez la commande <code>git push</code>, vous allez mettre à jour sur le
+serveur toutes les branches que vous avez modifié en local, ce qui est rarement
+souhaitable. Il faudra indiquer le refspec complet <code>git push origin mybranch</code>
+pour éviter cela.</p>
+<p>C'est pour cette raison que je configure Git avec l'option upstream :</p>
+<blockquote>
+<p>$ git config --global push.default upstream</p>
+</blockquote>
+<p>2 avantages immédiats :</p>
+<ul>
+<li>Il ne pousse que la branche courante.</li>
+<li>Il m'oblige à faire un <em>tracking</em>, ce qui est bien utile.</li>
+</ul>
+<p>Maintenant, si vous tentez de pousser la branche <em>test</em> avec la commande
+<code>git push</code> sans tracking préalable, Git vous répond :</p>
+<blockquote>
+<p>fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin test</p>
+</blockquote>
+<p>Suivez le conseil de Git en tapant la commande ci dessus pour suivre votre
+la branche distante test sur origin avec votre branche locale test. Vous verrez
+immédiatement un changement sur votre shell avec l'information <strong>u=</strong>, qui 
+indique que vos deux branches sont synchronisées.</p>
+<h3>Rappel sur le tracking</h3>
+<p>Le tracking consiste à <em>associer</em> une branche locale et une branche distante
+(dite <em>upstream</em> dans la terminologie Git), ce qui informe Git de la branche
+distante à utiliser lors d'un <code>git pull</code>. Si vous ne comprenez pas pourquoi
+vous n'êtes pas plus souvent confronté à cette notion de tracking, c'est tout
+simplement que Git le fait pour vous la plupart du temps :</p>
+<ul>
+<li>Git suit la branche master lors d'un clone.</li>
+<li>Git suit la branche que vous venez de créer si celle ci existe déjà sur le
+   serveur </li>
+</ul>
+<p>C'est donc (la plupart du temps) dans le cas ou créer une nouvelle branche en
+locale sans existance préalable sur le serveur que vous devez explicitement
+faire cette association.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/git-1.7.8-publiee.html">Git 1.7.8 publiée</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-12-11T23:13:00">2011-12-11 23:13</time>
+        </small></h1>
+        <hr>
+        <p>La version 1.7.8 est sortie le 2 décembre. Comme vous pouvez constater, le
+changelog est assez gros avec surtout de nouvelles options pour plusieurs
+commandes et l'habituel lot de corrections.</p>
+<h3>Le changelog</h3>
+<ul>
+<li>
+<p>Some git-svn, git-gui, git-p4 (in contrib) and msysgit updates.</p>
+</li>
+<li>
+<p>Updates to bash completion scripts.</p>
+</li>
+<li>
+<p>The build procedure has been taught to take advantage of computed
+  dependency automatically when the complier supports it.</p>
+</li>
+<li>
+<p>The date parser now accepts timezone designators that lack minutes
+  part and also has a colon between "hh:mm".</p>
+</li>
+<li>
+<p>The contents of the /etc/mailname file, if exists, is used as the
+  default value of the hostname part of the committer/author e-mail.</p>
+</li>
+<li>
+<p>"git am" learned how to read from patches generated by Hg.</p>
+</li>
+<li>
+<p>"git archive" talking with a remote repository can report errors
+  from the remote side in a more informative way.</p>
+</li>
+<li>
+<p>"git branch" learned an explicit --list option to ask for branches
+  listed, optionally with a glob matching pattern to limit its output.</p>
+</li>
+<li>
+<p>"git check-attr" learned "--cached" option to look at .gitattributes
+  files from the index, not from the working tree.</p>
+</li>
+<li>
+<p>Variants of "git cherry-pick" and "git revert" that take multiple
+  commits learned to "--continue" and "--abort".</p>
+</li>
+<li>
+<p>"git daemon" gives more human readble error messages to clients
+  using ERR packets when appropriate.</p>
+</li>
+<li>
+<p>Errors at the network layer is logged by "git daemon".</p>
+</li>
+<li>
+<p>"git diff" learned "--minimal" option to spend extra cycles to come
+  up with a minimal patch output.</p>
+</li>
+<li>
+<p>"git diff" learned "--function-context" option to show the whole
+  function as context that was affected by a change.</p>
+</li>
+<li>
+<p>"git difftool" can be told to skip launching the tool for a path by
+  answering 'n' to its prompt.</p>
+</li>
+<li>
+<p>"git fetch" learned to honor transfer.fsckobjects configuration to
+  validate the objects that were received from the other end, just like
+  "git receive-pack" (the receiving end of "git push") does.</p>
+</li>
+<li>
+<p>"git fetch" makes sure that the set of objects it received from the
+  other end actually completes the history before updating the refs.
+  "git receive-pack" (the receiving end of "git push") learned to do the
+  same.</p>
+</li>
+<li>
+<p>"git fetch" learned that fetching/cloning from a regular file on the
+  filesystem is not necessarily a request to unpack a bundle file; the
+  file could be ".git" with "gitdir: <path>" in it.</path></p>
+</li>
+<li>
+<p>"git for-each-ref" learned "%(contents:subject)", "%(contents:body)"
+  and "%(contents:signature)". The last one is useful for signed tags.</p>
+</li>
+<li>
+<p>"git grep" used to incorrectly pay attention to .gitignore files
+  scattered in the directory it was working in even when "--no-index"
+  option was used. It no longer does this. The "--exclude-standard"
+  option needs to be given to explicitly activate the ignore
+  mechanism.</p>
+</li>
+<li>
+<p>"git grep" learned "--untracked" option, where given patterns are
+   searched in untracked (but not ignored) files as well as tracked
+   files in the working tree, so that matches in new but not yet
+   added files do not get missed.</p>
+</li>
+<li>
+<p>The recursive merge backend no longer looks for meaningless
+  existing merges in submodules unless in the outermost merge.</p>
+</li>
+<li>
+<p>"git log" and friends learned "--children" option.</p>
+</li>
+<li>
+<p>"git ls-remote" learned to respond to "-h"(elp) requests.</p>
+</li>
+<li>
+<p>"mediawiki" remote helper can interact with (surprise!) MediaWiki
+  with "git fetch" &amp; "git push".</p>
+</li>
+<li>
+<p>"git merge" learned the "--edit" option to allow users to edit the
+  merge commit log message.</p>
+</li>
+<li>
+<p>"git rebase -i" can be told to use special purpose editor suitable
+  only for its insn sheet via sequence.editor configuration variable.</p>
+</li>
+<li>
+<p>"git send-email" learned to respond to "-h"(elp) requests.</p>
+</li>
+<li>
+<p>"git send-email" allows the value given to sendemail.aliasfile to begin
+  with "~/" to refer to the $HOME directory.</p>
+</li>
+<li>
+<p>"git send-email" forces use of Authen::SASL::Perl to work around
+  issues between Authen::SASL::Cyrus and AUTH PLAIN/LOGIN.</p>
+</li>
+<li>
+<p>"git stash" learned "--include-untracked" option to stash away
+  untracked/ignored cruft from the working tree.</p>
+</li>
+<li>
+<p>"git submodule clone" does not leak an error message to the UI
+  level unnecessarily anymore.</p>
+</li>
+<li>
+<p>"git submodule update" learned to honor "none" as the value for
+  submodule.<name>.update to specify that the named submodule should
+  not be checked out by default.</name></p>
+</li>
+<li>
+<p>When populating a new submodule directory with "git submodule init",
+  the $GIT_DIR metainformation directory for submodules is created inside
+  $GIT_DIR/modules/<name>/ directory of the superproject and referenced
+  via the gitfile mechanism. This is to make it possible to switch
+  between commits in the superproject that has and does not have the
+  submodule in the tree without re-cloning.</name></p>
+</li>
+<li>
+<p>"gitweb" leaked unescaped control characters from syntax hiliter
+  outputs.</p>
+</li>
+<li>
+<p>"gitweb" can be told to give custom string at the end of the HTML
+  HEAD element.</p>
+</li>
+<li>
+<p>"gitweb" now has its own manual pages.</p>
+</li>
+<li>
+<p>HTTP transport did not use pushurl correctly, and also did not tell
+  what host it is trying to authenticate with when asking for
+  credentials.
+  (merge deba493 jk/http-auth later to maint).</p>
+</li>
+<li>
+<p>"git blame" was aborted if started from an uncommitted content and
+  the path had the textconv filter in effect.
+  (merge 8518088 ss/blame-textconv-fake-working-tree later to maint).</p>
+</li>
+<li>
+<p>Adding many refs to the local repository in one go (e.g. "git fetch"
+  that fetches many tags) and looking up a ref by name in a repository
+  with too many refs were unnecessarily slow.
+  (merge 17d68a54d jp/get-ref-dir-unsorted later to maint).</p>
+</li>
+<li>
+<p>Report from "git commit" on untracked files was confused under
+  core.ignorecase option.
+  (merge 395c7356 jk/name-hash-dirent later to maint).</p>
+</li>
+<li>
+<p>"git merge" did not understand ":/<pattern>" as a way to name a commit.</pattern></p>
+</li>
+<li>
+<p>"git push" on the receiving end used to call post-receive and post-update
+  hooks for attempted removal of non-existing refs.
+  (merge 160b81ed ph/push-to-delete-nothing later to maint).</p>
+</li>
+<li>
+<p>Help text for "git remote set-url" and "git remote set-branches"
+  were misspelled.
+  (merge c49904e fc/remote-seturl-usage-fix later to maint).
+  (merge 656cdf0 jc/remote-setbranches-usage-fix later to maint).</p>
+</li>
+</ul>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-et-atelier-git-le-15-12-a-lille.html">Présentation et atelier Git le 15/12 à Lille</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-12-01T13:07:00">2011-12-01 13:07</time>
+        </small></h1>
+        <hr>
+        <p>Si vous êtes sur Lille ou sa région et que vous voulez apprendre Git, réservez
+votre 15 décembre ! Au programme, 3h (voir plus si les participants sont
+motivés) avec en entrée une présentation de Git, suivi d'un atelier pour
+débutant.</p>
+<p>Je vous avoue que 3h pour une présentation et un atlier est un peu court, mais
+cela me suffit pour vous donner une idée assez précise des possbilités de
+l'outil :).</p>
+<p>Cet événement est organisé par Ineat Conseil et cela se passera dans leur
+locaux. Les places sont donc limitées !</p>
+<p>L'inscription se fait sur cette <a href="http://ineat-conseil-git-estw.eventbrite.com/">page</a>.</p>
+<p><strong>Rappel</strong> : les participants doivent venir avec Git déjà installé sur leur
+poste.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/presentation-git-le-14-12-a-paris.html">Présentation Git le 14/12 à Paris</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-12-01T13:02:00">2011-12-01 13:02</time>
+        </small></h1>
+        <hr>
+        <p>Avant dernière conférence de l'année 2011, organisé par l'association
+<a href="http://www.altnetfr.org/">alt.netFR</a>. Si vous êtes sur Paris, c'est votre
+dernière chance de me voir en live avant un bon bout de temps ! C'est Valtech
+qui accueille cette fois ci dans une grande salle pouvant accueillir plus de
+100 personnes.  </p>
+<p>L'inscription se fait sur cette <a href="http://www.eventbrite.com/event/2421871884">page</a>.</p>
+<p>Pour l'anectode, je suis depuis 16 ans un grand fan d'Unix et du Logiciel Libre
+et je déteste Windows. je crois que ça va basher plus fort que d'habitude ;).</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/atelier-prive-hg-vs-git-le-03-12-a-paris.html">Atelier privé Hg vs Git le 03/12 à Paris</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-12-01T10:48:00">2011-12-01 10:48</time>
+        </small></h1>
+        <hr>
+        <p>Un atelier un peu particulier se déroulera le samedi 03 à 15h, et ce pour deux
+raisons :</p>
+<ul>
+<li>C'est à destination de mes amis de l'AFPy (association Python francophone).</li>
+<li>Les participants sont tous des utilisateurs de DVCS : principalement Hg (étant
+  lui même en Python, c'est le choix du projet CPython et de beaucoup de 
+  développeurs Python) et dans une moindre mesure Bzr et Git.</li>
+</ul>
+<p>Pour l'anectode, j'avais tanné (et le mot est faible) les mêmes pour abondonner
+SVN pour Hg[1] il y'a de ça quelques années. Maintenant, je recommence pour
+passer à Git ;).</p>
+<p>L'objectif est triple :</p>
+<ul>
+<li>Montrer à quel point Git déchire sa race :).</li>
+<li>Comparer Git / Hg / Bzr par des praticiens de ces 3 outils.</li>
+<li>Apprendre les évolutions de Hg depuis que je ne l'utilise plus. Et si possible
+  Bzr que je n'ai jamais utilisé.</li>
+</ul>
+<p>Pour le déroulement, je vais commencer par ma présentation classique mais sans
+les sections sur SVN (ils sont tous convaincus, inutile d'en parler) : la notion
+de workflows des DVCS puis théorie de Git et les commandes qui déchirent. Puis
+atelier Git.</p>
+<p>Je risque d'être un peu malmené cette fois ci, les participants étant loin
+d'être des novices :). Mais l'ambiance bonne enfant (on se connait tous pour la
+plupart depuis des années) et les compétences de chacun rendra l'atelier je suis
+sûr fort intéressant. </p>
+<p>Je tente de faire un compte rendu juste après.</p>
+<p>[1] Pour être exact, pour passer aux DVCS en général. A l'époque, j'étais sur
+Hg mais je n'avais pas vraiment de préférence marquée pour l'un des trois. Ce
+qui n'est plus le cas depuis que je connais Git.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/retour-sur-l-atelier-du-20-10.html">Retour sur l'atelier du 20/10</a>
+        <small>  
+             Publié: <time class="published" datetime="2011-10-23T20:20:00">2011-10-23 20:20</time>
+        </small></h1>
+        <hr>
+        <p>Petit retour qui intéressera peut être les personnes qui souhaitent aussi
+faire des ateliers Git. Je ne suis pas très satisfait de mon 2eme atelier
+plusieurs raisons :</p>
+<ol>
+<li>
+<p>C'était mon 1er atelier qui ne suit pas directement la conférence. Je ne
+   connaissais donc pas le niveau des participants. Moralité, j'ai rabaché
+   ma prés, au lieu de considérer qu'elle était acquise.</p>
+</li>
+<li>
+<p>Conséquence du point précédent, les participants ont passés plus de temps à
+   m'écouter qu'a travailler sur leurs machines. Il faut donc que je m'oblige à
+   me taire et attendre que les participants essayent les commandes.</p>
+</li>
+<li>
+<p>Je pense qu'il est bon de faire les démos avec un dépôt réel dés qu'on arrive
+   à la partie «cas d'utilisation».</p>
+</li>
+</ol>
+<p>Pour le dernier point, je suis partagé sur la solution à adopter :</p>
+<ul>
+<li>
+<p>Créer un dépôt spécial pour l'atelier, avec du contenu texte par exemple.</p>
+</li>
+<li>
+<p>Partager un dépôt de code que je possède.</p>
+</li>
+<li>
+<p>Demander aux participants de venir avec leur code.</p>
+</li>
+</ul>
+<p>Vous en pensez quoi ?</p>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager">
+    <li class="previous">
+        <a href="index-10.html">← Billets récents</a>
+    </li><li class="next">
+        <a href="index-8.html">Anciens billets →</a>
+</li></ul>
+</div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+</body>
+</html>
