@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Google Code supporte Git | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0069-google_code_supporte_git.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0069-google_code_supporte_git.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0069-google_code_supporte_git.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,24 +69,32 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Google Code supporte Git</h1>
+    <h1 class="p-name" itemprop="headline name">Google Code supporte Git</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-07-17T18:35:00">2011-07-17 18:35</time>
+        Publié: <time class="published dt-published" datetime="2011-07-17T18:35:00+00:00" itemprop="datePublished">2011-07-17 18:35</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/google-code.html"><span class="badge badge-info">google code</span></a>
-            <a class="tag" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/google-code.html"><span class="badge badge-info">google code</span></a>
+        <a class="tag p-category" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Le ticket <a href="http://code.google.com/p/support/issues/detail?id=2454">2454</a> est
 maintenant fermé. Nommé <em>native git support</em>, c'était le ticket le plus 
 <strong>demandé</strong> (<em>starred</em>) par les utilisateurs. Un peu plus de 2 ans après le
 support de Mercurial, Google Code <strong>supporte</strong> donc Git. Cela signifie que
@@ -99,7 +107,7 @@ l'occurence <a href="https://bitbucket.org/">Bitbucket</a> (<a href="https://lau
 pour Bzr).</p>
 <p>Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
 raisons, l'une <strong>technique</strong> et l'autre <strong>marketing</strong>.</p>
-<h3>L'argument technique</h3>
+<h4>L'argument technique</h4>
 <p>Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
 <a href="http://code.google.com/p/gerrit/">Gerrit</a> et <a href="http://www.eclipse.org/jgit/">JGit</a> 
 (ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
@@ -116,7 +124,7 @@ devrait sortir pour Git (chouette !).</p>
 curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
 n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
 pas en dire plus).</p>
-<h3>L'argument marketing</h3>
+<h4>L'argument marketing</h4>
 <p>La montée en puissance de GitHub ne fait aucun doute, cet
 <a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php">article</a>
 le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
@@ -127,43 +135,56 @@ un chiffre intéressant (le nombre de lignes de code serait lui significatif).</
 <p>Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
 entendre que ces communautés ont eux aussi (au moins partiellement) basculées
 sur GitHub (après les communautés Ruby, Javascript et Python).</p>
-<h3>Pour conclure</h3>
+<h4>Pour conclure</h4>
 <p>Redmonk dit que <strong>GitHub est le nouveau centre de gravité</strong>, les chiffres le
 prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
 poussés à ne plus utiliser des <em>hébergements 1.0</em> (et zut, je succombe
 moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
-augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p>
+augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="gitfr-sur-github.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="la-difference-entre-hg-et-git.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="gitfr-sur-github.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="la-difference-entre-hg-et-git.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

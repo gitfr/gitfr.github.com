@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Site francophone sur Git.">
     <meta name="author" content="GitFR">
-    <title>GitFR (anciens billets page 1) | GitFR</title>
+    <title>GitFR (anciens articles, page 1) | GitFR</title>
     
             <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
@@ -13,6 +13,7 @@
         <link href="assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/index-1.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -24,7 +25,7 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -35,22 +36,22 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href=".">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="archive.html">Archives</a>
-            </li><li><a href="categories/index.html">Tags</a>
-            </li><li><a href="rss.xml">RSS</a>
+                <li><a href="archive.html">Archives</a>
+                </li><li><a href="categories/index.html">Tags</a>
+                </li><li><a href="rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
+                    <li>
                 </ul>
             </div>
         </div>
@@ -63,13 +64,14 @@
     <div class="span2"></div>
     <div class="span8">
     
-        <div class="postbox">
-        <h1><a href="posts/simplifiez-vous-la-vie-avec-les-alias.html">Simplifiez vous la vie avec les alias</a>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/simplifiez-vous-la-vie-avec-les-alias.html" class="u-url">Simplifiez vous la vie avec les alias</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-04T03:33:00">2010-11-04 03:33</time>
+             Publié: <time class="published dt-published" datetime="2010-11-04T03:33:00+00:00">2010-11-04 03:33</time>
         </small></h1>
         <hr>
-        <p>Git est un couteau Suisse, avec beaucoup de sous commandes et d'options. Il n'est pas rare de taper des lignes assez fastidieuses comme celle ci :</p>
+        <div class="e-content">
+        <div><p>Git est un couteau Suisse, avec beaucoup de sous commandes et d'options. Il n'est pas rare de taper des lignes assez fastidieuses comme celle ci :</p>
 <blockquote>
 <p><code>$ git log --graph --abbrev-commit --date=relative</code></p>
 </blockquote>
@@ -100,18 +102,22 @@
 <li>disposer d'un environnement à votre main, avec des raccourcis qui vous parlent</li>
 </ul>
 <p>Pour illuster le deuxieme point, je préfère taper <strong>undo</strong> que <code>git reset --hard</code>. C'est un choix purement personnel. A titre d'exemple, mon fichier contient 36 alias.</p>
-<p><strong>Note</strong> : Cerise sur le gateau, la complétion fonctionne aussi avec les alias.</p>
+<p><strong>Note</strong> : Cerise sur le gateau, la complétion fonctionne aussi avec les alias.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/eviter-de-commiter-des-fichiers-indesirables.html">Eviter de commiter des fichiers indésirables</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/eviter-de-commiter-des-fichiers-indesirables.html" class="u-url">Eviter de commiter des fichiers indésirables</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-04T02:37:00">2010-11-04 02:37</time>
+             Publié: <time class="published dt-published" datetime="2010-11-04T02:37:00+00:00">2010-11-04 02:37</time>
         </small></h1>
         <hr>
-        <p>Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier <code>~./gitignore</code>. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un <code>git add .</code>, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.</p>
+        <div class="e-content">
+        <div><p>Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier <code>~./gitignore</code>. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un <code>git add .</code>, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.</p>
 <p>La configuration de ce fichier est trés simple :</p>
 <ul>
 <li>1 ligne par exclusion</li>
@@ -130,18 +136,22 @@
 </ol>
 <p>Nous allons voir plus tard que c'est pénible quand nous avons un <strong>prompt</strong> qui affiche <strong>en permanence</strong> la présence de ces fameux fichiers indésirables.</p>
 <p>Pour plus d'information sur gitignore, je vous conseille la lecture de la <a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">doc</a>.</p>
-<p>Note : il est bien sûr possible de disposer d'un fichier <em>gitignore</em> par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.</p>
+<p>Note : il est bien sûr possible de disposer d'un fichier <em>gitignore</em> par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/taper-plus-vite-avec-la-completion.html">Taper plus vite avec la complétion</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/taper-plus-vite-avec-la-completion.html" class="u-url">Taper plus vite avec la complétion</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-04T02:37:00">2010-11-04 02:37</time>
+             Publié: <time class="published dt-published" datetime="2010-11-04T02:37:00+00:00">2010-11-04 02:37</time>
         </small></h1>
         <hr>
-        <p>Le petit doigt de la main gauche est pour un <strong>Unixien</strong> un doigt important (bon, vous pouvez me rétorquer que <em>tous</em> les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche <strong>tab</strong>. Cette touche permet sous Unix de faire la <strong>complétion</strong>. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex <code>--exclude</code> de la commande <code>diff</code>).</p>
+        <div class="e-content">
+        <div><p>Le petit doigt de la main gauche est pour un <strong>Unixien</strong> un doigt important (bon, vous pouvez me rétorquer que <em>tous</em> les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche <strong>tab</strong>. Cette touche permet sous Unix de faire la <strong>complétion</strong>. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex <code>--exclude</code> de la commande <code>diff</code>).</p>
 <p>Comment cela marche t'il avec Git ? Voici quelques exemples :</p>
 <blockquote>
 <p><code>$ git &lt;TAB&gt;&lt;TAB&gt;</code></p>
@@ -169,11 +179,11 @@
 </blockquote>
 <p>Comme vous pouvez le constater, c'est un gain de temps incroyable. Pour la petite histoire, c'est la fréquence d'utilisation de cette touche qui me donne une première idée de la familiarité d'un candidat avec Unix en entretien d'embauche :).</p>
 <p><strong>Note</strong> : vous constaterez peut être que toutes les sous commandes ou options ne sont pas représentées dans la complétion. C'est un choix (ou non, par exemple un oubli ?) des développeurs du fichier de complétion. Il faut en effet modifier manuellement ce fichier à chaque nouvelle version (travail un poil fastidieux, pour vous donner une idée le fichier de la version 1.7.3.2 fait 2419 lignes), il se peut donc que les développeurs fassent des choix. Ceci est aussi valide pour les commandes Shell en général.</p>
-<h3>Activer la complétion</h3>
+<h4>Activer la complétion</h4>
 <p>C'est assez simple, il suffit d'ajouter le fichier de complétion Git soit dans votre profil (fichier <code>~/.bashrc</code>), soit dans la configuration globale de bash_completion du système. La plupart du temps, cette configuration est automatique à l'installation de Git.</p>
-<h3>Sous Ubuntu</h3>
+<h4>Sous Ubuntu</h4>
 <p>Le fichier de complétion est automatiquement activé sous Ubuntu car le fichier <code>git</code> est placé dans le répertoire <code>/etc/bash_completion.d/</code> par le paquet git lui même. Le paquet <code>bash-completion</code> étant lui installé par défaut.</p>
-<h3>Sous Mac OS X</h3>
+<h4>Sous Mac OS X</h4>
 <p>Il est nécessaire d'installer (avec Homebrew ou MacPorts) le paquet <code>bash_completion</code> si ce n'est pas deja fait, avec la commande :</p>
 <blockquote>
 <p>$ sudo port install bash_completion</p>
@@ -187,19 +197,23 @@
 <p><code>source ./path/to/git-completion.bash</code></p>
 </blockquote>
 <p>Changez <code>/path/to</code> avec le répertoire qui contient le fichier (qui est dofférent selon la méthode d'installation).</p>
-<h3>Sous Windows</h3>
-<p>Comme sous Ubuntu, la complétion est activé par défaut avec <em>msysgit</em>.</p>
+<h4>Sous Windows</h4>
+<p>Comme sous Ubuntu, la complétion est activé par défaut avec <em>msysgit</em>.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/configuration-minimale-pour-demarrer.html">Configuration minimale pour démarrer</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/configuration-minimale-pour-demarrer.html" class="u-url">Configuration minimale pour démarrer</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-04T02:01:00">2010-11-04 02:01</time>
+             Publié: <time class="published dt-published" datetime="2010-11-04T02:01:00+00:00">2010-11-04 02:01</time>
         </small></h1>
         <hr>
-        <p>La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : </p>
+        <div class="e-content">
+        <div><p>La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : </p>
 <blockquote>
 <p><code>$ git config --global user.name "Sebastien Douche"</code></p>
 <p><code>$ git config --global user.email sdouche@gmail.com</code></p>
@@ -218,31 +232,39 @@
 <li>
 <p>Vous pouvez éditer directement les fichiers, le résultat est strictement identique. D'ailleurs je vous conseille d'éditer les fichiers pour voir à quoi ils ressemblent (avant et aprés modification).</p>
 </li>
-</ul>
+</ul></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0005-ajout_des_commentaires_sur_le_blog.html">Ajout des commentaires sur le blog</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0005-ajout_des_commentaires_sur_le_blog.html" class="u-url">Ajout des commentaires sur le blog</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-01T19:45:00">2010-11-01 19:45</time>
+             Publié: <time class="published dt-published" datetime="2010-11-01T19:45:00+00:00">2010-11-01 19:45</time>
         </small></h1>
         <hr>
-        <p>Je viens d'activer les commentaires avec le service <a href="http://disqus.com/">DISQUS</a>. Pour commenter, il suffit de cliquer sur un article et d'aller tout en bas.</p>
-<p>Vous pouvez maintenant critiquer les billets ! ;)</p>
+        <div class="e-content">
+        <div><p>Je viens d'activer les commentaires avec le service <a href="http://disqus.com/">DISQUS</a>. Pour commenter, il suffit de cliquer sur un article et d'aller tout en bas.</p>
+<p>Vous pouvez maintenant critiquer les billets ! ;)</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0006-installer_git_sur_windows.html">Installer git sur Windows</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0006-installer_git_sur_windows.html" class="u-url">Installer git sur Windows</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-01T19:45:00">2010-11-01 19:45</time>
+             Publié: <time class="published dt-published" datetime="2010-11-01T19:45:00+00:00">2010-11-01 19:45</time>
         </small></h1>
         <hr>
-        <p>Les possibilités sont plus limitées sous Windows car il n'existe pas de projet pour l'installer à partir des sources originales. Et pour cause, Git n'est pas prévu pour fonctionner sur Windows (c'est un projet purement <strong>Unix</strong>). Heureusement, le projet <a href="http://code.google.com/p/msysgit/">msysgit</a> est la ! Ce dernier est comparable au projet <em>Git OSX Installer</em> sous Mac OS X, et comme ce dernier il est trés actif, puisque nous trouvons la version 1.7.3.1 (la 1.7.3.2 est la dernière version officielle). A une différence d'importance, msysgit installe une version <em>maison</em> (on dit un <strong>fork</strong>) qui se trouve <a href="http://repo.or.cz/w/git/mingw/4msysgit.git/">ici</a> pour rendre git opérationnel sous Windows.</p>
-<h3>Installation de msysgit</h3>
+        <div class="e-content">
+        <div><p>Les possibilités sont plus limitées sous Windows car il n'existe pas de projet pour l'installer à partir des sources originales. Et pour cause, Git n'est pas prévu pour fonctionner sur Windows (c'est un projet purement <strong>Unix</strong>). Heureusement, le projet <a href="http://code.google.com/p/msysgit/">msysgit</a> est la ! Ce dernier est comparable au projet <em>Git OSX Installer</em> sous Mac OS X, et comme ce dernier il est trés actif, puisque nous trouvons la version 1.7.3.1 (la 1.7.3.2 est la dernière version officielle). A une différence d'importance, msysgit installe une version <em>maison</em> (on dit un <strong>fork</strong>) qui se trouve <a href="http://repo.or.cz/w/git/mingw/4msysgit.git/">ici</a> pour rendre git opérationnel sous Windows.</p>
+<h4>Installation de msysgit</h4>
 <p>C'est assez simple :</p>
 <ul>
 <li>Téléchargez la derniere version de l'installeur. Voici un <a href="http://msysgit.googlecode.com/files/Git-1.7.3.1-preview20101002.exe">lien vers la 1.7.3.1</a></li>
@@ -252,33 +274,37 @@
 <li>Choisissez l'option <em>Use Git Bash only</em></li>
 <li>Choisissez l'option <em>Use Unix style line endings</em></li>
 </ul>
-<h3>Utiliser msysgit</h3>
+<h4>Utiliser msysgit</h4>
 <p>Vous pouvez maintenant utiliser git dans un <strong>shell</strong>. Celui-ci est accessible par l'icone du bureau ou dans le menu Windows.</p>
-<h3>Git Extensions</h3>
+<h4>Git Extensions</h4>
 <p><a href="http://code.google.com/p/gitextensions/">Git Extensions</a> utilise le projet msysgit et ajoute une <strong>interface graphique</strong> pour pas mal d'opérations, une extension Visual Studio et l'outil Kdiff3. Cerise sur le gateau, il embarque msysgit. Ce projet vous permet donc de tout installer en une seule fois. Cliquez sur ce <a href="http://gitextensions.googlecode.com/files/GitExtensions205SetupComplete.msi">lien</a> pour télécharger la dernière version. Vous pouvez voir sur cette <a href="http://code.google.com/p/gitextensions/wiki/Info">page</a> plusieurs copies d'écran pour vous faire une idée.</p>
-<h3>Un constat</h3>
+<h4>Un constat</h4>
 <p>La plateforme Windows est la moins adaptée à Git, d'abord parce que cette plateforme ne possède pas nativement les outils de type Unix (bash, diff...), et que c'est avant tout un outil <strong>ligne de commande</strong>, et que la ligne de commande... n'est pas le fort de Windows (mais cela reste largement possible). Il faut donc attendre que des développeurs codent des interfaces graphiques pour effectuer toutes les opérations usuelles (les fameuses commandes <em>porcelain</em>) plus "nativement" sous Windows. Ce problème devrait disparaitre avec l'arrivée à maturité des IDEs (IntelliJ, Eclipse...) et des outils de manipulations (TortoiseGit...). Git Extensions en est un bon exemple.</p>
-<p>Reste que le projet msysgit est un projet bénévole complètement détaché du projet Git. Et que l'utilisation en ligne de commande est quand même bien plus pratique ;).</p>
+<p>Reste que le projet msysgit est un projet bénévole complètement détaché du projet Git. Et que l'utilisation en ligne de commande est quand même bien plus pratique ;).</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0004-installer_git_sur_os_x.html">Installer git sur OS X</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0004-installer_git_sur_os_x.html" class="u-url">Installer git sur OS X</a>
         <small>  
-             Publié: <time class="published" datetime="2010-11-01T00:40:00">2010-11-01 00:40</time>
+             Publié: <time class="published dt-published" datetime="2010-11-01T00:40:00+00:00">2010-11-01 00:40</time>
         </small></h1>
         <hr>
-        <p>Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
+        <div class="e-content">
+        <div><p>Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
 <ul>
 <li>installer une version déja compilée par un tiers</li>
 <li>installer une version à partir des sources</li>
 </ul>
 <p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
-<h3>Installer une version compilée</h3>
+<h4>Installer une version compilée</h4>
 <p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
 <p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
-<h3>Installer une version source</h3>
+<h4>Installer une version source</h4>
 <p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
 <ul>
 <li><a href="http://www.macports.org">MacPorts</a></li>
@@ -286,10 +312,10 @@
 </ul>
 <p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
 <p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
-<h3>Installation de Xcode</h3>
+<h4>Installation de Xcode</h4>
 <p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
 <p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
-<h3>Avec MacPorts</h3>
+<h4>Avec MacPorts</h4>
 <p>Il faut bien évidemment installer MacPorts :</p>
 <ul>
 <li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
@@ -309,7 +335,7 @@
 <blockquote>
 <p>$ sudo port selfupdate</p>
 </blockquote>
-<h3>Avec Homebrew</h3>
+<h4>Avec Homebrew</h4>
 <p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
 <blockquote>
 <p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
@@ -323,15 +349,15 @@
 <blockquote>
 <p>$ brew update</p>
 </blockquote>
-<h3>Installation "à la main"</h3>
+<h4>Installation "à la main"</h4>
 <p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
 <ul>
 <li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
 <li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
 </ul>
-<h3>MacPorts ou Homebrew ?</h3>
+<h4>MacPorts ou Homebrew ?</h4>
 <p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
-<h3>Et voila !</h3>
+<h4>Et voila !</h4>
 <p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
 <p>Merci à David Gageot et Ronan Amicel pour la relecture.Mac OS X est un Unix et à ce titre, l'installation de git ressemble à ce qui existe sous les autres Unix comme Linux. Pour résumer, vous avez 2 méthodes :</p>
 <ul>
@@ -339,10 +365,10 @@
 <li>installer une version à partir des sources</li>
 </ul>
 <p>Cette dernière méthode est plus contraignante, votre système doit contenir le nécessaire pour compiler du code C (compilateur <em>GCC</em>, outil <em>Make</em> et <em>Autoconf</em>...). Les habitués d'Unix libres (Linux, BSD) ne seront pas étonnés par ces 2 méthodes d'installation. Mais si vous êtes nouveau sous Unix, ne craignez rien, cela reste abordable pour un néophyte (et rapide si vous avez vos DVD fournis avec la machine).</p>
-<h3>Installer une version compilée</h3>
+<h4>Installer une version compilée</h4>
 <p>Pour ceux qui souhaitent ne pas "se prendre la tête", Il existe le projet <a href="http://code.google.com/p/git-osx-installer/">Git OSX Installer</a>, qui permet d'installer simplement git sur <em>Leopard</em> (10.5) et <em>Snow Leopard</em> (10.6). Vous pouvez constater que le projet est actif : au 30/11/2010, la version 1.7.3.1 est disponible alors que la dernière version est la 1.7.3.2.</p>
 <p>Il suffit de télécharger le fichier (au format .dmg) et de le lancer. Vous trouverez à l'intérieur l'application git au format .pkg qu'il suffit d'installer. On peut ajouter une icône sur le <em>Finder</em> avec le sous projet <em>OpenInGitGui</em>.</p>
-<h3>Installer une version source</h3>
+<h4>Installer une version source</h4>
 <p>Pour ceux qui souhaitent maitriser leur installation, il est nécessaire de partir des sources. Dans ce cas, vous avez deux outils intéressants :</p>
 <ul>
 <li><a href="http://www.macports.org">MacPorts</a></li>
@@ -350,10 +376,10 @@
 </ul>
 <p>Les utilisateurs Linux peuvent le comparer à <em>aptitude</em> ou <em>yum</em> (et sous BSD, vous avez par exemple les  commandes <em>pkg_</em>).</p>
 <p>Homebrew est plus récent et semble plus complet, bien que les ports (les applications disponibles) soient moins nombreux. Dans les 2 cas, l'installation de Xcode est obligatoire.</p>
-<h3>Installation de Xcode</h3>
+<h4>Installation de Xcode</h4>
 <p>Xcode (qui est un ensemble d'applications et librairies pour développer sous Mac OS X) est nécessaire pour MacPorts et Homebrew. Ils sont disponibles sur le DVD1. Si vous avez perdu vos DVD, il est possible de télécharger Xcode sur le site d'<a href="http://developer.apple.com/technology/xcode.html">Apple</a>, aprés une inscription obligatoire. L'ensemble fait 2,9Go.</p>
 <p>Une fois téléchargée, lancez l'installateur Xcode, cliquez sur <em>Customize</em> et choisissez <em>X11 User</em> et <em>Unix Development</em>.</p>
-<h3>Avec MacPorts</h3>
+<h4>Avec MacPorts</h4>
 <p>Il faut bien évidemment installer MacPorts :</p>
 <ul>
 <li>Télécharger la dernière version au format .dmg <a href="http://distfiles.macports.org/MacPorts/">ici</a> en prenant la version pour votre version de Mac OS X.</li>
@@ -373,7 +399,7 @@
 <blockquote>
 <p>$ sudo port selfupdate</p>
 </blockquote>
-<h3>Avec Homebrew</h3>
+<h4>Avec Homebrew</h4>
 <p>Homebrew est un projet plus réçent mais avec un objectif semblable à MacPorts, vous simplifier la vie en automatisant l'installation des applications non natives Mac OS X. Il suffit de taper cette commande dans un shell pour l'installer :</p>
 <blockquote>
 <p>$ ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"</p>
@@ -387,28 +413,32 @@
 <blockquote>
 <p>$ brew update</p>
 </blockquote>
-<h3>Installation "à la main"</h3>
+<h4>Installation "à la main"</h4>
 <p>Il est bien sur possible d'installer git à la main (c'est à dire sans outil supplémentaire), en partant des sources. Mais je laisse cet exercice au lecteur :). Néanmoins, voici des aides :</p>
 <ul>
 <li><a href="http://gist.github.com/423308">http://gist.github.com/423308</a></li>
 <li><a href="http://hivelogic.com/articles/compiling-git-on-snow-leopard">Compiling Git on Snow Leopard</a></li>
 </ul>
-<h3>MacPorts ou Homebrew ?</h3>
+<h4>MacPorts ou Homebrew ?</h4>
 <p>Sans être un spécialiste (je n'ai pas touché à un Mac depuis des années), Homebrew me semble plus intéressant car il tente de simplifier la création d'un nouveau paquet et tente d'éliminer les duplications d'applications observées avec MacPorts. Néanmoins, il semble moins mature que ce dernier. Si vous avez un ami expérimenté sous Mac, demandez lui ce qu'il préfère !</p>
-<h3>Et voila !</h3>
+<h4>Et voila !</h4>
 <p>Vous avez maintenant un git fonctionnel sur votre machine :).</p>
-<p>Merci à David Gageot et Ronan Amicel pour la relecture.</p>
+<p>Merci à David Gageot et Ronan Amicel pour la relecture.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0003-installer_git_sur_ubuntu.html">Installer git sur Ubuntu</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0003-installer_git_sur_ubuntu.html" class="u-url">Installer git sur Ubuntu</a>
         <small>  
-             Publié: <time class="published" datetime="2010-10-30T19:56:00">2010-10-30 19:56</time>
+             Publié: <time class="published dt-published" datetime="2010-10-30T19:56:00+00:00">2010-10-30 19:56</time>
         </small></h1>
         <hr>
-        <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
+        <div class="e-content">
+        <div><p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
 <blockquote>
 <p>$ sudo aptitude install git</p>
 </blockquote>
@@ -426,18 +456,22 @@
 <p>$ sudo aptitude install git</p>
 </blockquote>
 <p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
-<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
+<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/inscription-a-l-atelier-git-2-du-30-11-2010.html">Inscription à l'atelier git #2 du 30/11/2010</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/inscription-a-l-atelier-git-2-du-30-11-2010.html" class="u-url">Inscription à l'atelier git #2 du 30/11/2010</a>
         <small>  
-             Publié: <time class="published" datetime="2010-10-30T03:39:00">2010-10-30 03:39</time>
+             Publié: <time class="published dt-published" datetime="2010-10-30T03:39:00+00:00">2010-10-30 03:39</time>
         </small></h1>
         <hr>
-        <p>L'inscription est <strong>ouverte</strong> pour l'atelier Git #2, puisque nous avons une salle ! Cette fois ci c'est <strong>Valtech</strong> qui prête :). Vous pouvez vous inscrire en suivant ce lien :</p>
+        <div class="e-content">
+        <div><p>L'inscription est <strong>ouverte</strong> pour l'atelier Git #2, puisque nous avons une salle ! Cette fois ci c'est <strong>Valtech</strong> qui prête :). Vous pouvez vous inscrire en suivant ce lien :</p>
 <p><a href="http://www.doodle.com/hya5bs3bghcup9rv">Inscription à l'atelier #2</a>. Il faut indiquer une adresse email valide pour recevoir un rappel de l'événement.</p>
 <p>Pour rappel :</p>
 <ul>
@@ -450,18 +484,22 @@
 <li>
 <p>il est possible d'avoir le livre "Version Control with Git" de la collection O'Reilly à -40% en s'inscrivant <a href="http://www.doodle.com/2quxg9wqdbbyhhvb">ici</a>. Je ne fais aucune marge dessus. C'est un excellent livre que je conseille (Pro Git est lui tout aussi excellent).</p>
 </li>
-</ul>
+</ul></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/atelier-1-le-24-11-2010.html">Atelier #1 le 24/11/2010</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/atelier-1-le-24-11-2010.html" class="u-url">Atelier #1 le 24/11/2010</a>
         <small>  
-             Publié: <time class="published" datetime="2010-10-30T02:50:00">2010-10-30 02:50</time>
+             Publié: <time class="published dt-published" datetime="2010-10-30T02:50:00+00:00">2010-10-30 02:50</time>
         </small></h1>
         <hr>
-        <p>Le premier atelier git (nommé donc #1 :) aura lieu le <strong>24 Novembre 2010</strong>, dans les locaux de <em>Xebia</em>. Les inscriptions sont déjá closes (50 inscrits), mais une session identique aura lieu le 30/11/2010 (billet à venir).</p>
+        <div class="e-content">
+        <div><p>Le premier atelier git (nommé donc #1 :) aura lieu le <strong>24 Novembre 2010</strong>, dans les locaux de <em>Xebia</em>. Les inscriptions sont déjá closes (50 inscrits), mais une session identique aura lieu le 30/11/2010 (billet à venir).</p>
 <p>L'objectif de cet <strong>Atelier Git #1</strong> est de vous présenter de manière claire et concise la philosophie et les concepts fondamentaux de Git, afin d'apprendre rapidement un outil certes puissant, mais déconcertant au premier abord.</p>
 <p>Pourquoi apprendre les concepts et ne pas directement se plonger dans la pratique ? Car votre maitrise de l'outil est proportionnelle à votre maitrise des concepts, apprendre les commandes sans bien comprendre n'est pas efficace.</p>
 <p>Cet atelier est utile :</p>
@@ -488,22 +526,28 @@
 <li>
 <p>c'est une erreur de voir dans Git (et plus généralement un outil de gestion de source) comme uniquement destiné aux développeurs. C'est avant tout un outil central à la bonne marche d'une équipe technique de développeurs comme d'admins. Maitriser ce type d'outil est fondalemental.</p>
 </li>
-</ul>
+</ul></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
+
+        </p></article>
     
-<div>
-<ul class="pager">
-    <li class="previous">
-        <a href="index-2.html">← Billets récents</a>
-</li></ul>
-</div>
+        <div>
+        <ul class="pager">
+            <li class="previous">
+                <a href="index-2.html" rel="prev">← Billets récents</a>
+            </li>
+        </ul>
+        </div>
 
     
+        
 
-    
+
+	
 
 
     </div>
@@ -511,16 +555,25 @@
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

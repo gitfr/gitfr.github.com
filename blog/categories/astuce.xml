@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR (astuce)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Le commit initial vide</title><link>http://gitfr.net/blog/posts/0071-le_commit_initial_vide.html</link><description>&lt;p&gt;Nous instaurons la rubrique astuce avec le &lt;strong&gt;commit initial vide&lt;/strong&gt;. Le commit
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR (astuce)</title><link>http://gitfr.net/blog</link><description></description><atom:link href="http://gitfr.net/categories/astuce.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Le commit initial vide</title><link>http://gitfr.net/posts/0071-le_commit_initial_vide.html</link><description>&lt;div&gt;&lt;p&gt;Nous instaurons la rubrique astuce avec le &lt;strong&gt;commit initial vide&lt;/strong&gt;. Le commit
 initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
 les commits. C'est pourquoi je commence &lt;strong&gt;toujours&lt;/strong&gt; un dépôt par un commit
 initial vide avec la commande :&lt;/p&gt;
@@ -10,13 +10,13 @@ initial vide avec la commande :&lt;/p&gt;
 &lt;p&gt;C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
 simplement à &lt;strong&gt;jouer avec tous les commits de contenu&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Examinons deux exemples.&lt;/p&gt;
-&lt;h3&gt;rebase -i&lt;/h3&gt;
+&lt;h4&gt;rebase -i&lt;/h4&gt;
 &lt;p&gt;Un rebase -i demande une limite basse, un commit de référence en sommes. Si
 mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
 c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
 je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
 contenu est accessible.&lt;/p&gt;
-&lt;h3&gt;Travailler directement dans une branche&lt;/h3&gt;
+&lt;h4&gt;Travailler directement dans une branche&lt;/h4&gt;
 &lt;p&gt;Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
 des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
 merger ensuite (avec sans &lt;em&gt;fast forward&lt;/em&gt; selon le &lt;em&gt;workflow&lt;/em&gt; que vous avez
@@ -24,8 +24,8 @@ choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
 raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
 disparait de lui-même : mon premier commit de contenu (le deuxième dans le
 graphe donc) sera lui, dans une branche.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h4&gt;Conclusion&lt;/h4&gt;
 &lt;p&gt;N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
 graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
 vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
-Voir des mois après :).&lt;/p&gt;</description><category>git</category><category>astuce</category><guid>http://gitfr.net/blog/posts/0071-le_commit_initial_vide.html</guid><pubDate>Sun, 31 Jul 2011 04:13:00 GMT</pubDate></item></channel></rss>
+Voir des mois après :).&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>astuce</category><guid>http://gitfr.net/posts/0071-le_commit_initial_vide.html</guid><pubDate>Sun, 31 Jul 2011 04:13:00 GMT</pubDate></item></channel></rss>

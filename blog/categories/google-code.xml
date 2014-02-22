@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR (google code)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Code supporte Git</title><link>http://gitfr.net/blog/posts/0069-google_code_supporte_git.html</link><description>&lt;p&gt;Le ticket &lt;a href="http://code.google.com/p/support/issues/detail?id=2454"&gt;2454&lt;/a&gt; est
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR (google code)</title><link>http://gitfr.net/blog</link><description></description><atom:link href="http://gitfr.net/categories/google-code.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Code supporte Git</title><link>http://gitfr.net/posts/0069-google_code_supporte_git.html</link><description>&lt;div&gt;&lt;p&gt;Le ticket &lt;a href="http://code.google.com/p/support/issues/detail?id=2454"&gt;2454&lt;/a&gt; est
 maintenant fermé. Nommé &lt;em&gt;native git support&lt;/em&gt;, c'était le ticket le plus 
 &lt;strong&gt;demandé&lt;/strong&gt; (&lt;em&gt;starred&lt;/em&gt;) par les utilisateurs. Un peu plus de 2 ans après le
 support de Mercurial, Google Code &lt;strong&gt;supporte&lt;/strong&gt; donc Git. Cela signifie que
@@ -12,7 +12,7 @@ l'occurence &lt;a href="https://bitbucket.org/"&gt;Bitbucket&lt;/a&gt; (&lt;a hr
 pour Bzr).&lt;/p&gt;
 &lt;p&gt;Pourquoi ce changement alors que rien ne semblait prévu ? Je vois deux
 raisons, l'une &lt;strong&gt;technique&lt;/strong&gt; et l'autre &lt;strong&gt;marketing&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3&gt;L'argument technique&lt;/h3&gt;
+&lt;h4&gt;L'argument technique&lt;/h4&gt;
 &lt;p&gt;Comme le dit très bien Shawn Pearce, développeur Git, mainteneur des projets
 &lt;a href="http://code.google.com/p/gerrit/"&gt;Gerrit&lt;/a&gt; et &lt;a href="http://www.eclipse.org/jgit/"&gt;JGit&lt;/a&gt; 
 (ré-implentation de Git en Java, utilisé par Gerrit et Eclipse notamment),
@@ -29,7 +29,7 @@ devrait sortir pour Git (chouette !).&lt;/p&gt;
 curieux de connaitre les raisons de ce choix (Shawn avait averti que ce
 n'était pas JGit mais n'étant pas le responsable du projet, il ne voulait
 pas en dire plus).&lt;/p&gt;
-&lt;h3&gt;L'argument marketing&lt;/h3&gt;
+&lt;h4&gt;L'argument marketing&lt;/h4&gt;
 &lt;p&gt;La montée en puissance de GitHub ne fait aucun doute, cet
 &lt;a href="http://www.readwriteweb.com/hack/2011/06/github-has-passed-sourceforge.php"&gt;article&lt;/a&gt;
 le montre fort bien : entre janvier et mai 2011, le nombre de commits sur
@@ -40,9 +40,9 @@ un chiffre intéressant (le nombre de lignes de code serait lui significatif).&l
 &lt;p&gt;Et chose intéressante, on retrouve le C++ et Java en tête,  cela laisse
 entendre que ces communautés ont eux aussi (au moins partiellement) basculées
 sur GitHub (après les communautés Ruby, Javascript et Python).&lt;/p&gt;
-&lt;h3&gt;Pour conclure&lt;/h3&gt;
+&lt;h4&gt;Pour conclure&lt;/h4&gt;
 &lt;p&gt;Redmonk dit que &lt;strong&gt;GitHub est le nouveau centre de gravité&lt;/strong&gt;, les chiffres le
 prouvent, et je trouve cela très bien. D'un coté, les développeurs sont
 poussés à ne plus utiliser des &lt;em&gt;hébergements 1.0&lt;/em&gt; (et zut, je succombe
 moi aussi à cette mode débile). De l'autre, il pousse les hébergeurs à
-augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !&lt;/p&gt;</description><category>git</category><category>google code</category><category>github</category><guid>http://gitfr.net/blog/posts/0069-google_code_supporte_git.html</guid><pubDate>Sun, 17 Jul 2011 18:35:00 GMT</pubDate></item></channel></rss>
+augmenter drastiquement la qualité. Et on ne va pas s'en plaindre !&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>google code</category><category>github</category><guid>http://gitfr.net/posts/0069-google_code_supporte_git.html</guid><pubDate>Sun, 17 Jul 2011 18:35:00 GMT</pubDate></item></channel></rss>

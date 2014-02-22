@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Cycle de release raccourci | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0066-cycle_de_release_raccourci.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0066-cycle_de_release_raccourci.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0066-cycle_de_release_raccourci.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,23 +69,31 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Cycle de release raccourci</h1>
+    <h1 class="p-name" itemprop="headline name">Cycle de release raccourci</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-06-13T03:24:00">2011-06-13 03:24</time>
+        Publié: <time class="published dt-published" datetime="2011-06-13T03:24:00+00:00" itemprop="datePublished">2011-06-13 03:24</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
-<h3>Le planning</h3>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Junio, le mainteneur de Git, a proposé le 1er avril, de réduire le cycle de développement d'une version stable à 8 semaines. Cette nouvelle approche est effective depuis la sortie de la 1.7.5, ce qui veut dire que la prochaine versions stable, aka la 1.7.6 devrait sortir très prochainement (le 19 juin).</p>
+<h4>Le planning</h4>
 <ul>
 <li>
 <p>La première semaine aprés la sortie d'une release stable est consacrée en priorité à fixer les bugs de régression.</p>
@@ -107,7 +115,7 @@
 </li>
 </ul>
 <p>Vous pouvez constater 2 inconnues, <em>N</em> et <em>X</em>. Idéalement N est la quatrième semaine et X la huitième. Mais pas question pour Junio de respecter à la lettre les dates si un problème survient, c'est une feuille de route indicative, en sortant trois ou quatre <em>rc</em> si nécessaire.</p>
-<h3>Gestion des branches</h3>
+<h4>Gestion des branches</h4>
 <p>Ce cycle assez court pour un projet aussi important que Git est possible par la gestion des branches :</p>
 <ul>
 <li>
@@ -132,38 +140,51 @@
 <p>une fonctionnalité est largement testée, analysée et discutée avant d'arriver dans la branche principale.</p>
 </li>
 </ul>
-<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p>
+<p>On retrouve les bonnes pratiques des outils de gestion de source, mise à mal par l'<strong>immonde</strong> SVN (et ses amis) qui nous ont fait croire que les branches étaient le mal. Mais ca sera le sujet </p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="0065-git_blameall.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="git-1.7.6-publiee.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="0065-git_blameall.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="git-1.7.6-publiee.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

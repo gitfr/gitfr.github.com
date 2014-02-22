@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>La différence entre Hg et Git | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/la-difference-entre-hg-et-git.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="la-difference-entre-hg-et-git.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="la-difference-entre-hg-et-git.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,28 +69,36 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>La différence entre Hg et Git</h1>
+    <h1 class="p-name" itemprop="headline name">La différence entre Hg et Git</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-07-18T00:40:00">2011-07-18 00:40</time>
+        Publié: <time class="published dt-published" datetime="2011-07-18T00:40:00+00:00" itemprop="datePublished">2011-07-18 00:40</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/hg.html"><span class="badge badge-info">hg</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/hg.html"><span class="badge badge-info">hg</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>J'aime beaucoup ce <a href="http://blog.daemon.com.au/blog-post/know-subversion-git-or-mercurial">billet</a>,
 il résume parfaitement à mes yeux la différence majeure entre Hg et Git quand
 on vient de SVN : il est possible d'utiliser Hg (Mercurial) comme un <em>SVN qui
 marche</em>, ce n'est pas du tout le cas avec Git car très vite, on se retrouve à
 faire des grosses bêtises si on n'a pas compris les concepts importants.</p>
-<h3>Hg, un SVN qui marche</h3>
+<h4>Hg, un SVN qui marche</h4>
 <p>Ce n'est pas une attaque contre Hg, bien au contraire, c'est une choix
 réfléchi de se comporter comme tel :</p>
 <ul>
@@ -119,7 +127,7 @@ reinforcement for the student's SVN branching and merging habits.</p>
 débrouille relativement bien. Je connais d'ailleurs peu d'utilisateurs
 de Mercurial qui ont étudiés le DAG, ou les possiblités avancées des 
 branches (rebase, cherry-pick...).</p>
-<h3>Git, un outil de gestion de contenu</h3>
+<h4>Git, un outil de gestion de contenu</h4>
 <p>C'est une notion importante à saisir, Git n'est <strong>pas</strong> un outil de gestion de
 source (VCS). Comme avec n'importe quel outil de contenu, il est possible de
 modifier ou de supprimer ce que l'on veut : Git permet de <strong>modifier
@@ -150,38 +158,51 @@ utilise SVN, ni de prêt ni de loin, il faut <strong>ré-apprendre</strong> ce q
 contrôle de version. Je ne dit pas que cela est facile, c'est même la raison
 première de la création de #gitfr.</p>
 <p>Mais ce travail est valorisé au centuple une fois Git maitrisé, et vous ouvre
-un champ des possibles inimaginable quand on vient de SVN...</p>
+un champ des possibles inimaginable quand on vient de SVN...</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="0069-google_code_supporte_git.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="0071-le_commit_initial_vide.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="0069-google_code_supporte_git.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="0071-le_commit_initial_vide.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

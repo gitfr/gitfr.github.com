@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Eclipse sur GitHub | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0036-eclipse_sur_github.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0036-eclipse_sur_github.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0036-eclipse_sur_github.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,23 +69,31 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Eclipse sur GitHub</h1>
+    <h1 class="p-name" itemprop="headline name">Eclipse sur GitHub</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-04-03T00:46:00">2011-04-03 00:46</time>
+        Publié: <time class="published dt-published" datetime="2011-04-03T00:46:00+00:00" itemprop="datePublished">2011-04-03 00:46</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/github.html"><span class="badge badge-info">github</span></a>
-            <a class="tag" href="../categories/migration.html"><span class="badge badge-info">migration</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+        <a class="tag p-category" href="../categories/migration.html"><span class="badge badge-info">migration</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>La fondation <strong>Eclipse</strong> propose maintenant des <a href="https://github.com/eclipse/">miroirs GitHub</a>. 70 projets sont d'ores et déjà disponibles, et le mouvement semble enclenché pour que Git devienne l'outil de gestion de source par défaut.</p>
 <p>La fondation héberge ses propres projets en proposant <a href="http://dev.eclipse.org/viewcvs/viewvc.cgi/">CVS, Subversion</a> et <a href="http://git.eclipse.org/c/">Git</a>. Mais la perspective collaborative de GitHub semble être un avantage certain, comme le souligne l'<a href="http://aniszczyk.org/2011/04/01/eclipse-org-and-github/">annonce</a> de Chris Aniszczyk :</p>
 <blockquote>
 <p>I'm happy to announce we finally setup mirroring of eclipse.org repositories on GitHub.
@@ -94,38 +102,51 @@ to fork and contribute changes.</p>
 </blockquote>
 <p>Et il faut bien évidemment que son projet soit sur Git pour que ce dernier apparaisse sur GitHub...</p>
 <p>De plus, InfoQ souligne que c'est l'amélioration d'<a href="http://www.eclipse.org/egit/">Egit</a>, le module Git pour Eclipse (la version 1.0 devant sortir pour Eclipse 3.7) qui rend Git attrayant aux yeux des développeurs. Ce qui est confirmé par l'augmentation très sensible depuis plusieurs mois des demandes de migration vers l'hébergement Git que propose la fondation.</p>
-<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p>
+<p>C'est donc une énorme communauté qui pointe le bout de son nez dans l'écosystème Git (Eclipse héberge des centaines de projets), signe supplémentaire de la maturité de ce dernier, notamment dans des environnements non Unix. Et on ne va pas s'en plaindre :).</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="0035-la_commande_add.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="0037-haskell_sur_github.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="0035-la_commande_add.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="0037-haskell_sur_github.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

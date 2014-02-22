@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>La commande diff | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/la-commande-diff.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="la-commande-diff.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="la-commande-diff.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,25 +69,33 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>La commande diff</h1>
+    <h1 class="p-name" itemprop="headline name">La commande diff</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2012-01-26T15:48:00">2012-01-26 15:48</time>
+        Publié: <time class="published dt-published" datetime="2012-01-26T15:48:00+00:00" itemprop="datePublished">2012-01-26 15:48</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git-git-diff.html"><span class="badge badge-info">git git-diff</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git-git-diff.html"><span class="badge badge-info">git git-diff</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Vous connaissez surement la commande <code>git-diff</code>, puisqu'elle existe sur Hg ou
 SVN. Mais comme d'habitude, git fourmille de possibilités. Petit tour
 d'horizon.</p>
-<h3>Le base</h3>
+<h4>Le base</h4>
 <p>Commençons par le basique. Pour connaître les différences entre votre
 répertoire de travail et votre index :</p>
 <blockquote>
@@ -121,7 +129,7 @@ dans l'autre :</p>
 </blockquote>
 <p>Cela se lit comme suit : affiche moi ce qui existe entre l'ancêtre commun aux
 deux commits jusqu'au commit2 qui n'existe pas de l'ancêtre commun au commit1.</p>
-<h3>Le contexte</h3>
+<h4>Le contexte</h4>
 <p>Par défaut, Git vous propose un contexte de 3 lignes, c'est à dire qu'il
 affiche 3 lignes supplémentaires en dessous des changements pour vous donner
 plus d'indications. Si vous trouvez cela insuffisant, voici 2 techniques
@@ -143,11 +151,11 @@ taille différente.</p>
 <p>C'est une nouveauté de la version 1.7.8. Vu le nombre impressionnant de
 langages il n'est pas sûr que Git se débrouille correctement mais d'après mes
 premiers tests en Python, cela semble plûtot bien fonctionner.</p>
-<h3>Ignorer les espaces</h3>
+<h4>Ignorer les espaces</h4>
 <p>Il est désagréable de voir son diff pourri parce qu'un collègue à aussi
 supprimer des espaces. Vous avez à votre disposition les options <code>-b</code> <code>-w</code> pour
 ignorer les espaces en fin de lignes ou toutes les espaces.</p>
-<h3>Algorithme patience</h3>
+<h4>Algorithme patience</h4>
 <p>La commande implémente aussi un autre algorithme de détection de changement du
 nom de <em>Patience</em>. Pour faire très court, cet algo se focalise uniquement sur
 des lignes à fort contenu, alors que l'algorithme classique travaille sur
@@ -156,21 +164,21 @@ quand le diff classique est complètement perdu).</p>
 <p><strong>Note</strong> : pour de plus amples explications, veuillez vous référer à cette
 page <a href="http://bryanpendleton.blogspot.com/2010/05/patience-diff.html">ci</a> et à
 celle <a href="http://alfedenzo.livejournal.com/170301.html">la</a>.</p>
-<h3>Faire des statistiques</h3>
+<h4>Faire des statistiques</h4>
 <p>Je vous laisse regarder par vous même les options <code>--stat</code>, <code>--numstat</code>,
 <code>--shortstat</code>, <code>--dirstat</code> et <code>--summary</code> :).</p>
-<h3>Afficher les différences sur la même ligne</h3>
+<h4>Afficher les différences sur la même ligne</h4>
 <p>Il est intéressant, par exemple pour de la documentation, d'afficher les
 modifications sur la même ligne. C'est tout l'intérêt du mode <em>word diff</em>.</p>
 <blockquote>
 <p>$ git diff --word-diff</p>
 </blockquote>
-<h3>Ne pas afficher les prefixes</h3>
+<h4>Ne pas afficher les prefixes</h4>
 <p>Ne pas afficher les a/ et b/, utilise quand on fait des copier / coller :</p>
 <blockquote>
 <p>$ git diff --no-prefix</p>
 </blockquote>
-<h3>Chercher une chaine dans le contenu</h3>
+<h4>Chercher une chaine dans le contenu</h4>
 <p>Si vous cherchez une chaine particulière dans le contenu d'un commit (cad les
 lignes qui ont été ajoutées ou supprimées), c'est l'option pickaxe qu'il vous
 faut :</p>
@@ -180,47 +188,60 @@ faut :</p>
 <p>Vous pouvez utiliser une expression rationnelle avec l'option <code>-G</code>.</p>
 <p><strong>Note</strong> : l'option <code>--pickaxe-all</code> affiche l'ensemble du commit, et pas
 uniquement les fichiers impactés.</p>
-<h3>Générer un patch</h3>
+<h4>Générer un patch</h4>
 <p>Le comportement par défaut de Git est de générer un patch :</p>
 <blockquote>
 <p>$ git diff &gt; diff.patch</p>
 </blockquote>
-<h3>Et encore plein d'autres options</h3>
+<h4>Et encore plein d'autres options</h4>
 <p>Comme d'habitude, je vous recommande chaudement de lire le manuel de la
 commande tellement Git regorge d'options (notamment pour aider au scripting).
 Je n'ai pas parlé de l'option <code>--check</code> pour vérifier les espaces inutiles, le
-<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p>
+<code>-M</code> et le <code>-C</code> pour détecter copie et déplacement...</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="retour-sur-un-an-de-gitfr.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="presentation-et-atelier-git-le-20-02-a-lyon.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="retour-sur-un-an-de-gitfr.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="presentation-et-atelier-git-le-20-02-a-lyon.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

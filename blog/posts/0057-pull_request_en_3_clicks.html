@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Pull request en 3 clicks | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0057-pull_request_en_3_clicks.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0057-pull_request_en_3_clicks.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0057-pull_request_en_3_clicks.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,58 +69,79 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Pull request en 3 clicks</h1>
+    <h1 class="p-name" itemprop="headline name">Pull request en 3 clicks</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-04-27T00:58:00">2011-04-27 00:58</time>
+        Publié: <time class="published dt-published" datetime="2011-04-27T00:58:00+00:00" itemprop="datePublished">2011-04-27 00:58</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/github.html"><span class="badge badge-info">github</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>GitHub vient de sortir le pendant du <a href="http://blog.gitfr.net/post/4930259268/merge-en-un-click">merge en 1 click</a>. Alors que l'amélioration précédente était à destination du mainteneur, celle ci est à destination du collaborateur. Ce dernier peut maintenant modifier un fichier d'un dépôt quelconque (sans droit d'écriture donc) en passant par le site web :</p>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>GitHub vient de sortir le pendant du <a href="http://blog.gitfr.net/post/4930259268/merge-en-un-click">merge en 1 click</a>. Alors que l'amélioration précédente était à destination du mainteneur, celle ci est à destination du collaborateur. Ce dernier peut maintenant modifier un fichier d'un dépôt quelconque (sans droit d'écriture donc) en passant par le site web :</p>
 <p><img alt="" src="http://media.tumblr.com/tumblr_lka7o4sTe81qdkaiq.png"></p>
 <p>Et proposer un <em>pull request</em> dans la foulée :</p>
 <p><img alt="" src="http://media.tumblr.com/tumblr_lka7qqRc3L1qdkaiq.png"></p>
 <p>Cela veut dire qu'une modification peut être faites et proposer en... 3 clicks ! Plus d'excuse pour proposer cette petite correction de typo que vous avez vu, ou cette documentation pas très claire. </p>
-<p><strong>Note</strong> : bien sur, rien de magique la dedans. GitHub <strong>fork</strong> le projet, applique votre modification (commit), et vous ouvre la fenêtre du <em>pull request</em>. Pas magique certes, mais bien pratique :).</p>
+<p><strong>Note</strong> : bien sur, rien de magique la dedans. GitHub <strong>fork</strong> le projet, applique votre modification (commit), et vous ouvre la fenêtre du <em>pull request</em>. Pas magique certes, mais bien pratique :).</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="0056-merge_en_un_click.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="0058-ror_utilise_le_tracker_de_github.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="0056-merge_en_un_click.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="0058-ror_utilise_le_tracker_de_github.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

@@ -5,793 +5,739 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://gitfr.net/blog/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/2010/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
   <loc>http://gitfr.net/blog/2010/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/2011/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/2011/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/2012/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/2012/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/2013/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/2013/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/2014/index.html</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/archive.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/categories/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/astuce.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/astuce.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/atelier.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/atelier.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/configuration.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/configuration.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-add.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-add.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-checkout.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-checkout.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-clone.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-clone.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-commit.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-commit.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-fetch.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-fetch.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-git-diff.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-git-diff.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-init.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-init.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-pull.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-pull.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-push.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-push.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-remote.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-remote.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-reset.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-reset.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-revert.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-revert.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git-rm.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git-rm.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/git.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/gitfr.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/gitfr.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/github.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/google-code.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/google-code.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/hg.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/hg.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/installation.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/installation.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/macos.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/macos.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/migration.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/migration.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/outil.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/outil.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/refspec.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/refspec.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/release.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/release.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/traduction.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/traduction.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/ubuntu.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/categories/ubuntu.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/categories/windows.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
-  <loc>http://gitfr.net/blog/galleries/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <loc>http://gitfr.net/blog/categories/windows.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/galleries/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/galleries/rss.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-1.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-10.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-2.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-3.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-4.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-5.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-6.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-7.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-8.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index-9.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>http://gitfr.net/blog/listings/</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/listings/index.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0003-installer_git_sur_ubuntu.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0004-installer_git_sur_os_x.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0005-ajout_des_commentaires_sur_le_blog.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0006-installer_git_sur_windows.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0012-des_exemples_de_fichiers_gitignore.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0013-support_de_git_dans_les_projets_apache.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0014-migration_cvs_vers_git_pour_le_projet_drupal.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0015-les_gui_sous_macos_x.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0023-la_commande_init.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0025-la_commande_clone.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0027-git_rejoint_la_software_freedom_conservancy.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0035-la_commande_add.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0036-eclipse_sur_github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0037-haskell_sur_github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0041-guide_visuel_pour_git_sous_windows.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0045-gestion_de_ticket_v2_sur_github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0049-la_commande_commit.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0050-la_commande_rm.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0052-recherche_de_salles.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0053-annuler_des_modifications.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0056-merge_en_un_click.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0057-pull_request_en_3_clicks.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0058-ror_utilise_le_tracker_de_github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0065-git_blameall.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0066-cycle_de_release_raccourci.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0069-google_code_supporte_git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0071-le_commit_initial_vide.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0072-liste_de_diffusion_pour_la_traduction_git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0076-plone_sur_github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/0079-comprendre_le_refspec.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/ameliorer-sa-productivite-avec-un-beau-shell.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/atelier-1-le-24-11-2010.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/atelier-git-le-16-06-a-rennes.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/atelier-git-le-20-10-a-levallois.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/atelier-prive-hg-vs-git-le-03-12-a-paris.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/cgit-un-frontal-web-pour-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/comment-ecrire-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/comportement-par-defaut-du-git-push.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/configuration-minimale-pour-demarrer.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/creation-de-liste-de-diffusion-gitfr.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/eviter-de-commiter-des-fichiers-indesirables.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.0.8-1.7.1.3-et-1.7.2.4-publiees.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.10-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.11-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.12-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.3.3-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.3.4-et-1.6.6.3-publiees.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.3.5-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4.1-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4.2-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4.3-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4.4-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.4.5-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.5-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.5.1-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.5.2-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.5.3-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.5.4-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.6-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.6.1-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.7-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.8-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.7.9-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-1.8.0-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/git-184-publiee.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/posts/gitfr-est-mort.html</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/gitfr-recherche-un-repreneur.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/gitfr-sur-github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/github-au-centre-de-l-univers-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/historiser-etc-avec-etckeeper.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/info-sur-la-presentation-du-12-04.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/inscription-a-l-atelier-git-2-du-30-11-2010.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/la-commande-diff.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/la-difference-entre-hg-et-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/le-million-le-million.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/les-nouveautes-2011-sur-github.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/mise-a-jour-de-la-presentation-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-Git-disponible.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-15-12-a-lille.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-20-02-a-lyon.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-01-06-a-strasbourg.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-03-11-a-evry.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-lausanne.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-paris.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-13-02-a-montpellier.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-14-12-a-paris.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-20-09-a-lyon.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/presentation-git-le-24-11-a-bordeaux.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/retour-sur-l-atelier-du-20-10.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/retour-sur-la-soiree-git-parisjug.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/retour-sur-le-breizhcamp-2012.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/retour-sur-les-ateliers-1-et-2.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/retour-sur-un-an-de-gitfr.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/simplifiez-vous-la-vie-avec-les-alias.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/structure-d-un-depot-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/suivre-le-developpement-de-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/taper-plus-vite-avec-la-completion.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/tour-d-horizon-des-propositions-pour-git-1.8.0.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/traduction-de-git-en-francais.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
  </url>
  <url>
   <loc>http://gitfr.net/blog/posts/video-de-la-soiree-git.html</loc>
-  <lastmod>2013-09-02</lastmod>
-  <priority>0.5000</priority>
+  <lastmod>2014-02-22</lastmod>
+ </url>
+ <url>
+  <loc>http://gitfr.net/blog/rss.xml</loc>
+  <lastmod>2014-02-22</lastmod>
  </url>
 </urlset>

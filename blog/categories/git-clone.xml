@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR (git-clone)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Comprendre le refspec</title><link>http://gitfr.net/blog/posts/0079-comprendre_le_refspec.html</link><description>&lt;p&gt;Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR (git-clone)</title><link>http://gitfr.net/blog</link><description></description><atom:link href="http://gitfr.net/categories/git-clone.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Comprendre le refspec</title><link>http://gitfr.net/posts/0079-comprendre_le_refspec.html</link><description>&lt;div&gt;&lt;p&gt;Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
 comporte Git : il vous indique les références du dépôt distant en
 ajoutant l'espace de nom &lt;code&gt;origin&lt;/code&gt; (dans le cas d'un clone) ou le nom que
 vous lui donnez si vous l'avez ajouter avec la commande &lt;code&gt;git-remote add&lt;/code&gt;.
@@ -9,14 +9,14 @@ se traduire en bon français par : «comment je gère les dépôts distants
 chef ?». Soit ce refspec est spécifié en ligne de commande au moment
 de l'action (fetch ou push), soit elle se trouve dans le fichier de
 configuration du dépôt.&lt;/p&gt;
-&lt;h3&gt;Petit rappel&lt;/h3&gt;
+&lt;h4&gt;Petit rappel&lt;/h4&gt;
 &lt;p&gt;Il est &lt;strong&gt;impossible&lt;/strong&gt; de modifer directement un dépôt distant, vous devez
 obligatoirement modifier le dépôt local puis pousser vos commits
 sur le dépôt distant. Autrement dit, modifier un dépôt consiste à
 synchroniser les bases de données.&lt;/p&gt;
 &lt;p&gt;C'est là que le refspec rentre en jeu, il permet de définir les branches
 concernées au moment de la synchronisation.&lt;/p&gt;
-&lt;h3&gt;Clonage&lt;/h3&gt;
+&lt;h4&gt;Clonage&lt;/h4&gt;
 &lt;p&gt;Si vous joué rarement avec le refspec, c'est que vous travaillé la plupart
 du temps sur un dépôt local que vous avez créé avec la commande &lt;code&gt;git-clone&lt;/code&gt;.
 Ce dernier génère un refspec générique suffisant. Editez le fichier
@@ -31,7 +31,7 @@ Ce dernier génère un refspec générique suffisant. Editez le fichier
 s'appelle en local &lt;em&gt;origin&lt;/em&gt; et on associe à chaque référence de branche
 du dépôt distant une référence de branche locale préfixée par &lt;em&gt;origin&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Mais un deuxième rappel avant d'aller plus loin.&lt;/p&gt;
-&lt;h3&gt;Structure des références&lt;/h3&gt;
+&lt;h4&gt;Structure des références&lt;/h4&gt;
 &lt;p&gt;La gestion des références est d'une simplicité affligeante. Tout est contenu
 dans le répertoire &lt;code&gt;.git/refs&lt;/code&gt;. Un répertoire étant un espace de nom, un
 fichier une référence. Pour fonctionner, Git à besoin de 2 espaces de nom
@@ -47,7 +47,7 @@ bien particulier :&lt;/p&gt;
 &lt;p&gt;Vous ne faites pas attention à ces répertoires en temps normal car les
 commandes Git savent pertinamment que les références sont à ces endroits
 précis.&lt;/p&gt;
-&lt;h3&gt;Explication&lt;/h3&gt;
+&lt;h4&gt;Explication&lt;/h4&gt;
 &lt;p&gt;Si je vous dis qu'un refspec s'écrit toujours &lt;code&gt;source:destination&lt;/code&gt;, la ligne
 suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -71,19 +71,19 @@ suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :&lt;
 &lt;p&gt;Si par exemple le dépôt distant a 3 branches qui se nomment &lt;code&gt;riri&lt;/code&gt;, &lt;code&gt;fifi&lt;/code&gt; et
 &lt;code&gt;loulou&lt;/code&gt;, vous aurez donc en local 3 branches &lt;code&gt;origin/riri&lt;/code&gt;, &lt;code&gt;origin/fifi&lt;/code&gt; et
 &lt;code&gt;origin/loulou&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Importance du refspec&lt;/h3&gt;
+&lt;h4&gt;Importance du refspec&lt;/h4&gt;
 &lt;p&gt;Il est important de maitriser le refspec car tout part de là, c'est en fonction
 des références à récupérer ou à pousser que Git détermine les objets à 
 synchroniser. Si je demande à récupérer toutes les références distantes, je demande
 implicitement tous les objets accessibles par ces références, donc toute la base.
 Au contraire, si le refspec implique des références précises, seuls les objets
 nécessaires à ces références seront impactés.&lt;/p&gt;
-&lt;h3&gt;Ajout d'un dépôt distant&lt;/h3&gt;
+&lt;h4&gt;Ajout d'un dépôt distant&lt;/h4&gt;
 &lt;p&gt;La commande &lt;code&gt;git-remote&lt;/code&gt; permet de manipuler les dépôts distants, avec
 notamment la commande &lt;code&gt;git-remote add&lt;/code&gt; pour en ajouter. Ce dernier se comporte
 comme la commande &lt;code&gt;git-clone&lt;/code&gt;, en configurant le refspec au plus
 large (toutes les références donc).&lt;/p&gt;
-&lt;h3&gt;refspec en ligne de commande&lt;/h3&gt;
+&lt;h4&gt;refspec en ligne de commande&lt;/h4&gt;
 &lt;p&gt;Le refspec se manipule aussi en ligne de commande, ce qui permet de passer
 outre la configuration ou d'utiliser Git sans configuration préalable.&lt;/p&gt;
 &lt;p&gt;Quelques exemples :&lt;/p&gt;
@@ -101,11 +101,11 @@ en local.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Pousse la branche master sur la branche distante expérimental. Nous
 utilisons ici le nom complet de la référence. &lt;/p&gt;
-&lt;h3&gt;Le refspec :&lt;/h3&gt;
+&lt;h4&gt;Le refspec :&lt;/h4&gt;
 &lt;p&gt;Refspec particulier qui indique de mettre à jour toutes les branches
 distantes existantes qui ont un nom identique aux branches locales. C'est en
 fait le refspec utilisé par défaut au push quand nous en spécifions pas.&lt;/p&gt;
-&lt;h3&gt;Effacer une référence distante&lt;/h3&gt;
+&lt;h4&gt;Effacer une référence distante&lt;/h4&gt;
 &lt;p&gt;Autre cas particulier. Si vous souhaitez par exemple effacer la référence
 distante test si vous souhaitez effacer une référence distante,
 il faut taper :&lt;/p&gt;
@@ -113,7 +113,7 @@ il faut taper :&lt;/p&gt;
 &lt;p&gt;git push :test&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Autrement dit, je pousse une référence vide sur la référence test.&lt;/p&gt;
-&lt;h3&gt;Associer branche locale / branche distante&lt;/h3&gt;
+&lt;h4&gt;Associer branche locale / branche distante&lt;/h4&gt;
 &lt;p&gt;Comme nous l'avons vu, le refspec en ligne de commande permet d'associer
 temporairement une branche locale et une branche sur le dépôt distant. Mais
 comment associer ces deux branches dans la configuration et éviter ainsi de
@@ -135,14 +135,14 @@ distante (&lt;em&gt;upstream&lt;/em&gt; dans le vocabulaire Git) que votre shell
 si vous avez des commits en avance ou en retard (logique non ?). Cela arrive
 quand vous avez créé une nouvelle branche locale mais sans l'avoir poussée
 sur le dépôt distant.&lt;/p&gt;
-&lt;h3&gt;pull = fetch + merge&lt;/h3&gt;
+&lt;h4&gt;pull = fetch + merge&lt;/h4&gt;
 &lt;p&gt;Vous devez maintenant comprendre pourquoi on dit que la commande &lt;code&gt;git-pull&lt;/code&gt;
 n'est en fait qu'un raccouri pour :&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;git-fetch&lt;/li&gt;
 &lt;li&gt;git-merge origin/master&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;A quoi sert le fetch ?&lt;/h3&gt;
+&lt;h4&gt;A quoi sert le fetch ?&lt;/h4&gt;
 &lt;p&gt;La commande &lt;code&gt;git-pull&lt;/code&gt; est une commodité car c'est dans 90% des cas ce que l'on
 souhaite faire. Mais le merge est seulement une des nombreuses possibilités que
 vous offre Git. La beauté du travail collaboratif avec Git est que cette branche
@@ -154,9 +154,9 @@ le Net de ne pas faire que des fetch.&lt;/p&gt;
 &lt;p&gt;Notez qu'il existe l'option &lt;code&gt;--rebase&lt;/code&gt; pour rebaser automatiquement votre
 branche locale sur la branche distante (ce qui est la aussi un scénario de
 base).&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h4&gt;Conclusion&lt;/h4&gt;
 &lt;p&gt;Je pense avoir fait le tour. Comme d'habitude je vous conseille de de lire
-les pages du manuel (git-clone, git-fetch, git-push et git-pull).&lt;/p&gt;</description><category>git</category><category>refspec</category><category>git-clone</category><category>git-remote</category><category>git-fetch</category><category>git-pull</category><category>git-push</category><guid>http://gitfr.net/blog/posts/0079-comprendre_le_refspec.html</guid><pubDate>Sun, 09 Oct 2011 17:53:00 GMT</pubDate></item><item><title>La commande clone</title><link>http://gitfr.net/blog/posts/0025-la_commande_clone.html</link><description>&lt;p&gt;Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches &lt;strong&gt;remotes&lt;/strong&gt;, et créer une branche &lt;strong&gt;locale&lt;/strong&gt; qui est une copie de la branche active du dépôt distant (généralement &lt;strong&gt;master&lt;/strong&gt;).&lt;/p&gt;
+les pages du manuel (git-clone, git-fetch, git-push et git-pull).&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>refspec</category><category>git-clone</category><category>git-remote</category><category>git-fetch</category><category>git-pull</category><category>git-push</category><guid>http://gitfr.net/posts/0079-comprendre_le_refspec.html</guid><pubDate>Sun, 09 Oct 2011 17:53:00 GMT</pubDate></item><item><title>La commande clone</title><link>http://gitfr.net/posts/0025-la_commande_clone.html</link><description>&lt;div&gt;&lt;p&gt;Si l'on souhaite récupérer un dépôt existant, il faut passer par la commande clone. Ce dernier va créer une copie locale, créer des branches &lt;strong&gt;remotes&lt;/strong&gt;, et créer une branche &lt;strong&gt;locale&lt;/strong&gt; qui est une copie de la branche active du dépôt distant (généralement &lt;strong&gt;master&lt;/strong&gt;).&lt;/p&gt;
 &lt;p&gt;La commande est simple :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;$ git clone &amp;lt;dépôt&amp;gt; [&amp;lt;répertoire&amp;gt;]&lt;/code&gt;&lt;/p&gt;
@@ -210,4 +210,4 @@ les pages du manuel (git-clone, git-fetch, git-push et git-pull).&lt;/p&gt;</des
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;C'est toujours ça de gagné.&lt;/p&gt;</description><category>git</category><category>git-clone</category><guid>http://gitfr.net/blog/posts/0025-la_commande_clone.html</guid><pubDate>Sun, 12 Dec 2010 05:49:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;C'est toujours ça de gagné.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>git-clone</category><guid>http://gitfr.net/posts/0025-la_commande_clone.html</guid><pubDate>Sun, 12 Dec 2010 05:49:00 GMT</pubDate></item></channel></rss>

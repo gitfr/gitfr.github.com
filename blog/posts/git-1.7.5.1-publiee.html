@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Git 1.7.5.1 publiée | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/git-1.7.5.1-publiee.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="git-1.7.5.1-publiee.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="git-1.7.5.1-publiee.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,24 +69,32 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Git 1.7.5.1 publiée</h1>
+    <h1 class="p-name" itemprop="headline name">Git 1.7.5.1 publiée</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-06-13T01:57:00">2011-06-13 01:57</time>
+        Publié: <time class="published dt-published" datetime="2011-06-13T01:57:00+00:00" itemprop="datePublished">2011-06-13 01:57</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/release.html"><span class="badge badge-info">release</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
-<h3>Le changelog</h3>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>La première version de maintenance de la branche 1.7.5.x est sortie la 5 mai.</p>
+<h4>Le changelog</h4>
 <ul>
 <li>
 <p>When an object "$tree:$path" does not exist, if $path does exist in the
@@ -147,38 +155,51 @@
 <p>"git upload-pack" (hence "git push" over git native protocol) had a
   subtle race condition that could lead to a deadlock.</p>
 </li>
-</ul>
+</ul></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="presentation-git-le-01-06-a-strasbourg.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="git-1.7.5.2-publiee.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="atelier-git-le-16-06-a-rennes.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="git-1.7.5.2-publiee.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

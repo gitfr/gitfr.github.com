@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Le commit initial vide | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0071-le_commit_initial_vide.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0071-le_commit_initial_vide.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0071-le_commit_initial_vide.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,23 +69,31 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Le commit initial vide</h1>
+    <h1 class="p-name" itemprop="headline name">Le commit initial vide</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-07-31T04:13:00">2011-07-31 04:13</time>
+        Publié: <time class="published dt-published" datetime="2011-07-31T04:13:00+00:00" itemprop="datePublished">2011-07-31 04:13</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/astuce.html"><span class="badge badge-info">astuce</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/astuce.html"><span class="badge badge-info">astuce</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
 initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
 les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
 initial vide avec la commande :</p>
@@ -96,13 +104,13 @@ initial vide avec la commande :</p>
 <p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
 simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
 <p>Examinons deux exemples.</p>
-<h3>rebase -i</h3>
+<h4>rebase -i</h4>
 <p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
 mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
 c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
 je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
 contenu est accessible.</p>
-<h3>Travailler directement dans une branche</h3>
+<h4>Travailler directement dans une branche</h4>
 <p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
 des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
 merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
@@ -110,42 +118,55 @@ choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
 raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
 disparait de lui-même : mon premier commit de contenu (le deuxième dans le
 graphe donc) sera lui, dans une branche.</p>
-<h3>Conclusion</h3>
+<h4>Conclusion</h4>
 <p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
 graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
 vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
-Voir des mois après :).</p>
+Voir des mois après :).</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="la-difference-entre-hg-et-git.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="0072-liste_de_diffusion_pour_la_traduction_git.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="la-difference-entre-hg-et-git.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="0072-liste_de_diffusion_pour_la_traduction_git.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Installer git sur Ubuntu | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0003-installer_git_sur_ubuntu.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0003-installer_git_sur_ubuntu.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0003-installer_git_sur_ubuntu.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,24 +69,32 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Installer git sur Ubuntu</h1>
+    <h1 class="p-name" itemprop="headline name">Installer git sur Ubuntu</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2010-10-30T19:56:00">2010-10-30 19:56</time>
+        Publié: <time class="published dt-published" datetime="2010-10-30T19:56:00+00:00" itemprop="datePublished">2010-10-30 19:56</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/installation.html"><span class="badge badge-info">installation</span></a>
-            <a class="tag" href="../categories/ubuntu.html"><span class="badge badge-info">ubuntu</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/installation.html"><span class="badge badge-info">installation</span></a>
+        <a class="tag p-category" href="../categories/ubuntu.html"><span class="badge badge-info">ubuntu</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Rien de plus facile pour disposer de git sous Ubuntu :</p>
 <blockquote>
 <p>$ sudo aptitude install git</p>
 </blockquote>
@@ -104,38 +112,51 @@
 <p>$ sudo aptitude install git</p>
 </blockquote>
 <p>Installation de git. Comme la version de git disponible sur le PPA est plus réçente que la version officielle, c'est donc cette première qui sera choisie. Et voila. Moins de 48 heures aprés une sortie officielle de git, vous l'avez sur votre machine ! Les mainteneurs étant trés réactifs.</p>
-<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p>
+<p>Note : vous pouvez constater qu'ils maintiennent non seulement pour Maverick (10.10), mais aussi pour Lucid (10.04), Karmic (09.10), Jaunty (09.04), Hardy (08.04) et Dapper (06.06) ! Il existe même une version réçente pour Intrepid (07.04) même si cette dernière n'est plus offciellement maintenue (Hardy et Dapper étant des LTS, <em>Long Term Support</em>).</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="inscription-a-l-atelier-git-2-du-30-11-2010.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="0004-installer_git_sur_os_x.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="inscription-a-l-atelier-git-2-du-30-11-2010.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="0004-installer_git_sur_os_x.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

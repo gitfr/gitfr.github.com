@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 09:42:08 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git 1.8.4 publiée</title><link>http://gitfr.net/blog/posts/git-184-publiee.html</link><description>&lt;p&gt;La version 1.8.4 est sortie le 23 août. Beaucoup de choses au menu avec plus de
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><atom:link href="http://gitfr.net/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GitFR est mort, vive GitFR !</title><link>http://gitfr.net/posts/gitfr-est-mort.html</link><description>&lt;div&gt;&lt;p&gt;Lançé en 2010 pour expliquer l'apport de Git et des DVCS en général, il ne fait
+plus de doute pour tout le monde maintenant que ces outils sont indispensables.
+GitFR n'a donc plus de raison d'exister.&lt;/p&gt;
+&lt;p&gt;Le nom de domaine ne sera pas renouvellé et le compte Twitter sera détruit.&lt;/p&gt;
+&lt;p&gt;Merci à tous !&lt;/p&gt;&lt;/div&gt;</description><category>gitfr</category><guid>http://gitfr.net/posts/gitfr-est-mort.html</guid><pubDate>Sat, 22 Feb 2014 13:43:00 GMT</pubDate></item><item><title>Git 1.8.4 publiée</title><link>http://gitfr.net/posts/git-184-publiee.html</link><description>&lt;div&gt;&lt;p&gt;La version 1.8.4 est sortie le 23 août. Beaucoup de choses au menu avec plus de
 870 changements (venant de plus de 100 contributeurs). Le changelog est donc
 particulièrement bien fourni. Voici quelques points clés :&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -25,7 +29,7 @@ de lignes vides.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A noter que la version 2.0 devrait sortir l'année prochaine.&lt;/p&gt;
 &lt;div class="section" id="changelog"&gt;
-&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;h3&gt;Changelog&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p class="first"&gt;Cygwin port has been updated for more recent Cygwin 1.7.&lt;/p&gt;
@@ -449,7 +453,7 @@ updated to correctly take existing remote definitions into account.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-184-publiee.html</guid><pubDate>Mon, 02 Sep 2013 08:34:06 GMT</pubDate></item><item><title>Git 1.8.0 publiée</title><link>http://gitfr.net/blog/posts/git-1.8.0-publiee.html</link><description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-184-publiee.html</guid><pubDate>Mon, 02 Sep 2013 08:34:06 GMT</pubDate></item><item><title>Git 1.8.0 publiée</title><link>http://gitfr.net/posts/git-1.8.0-publiee.html</link><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.&lt;/p&gt;
 &lt;p&gt;Changements intéressants:
  * la configuration upstream d'une branche évolue: --set-upstream est dépréciée,
    et est remplacée par --set-upstream-to=reference.
@@ -479,7 +483,7 @@ updated to correctly take existing remote definitions into account.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Changelog&lt;/h3&gt;
+&lt;h4&gt;Changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;A credential helper for Win32 to allow access to the keychain of
@@ -761,13 +765,13 @@ changements intéressants.&lt;/p&gt;
 &lt;p&gt;"gitweb" did not give the correct committer timezone in its feed
    output due to a typo.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.8.0-publiee.html</guid><pubDate>Sun, 06 Jan 2013 21:43:00 GMT</pubDate></item><item><title>Présentation et atelier Git le 24 et 25/11 à Toulouse</title><link>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</link><description>&lt;p&gt;gitfr descend sur Toulouse à l'occasion de l'événement &lt;a href="http://www.capitoledulibre.org/2012/"&gt;Le Capitole du
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.8.0-publiee.html</guid><pubDate>Sun, 06 Jan 2013 21:43:00 GMT</pubDate></item><item><title>Présentation et atelier Git le 24 et 25/11 à Toulouse</title><link>http://gitfr.net/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</link><description>&lt;div&gt;&lt;p&gt;gitfr descend sur Toulouse à l'occasion de l'événement &lt;a href="http://www.capitoledulibre.org/2012/"&gt;Le Capitole du
 Libre&lt;/a&gt; avec non pas une présentation et
 un atelier mais &lt;strong&gt;deux&lt;/strong&gt; ateliers !&lt;/p&gt;
 &lt;p&gt;La présentation d'une heure s'appelle «Pourquoi Git ?», destinée aux gens
 pressés. Puis le lendemain deux ateliers «Initiation» et «Allez plus loin».&lt;/p&gt;
 &lt;p&gt;7h de Git au programme, si vous aviez envie de vous y mettre, c'est
-l'occasion !&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</guid><pubDate>Fri, 19 Oct 2012 06:37:00 GMT</pubDate></item><item><title>gitfr recherche un repreneur (ou simplement des bloggeurs)</title><link>http://gitfr.net/blog/posts/gitfr-recherche-un-repreneur.html</link><description>&lt;p&gt;Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
+l'occasion !&lt;/p&gt;&lt;/div&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/posts/presentation-et-atelier-git-le-24-et-25-a-toulouse.html</guid><pubDate>Fri, 19 Oct 2012 06:37:00 GMT</pubDate></item><item><title>gitfr recherche un repreneur (ou simplement des bloggeurs)</title><link>http://gitfr.net/posts/gitfr-recherche-un-repreneur.html</link><description>&lt;div&gt;&lt;p&gt;Lançé début octobre 2010, gitfr avait pour mission de sensibiliser les
 informaticiens Français aux DVCS en général, et à Git en particulier.
 Et avec bientôt une trentaine de présentations et une dizaine
 d'atelier, je pense avoir réussi à transmettre un peu de mes connaissances
@@ -780,7 +784,7 @@ le flambeau.&lt;/p&gt;
 &lt;p&gt;Si cela vous intéresse : seb@gitfr.net.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : le coût est de 15€ / an pour le nom de domaine que je prends à ma
 charge, le reste étant hébergé sur GitHub. Le site peut être revue de fond en
-comble si besoin.&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/gitfr-recherche-un-repreneur.html</guid><pubDate>Fri, 19 Oct 2012 06:36:00 GMT</pubDate></item><item><title>Git 1.7.12 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.12-publiee.html</link><description>&lt;p&gt;Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :&lt;/p&gt;
+comble si besoin.&lt;/p&gt;&lt;/div&gt;</description><category>gitfr</category><guid>http://gitfr.net/posts/gitfr-recherche-un-repreneur.html</guid><pubDate>Fri, 19 Oct 2012 06:36:00 GMT</pubDate></item><item><title>Git 1.7.12 publiée</title><link>http://gitfr.net/posts/git-1.7.12-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Une option &lt;code&gt;--root&lt;/code&gt; à rebase pour modifier aussi le commit root.&lt;/p&gt;
@@ -799,7 +803,7 @@ comble si besoin.&lt;/p&gt;</description><category>gitfr</category><guid>http://
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Git can be told to normalize pathnames it read from readdir(3) and
    all arguments it got from the command line into precomposed UTF-8
@@ -940,7 +944,7 @@ changements intéressants.&lt;/p&gt;
    when the human-readable committer name was given insufficiently by
    getpwent(3).&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.12-publiee.html</guid><pubDate>Fri, 24 Aug 2012 02:54:00 GMT</pubDate></item><item><title>Retour sur le BreizhCamp 2012</title><link>http://gitfr.net/blog/posts/retour-sur-le-breizhcamp-2012.html</link><description>&lt;p&gt;Les organisateurs du &lt;a href="http://www.breizhcamp.org/"&gt;BreihCamp&lt;/a&gt; m'ont proposé de
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.12-publiee.html</guid><pubDate>Fri, 24 Aug 2012 02:54:00 GMT</pubDate></item><item><title>Retour sur le BreizhCamp 2012</title><link>http://gitfr.net/posts/retour-sur-le-breizhcamp-2012.html</link><description>&lt;div&gt;&lt;p&gt;Les organisateurs du &lt;a href="http://www.breizhcamp.org/"&gt;BreihCamp&lt;/a&gt; m'ont proposé de
 monter un atelier Git de 3 heures le jeudi 14 juin. J'ai fait 2 erreurs :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -972,7 +976,7 @@ les commandes a taper.&lt;/p&gt;
 &lt;p&gt;Cela peut donc donner une journée complète de Git (pres + atelier débutant +
 atelier intermédiaire). Mais avec plus de 20 présentations et 7 ateliers,
 cela ne me fait pas vraiment peur. J'ai d'ailleurs totalement improvisé
-cet atelier / pres de 3h :).&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/retour-sur-le-breizhcamp-2012.html</guid><pubDate>Sun, 01 Jul 2012 02:54:00 GMT</pubDate></item><item><title>Git 1.7.11 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.11-publiee.html</link><description>&lt;p&gt;Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :&lt;/p&gt;
+cet atelier / pres de 3h :).&lt;/p&gt;&lt;/div&gt;</description><category>gitfr</category><guid>http://gitfr.net/posts/retour-sur-le-breizhcamp-2012.html</guid><pubDate>Sun, 01 Jul 2012 02:54:00 GMT</pubDate></item><item><title>Git 1.7.11 publiée</title><link>http://gitfr.net/posts/git-1.7.11-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Fini la configuration par défaut qui pousse toutes les branches connues
@@ -992,7 +996,7 @@ cet atelier / pres de 3h :).&lt;/p&gt;</description><category>gitfr</category><g
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;A new mode for push, "simple", which is a cross between "current"
@@ -1145,7 +1149,7 @@ changements intéressants.&lt;/p&gt;
   execution bits whose contents is unmodified, which was not quite
   right.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.11-publiee.html</guid><pubDate>Sun, 01 Jul 2012 02:52:00 GMT</pubDate></item><item><title>Git 1.7.10 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.10-publiee.html</link><description>&lt;p&gt;Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.11-publiee.html</guid><pubDate>Sun, 01 Jul 2012 02:52:00 GMT</pubDate></item><item><title>Git 1.7.10 publiée</title><link>http://gitfr.net/posts/git-1.7.10-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
 voulais initialement tester cette version avant de publier l'annonce mais je
 n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :&lt;/p&gt;
 &lt;ul&gt;
@@ -1162,7 +1166,7 @@ n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :&lt;/p&gt
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants dans votre façon de travailler avec Git.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;various "gitk" updates.&lt;/p&gt;
@@ -1477,12 +1481,8 @@ changements intéressants dans votre façon de travailler avec Git.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;"gitweb" learned to show side-by-side diff.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.10-publiee.html</guid><pubDate>Sun, 15 Apr 2012 22:52:00 GMT</pubDate></item><item><title>Présentation Git le 12/04 à Lausanne</title><link>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-lausanne.html</link><description>&lt;p&gt;gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.10-publiee.html</guid><pubDate>Sun, 15 Apr 2012 22:52:00 GMT</pubDate></item><item><title>Présentation Git le 12/04 à Lausanne</title><link>http://gitfr.net/posts/presentation-git-le-12-04-a-lausanne.html</link><description>&lt;div&gt;&lt;p&gt;gitfr sort de France pour diffuser la bonne parole en Suisse, et plus
 précisemment à Lausanne. C'est organisé par le JUGL, le &lt;em&gt;Java User Group de
 Lausanne&lt;/em&gt;, et la présentation démarre à 18h30 dans &lt;a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/OCTOLausanne"&gt;les locaux
 d'Octo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Toutes les infos sur le site du &lt;a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/WebHome"&gt;JUGL&lt;/a&gt;.&lt;/p&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/blog/posts/presentation-git-le-12-04-a-lausanne.html</guid><pubDate>Fri, 30 Mar 2012 09:40:00 GMT</pubDate></item><item><title>Mise à jour de la présentation Git</title><link>http://gitfr.net/blog/posts/mise-a-jour-de-la-presentation-git.html</link><description>&lt;p&gt;Demander à cor et à cri depuis de mois, j'ai mis à jour la présentation 
-le &lt;a href="https://github.com/sdouche/showoff-presentation-git"&gt;dépôt Git&lt;/a&gt; et la
-&lt;a href="http://presentation-git.heroku.com/"&gt;présentation en ligne&lt;/a&gt;. Il y'a malheureusement
-des petits soucis d'affichage des images mais un rafraichissement règle en
-général le problème.&lt;/p&gt;</description><category>gitfr</category><guid>http://gitfr.net/blog/posts/mise-a-jour-de-la-presentation-git.html</guid><pubDate>Wed, 01 Feb 2012 00:50:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Toutes les infos sur le site du &lt;a href="http://jugl.myxwiki.org/xwiki/bin/view/Main/WebHome"&gt;JUGL&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>gitfr</category><category>atelier</category><guid>http://gitfr.net/posts/presentation-git-le-12-04-a-lausanne.html</guid><pubDate>Fri, 30 Mar 2012 09:40:00 GMT</pubDate></item></channel></rss>

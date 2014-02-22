@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Annuler des modifications | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/0053-annuler_des_modifications.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="0053-annuler_des_modifications.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="0053-annuler_des_modifications.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,29 +69,37 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Annuler des modifications</h1>
+    <h1 class="p-name" itemprop="headline name">Annuler des modifications</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2011-04-24T23:28:00">2011-04-24 23:28</time>
+        Publié: <time class="published dt-published" datetime="2011-04-24T23:28:00+00:00" itemprop="datePublished">2011-04-24 23:28</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/git-revert.html"><span class="badge badge-info">git-revert</span></a>
-            <a class="tag" href="../categories/git-reset.html"><span class="badge badge-info">git-reset</span></a>
-            <a class="tag" href="../categories/git-checkout.html"><span class="badge badge-info">git-checkout</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/git-revert.html"><span class="badge badge-info">git-revert</span></a>
+        <a class="tag p-category" href="../categories/git-reset.html"><span class="badge badge-info">git-reset</span></a>
+        <a class="tag p-category" href="../categories/git-checkout.html"><span class="badge badge-info">git-checkout</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Vous pouvez annuler votre travail de plusieurs manières.</p>
-<h3>git revert</h3>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Vous pouvez annuler votre travail de plusieurs manières.</p>
+<h4>git revert</h4>
 <p>La commande <code>git revert $commit</code> permet, comme son l'indique, d'inverser un commit. C'est la commande à privilégier quand vous avez <strong>déjà poussé les modifications</strong> sur un dépôt public. Vous pouvez spécifiez plusieurs commits avec un range, ou modifier le message de commit avec l'option <code>-e</code>. L'option <code>-n</code> permet de ne pas créer de commit, permettant de vérifier le résultat.</p>
 <p>Pas grand chose à dire de plus sur cette commande qui est très simple.</p>
-<h3>git reset</h3>
+<h4>git reset</h4>
 <p>La commande reset est trés utile, car pouvant être employée de plusieurs manières :</p>
 <ul>
 <li>
@@ -125,42 +133,55 @@
 <p><img alt="" src="http://media.tumblr.com/tumblr_lk6cuf9fCF1qdkaiq.png"></p>
 <p>Si je veux revenir au commit C, j'utilise l'option <em>soft</em>. Si je veux également modifier l'index, j'utilise l'option <em>mixed</em>. Et enfin si je veux également modifier le répertoire de travail, j'utilise l'option <em>hard</em>.</p>
 <p>J'utilise beaucoup le  <em>reset hard</em> : supprimer des commits superflus, ou un merge / rebase raté, etc. Mais attention, cela veut dire que cela supprime toute trace de vos modifications. Si ces dernières dans un commit, le <strong>reflog</strong> est la pour vous secourir. Mais sinon, adieu à votre travail...</p>
-<h3>git checkout</h3>
+<h4>git checkout</h4>
 <p>Et pour être complet, la dernière méthode consiste tout simplement à faire un <code>checkout $path</code>. C'est dans le cas ou vous souhaitez non pas repartir d'un ancien commit (comme  <code>revert</code> ou <code>reset</code>) mais de la version qui est dans l'index (si elle existe, sinon il ne se passe rien).</p>
-<h3>Conclusion</h3>
+<h4>Conclusion</h4>
 <p>La maitrise de l'index est nécessaire pour comprendre toutes les subtilités de ces commandes. Même si cela peut paraître un peu compliqué au premier abord, vous verrez aprés quelques jours d'utilisation que ce n'est vraiment pas sorcier :).</p>
-<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p>
+<p>Et comme d'habitude, n'oubliez pas de lire le manuel (je me répète non ?).</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="0052-recherche_de_salles.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="git-1.7.5-publiee.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="0052-recherche_de_salles.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="git-1.7.5-publiee.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

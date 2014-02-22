@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR (configuration)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 08:29:49 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Comportement par défaut du git push</title><link>http://gitfr.net/blog/posts/comportement-par-defaut-du-git-push.html</link><description>&lt;p&gt;Git est hautement configurable, avec des dizaines de variables possibles
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR (configuration)</title><link>http://gitfr.net/blog</link><description></description><atom:link href="http://gitfr.net/categories/configuration.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Comportement par défaut du git push</title><link>http://gitfr.net/posts/comportement-par-defaut-du-git-push.html</link><description>&lt;div&gt;&lt;p&gt;Git est hautement configurable, avec des dizaines de variables possibles
 dans le fichier de configuration, la longueur de l'aide de l'option config
 donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
 sur les différentes possibilités de configuration, je vous propose plutôt
@@ -48,7 +48,7 @@ To push the current branch and set the remote as upstream, use&lt;/p&gt;
 la branche distante test sur origin avec votre branche locale test. Vous verrez
 immédiatement un changement sur votre shell avec l'information &lt;strong&gt;u=&lt;/strong&gt;, qui 
 indique que vos deux branches sont synchronisées.&lt;/p&gt;
-&lt;h3&gt;Rappel sur le tracking&lt;/h3&gt;
+&lt;h4&gt;Rappel sur le tracking&lt;/h4&gt;
 &lt;p&gt;Le tracking consiste à &lt;em&gt;associer&lt;/em&gt; une branche locale et une branche distante
 (dite &lt;em&gt;upstream&lt;/em&gt; dans la terminologie Git), ce qui informe Git de la branche
 distante à utiliser lors d'un &lt;code&gt;git pull&lt;/code&gt;. Si vous ne comprenez pas pourquoi
@@ -61,7 +61,7 @@ simplement que Git le fait pour vous la plupart du temps :&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;C'est donc (la plupart du temps) dans le cas ou créer une nouvelle branche en
 locale sans existance préalable sur le serveur que vous devez explicitement
-faire cette association.&lt;/p&gt;</description><category>git</category><category>git-push</category><category>git-pull</category><category>refspec</category><category>configuration</category><guid>http://gitfr.net/blog/posts/comportement-par-defaut-du-git-push.html</guid><pubDate>Sun, 11 Dec 2011 23:19:00 GMT</pubDate></item><item><title>Des exemples de fichiers gitignore</title><link>http://gitfr.net/blog/posts/0012-des_exemples_de_fichiers_gitignore.html</link><description>&lt;p&gt;Le projet &lt;a href="http://github.com/github/gitignore"&gt;gitignore&lt;/a&gt;, lancé par &lt;em&gt;GitHub&lt;/em&gt;, est une collection de fichiers &lt;strong&gt;gitignore&lt;/strong&gt;. Vous trouverez des exemples pour :&lt;/p&gt;
+faire cette association.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>git-push</category><category>git-pull</category><category>refspec</category><category>configuration</category><guid>http://gitfr.net/posts/comportement-par-defaut-du-git-push.html</guid><pubDate>Sun, 11 Dec 2011 23:19:00 GMT</pubDate></item><item><title>Des exemples de fichiers gitignore</title><link>http://gitfr.net/posts/0012-des_exemples_de_fichiers_gitignore.html</link><description>&lt;div&gt;&lt;p&gt;Le projet &lt;a href="http://github.com/github/gitignore"&gt;gitignore&lt;/a&gt;, lancé par &lt;em&gt;GitHub&lt;/em&gt;, est une collection de fichiers &lt;strong&gt;gitignore&lt;/strong&gt;. Vous trouverez des exemples pour :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;des langages (&lt;strong&gt;Python&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt;, &lt;strong&gt;Scala&lt;/strong&gt;...)&lt;/li&gt;
 &lt;li&gt;des frameworks (&lt;strong&gt;Symphony&lt;/strong&gt;,  &lt;strong&gt;Rails&lt;/strong&gt;...)&lt;/li&gt;
@@ -69,7 +69,7 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;li&gt;des systèmes d'exploitation (&lt;strong&gt;Linux&lt;/strong&gt;, &lt;strong&gt;Windows&lt;/strong&gt;...)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : ces deux dernières catégories se trouvent dans le répertoire &lt;em&gt;Global&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Pour plus d'informations, (re)lisez le billet sur &lt;a href="http://blog.gitfr.net/post/1475460682/eviter-de-commiter-des-fichiers-indesirables"&gt;gitignore&lt;/a&gt;.&lt;/p&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/0012-des_exemples_de_fichiers_gitignore.html</guid><pubDate>Wed, 10 Nov 2010 18:50:00 GMT</pubDate></item><item><title>Améliorer sa productivité avec un beau shell</title><link>http://gitfr.net/blog/posts/ameliorer-sa-productivite-avec-un-beau-shell.html</link><description>&lt;p&gt;Git est avant un outil qu'on utilise en &lt;strong&gt;ligne de commande&lt;/strong&gt;. Mais par défaut, le shell ne vous indique pas grand chose de la part de Git, en fait rien du tout :). Il faut donc taper des commandes Git pour connaitre l'état de son dépôt. Au minimum :&lt;/p&gt;
+&lt;p&gt;Pour plus d'informations, (re)lisez le billet sur &lt;a href="http://blog.gitfr.net/post/1475460682/eviter-de-commiter-des-fichiers-indesirables"&gt;gitignore&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/0012-des_exemples_de_fichiers_gitignore.html</guid><pubDate>Wed, 10 Nov 2010 18:50:00 GMT</pubDate></item><item><title>Améliorer sa productivité avec un beau shell</title><link>http://gitfr.net/posts/ameliorer-sa-productivite-avec-un-beau-shell.html</link><description>&lt;div&gt;&lt;p&gt;Git est avant un outil qu'on utilise en &lt;strong&gt;ligne de commande&lt;/strong&gt;. Mais par défaut, le shell ne vous indique pas grand chose de la part de Git, en fait rien du tout :). Il faut donc taper des commandes Git pour connaitre l'état de son dépôt. Au minimum :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git status&lt;/code&gt; pour l'état de son &lt;strong&gt;répertoire de travail&lt;/strong&gt; et de son &lt;strong&gt;index&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git branch&lt;/code&gt; pour connaitre dans quelle &lt;strong&gt;branche&lt;/strong&gt; on se trouve&lt;/li&gt;
@@ -82,7 +82,7 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;li&gt;et... le fichier de complétion de Git&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Et oui ! Ce dernier, livré en standard avec Git, sait aussi faire de l'affichage, et il est même trés bon ! Passage en revue de ces deux solutions.&lt;/p&gt;
-&lt;h3&gt;Git Prompt&lt;/h3&gt;
+&lt;h4&gt;Git Prompt&lt;/h4&gt;
 &lt;p&gt;L'avantage est qu'il est, malgré son nom, compatible avec &lt;strong&gt;SVN&lt;/strong&gt; et &lt;strong&gt;Hg&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Ses fonctionnalités :&lt;/p&gt;
 &lt;ul&gt;
@@ -143,7 +143,7 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;ul&gt;
 &lt;li&gt;Editez le fichier ~/.git-prompt.conf` pour configurer selon vos envies&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Git Completion&lt;/h3&gt;
+&lt;h4&gt;Git Completion&lt;/h4&gt;
 &lt;p&gt;Le fichier de complétion possède tout le nécessaire pour afficher des informations sur votre dépôt, il est même bien plus complet sur certains aspects que &lt;em&gt;git-prompt&lt;/em&gt;. Mais ne vous attendait pas à l'utiliser pour autre chose que Git. Il faudra donc choisir selon vos besoins.&lt;/p&gt;
 &lt;p&gt;En échange, il vous offre pas mal de possibilités, il affiche :&lt;/p&gt;
 &lt;ul&gt;
@@ -207,13 +207,13 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;p&gt;&lt;code&gt;PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Ajouter &lt;code&gt;\u@\h&lt;/code&gt; aprés le &lt;strong&gt;[&lt;/strong&gt; à ma configuration si vous voulez associer la configuration de base avec mon jeu de couleurs.&lt;/p&gt;
-&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;h4&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Les informations Git s'affichent &lt;strong&gt;uniquement&lt;/strong&gt; dans le cas ou vous êtes dans un dépôt Git&lt;/li&gt;
 &lt;li&gt;Pour en savoir plus sur les couleurs du prompt, je vous conseille ce &lt;a href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt"&gt;lien&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;pour utiliser &lt;em&gt;Git Completion&lt;/em&gt;, il faut bien évidemment que ce dernier soit installé (voir à se sujet un précédent &lt;a href="http://blog.gitfr.net/post/1475820312/taper-plus-vite-avec-la-completion"&gt;billet&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Mon shell idéal&lt;/h3&gt;
+&lt;h4&gt;Mon shell idéal&lt;/h4&gt;
 &lt;p&gt;Cela serait une combinaison des 2 :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;la possibilité de l'utiliser avec Hg, Bzr et Git&lt;/li&gt;
@@ -222,8 +222,8 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;li&gt;affichage du nombre de patchs dans ma pile de Stash&lt;/li&gt;
 &lt;li&gt;et surtout le &lt;strong&gt;choix&lt;/strong&gt; des couleurs pour chaque élement visuel. Imaginez par exemple du rouge pour afficher un décalage avec &lt;em&gt;upstream&lt;/em&gt;, du bleu si j'ai du &lt;em&gt;stash&lt;/em&gt;, etc&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Avoir en permanence l'état de votre dépôt est un plus &lt;strong&gt;indéniable&lt;/strong&gt;, que je vous &lt;strong&gt;encourage fortement&lt;/strong&gt; à installer ! Il m'est arrivé plusieurs fois de commiter dans la mauvaise branche, ou d'oublier de pusher. Avec un beau shell, c'est &lt;strong&gt;fini&lt;/strong&gt; (enfin, cela arrive beaucoup moins souvent :).&lt;/p&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/ameliorer-sa-productivite-avec-un-beau-shell.html</guid><pubDate>Sat, 06 Nov 2010 04:15:00 GMT</pubDate></item><item><title>Simplifiez vous la vie avec les alias</title><link>http://gitfr.net/blog/posts/simplifiez-vous-la-vie-avec-les-alias.html</link><description>&lt;p&gt;Git est un couteau Suisse, avec beaucoup de sous commandes et d'options. Il n'est pas rare de taper des lignes assez fastidieuses comme celle ci :&lt;/p&gt;
+&lt;h4&gt;Conclusion&lt;/h4&gt;
+&lt;p&gt;Avoir en permanence l'état de votre dépôt est un plus &lt;strong&gt;indéniable&lt;/strong&gt;, que je vous &lt;strong&gt;encourage fortement&lt;/strong&gt; à installer ! Il m'est arrivé plusieurs fois de commiter dans la mauvaise branche, ou d'oublier de pusher. Avec un beau shell, c'est &lt;strong&gt;fini&lt;/strong&gt; (enfin, cela arrive beaucoup moins souvent :).&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/ameliorer-sa-productivite-avec-un-beau-shell.html</guid><pubDate>Sat, 06 Nov 2010 04:15:00 GMT</pubDate></item><item><title>Simplifiez vous la vie avec les alias</title><link>http://gitfr.net/posts/simplifiez-vous-la-vie-avec-les-alias.html</link><description>&lt;div&gt;&lt;p&gt;Git est un couteau Suisse, avec beaucoup de sous commandes et d'options. Il n'est pas rare de taper des lignes assez fastidieuses comme celle ci :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;$ git log --graph --abbrev-commit --date=relative&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -254,26 +254,7 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;li&gt;disposer d'un environnement à votre main, avec des raccourcis qui vous parlent&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Pour illuster le deuxieme point, je préfère taper &lt;strong&gt;undo&lt;/strong&gt; que &lt;code&gt;git reset --hard&lt;/code&gt;. C'est un choix purement personnel. A titre d'exemple, mon fichier contient 36 alias.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Cerise sur le gateau, la complétion fonctionne aussi avec les alias.&lt;/p&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/simplifiez-vous-la-vie-avec-les-alias.html</guid><pubDate>Thu, 04 Nov 2010 03:33:00 GMT</pubDate></item><item><title>Eviter de commiter des fichiers indésirables</title><link>http://gitfr.net/blog/posts/eviter-de-commiter-des-fichiers-indesirables.html</link><description>&lt;p&gt;Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier &lt;code&gt;~./gitignore&lt;/code&gt;. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un &lt;code&gt;git add .&lt;/code&gt;, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.&lt;/p&gt;
-&lt;p&gt;La configuration de ce fichier est trés simple :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1 ligne par exclusion&lt;/li&gt;
-&lt;li&gt;si c'est un répertoire, mettre son nom (comme &lt;code&gt;egg&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;si c'est un fichier, ajouter un wildcard (comme &lt;code&gt;*.egg&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Enfin, il faut modifier sa configuration Git pour utiliser ce filtre d'exclusion sur tous les dépôts avec la ligne &lt;code&gt;excludesfile=/path/to/.gitignore&lt;/code&gt; dans la section &lt;code&gt;[core]&lt;/code&gt; (remplacer "/path/to" par le chemin vers votre fichier). Ce qui donne :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;[core]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;excludesfile=/home/sdouche/.gitignore&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Disposer d'un gitignore à deux intérêts :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;éviter de commiter des fichiers indésirables&lt;/li&gt;
-&lt;li&gt;ne pas être surchargé d'informations inutiles (présence de fichier &lt;em&gt;non suivis&lt;/em&gt;, &lt;strong&gt;untracked&lt;/strong&gt; en anglais)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Nous allons voir plus tard que c'est pénible quand nous avons un &lt;strong&gt;prompt&lt;/strong&gt; qui affiche &lt;strong&gt;en permanence&lt;/strong&gt; la présence de ces fameux fichiers indésirables.&lt;/p&gt;
-&lt;p&gt;Pour plus d'information sur gitignore, je vous conseille la lecture de la &lt;a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"&gt;doc&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Note : il est bien sûr possible de disposer d'un fichier &lt;em&gt;gitignore&lt;/em&gt; par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.&lt;/p&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/eviter-de-commiter-des-fichiers-indesirables.html</guid><pubDate>Thu, 04 Nov 2010 02:37:00 GMT</pubDate></item><item><title>Taper plus vite avec la complétion</title><link>http://gitfr.net/blog/posts/taper-plus-vite-avec-la-completion.html</link><description>&lt;p&gt;Le petit doigt de la main gauche est pour un &lt;strong&gt;Unixien&lt;/strong&gt; un doigt important (bon, vous pouvez me rétorquer que &lt;em&gt;tous&lt;/em&gt; les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche &lt;strong&gt;tab&lt;/strong&gt;. Cette touche permet sous Unix de faire la &lt;strong&gt;complétion&lt;/strong&gt;. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex &lt;code&gt;--exclude&lt;/code&gt; de la commande &lt;code&gt;diff&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Cerise sur le gateau, la complétion fonctionne aussi avec les alias.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/simplifiez-vous-la-vie-avec-les-alias.html</guid><pubDate>Thu, 04 Nov 2010 03:33:00 GMT</pubDate></item><item><title>Taper plus vite avec la complétion</title><link>http://gitfr.net/posts/taper-plus-vite-avec-la-completion.html</link><description>&lt;div&gt;&lt;p&gt;Le petit doigt de la main gauche est pour un &lt;strong&gt;Unixien&lt;/strong&gt; un doigt important (bon, vous pouvez me rétorquer que &lt;em&gt;tous&lt;/em&gt; les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche &lt;strong&gt;tab&lt;/strong&gt;. Cette touche permet sous Unix de faire la &lt;strong&gt;complétion&lt;/strong&gt;. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex &lt;code&gt;--exclude&lt;/code&gt; de la commande &lt;code&gt;diff&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;Comment cela marche t'il avec Git ? Voici quelques exemples :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;$ git &amp;lt;TAB&amp;gt;&amp;lt;TAB&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -301,11 +282,11 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;/blockquote&gt;
 &lt;p&gt;Comme vous pouvez le constater, c'est un gain de temps incroyable. Pour la petite histoire, c'est la fréquence d'utilisation de cette touche qui me donne une première idée de la familiarité d'un candidat avec Unix en entretien d'embauche :).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : vous constaterez peut être que toutes les sous commandes ou options ne sont pas représentées dans la complétion. C'est un choix (ou non, par exemple un oubli ?) des développeurs du fichier de complétion. Il faut en effet modifier manuellement ce fichier à chaque nouvelle version (travail un poil fastidieux, pour vous donner une idée le fichier de la version 1.7.3.2 fait 2419 lignes), il se peut donc que les développeurs fassent des choix. Ceci est aussi valide pour les commandes Shell en général.&lt;/p&gt;
-&lt;h3&gt;Activer la complétion&lt;/h3&gt;
+&lt;h4&gt;Activer la complétion&lt;/h4&gt;
 &lt;p&gt;C'est assez simple, il suffit d'ajouter le fichier de complétion Git soit dans votre profil (fichier &lt;code&gt;~/.bashrc&lt;/code&gt;), soit dans la configuration globale de bash_completion du système. La plupart du temps, cette configuration est automatique à l'installation de Git.&lt;/p&gt;
-&lt;h3&gt;Sous Ubuntu&lt;/h3&gt;
+&lt;h4&gt;Sous Ubuntu&lt;/h4&gt;
 &lt;p&gt;Le fichier de complétion est automatiquement activé sous Ubuntu car le fichier &lt;code&gt;git&lt;/code&gt; est placé dans le répertoire &lt;code&gt;/etc/bash_completion.d/&lt;/code&gt; par le paquet git lui même. Le paquet &lt;code&gt;bash-completion&lt;/code&gt; étant lui installé par défaut.&lt;/p&gt;
-&lt;h3&gt;Sous Mac OS X&lt;/h3&gt;
+&lt;h4&gt;Sous Mac OS X&lt;/h4&gt;
 &lt;p&gt;Il est nécessaire d'installer (avec Homebrew ou MacPorts) le paquet &lt;code&gt;bash_completion&lt;/code&gt; si ce n'est pas deja fait, avec la commande :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;$ sudo port install bash_completion&lt;/p&gt;
@@ -319,8 +300,27 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;p&gt;&lt;code&gt;source ./path/to/git-completion.bash&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Changez &lt;code&gt;/path/to&lt;/code&gt; avec le répertoire qui contient le fichier (qui est dofférent selon la méthode d'installation).&lt;/p&gt;
-&lt;h3&gt;Sous Windows&lt;/h3&gt;
-&lt;p&gt;Comme sous Ubuntu, la complétion est activé par défaut avec &lt;em&gt;msysgit&lt;/em&gt;.&lt;/p&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/taper-plus-vite-avec-la-completion.html</guid><pubDate>Thu, 04 Nov 2010 02:37:00 GMT</pubDate></item><item><title>Configuration minimale pour démarrer</title><link>http://gitfr.net/blog/posts/configuration-minimale-pour-demarrer.html</link><description>&lt;p&gt;La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : &lt;/p&gt;
+&lt;h4&gt;Sous Windows&lt;/h4&gt;
+&lt;p&gt;Comme sous Ubuntu, la complétion est activé par défaut avec &lt;em&gt;msysgit&lt;/em&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/taper-plus-vite-avec-la-completion.html</guid><pubDate>Thu, 04 Nov 2010 02:37:00 GMT</pubDate></item><item><title>Eviter de commiter des fichiers indésirables</title><link>http://gitfr.net/posts/eviter-de-commiter-des-fichiers-indesirables.html</link><description>&lt;div&gt;&lt;p&gt;Pour éviter d'historiser des fichiers qui ne nous intéresse pas, il est nécessaire de configurer le fichier &lt;code&gt;~./gitignore&lt;/code&gt;. Bien évidemment, le contenu de ce fichier dépendra fortement du contexte (éditeur utilisé, langage, os...). Personnellement, mon fichier fait 30 lignes, je n'ai donc plus me soucier quand je fais un &lt;code&gt;git add .&lt;/code&gt;, et je n'hésite pas à ajouter une exclusion dés que le besoin s'en fait sentir.&lt;/p&gt;
+&lt;p&gt;La configuration de ce fichier est trés simple :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 ligne par exclusion&lt;/li&gt;
+&lt;li&gt;si c'est un répertoire, mettre son nom (comme &lt;code&gt;egg&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;si c'est un fichier, ajouter un wildcard (comme &lt;code&gt;*.egg&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enfin, il faut modifier sa configuration Git pour utiliser ce filtre d'exclusion sur tous les dépôts avec la ligne &lt;code&gt;excludesfile=/path/to/.gitignore&lt;/code&gt; dans la section &lt;code&gt;[core]&lt;/code&gt; (remplacer "/path/to" par le chemin vers votre fichier). Ce qui donne :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;[core]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;excludesfile=/home/sdouche/.gitignore&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Disposer d'un gitignore à deux intérêts :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;éviter de commiter des fichiers indésirables&lt;/li&gt;
+&lt;li&gt;ne pas être surchargé d'informations inutiles (présence de fichier &lt;em&gt;non suivis&lt;/em&gt;, &lt;strong&gt;untracked&lt;/strong&gt; en anglais)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nous allons voir plus tard que c'est pénible quand nous avons un &lt;strong&gt;prompt&lt;/strong&gt; qui affiche &lt;strong&gt;en permanence&lt;/strong&gt; la présence de ces fameux fichiers indésirables.&lt;/p&gt;
+&lt;p&gt;Pour plus d'information sur gitignore, je vous conseille la lecture de la &lt;a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"&gt;doc&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note : il est bien sûr possible de disposer d'un fichier &lt;em&gt;gitignore&lt;/em&gt; par dépôt, utile quand on veut s'assurer que les développeurs (par exemple sur un projet Libre) ne feront pas la bétise de commiter ces fichiers à cause d'une mauvaise configuration.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/eviter-de-commiter-des-fichiers-indesirables.html</guid><pubDate>Thu, 04 Nov 2010 02:37:00 GMT</pubDate></item><item><title>Configuration minimale pour démarrer</title><link>http://gitfr.net/posts/configuration-minimale-pour-demarrer.html</link><description>&lt;div&gt;&lt;p&gt;La configuration minimale se résume à donner son nom et son adresse email (pour indiquer qui est le "propriétaire" du commit) : &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;$ git config --global user.name "Sebastien Douche"&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$ git config --global user.email sdouche@gmail.com&lt;/code&gt;&lt;/p&gt;
@@ -339,4 +339,4 @@ faire cette association.&lt;/p&gt;</description><category>git</category><categor
 &lt;li&gt;
 &lt;p&gt;Vous pouvez éditer directement les fichiers, le résultat est strictement identique. D'ailleurs je vous conseille d'éditer les fichiers pour voir à quoi ils ressemblent (avant et aprés modification).&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/blog/posts/configuration-minimale-pour-demarrer.html</guid><pubDate>Thu, 04 Nov 2010 02:01:00 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>configuration</category><guid>http://gitfr.net/posts/configuration-minimale-pour-demarrer.html</guid><pubDate>Thu, 04 Nov 2010 02:01:00 GMT</pubDate></item></channel></rss>

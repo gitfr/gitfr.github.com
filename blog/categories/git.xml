@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>GitFR (git)</title><link>http://gitfr.net/blog</link><description>Site francophone sur Git.</description><lastBuildDate>Mon, 02 Sep 2013 09:42:08 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git 1.8.4 publiée</title><link>http://gitfr.net/blog/posts/git-184-publiee.html</link><description>&lt;p&gt;La version 1.8.4 est sortie le 23 août. Beaucoup de choses au menu avec plus de
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>GitFR (git)</title><link>http://gitfr.net/blog</link><description></description><atom:link href="http://gitfr.net/categories/git.xml" type="application/rss+xml" rel="self"></atom:link><language>fr</language><lastBuildDate>Sat, 22 Feb 2014 14:49:46 GMT</lastBuildDate><generator>Nikola &lt;http://getnikola.com/&gt;</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git 1.8.4 publiée</title><link>http://gitfr.net/posts/git-184-publiee.html</link><description>&lt;div&gt;&lt;p&gt;La version 1.8.4 est sortie le 23 août. Beaucoup de choses au menu avec plus de
 870 changements (venant de plus de 100 contributeurs). Le changelog est donc
 particulièrement bien fourni. Voici quelques points clés :&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -25,7 +25,7 @@ de lignes vides.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A noter que la version 2.0 devrait sortir l'année prochaine.&lt;/p&gt;
 &lt;div class="section" id="changelog"&gt;
-&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;h3&gt;Changelog&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p class="first"&gt;Cygwin port has been updated for more recent Cygwin 1.7.&lt;/p&gt;
@@ -449,7 +449,7 @@ updated to correctly take existing remote definitions into account.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-184-publiee.html</guid><pubDate>Mon, 02 Sep 2013 08:34:06 GMT</pubDate></item><item><title>Git 1.8.0 publiée</title><link>http://gitfr.net/blog/posts/git-1.8.0-publiee.html</link><description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-184-publiee.html</guid><pubDate>Mon, 02 Sep 2013 08:34:06 GMT</pubDate></item><item><title>Git 1.8.0 publiée</title><link>http://gitfr.net/posts/git-1.8.0-publiee.html</link><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : Git 1.8.0 est sortie le 22 octobre, désolé pour le retard.&lt;/p&gt;
 &lt;p&gt;Changements intéressants:
  * la configuration upstream d'une branche évolue: --set-upstream est dépréciée,
    et est remplacée par --set-upstream-to=reference.
@@ -479,7 +479,7 @@ updated to correctly take existing remote definitions into account.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Changelog&lt;/h3&gt;
+&lt;h4&gt;Changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;A credential helper for Win32 to allow access to the keychain of
@@ -761,7 +761,7 @@ changements intéressants.&lt;/p&gt;
 &lt;p&gt;"gitweb" did not give the correct committer timezone in its feed
    output due to a typo.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.8.0-publiee.html</guid><pubDate>Sun, 06 Jan 2013 21:43:00 GMT</pubDate></item><item><title>Git 1.7.12 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.12-publiee.html</link><description>&lt;p&gt;Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :&lt;/p&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.8.0-publiee.html</guid><pubDate>Sun, 06 Jan 2013 21:43:00 GMT</pubDate></item><item><title>Git 1.7.12 publiée</title><link>http://gitfr.net/posts/git-1.7.12-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Quatre changements intéressants dans cette 1.7.12 qui date du 20 août :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Une option &lt;code&gt;--root&lt;/code&gt; à rebase pour modifier aussi le commit root.&lt;/p&gt;
@@ -780,7 +780,7 @@ changements intéressants.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Git can be told to normalize pathnames it read from readdir(3) and
    all arguments it got from the command line into precomposed UTF-8
@@ -921,7 +921,7 @@ changements intéressants.&lt;/p&gt;
    when the human-readable committer name was given insufficiently by
    getpwent(3).&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.12-publiee.html</guid><pubDate>Fri, 24 Aug 2012 02:54:00 GMT</pubDate></item><item><title>Git 1.7.11 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.11-publiee.html</link><description>&lt;p&gt;Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :&lt;/p&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.12-publiee.html</guid><pubDate>Fri, 24 Aug 2012 02:54:00 GMT</pubDate></item><item><title>Git 1.7.11 publiée</title><link>http://gitfr.net/posts/git-1.7.11-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Deux changements intéressants dans cette 1.7.11 qui date du 18 juin :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Fini la configuration par défaut qui pousse toutes les branches connues
@@ -941,7 +941,7 @@ changements intéressants.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;A new mode for push, "simple", which is a cross between "current"
@@ -1094,7 +1094,7 @@ changements intéressants.&lt;/p&gt;
   execution bits whose contents is unmodified, which was not quite
   right.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.11-publiee.html</guid><pubDate>Sun, 01 Jul 2012 02:52:00 GMT</pubDate></item><item><title>Git 1.7.10 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.10-publiee.html</link><description>&lt;p&gt;Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.11-publiee.html</guid><pubDate>Sun, 01 Jul 2012 02:52:00 GMT</pubDate></item><item><title>Git 1.7.10 publiée</title><link>http://gitfr.net/posts/git-1.7.10-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Pas mal de petites changements dans cette version 1.7.10 sortie le 10 avril. Je
 voulais initialement tester cette version avant de publier l'annonce mais je
 n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :&lt;/p&gt;
 &lt;ul&gt;
@@ -1111,7 +1111,7 @@ n'ai pas eu le cou^H^H^Htemps :(. Mais rapidement de ce qu'ai pu voir :&lt;/p&gt
 &lt;/ul&gt;
 &lt;p&gt;N'hésitez pas comme d'habitude à commenter ce billet si vous voyez des 
 changements intéressants dans votre façon de travailler avec Git.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;various "gitk" updates.&lt;/p&gt;
@@ -1426,7 +1426,7 @@ changements intéressants dans votre façon de travailler avec Git.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;"gitweb" learned to show side-by-side diff.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.10-publiee.html</guid><pubDate>Sun, 15 Apr 2012 22:52:00 GMT</pubDate></item><item><title>Git 1.7.9 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.9-publiee.html</link><description>&lt;p&gt;La version 1.7.9 est sortie le 27 janvier avec plusieurs évolutions
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.10-publiee.html</guid><pubDate>Sun, 15 Apr 2012 22:52:00 GMT</pubDate></item><item><title>Git 1.7.9 publiée</title><link>http://gitfr.net/posts/git-1.7.9-publiee.html</link><description>&lt;div&gt;&lt;p&gt;La version 1.7.9 est sortie le 27 janvier avec plusieurs évolutions
 intéressantes : &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1450,7 +1450,7 @@ intéressantes : &lt;/p&gt;
 &lt;p&gt;Je vous laisse comme d'habitude lire le changelog mais je trouve cette version
 bien excitente ! J'attends la mise à jour sur ma machine pour faire quelques
 tests.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;gitk updates accumulated since early 2011.&lt;/p&gt;
@@ -1578,7 +1578,7 @@ tests.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;"gitweb" learned to show side-by-side diff.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.9-publiee.html</guid><pubDate>Sat, 28 Jan 2012 21:13:00 GMT</pubDate></item><item><title>Comportement par défaut du git push</title><link>http://gitfr.net/blog/posts/comportement-par-defaut-du-git-push.html</link><description>&lt;p&gt;Git est hautement configurable, avec des dizaines de variables possibles
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.9-publiee.html</guid><pubDate>Sat, 28 Jan 2012 21:13:00 GMT</pubDate></item><item><title>Comportement par défaut du git push</title><link>http://gitfr.net/posts/comportement-par-defaut-du-git-push.html</link><description>&lt;div&gt;&lt;p&gt;Git est hautement configurable, avec des dizaines de variables possibles
 dans le fichier de configuration, la longueur de l'aide de l'option config
 donnant d'ailleurs quelques vertiges. Au lieu de faire un (très) long billet
 sur les différentes possibilités de configuration, je vous propose plutôt
@@ -1627,7 +1627,7 @@ To push the current branch and set the remote as upstream, use&lt;/p&gt;
 la branche distante test sur origin avec votre branche locale test. Vous verrez
 immédiatement un changement sur votre shell avec l'information &lt;strong&gt;u=&lt;/strong&gt;, qui 
 indique que vos deux branches sont synchronisées.&lt;/p&gt;
-&lt;h3&gt;Rappel sur le tracking&lt;/h3&gt;
+&lt;h4&gt;Rappel sur le tracking&lt;/h4&gt;
 &lt;p&gt;Le tracking consiste à &lt;em&gt;associer&lt;/em&gt; une branche locale et une branche distante
 (dite &lt;em&gt;upstream&lt;/em&gt; dans la terminologie Git), ce qui informe Git de la branche
 distante à utiliser lors d'un &lt;code&gt;git pull&lt;/code&gt;. Si vous ne comprenez pas pourquoi
@@ -1640,10 +1640,10 @@ simplement que Git le fait pour vous la plupart du temps :&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;C'est donc (la plupart du temps) dans le cas ou créer une nouvelle branche en
 locale sans existance préalable sur le serveur que vous devez explicitement
-faire cette association.&lt;/p&gt;</description><category>git</category><category>git-push</category><category>git-pull</category><category>refspec</category><category>configuration</category><guid>http://gitfr.net/blog/posts/comportement-par-defaut-du-git-push.html</guid><pubDate>Sun, 11 Dec 2011 23:19:00 GMT</pubDate></item><item><title>Git 1.7.8 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.8-publiee.html</link><description>&lt;p&gt;La version 1.7.8 est sortie le 2 décembre. Comme vous pouvez constater, le
+faire cette association.&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>git-push</category><category>git-pull</category><category>refspec</category><category>configuration</category><guid>http://gitfr.net/posts/comportement-par-defaut-du-git-push.html</guid><pubDate>Sun, 11 Dec 2011 23:19:00 GMT</pubDate></item><item><title>Git 1.7.8 publiée</title><link>http://gitfr.net/posts/git-1.7.8-publiee.html</link><description>&lt;div&gt;&lt;p&gt;La version 1.7.8 est sortie le 2 décembre. Comme vous pouvez constater, le
 changelog est assez gros avec surtout de nouvelles options pour plusieurs
 commandes et l'habituel lot de corrections.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Some git-svn, git-gui, git-p4 (in contrib) and msysgit updates.&lt;/p&gt;
@@ -1835,7 +1835,7 @@ commandes et l'habituel lot de corrections.&lt;/p&gt;
   (merge c49904e fc/remote-seturl-usage-fix later to maint).
   (merge 656cdf0 jc/remote-setbranches-usage-fix later to maint).&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.8-publiee.html</guid><pubDate>Sun, 11 Dec 2011 23:13:00 GMT</pubDate></item><item><title>Comprendre le refspec</title><link>http://gitfr.net/blog/posts/0079-comprendre_le_refspec.html</link><description>&lt;p&gt;Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.8-publiee.html</guid><pubDate>Sun, 11 Dec 2011 23:13:00 GMT</pubDate></item><item><title>Comprendre le refspec</title><link>http://gitfr.net/posts/0079-comprendre_le_refspec.html</link><description>&lt;div&gt;&lt;p&gt;Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
 comporte Git : il vous indique les références du dépôt distant en
 ajoutant l'espace de nom &lt;code&gt;origin&lt;/code&gt; (dans le cas d'un clone) ou le nom que
 vous lui donnez si vous l'avez ajouter avec la commande &lt;code&gt;git-remote add&lt;/code&gt;.
@@ -1845,14 +1845,14 @@ se traduire en bon français par : «comment je gère les dépôts distants
 chef ?». Soit ce refspec est spécifié en ligne de commande au moment
 de l'action (fetch ou push), soit elle se trouve dans le fichier de
 configuration du dépôt.&lt;/p&gt;
-&lt;h3&gt;Petit rappel&lt;/h3&gt;
+&lt;h4&gt;Petit rappel&lt;/h4&gt;
 &lt;p&gt;Il est &lt;strong&gt;impossible&lt;/strong&gt; de modifer directement un dépôt distant, vous devez
 obligatoirement modifier le dépôt local puis pousser vos commits
 sur le dépôt distant. Autrement dit, modifier un dépôt consiste à
 synchroniser les bases de données.&lt;/p&gt;
 &lt;p&gt;C'est là que le refspec rentre en jeu, il permet de définir les branches
 concernées au moment de la synchronisation.&lt;/p&gt;
-&lt;h3&gt;Clonage&lt;/h3&gt;
+&lt;h4&gt;Clonage&lt;/h4&gt;
 &lt;p&gt;Si vous joué rarement avec le refspec, c'est que vous travaillé la plupart
 du temps sur un dépôt local que vous avez créé avec la commande &lt;code&gt;git-clone&lt;/code&gt;.
 Ce dernier génère un refspec générique suffisant. Editez le fichier
@@ -1867,7 +1867,7 @@ Ce dernier génère un refspec générique suffisant. Editez le fichier
 s'appelle en local &lt;em&gt;origin&lt;/em&gt; et on associe à chaque référence de branche
 du dépôt distant une référence de branche locale préfixée par &lt;em&gt;origin&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Mais un deuxième rappel avant d'aller plus loin.&lt;/p&gt;
-&lt;h3&gt;Structure des références&lt;/h3&gt;
+&lt;h4&gt;Structure des références&lt;/h4&gt;
 &lt;p&gt;La gestion des références est d'une simplicité affligeante. Tout est contenu
 dans le répertoire &lt;code&gt;.git/refs&lt;/code&gt;. Un répertoire étant un espace de nom, un
 fichier une référence. Pour fonctionner, Git à besoin de 2 espaces de nom
@@ -1883,7 +1883,7 @@ bien particulier :&lt;/p&gt;
 &lt;p&gt;Vous ne faites pas attention à ces répertoires en temps normal car les
 commandes Git savent pertinamment que les références sont à ces endroits
 précis.&lt;/p&gt;
-&lt;h3&gt;Explication&lt;/h3&gt;
+&lt;h4&gt;Explication&lt;/h4&gt;
 &lt;p&gt;Si je vous dis qu'un refspec s'écrit toujours &lt;code&gt;source:destination&lt;/code&gt;, la ligne
 suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1907,19 +1907,19 @@ suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :&lt;
 &lt;p&gt;Si par exemple le dépôt distant a 3 branches qui se nomment &lt;code&gt;riri&lt;/code&gt;, &lt;code&gt;fifi&lt;/code&gt; et
 &lt;code&gt;loulou&lt;/code&gt;, vous aurez donc en local 3 branches &lt;code&gt;origin/riri&lt;/code&gt;, &lt;code&gt;origin/fifi&lt;/code&gt; et
 &lt;code&gt;origin/loulou&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Importance du refspec&lt;/h3&gt;
+&lt;h4&gt;Importance du refspec&lt;/h4&gt;
 &lt;p&gt;Il est important de maitriser le refspec car tout part de là, c'est en fonction
 des références à récupérer ou à pousser que Git détermine les objets à 
 synchroniser. Si je demande à récupérer toutes les références distantes, je demande
 implicitement tous les objets accessibles par ces références, donc toute la base.
 Au contraire, si le refspec implique des références précises, seuls les objets
 nécessaires à ces références seront impactés.&lt;/p&gt;
-&lt;h3&gt;Ajout d'un dépôt distant&lt;/h3&gt;
+&lt;h4&gt;Ajout d'un dépôt distant&lt;/h4&gt;
 &lt;p&gt;La commande &lt;code&gt;git-remote&lt;/code&gt; permet de manipuler les dépôts distants, avec
 notamment la commande &lt;code&gt;git-remote add&lt;/code&gt; pour en ajouter. Ce dernier se comporte
 comme la commande &lt;code&gt;git-clone&lt;/code&gt;, en configurant le refspec au plus
 large (toutes les références donc).&lt;/p&gt;
-&lt;h3&gt;refspec en ligne de commande&lt;/h3&gt;
+&lt;h4&gt;refspec en ligne de commande&lt;/h4&gt;
 &lt;p&gt;Le refspec se manipule aussi en ligne de commande, ce qui permet de passer
 outre la configuration ou d'utiliser Git sans configuration préalable.&lt;/p&gt;
 &lt;p&gt;Quelques exemples :&lt;/p&gt;
@@ -1937,11 +1937,11 @@ en local.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Pousse la branche master sur la branche distante expérimental. Nous
 utilisons ici le nom complet de la référence. &lt;/p&gt;
-&lt;h3&gt;Le refspec :&lt;/h3&gt;
+&lt;h4&gt;Le refspec :&lt;/h4&gt;
 &lt;p&gt;Refspec particulier qui indique de mettre à jour toutes les branches
 distantes existantes qui ont un nom identique aux branches locales. C'est en
 fait le refspec utilisé par défaut au push quand nous en spécifions pas.&lt;/p&gt;
-&lt;h3&gt;Effacer une référence distante&lt;/h3&gt;
+&lt;h4&gt;Effacer une référence distante&lt;/h4&gt;
 &lt;p&gt;Autre cas particulier. Si vous souhaitez par exemple effacer la référence
 distante test si vous souhaitez effacer une référence distante,
 il faut taper :&lt;/p&gt;
@@ -1949,7 +1949,7 @@ il faut taper :&lt;/p&gt;
 &lt;p&gt;git push :test&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Autrement dit, je pousse une référence vide sur la référence test.&lt;/p&gt;
-&lt;h3&gt;Associer branche locale / branche distante&lt;/h3&gt;
+&lt;h4&gt;Associer branche locale / branche distante&lt;/h4&gt;
 &lt;p&gt;Comme nous l'avons vu, le refspec en ligne de commande permet d'associer
 temporairement une branche locale et une branche sur le dépôt distant. Mais
 comment associer ces deux branches dans la configuration et éviter ainsi de
@@ -1971,14 +1971,14 @@ distante (&lt;em&gt;upstream&lt;/em&gt; dans le vocabulaire Git) que votre shell
 si vous avez des commits en avance ou en retard (logique non ?). Cela arrive
 quand vous avez créé une nouvelle branche locale mais sans l'avoir poussée
 sur le dépôt distant.&lt;/p&gt;
-&lt;h3&gt;pull = fetch + merge&lt;/h3&gt;
+&lt;h4&gt;pull = fetch + merge&lt;/h4&gt;
 &lt;p&gt;Vous devez maintenant comprendre pourquoi on dit que la commande &lt;code&gt;git-pull&lt;/code&gt;
 n'est en fait qu'un raccouri pour :&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;git-fetch&lt;/li&gt;
 &lt;li&gt;git-merge origin/master&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;A quoi sert le fetch ?&lt;/h3&gt;
+&lt;h4&gt;A quoi sert le fetch ?&lt;/h4&gt;
 &lt;p&gt;La commande &lt;code&gt;git-pull&lt;/code&gt; est une commodité car c'est dans 90% des cas ce que l'on
 souhaite faire. Mais le merge est seulement une des nombreuses possibilités que
 vous offre Git. La beauté du travail collaboratif avec Git est que cette branche
@@ -1990,12 +1990,12 @@ le Net de ne pas faire que des fetch.&lt;/p&gt;
 &lt;p&gt;Notez qu'il existe l'option &lt;code&gt;--rebase&lt;/code&gt; pour rebaser automatiquement votre
 branche locale sur la branche distante (ce qui est la aussi un scénario de
 base).&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h4&gt;Conclusion&lt;/h4&gt;
 &lt;p&gt;Je pense avoir fait le tour. Comme d'habitude je vous conseille de de lire
-les pages du manuel (git-clone, git-fetch, git-push et git-pull).&lt;/p&gt;</description><category>git</category><category>refspec</category><category>git-clone</category><category>git-remote</category><category>git-fetch</category><category>git-pull</category><category>git-push</category><guid>http://gitfr.net/blog/posts/0079-comprendre_le_refspec.html</guid><pubDate>Sun, 09 Oct 2011 17:53:00 GMT</pubDate></item><item><title>Git 1.7.7 publiée</title><link>http://gitfr.net/blog/posts/git-1.7.7-publiee.html</link><description>&lt;p&gt;Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+les pages du manuel (git-clone, git-fetch, git-push et git-pull).&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>refspec</category><category>git-clone</category><category>git-remote</category><category>git-fetch</category><category>git-pull</category><category>git-push</category><guid>http://gitfr.net/posts/0079-comprendre_le_refspec.html</guid><pubDate>Sun, 09 Oct 2011 17:53:00 GMT</pubDate></item><item><title>Git 1.7.7 publiée</title><link>http://gitfr.net/posts/git-1.7.7-publiee.html</link><description>&lt;div&gt;&lt;p&gt;Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
 méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
 changements.&lt;/p&gt;
-&lt;h3&gt;Le changelog&lt;/h3&gt;
+&lt;h4&gt;Le changelog&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The scripting part of the codebase is getting prepared for i18n/l10n.&lt;/p&gt;
@@ -2146,4 +2146,4 @@ changements.&lt;/p&gt;
 &lt;p&gt;test scripts for gitweb tried to run even when CGI-related perl modules
   are not installed; they now exit early when the latter are unavailable.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/blog/posts/git-1.7.7-publiee.html</guid><pubDate>Sat, 01 Oct 2011 10:34:00 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><category>release</category><guid>http://gitfr.net/posts/git-1.7.7-publiee.html</guid><pubDate>Sat, 01 Oct 2011 10:34:00 GMT</pubDate></item></channel></rss>

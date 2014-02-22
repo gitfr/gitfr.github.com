@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="GitFR">
     <title>Taper plus vite avec la complétion | GitFR</title>
     
@@ -13,6 +12,7 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/posts/taper-plus-vite-avec-la-completion.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -22,11 +22,13 @@
 
 
 
+
+
     
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -37,26 +39,24 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href="../">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
-            </li><li><a href="../rss.xml">RSS</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="taper-plus-vite-avec-la-completion.md" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="taper-plus-vite-avec-la-completion.md" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,23 +69,31 @@
     <div class="span2"></div>
     <div class="span8">
     
-    <div class="postbox">
+    <article class="postbox post-text">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Taper plus vite avec la complétion</h1>
+    <h1 class="p-name" itemprop="headline name">Taper plus vite avec la complétion</h1>
 
     <hr>
     <small>
-        Publié: <time class="published" datetime="2010-11-04T02:37:00">2010-11-04 02:37</time>
+        Publié: <time class="published dt-published" datetime="2010-11-04T02:37:00+00:00" itemprop="datePublished">2010-11-04 02:37</time>
         
 
-        
-          |  Plus de billets sur
-            <a class="tag" href="../categories/git.html"><span class="badge badge-info">git</span></a>
-            <a class="tag" href="../categories/configuration.html"><span class="badge badge-info">configuration</span></a>
+		
+          |  
+        Plus d'articles sur 
+    <span itemprop="keywords">
+        <a class="tag p-category" href="../categories/git.html"><span class="badge badge-info">git</span></a>
+        <a class="tag p-category" href="../categories/configuration.html"><span class="badge badge-info">configuration</span></a>
+    </span>
 
+
+          |  
+		
     </small>
     <hr>
-    <p>Le petit doigt de la main gauche est pour un <strong>Unixien</strong> un doigt important (bon, vous pouvez me rétorquer que <em>tous</em> les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche <strong>tab</strong>. Cette touche permet sous Unix de faire la <strong>complétion</strong>. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex <code>--exclude</code> de la commande <code>diff</code>).</p>
+    <div class="e-content" itemprop="articleBody text">
+    <div><p>Le petit doigt de la main gauche est pour un <strong>Unixien</strong> un doigt important (bon, vous pouvez me rétorquer que <em>tous</em> les doigts sont importants) : c'est celui qu'on utilise pour taper sur la touche <strong>tab</strong>. Cette touche permet sous Unix de faire la <strong>complétion</strong>. Autrement dit, de compléter le nom d'une commande quand on tape le début de celle-ci. Non seulement une commande, mais aussi les sous commandes et options (par ex <code>--exclude</code> de la commande <code>diff</code>).</p>
 <p>Comment cela marche t'il avec Git ? Voici quelques exemples :</p>
 <blockquote>
 <p><code>$ git &lt;TAB&gt;&lt;TAB&gt;</code></p>
@@ -113,11 +121,11 @@
 </blockquote>
 <p>Comme vous pouvez le constater, c'est un gain de temps incroyable. Pour la petite histoire, c'est la fréquence d'utilisation de cette touche qui me donne une première idée de la familiarité d'un candidat avec Unix en entretien d'embauche :).</p>
 <p><strong>Note</strong> : vous constaterez peut être que toutes les sous commandes ou options ne sont pas représentées dans la complétion. C'est un choix (ou non, par exemple un oubli ?) des développeurs du fichier de complétion. Il faut en effet modifier manuellement ce fichier à chaque nouvelle version (travail un poil fastidieux, pour vous donner une idée le fichier de la version 1.7.3.2 fait 2419 lignes), il se peut donc que les développeurs fassent des choix. Ceci est aussi valide pour les commandes Shell en général.</p>
-<h3>Activer la complétion</h3>
+<h4>Activer la complétion</h4>
 <p>C'est assez simple, il suffit d'ajouter le fichier de complétion Git soit dans votre profil (fichier <code>~/.bashrc</code>), soit dans la configuration globale de bash_completion du système. La plupart du temps, cette configuration est automatique à l'installation de Git.</p>
-<h3>Sous Ubuntu</h3>
+<h4>Sous Ubuntu</h4>
 <p>Le fichier de complétion est automatiquement activé sous Ubuntu car le fichier <code>git</code> est placé dans le répertoire <code>/etc/bash_completion.d/</code> par le paquet git lui même. Le paquet <code>bash-completion</code> étant lui installé par défaut.</p>
-<h3>Sous Mac OS X</h3>
+<h4>Sous Mac OS X</h4>
 <p>Il est nécessaire d'installer (avec Homebrew ou MacPorts) le paquet <code>bash_completion</code> si ce n'est pas deja fait, avec la commande :</p>
 <blockquote>
 <p>$ sudo port install bash_completion</p>
@@ -131,39 +139,52 @@
 <p><code>source ./path/to/git-completion.bash</code></p>
 </blockquote>
 <p>Changez <code>/path/to</code> avec le répertoire qui contient le fichier (qui est dofférent selon la méthode d'installation).</p>
-<h3>Sous Windows</h3>
-<p>Comme sous Ubuntu, la complétion est activé par défaut avec <em>msysgit</em>.</p>
+<h4>Sous Windows</h4>
+<p>Comme sous Ubuntu, la complétion est activé par défaut avec <em>msysgit</em>.</p></div>
+    </div>
+    </div>
     
-    <ul class="pager">
-        <li class="previous">
-            <a href="configuration-minimale-pour-demarrer.html">← Billet précédent</a>
-        </li>
-        <li class="next">
-            <a href="eviter-de-commiter-des-fichiers-indesirables.html">Billet suivant →</a>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous">
+                <a href="configuration-minimale-pour-demarrer.html" rel="prev">← Article précédent</a>
+            </li>
+            <li class="next">
+                <a href="eviter-de-commiter-des-fichiers-indesirables.html" rel="next">Article suivant →</a>
+            </li>
+        </ul>
 
         
+        
+
 
     
 
-    </div>
+    </article>
 
     </div>
     </div>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

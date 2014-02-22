@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Site francophone sur Git.">
     <meta name="author" content="GitFR">
-    <title>GitFR (anciens billets page 8) | GitFR</title>
+    <title>GitFR (anciens articles, page 8) | GitFR</title>
     
             <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
@@ -13,6 +13,7 @@
         <link href="assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="http://gitfr.net/index-8.html">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -24,7 +25,7 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -35,22 +36,22 @@
             <span class="icon-bar"></span>
         </a>
 
-            <a class="brand" href=".">
+            <a class="brand" href="http://gitfr.net/">
             GitFR
             </a>
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="archive.html">Archives</a>
-            </li><li><a href="categories/index.html">Tags</a>
-            </li><li><a href="rss.xml">RSS</a>
+                <li><a href="archive.html">Archives</a>
+                </li><li><a href="categories/index.html">Tags</a>
+                </li><li><a href="rss.xml">RSS</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
+                    <li>
                 </ul>
             </div>
         </div>
@@ -63,13 +64,14 @@
     <div class="span2"></div>
     <div class="span8">
     
-        <div class="postbox">
-        <h1><a href="posts/presentation-git-le-24-11-a-bordeaux.html">Présentation Git le 24/11 à Bordeaux</a>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/presentation-git-le-24-11-a-bordeaux.html" class="u-url">Présentation Git le 24/11 à Bordeaux</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-13T01:40:00">2011-10-13 01:40</time>
+             Publié: <time class="published dt-published" datetime="2011-10-13T01:40:00+00:00">2011-10-13 01:40</time>
         </small></h1>
         <hr>
-        <p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
+        <div class="e-content">
+        <div><p>Nouvelle étape du tour de France avec la bonne ville de Bordeaux, pour un
 combo présentation et atelier sur 2 jours : </p>
 <ul>
 <li>Présentation le 24/11</li>
@@ -77,18 +79,22 @@ combo présentation et atelier sur 2 jours : </p>
 </ul>
 <p><strong>MAJ</strong> : Vous pouvez vous inscrire à la soirée sur site du
 <a href="http://bordeauxjug.org/20111124_SoireeGit">BordeauxJUG</a>, organisateur
-de l'événement.</p>
+de l'événement.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0079-comprendre_le_refspec.html">Comprendre le refspec</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0079-comprendre_le_refspec.html" class="u-url">Comprendre le refspec</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-09T17:53:00">2011-10-09 17:53</time>
+             Publié: <time class="published dt-published" datetime="2011-10-09T17:53:00+00:00">2011-10-09 17:53</time>
         </small></h1>
         <hr>
-        <p>Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
+        <div class="e-content">
+        <div><p>Si vous avez déjà travaillé avec un dépôt distant, vous savez comment se
 comporte Git : il vous indique les références du dépôt distant en
 ajoutant l'espace de nom <code>origin</code> (dans le cas d'un clone) ou le nom que
 vous lui donnez si vous l'avez ajouter avec la commande <code>git-remote add</code>.
@@ -98,14 +104,14 @@ se traduire en bon français par : «comment je gère les dépôts distants
 chef ?». Soit ce refspec est spécifié en ligne de commande au moment
 de l'action (fetch ou push), soit elle se trouve dans le fichier de
 configuration du dépôt.</p>
-<h3>Petit rappel</h3>
+<h4>Petit rappel</h4>
 <p>Il est <strong>impossible</strong> de modifer directement un dépôt distant, vous devez
 obligatoirement modifier le dépôt local puis pousser vos commits
 sur le dépôt distant. Autrement dit, modifier un dépôt consiste à
 synchroniser les bases de données.</p>
 <p>C'est là que le refspec rentre en jeu, il permet de définir les branches
 concernées au moment de la synchronisation.</p>
-<h3>Clonage</h3>
+<h4>Clonage</h4>
 <p>Si vous joué rarement avec le refspec, c'est que vous travaillé la plupart
 du temps sur un dépôt local que vous avez créé avec la commande <code>git-clone</code>.
 Ce dernier génère un refspec générique suffisant. Editez le fichier
@@ -120,7 +126,7 @@ Ce dernier génère un refspec générique suffisant. Editez le fichier
 s'appelle en local <em>origin</em> et on associe à chaque référence de branche
 du dépôt distant une référence de branche locale préfixée par <em>origin</em>.</p>
 <p>Mais un deuxième rappel avant d'aller plus loin.</p>
-<h3>Structure des références</h3>
+<h4>Structure des références</h4>
 <p>La gestion des références est d'une simplicité affligeante. Tout est contenu
 dans le répertoire <code>.git/refs</code>. Un répertoire étant un espace de nom, un
 fichier une référence. Pour fonctionner, Git à besoin de 2 espaces de nom
@@ -136,7 +142,7 @@ bien particulier :</p>
 <p>Vous ne faites pas attention à ces répertoires en temps normal car les
 commandes Git savent pertinamment que les références sont à ces endroits
 précis.</p>
-<h3>Explication</h3>
+<h4>Explication</h4>
 <p>Si je vous dis qu'un refspec s'écrit toujours <code>source:destination</code>, la ligne
 suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :</p>
 <blockquote>
@@ -160,19 +166,19 @@ suivante ne doit pas vous poser trop de soucis. Examinons la de plus prêt :</p>
 <p>Si par exemple le dépôt distant a 3 branches qui se nomment <code>riri</code>, <code>fifi</code> et
 <code>loulou</code>, vous aurez donc en local 3 branches <code>origin/riri</code>, <code>origin/fifi</code> et
 <code>origin/loulou</code>.</p>
-<h3>Importance du refspec</h3>
+<h4>Importance du refspec</h4>
 <p>Il est important de maitriser le refspec car tout part de là, c'est en fonction
 des références à récupérer ou à pousser que Git détermine les objets à 
 synchroniser. Si je demande à récupérer toutes les références distantes, je demande
 implicitement tous les objets accessibles par ces références, donc toute la base.
 Au contraire, si le refspec implique des références précises, seuls les objets
 nécessaires à ces références seront impactés.</p>
-<h3>Ajout d'un dépôt distant</h3>
+<h4>Ajout d'un dépôt distant</h4>
 <p>La commande <code>git-remote</code> permet de manipuler les dépôts distants, avec
 notamment la commande <code>git-remote add</code> pour en ajouter. Ce dernier se comporte
 comme la commande <code>git-clone</code>, en configurant le refspec au plus
 large (toutes les références donc).</p>
-<h3>refspec en ligne de commande</h3>
+<h4>refspec en ligne de commande</h4>
 <p>Le refspec se manipule aussi en ligne de commande, ce qui permet de passer
 outre la configuration ou d'utiliser Git sans configuration préalable.</p>
 <p>Quelques exemples :</p>
@@ -190,11 +196,11 @@ en local.</p>
 </blockquote>
 <p>Pousse la branche master sur la branche distante expérimental. Nous
 utilisons ici le nom complet de la référence. </p>
-<h3>Le refspec :</h3>
+<h4>Le refspec :</h4>
 <p>Refspec particulier qui indique de mettre à jour toutes les branches
 distantes existantes qui ont un nom identique aux branches locales. C'est en
 fait le refspec utilisé par défaut au push quand nous en spécifions pas.</p>
-<h3>Effacer une référence distante</h3>
+<h4>Effacer une référence distante</h4>
 <p>Autre cas particulier. Si vous souhaitez par exemple effacer la référence
 distante test si vous souhaitez effacer une référence distante,
 il faut taper :</p>
@@ -202,7 +208,7 @@ il faut taper :</p>
 <p>git push :test</p>
 </blockquote>
 <p>Autrement dit, je pousse une référence vide sur la référence test.</p>
-<h3>Associer branche locale / branche distante</h3>
+<h4>Associer branche locale / branche distante</h4>
 <p>Comme nous l'avons vu, le refspec en ligne de commande permet d'associer
 temporairement une branche locale et une branche sur le dépôt distant. Mais
 comment associer ces deux branches dans la configuration et éviter ainsi de
@@ -224,14 +230,14 @@ distante (<em>upstream</em> dans le vocabulaire Git) que votre shell vous indiqu
 si vous avez des commits en avance ou en retard (logique non ?). Cela arrive
 quand vous avez créé une nouvelle branche locale mais sans l'avoir poussée
 sur le dépôt distant.</p>
-<h3>pull = fetch + merge</h3>
+<h4>pull = fetch + merge</h4>
 <p>Vous devez maintenant comprendre pourquoi on dit que la commande <code>git-pull</code>
 n'est en fait qu'un raccouri pour :</p>
 <ol>
 <li>git-fetch</li>
 <li>git-merge origin/master</li>
 </ol>
-<h3>A quoi sert le fetch ?</h3>
+<h4>A quoi sert le fetch ?</h4>
 <p>La commande <code>git-pull</code> est une commodité car c'est dans 90% des cas ce que l'on
 souhaite faire. Mais le merge est seulement une des nombreuses possibilités que
 vous offre Git. La beauté du travail collaboratif avec Git est que cette branche
@@ -243,51 +249,63 @@ le Net de ne pas faire que des fetch.</p>
 <p>Notez qu'il existe l'option <code>--rebase</code> pour rebaser automatiquement votre
 branche locale sur la branche distante (ce qui est la aussi un scénario de
 base).</p>
-<h3>Conclusion</h3>
+<h4>Conclusion</h4>
 <p>Je pense avoir fait le tour. Comme d'habitude je vous conseille de de lire
-les pages du manuel (git-clone, git-fetch, git-push et git-pull).</p>
+les pages du manuel (git-clone, git-fetch, git-push et git-pull).</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/presentation-git-le-03-11-a-evry.html">Présentation Git le 03/11 à Évry</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/presentation-git-le-03-11-a-evry.html" class="u-url">Présentation Git le 03/11 à Évry</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-08T00:05:00">2011-10-08 00:05</time>
+             Publié: <time class="published dt-published" datetime="2011-10-08T00:05:00+00:00">2011-10-08 00:05</time>
         </small></h1>
         <hr>
-        <p>Nouvelle conférence Git à Télécom SudParis, à Évry, en région parisienne. L'occasion d'évengéliser
+        <div class="e-content">
+        <div><p>Nouvelle conférence Git à Télécom SudParis, à Évry, en région parisienne. L'occasion d'évengéliser
 des étudiants pas encore trop déformés par SVN :). A ce propos, vu qu'ils ont pour obligation
 d'utiliser ce dernier pour leurs devoirs, je devrais <strong>exceptionnellement</strong> être soft en SVN
 bashing, enfin si j'arrive à me retenir ;)</p>
 <p>La conférence se déroulera dans l'amphi 10 de 100 places, de 14h30 à 17h, et ouvert au public. La
 conférence sera sûrement filmé et mis à disposition sur Internet.</p>
-<p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p>
+<p>Toutes les infos <a href="http://www-public.it-sudparis.eu/~berger_o/weblog/2011/10/05/conference-sur-le-gestionnaire-de-versions-distribue-git-le-jeudi-0311-apres-midi-a-telecom-sudparis-evry/">ici</a>.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/atelier-git-le-20-10-a-levallois.html">Atelier Git le 20/10 à Levallois</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/atelier-git-le-20-10-a-levallois.html" class="u-url">Atelier Git le 20/10 à Levallois</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-07T23:48:00">2011-10-07 23:48</time>
+             Publié: <time class="published dt-published" datetime="2011-10-07T23:48:00+00:00">2011-10-07 23:48</time>
         </small></h1>
         <hr>
-        <p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
+        <div class="e-content">
+        <div><p>Nouvel atelier Git le 20 octobre 2011 chez Ippon Technologies, à Levallois, en région parisienne.
 Toutes les informations sur <a href="http://blog.ippon.fr/2011/10/06/atelier-git-le-20-octobre-avec-sebastien-douche-inscriptions-ouvertes/">leur blog</a>.</p>
 <p>Ippon ayant blogué sans me prévenir, il n'y a plus de places, les 20 places sont toutes parties en
-quelques heures :).</p>
+quelques heures :).</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0076-plone_sur_github.html">Plone sur GitHub</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0076-plone_sur_github.html" class="u-url">Plone sur GitHub</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-01T15:29:00">2011-10-01 15:29</time>
+             Publié: <time class="published dt-published" datetime="2011-10-01T15:29:00+00:00">2011-10-01 15:29</time>
         </small></h1>
         <hr>
-        <p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
+        <div class="e-content">
+        <div><p><a href="http://www.plone.net">Plone</a>, le plus gros CMS Libre vient lui aussi de
 <a href="https://github.com/plone">passer sur GitHub</a>. Vous pouvez donc constater la
 présence de 127 (!) dépôts Git. Ce nombre important vient de la programmation
 par composant du monde <em>Zope</em> (une fonctionnalité = un composant Python = un
@@ -322,21 +340,25 @@ plateforme d'hébergement (3 réponses possibles : oui, neutre, non) :</p>
 fois GitHub qui fait pencher la balance vers Git, et non l'inverse. D'autant
 plus que choisir Git signifie faire une croix sur la possibilité pour un
 développeur Python de coder facilement des extensions Mercurial, atout non
-négligeable quand on gère un projet.</p>
+négligeable quand on gère un projet.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/git-1.7.7-publiee.html">Git 1.7.7 publiée</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/git-1.7.7-publiee.html" class="u-url">Git 1.7.7 publiée</a>
         <small>  
-             Publié: <time class="published" datetime="2011-10-01T10:34:00">2011-10-01 10:34</time>
+             Publié: <time class="published dt-published" datetime="2011-10-01T10:34:00+00:00">2011-10-01 10:34</time>
         </small></h1>
         <hr>
-        <p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
+        <div class="e-content">
+        <div><p>Reprenons la bonne habitude d'annoncer les nouvelles versions. Rien de bien
 méchant dans cette 1.7.7, il faut attendre la 1.8 je pense pour des plus gros
 changements.</p>
-<h3>Le changelog</h3>
+<h4>Le changelog</h4>
 <ul>
 <li>
 <p>The scripting part of the codebase is getting prepared for i18n/l10n.</p>
@@ -487,35 +509,43 @@ changements.</p>
 <p>test scripts for gitweb tried to run even when CGI-related perl modules
   are not installed; they now exit early when the latter are unavailable.</p>
 </li>
-</ul>
+</ul></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/presentation-git-le-20-09-a-lyon.html">Présentation Git le 20/09 à Lyon</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/presentation-git-le-20-09-a-lyon.html" class="u-url">Présentation Git le 20/09 à Lyon</a>
         <small>  
-             Publié: <time class="published" datetime="2011-09-10T18:40:00">2011-09-10 18:40</time>
+             Publié: <time class="published dt-published" datetime="2011-09-10T18:40:00+00:00">2011-09-10 18:40</time>
         </small></h1>
         <hr>
-        <p>GitFR continue son tour de France avec comme étape Lyon, grâce au
+        <div class="e-content">
+        <div><p>GitFR continue son tour de France avec comme étape Lyon, grâce au
 <a href="http://www.lyonjug.org/evenements/git">LyonJUG</a>.</p>
 <p>Nous sommes en train de finaliser l'atelier Git qui aura lieu le lendemain, le
 21 septembre. Atelier limité à 20 places. Stay tuned comme ont dit :).</p>
-<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p>
+<p>Pour l'anectode, je participerai au podcast <a href="http://www.cast-it.fr/">Cast-It</a>.</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/git-1.7.6.1-publiee.html">Git 1.7.6.1 publiée</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/git-1.7.6.1-publiee.html" class="u-url">Git 1.7.6.1 publiée</a>
         <small>  
-             Publié: <time class="published" datetime="2011-08-29T00:34:00">2011-08-29 00:34</time>
+             Publié: <time class="published dt-published" datetime="2011-08-29T00:34:00+00:00">2011-08-29 00:34</time>
         </small></h1>
         <hr>
-        <p>La première version de maintenance de la branche 1.7.6.x est sortie le 24 août,
+        <div class="e-content">
+        <div><p>La première version de maintenance de la branche 1.7.6.x est sortie le 24 août,
 avec 88 corrections.</p>
-<h3>Le changelog</h3>
+<h4>Le changelog</h4>
 <ul>
 <li>
 <p>Various codepaths that invoked zlib deflate/inflate assumed that these
@@ -595,33 +625,41 @@ avec 88 corrections.</p>
 <p>"git tag -l <glob>..." did not take multiple glob patterns from the
    command line.</glob></p>
 </li>
-</ul>
+</ul></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0072-liste_de_diffusion_pour_la_traduction_git.html">Liste de diffusion pour la traduction Git</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0072-liste_de_diffusion_pour_la_traduction_git.html" class="u-url">Liste de diffusion pour la traduction Git</a>
         <small>  
-             Publié: <time class="published" datetime="2011-08-06T23:13:00">2011-08-06 23:13</time>
+             Publié: <time class="published dt-published" datetime="2011-08-06T23:13:00+00:00">2011-08-06 23:13</time>
         </small></h1>
         <hr>
+        <div class="e-content">
         <p>Pour travailler à plusieurs et communiquer plus efficacement sur la traduction,
 <a href="http://groups.google.com/group/gitfr-translation">une nouvelle liste de diffusion</a>
 vient d'être créée. Si ça vous branche de vous prendre la tête sur la
 meilleure traduction du mot <em>checkout</em> ou de passer 4h à revoir des fichiers
 <em>.po</em>, vous êtes le bienvenu ! :).</p>
+        </div>
             
+        
     <p>
 
-        </p></div>
-        <div class="postbox">
-        <h1><a href="posts/0071-le_commit_initial_vide.html">Le commit initial vide</a>
+
+        </p></article>
+        <article class="postbox h-entry post-text">
+        <h1 class="p-name"><a href="posts/0071-le_commit_initial_vide.html" class="u-url">Le commit initial vide</a>
         <small>  
-             Publié: <time class="published" datetime="2011-07-31T04:13:00">2011-07-31 04:13</time>
+             Publié: <time class="published dt-published" datetime="2011-07-31T04:13:00+00:00">2011-07-31 04:13</time>
         </small></h1>
         <hr>
-        <p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
+        <div class="e-content">
+        <div><p>Nous instaurons la rubrique astuce avec le <strong>commit initial vide</strong>. Le commit
 initial a un statut particulier puisque c'est... le premier, l'ancêtre de tous
 les commits. C'est pourquoi je commence <strong>toujours</strong> un dépôt par un commit
 initial vide avec la commande :</p>
@@ -632,13 +670,13 @@ initial vide avec la commande :</p>
 <p>C'est seulement ensuite que j'ajoute du contenu. A quoi ça sert ? Tout
 simplement à <strong>jouer avec tous les commits de contenu</strong>.</p>
 <p>Examinons deux exemples.</p>
-<h3>rebase -i</h3>
+<h4>rebase -i</h4>
 <p>Un rebase -i demande une limite basse, un commit de référence en sommes. Si
 mon graphe est composé des commits c1, c2, c3 et c4, je peux jouer sur c2 à
 c4, mais pas c1, ce dernier étant la référence. Si j'ai du contenu dans c1,
 je l'ai dans le baba ! Inversement, si c1 est un commit vide, alors tout mon
 contenu est accessible.</p>
-<h3>Travailler directement dans une branche</h3>
+<h4>Travailler directement dans une branche</h4>
 <p>Une bonne pratique est de ne pas travailler dans master, mais uniquement dans
 des branches (de fonctionnalités, d'intégration ou de correction de bugs) et de
 merger ensuite (avec sans <em>fast forward</em> selon le <em>workflow</em> que vous avez
@@ -646,28 +684,35 @@ choisi). Mais comme mon commit initial est obligatoirement dans master, c'est
 raté. Encore une fois, si ce commit ne contient pas de contenu, le problème
 disparait de lui-même : mon premier commit de contenu (le deuxième dans le
 graphe donc) sera lui, dans une branche.</p>
-<h3>Conclusion</h3>
+<h4>Conclusion</h4>
 <p>N'oubliez pas que la puissance de Git vient dans la capacité à manipuler votre
 graphe dans tous les sens, et même si vous ne voyez pas l'intérêt de modifier
 vos premiers commits, vous en verrez l'utilité plusieurs semaines aprés.
-Voir des mois après :).</p>
+Voir des mois après :).</p></div>
+        </div>
             
+        
     <p>
 
-        </p></div>
+
+        </p></article>
     
-<div>
-<ul class="pager">
-    <li class="previous">
-        <a href="index-9.html">← Billets récents</a>
-    </li><li class="next">
-        <a href="index-7.html">Anciens billets →</a>
-</li></ul>
-</div>
+        <div>
+        <ul class="pager">
+            <li class="previous">
+                <a href="index-9.html" rel="prev">← Billets récents</a>
+            </li>
+            <li class="next">
+                <a href="index-7.html" rel="next">Anciens articles →</a>
+            </li>
+        </ul>
+        </div>
 
     
+        
 
-    
+
+	
 
 
     </div>
@@ -675,16 +720,25 @@ Voir des mois après :).</p>
     <!--End of body content-->
 </div>
 <div class="footerbox">
-    Contents © 2013         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
+    Contents © 2014         <a href="mailto:seb@gitfr.et">GitFR</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+    
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>
